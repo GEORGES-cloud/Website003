@@ -1,4 +1,41 @@
 {
+  "funnel": {
+    "title": "Devenir membre",
+    "close": "Fermer",
+    "back": "Retour",
+    "progress": "Étape {current} sur {total}",
+    "intro": {
+      "eyebrow": "Test de 30 secondes",
+      "title": "Trouvez votre adhésion idéale",
+      "subtitle": "Répondez à trois questions et nous vous dirons quelle formule vous correspond. Sans engagement.",
+      "start": "Commencer"
+    },
+    "q1": {
+      "title": "À quelle fréquence rêvez-vous de naviguer ?",
+      "options": ["Quelques escapades par an", "Deux ou trois fois par mois", "Chaque semaine — c’est ma vie"]
+    },
+    "q2": {
+      "title": "C’est quoi votre journée parfaite en mer ?",
+      "options": ["Une baignade dans les criques à midi", "Un week-end le long de la côte", "Une traversée privée où tout est pris en charge"]
+    },
+    "q3": {
+      "title": "Avec qui prenez-vous le large d’habitude ?",
+      "options": ["En couple", "En famille et entre amis", "Événements, clients et occasions spéciales"]
+    },
+    "result": {
+      "eyebrow": "Votre formule idéale",
+      "namePlaceholder": "Votre nom (facultatif)",
+      "whatsapp": "Discuter sur WhatsApp",
+      "allPlans": "Voir toutes les formules",
+      "restart": "Refaire le test"
+    },
+    "wa": {
+      "hello": "Bonjour 👋 Je suis {name}.",
+      "helloAnon": "Bonjour 👋",
+      "body": "D’après le test du Flamingo Yacht Club, ma formule idéale est {plan}. Mes préférences : {summary}. Pouvez-vous m’en dire plus ?",
+      "bodyShort": "La formule {plan} du Flamingo Yacht Club m’intéresse. Pouvez-vous m’en dire plus ?"
+    }
+  },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Banus | Club de Membres Yachts",
     "description": "Club de membres yachts basé à Puerto Banús, Marbella. Accédez à une flotte premium, sans aucun compromis."

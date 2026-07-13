@@ -1,4 +1,41 @@
 {
+  "funnel": {
+    "title": "Become a member",
+    "close": "Close",
+    "back": "Back",
+    "progress": "Step {current} of {total}",
+    "intro": {
+      "eyebrow": "30-second quiz",
+      "title": "Find your ideal membership",
+      "subtitle": "Answer three questions and we’ll tell you which plan fits you. No commitment.",
+      "start": "Start"
+    },
+    "q1": {
+      "title": "How often do you dream of sailing?",
+      "options": ["A few getaways a year", "A couple of times a month", "Every week — it’s my life"]
+    },
+    "q2": {
+      "title": "What’s your perfect day at sea?",
+      "options": ["A midday swim in the coves", "A weekend exploring the coast", "A private cruise with everything taken care of"]
+    },
+    "q3": {
+      "title": "Who do you usually set sail with?",
+      "options": ["As a couple", "With family and friends", "Events, clients and special occasions"]
+    },
+    "result": {
+      "eyebrow": "Your ideal plan",
+      "namePlaceholder": "Your name (optional)",
+      "whatsapp": "Chat on WhatsApp",
+      "allPlans": "See all plans",
+      "restart": "Retake quiz"
+    },
+    "wa": {
+      "hello": "Hi 👋 I’m {name}.",
+      "helloAnon": "Hi 👋",
+      "body": "According to the Flamingo Yacht Club quiz, my ideal plan is {plan}. My preferences: {summary}. Could you tell me more?",
+      "bodyShort": "I’m interested in the {plan} plan at Flamingo Yacht Club. Could you tell me more?"
+    }
+  },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Banus | Yacht Membership Club",
     "description": "Yacht membership club based in Puerto Banús, Marbella. Access a premium fleet with no compromises."

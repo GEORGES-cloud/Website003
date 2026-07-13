@@ -1,4 +1,41 @@
 {
+  "funnel": {
+    "title": "Hazte socio",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "progress": "Paso {current} de {total}",
+    "intro": {
+      "eyebrow": "Test de 30 segundos",
+      "title": "Encuentra tu membresía ideal",
+      "subtitle": "Responde tres preguntas y te decimos qué plan encaja contigo. Sin compromiso.",
+      "start": "Empezar"
+    },
+    "q1": {
+      "title": "¿Cada cuánto sueñas con navegar?",
+      "options": ["Alguna escapada al año", "Un par de veces al mes", "Cada semana, es mi vida"]
+    },
+    "q2": {
+      "title": "¿Cómo es tu día perfecto en el mar?",
+      "options": ["Un baño en las calas al mediodía", "Un fin de semana explorando la costa", "Una travesía privada con todo resuelto"]
+    },
+    "q3": {
+      "title": "¿Con quién sueles zarpar?",
+      "options": ["En pareja", "Con la familia y amigos", "Eventos, clientes y ocasiones especiales"]
+    },
+    "result": {
+      "eyebrow": "Tu plan ideal",
+      "namePlaceholder": "Tu nombre (opcional)",
+      "whatsapp": "Hablar por WhatsApp",
+      "allPlans": "Ver todos los planes",
+      "restart": "Repetir test"
+    },
+    "wa": {
+      "hello": "Hola 👋 Soy {name}.",
+      "helloAnon": "Hola 👋",
+      "body": "Según el test del Flamingo Yacht Club, mi plan ideal es {plan}. Mis preferencias: {summary}. ¿Me contáis más?",
+      "bodyShort": "Me interesa el plan {plan} del Flamingo Yacht Club. ¿Me contáis más?"
+    }
+  },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Banus | Club Náutico de Membresía",
     "description": "Club náutico de membresía en Puerto Banús, Marbella. Accede a una flota premium de yates sin compromisos."

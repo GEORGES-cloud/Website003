@@ -9,6 +9,8 @@ import JsonLd from '@/components/JsonLd';
 import CookieBanner from '@/components/CookieBanner';
 import FloatingContact from '@/components/FloatingContact';
 import SmoothScroll from '@/components/SmoothScroll';
+import JoinFunnelProvider from '@/components/JoinFunnelProvider';
+import JoinFunnel from '@/components/JoinFunnel';
 import { locales, isLocale } from '@/lib/locales';
 
 const manrope = Manrope({
@@ -77,12 +79,15 @@ export default async function LocaleLayout({
           {({ es: 'Saltar al contenido', en: 'Skip to content', sv: 'Hoppa till innehåll', ru: 'Перейти к содержимому', de: 'Zum Inhalt springen', fr: 'Aller au contenu' } as Record<string, string>)[locale] ?? 'Skip to content'}
         </a>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <SmoothScroll />
-          <Navbar locale={locale} />
-          <main id="main">{children}</main>
-          <Footer locale={locale} />
-          <FloatingContact locale={locale} />
-          <CookieBanner locale={locale} />
+          <JoinFunnelProvider>
+            <SmoothScroll />
+            <Navbar locale={locale} />
+            <main id="main">{children}</main>
+            <Footer locale={locale} />
+            <FloatingContact locale={locale} />
+            <CookieBanner locale={locale} />
+            <JoinFunnel locale={locale} />
+          </JoinFunnelProvider>
         </NextIntlClientProvider>
         <JsonLd locale={locale} />
       </body>

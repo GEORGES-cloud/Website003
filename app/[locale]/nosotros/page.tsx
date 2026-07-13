@@ -4,7 +4,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
 import CTAFinal from '@/components/CTAFinal';
 
-export default function NosotrosPage({ params: { locale } }: { params: { locale: string } }) {
+export default function NosotrosPage() {
   const t = useTranslations('about');
   const tc = useTranslations('home.cta');
 
@@ -76,7 +76,6 @@ export default function NosotrosPage({ params: { locale } }: { params: { locale:
         title={tc('title')}
         description={tc('description')}
         button={tc('button')}
-        locale={locale}
       />
     </>
   );

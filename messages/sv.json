@@ -1,4 +1,41 @@
 {
+  "funnel": {
+    "title": "Bli medlem",
+    "close": "Stäng",
+    "back": "Tillbaka",
+    "progress": "Steg {current} av {total}",
+    "intro": {
+      "eyebrow": "30-sekunderstest",
+      "title": "Hitta ditt perfekta medlemskap",
+      "subtitle": "Svara på tre frågor så säger vi vilket paket som passar dig. Utan förpliktelser.",
+      "start": "Börja"
+    },
+    "q1": {
+      "title": "Hur ofta drömmer du om att segla?",
+      "options": ["Några utflykter om året", "Ett par gånger i månaden", "Varje vecka – det är mitt liv"]
+    },
+    "q2": {
+      "title": "Hur ser din perfekta dag till havs ut?",
+      "options": ["Ett dopp i vikarna mitt på dagen", "En helg längs kusten", "En privat kryssning där allt är ordnat"]
+    },
+    "q3": {
+      "title": "Vem seglar du oftast med?",
+      "options": ["Som par", "Med familj och vänner", "Event, kunder och speciella tillfällen"]
+    },
+    "result": {
+      "eyebrow": "Ditt perfekta paket",
+      "namePlaceholder": "Ditt namn (valfritt)",
+      "whatsapp": "Chatta på WhatsApp",
+      "allPlans": "Se alla paket",
+      "restart": "Gör om testet"
+    },
+    "wa": {
+      "hello": "Hej 👋 Jag heter {name}.",
+      "helloAnon": "Hej 👋",
+      "body": "Enligt Flamingo Yacht Clubs test är mitt perfekta paket {plan}. Mina önskemål: {summary}. Kan ni berätta mer?",
+      "bodyShort": "Jag är intresserad av paketet {plan} hos Flamingo Yacht Club. Kan ni berätta mer?"
+    }
+  },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Banus | Yachtklubb med medlemskap",
     "description": "Yachtklubb med medlemskap baserad i Puerto Banús, Marbella. Få tillgång till en premiumflotta utan kompromisser."

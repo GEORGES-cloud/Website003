@@ -32,7 +32,7 @@ export default function Footer({ locale }: FooterProps) {
               aria-label="Flamingo Yacht Club"
               className="inline-block text-white hover:text-sea-light transition-colors w-fit"
             >
-              <Logo layout="row" markSize={48} />
+              <Logo layout="row" />
             </Link>
             <p className="font-sans text-sm text-white/45 mt-6 leading-relaxed max-w-xs">
               {tf('tagline')}

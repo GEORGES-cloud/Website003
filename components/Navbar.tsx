@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
-import { YachtMark } from './Logo';
+import JoinCTA from './JoinCTA';
 
 interface NavbarProps {
   locale: string;
@@ -25,8 +25,7 @@ const display = { fontFamily: 'var(--font-display), "Arial Black", Impact, sans-
 function Wordmark({ className = '' }: { className?: string }) {
   return (
     <span className={`flex flex-col items-center leading-none ${className}`}>
-      <YachtMark size={32} className="mb-2" />
-      <span className="font-black uppercase" style={{ ...display, fontSize: 'clamp(0.95rem, 2.1vw, 1.4rem)', letterSpacing: '0.03em' }}>
+      <span className="font-black uppercase" style={{ ...display, fontSize: 'clamp(1rem, 2.3vw, 1.5rem)', letterSpacing: '0.03em' }}>
         Flamingo
       </span>
       <span
@@ -68,8 +67,6 @@ export default function Navbar({ locale }: NavbarProps) {
     { href: `/${locale}/experiencias`, label: t('experiences') },
     { href: `/${locale}/nosotros`, label: t('about') },
   ];
-
-  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? `/${locale}/contacto`;
 
   // On hero (not scrolled): white text over the video. After scroll: solid light bg, ink text.
   const onLight = scrolled;
@@ -163,7 +160,7 @@ export default function Navbar({ locale }: NavbarProps) {
 
             <div className="px-8 pb-10 pt-6 border-t border-line space-y-5">
               <LanguageSwitcher locale={locale} variant="inline" className="-mx-2.5" />
-              <Link href={bookingUrl} className="btn-primary w-full">{t('join')}</Link>
+              <JoinCTA className="btn-primary w-full">{t('join')}</JoinCTA>
             </div>
           </motion.div>
         )}

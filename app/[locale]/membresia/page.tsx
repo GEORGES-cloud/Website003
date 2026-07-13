@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import PageHero from '@/components/PageHero';
+import JoinCTA from '@/components/JoinCTA';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
 import MembershipTiers from '@/components/MembershipTiers';
@@ -8,7 +8,6 @@ import Faq from '@/components/Faq';
 
 export default function MembresiaPage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('membership');
-  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? `/${locale}/contacto`;
 
   const benefits = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6'] as const;
 
@@ -34,7 +33,7 @@ export default function MembresiaPage({ params: { locale } }: { params: { locale
                 <p className="font-sans text-lg text-muted leading-relaxed mb-10 max-w-md">
                   {t('how.description')}
                 </p>
-                <Link href={bookingUrl} className="btn-primary">{t('cta')}</Link>
+                <JoinCTA className="btn-primary">{t('cta')}</JoinCTA>
               </div>
             </ScrollReveal>
 
@@ -76,12 +75,9 @@ export default function MembresiaPage({ params: { locale } }: { params: { locale
             <p className="font-sans text-lg text-white/70 max-w-lg mx-auto leading-relaxed mb-10">
               {t('plans.contact')}
             </p>
-            <Link
-              href={bookingUrl}
-              className="inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-wide2 bg-bone text-ink px-12 py-5 hover:bg-sea hover:text-white transition-colors duration-300"
-            >
+            <JoinCTA className="inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-wide2 bg-bone text-ink px-12 py-5 hover:bg-sea hover:text-white transition-colors duration-300">
               {t('cta')}
-            </Link>
+            </JoinCTA>
           </ScrollReveal>
         </div>
       </section>

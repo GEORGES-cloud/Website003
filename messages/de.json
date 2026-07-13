@@ -1,4 +1,41 @@
 {
+  "funnel": {
+    "title": "Mitglied werden",
+    "close": "Schließen",
+    "back": "Zurück",
+    "progress": "Schritt {current} von {total}",
+    "intro": {
+      "eyebrow": "30-Sekunden-Test",
+      "title": "Finde deine ideale Mitgliedschaft",
+      "subtitle": "Beantworte drei Fragen und wir sagen dir, welcher Tarif zu dir passt. Unverbindlich.",
+      "start": "Starten"
+    },
+    "q1": {
+      "title": "Wie oft träumst du vom Segeln?",
+      "options": ["Ein paar Ausflüge im Jahr", "Ein paarmal im Monat", "Jede Woche – es ist mein Leben"]
+    },
+    "q2": {
+      "title": "Wie sieht dein perfekter Tag auf dem Meer aus?",
+      "options": ["Ein Bad in den Buchten am Mittag", "Ein Wochenende entlang der Küste", "Eine private Ausfahrt, bei der alles geregelt ist"]
+    },
+    "q3": {
+      "title": "Mit wem legst du normalerweise ab?",
+      "options": ["Zu zweit", "Mit Familie und Freunden", "Events, Kunden und besondere Anlässe"]
+    },
+    "result": {
+      "eyebrow": "Dein idealer Tarif",
+      "namePlaceholder": "Dein Name (optional)",
+      "whatsapp": "Per WhatsApp schreiben",
+      "allPlans": "Alle Tarife ansehen",
+      "restart": "Test wiederholen"
+    },
+    "wa": {
+      "hello": "Hallo 👋 Ich bin {name}.",
+      "helloAnon": "Hallo 👋",
+      "body": "Laut dem Test des Flamingo Yacht Club ist mein idealer Tarif {plan}. Meine Vorlieben: {summary}. Könnt ihr mir mehr erzählen?",
+      "bodyShort": "Ich interessiere mich für den Tarif {plan} im Flamingo Yacht Club. Könnt ihr mir mehr erzählen?"
+    }
+  },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Banus | Yacht-Membership-Club",
     "description": "Yacht-Membership-Club in Puerto Banús, Marbella. Zugang zu einer Premium-Flotte – ohne Kompromisse."

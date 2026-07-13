@@ -71,7 +71,6 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
         title={t('cta.title')}
         description={t('cta.description')}
         button={t('cta.button')}
-        locale={locale}
       />
     </>
   );

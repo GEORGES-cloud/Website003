@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import ScrollReveal from './ScrollReveal';
+import JoinCTA from './JoinCTA';
 import ParallaxImage from './ParallaxImage';
 
 interface CTAFinalProps {
@@ -7,12 +7,9 @@ interface CTAFinalProps {
   title: string;
   description: string;
   button: string;
-  locale: string;
 }
 
-export default function CTAFinal({ eyebrow, title, description, button, locale }: CTAFinalProps) {
-  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? `/${locale}/contacto`;
-
+export default function CTAFinal({ eyebrow, title, description, button }: CTAFinalProps) {
   return (
     <section className="relative py-32 md:py-44 overflow-hidden md:rounded-[2.5rem] md:mx-6 lg:mx-10">
       <ParallaxImage src="/images/cta.jpg" alt="" sizes="100vw" strength={70} kenBurns className="absolute inset-0" />
@@ -34,12 +31,9 @@ export default function CTAFinal({ eyebrow, title, description, button, locale }
           <p className="font-sans text-lg text-white/70 mb-12 max-w-lg mx-auto leading-relaxed">{description}</p>
         </ScrollReveal>
         <ScrollReveal delay={0.3}>
-          <Link
-            href={bookingUrl}
-            className="inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-wide2 bg-white text-ink px-12 py-5 hover:bg-sea hover:text-white transition-colors duration-300"
-          >
+          <JoinCTA className="inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-wide2 bg-white text-ink px-12 py-5 hover:bg-sea hover:text-white transition-colors duration-300">
             {button}
-          </Link>
+          </JoinCTA>
         </ScrollReveal>
       </div>
     </section>

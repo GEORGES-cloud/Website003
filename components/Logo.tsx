@@ -2,7 +2,6 @@ interface LogoProps {
   layout?: 'row' | 'stack';
   withTagline?: boolean;
   className?: string; // controls color via currentColor
-  markSize?: number;
 }
 
 const display = { fontFamily: 'var(--font-display), "Arial Black", Impact, sans-serif' } as const;
@@ -41,13 +40,11 @@ export default function Logo({
   layout = 'row',
   withTagline = true,
   className = '',
-  markSize = 40,
 }: LogoProps) {
   if (layout === 'stack') {
     return (
       <span className={`inline-flex flex-col items-center text-center ${className}`}>
-        <YachtMark size={markSize} />
-        <span className="mt-3.5 text-[1.15em] font-black uppercase leading-none" style={{ ...display, letterSpacing: '0.02em' }}>
+        <span className="text-[1.15em] font-black uppercase leading-none" style={{ ...display, letterSpacing: '0.02em' }}>
           Flamingo
         </span>
         <span className="mt-2 text-[0.52em] uppercase leading-none opacity-90" style={{ ...display, fontWeight: 500, letterSpacing: '0.36em', paddingLeft: '0.36em' }}>
@@ -63,8 +60,7 @@ export default function Logo({
   }
 
   return (
-    <span className={`inline-flex items-center gap-3 ${className}`}>
-      <YachtMark size={markSize} />
+    <span className={`inline-flex flex-col leading-none ${className}`}>
       <span className="inline-flex flex-col leading-none">
         <span className="text-[0.95rem] font-black uppercase" style={{ ...display, letterSpacing: '0.02em' }}>
           Flamingo

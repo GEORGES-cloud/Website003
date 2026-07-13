@@ -27,7 +27,6 @@ export default function FlotaPage({ params: { locale } }: { params: { locale: st
         title={th('title')}
         description={th('description')}
         button={th('button')}
-        locale={locale}
       />
     </>
   );

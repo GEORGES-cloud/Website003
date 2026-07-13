@@ -11,7 +11,7 @@ const EXPERIENCES = [
   { key: 'private', image: '/images/exp-private.jpg' },
 ] as const;
 
-export default function ExperienciasPage({ params: { locale } }: { params: { locale: string } }) {
+export default function ExperienciasPage() {
   const t = useTranslations('experiences');
   const tc = useTranslations('home.cta');
 
@@ -58,7 +58,6 @@ export default function ExperienciasPage({ params: { locale } }: { params: { loc
         title={tc('title')}
         description={tc('description')}
         button={tc('button')}
-        locale={locale}
       />
     </>
   );

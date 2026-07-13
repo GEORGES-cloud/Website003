@@ -1,11 +1,10 @@
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { getTiers } from '@/lib/localize';
 import ScrollReveal from './ScrollReveal';
+import JoinCTA from './JoinCTA';
 
 export default function MembershipTiers({ locale }: { locale: string }) {
   const t = useTranslations('membership.tiers');
-  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? `/${locale}/contacto`;
   const tiers = getTiers(locale);
 
   return (
@@ -75,8 +74,8 @@ export default function MembershipTiers({ locale }: { locale: string }) {
                     ))}
                   </ul>
 
-                  <Link
-                    href={bookingUrl}
+                  <JoinCTA
+                    tier={tier.id}
                     className={`font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 ${
                       featured
                         ? 'bg-white text-ink hover:bg-sea-light'
@@ -84,7 +83,7 @@ export default function MembershipTiers({ locale }: { locale: string }) {
                     }`}
                   >
                     {t('cta')}
-                  </Link>
+                  </JoinCTA>
                 </div>
               </ScrollReveal>
             );
