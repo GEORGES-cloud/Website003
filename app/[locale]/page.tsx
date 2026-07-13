@@ -33,12 +33,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
   return (
     <>
-      <HeroVideo
-        tagline={t('hero.tagline')}
-        subtitle={t('hero.subtitle')}
-        cta={t('hero.cta')}
-        locale={locale}
-      />
+      <HeroVideo />
 
       <MembershipPitch
         eyebrow={t('pitch.eyebrow')}

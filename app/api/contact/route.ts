@@ -9,13 +9,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
     }
 
-    const contactEmail = process.env.CONTACT_EMAIL ?? 'info@navigante.com';
+    const contactEmail = process.env.CONTACT_EMAIL ?? 'info@flamingoyachtclub.com';
 
     // TODO: Replace with Resend / Nodemailer for production
     // Example with Resend:
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send({
-    //   from: 'Flamingo Yacht Club <noreply@marbellacharterboatclub.com>',
+    //   from: 'Flamingo Yacht Club <noreply@flamingoyachtclub.com>',
     //   to: contactEmail,
     //   subject: `Nuevo mensaje de ${name}`,
     //   html: `<p>${message}</p><p>Email: ${email}</p><p>Tel: ${phone}</p>`,

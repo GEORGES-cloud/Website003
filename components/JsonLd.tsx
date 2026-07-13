@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://marbellacharterboatclub.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://flamingoyachtclub.com';
 
 export default function JsonLd({ locale }: { locale: string }) {
   const data = {

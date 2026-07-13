@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { fleet } from '@/lib/data';
 import { locales } from '@/lib/locales';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://marbellacharterboatclub.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://flamingoyachtclub.com';
 const routes = ['', '/flota', '/membresia', '/experiencias', '/nosotros', '/contacto'];
 
 export default function sitemap(): MetadataRoute.Sitemap {

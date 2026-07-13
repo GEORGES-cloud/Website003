@@ -3,14 +3,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion
 import { useRef } from 'react';
 import { MARK_PATH } from './Logo';
 
-interface HeroVideoProps {
-  tagline: string;
-  subtitle: string;
-  cta: string;
-  locale: string;
-}
-
-export default function HeroVideo({ tagline, subtitle, cta }: HeroVideoProps) {
+export default function HeroVideo() {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
@@ -42,15 +35,6 @@ export default function HeroVideo({ tagline, subtitle, cta }: HeroVideoProps) {
 
       {/* Centered brand lockup */}
       <motion.div style={{ y: contentY, opacity: contentOpacity }} className="relative h-full flex flex-col items-center justify-center text-center px-6">
-        <motion.span
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3 }}
-          className="font-sans text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.42em] text-white/80 mb-8"
-        >
-          {tagline}
-        </motion.span>
-
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
@@ -79,32 +63,6 @@ export default function HeroVideo({ tagline, subtitle, cta }: HeroVideoProps) {
             </span>
           </h1>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.95 }}
-          className="font-sans text-base sm:text-lg font-light text-white/85 mt-7 tracking-wide"
-        >
-          {subtitle}
-        </motion.p>
-      </motion.div>
-
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
-      >
-        <span className="font-sans text-[10px] font-semibold tracking-[0.3em] uppercase text-white/70">{cta}</span>
-        <div className="relative w-px h-12 overflow-hidden bg-white/25">
-          <motion.div
-            className="absolute inset-x-0 top-0 h-1/2 bg-white"
-            animate={{ y: ['-100%', '200%'] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          />
-        </div>
       </motion.div>
     </section>
   );

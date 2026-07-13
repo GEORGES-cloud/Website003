@@ -14,7 +14,7 @@ export interface LegalDoc {
 const COMPANY = '[RAZÓN SOCIAL]';
 const CIF = '[CIF/NIF]';
 const ADDR = 'Puerto Banús, 29660 Marbella, Málaga';
-const EMAIL = 'info@navigante.com';
+const EMAIL = 'info@flamingoyachtclub.com';
 
 export const legal: Record<'privacy' | 'terms' | 'notice', Record<'es' | 'en', LegalDoc>> = {
   privacy: {
