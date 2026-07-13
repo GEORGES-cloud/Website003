@@ -3,28 +3,49 @@
     "title": "Hazte socio",
     "close": "Cerrar",
     "back": "Atrás",
-    "progress": "Paso {current} de {total}",
+    "progress": "Pregunta {current} de {total}",
     "intro": {
-      "eyebrow": "Test de 30 segundos",
-      "title": "Encuentra tu membresía ideal",
-      "subtitle": "Responde tres preguntas y te decimos qué plan encaja contigo. Sin compromiso.",
+      "eyebrow": "Un minuto · Sin compromiso",
+      "title": "Descubre si el club es para ti",
+      "subtitle": "Cuéntanos cómo vives el mar y te enseñamos lo que la membresía puede hacer por ti. Al final, si te encaja, reservamos una cita para conocerlo a fondo.",
       "start": "Empezar"
     },
+    "name": {
+      "title": "Primero, ¿cómo te llamas?",
+      "subtitle": "Para hablarte de tú a tú.",
+      "placeholder": "Nombre y apellidos",
+      "continue": "Continuar"
+    },
     "q1": {
-      "title": "¿Cada cuánto sueñas con navegar?",
-      "options": ["Alguna escapada al año", "Un par de veces al mes", "Cada semana, es mi vida"]
+      "title": "{name}, ¿cada cuánto te imaginas saliendo al mar?",
+      "options": ["Alguna escapada al año", "Un par de veces al mes", "Cada semana, es mi estilo de vida"]
     },
     "q2": {
-      "title": "¿Cómo es tu día perfecto en el mar?",
+      "title": "¿Cómo sería tu día perfecto a bordo?",
       "options": ["Un baño en las calas al mediodía", "Un fin de semana explorando la costa", "Una travesía privada con todo resuelto"]
     },
     "q3": {
-      "title": "¿Con quién sueles zarpar?",
+      "title": "¿Con quién zarparás normalmente?",
       "options": ["En pareja", "Con la familia y amigos", "Eventos, clientes y ocasiones especiales"]
+    },
+    "q4": {
+      "title": "¿Cuál es tu experiencia en el mar?",
+      "options": ["Tengo titulación náutica", "He navegado, pero sin título", "Soy nuevo en esto"]
+    },
+    "q5": {
+      "title": "¿Cuándo te gustaría empezar?",
+      "options": ["Esta misma temporada", "En los próximos meses", "De momento solo estoy explorando"]
+    },
+    "cita": {
+      "title": "Reserva una visita sin compromiso",
+      "subtitle": "Te enseñamos el programa, la flota y Puerto Banús. Tú eliges cuándo:",
+      "day": ["Entre semana", "Fin de semana"],
+      "time": ["Por la mañana", "Por la tarde"],
+      "cta": "Reservar cita por WhatsApp"
     },
     "result": {
       "eyebrow": "Hecha para ti",
-      "namePlaceholder": "Tu nombre (opcional)",
+      "title": "{name}, el club encaja contigo.",
       "whatsapp": "Hablar por WhatsApp",
       "allPlans": "Ver la membresía",
       "restart": "Repetir test"
@@ -32,7 +53,9 @@
     "wa": {
       "hello": "Hola 👋 Soy {name}.",
       "helloAnon": "Hola 👋",
-      "body": "Me interesa la membresía del Flamingo Yacht Club. Mis preferencias: {summary}. ¿Me contáis más?"
+      "body": "Me gustaría conocer la membresía del Flamingo Yacht Club. Mi perfil: {summary}.",
+      "cita": "Me encantaría reservar una cita para conocer el programa: {when}.",
+      "closing": "¿Hablamos?"
     }
   },
   "meta": {

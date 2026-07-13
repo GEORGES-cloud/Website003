@@ -3,28 +3,49 @@
     "title": "Bli medlem",
     "close": "Stäng",
     "back": "Tillbaka",
-    "progress": "Steg {current} av {total}",
+    "progress": "Fråga {current} av {total}",
     "intro": {
-      "eyebrow": "30-sekunderstest",
-      "title": "Hitta ditt perfekta medlemskap",
-      "subtitle": "Svara på tre frågor så säger vi vilket paket som passar dig. Utan förpliktelser.",
+      "eyebrow": "En minut · Utan förpliktelser",
+      "title": "Ta reda på om klubben är något för dig",
+      "subtitle": "Berätta hur du upplever havet så visar vi vad medlemskapet kan göra för dig. Om det känns rätt bokar vi sedan ett besök så att du får lära känna klubben på djupet.",
       "start": "Börja"
     },
+    "name": {
+      "title": "Först och främst, vad heter du?",
+      "subtitle": "Så att vi kan prata med dig personligen.",
+      "placeholder": "För- och efternamn",
+      "continue": "Fortsätt"
+    },
     "q1": {
-      "title": "Hur ofta drömmer du om att segla?",
-      "options": ["Några utflykter om året", "Ett par gånger i månaden", "Varje vecka – det är mitt liv"]
+      "title": "{name}, hur ofta ser du dig själv ge dig ut på havet?",
+      "options": ["Några utflykter om året", "Ett par gånger i månaden", "Varje vecka – det är min livsstil"]
     },
     "q2": {
-      "title": "Hur ser din perfekta dag till havs ut?",
-      "options": ["Ett dopp i vikarna mitt på dagen", "En helg längs kusten", "En privat kryssning där allt är ordnat"]
+      "title": "Hur skulle din perfekta dag ombord se ut?",
+      "options": ["Ett dopp i vikarna mitt på dagen", "En helg där du utforskar kusten", "En privat kryssning där allt är ordnat"]
     },
     "q3": {
-      "title": "Vem seglar du oftast med?",
+      "title": "Vem kommer du oftast att kasta loss med?",
       "options": ["Som par", "Med familj och vänner", "Event, kunder och speciella tillfällen"]
+    },
+    "q4": {
+      "title": "Vilken erfarenhet har du av havet?",
+      "options": ["Jag har förarintyg", "Jag har seglat, men utan intyg", "Jag är ny på det här"]
+    },
+    "q5": {
+      "title": "När skulle du vilja börja?",
+      "options": ["Redan denna säsong", "Inom de närmaste månaderna", "Jag utforskar bara just nu"]
+    },
+    "cita": {
+      "title": "Boka ett besök utan förpliktelser",
+      "subtitle": "Vi visar dig programmet, flottan och Puerto Banús. Du väljer när:",
+      "day": ["Vardagar", "Helg"],
+      "time": ["På förmiddagen", "På eftermiddagen"],
+      "cta": "Boka besök via WhatsApp"
     },
     "result": {
       "eyebrow": "Skapat för dig",
-      "namePlaceholder": "Ditt namn (valfritt)",
+      "title": "{name}, klubben är som gjord för dig.",
       "whatsapp": "Chatta på WhatsApp",
       "allPlans": "Se medlemskapet",
       "restart": "Gör om testet"
@@ -32,7 +53,9 @@
     "wa": {
       "hello": "Hej 👋 Jag heter {name}.",
       "helloAnon": "Hej 👋",
-      "body": "Jag är intresserad av medlemskapet hos Flamingo Yacht Club. Mina önskemål: {summary}. Kan ni berätta mer?"
+      "body": "Jag skulle vilja veta mer om medlemskapet i Flamingo Yacht Club. Min profil: {summary}.",
+      "cita": "Jag skulle gärna boka ett besök för att lära känna programmet: {when}.",
+      "closing": "Ska vi höras?"
     }
   },
   "meta": {

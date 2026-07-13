@@ -3,28 +3,49 @@
     "title": "Mitglied werden",
     "close": "Schließen",
     "back": "Zurück",
-    "progress": "Schritt {current} von {total}",
+    "progress": "Frage {current} von {total}",
     "intro": {
-      "eyebrow": "30-Sekunden-Test",
-      "title": "Finde deine ideale Mitgliedschaft",
-      "subtitle": "Beantworte drei Fragen und wir sagen dir, welcher Tarif zu dir passt. Unverbindlich.",
-      "start": "Starten"
+      "eyebrow": "Eine Minute · Unverbindlich",
+      "title": "Finde heraus, ob der Club zu dir passt",
+      "subtitle": "Erzähl uns, wie du das Meer erlebst, und wir zeigen dir, was die Mitgliedschaft für dich tun kann. Wenn es passt, vereinbaren wir am Ende einen Termin, um alles in Ruhe kennenzulernen.",
+      "start": "Los geht's"
+    },
+    "name": {
+      "title": "Zuerst: Wie heißt du?",
+      "subtitle": "Damit wir dich persönlich ansprechen können.",
+      "placeholder": "Vor- und Nachname",
+      "continue": "Weiter"
     },
     "q1": {
-      "title": "Wie oft träumst du vom Segeln?",
-      "options": ["Ein paar Ausflüge im Jahr", "Ein paarmal im Monat", "Jede Woche – es ist mein Leben"]
+      "title": "{name}, wie oft siehst du dich aufs Meer hinausfahren?",
+      "options": ["Ein paar Ausflüge im Jahr", "Ein paarmal im Monat", "Jede Woche – es ist mein Lebensstil"]
     },
     "q2": {
-      "title": "Wie sieht dein perfekter Tag auf dem Meer aus?",
-      "options": ["Ein Bad in den Buchten am Mittag", "Ein Wochenende entlang der Küste", "Eine private Ausfahrt, bei der alles geregelt ist"]
+      "title": "Wie sähe dein perfekter Tag an Bord aus?",
+      "options": ["Ein Bad in den Buchten am Mittag", "Ein Wochenende, um die Küste zu erkunden", "Ein privater Törn, bei dem alles geregelt ist"]
     },
     "q3": {
       "title": "Mit wem legst du normalerweise ab?",
       "options": ["Zu zweit", "Mit Familie und Freunden", "Events, Kunden und besondere Anlässe"]
     },
+    "q4": {
+      "title": "Wie viel Erfahrung hast du auf dem Meer?",
+      "options": ["Ich habe einen Bootsführerschein", "Ich war schon auf See, aber ohne Schein", "Ich bin ganz neu dabei"]
+    },
+    "q5": {
+      "title": "Wann würdest du gern starten?",
+      "options": ["Noch in dieser Saison", "In den nächsten Monaten", "Im Moment schaue ich mich nur um"]
+    },
+    "cita": {
+      "title": "Buche einen unverbindlichen Besuch",
+      "subtitle": "Wir zeigen dir das Programm, die Flotte und Puerto Banús. Du entscheidest, wann:",
+      "day": ["Unter der Woche", "Am Wochenende"],
+      "time": ["Vormittags", "Nachmittags"],
+      "cta": "Termin per WhatsApp buchen"
+    },
     "result": {
       "eyebrow": "Wie für dich gemacht",
-      "namePlaceholder": "Dein Name (optional)",
+      "title": "{name}, der Club passt zu dir.",
       "whatsapp": "Per WhatsApp schreiben",
       "allPlans": "Zur Mitgliedschaft",
       "restart": "Test wiederholen"
@@ -32,7 +53,9 @@
     "wa": {
       "hello": "Hallo 👋 Ich bin {name}.",
       "helloAnon": "Hallo 👋",
-      "body": "Ich interessiere mich für die Mitgliedschaft im Flamingo Yacht Club. Meine Vorlieben: {summary}. Könnt ihr mir mehr erzählen?"
+      "body": "Ich würde gern mehr über die Mitgliedschaft im Flamingo Yacht Club erfahren. Mein Profil: {summary}.",
+      "cita": "Sehr gern würde ich einen Termin vereinbaren, um das Programm kennenzulernen: {when}.",
+      "closing": "Sprechen wir?"
     }
   },
   "meta": {

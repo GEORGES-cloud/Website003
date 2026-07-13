@@ -3,28 +3,49 @@
     "title": "Become a member",
     "close": "Close",
     "back": "Back",
-    "progress": "Step {current} of {total}",
+    "progress": "Question {current} of {total}",
     "intro": {
-      "eyebrow": "30-second quiz",
-      "title": "Find your ideal membership",
-      "subtitle": "Answer three questions and we’ll tell you which plan fits you. No commitment.",
+      "eyebrow": "One minute · No commitment",
+      "title": "Find out if the club is for you",
+      "subtitle": "Tell us how you live the sea and we’ll show you what the membership can do for you. At the end, if it fits, we’ll set up a visit to see it all in depth.",
       "start": "Start"
     },
+    "name": {
+      "title": "First, what’s your name?",
+      "subtitle": "So we can talk one to one.",
+      "placeholder": "First and last name",
+      "continue": "Continue"
+    },
     "q1": {
-      "title": "How often do you dream of sailing?",
-      "options": ["A few getaways a year", "A couple of times a month", "Every week — it’s my life"]
+      "title": "{name}, how often do you picture yourself out at sea?",
+      "options": ["A few getaways a year", "A couple of times a month", "Every week — it’s my lifestyle"]
     },
     "q2": {
-      "title": "What’s your perfect day at sea?",
+      "title": "What would your perfect day on board look like?",
       "options": ["A midday swim in the coves", "A weekend exploring the coast", "A private cruise with everything taken care of"]
     },
     "q3": {
-      "title": "Who do you usually set sail with?",
+      "title": "Who will you usually set sail with?",
       "options": ["As a couple", "With family and friends", "Events, clients and special occasions"]
+    },
+    "q4": {
+      "title": "What’s your experience at sea?",
+      "options": ["I hold a boating licence", "I’ve sailed, but without a licence", "I’m new to this"]
+    },
+    "q5": {
+      "title": "When would you like to start?",
+      "options": ["This very season", "In the coming months", "Just exploring for now"]
+    },
+    "cita": {
+      "title": "Book a no-obligation visit",
+      "subtitle": "We’ll show you the programme, the fleet and Puerto Banús. You choose when:",
+      "day": ["On a weekday", "At the weekend"],
+      "time": ["In the morning", "In the afternoon"],
+      "cta": "Book a visit via WhatsApp"
     },
     "result": {
       "eyebrow": "Made for you",
-      "namePlaceholder": "Your name (optional)",
+      "title": "{name}, the club is a match for you.",
       "whatsapp": "Chat on WhatsApp",
       "allPlans": "See the membership",
       "restart": "Retake quiz"
@@ -32,7 +53,9 @@
     "wa": {
       "hello": "Hi 👋 I’m {name}.",
       "helloAnon": "Hi 👋",
-      "body": "I’m interested in the Flamingo Yacht Club membership. My preferences: {summary}. Could you tell me more?"
+      "body": "I’d like to learn about the Flamingo Yacht Club membership. My profile: {summary}.",
+      "cita": "I’d love to book a visit to see the programme: {when}.",
+      "closing": "Shall we talk?"
     }
   },
   "meta": {

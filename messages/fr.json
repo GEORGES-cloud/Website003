@@ -3,28 +3,49 @@
     "title": "Devenir membre",
     "close": "Fermer",
     "back": "Retour",
-    "progress": "Étape {current} sur {total}",
+    "progress": "Question {current} sur {total}",
     "intro": {
-      "eyebrow": "Test de 30 secondes",
-      "title": "Trouvez votre adhésion idéale",
-      "subtitle": "Répondez à trois questions et nous vous dirons quelle formule vous correspond. Sans engagement.",
+      "eyebrow": "Une minute · Sans engagement",
+      "title": "Découvrez si le club est fait pour vous",
+      "subtitle": "Dites-nous comment vous vivez la mer et nous vous montrerons ce que l’adhésion peut vous apporter. À la fin, si le club vous correspond, nous réservons un rendez-vous pour le découvrir en détail.",
       "start": "Commencer"
     },
+    "name": {
+      "title": "D’abord, comment vous appelez-vous ?",
+      "subtitle": "Pour nous adresser à vous personnellement.",
+      "placeholder": "Prénom et nom",
+      "continue": "Continuer"
+    },
     "q1": {
-      "title": "À quelle fréquence rêvez-vous de naviguer ?",
-      "options": ["Quelques escapades par an", "Deux ou trois fois par mois", "Chaque semaine — c’est ma vie"]
+      "title": "{name}, à quelle fréquence vous imaginez-vous en mer ?",
+      "options": ["Quelques escapades par an", "Deux ou trois fois par mois", "Chaque semaine, c’est mon art de vivre"]
     },
     "q2": {
-      "title": "C’est quoi votre journée parfaite en mer ?",
-      "options": ["Une baignade dans les criques à midi", "Un week-end le long de la côte", "Une traversée privée où tout est pris en charge"]
+      "title": "À quoi ressemblerait votre journée parfaite à bord ?",
+      "options": ["Une baignade dans les criques à midi", "Un week-end à explorer la côte", "Une croisière privée où tout est pris en charge"]
     },
     "q3": {
-      "title": "Avec qui prenez-vous le large d’habitude ?",
+      "title": "Avec qui prendrez-vous le large le plus souvent ?",
       "options": ["En couple", "En famille et entre amis", "Événements, clients et occasions spéciales"]
+    },
+    "q4": {
+      "title": "Quelle est votre expérience en mer ?",
+      "options": ["J’ai le permis bateau", "J’ai déjà navigué, mais sans permis", "Je débute"]
+    },
+    "q5": {
+      "title": "Quand aimeriez-vous commencer ?",
+      "options": ["Dès cette saison", "Dans les prochains mois", "Pour l’instant, je me renseigne"]
+    },
+    "cita": {
+      "title": "Réservez une visite sans engagement",
+      "subtitle": "Nous vous présentons le programme, la flotte et Puerto Banús. C’est vous qui choisissez quand :",
+      "day": ["En semaine", "Le week-end"],
+      "time": ["Le matin", "L’après-midi"],
+      "cta": "Réserver une visite via WhatsApp"
     },
     "result": {
       "eyebrow": "Faite pour vous",
-      "namePlaceholder": "Votre nom (facultatif)",
+      "title": "{name}, le club est fait pour vous.",
       "whatsapp": "Discuter sur WhatsApp",
       "allPlans": "Voir l’adhésion",
       "restart": "Refaire le test"
@@ -32,7 +53,9 @@
     "wa": {
       "hello": "Bonjour 👋 Je suis {name}.",
       "helloAnon": "Bonjour 👋",
-      "body": "L’adhésion au Flamingo Yacht Club m’intéresse. Mes préférences : {summary}. Pouvez-vous m’en dire plus ?"
+      "body": "J’aimerais découvrir l’adhésion au Flamingo Yacht Club. Mon profil : {summary}.",
+      "cita": "J’aimerais beaucoup réserver une visite pour connaître le programme : {when}.",
+      "closing": "On en parle ?"
     }
   },
   "meta": {
