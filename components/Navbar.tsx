@@ -5,17 +5,46 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
-import Logo from './Logo';
+import { YachtMark } from './Logo';
 
 interface NavbarProps {
   locale: string;
 }
 
+const MENU_LABEL: Record<string, string> = {
+  es: 'Menú',
+  en: 'Menu',
+  sv: 'Meny',
+  ru: 'Меню',
+  de: 'Menü',
+  fr: 'Menu',
+};
+
+const display = { fontFamily: 'var(--font-display), "Arial Black", Impact, sans-serif' } as const;
+
+function Wordmark({ className = '' }: { className?: string }) {
+  return (
+    <span className={`flex flex-col items-center leading-none ${className}`}>
+      <YachtMark size={32} className="mb-2" />
+      <span className="font-black uppercase" style={{ ...display, fontSize: 'clamp(0.95rem, 2.1vw, 1.4rem)', letterSpacing: '0.03em' }}>
+        Flamingo
+      </span>
+      <span
+        className="uppercase mt-1 opacity-90"
+        style={{ ...display, fontWeight: 500, fontSize: 'clamp(0.46rem, 0.82vw, 0.58rem)', letterSpacing: '0.36em', paddingLeft: '0.36em' }}
+      >
+        Yacht Club
+      </span>
+    </span>
+  );
+}
+
 export default function Navbar({ locale }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const t = useTranslations('nav');
   const pathname = usePathname();
+  const menuLabel = MENU_LABEL[locale] ?? 'Menu';
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -25,13 +54,13 @@ export default function Navbar({ locale }: NavbarProps) {
   }, []);
 
   useEffect(() => {
-    setMobileOpen(false);
+    setMenuOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
-  }, [mobileOpen]);
+  }, [menuOpen]);
 
   const navLinks = [
     { href: `/${locale}/flota`, label: t('fleet') },
@@ -42,10 +71,10 @@ export default function Navbar({ locale }: NavbarProps) {
 
   const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? `/${locale}/contacto`;
 
-  // On hero (not scrolled): white text. After scroll: solid white bg, ink text.
+  // On hero (not scrolled): white text over the video. After scroll: solid light bg, ink text.
   const onLight = scrolled;
   const textColor = onLight ? 'text-ink' : 'text-white';
-  const mutedColor = onLight ? 'text-ink/60' : 'text-white/75';
+  const barColor = onLight ? 'bg-ink' : 'bg-white';
 
   return (
     <>
@@ -54,73 +83,56 @@ export default function Navbar({ locale }: NavbarProps) {
           scrolled ? 'bg-bone/95 backdrop-blur-md border-b border-line shadow-[0_1px_20px_rgba(0,0,0,0.04)]' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-[1480px] mx-auto px-6 md:px-10 h-[88px] flex items-center justify-between">
-          {/* Logo */}
+        <div className="relative max-w-[1480px] mx-auto px-6 md:px-10 h-[88px] flex items-center justify-between">
+          {/* LEFT — menu trigger */}
+          <button
+            onClick={() => setMenuOpen(true)}
+            aria-label={menuLabel}
+            className={`flex items-center gap-3 transition-colors hover:text-sea ${textColor}`}
+          >
+            <span className="flex flex-col gap-[5px]" aria-hidden>
+              <span className={`block w-6 h-[1.5px] transition-colors ${barColor}`} />
+              <span className={`block w-6 h-[1.5px] transition-colors ${barColor}`} />
+              <span className={`block w-4 h-[1.5px] transition-colors ${barColor}`} />
+            </span>
+            <span className="hidden sm:inline font-sans text-[12px] font-semibold uppercase tracking-wide2">
+              {menuLabel}
+            </span>
+          </button>
+
+          {/* CENTER — brand lockup */}
           <Link
             href={`/${locale}`}
             aria-label="Flamingo Yacht Club"
-            className={`transition-colors ${textColor} hover:text-sea`}
+            className={`absolute left-1/2 -translate-x-1/2 transition-colors hover:text-sea ${textColor}`}
           >
-            <Logo layout="row" markSize={44} />
+            <Wordmark />
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-9">
-            {navLinks.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`font-sans text-[12px] font-medium uppercase tracking-wide2 transition-colors hover:text-sea ${mutedColor}`}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Right */}
-          <div className="hidden lg:flex items-center gap-7">
+          {/* RIGHT — language */}
+          <div className="flex items-center">
             <LanguageSwitcher locale={locale} dark={!onLight} />
-            <Link
-              href={bookingUrl}
-              className={`font-sans text-[12px] font-semibold uppercase tracking-wide2 px-7 py-3 transition-colors duration-300 ${
-                onLight
-                  ? 'bg-ink text-white hover:bg-sea'
-                  : 'bg-bone text-ink hover:bg-sea hover:text-white'
-              }`}
-            >
-              {t('join')}
-            </Link>
           </div>
-
-          {/* Mobile burger */}
-          <button
-            onClick={() => setMobileOpen(true)}
-            className="lg:hidden flex flex-col gap-[5px] p-2 -mr-2"
-            aria-label="Open menu"
-          >
-            <span className={`block w-6 h-[1.5px] transition-colors ${onLight ? 'bg-ink' : 'bg-bone'}`} />
-            <span className={`block w-6 h-[1.5px] transition-colors ${onLight ? 'bg-ink' : 'bg-bone'}`} />
-            <span className={`block w-4 h-[1.5px] transition-colors ${onLight ? 'bg-ink' : 'bg-bone'}`} />
-          </button>
         </div>
       </header>
 
-      {/* Mobile overlay */}
+      {/* Full-screen menu overlay */}
       <AnimatePresence>
-        {mobileOpen && (
+        {menuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 bg-bone flex flex-col lg:hidden"
+            className="fixed inset-0 z-50 bg-bone flex flex-col"
           >
-            <div className="flex justify-between items-center px-6 h-[88px] border-b border-line">
-              <Link href={`/${locale}`} aria-label="Flamingo Yacht Club" className="text-ink">
-                <Logo layout="row" markSize={40} />
+            <div className="relative flex justify-between items-center px-6 h-[88px] border-b border-line">
+              <span className="w-8" aria-hidden />
+              <Link href={`/${locale}`} aria-label="Flamingo Yacht Club" className="absolute left-1/2 -translate-x-1/2 text-ink">
+                <Wordmark />
               </Link>
               <button
-                onClick={() => setMobileOpen(false)}
+                onClick={() => setMenuOpen(false)}
                 className="p-2 -mr-2 text-ink/50 hover:text-ink transition-colors"
                 aria-label="Close menu"
               >
