@@ -8,9 +8,13 @@ interface LanguageSwitcherProps {
   locale: string;
   dark?: boolean; // true when sitting on a dark background (hero)
   className?: string;
+  // 'dropdown' floats a list below the trigger (desktop navbar).
+  // 'inline' renders every locale as a tappable row — use where a floating
+  // list would clip against the viewport (mobile menu).
+  variant?: 'dropdown' | 'inline';
 }
 
-export default function LanguageSwitcher({ locale, dark = false, className = '' }: LanguageSwitcherProps) {
+export default function LanguageSwitcher({ locale, dark = false, className = '', variant = 'dropdown' }: LanguageSwitcherProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -31,6 +35,28 @@ export default function LanguageSwitcher({ locale, dark = false, className = '' 
   };
 
   const base = dark ? 'text-white/70 hover:text-white' : 'text-ink/55 hover:text-sea';
+
+  if (variant === 'inline') {
+    return (
+      <div role="group" aria-label="Idioma / Language" className={`flex flex-wrap items-center gap-x-2 gap-y-2 ${className}`}>
+        {locales.map((l) => (
+          <button
+            key={l}
+            onClick={() => change(l)}
+            aria-current={l === locale ? 'true' : undefined}
+            title={localeNames[l]}
+            className={`font-sans text-[12px] font-semibold tracking-wide2 uppercase px-2.5 py-2 border-b-2 transition-colors ${
+              l === locale
+                ? 'text-ink border-ink'
+                : 'text-ink/40 border-transparent hover:text-ink'
+            }`}
+          >
+            {l}
+          </button>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div ref={ref} className={`relative ${className}`}>

@@ -149,9 +149,9 @@ export default function Navbar({ locale }: NavbarProps) {
               ))}
             </nav>
 
-            <div className="px-8 pb-10 pt-6 border-t border-line flex items-center justify-between">
-              <LanguageSwitcher locale={locale} />
-              <Link href={bookingUrl} className="btn-primary">{t('join')}</Link>
+            <div className="px-8 pb-10 pt-6 border-t border-line space-y-5">
+              <LanguageSwitcher locale={locale} variant="inline" className="-mx-2.5" />
+              <Link href={bookingUrl} className="btn-primary w-full">{t('join')}</Link>
             </div>
           </motion.div>
         )}
