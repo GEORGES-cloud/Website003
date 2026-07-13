@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "title": "Flamingo Yacht Club powered by Marina Banus | Yacht Membership Club",
+    "description": "Yacht membership club based in Puerto Banús, Marbella. Access a premium fleet with no compromises."
+  },
+  "nav": {
+    "fleet": "Fleet",
+    "membership": "Membership",
+    "experiences": "Experiences",
+    "about": "About",
+    "contact": "Contact",
+    "join": "Join Now"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Yacht Club · Puerto Banús",
+      "subtitle": "The sea, untethered.",
+      "cta": "Scroll"
+    },
+    "pitch": {
+      "eyebrow": "Yacht club · Puerto Banús",
+      "title": "The sea without compromise.",
+      "description": "From the heart of Puerto Banús, access a premium fleet of yachts with an exclusive membership. You choose when, where, and with whom you sail. We handle the rest.",
+      "cta": "View memberships"
+    },
+    "fleet": {
+      "eyebrow": "Yachts designed for every moment",
+      "title": "The fleet",
+      "viewAll": "View full fleet"
+    },
+    "howItWorks": {
+      "eyebrow": "Simple as the sea",
+      "title": "How it works",
+      "step1": {
+        "number": "01",
+        "title": "Join",
+        "desc": "Choose your plan and become a member in minutes from our app."
+      },
+      "step2": {
+        "number": "02",
+        "title": "Book",
+        "desc": "Select your yacht, date, and destination. Instant confirmation."
+      },
+      "step3": {
+        "number": "03",
+        "title": "Sail",
+        "desc": "Arrive at the boat and set off. We take care of everything else."
+      }
+    },
+    "app": {
+      "eyebrow": "The club app",
+      "titleLead": "Your club, in your",
+      "titleAccent": "pocket.",
+      "description": "Book your yacht, check real-time availability, and manage your membership from a single app. No calls, no waiting.",
+      "f1": "Book in seconds, 24/7",
+      "f2": "Real-time fleet availability",
+      "f3": "No maintenance or fuel costs"
+    },
+    "gallery": {
+      "title": "A life at sea"
+    },
+    "cta": {
+      "eyebrow": "The sea awaits",
+      "title": "Ready to set sail?",
+      "description": "Join the club and discover what it means to sail without limits.",
+      "button": "Become a member"
+    }
+  },
+  "fleet": {
+    "hero": {
+      "eyebrow": "Our fleet",
+      "title": "Every boat, a story.",
+      "subtitle": "Yachts carefully selected to offer the best experience on every journey."
+    },
+    "capacity": "people",
+    "length": "length",
+    "year": "year",
+    "viewDetails": "View details",
+    "book": "Book"
+  },
+  "boatDetail": {
+    "specs": "Specifications",
+    "capacity": "Capacity",
+    "length": "Length",
+    "maxSpeed": "Top speed",
+    "engines": "Engines",
+    "book": "Book this boat",
+    "backToFleet": "← Back to fleet"
+  },
+  "membership": {
+    "hero": {
+      "eyebrow": "Membership",
+      "title": "The access to the sea you always wanted.",
+      "subtitle": "A simple model: pay a fee, sail the sea."
+    },
+    "how": {
+      "eyebrow": "The model",
+      "title": "How does it work?",
+      "description": "With Flamingo Yacht Club, you don't buy a boat. You access the entire fleet. No mooring fees, no maintenance, no insurance. Just pure sailing."
+    },
+    "benefits": {
+      "title": "What's included?",
+      "b1": "Access to the full fleet",
+      "b2": "24/7 booking app",
+      "b3": "No hidden costs",
+      "b4": "Insurance included",
+      "b5": "Skipper available",
+      "b6": "Priority support"
+    },
+    "plans": {
+      "eyebrow": "Join the club",
+      "title": "Plans made for you",
+      "contact": "For more information on our plans and pricing, write to us with no obligation."
+    },
+    "tiers": {
+      "eyebrow": "Memberships",
+      "title": "Choose how you want to sail",
+      "from": "From",
+      "popular": "Most chosen",
+      "cta": "I want this plan",
+      "note": "Indicative prices. Ask about conditions with no obligation."
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "Frequently asked questions"
+    },
+    "cta": "I want to join"
+  },
+  "experiences": {
+    "hero": {
+      "eyebrow": "Experiences",
+      "title": "Moments you won't forget.",
+      "subtitle": "From sunrise to sunset, the sea offers endless possibilities."
+    },
+    "dayTrip": {
+      "title": "Day trip",
+      "desc": "Leave at dawn, return with the sunset. Choose your destination and enjoy the sea as if it were yours."
+    },
+    "sunset": {
+      "title": "Sunset on board",
+      "desc": "The golden hour at sea. Champagne, fine bites, and the horizon as your backdrop."
+    },
+    "weekend": {
+      "title": "Weekend getaway",
+      "desc": "Friday evening to Sunday. Sleep on board, wake up to the sound of the sea."
+    },
+    "private": {
+      "title": "Private celebration",
+      "desc": "Birthdays, farewells, anniversaries. The boat as the stage for your best moments."
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Who we are",
+      "title": "Born from the sea. We live for it.",
+      "subtitle": "A new venture powered by Marina Banus with one mission: to make sailing from Puerto Banús accessible, simple, and extraordinary."
+    },
+    "story": {
+      "title": "Our story",
+      "p1": "Flamingo Yacht Club is born from Marina Banus's commitment to bringing the nautical experience to everyone. From one of the world's most exclusive ports, we bring the Mediterranean to those who have always dreamed of sailing it.",
+      "p2": "A club where the experience comes first. No ownership costs, no mooring fees, no insurance headaches. Premium fleet, booking app, and the backing of Marina Banus.",
+      "p3": "Just you, the boat, and the Mediterranean."
+    },
+    "values": {
+      "title": "What drives us",
+      "v1": { "title": "Freedom", "desc": "Sail when you want, where you want." },
+      "v2": { "title": "Quality", "desc": "A premium fleet, always in perfect condition." },
+      "v3": { "title": "Simplicity", "desc": "Book in minutes. No paperwork, no surprises." }
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "We are here to help you.",
+      "subtitle": "Questions about membership or the fleet? Write to us."
+    },
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone (optional)",
+      "message": "Your message",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent. We will get back to you soon.",
+      "error": "An error occurred. Please try again."
+    },
+    "info": {
+      "title": "Contact details",
+      "email": "info@navigante.com",
+      "hours": "Monday to Friday, 9:00 – 18:00"
+    }
+  },
+  "footer": {
+    "tagline": "Yacht membership club in Puerto Banús, Marbella.",
+    "explore": "Explore",
+    "app": "App",
+    "appText": "Manage your bookings from the app.",
+    "legal": "© 2024 Flamingo Yacht Club. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "fleet": {
+    "wajer-55": {
+      "tagline": "Den ultimata day boaten.",
+      "description": "Wajer 55 är världens måttstock för exklusiva day boats. Handbyggd i Holland förenar den ett rasande snabbt skrov med komfort och finish utan motstycke – för den allra finaste dagen till havs."
+    },
+    "frauscher-1212-ghost": {
+      "tagline": "Österrikisk design, sportig själ.",
+      "description": "1212 Ghost är Frauschers mästerverk: skulpturala linjer, knivskarp manövrering och en prestanda som elektrifierar. Ren nautisk passion, med österrikisk signatur."
+    },
+    "sessa-c68": {
+      "tagline": "Italiensk lyx med flybridge.",
+      "description": "C68 lyfter det italienska savoir-faire till sin höjdpunkt: en panoramisk flybridge, en salong badande i ljus och ett akterdäck skapat för att leva havet. Elegans för de dagar som räknas."
+    },
+    "navan-s30": {
+      "tagline": "Skandinavisk design, total mångsidighet.",
+      "description": "Navan S30 återuppfinner den nordiska day boaten: smidig, ljus och förvånansvärt rymlig. Det perfekta valet för spontana utflykter och bad i en stilla vik."
+    },
+    "solaris-power-48": {
+      "tagline": "En walkaround som ingen annan.",
+      "description": "Solaris Power 48 Open förenar Solaris seglarstamtavla med en renlinjad walkaround. Utrymme, hav och horisont i sin renaste form, utan en enda kompromiss."
+    }
+  },
+  "testimonials": [
+    {
+      "quote": "Att ha Medelhavet inom räckhåll från Puerto Banús utan allt krångel med underhåll – det var precis vad vi sökte.",
+      "role": "Grundande medlem"
+    },
+    {
+      "quote": "Flottan är imponerande och servicen oklanderlig. Att boka är så enkelt att jag inte kan föreställa mig en sommar i Marbella utan det.",
+      "role": "Medlemmar"
+    },
+    {
+      "quote": "Det jag uppskattar mest är flexibiliteten. Jag väljer båt, dag och destination. Att kasta loss från Puerto Banús när jag vill är ett privilegium.",
+      "role": "Medlem"
+    }
+  ],
+  "tiers": {
+    "costa": {
+      "tagline": "Din ingång till Marbellas hav.",
+      "period": "/ år",
+      "features": [
+        "Tillgång till flottan av day boats",
+        "Upp till 20 utflykter per år",
+        "Boka från appen dygnet runt",
+        "Försäkring och underhåll ingår"
+      ]
+    },
+    "mediterraneo": {
+      "tagline": "Hela flottan, utan säsongsbegränsningar.",
+      "period": "/ år",
+      "features": [
+        "Tillgång till hela flottan",
+        "Obegränsade utflykter",
+        "Professionell skeppare tillgänglig",
+        "Gäster utan extra kostnad",
+        "Prioriterad bokning"
+      ]
+    },
+    "signature": {
+      "tagline": "En upplevelse utan eftergifter.",
+      "period": "",
+      "features": [
+        "Allt i Mediterráneo",
+        "Personlig nautisk concierge",
+        "Premiumyachter och privata seglatser",
+        "Exklusiva klubbevenemang",
+        "Garanterad förtöjning under högsäsong"
+      ]
+    }
+  },
+  "faqs": [
+    {
+      "q": "Behöver jag förarintyg för båt?",
+      "a": "Nej. Du kan segla med din egen behörighet eller boka en av våra professionella skeppare som tar dig vart du vill."
+    },
+    {
+      "q": "Får jag ta med gäster ombord?",
+      "a": "Självklart. Beroende på ditt medlemskap kan du bjuda med familj och vänner utan extra kostnad, inom varje båts kapacitet."
+    },
+    {
+      "q": "Hur bokar jag en båt?",
+      "a": "Från vår app, på några sekunder. Du väljer båt, datum och destination och får bekräftelsen omedelbart. Du kommer till kajen och kastar loss."
+    },
+    {
+      "q": "Vad ingår i avgiften?",
+      "a": "Tillgång till flottan, försäkring, underhåll, städning och förtöjning. Inga dolda kostnader: bara bränslet för varje utflykt står du för."
+    },
+    {
+      "q": "Varifrån avgår båtarna?",
+      "a": "Från hjärtat av Puerto Banús, Marbella – en av Medelhavets mest exklusiva hamnar, ett stenkast från de finaste vikarna på Costa del Sol."
+    },
+    {
+      "q": "Finns det någon minsta bindningstid?",
+      "a": "Medlemskapet är årligt. Hör av dig så går vi igenom villkoren för varje medlemskap helt utan förpliktelser."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Marbellas vikar",
+      "desc": "Turkost vatten och dolda vikar ett stenkast från hamnen. Den perfekta planen för ett dopp mitt på dagen."
+    },
+    {
+      "name": "Esteponas hamn",
+      "desc": "En kustnära kryssning till Esteponas sjöbornas charm, idealisk för lunch vid vattnet."
+    },
+    {
+      "name": "Sotogrande",
+      "desc": "Områdets mest exklusiva destination. Förtöj, ät lunch och återvänd med solnedgången."
+    },
+    {
+      "name": "Gibraltar och Sundet",
+      "desc": "Där Medelhavet öppnar sig mot Atlanten. En dagslång seglats med delfiner längs vägen."
+    }
+  ],
+  "stats": [
+    { "label": "Premiummärken i flottan" },
+    { "label": "Seglingsdagar per år" },
+    { "label": "Kust inom räckhåll" },
+    { "label": "Hemmahamn: Banús, Marbella" }
+  ],
+  "legal": {
+    "privacy": {
+      "title": "Integritetspolicy",
+      "updated": "Senast uppdaterad: juni 2026",
+      "intro": "På Flamingo Yacht Club (drivet av [RAZÓN SOCIAL], skatte-ID [CIF/NIF]) respekterar vi din integritet och behandlar dina uppgifter i enlighet med förordning (EU) 2016/679 (GDPR).",
+      "sections": [
+        { "heading": "Personuppgiftsansvarig", "body": ["[RAZÓN SOCIAL] · Skatte-ID [CIF/NIF] · Puerto Banús, 29660 Marbella, Málaga · info@navigante.com."] },
+        { "heading": "Uppgifter vi samlar in", "body": ["Identifierings- och kontaktuppgifter som du lämnar via kontaktformuläret eller medlemsprocessen (namn, e-post, telefon och ditt meddelande), samt surfdata via cookies."] },
+        { "heading": "Ändamål", "body": ["Att besvara dina förfrågningar, hantera ditt medlemskap och, med ditt samtycke, skicka dig information om klubben. Vi fattar inga automatiserade beslut."] },
+        { "heading": "Rättslig grund", "body": ["Ditt samtycke när du kontaktar oss, fullgörandet av medlemsförhållandet och vårt berättigade intresse av att besvara dina förfrågningar."] },
+        { "heading": "Lagring", "body": ["Vi sparar dina uppgifter så länge relationen varar och därefter under de lagstadgade perioderna."] },
+        { "heading": "Mottagare", "body": ["Vi delar inte dina uppgifter med tredje part utom när lagen kräver det eller med tjänsteleverantörer (t.ex. bokningshantering), alltid enligt ett personuppgiftsbiträdesavtal."] },
+        { "heading": "Dina rättigheter", "body": ["Du kan utöva dina rättigheter till tillgång, rättelse, radering, invändning, begränsning och dataportabilitet genom att skriva till info@navigante.com."] }
+      ]
+    },
+    "terms": {
+      "title": "Villkor",
+      "updated": "Senast uppdaterad: juni 2026",
+      "intro": "Dessa villkor reglerar användningen av denna webbplats och informationen om medlemsklubben Flamingo Yacht Club.",
+      "sections": [
+        { "heading": "Syfte", "body": ["Denna webbplats är av informativ karaktär om yachtklubben Flamingo Yacht Club med medlemskap. Medlemskap och bokningar regleras av de särskilda villkor som tillhandahålls i varje enskilt fall."] },
+        { "heading": "Användning av webbplatsen", "body": ["Du förbinder dig att använda webbplatsen lagenligt och att inte göra något som kan skada dess funktion eller tredje parts rättigheter."] },
+        { "heading": "Medlemskap och bokningar", "body": ["Flottans egenskaper, priser och tillgänglighet kan ändras. Publicerad information utgör inte ett bindande erbjudande förrän medlemskapet formaliserats."] },
+        { "heading": "Immateriella rättigheter", "body": ["Innehållet, varumärkena och designen på denna webbplats är skyddade och får inte återges utan tillstånd."] },
+        { "heading": "Ansvar", "body": ["Vi ansvarar inte för fel eller utelämnanden i innehållet eller för avbrott i tjänsten utanför vår kontroll."] },
+        { "heading": "Tillämplig lag", "body": ["Dessa villkor regleras av spansk lag och underställs domstolarna i Marbella, om inte tvingande regler föreskriver annat."] }
+      ]
+    },
+    "notice": {
+      "title": "Rättsligt meddelande",
+      "updated": "Senast uppdaterad: juni 2026",
+      "intro": "I enlighet med den spanska lagen 34/2002 (LSSI-CE) tillhandahålls identifieringsuppgifterna för ägaren av denna webbplats.",
+      "sections": [
+        { "heading": "Ägare", "body": ["Företag: [RAZÓN SOCIAL].", "Skatte-ID: [CIF/NIF].", "Adress: Puerto Banús, 29660 Marbella, Málaga.", "E-post: info@navigante.com."] },
+        { "heading": "Användarvillkor", "body": ["Tillgång till denna webbplats ger användarstatus och innebär godkännande av detta rättsliga meddelande."] },
+        { "heading": "Immateriella rättigheter", "body": ["Alla rättigheter till webbplatsens innehåll tillhör dess ägare eller tredje part som har godkänt dess användning."] }
+      ]
+    }
+  }
+}

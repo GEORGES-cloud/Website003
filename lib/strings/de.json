@@ -1,0 +1,209 @@
+{
+  "fleet": {
+    "wajer-55": {
+      "tagline": "Das ultimative Day Boat.",
+      "description": "Die Wajer 55 ist die weltweite Referenz unter den luxuriösen Day Boats. In Handarbeit in Holland gefertigt, vereint sie einen rasend schnellen Rumpf mit konkurrenzlosem Komfort und unübertroffener Verarbeitung – für den schönsten Tag auf dem Meer."
+    },
+    "frauscher-1212-ghost": {
+      "tagline": "Österreichisches Design, sportliche Seele.",
+      "description": "Die 1212 Ghost ist Frauschers Meisterwerk: skulpturale Linien, messerscharfes Handling und eine elektrisierende Leistung. Pure nautische Emotion mit österreichischer Handschrift."
+    },
+    "sessa-c68": {
+      "tagline": "Italienischer Luxus mit Flybridge.",
+      "description": "Die C68 treibt das italienische Savoir-faire auf die Spitze: eine panoramische Flybridge, ein lichtdurchfluteter Salon und ein Achterdeck, geschaffen, um das Meer zu leben. Eleganz für die Tage, die zählen."
+    },
+    "navan-s30": {
+      "tagline": "Skandinavisches Design, grenzenlose Vielseitigkeit.",
+      "description": "Die Navan S30 erfindet das nordische Day Boat neu: wendig, lichtdurchflutet und überraschend großzügig. Die perfekte Wahl für spontane Ausflüge und ein Bad in einer stillen Bucht."
+    },
+    "solaris-power-48": {
+      "tagline": "Ein Walkaround ohnegleichen.",
+      "description": "Die Solaris Power 48 Open verbindet Solaris' Segelpedigree mit einem klar gezeichneten Walkaround. Raum, Meer und Horizont in ihrer reinsten Form – ohne jeden Kompromiss."
+    }
+  },
+  "testimonials": [
+    {
+      "quote": "Das Mittelmeer ab Puerto Banús jederzeit zur Verfügung zu haben, ohne den Aufwand der Wartung – genau das war es, was wir gesucht haben.",
+      "role": "Gründungsmitglied"
+    },
+    {
+      "quote": "Die Flotte ist beeindruckend und der Service makellos. Das Reservieren ist so einfach, dass ich mir einen Sommer in Marbella ohne dies nicht mehr vorstellen kann.",
+      "role": "Mitglieder"
+    },
+    {
+      "quote": "Was ich am meisten schätze, ist die Flexibilität. Ich wähle die Yacht, den Tag und das Ziel. Ab Puerto Banús auszulaufen, wann immer ich möchte, ist ein Privileg.",
+      "role": "Mitglied"
+    }
+  ],
+  "tiers": {
+    "costa": {
+      "tagline": "Ihr Zugang zum Meer von Marbella.",
+      "period": "/ Jahr",
+      "features": [
+        "Zugang zur Day-Boat-Flotte",
+        "Bis zu 20 Ausfahrten pro Jahr",
+        "Reservierung über die App, rund um die Uhr",
+        "Versicherung und Wartung inklusive"
+      ]
+    },
+    "mediterraneo": {
+      "tagline": "Die gesamte Flotte, ohne saisonale Grenzen.",
+      "period": "/ Jahr",
+      "features": [
+        "Zugang zur gesamten Flotte",
+        "Unbegrenzte Ausfahrten",
+        "Professioneller Skipper auf Wunsch",
+        "Gäste ohne Aufpreis",
+        "Priorisierte Reservierung"
+      ]
+    },
+    "signature": {
+      "tagline": "Ein Erlebnis ohne Zugeständnisse.",
+      "period": "",
+      "features": [
+        "Alles aus dem Plan Mediterráneo",
+        "Persönlicher nautischer Concierge",
+        "Premium-Yachten und private Törns",
+        "Exklusive Club-Events",
+        "Garantierter Liegeplatz in der Hochsaison"
+      ]
+    }
+  },
+  "faqs": [
+    {
+      "q": "Benötige ich einen Bootsführerschein?",
+      "a": "Nein. Sie können mit Ihrem eigenen Führerschein fahren oder einen unserer professionellen Skipper buchen, der Sie überallhin bringt, wohin Sie möchten."
+    },
+    {
+      "q": "Darf ich Gäste an Bord mitnehmen?",
+      "a": "Selbstverständlich. Je nach Ihrem Plan können Sie Familie und Freunde ohne Aufpreis einladen – im Rahmen der Kapazität der jeweiligen Yacht."
+    },
+    {
+      "q": "Wie reserviere ich eine Yacht?",
+      "a": "Über unsere App, in Sekunden. Sie wählen Yacht, Termin und Ziel und erhalten die Bestätigung sofort. Sie kommen an den Liegeplatz und legen ab."
+    },
+    {
+      "q": "Was ist im Beitrag enthalten?",
+      "a": "Zugang zur Flotte, Versicherung, Wartung, Reinigung und Liegeplatz. Keine versteckten Kosten: Lediglich den Treibstoff jeder Ausfahrt übernehmen Sie selbst."
+    },
+    {
+      "q": "Von wo aus laufen die Yachten aus?",
+      "a": "Vom Herzen Puerto Banús', Marbella – einem der exklusivsten Häfen des Mittelmeers, nur einen Steinwurf von den schönsten Buchten der Costa del Sol entfernt."
+    },
+    {
+      "q": "Gibt es eine Mindestlaufzeit?",
+      "a": "Die Mitgliedschaft ist jährlich. Schreiben Sie uns, und wir erläutern Ihnen unverbindlich die Konditionen jedes Plans."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Buchten von Marbella",
+      "desc": "Türkisfarbenes Wasser und versteckte Buchten nur einen Steinwurf vom Hafen entfernt. Der perfekte Plan für ein Bad zur Mittagszeit."
+    },
+    {
+      "name": "Hafen von Estepona",
+      "desc": "Eine Küstenfahrt zum maritimen Charme von Estepona, ideal für ein Mittagessen mit Blick aufs Meer."
+    },
+    {
+      "name": "Sotogrande",
+      "desc": "Das exklusivste Ziel der Region. Festmachen, speisen und mit dem Sonnenuntergang zurückkehren."
+    },
+    {
+      "name": "Gibraltar und die Meerenge",
+      "desc": "Wo sich das Mittelmeer zum Atlantik öffnet. Ein Tagestörn, begleitet von Delfinen."
+    }
+  ],
+  "stats": [
+    { "label": "Premium-Marken in der Flotte" },
+    { "label": "Befahrbare Tage im Jahr" },
+    { "label": "Küste in Ihrer Reichweite" },
+    { "label": "Heimathafen: Banús, Marbella" }
+  ],
+  "legal": {
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "updated": "Zuletzt aktualisiert: Juni 2026",
+      "intro": "Bei Flamingo Yacht Club (betrieben durch [RAZÓN SOCIAL], Steuernummer [CIF/NIF]) achten wir Ihre Privatsphäre und verarbeiten Ihre Daten im Einklang mit der Verordnung (EU) 2016/679 (DSGVO).",
+      "sections": [
+        {
+          "heading": "Verantwortlicher",
+          "body": ["[RAZÓN SOCIAL] · Steuernummer [CIF/NIF] · Puerto Banús, 29660 Marbella, Málaga · info@navigante.com."]
+        },
+        {
+          "heading": "Daten, die wir erheben",
+          "body": ["Identifikations- und Kontaktdaten, die Sie über das Kontaktformular oder im Rahmen des Mitgliedschaftsprozesses bereitstellen (Name, E-Mail, Telefon und Ihre Nachricht), sowie Navigationsdaten über Cookies."]
+        },
+        {
+          "heading": "Zweck",
+          "body": ["Um Ihre Anfragen zu beantworten, Ihre Mitgliedschaft zu verwalten und Ihnen mit Ihrer Einwilligung Mitteilungen über den Club zuzusenden. Wir treffen keine automatisierten Entscheidungen."]
+        },
+        {
+          "heading": "Rechtsgrundlage",
+          "body": ["Ihre Einwilligung bei der Kontaktaufnahme, die Erfüllung des Mitgliedschaftsverhältnisses und unser berechtigtes Interesse an der Beantwortung Ihrer Anliegen."]
+        },
+        {
+          "heading": "Aufbewahrung",
+          "body": ["Wir bewahren Ihre Daten für die Dauer der Beziehung und anschließend für die gesetzlich vorgeschriebenen Zeiträume auf."]
+        },
+        {
+          "heading": "Empfänger",
+          "body": ["Wir geben Ihre Daten nicht an Dritte weiter, außer bei gesetzlicher Verpflichtung oder an Dienstleister (z. B. Reservierungsverwaltung), stets im Rahmen eines Auftragsverarbeitungsvertrags."]
+        },
+        {
+          "heading": "Ihre Rechte",
+          "body": ["Sie können Ihre Rechte auf Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung und Datenübertragbarkeit ausüben, indem Sie an info@navigante.com schreiben."]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "updated": "Zuletzt aktualisiert: Juni 2026",
+      "intro": "Diese Bedingungen regeln die Nutzung dieser Website und die Informationen über den Mitgliedschaftsclub Flamingo Yacht Club.",
+      "sections": [
+        {
+          "heading": "Gegenstand",
+          "body": ["Diese Website hat informativen Charakter über den Yacht-Membership-Club Flamingo Yacht Club. Mitgliedschaft und Reservierungen unterliegen den jeweils im Einzelfall bereitgestellten besonderen Bedingungen."]
+        },
+        {
+          "heading": "Nutzung der Website",
+          "body": ["Sie verpflichten sich, die Website rechtmäßig zu nutzen und nichts zu unternehmen, was ihren Betrieb oder die Rechte Dritter beeinträchtigen könnte."]
+        },
+        {
+          "heading": "Mitgliedschaft und Reservierungen",
+          "body": ["Ausstattung, Preise und Verfügbarkeit der Flotte können sich ändern. Die veröffentlichten Informationen stellen bis zur Formalisierung der Mitgliedschaft kein verbindliches Angebot dar."]
+        },
+        {
+          "heading": "Geistiges Eigentum",
+          "body": ["Die Inhalte, Marken und das Design dieser Website sind geschützt und dürfen ohne Genehmigung nicht vervielfältigt werden."]
+        },
+        {
+          "heading": "Haftung",
+          "body": ["Wir haften nicht für Fehler oder Auslassungen in den Inhalten oder für Betriebsunterbrechungen, die außerhalb unserer Kontrolle liegen."]
+        },
+        {
+          "heading": "Anwendbares Recht",
+          "body": ["Diese Bedingungen unterliegen dem spanischen Recht und der Zuständigkeit der Gerichte von Marbella, sofern keine zwingenden Vorschriften etwas anderes vorsehen."]
+        }
+      ]
+    },
+    "notice": {
+      "title": "Impressum",
+      "updated": "Zuletzt aktualisiert: Juni 2026",
+      "intro": "In Erfüllung des spanischen Gesetzes 34/2002 (LSSI-CE) werden die identifizierenden Angaben des Inhabers dieser Website bereitgestellt.",
+      "sections": [
+        {
+          "heading": "Inhaber",
+          "body": ["Firma: [RAZÓN SOCIAL].", "Steuernummer: [CIF/NIF].", "Anschrift: Puerto Banús, 29660 Marbella, Málaga.", "E-Mail: info@navigante.com."]
+        },
+        {
+          "heading": "Nutzungsbedingungen",
+          "body": ["Der Zugang zu dieser Website verleiht den Status eines Nutzers und impliziert die Annahme dieses Impressums."]
+        },
+        {
+          "heading": "Geistiges Eigentum",
+          "body": ["Alle Rechte an den Inhalten der Website gehören ihrem Inhaber oder Dritten, die ihre Nutzung genehmigt haben."]
+        }
+      ]
+    }
+  }
+}

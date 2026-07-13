@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "title": "Flamingo Yacht Club powered by Marina Banus | Yachtklubb med medlemskap",
+    "description": "Yachtklubb med medlemskap baserad i Puerto Banús, Marbella. Få tillgång till en premiumflotta utan kompromisser."
+  },
+  "nav": {
+    "fleet": "Flotta",
+    "membership": "Medlemskap",
+    "experiences": "Upplevelser",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "join": "Bli medlem"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Yachtklubb · Puerto Banús",
+      "subtitle": "Havet, utan gränser.",
+      "cta": "Skrolla"
+    },
+    "pitch": {
+      "eyebrow": "Yachtklubb · Puerto Banús",
+      "title": "Havet utan kompromisser.",
+      "description": "Från hjärtat av Puerto Banús får du tillgång till en premiumflotta av yachter med ett exklusivt medlemskap. Du väljer när, var och med vem du seglar. Vi tar hand om resten.",
+      "cta": "Se medlemskap"
+    },
+    "fleet": {
+      "eyebrow": "Yachter formade för varje ögonblick",
+      "title": "Flottan",
+      "viewAll": "Se hela flottan"
+    },
+    "howItWorks": {
+      "eyebrow": "Enkelt som havet",
+      "title": "Så fungerar det",
+      "step1": {
+        "number": "01",
+        "title": "Bli medlem",
+        "desc": "Välj ditt medlemskap och bli medlem på några minuter via vår app."
+      },
+      "step2": {
+        "number": "02",
+        "title": "Boka",
+        "desc": "Välj din yacht, datum och destination. Omedelbar bekräftelse."
+      },
+      "step3": {
+        "number": "03",
+        "title": "Segla",
+        "desc": "Kom till båten och kasta loss. Vi tar hand om allt annat."
+      }
+    },
+    "app": {
+      "eyebrow": "Klubbappen",
+      "titleLead": "Din klubb, i din",
+      "titleAccent": "ficka.",
+      "description": "Boka din yacht, se tillgängligheten i realtid och hantera ditt medlemskap från en enda app. Inga samtal, ingen väntan.",
+      "f1": "Boka på sekunder, dygnet runt",
+      "f2": "Flottans tillgänglighet i realtid",
+      "f3": "Inga kostnader för underhåll eller bränsle"
+    },
+    "gallery": {
+      "title": "Ett liv till havs"
+    },
+    "cta": {
+      "eyebrow": "Havet väntar",
+      "title": "Redo att kasta loss?",
+      "description": "Bli medlem i klubben och upptäck vad det innebär att segla utan gränser.",
+      "button": "Bli medlem"
+    }
+  },
+  "fleet": {
+    "hero": {
+      "eyebrow": "Vår flotta",
+      "title": "Varje båt, en historia.",
+      "subtitle": "Yachter omsorgsfullt utvalda för att ge den bästa upplevelsen på varje resa."
+    },
+    "capacity": "personer",
+    "length": "längd",
+    "year": "år",
+    "viewDetails": "Se detaljer",
+    "book": "Boka"
+  },
+  "boatDetail": {
+    "specs": "Specifikationer",
+    "capacity": "Kapacitet",
+    "length": "Längd",
+    "maxSpeed": "Toppfart",
+    "engines": "Motorer",
+    "book": "Boka denna båt",
+    "backToFleet": "← Tillbaka till flottan"
+  },
+  "membership": {
+    "hero": {
+      "eyebrow": "Medlemskap",
+      "title": "Tillgången till havet du alltid önskat dig.",
+      "subtitle": "En enkel modell: betala en avgift, segla på havet."
+    },
+    "how": {
+      "eyebrow": "Modellen",
+      "title": "Hur fungerar det?",
+      "description": "Med Flamingo Yacht Club köper du ingen båt. Du får tillgång till hela flottan. Inga hamnavgifter, inget underhåll, ingen försäkring. Bara ren segling."
+    },
+    "benefits": {
+      "title": "Vad ingår?",
+      "b1": "Tillgång till hela flottan",
+      "b2": "Bokningsapp dygnet runt",
+      "b3": "Inga dolda kostnader",
+      "b4": "Försäkring ingår",
+      "b5": "Skeppare tillgänglig",
+      "b6": "Prioriterad support"
+    },
+    "plans": {
+      "eyebrow": "Bli medlem i klubben",
+      "title": "Medlemskap skapade för dig",
+      "contact": "För mer information om våra medlemskap och priser, skriv till oss helt utan förpliktelser."
+    },
+    "tiers": {
+      "eyebrow": "Medlemskap",
+      "title": "Välj hur du vill segla",
+      "from": "Från",
+      "popular": "Mest valda",
+      "cta": "Jag vill ha detta medlemskap",
+      "note": "Vägledande priser. Fråga om villkoren helt utan förpliktelser."
+    },
+    "faq": {
+      "eyebrow": "Frågor",
+      "title": "Vanliga frågor"
+    },
+    "cta": "Jag vill bli medlem"
+  },
+  "experiences": {
+    "hero": {
+      "eyebrow": "Upplevelser",
+      "title": "Ögonblick du aldrig glömmer.",
+      "subtitle": "Från soluppgång till solnedgång erbjuder havet oändliga möjligheter."
+    },
+    "dayTrip": {
+      "title": "Dagstur",
+      "desc": "Kasta loss i gryningen, återvänd med solnedgången. Välj din destination och njut av havet som om det vore ditt eget."
+    },
+    "sunset": {
+      "title": "Solnedgång ombord",
+      "desc": "Den gyllene timmen till havs. Champagne, fina tilltugg och horisonten som fond."
+    },
+    "weekend": {
+      "title": "Weekendresa",
+      "desc": "Från fredagskväll till söndag. Sov ombord, vakna till havets ljud."
+    },
+    "private": {
+      "title": "Privat firande",
+      "desc": "Födelsedagar, avskedsfester, jubileum. Båten som scen för dina bästa stunder."
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Vilka vi är",
+      "title": "Född ur havet. Vi lever för det.",
+      "subtitle": "Ett nytt initiativ powered by Marina Banus med ett enda uppdrag: att göra seglingen från Puerto Banús tillgänglig, enkel och extraordinär."
+    },
+    "story": {
+      "title": "Vår historia",
+      "p1": "Flamingo Yacht Club föds ur Marina Banus åtagande att göra den nautiska upplevelsen tillgänglig för alla. Från en av världens mest exklusiva hamnar för vi Medelhavet till dem som alltid drömt om att segla det.",
+      "p2": "En klubb där upplevelsen kommer först. Inga ägandekostnader, inga hamnavgifter, inget krångel med försäkringar. Premiumflotta, bokningsapp och stödet från Marina Banus.",
+      "p3": "Bara du, båten och Medelhavet."
+    },
+    "values": {
+      "title": "Vad som driver oss",
+      "v1": { "title": "Frihet", "desc": "Segla när du vill, vart du vill." },
+      "v2": { "title": "Kvalitet", "desc": "En premiumflotta, alltid i perfekt skick." },
+      "v3": { "title": "Enkelhet", "desc": "Boka på några minuter. Inget pappersarbete, inga överraskningar." }
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Kontakt",
+      "title": "Vi finns här för att hjälpa dig.",
+      "subtitle": "Frågor om medlemskap eller flottan? Skriv till oss."
+    },
+    "form": {
+      "name": "Fullständigt namn",
+      "email": "E-postadress",
+      "phone": "Telefon (valfritt)",
+      "message": "Ditt meddelande",
+      "submit": "Skicka meddelande",
+      "sending": "Skickar...",
+      "success": "Meddelandet är skickat. Vi återkommer snart.",
+      "error": "Ett fel uppstod. Försök igen."
+    },
+    "info": {
+      "title": "Kontaktuppgifter",
+      "email": "info@navigante.com",
+      "hours": "Måndag till fredag, 9:00 – 18:00"
+    }
+  },
+  "footer": {
+    "tagline": "Yachtklubb med medlemskap i Puerto Banús, Marbella.",
+    "explore": "Utforska",
+    "app": "App",
+    "appText": "Hantera dina bokningar från appen.",
+    "legal": "© 2024 Flamingo Yacht Club. Med ensamrätt.",
+    "privacy": "Integritet",
+    "terms": "Villkor"
+  }
+}

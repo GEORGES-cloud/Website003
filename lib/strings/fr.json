@@ -1,0 +1,161 @@
+{
+  "fleet": {
+    "wajer-55": {
+      "tagline": "Le day boat absolu.",
+      "description": "Le Wajer 55 est la référence mondiale du day boat de luxe. Construit à la main aux Pays-Bas, il associe une carène d'une vivacité fulgurante à un confort et des finitions sans égal, pour la plus belle des journées en mer."
+    },
+    "frauscher-1212-ghost": {
+      "tagline": "Design autrichien, âme sportive.",
+      "description": "Le 1212 Ghost est le chef-d'œuvre de Frauscher : lignes sculpturales, navigation d'une précision chirurgicale et performances électrisantes. L'émotion nautique à l'état pur, signée Frauscher."
+    },
+    "sessa-c68": {
+      "tagline": "Luxe italien et flybridge.",
+      "description": "Le C68 porte le savoir-faire italien à son sommet : flybridge panoramique, salon baigné de lumière et cockpit arrière conçu pour vivre pleinement la mer. L'élégance pour les jours qui comptent."
+    },
+    "navan-s30": {
+      "tagline": "Design scandinave, polyvalence absolue.",
+      "description": "Le Navan S30 réinvente le day boat nordique : agile, lumineux et étonnamment spacieux. Le choix idéal pour les escapades spontanées et les baignades au creux d'une crique."
+    },
+    "solaris-power-48": {
+      "tagline": "Un walkaround d'exception.",
+      "description": "Le Solaris Power 48 Open marie la passion voilière de Solaris à un walkaround aux lignes épurées. Espace, mer et horizon à l'état pur, sans le moindre compromis."
+    }
+  },
+  "testimonials": [
+    {
+      "quote": "Avoir la Méditerranée à portée de main depuis Puerto Banús, sans les tracas de l'entretien — c'est exactement ce que nous recherchions.",
+      "role": "Membre fondateur"
+    },
+    {
+      "quote": "La flotte est impressionnante et le service, impeccable. Réserver est si simple que je n'imagine plus un été à Marbella sans cela.",
+      "role": "Membres"
+    },
+    {
+      "quote": "Ce que j'apprécie par-dessus tout, c'est la flexibilité. Je choisis le bateau, le jour et la destination. Appareiller depuis Puerto Banús quand je le souhaite est un privilège.",
+      "role": "Membre"
+    }
+  ],
+  "tiers": {
+    "costa": {
+      "tagline": "Votre porte d'entrée sur la mer de Marbella.",
+      "period": "/ an",
+      "features": [
+        "Accès à la flotte de day boats",
+        "Jusqu'à 20 sorties par an",
+        "Réservation depuis l'application 24h/24 et 7j/7",
+        "Assurance et entretien inclus"
+      ]
+    },
+    "mediterraneo": {
+      "tagline": "La flotte entière, sans limite de saison.",
+      "period": "/ an",
+      "features": [
+        "Accès à toute la flotte",
+        "Sorties illimitées",
+        "Skipper professionnel disponible",
+        "Invités sans frais supplémentaires",
+        "Réservation prioritaire"
+      ]
+    },
+    "signature": {
+      "tagline": "Une expérience sans concession.",
+      "period": "",
+      "features": [
+        "Tout le plan Mediterráneo",
+        "Concierge nautique personnel",
+        "Yachts premium et croisières privées",
+        "Événements exclusifs du club",
+        "Amarrage garanti en haute saison"
+      ]
+    }
+  },
+  "faqs": [
+    {
+      "q": "Ai-je besoin d'un permis bateau ?",
+      "a": "Non. Vous pouvez naviguer avec votre propre titre de navigation ou réserver l'un de nos skippers professionnels pour vous emmener où vous le souhaitez."
+    },
+    {
+      "q": "Puis-je inviter des personnes à bord ?",
+      "a": "Bien entendu. Selon votre formule, vous pouvez convier famille et amis sans frais supplémentaires, dans la limite de la capacité de chaque bateau."
+    },
+    {
+      "q": "Comment réserver un bateau ?",
+      "a": "Depuis notre application, en quelques secondes. Vous choisissez le bateau, la date et la destination, et recevez la confirmation à l'instant. Vous rejoignez l'amarrage et appareillez."
+    },
+    {
+      "q": "Que comprend la cotisation ?",
+      "a": "L'accès à la flotte, l'assurance, l'entretien, le nettoyage et l'amarrage. Aucun frais caché : seul le carburant de chaque sortie reste à votre charge."
+    },
+    {
+      "q": "D'où partent les bateaux ?",
+      "a": "Du cœur de Puerto Banús, Marbella — l'un des ports les plus exclusifs de la Méditerranée, à deux pas des plus belles criques de la Costa del Sol."
+    },
+    {
+      "q": "Y a-t-il un engagement minimum ?",
+      "a": "L'adhésion est annuelle. Écrivez-nous et nous vous présenterons les conditions de chaque formule, sans engagement."
+    }
+  ],
+  "routes": [
+    {
+      "name": "Criques de Marbella",
+      "desc": "Eaux turquoise et criques secrètes à deux pas du port. Le programme idéal pour une baignade à midi."
+    },
+    {
+      "name": "Port d'Estepona",
+      "desc": "Une balade côtière jusqu'au charme maritime d'Estepona, idéale pour déjeuner face à la mer."
+    },
+    {
+      "name": "Sotogrande",
+      "desc": "La destination la plus exclusive de la région. Amarrez, déjeunez et rentrez avec le coucher du soleil."
+    },
+    {
+      "name": "Gibraltar et le Détroit",
+      "desc": "Là où la Méditerranée s'ouvre à l'Atlantique. Une traversée à la journée, avec les dauphins pour compagnons."
+    }
+  ],
+  "stats": [
+    { "label": "Marques premium dans la flotte" },
+    { "label": "Jours de navigation par an" },
+    { "label": "De côte à votre portée" },
+    { "label": "Port d'attache : Banús, Marbella" }
+  ],
+  "legal": {
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "updated": "Dernière mise à jour : juin 2026",
+      "intro": "Chez Flamingo Yacht Club (exploité par [RAZÓN SOCIAL], numéro fiscal [CIF/NIF]), nous respectons votre vie privée et traitons vos données conformément au Règlement (UE) 2016/679 (RGPD).",
+      "sections": [
+        { "heading": "Responsable du traitement", "body": ["[RAZÓN SOCIAL] · Numéro fiscal [CIF/NIF] · Puerto Banús, 29660 Marbella, Málaga · info@navigante.com."] },
+        { "heading": "Données que nous collectons", "body": ["Les données d'identification et de contact que vous nous communiquez via le formulaire de contact ou le processus d'adhésion (nom, e-mail, téléphone et contenu de votre message), ainsi que les données de navigation au moyen de cookies."] },
+        { "heading": "Finalité", "body": ["Répondre à vos demandes, gérer votre adhésion et, avec votre consentement, vous adresser des communications relatives au club. Nous ne procédons à aucune prise de décision automatisée."] },
+        { "heading": "Base légale", "body": ["Le consentement que vous donnez en nous contactant, l'exécution de la relation d'adhésion et notre intérêt légitime à répondre à vos demandes."] },
+        { "heading": "Conservation", "body": ["Nous conservons vos données pendant toute la durée de la relation puis, ensuite, durant les délais légalement requis."] },
+        { "heading": "Destinataires", "body": ["Nous ne communiquons vos données à des tiers que lorsque la loi l'exige ou à des prestataires de services (par exemple la gestion des réservations), toujours dans le cadre d'un contrat de sous-traitance des données."] },
+        { "heading": "Vos droits", "body": ["Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité en écrivant à info@navigante.com."] }
+      ]
+    },
+    "terms": {
+      "title": "Conditions Générales",
+      "updated": "Dernière mise à jour : juin 2026",
+      "intro": "Les présentes conditions régissent l'utilisation de ce site web et les informations relatives au club d'adhésion Flamingo Yacht Club.",
+      "sections": [
+        { "heading": "Objet", "body": ["Ce site a une vocation informative concernant le club de membres yachts Flamingo Yacht Club. L'adhésion et les réservations sont régies par les conditions particulières communiquées dans chaque cas."] },
+        { "heading": "Utilisation du site", "body": ["Vous vous engagez à utiliser le site de manière licite et à ne rien entreprendre qui puisse nuire à son fonctionnement ou aux droits de tiers."] },
+        { "heading": "Adhésion et réservations", "body": ["Les caractéristiques, prix et disponibilités de la flotte sont susceptibles d'évoluer. Les informations publiées ne constituent pas une offre ferme tant que l'adhésion n'a pas été formalisée."] },
+        { "heading": "Propriété intellectuelle", "body": ["Les contenus, marques et le design de ce site sont protégés et ne peuvent être reproduits sans autorisation."] },
+        { "heading": "Responsabilité", "body": ["Nous déclinons toute responsabilité en cas d'erreurs ou d'omissions dans les contenus, ainsi qu'en cas d'interruptions de service échappant à notre contrôle."] },
+        { "heading": "Droit applicable", "body": ["Les présentes conditions sont régies par le droit espagnol et relèvent de la compétence des tribunaux de Marbella, sauf disposition impérative contraire."] }
+      ]
+    },
+    "notice": {
+      "title": "Mentions Légales",
+      "updated": "Dernière mise à jour : juin 2026",
+      "intro": "Conformément à la loi espagnole 34/2002 (LSSI-CE), les données d'identification du titulaire de ce site web sont communiquées ci-après.",
+      "sections": [
+        { "heading": "Titulaire", "body": ["Dénomination : [RAZÓN SOCIAL].", "Numéro fiscal : [CIF/NIF].", "Adresse : Puerto Banús, 29660 Marbella, Málaga.", "E-mail : info@navigante.com."] },
+        { "heading": "Conditions d'utilisation", "body": ["L'accès à ce site confère la qualité d'utilisateur et implique l'acceptation des présentes mentions légales."] },
+        { "heading": "Propriété intellectuelle", "body": ["L'ensemble des droits sur les contenus du site appartiennent à son titulaire ou à des tiers qui en ont autorisé l'usage."] }
+      ]
+    }
+  }
+}

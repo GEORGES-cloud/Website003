@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FAF9F6;
+    color: #1A1916;
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #1A1916;
+    color: #FAF9F6;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-sans text-[10px] font-semibold uppercase tracking-[0.34em] text-sea/90;
+  }
+
+  /* Big editorial heading — Manrope extralight, airy */
+  .display {
+    @apply font-sans font-extralight tracking-[-0.01em] leading-[1.04];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-[0.18em] bg-ink text-white px-9 py-4 transition-colors duration-300 hover:bg-sea;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-[0.18em] border border-ink/25 text-ink px-9 py-4 transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-white;
+  }
+
+  .link-underline {
+    @apply inline-flex items-center gap-2 font-sans text-[12px] font-semibold uppercase tracking-[0.18em] text-ink border-b border-ink/30 pb-1 transition-colors hover:border-ink;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ---- Luxurious motion ---- */
+@keyframes kenburns {
+  0% { transform: scale(1.02) translate3d(0, 0, 0); }
+  100% { transform: scale(1.14) translate3d(-1.5%, -1.5%, 0); }
+}
+.animate-kenburns {
+  animation: kenburns 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* soft gold sheen sweep for accents/buttons */
+@keyframes sheen {
+  0% { background-position: -150% 0; }
+  100% { background-position: 250% 0; }
+}
+
+/* slow reveal of a thin rule */
+@keyframes growLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ---- Lenis smooth scroll ---- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ---- Accessibility ---- */
+:focus-visible {
+  outline: 2px solid #2C4A4F;
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+/* keep mouse clicks clean; only show ring for keyboard users (handled by :focus-visible) */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns { animation: none; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

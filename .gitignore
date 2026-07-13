@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+
+# next.js build output
+/.next
+/out
+
+# env files (keep .env.example)
+.env
+.env.local
+.env.*.local
+
+# misc
+*.log
+.DS_Store
+Thumbs.db
+
+# inspiration material (not part of the app)
+/Pinterest
