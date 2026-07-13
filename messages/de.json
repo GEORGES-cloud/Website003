@@ -23,17 +23,16 @@
       "options": ["Zu zweit", "Mit Familie und Freunden", "Events, Kunden und besondere Anlässe"]
     },
     "result": {
-      "eyebrow": "Dein idealer Tarif",
+      "eyebrow": "Wie für dich gemacht",
       "namePlaceholder": "Dein Name (optional)",
       "whatsapp": "Per WhatsApp schreiben",
-      "allPlans": "Alle Tarife ansehen",
+      "allPlans": "Zur Mitgliedschaft",
       "restart": "Test wiederholen"
     },
     "wa": {
       "hello": "Hallo 👋 Ich bin {name}.",
       "helloAnon": "Hallo 👋",
-      "body": "Laut dem Test des Flamingo Yacht Club ist mein idealer Tarif {plan}. Meine Vorlieben: {summary}. Könnt ihr mir mehr erzählen?",
-      "bodyShort": "Ich interessiere mich für den Tarif {plan} im Flamingo Yacht Club. Könnt ihr mir mehr erzählen?"
+      "body": "Ich interessiere mich für die Mitgliedschaft im Flamingo Yacht Club. Meine Vorlieben: {summary}. Könnt ihr mir mehr erzählen?"
     }
   },
   "meta": {
@@ -146,16 +145,14 @@
     },
     "plans": {
       "eyebrow": "Treten Sie dem Club bei",
-      "title": "Pläne, die zu Ihnen passen",
-      "contact": "Für weitere Informationen zu unseren Plänen und Preisen schreiben Sie uns – ganz unverbindlich."
+      "title": "Eine Mitgliedschaft nach Maß",
+      "contact": "Für weitere Informationen zur Mitgliedschaft schreiben Sie uns – ganz unverbindlich."
     },
     "tiers": {
-      "eyebrow": "Mitgliedschaften",
-      "title": "Wählen Sie, wie Sie fahren möchten",
-      "from": "Ab",
-      "popular": "Am häufigsten gewählt",
-      "cta": "Diesen Plan möchte ich",
-      "note": "Richtpreise. Fragen Sie unverbindlich nach den Konditionen."
+      "eyebrow": "Mitgliedschaft",
+      "title": "Die Mitgliedschaft",
+      "cta": "Informationen anfordern",
+      "note": "Unverbindliche Konditionen. Schreiben Sie uns – wir erzählen Ihnen alles."
     },
     "faq": {
       "eyebrow": "Fragen",

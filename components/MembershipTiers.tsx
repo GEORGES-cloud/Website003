@@ -3,9 +3,11 @@ import { getTiers } from '@/lib/localize';
 import ScrollReveal from './ScrollReveal';
 import JoinCTA from './JoinCTA';
 
+/* Single membership, no pricing shown for now. The card reads name-less on
+   purpose — the section heading introduces it ("La membresía"). */
 export default function MembershipTiers({ locale }: { locale: string }) {
   const t = useTranslations('membership.tiers');
-  const tiers = getTiers(locale);
+  const membership = getTiers(locale)[0];
 
   return (
     <section className="py-20 md:py-28 bg-sand">
@@ -21,74 +23,26 @@ export default function MembershipTiers({ locale }: { locale: string }) {
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {tiers.map((tier, i) => {
-            const featured = tier.featured;
-            const features = tier.features;
-            const numeric = /^[\d.]+$/.test(tier.price);
-            return (
-              <ScrollReveal key={tier.id} delay={i * 0.1} zoom>
-                <div
-                  className={`relative h-full flex flex-col p-8 lg:p-10 rounded-3xl border transition-colors ${
-                    featured ? 'bg-ink text-white border-ink shadow-2xl md:-translate-y-3' : 'bg-bone text-ink border-line'
-                  }`}
-                >
-                  {featured && (
-                    <span className="absolute top-6 right-6 font-sans text-[10px] font-semibold uppercase tracking-wide2 text-sea-light">
-                      {t('popular')}
-                    </span>
-                  )}
-                  <h3 className="font-sans text-2xl font-medium mb-2">{tier.name}</h3>
-                  <p className={`font-sans text-sm mb-7 ${featured ? 'text-white/60' : 'text-muted'}`}>
-                    {tier.tagline}
-                  </p>
+        <ScrollReveal zoom>
+          <div className="max-w-2xl mx-auto flex flex-col p-8 sm:p-10 lg:p-12 rounded-3xl bg-ink text-white border border-ink shadow-2xl">
+            <p className="font-sans text-lg sm:text-xl text-white/75 leading-relaxed mb-9">
+              {membership.tagline}
+            </p>
 
-                  <div className="mb-8">
-                    {numeric ? (
-                      <>
-                        <span className={`font-sans text-[11px] uppercase tracking-wide2 ${featured ? 'text-white/50' : 'text-muted'}`}>
-                          {t('from')}
-                        </span>
-                        <div className="flex items-baseline gap-1 mt-1">
-                          <span className="font-sans text-4xl font-light tracking-tight">{tier.price}€</span>
-                          <span className={`font-sans text-sm ${featured ? 'text-white/50' : 'text-muted'}`}>
-                            {tier.period}
-                          </span>
-                        </div>
-                      </>
-                    ) : (
-                      <span className="font-sans text-4xl font-light tracking-tight">{tier.price}</span>
-                    )}
-                  </div>
+            <ul className="space-y-4 mb-11">
+              {membership.features.map((f) => (
+                <li key={f} className="flex items-start gap-3">
+                  <span className="mt-[7px] w-1.5 h-1.5 rounded-full flex-none bg-sea-light" />
+                  <span className="font-sans text-[15px] sm:text-base leading-snug text-white/85">{f}</span>
+                </li>
+              ))}
+            </ul>
 
-                  <ul className="space-y-3.5 mb-10 flex-1">
-                    {features.map((f) => (
-                      <li key={f} className="flex items-start gap-3">
-                        <span
-                          className={`mt-[7px] w-1.5 h-1.5 rounded-full flex-none ${featured ? 'bg-sea-light' : 'bg-sea'}`}
-                        />
-                        <span className={`font-sans text-[15px] leading-snug ${featured ? 'text-white/85' : 'text-ink/80'}`}>
-                          {f}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <JoinCTA
-                    tier={tier.id}
-                    className={`font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 ${
-                      featured
-                        ? 'bg-white text-ink hover:bg-sea-light'
-                        : 'bg-ink text-white hover:bg-sea'
-                    }`}
-                  >
-                    {t('cta')}
-                  </JoinCTA>
-                </div>
-              </ScrollReveal>
-            );
-          })}
-        </div>
+            <JoinCTA className="font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-sea-light">
+              {t('cta')}
+            </JoinCTA>
+          </div>
+        </ScrollReveal>
 
         <p className="text-center font-sans text-sm text-muted mt-10">{t('note')}</p>
       </div>

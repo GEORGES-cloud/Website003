@@ -23,17 +23,16 @@
       "options": ["En pareja", "Con la familia y amigos", "Eventos, clientes y ocasiones especiales"]
     },
     "result": {
-      "eyebrow": "Tu plan ideal",
+      "eyebrow": "Hecha para ti",
       "namePlaceholder": "Tu nombre (opcional)",
       "whatsapp": "Hablar por WhatsApp",
-      "allPlans": "Ver todos los planes",
+      "allPlans": "Ver la membresía",
       "restart": "Repetir test"
     },
     "wa": {
       "hello": "Hola 👋 Soy {name}.",
       "helloAnon": "Hola 👋",
-      "body": "Según el test del Flamingo Yacht Club, mi plan ideal es {plan}. Mis preferencias: {summary}. ¿Me contáis más?",
-      "bodyShort": "Me interesa el plan {plan} del Flamingo Yacht Club. ¿Me contáis más?"
+      "body": "Me interesa la membresía del Flamingo Yacht Club. Mis preferencias: {summary}. ¿Me contáis más?"
     }
   },
   "meta": {
@@ -146,16 +145,14 @@
     },
     "plans": {
       "eyebrow": "Únete al club",
-      "title": "Planes a tu medida",
-      "contact": "Para más información sobre nuestros planes y precios, escríbenos sin compromiso."
+      "title": "Una membresía a tu medida",
+      "contact": "Para más información sobre la membresía, escríbenos sin compromiso."
     },
     "tiers": {
-      "eyebrow": "Membresías",
-      "title": "Elige cómo quieres navegar",
-      "from": "Desde",
-      "popular": "El más elegido",
-      "cta": "Quiero este plan",
-      "note": "Precios orientativos. Consulta condiciones sin compromiso."
+      "eyebrow": "Membresía",
+      "title": "La membresía",
+      "cta": "Solicitar información",
+      "note": "Condiciones sin compromiso. Escríbenos y te lo contamos todo."
     },
     "faq": {
       "eyebrow": "Dudas",

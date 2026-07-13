@@ -14,7 +14,6 @@ export default function JsonLd({ locale }: { locale: string }) {
     url: `${siteUrl}/${locale}`,
     image: `${siteUrl}/opengraph-image.jpg`,
     logo: `${siteUrl}/logo.svg`,
-    priceRange: '€€€€',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Puerto Banús',

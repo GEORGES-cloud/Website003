@@ -14,74 +14,34 @@ export interface Tier {
   featured?: boolean;
 }
 
+/* Single membership for now — prices intentionally not shown. The Tier[]
+   structure is kept so tiered plans with prices can return with a minimal diff. */
 export const tiers: Tier[] = [
   {
-    id: 'costa',
-    name: 'Costa',
-    price: '6.900',
-    period: '/ año',
-    periodEn: '/ year',
-    tagline: 'Tu entrada al mar de Marbella.',
-    taglineEn: 'Your gateway to the sea of Marbella.',
-    features: [
-      'Acceso a la flota de day boats',
-      'Hasta 20 salidas al año',
-      'Reserva desde la app 24/7',
-      'Seguro y mantenimiento incluidos',
-    ],
-    featuresEn: [
-      'Access to the day-boat fleet',
-      'Up to 20 outings per year',
-      '24/7 booking from the app',
-      'Insurance and maintenance included',
-    ],
-  },
-  {
-    id: 'mediterraneo',
-    name: 'Mediterráneo',
-    price: '12.900',
-    period: '/ año',
-    periodEn: '/ year',
-    tagline: 'La flota entera, sin límites de temporada.',
-    taglineEn: 'The whole fleet, with no seasonal limits.',
+    id: 'club',
+    name: 'Membresía',
+    price: '',
+    period: '',
+    periodEn: '',
+    tagline: 'Todo el mar de Marbella, una sola membresía.',
+    taglineEn: 'All the sea of Marbella, one single membership.',
     features: [
       'Acceso a toda la flota',
-      'Salidas ilimitadas',
+      'Reserva desde la app 24/7',
+      'Seguro, mantenimiento y amarre incluidos',
       'Patrón profesional disponible',
-      'Invitados sin coste adicional',
-      'Reserva prioritaria',
+      'Invitados a bordo sin coste adicional',
+      'Eventos exclusivos del club',
     ],
     featuresEn: [
       'Access to the entire fleet',
-      'Unlimited outings',
+      '24/7 booking from the app',
+      'Insurance, maintenance and mooring included',
       'Professional skipper available',
-      'Guests at no extra cost',
-      'Priority booking',
+      'Guests on board at no extra cost',
+      'Exclusive club events',
     ],
     featured: true,
-  },
-  {
-    id: 'signature',
-    name: 'Signature',
-    price: 'A medida',
-    period: '',
-    periodEn: '',
-    tagline: 'Una experiencia sin concesiones.',
-    taglineEn: 'An experience without compromise.',
-    features: [
-      'Todo lo del plan Mediterráneo',
-      'Concierge náutico personal',
-      'Yates premium y travesías privadas',
-      'Eventos exclusivos del club',
-      'Amarre garantizado en temporada alta',
-    ],
-    featuresEn: [
-      'Everything in Mediterráneo',
-      'Personal nautical concierge',
-      'Premium yachts and private voyages',
-      'Exclusive club events',
-      'Guaranteed mooring in high season',
-    ],
   },
 ];
 
@@ -102,8 +62,8 @@ export const faqs: Faq[] = [
   {
     q: '¿Puedo llevar invitados a bordo?',
     qEn: 'Can I bring guests on board?',
-    a: 'Por supuesto. Según tu plan, puedes invitar a familia y amigos sin coste adicional, respetando la capacidad de cada barco.',
-    aEn: 'Of course. Depending on your plan, you can invite family and friends at no extra cost, within each boat’s capacity.',
+    a: 'Por supuesto. Puedes invitar a familia y amigos sin coste adicional, respetando la capacidad de cada barco.',
+    aEn: 'Of course. You can invite family and friends at no extra cost, within each boat’s capacity.',
   },
   {
     q: '¿Cómo se reserva un barco?',
@@ -126,8 +86,8 @@ export const faqs: Faq[] = [
   {
     q: '¿Hay permanencia mínima?',
     qEn: 'Is there a minimum commitment?',
-    a: 'La membresía es anual. Escríbenos y te explicamos sin compromiso las condiciones de cada plan.',
-    aEn: 'Membership is annual. Get in touch and we will walk you through each plan with no obligation.',
+    a: 'La membresía es anual. Escríbenos y te explicamos sin compromiso las condiciones.',
+    aEn: 'Membership is annual. Get in touch and we will walk you through the terms with no obligation.',
   },
 ];
 

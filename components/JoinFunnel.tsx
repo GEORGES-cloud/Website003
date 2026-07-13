@@ -10,32 +10,26 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const TOTAL_Q = 3;
 
 export default function JoinFunnel({ locale }: { locale: string }) {
-  const { open, preselectTier, closeFunnel } = useJoinFunnel();
+  const { open, closeFunnel } = useJoinFunnel();
   const t = useTranslations('funnel');
   const reduce = useReducedMotion();
-  const tiers = getTiers(locale);
+  // Single membership — the quiz captures preferences for the lead handoff.
+  const membership = getTiers(locale)[0];
   const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34600000000';
 
   // step: 0 intro · 1..3 questions · 4 result
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
-  const [forced, setForced] = useState<string | null>(null);
   const [name, setName] = useState('');
   const closeRef = useRef<HTMLButtonElement>(null);
 
-  // Initialise each time the modal opens (fresh quiz, or jump to a preselected plan)
+  // Fresh quiz each time the modal opens
   useEffect(() => {
     if (!open) return;
-    if (preselectTier) {
-      setForced(preselectTier);
-      setStep(4);
-    } else {
-      setForced(null);
-      setAnswers([]);
-      setStep(0);
-    }
+    setAnswers([]);
+    setStep(0);
     setName('');
-  }, [open, preselectTier]);
+  }, [open]);
 
   // Body scroll lock + Escape to close
   useEffect(() => {
@@ -53,12 +47,6 @@ export default function JoinFunnel({ locale }: { locale: string }) {
 
   if (!open) return null;
 
-  const recommended =
-    (forced ? tiers.find((x) => x.id === forced) : undefined) ??
-    (answers.length === TOTAL_Q
-      ? tiers[Math.round(answers.reduce((a, b) => a + b, 0) / TOTAL_Q)] ?? tiers[1]
-      : tiers[1]);
-
   const choose = (optIndex: number) => {
     const next = [...answers];
     next[step - 1] = optIndex;
@@ -67,22 +55,18 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   };
 
   const restart = () => {
-    setForced(null);
     setAnswers([]);
     setStep(1);
   };
 
-  // WhatsApp handoff message
-  const priceLabel = /^[\d.]+$/.test(recommended.price)
-    ? `${recommended.price}€ ${recommended.period}`.trim()
-    : recommended.price;
+  // WhatsApp handoff message — greeting + quiz preferences
   const waMessage = (() => {
     const hello = name.trim() ? t('wa.hello', { name: name.trim() }) : t('wa.helloAnon');
-    if (answers.length === TOTAL_Q) {
-      const summary = answers.map((a, i) => (t.raw(`q${i + 1}.options`) as string[])[a]).join(' · ');
-      return `${hello} ${t('wa.body', { plan: recommended.name, summary })}`;
-    }
-    return `${hello} ${t('wa.bodyShort', { plan: recommended.name })}`;
+    const summary = answers
+      .slice(0, TOTAL_Q)
+      .map((a, i) => (t.raw(`q${i + 1}.options`) as string[])[a])
+      .join(' · ');
+    return `${hello} ${t('wa.body', { summary })}`;
   })();
   const waHref = `https://wa.me/${phone}?text=${encodeURIComponent(waMessage)}`;
 
@@ -191,17 +175,13 @@ export default function JoinFunnel({ locale }: { locale: string }) {
           {step === 4 && (
             <>
               <p className="eyebrow mb-4">{t('result.eyebrow')}</p>
-              <h2 className="font-sans font-medium text-ink mb-1" style={{ fontSize: 'clamp(2.4rem, 6vw, 3.5rem)' }}>
-                {recommended.name}
+              <h2 className="font-sans font-medium text-ink mb-3" style={{ fontSize: 'clamp(2.2rem, 5.5vw, 3.25rem)' }}>
+                {membership.name}
               </h2>
-              <p className="font-sans text-lg text-muted mb-6">{recommended.tagline}</p>
-
-              <div className="inline-flex items-baseline gap-1.5 mb-8">
-                <span className="font-sans text-3xl font-light tracking-tight text-ink">{priceLabel}</span>
-              </div>
+              <p className="font-sans text-lg text-muted mb-8">{membership.tagline}</p>
 
               <ul className="space-y-3 mb-9 text-left max-w-sm mx-auto">
-                {recommended.features.slice(0, 4).map((f) => (
+                {membership.features.slice(0, 4).map((f) => (
                   <li key={f} className="flex items-start gap-3">
                     <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-sea flex-none" />
                     <span className="font-sans text-[15px] leading-snug text-ink/80">{f}</span>

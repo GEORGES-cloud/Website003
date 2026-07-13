@@ -36,36 +36,16 @@
     }
   ],
   "tiers": {
-    "costa": {
-      "tagline": "Votre porte d'entrée sur la mer de Marbella.",
-      "period": "/ an",
-      "features": [
-        "Accès à la flotte de day boats",
-        "Jusqu'à 20 sorties par an",
-        "Réservation depuis l'application 24h/24 et 7j/7",
-        "Assurance et entretien inclus"
-      ]
-    },
-    "mediterraneo": {
-      "tagline": "La flotte entière, sans limite de saison.",
-      "period": "/ an",
-      "features": [
-        "Accès à toute la flotte",
-        "Sorties illimitées",
-        "Skipper professionnel disponible",
-        "Invités sans frais supplémentaires",
-        "Réservation prioritaire"
-      ]
-    },
-    "signature": {
-      "tagline": "Une expérience sans concession.",
+    "club": {
+      "tagline": "Toute la mer de Marbella, une seule adhésion.",
       "period": "",
       "features": [
-        "Tout le plan Mediterráneo",
-        "Concierge nautique personnel",
-        "Yachts premium et croisières privées",
-        "Événements exclusifs du club",
-        "Amarrage garanti en haute saison"
+        "Accès à toute la flotte",
+        "Réservation depuis l'application 24h/24 et 7j/7",
+        "Assurance, entretien et amarrage inclus",
+        "Skipper professionnel disponible",
+        "Invités à bord sans frais supplémentaires",
+        "Événements exclusifs du club"
       ]
     }
   },
@@ -76,7 +56,7 @@
     },
     {
       "q": "Puis-je inviter des personnes à bord ?",
-      "a": "Bien entendu. Selon votre formule, vous pouvez convier famille et amis sans frais supplémentaires, dans la limite de la capacité de chaque bateau."
+      "a": "Bien entendu. Vous pouvez convier famille et amis sans frais supplémentaires, dans la limite de la capacité de chaque bateau."
     },
     {
       "q": "Comment réserver un bateau ?",
@@ -92,7 +72,7 @@
     },
     {
       "q": "Y a-t-il un engagement minimum ?",
-      "a": "L'adhésion est annuelle. Écrivez-nous et nous vous présenterons les conditions de chaque formule, sans engagement."
+      "a": "L'adhésion est annuelle. Écrivez-nous et nous vous présenterons les conditions, sans engagement."
     }
   ],
   "routes": [

@@ -23,17 +23,16 @@
       "options": ["Som par", "Med familj och vänner", "Event, kunder och speciella tillfällen"]
     },
     "result": {
-      "eyebrow": "Ditt perfekta paket",
+      "eyebrow": "Skapat för dig",
       "namePlaceholder": "Ditt namn (valfritt)",
       "whatsapp": "Chatta på WhatsApp",
-      "allPlans": "Se alla paket",
+      "allPlans": "Se medlemskapet",
       "restart": "Gör om testet"
     },
     "wa": {
       "hello": "Hej 👋 Jag heter {name}.",
       "helloAnon": "Hej 👋",
-      "body": "Enligt Flamingo Yacht Clubs test är mitt perfekta paket {plan}. Mina önskemål: {summary}. Kan ni berätta mer?",
-      "bodyShort": "Jag är intresserad av paketet {plan} hos Flamingo Yacht Club. Kan ni berätta mer?"
+      "body": "Jag är intresserad av medlemskapet hos Flamingo Yacht Club. Mina önskemål: {summary}. Kan ni berätta mer?"
     }
   },
   "meta": {
@@ -146,16 +145,14 @@
     },
     "plans": {
       "eyebrow": "Bli medlem i klubben",
-      "title": "Medlemskap skapade för dig",
-      "contact": "För mer information om våra medlemskap och priser, skriv till oss helt utan förpliktelser."
+      "title": "Ett medlemskap skapat för dig",
+      "contact": "För mer information om medlemskapet, skriv till oss helt utan förpliktelser."
     },
     "tiers": {
       "eyebrow": "Medlemskap",
-      "title": "Välj hur du vill segla",
-      "from": "Från",
-      "popular": "Mest valda",
-      "cta": "Jag vill ha detta medlemskap",
-      "note": "Vägledande priser. Fråga om villkoren helt utan förpliktelser."
+      "title": "Medlemskapet",
+      "cta": "Begär information",
+      "note": "Villkor utan förpliktelser. Skriv till oss så berättar vi allt."
     },
     "faq": {
       "eyebrow": "Frågor",

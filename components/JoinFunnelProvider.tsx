@@ -3,8 +3,7 @@ import { createContext, useContext, useState, useCallback, ReactNode } from 'rea
 
 interface JoinFunnelContextValue {
   open: boolean;
-  preselectTier: string | null;
-  openFunnel: (tier?: string) => void;
+  openFunnel: () => void;
   closeFunnel: () => void;
 }
 
@@ -18,17 +17,12 @@ export function useJoinFunnel(): JoinFunnelContextValue {
 
 export default function JoinFunnelProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
-  const [preselectTier, setPreselectTier] = useState<string | null>(null);
 
-  const openFunnel = useCallback((tier?: string) => {
-    setPreselectTier(tier ?? null);
-    setOpen(true);
-  }, []);
-
+  const openFunnel = useCallback(() => setOpen(true), []);
   const closeFunnel = useCallback(() => setOpen(false), []);
 
   return (
-    <JoinFunnelContext.Provider value={{ open, preselectTier, openFunnel, closeFunnel }}>
+    <JoinFunnelContext.Provider value={{ open, openFunnel, closeFunnel }}>
       {children}
     </JoinFunnelContext.Provider>
   );

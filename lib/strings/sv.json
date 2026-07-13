@@ -36,36 +36,16 @@
     }
   ],
   "tiers": {
-    "costa": {
-      "tagline": "Din ingång till Marbellas hav.",
-      "period": "/ år",
-      "features": [
-        "Tillgång till flottan av day boats",
-        "Upp till 20 utflykter per år",
-        "Boka från appen dygnet runt",
-        "Försäkring och underhåll ingår"
-      ]
-    },
-    "mediterraneo": {
-      "tagline": "Hela flottan, utan säsongsbegränsningar.",
-      "period": "/ år",
-      "features": [
-        "Tillgång till hela flottan",
-        "Obegränsade utflykter",
-        "Professionell skeppare tillgänglig",
-        "Gäster utan extra kostnad",
-        "Prioriterad bokning"
-      ]
-    },
-    "signature": {
-      "tagline": "En upplevelse utan eftergifter.",
+    "club": {
+      "tagline": "Hela Marbellas hav, ett enda medlemskap.",
       "period": "",
       "features": [
-        "Allt i Mediterráneo",
-        "Personlig nautisk concierge",
-        "Premiumyachter och privata seglatser",
-        "Exklusiva klubbevenemang",
-        "Garanterad förtöjning under högsäsong"
+        "Tillgång till hela flottan",
+        "Boka från appen dygnet runt",
+        "Försäkring, underhåll och förtöjning ingår",
+        "Professionell skeppare tillgänglig",
+        "Gäster ombord utan extra kostnad",
+        "Exklusiva klubbevenemang"
       ]
     }
   },
@@ -76,7 +56,7 @@
     },
     {
       "q": "Får jag ta med gäster ombord?",
-      "a": "Självklart. Beroende på ditt medlemskap kan du bjuda med familj och vänner utan extra kostnad, inom varje båts kapacitet."
+      "a": "Självklart. Du kan bjuda med familj och vänner utan extra kostnad, inom varje båts kapacitet."
     },
     {
       "q": "Hur bokar jag en båt?",
@@ -92,7 +72,7 @@
     },
     {
       "q": "Finns det någon minsta bindningstid?",
-      "a": "Medlemskapet är årligt. Hör av dig så går vi igenom villkoren för varje medlemskap helt utan förpliktelser."
+      "a": "Medlemskapet är årligt. Hör av dig så går vi igenom villkoren helt utan förpliktelser."
     }
   ],
   "routes": [

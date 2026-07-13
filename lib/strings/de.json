@@ -36,36 +36,16 @@
     }
   ],
   "tiers": {
-    "costa": {
-      "tagline": "Ihr Zugang zum Meer von Marbella.",
-      "period": "/ Jahr",
-      "features": [
-        "Zugang zur Day-Boat-Flotte",
-        "Bis zu 20 Ausfahrten pro Jahr",
-        "Reservierung über die App, rund um die Uhr",
-        "Versicherung und Wartung inklusive"
-      ]
-    },
-    "mediterraneo": {
-      "tagline": "Die gesamte Flotte, ohne saisonale Grenzen.",
-      "period": "/ Jahr",
-      "features": [
-        "Zugang zur gesamten Flotte",
-        "Unbegrenzte Ausfahrten",
-        "Professioneller Skipper auf Wunsch",
-        "Gäste ohne Aufpreis",
-        "Priorisierte Reservierung"
-      ]
-    },
-    "signature": {
-      "tagline": "Ein Erlebnis ohne Zugeständnisse.",
+    "club": {
+      "tagline": "Das ganze Meer von Marbella, eine einzige Mitgliedschaft.",
       "period": "",
       "features": [
-        "Alles aus dem Plan Mediterráneo",
-        "Persönlicher nautischer Concierge",
-        "Premium-Yachten und private Törns",
-        "Exklusive Club-Events",
-        "Garantierter Liegeplatz in der Hochsaison"
+        "Zugang zur gesamten Flotte",
+        "Reservierung über die App, rund um die Uhr",
+        "Versicherung, Wartung und Liegeplatz inklusive",
+        "Professioneller Skipper auf Wunsch",
+        "Gäste an Bord ohne Aufpreis",
+        "Exklusive Club-Events"
       ]
     }
   },
@@ -76,7 +56,7 @@
     },
     {
       "q": "Darf ich Gäste an Bord mitnehmen?",
-      "a": "Selbstverständlich. Je nach Ihrem Plan können Sie Familie und Freunde ohne Aufpreis einladen – im Rahmen der Kapazität der jeweiligen Yacht."
+      "a": "Selbstverständlich. Sie können Familie und Freunde ohne Aufpreis einladen – im Rahmen der Kapazität der jeweiligen Yacht."
     },
     {
       "q": "Wie reserviere ich eine Yacht?",
@@ -92,7 +72,7 @@
     },
     {
       "q": "Gibt es eine Mindestlaufzeit?",
-      "a": "Die Mitgliedschaft ist jährlich. Schreiben Sie uns, und wir erläutern Ihnen unverbindlich die Konditionen jedes Plans."
+      "a": "Die Mitgliedschaft ist jährlich. Schreiben Sie uns, und wir erläutern Ihnen unverbindlich die Konditionen."
     }
   ],
   "routes": [

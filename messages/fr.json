@@ -23,17 +23,16 @@
       "options": ["En couple", "En famille et entre amis", "Événements, clients et occasions spéciales"]
     },
     "result": {
-      "eyebrow": "Votre formule idéale",
+      "eyebrow": "Faite pour vous",
       "namePlaceholder": "Votre nom (facultatif)",
       "whatsapp": "Discuter sur WhatsApp",
-      "allPlans": "Voir toutes les formules",
+      "allPlans": "Voir l’adhésion",
       "restart": "Refaire le test"
     },
     "wa": {
       "hello": "Bonjour 👋 Je suis {name}.",
       "helloAnon": "Bonjour 👋",
-      "body": "D’après le test du Flamingo Yacht Club, ma formule idéale est {plan}. Mes préférences : {summary}. Pouvez-vous m’en dire plus ?",
-      "bodyShort": "La formule {plan} du Flamingo Yacht Club m’intéresse. Pouvez-vous m’en dire plus ?"
+      "body": "L’adhésion au Flamingo Yacht Club m’intéresse. Mes préférences : {summary}. Pouvez-vous m’en dire plus ?"
     }
   },
   "meta": {
@@ -146,16 +145,14 @@
     },
     "plans": {
       "eyebrow": "Rejoignez le club",
-      "title": "Des formules pensées pour vous",
-      "contact": "Pour en savoir plus sur nos formules et nos tarifs, écrivez-nous sans engagement."
+      "title": "Une adhésion à votre mesure",
+      "contact": "Pour en savoir plus sur l’adhésion, écrivez-nous sans engagement."
     },
     "tiers": {
-      "eyebrow": "Adhésions",
-      "title": "Choisissez votre façon de naviguer",
-      "from": "À partir de",
-      "popular": "Le plus choisi",
-      "cta": "Je veux cette formule",
-      "note": "Tarifs indicatifs. Renseignez-vous sur les conditions sans engagement."
+      "eyebrow": "Adhésion",
+      "title": "L’adhésion",
+      "cta": "Demander des informations",
+      "note": "Conditions sans engagement. Écrivez-nous, on vous dit tout."
     },
     "faq": {
       "eyebrow": "Questions",
