@@ -45,7 +45,7 @@ export default function CookieBanner({ locale }: { locale: string }) {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           role="dialog"
           aria-label="Cookies"
-          className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[90] bg-ink text-white p-6 md:p-7 rounded-2xl shadow-2xl"
+          className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] left-4 right-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[90] bg-ink text-white p-6 md:p-7 border border-white/15"
         >
           <p className="font-sans text-sm text-white/80 leading-relaxed">
             {t.text}{' '}

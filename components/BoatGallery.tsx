@@ -35,7 +35,7 @@ export default function BoatGallery({ images, name }: { images: string[]; name: 
             key={i}
             onClick={() => setOpen(i)}
             aria-label={`${name} — ${i + 1}`}
-            className={`group relative overflow-hidden rounded-2xl ${i === 0 ? 'col-span-2 row-span-2 aspect-square md:aspect-auto' : 'aspect-[4/3]'}`}
+            className={`group relative overflow-hidden ${i === 0 ? 'col-span-2 aspect-[3/2] md:row-span-2 md:aspect-auto' : 'aspect-[4/3]'}`}
           >
             <Image
               src={src}

@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { fleet } from '@/lib/data';
 import { getBoat } from '@/lib/localize';
+import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import BoatGallery from '@/components/BoatGallery';
 
@@ -26,28 +26,17 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-[88px] h-[75vh] min-h-[520px] overflow-hidden">
-        <Image src={boat.image} alt={boat.name} fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-ink/25" />
-        <div className="relative h-full max-w-[1480px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-16">
-          <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-white/85 mb-4">
-            {boat.lengthM} · {boat.capacity} {guestsLabel}
-          </p>
-          <h1 className="display text-white" style={{ fontSize: 'clamp(2.75rem, 6vw, 5.5rem)' }}>
-            {boat.name}
-          </h1>
-        </div>
-      </section>
+      {/* Hero — shared PageHero (kenburns, svh heights, header offset) */}
+      <PageHero eyebrow={`${boat.lengthM} · ${boat.capacity} ${guestsLabel}`} title={boat.name} image={boat.image} />
 
       {/* Content */}
-      <section className="py-20 md:py-28 bg-bone">
+      <section className="py-24 md:py-36 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
             {/* Description */}
             <ScrollReveal>
               <div>
-                <p className="font-sans text-2xl md:text-3xl font-light text-ink leading-snug tracking-tight mb-8">
+                <p className="display text-2xl md:text-3xl text-ink leading-snug mb-8">
                   &ldquo;{boat.tagline}&rdquo;
                 </p>
                 <p className="font-sans text-lg text-muted leading-relaxed">{boat.description}</p>
@@ -87,6 +76,7 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
           <div className="mt-20">
             <ScrollReveal>
               <p className="eyebrow mb-8">{({ es: 'Galería', en: 'Gallery', sv: 'Galleri', ru: 'Галерея', de: 'Galerie', fr: 'Galerie' } as Record<string, string>)[locale] ?? 'Gallery'}</p>
+              {/* TODO(content): stock placeholders shared by every boat — swap for real per-boat photography when the client provides it */}
               <BoatGallery
                 images={[boat.image, '/images/life-4.jpg', '/images/membership.jpg', '/images/life-3.jpg', '/images/exp-sunset.jpg']}
                 name={boat.name}

@@ -7,20 +7,19 @@ interface CTAFinalProps {
   title: string;
   description: string;
   button: string;
+  image?: string;
 }
 
-export default function CTAFinal({ eyebrow, title, description, button }: CTAFinalProps) {
+export default function CTAFinal({ eyebrow, title, description, button, image = '/images/cta.jpg' }: CTAFinalProps) {
   return (
-    <section className="relative py-32 md:py-44 overflow-hidden md:rounded-[2.5rem] md:mx-6 lg:mx-10">
-      <ParallaxImage src="/images/cta.jpg" alt="" sizes="100vw" strength={70} kenBurns className="absolute inset-0" />
+    <section className="relative py-32 md:py-44 overflow-hidden">
+      <ParallaxImage src={image} alt="" sizes="100vw" strength={70} kenBurns className="absolute inset-0" />
       <div className="absolute inset-0 bg-ink/55" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
 
       <div className="relative max-w-[1480px] mx-auto px-6 md:px-10 text-center">
         <ScrollReveal>
-          <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-white/80 mb-7">
-            {eyebrow}
-          </p>
+          <p className="eyebrow-invert mb-7">{eyebrow}</p>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <h2 className="display text-white mb-9" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)' }}>

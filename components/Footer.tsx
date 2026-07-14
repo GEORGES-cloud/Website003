@@ -34,7 +34,7 @@ export default function Footer({ locale }: FooterProps) {
             >
               <Logo layout="row" />
             </Link>
-            <p className="font-sans text-sm text-white/45 mt-6 leading-relaxed max-w-xs">
+            <p className="font-sans text-sm text-white/60 mt-6 leading-relaxed max-w-xs">
               {tf('tagline')}
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function Footer({ locale }: FooterProps) {
             <ul className="space-y-3.5">
               {navLinks.map(({ href, label }) => (
                 <li key={href}>
-                  <Link href={href} className="font-sans text-sm text-white/55 hover:text-white transition-colors">
+                  <Link href={href} className="font-sans text-sm text-white/70 hover:text-white transition-colors">
                     {label}
                   </Link>
                 </li>
@@ -60,7 +60,7 @@ export default function Footer({ locale }: FooterProps) {
             <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-sea-light mb-7">
               {tf('app')}
             </p>
-            <p className="font-sans text-sm text-white/45 mb-7 leading-relaxed">{tf('appText')}</p>
+            <p className="font-sans text-sm text-white/60 mb-7 leading-relaxed">{tf('appText')}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={appStoreUrl}
@@ -81,12 +81,12 @@ export default function Footer({ locale }: FooterProps) {
         <div className="h-px bg-white/10 mt-16 mb-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-sans text-xs text-white/30">{tf('legal')}</p>
+          <p className="font-sans text-sm text-white/60">{tf('legal')}</p>
           <div className="flex gap-8">
-            <Link href={`/${locale}/privacidad`} className="font-sans text-xs text-white/30 hover:text-white/60 transition-colors">
+            <Link href={`/${locale}/privacidad`} className="font-sans text-sm text-white/60 hover:text-white transition-colors">
               {tf('privacy')}
             </Link>
-            <Link href={`/${locale}/terminos`} className="font-sans text-xs text-white/30 hover:text-white/60 transition-colors">
+            <Link href={`/${locale}/terminos`} className="font-sans text-sm text-white/60 hover:text-white transition-colors">
               {tf('terms')}
             </Link>
           </div>

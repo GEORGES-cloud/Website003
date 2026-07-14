@@ -10,9 +10,9 @@ export default function MembershipTiers({ locale }: { locale: string }) {
   const membership = getTiers(locale)[0];
 
   return (
-    <section className="py-20 md:py-28 bg-sand">
+    <section className="py-24 md:py-36 bg-sand">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
-        <div className="text-center max-w-2xl mx-auto mb-14 md:mb-16">
+        <div className="max-w-2xl mb-14 md:mb-16">
           <ScrollReveal>
             <p className="eyebrow mb-5">{t('eyebrow')}</p>
           </ScrollReveal>
@@ -24,7 +24,7 @@ export default function MembershipTiers({ locale }: { locale: string }) {
         </div>
 
         <ScrollReveal zoom>
-          <div className="max-w-2xl mx-auto flex flex-col p-8 sm:p-10 lg:p-12 rounded-3xl bg-ink text-white border border-ink shadow-2xl">
+          <div className="max-w-2xl flex flex-col p-8 sm:p-10 lg:p-12 bg-ink text-white">
             <p className="font-sans text-lg sm:text-xl text-white/75 leading-relaxed mb-9">
               {membership.tagline}
             </p>
@@ -44,7 +44,7 @@ export default function MembershipTiers({ locale }: { locale: string }) {
           </div>
         </ScrollReveal>
 
-        <p className="text-center font-sans text-sm text-muted mt-10">{t('note')}</p>
+        <p className="font-sans text-sm text-muted mt-10 max-w-2xl">{t('note')}</p>
       </div>
     </section>
   );

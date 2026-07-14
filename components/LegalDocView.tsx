@@ -2,7 +2,7 @@ import type { LegalDoc } from '@/lib/legal';
 
 export default function LegalDocView({ doc }: { doc: LegalDoc }) {
   return (
-    <article className="pt-[136px] pb-24 md:pb-32 bg-bone">
+    <article className="pt-[calc(var(--header-h)+3rem)] pb-24 md:pb-32 bg-bone">
       <div className="max-w-3xl mx-auto px-6 md:px-10">
         <p className="eyebrow mb-5">Flamingo Yacht Club</p>
         <h1 className="display text-ink mb-4" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.5rem)' }}>

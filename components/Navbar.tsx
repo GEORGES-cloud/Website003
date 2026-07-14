@@ -77,10 +77,10 @@ export default function Navbar({ locale }: NavbarProps) {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          scrolled ? 'bg-bone/95 backdrop-blur-md border-b border-line shadow-[0_1px_20px_rgba(0,0,0,0.04)]' : 'bg-transparent'
+          scrolled ? 'bg-bone/95 backdrop-blur-md border-b border-line' : 'bg-transparent'
         }`}
       >
-        <div className="relative max-w-[1480px] mx-auto px-6 md:px-10 h-[88px] flex items-center justify-between">
+        <div className="relative max-w-[1480px] mx-auto px-6 md:px-10 h-[var(--header-h)] flex items-center justify-between">
           {/* LEFT — menu trigger */}
           <button
             onClick={() => setMenuOpen(true)}
@@ -123,7 +123,7 @@ export default function Navbar({ locale }: NavbarProps) {
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-50 bg-bone flex flex-col"
           >
-            <div className="relative flex justify-between items-center px-6 h-[88px] border-b border-line">
+            <div className="relative flex justify-between items-center px-6 h-[var(--header-h)] border-b border-line">
               <span className="w-8" aria-hidden />
               <Link href={`/${locale}`} aria-label="Flamingo Yacht Club" className="absolute left-1/2 -translate-x-1/2 text-ink">
                 <Wordmark />

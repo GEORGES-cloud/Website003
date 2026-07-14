@@ -2,9 +2,9 @@ import { useTranslations } from 'next-intl';
 import PageHero from '@/components/PageHero';
 import JoinCTA from '@/components/JoinCTA';
 import ScrollReveal from '@/components/ScrollReveal';
-import ParallaxImage from '@/components/ParallaxImage';
 import MembershipTiers from '@/components/MembershipTiers';
 import Faq from '@/components/Faq';
+import CTAFinal from '@/components/CTAFinal';
 
 export default function MembresiaPage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('membership');
@@ -21,7 +21,7 @@ export default function MembresiaPage({ params: { locale } }: { params: { locale
       />
 
       {/* How it works + benefits */}
-      <section className="py-20 md:py-28 bg-bone">
+      <section className="py-24 md:py-36 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
             <ScrollReveal>
@@ -61,26 +61,13 @@ export default function MembresiaPage({ params: { locale } }: { params: { locale
       <Faq locale={locale} />
 
       {/* Plans / closing CTA */}
-      <section className="relative py-28 md:py-36 overflow-hidden">
-        <ParallaxImage src="/images/cta.jpg" alt="" sizes="100vw" strength={70} kenBurns className="absolute inset-0" />
-        <div className="absolute inset-0 bg-ink/60" />
-        <div className="relative max-w-[1480px] mx-auto px-6 md:px-10 text-center">
-          <ScrollReveal>
-            <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-white/80 mb-6">
-              {t('plans.eyebrow')}
-            </p>
-            <h2 className="display text-white mb-7" style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)' }}>
-              {t('plans.title')}
-            </h2>
-            <p className="font-sans text-lg text-white/70 max-w-lg mx-auto leading-relaxed mb-10">
-              {t('plans.contact')}
-            </p>
-            <JoinCTA className="inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-wide2 bg-bone text-ink px-12 py-5 hover:bg-sea hover:text-white transition-colors duration-300">
-              {t('cta')}
-            </JoinCTA>
-          </ScrollReveal>
-        </div>
-      </section>
+      <CTAFinal
+        eyebrow={t('plans.eyebrow')}
+        title={t('plans.title')}
+        description={t('plans.contact')}
+        button={t('cta')}
+        image="/images/life-1.jpg"
+      />
     </>
   );
 }

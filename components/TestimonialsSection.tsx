@@ -1,7 +1,5 @@
-'use client';
-import { useState, useEffect, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { getTestimonials } from '@/lib/localize';
+import ScrollReveal from './ScrollReveal';
 
 interface TestimonialsSectionProps {
   locale: string;
@@ -16,55 +14,53 @@ const EYEBROW: Record<string, string> = {
   fr: 'Ce que disent les membres',
 };
 
+/* Static editorial quote — one confident hero testimonial, the rest as a quiet
+   two-column postscript. No carousel, no timers. */
 export default function TestimonialsSection({ locale }: TestimonialsSectionProps) {
-  const [current, setCurrent] = useState(0);
-  const testimonials = useMemo(() => getTestimonials(locale), [locale]);
+  const all = getTestimonials(locale);
+  if (all.length === 0) return null;
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((c) => (c + 1) % testimonials.length);
-    }, 5500);
-    return () => clearInterval(timer);
-  }, [testimonials.length]);
-
-  const t = testimonials[current];
+  const featured = all.reduce((a, b) => (b.quote.length > a.quote.length ? b : a));
+  const rest = all.filter((t) => t !== featured);
 
   return (
-    <section className="py-24 md:py-32 bg-bone">
+    <section className="py-24 md:py-36 bg-bone">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="eyebrow mb-10">{EYEBROW[locale] ?? EYEBROW.en}</p>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          <ScrollReveal>
+            <p className="eyebrow mb-10">{EYEBROW[locale] ?? EYEBROW.en}</p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <blockquote
+              className="display text-ink leading-[1.15] mb-10"
+              style={{ fontSize: 'clamp(1.9rem, 3.5vw, 3.25rem)' }}
             >
-              <p className="font-sans text-2xl md:text-4xl font-light text-ink leading-snug tracking-tight mb-10">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <div>
-                <p className="font-sans text-sm font-semibold text-ink tracking-wide">{t.author}</p>
-                <p className="font-sans text-xs text-sea mt-1 tracking-wide2 uppercase">{t.role}</p>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+              &ldquo;{featured.quote}&rdquo;
+            </blockquote>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="font-sans text-sm font-semibold text-ink tracking-wide">{featured.author}</p>
+            <p className="font-sans text-xs text-sea mt-1 tracking-wide2 uppercase">{featured.role}</p>
+          </ScrollReveal>
+        </div>
 
-          <div className="flex justify-center gap-3 mt-12">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`transition-all duration-300 h-px ${
-                  i === current ? 'w-10 bg-sea' : 'w-3 bg-ink/20 hover:bg-ink/40'
-                }`}
-                aria-label={`Testimonial ${i + 1}`}
-              />
+        {rest.length > 0 && (
+          <div className="grid md:grid-cols-2 gap-10 mt-20 text-left max-w-4xl mx-auto">
+            {rest.map((t, i) => (
+              <ScrollReveal key={t.author} delay={i * 0.1}>
+                <figure className="border-t border-line pt-7">
+                  <blockquote className="font-sans text-lg font-light text-ink/80 leading-relaxed">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-4">
+                    <span className="font-sans text-sm font-semibold text-ink">{t.author}</span>
+                    <span className="font-sans text-xs text-sea uppercase tracking-wide2 ml-3">{t.role}</span>
+                  </figcaption>
+                </figure>
+              </ScrollReveal>
             ))}
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

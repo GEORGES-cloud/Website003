@@ -16,7 +16,7 @@ export default function FleetPreviewSection({ eyebrow, title, viewAll, locale }:
   const preview = getFleet(locale).slice(0, 4);
 
   return (
-    <section className="py-24 md:py-28 bg-bone overflow-hidden">
+    <section className="py-24 md:py-36 bg-bone overflow-hidden">
       {/* Header */}
       <div className="max-w-[1480px] mx-auto px-6 md:px-10 mb-14 flex flex-wrap items-end justify-between gap-6">
         <div>
@@ -32,7 +32,6 @@ export default function FleetPreviewSection({ eyebrow, title, viewAll, locale }:
         <ScrollReveal delay={0.15}>
           <Link href={`/${locale}/flota`} className="link-underline hidden md:inline-flex">
             {viewAll}
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </ScrollReveal>
       </div>
@@ -49,7 +48,7 @@ export default function FleetPreviewSection({ eyebrow, title, viewAll, locale }:
             className="flex-none w-[290px] md:w-[380px] snap-start"
           >
             <Link href={`/${locale}/flota/${boat.slug}`} className="group block">
-              <div className="relative overflow-hidden rounded-2xl aspect-[3/4]">
+              <div className="relative overflow-hidden aspect-[3/4]">
                 <Image
                   src={boat.image}
                   alt={boat.name}
@@ -75,7 +74,6 @@ export default function FleetPreviewSection({ eyebrow, title, viewAll, locale }:
       <div className="max-w-[1480px] mx-auto px-6 md:px-10 mt-10 md:hidden">
         <Link href={`/${locale}/flota`} className="link-underline">
           {viewAll}
-          <span>→</span>
         </Link>
       </div>
     </section>

@@ -21,6 +21,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'sans-serif'],
       },
       letterSpacing: {
         eyebrow: '0.3em',

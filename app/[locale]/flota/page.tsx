@@ -16,7 +16,7 @@ export default function FlotaPage({ params: { locale } }: { params: { locale: st
         image="/images/fleet-frauscher.jpg"
       />
 
-      <section className="py-20 md:py-28 bg-bone">
+      <section className="py-24 md:py-36 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <FleetGrid locale={locale} capacityLabel={t('capacity')} lengthLabel={t('length')} />
         </div>
@@ -27,6 +27,7 @@ export default function FlotaPage({ params: { locale } }: { params: { locale: st
         title={th('title')}
         description={th('description')}
         button={th('button')}
+        image="/images/life-5.jpg"
       />
     </>
   );

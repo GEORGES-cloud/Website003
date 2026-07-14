@@ -36,25 +36,27 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    'w-full bg-transparent border-b border-line py-4 font-sans text-base text-ink placeholder-muted/70 focus:outline-none focus:border-sea transition-colors';
+    'w-full bg-transparent border-b border-line py-3 font-sans text-base text-ink focus:outline-none focus:border-sea transition-colors';
+  const labelClass =
+    'block font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted mb-1';
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8" noValidate>
       <div>
-        <label htmlFor="name" className="sr-only">{t('name')}</label>
-        <input id="name" name="name" type="text" required autoComplete="name" placeholder={t('name')} className={inputClass} />
+        <label htmlFor="name" className={labelClass}>{t('name')}</label>
+        <input id="name" name="name" type="text" required autoComplete="name" className={inputClass} />
       </div>
       <div>
-        <label htmlFor="email" className="sr-only">{t('email')}</label>
-        <input id="email" name="email" type="email" required autoComplete="email" placeholder={t('email')} className={inputClass} />
+        <label htmlFor="email" className={labelClass}>{t('email')}</label>
+        <input id="email" name="email" type="email" required autoComplete="email" className={inputClass} />
       </div>
       <div>
-        <label htmlFor="phone" className="sr-only">{t('phone')}</label>
-        <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder={t('phone')} className={inputClass} />
+        <label htmlFor="phone" className={labelClass}>{t('phone')}</label>
+        <input id="phone" name="phone" type="tel" autoComplete="tel" className={inputClass} />
       </div>
       <div>
-        <label htmlFor="message" className="sr-only">{t('message')}</label>
-        <textarea id="message" name="message" required rows={5} placeholder={t('message')} className={`${inputClass} resize-none`} />
+        <label htmlFor="message" className={labelClass}>{t('message')}</label>
+        <textarea id="message" name="message" required rows={5} className={`${inputClass} resize-none`} />
       </div>
 
       <p aria-live="polite" className="min-h-[1.25rem]">

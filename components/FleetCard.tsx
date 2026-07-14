@@ -13,7 +13,7 @@ export default function FleetCard({ boat, locale, capacityLabel }: FleetCardProp
   return (
     <Link href={`/${locale}/flota/${boat.slug}`} className="group block">
       {/* Image */}
-      <div className="relative overflow-hidden rounded-2xl aspect-[4/3] mb-5 bg-sand">
+      <div className="relative overflow-hidden aspect-[4/3] mb-5 bg-sand">
         <Image
           src={boat.image}
           alt={boat.name}
@@ -22,7 +22,7 @@ export default function FleetCard({ boat, locale, capacityLabel }: FleetCardProp
           className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.04]"
         />
         <div className="absolute top-4 left-4">
-          <span className="font-sans text-[10px] font-semibold tracking-wide2 uppercase text-white bg-ink/35 backdrop-blur-sm px-3 py-1.5">
+          <span className="font-sans text-xs font-semibold tracking-wide2 uppercase text-white bg-ink/45 px-3 py-1.5">
             {boat.lengthM}
           </span>
         </div>

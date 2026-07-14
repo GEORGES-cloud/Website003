@@ -11,7 +11,7 @@ export default function Faq({ locale }: { locale: string }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-20 md:py-28 bg-bone">
+    <section className="py-24 md:py-36 bg-bone">
       <div className="max-w-3xl mx-auto px-6 md:px-10">
         <div className="mb-12 md:mb-14">
           <ScrollReveal>

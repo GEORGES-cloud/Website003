@@ -149,14 +149,15 @@ export default function JoinFunnel({ locale }: { locale: string }) {
         </div>
       )}
 
-      {/* Content */}
-      <div className="flex-1 overflow-y-auto flex items-center justify-center px-6 py-12">
+      {/* Content — block layout + my-auto so tall steps scroll from the top
+          instead of clipping (centered-flex-in-overflow bug on small phones) */}
+      <div className="flex-1 overflow-y-auto flex flex-col px-6 py-12">
         <motion.div
           key={step}
           initial={panelInit}
           animate={panelShown}
           transition={panelT}
-          className="w-full max-w-xl mx-auto text-center"
+          className="w-full max-w-xl mx-auto my-auto text-center"
         >
           {/* INTRO */}
           {step === 0 && (
@@ -224,7 +225,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                   <button
                     key={i}
                     onClick={() => choose(i)}
-                    className={`group flex items-center justify-between gap-4 w-full rounded-2xl border px-6 py-5 transition-colors duration-200 ${
+                    className={`group flex items-center justify-between gap-4 w-full border px-6 py-5 transition-colors duration-200 ${
                       answers[qNum - 1] === i ? 'border-sea bg-sand' : 'border-line hover:border-sea hover:bg-sand'
                     }`}
                   >
@@ -250,7 +251,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
           {step === 7 && (
             <>
               <p className="eyebrow mb-4">{t('result.eyebrow')}</p>
-              <h2 className="font-sans font-medium text-ink mb-3" style={{ fontSize: 'clamp(1.9rem, 5vw, 2.9rem)' }}>
+              <h2 className="display text-ink mb-3" style={{ fontSize: 'clamp(1.9rem, 5vw, 2.9rem)' }}>
                 {t('result.title', { name: firstName })}
               </h2>
               <p className="font-sans text-lg text-muted mb-8">{membership.tagline}</p>
@@ -265,7 +266,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
               </ul>
 
               {/* Appointment picker */}
-              <div className="border border-line rounded-3xl px-6 py-7 mb-8 bg-sand/50">
+              <div className="border border-line px-6 py-7 mb-8 bg-sand/50">
                 <p className="font-sans text-base font-medium text-ink mb-1.5">{t('cita.title')}</p>
                 <p className="font-sans text-sm text-muted mb-5">{t('cita.subtitle')}</p>
                 <div className="flex flex-wrap justify-center gap-2.5 mb-3">

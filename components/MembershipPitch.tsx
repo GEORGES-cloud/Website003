@@ -14,7 +14,7 @@ interface MembershipPitchProps {
 
 export default function MembershipPitch({ eyebrow, title, description, cta, locale }: MembershipPitchProps) {
   return (
-    <section className="py-24 md:py-32 bg-sand">
+    <section className="py-24 md:py-36 bg-sand">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
@@ -31,7 +31,7 @@ export default function MembershipPitch({ eyebrow, title, description, cta, loca
               sizes="(max-width: 1024px) 100vw, 50vw"
               strength={40}
               kenBurns
-              className="aspect-[4/5] lg:aspect-[5/6] rounded-3xl"
+              className="aspect-[4/5] lg:aspect-[5/6]"
             />
           </motion.div>
 
@@ -51,7 +51,6 @@ export default function MembershipPitch({ eyebrow, title, description, cta, loca
             <ScrollReveal delay={0.3}>
               <Link href={`/${locale}/membresia`} className="link-underline">
                 {cta}
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </ScrollReveal>
           </div>

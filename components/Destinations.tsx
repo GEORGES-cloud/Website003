@@ -15,7 +15,7 @@ export default function Destinations({ locale }: { locale: string }) {
   const routes = getRoutes(locale);
 
   return (
-    <section className="py-20 md:py-28 bg-bone">
+    <section className="py-24 md:py-36 bg-bone">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <div className="max-w-2xl mb-14 md:mb-16">
           <ScrollReveal>
@@ -35,8 +35,8 @@ export default function Destinations({ locale }: { locale: string }) {
           {routes.map((r, i) => (
             <ScrollReveal key={r.name} delay={(i % 4) * 0.06}>
               <div className="group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 items-baseline py-7 md:py-8 border-b border-line">
-                <div className="md:col-span-1 font-sans text-sm text-sea font-semibold">0{i + 1}</div>
-                <h3 className="md:col-span-4 font-sans text-2xl md:text-3xl font-light text-ink tracking-tight group-hover:text-sea transition-colors">
+                <div className="md:col-span-1 display-num text-2xl md:text-3xl text-ink/20">0{i + 1}</div>
+                <h3 className="md:col-span-4 display text-2xl md:text-3xl text-ink group-hover:text-sea transition-colors">
                   {r.name}
                 </h3>
                 <p className="md:col-span-4 font-sans text-base text-muted leading-relaxed">{r.desc}</p>

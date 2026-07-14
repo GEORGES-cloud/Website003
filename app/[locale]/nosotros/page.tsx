@@ -20,7 +20,7 @@ export default function NosotrosPage() {
       />
 
       {/* Story */}
-      <section className="py-20 md:py-28 bg-bone">
+      <section className="py-24 md:py-36 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal direction="right">
@@ -30,14 +30,14 @@ export default function NosotrosPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}
                 kenBurns
-                className="aspect-[4/5] rounded-3xl"
+                className="aspect-[4/5]"
               />
             </ScrollReveal>
 
             <ScrollReveal>
               <div>
                 <p className="eyebrow mb-7">{t('story.title')}</p>
-                <p className="font-sans text-2xl md:text-3xl font-light text-ink leading-snug tracking-tight mb-7">
+                <p className="display text-2xl md:text-3xl text-ink leading-snug mb-7">
                   {t('story.p1')}
                 </p>
                 <p className="font-sans text-lg text-muted leading-relaxed mb-5">{t('story.p2')}</p>
@@ -49,7 +49,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 md:py-28 bg-sand">
+      <section className="py-24 md:py-36 bg-sand">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <ScrollReveal>
             <h2 className="display text-ink mb-16" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
@@ -60,7 +60,7 @@ export default function NosotrosPage() {
             {values.map((key, i) => (
               <ScrollReveal key={key} delay={i * 0.1}>
                 <div className="border-t border-line pt-8">
-                  <h3 className="font-sans text-2xl font-light text-ink mb-4 tracking-tight">
+                  <h3 className="display text-2xl text-ink mb-4">
                     {t(`values.${key}.title`)}
                   </h3>
                   <p className="font-sans text-base text-muted leading-relaxed">{t(`values.${key}.desc`)}</p>
@@ -76,6 +76,7 @@ export default function NosotrosPage() {
         title={tc('title')}
         description={tc('description')}
         button={tc('button')}
+        image="/images/life-6.jpg"
       />
     </>
   );

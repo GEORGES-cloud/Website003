@@ -10,7 +10,7 @@ export default function ContactoPage({ params: { locale } }: { params: { locale:
     <>
       <PageHero eyebrow={t('hero.eyebrow')} title={t('hero.title')} subtitle={t('hero.subtitle')} />
 
-      <section className="pb-24 md:pb-32 bg-bone">
+      <section className="pb-24 md:pb-36 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
             <ScrollReveal>
@@ -25,7 +25,7 @@ export default function ContactoPage({ params: { locale } }: { params: { locale:
                     <p className="font-sans text-xs tracking-wide2 uppercase text-muted mb-2">Email</p>
                     <a
                       href={`mailto:${t('info.email')}`}
-                      className="font-sans text-2xl font-light text-ink hover:text-sea transition-colors tracking-tight"
+                      className="display text-2xl text-ink hover:text-sea transition-colors"
                     >
                       {t('info.email')}
                     </a>

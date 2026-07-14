@@ -58,7 +58,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
       <Stats locale={locale} />
 
-      <AppShowcase locale={locale} />
+      <AppShowcase />
 
       <Destinations locale={locale} />
 

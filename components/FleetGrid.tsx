@@ -39,7 +39,7 @@ export default function FleetGrid({ locale, capacityLabel, lengthLabel }: FleetG
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2.5 mb-12">
+      <div className="flex flex-wrap gap-x-8 gap-y-3 mb-12">
         {filters.map((f) => {
           const active = cat === f.id;
           return (
@@ -47,10 +47,8 @@ export default function FleetGrid({ locale, capacityLabel, lengthLabel }: FleetG
               key={f.id}
               onClick={() => setCat(f.id)}
               aria-pressed={active}
-              className={`font-sans text-[11px] font-semibold uppercase tracking-wide2 px-5 py-2.5 rounded-full border transition-colors ${
-                active
-                  ? 'bg-ink text-white border-ink'
-                  : 'bg-transparent text-muted border-line hover:border-ink hover:text-ink'
+              className={`font-sans text-[11px] font-semibold uppercase tracking-wide2 pb-2 border-b transition-colors ${
+                active ? 'text-ink border-ink' : 'text-muted border-transparent hover:text-ink'
               }`}
             >
               {f.label}

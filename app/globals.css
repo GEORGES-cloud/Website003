@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --header-h: 88px;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -29,6 +33,17 @@
   /* Big editorial heading — Manrope extralight, airy */
   .display {
     @apply font-sans font-extralight tracking-[-0.01em] leading-[1.04];
+  }
+
+  /* Brand punctuation — Montserrat black, for big numerals only (stats, indices) */
+  .display-num {
+    @apply font-display font-black tracking-tight leading-none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* .eyebrow on dark backgrounds — same metrics, inverted color */
+  .eyebrow-invert {
+    @apply font-sans text-[10px] font-semibold uppercase tracking-[0.34em] text-white/85;
   }
 
   .btn-primary {
