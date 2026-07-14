@@ -15,6 +15,8 @@ export interface Boat {
     engines?: string;
   };
   image: string;
+  /** Optional per-boat photography for the detail-page gallery. Falls back to [image]. */
+  gallery?: string[];
 }
 
 export interface Testimonial {
@@ -24,11 +26,41 @@ export interface Testimonial {
   role: string;
 }
 
-// TODO(content): placeholder — the real single boat is still to be decided.
-// Change this one line to swap the displayed boat (the other boats stay hidden but in the data).
-export const ACTIVE_BOAT_SLUGS = ['wajer-55'];
+// The club's single active boat. Change this one line to swap the displayed boat
+// (the other boats stay hidden but in the data).
+export const ACTIVE_BOAT_SLUGS = ['sea-ray-spx-210'];
 
 export const fleet: Boat[] = [
+  {
+    slug: 'sea-ray-spx-210',
+    name: 'Sea Ray SPX 210',
+    lengthM: '6.6 m',
+    capacity: 10,
+    year: 2025,
+    tagline: 'El day boat que lo hace todo.',
+    taglineEn: 'The day boat that does it all.',
+    description:
+      'La Sea Ray SPX 210 es el day boat perfecto para vivir la costa de Marbella a tu ritmo: ágil, luminosa y pensada para el baño en cala, el wakesurf y los atardeceres a bordo. Un deportivo americano de acabados cuidados que convierte cada salida desde Puerto Banús en un plan redondo.',
+    descriptionEn:
+      'The Sea Ray SPX 210 is the perfect day boat for living the Marbella coast at your own pace: agile, bright and made for swims in a quiet cove, wakesurfing and sunsets on board. A sporty American build with refined finishes that turns every outing from Puerto Banús into the perfect plan.',
+    specs: {
+      length: '6.60 m',
+      beam: '2.59 m',
+      maxSpeed: '38 kn',
+      engines: 'MerCruiser 4.5L · 250 CV',
+    },
+    image: '/images/fleet-searay.jpg',
+    gallery: [
+      '/images/searay-1.jpg',
+      '/images/searay-2.jpg',
+      '/images/searay-3.jpg',
+      '/images/searay-4.jpg',
+      '/images/searay-5.jpg',
+      '/images/searay-6.jpg',
+      '/images/searay-7.jpg',
+      '/images/searay-8.jpg',
+    ],
+  },
   {
     slug: 'wajer-55',
     name: 'Wajer 55',

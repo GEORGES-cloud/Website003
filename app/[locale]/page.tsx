@@ -35,6 +35,9 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
     <>
       <HeroVideo />
 
+      {/* Second hero — the real Sea Ray SPX 210 in the Mediterranean (client footage) */}
+      <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" showHeading={false} heightClass="h-[92svh] min-h-[560px]" />
+
       <MembershipPitch
         eyebrow={t('pitch.eyebrow')}
         title={t('pitch.title')}

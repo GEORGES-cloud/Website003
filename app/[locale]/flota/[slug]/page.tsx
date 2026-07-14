@@ -88,9 +88,8 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
           <div className="mt-20">
             <ScrollReveal>
               <p className="eyebrow mb-8">{({ es: 'Galería', en: 'Gallery', sv: 'Galleri', ru: 'Галерея', de: 'Galerie', fr: 'Galerie' } as Record<string, string>)[locale] ?? 'Gallery'}</p>
-              {/* TODO(content): stock placeholders shared by every boat — swap for real per-boat photography when the client provides it */}
               <BoatGallery
-                images={[boat.image, '/images/life-4.jpg', '/images/membership.jpg', '/images/life-3.jpg', '/images/exp-sunset.jpg']}
+                images={boat.gallery ?? [boat.image]}
                 name={boat.name}
               />
             </ScrollReveal>
