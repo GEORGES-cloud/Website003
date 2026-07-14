@@ -19,7 +19,10 @@ export function generateStaticParams() {
 }
 
 export default function BoatDetailPage({ params: { locale, slug } }: Props) {
-  const boat = getBoat(locale, slug);
+  // Runtime guard: only active boats are reachable. `dynamicParams=false` covers
+  // this for static generation, but the boat data for hidden slugs still exists,
+  // so a dynamically-rendered request would otherwise render them — 404 explicitly.
+  const boat = ACTIVE_BOAT_SLUGS.includes(slug) ? getBoat(locale, slug) : null;
   if (!boat) notFound();
 
   const t = useTranslations('boatDetail');
