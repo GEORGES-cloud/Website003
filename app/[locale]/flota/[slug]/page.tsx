@@ -6,6 +6,7 @@ import { getBoat } from '@/lib/localize';
 import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import BoatGallery from '@/components/BoatGallery';
+import VirtualTour360 from '@/components/VirtualTour360';
 
 interface Props {
   params: { locale: string; slug: string };
@@ -94,6 +95,16 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
               />
             </ScrollReveal>
           </div>
+
+          {/* Visita virtual 360° — el barco real escaneado (partner 3d-boats) */}
+          {boat.tour360 && (
+            <div className="mt-20">
+              <ScrollReveal>
+                <p className="eyebrow mb-8">{({ es: 'Visita virtual', en: 'Virtual tour', sv: 'Virtuell rundtur', ru: 'Виртуальный тур', de: 'Virtueller Rundgang', fr: 'Visite virtuelle' } as Record<string, string>)[locale] ?? 'Virtual tour'}</p>
+                <VirtualTour360 url={boat.tour360} title={boat.name} poster={boat.image} locale={locale} />
+              </ScrollReveal>
+            </div>
+          )}
 
           <div className="mt-16">
             <Link

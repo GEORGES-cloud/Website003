@@ -17,6 +17,8 @@ export interface Boat {
   image: string;
   /** Optional per-boat photography for the detail-page gallery. Falls back to [image]. */
   gallery?: string[];
+  /** Optional embeddable 360° tour viewer URL (partner-hosted, click-to-load). */
+  tour360?: string;
 }
 
 export interface Testimonial {
@@ -60,6 +62,8 @@ export const fleet: Boat[] = [
       '/images/searay-7.jpg',
       '/images/searay-8.jpg',
     ],
+    // Escaneo real del barco (partner 3d-boats; el cliente confirma permiso de uso).
+    tour360: 'https://3dbv.3d-boats.com/?code=2025-sea-ray-210-spx-io',
   },
   {
     slug: 'wajer-55',
