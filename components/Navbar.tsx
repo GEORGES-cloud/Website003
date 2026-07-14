@@ -165,20 +165,6 @@ export default function Navbar({ locale }: NavbarProps) {
                   </Link>
                 </motion.div>
               ))}
-              {/* Let's Meet — 6th item, opens the funnel instead of navigating */}
-              <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.06 + 0.1, duration: 0.4 }}
-              >
-                <button
-                  type="button"
-                  onClick={openLetsMeet}
-                  className="font-sans text-2xl font-extralight text-sea hover:text-ink transition-colors block py-2.5 leading-snug tracking-tight text-left"
-                >
-                  {t('letsMeet')}
-                </button>
-              </motion.div>
             </nav>
 
             <div className="px-8 pb-10 pt-6 border-t border-line space-y-5">
