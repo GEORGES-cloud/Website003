@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl';
 import FleetGrid from '@/components/FleetGrid';
 import FleetShowcase3D from '@/components/FleetShowcase3D';
-import PageHero from '@/components/PageHero';
 import CTAFinal from '@/components/CTAFinal';
 
 export default function FlotaPage({ params: { locale } }: { params: { locale: string } }) {
@@ -10,14 +9,10 @@ export default function FlotaPage({ params: { locale } }: { params: { locale: st
 
   return (
     <>
-      <PageHero
-        eyebrow={t('hero.eyebrow')}
-        title={t('hero.title')}
-        subtitle={t('hero.subtitle')}
-        image="/images/fleet-frauscher.jpg"
-      />
+      {/* El hero de la página es ahora el visor 3D. Mantenemos el h1 para SEO/a11y. */}
+      <h1 className="sr-only">{t('hero.title')}</h1>
 
-      {/* Prototipo: showcase con scroll-scrubbing de vídeo (efecto "3D"). */}
+      {/* Hero 3D a pantalla completa: la cámara orbita el barco al hacer scroll. */}
       <FleetShowcase3D locale={locale} />
 
       <section className="py-24 md:py-36 bg-bone">
