@@ -41,8 +41,8 @@
       "period": "",
       "features": [
         "Obegränsade bokningar från appen",
-        "Minibar i hotellstil ombord på varje båt",
-        "Bränslekuponger, som du fyller på i appen",
+        "Proviant ombord ingår på varje båt",
+        "Laddningsbart bränslesaldo i appen",
         "Försäkring, underhåll och förtöjning ingår",
         "Förarintyg krävs (vi hjälper dig att skaffa ett om du inte har det)",
         "Gäster ombord utan extra kostnad"
@@ -64,7 +64,7 @@
     },
     {
       "q": "Vad ingår i avgiften?",
-      "a": "Obegränsade bokningar, en minibar ombord, försäkring, underhåll, städning och förtöjning. Bränslet hanteras med kuponger som du fyller på i appen."
+      "a": "Obegränsade bokningar, proviant ombord, försäkring, underhåll, städning och förtöjning. Bränslet hanteras med ett laddningsbart saldo i appen."
     },
     {
       "q": "Varifrån avgår båtarna?",

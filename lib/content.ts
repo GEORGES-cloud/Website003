@@ -27,16 +27,16 @@ export const tiers: Tier[] = [
     taglineEn: 'All the sea of Marbella, one single membership.',
     features: [
       'Reservas ilimitadas desde la app',
-      'Minibar incluido en cada barco, al estilo hotel',
-      'Cupones de combustible recargables desde la app',
+      'Provisiones de a bordo incluidas en cada barco',
+      'Saldo de combustible recargable en la app',
       'Seguro, mantenimiento y amarre incluidos',
       'Licencia de navegación obligatoria (si no la tienes, te ayudamos a conseguirla)',
       'Invitados a bordo sin coste adicional',
     ],
     featuresEn: [
       'Unlimited bookings from the app',
-      'Hotel-style minibar on board every boat',
-      'Fuel coupons, rechargeable in the app',
+      'On-board provisions included on every boat',
+      'Rechargeable fuel balance in the app',
       'Insurance, maintenance and mooring included',
       'Boating licence required (we help you get one if you don’t have it)',
       'Guests on board at no extra cost',
@@ -74,8 +74,8 @@ export const faqs: Faq[] = [
   {
     q: '¿Qué incluye la cuota?',
     qEn: 'What does the membership fee include?',
-    a: 'Reservas ilimitadas, minibar a bordo, seguro, mantenimiento, limpieza y amarre. El combustible se gestiona con cupones recargables desde la app.',
-    aEn: 'Unlimited bookings, an on-board minibar, insurance, maintenance, cleaning and mooring. Fuel is handled with rechargeable coupons in the app.',
+    a: 'Reservas ilimitadas, provisiones de a bordo, seguro, mantenimiento, limpieza y amarre. El combustible se gestiona con un saldo recargable desde la app.',
+    aEn: 'Unlimited bookings, on-board provisions, insurance, maintenance, cleaning and mooring. Fuel runs on a rechargeable balance in the app.',
   },
   {
     q: '¿Desde dónde salen los barcos?',

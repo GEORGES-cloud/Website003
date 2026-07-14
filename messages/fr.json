@@ -109,7 +109,7 @@
     },
     "intro": {
       "title": "Que comprend l’adhésion ?",
-      "body": "Réservations illimitées, minibar à bord façon hôtel, coupons de carburant rechargeables depuis l’application, assurance et entretien. Le permis bateau est obligatoire."
+      "body": "Réservations illimitées, provisions de bord, solde de carburant rechargeable dans l’application, assurance et entretien. Le permis bateau est obligatoire."
     },
     "cta": {
       "eyebrow": "Le prix, en personne",
@@ -173,8 +173,8 @@
       "titleAccent": "poche.",
       "description": "Réservez sans limites, rechargez le carburant et gérez votre adhésion depuis une seule application. Aucun appel, aucune attente.",
       "f1": "Réservations illimitées depuis l’application",
-      "f2": "Rechargez vos coupons de carburant dans l’application",
-      "f3": "Minibar inclus sur chaque bateau"
+      "f2": "Rechargez votre solde de carburant dans l’application",
+      "f3": "Provisions de bord sur chaque bateau"
     },
     "gallery": {
       "title": "Une vie en mer"

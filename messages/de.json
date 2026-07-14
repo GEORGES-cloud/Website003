@@ -109,7 +109,7 @@
     },
     "intro": {
       "title": "Was ist in der Mitgliedschaft enthalten?",
-      "body": "Unbegrenzte Reservierungen, eine Minibar an Bord im Hotelstil, über die App aufladbare Treibstoff-Gutscheine, Versicherung und Wartung. Ein Bootsführerschein ist Pflicht."
+      "body": "Unbegrenzte Reservierungen, Proviant an Bord, ein aufladbares Treibstoffguthaben in der App, Versicherung und Wartung. Ein Bootsführerschein ist Pflicht."
     },
     "cta": {
       "eyebrow": "Der Preis, ganz persönlich",
@@ -173,8 +173,8 @@
       "titleAccent": "Tasche.",
       "description": "Reserviere ohne Limits, lade Treibstoff auf und verwalte deine Mitgliedschaft über eine einzige App. Keine Anrufe, kein Warten.",
       "f1": "Unbegrenzte Reservierungen über die App",
-      "f2": "Lade deine Treibstoff-Gutscheine in der App auf",
-      "f3": "Minibar an Bord jedes Bootes inklusive"
+      "f2": "Lade dein Treibstoffguthaben in der App auf",
+      "f3": "Proviant an Bord jedes Bootes inklusive"
     },
     "gallery": {
       "title": "Ein Leben auf dem Meer"

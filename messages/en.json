@@ -87,7 +87,7 @@
   },
   "prices": {
     "hero": { "eyebrow": "Prices", "title": "Everything included. One single fee.", "subtitle": "No hidden costs, no surprises. Here’s what your membership includes." },
-    "intro": { "title": "What’s included in the membership?", "body": "Unlimited bookings, a hotel-style minibar on board, fuel coupons rechargeable in the app, insurance and maintenance. A boating licence is required." },
+    "intro": { "title": "What’s included in the membership?", "body": "Unlimited bookings, on-board provisions, a rechargeable fuel balance in the app, insurance and maintenance. A boating licence is required." },
     "cta": { "eyebrow": "The price, in person", "title": "Let’s meet and we’ll share the price", "description": "We’d rather give you the numbers in person, with no obligation. Book a visit and we’ll walk you through it all.", "button": "Let’s Meet" }
   },
   "homePort": {
@@ -141,8 +141,8 @@
       "titleAccent": "pocket.",
       "description": "Book without limits, recharge fuel and manage your membership from a single app. No calls, no waiting.",
       "f1": "Unlimited bookings from the app",
-      "f2": "Recharge your fuel coupons in the app",
-      "f3": "Minibar included on every boat"
+      "f2": "Top up your fuel balance in the app",
+      "f3": "On-board provisions on every boat"
     },
     "gallery": {
       "title": "A life at sea"

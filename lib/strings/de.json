@@ -41,8 +41,8 @@
       "period": "",
       "features": [
         "Unbegrenzte Reservierungen über die App",
-        "Minibar an Bord jedes Bootes, im Hotelstil",
-        "Treibstoff-Gutscheine, aufladbar über die App",
+        "Proviant an Bord jedes Bootes inklusive",
+        "Aufladbares Treibstoffguthaben in der App",
         "Versicherung, Wartung und Liegeplatz inklusive",
         "Bootsführerschein erforderlich (falls du keinen hast, helfen wir dir, einen zu bekommen)",
         "Gäste an Bord ohne Aufpreis"
@@ -64,7 +64,7 @@
     },
     {
       "q": "Was ist im Beitrag enthalten?",
-      "a": "Unbegrenzte Reservierungen, eine Minibar an Bord, Versicherung, Wartung, Reinigung und Liegeplatz. Der Treibstoff wird über aufladbare Gutscheine in der App verwaltet."
+      "a": "Unbegrenzte Reservierungen, Proviant an Bord, Versicherung, Wartung, Reinigung und Liegeplatz. Der Treibstoff läuft über ein aufladbares Guthaben in der App."
     },
     {
       "q": "Von wo aus laufen die Yachten aus?",

@@ -41,8 +41,8 @@
       "period": "",
       "features": [
         "Réservations illimitées depuis l’application",
-        "Minibar inclus sur chaque bateau, façon hôtel",
-        "Coupons de carburant rechargeables depuis l’application",
+        "Provisions de bord incluses sur chaque bateau",
+        "Solde de carburant rechargeable dans l’application",
         "Assurance, entretien et amarrage inclus",
         "Permis bateau obligatoire (si vous ne l’avez pas, nous vous aidons à l’obtenir)",
         "Invités à bord sans frais supplémentaires"
@@ -64,7 +64,7 @@
     },
     {
       "q": "Que comprend la cotisation ?",
-      "a": "Réservations illimitées, minibar à bord, assurance, entretien, nettoyage et amarrage. Le carburant se gère avec des coupons rechargeables depuis l’application."
+      "a": "Réservations illimitées, provisions de bord, assurance, entretien, nettoyage et amarrage. Le carburant se gère avec un solde rechargeable dans l’application."
     },
     {
       "q": "D'où partent les bateaux ?",

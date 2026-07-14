@@ -109,7 +109,7 @@
     },
     "intro": {
       "title": "Vad ingår i medlemskapet?",
-      "body": "Obegränsade bokningar, en minibar ombord i hotellstil, bränslekuponger som du fyller på i appen, försäkring och underhåll. Förarintyg är obligatoriskt."
+      "body": "Obegränsade bokningar, proviant ombord, ett laddningsbart bränslesaldo i appen, försäkring och underhåll. Förarintyg är obligatoriskt."
     },
     "cta": {
       "eyebrow": "Priset, personligen",
@@ -173,8 +173,8 @@
       "titleAccent": "ficka.",
       "description": "Boka utan gränser, fyll på bränsle och hantera ditt medlemskap från en enda app. Inga samtal, ingen väntan.",
       "f1": "Obegränsade bokningar från appen",
-      "f2": "Fyll på dina bränslekuponger i appen",
-      "f3": "Minibar ingår på varje båt"
+      "f2": "Fyll på ditt bränslesaldo i appen",
+      "f3": "Proviant ombord på varje båt"
     },
     "gallery": {
       "title": "Ett liv till havs"

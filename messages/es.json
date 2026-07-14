@@ -87,7 +87,7 @@
   },
   "prices": {
     "hero": { "eyebrow": "Precios", "title": "Todo incluido. Una sola cuota.", "subtitle": "Sin costes ocultos ni sorpresas. Esto es lo que incluye tu membresía." },
-    "intro": { "title": "¿Qué incluye la membresía?", "body": "Reservas ilimitadas, minibar a bordo al estilo hotel, cupones de combustible recargables desde la app, seguro y mantenimiento. La licencia de navegación es obligatoria." },
+    "intro": { "title": "¿Qué incluye la membresía?", "body": "Reservas ilimitadas, provisiones de a bordo, saldo de combustible recargable desde la app, seguro y mantenimiento. La licencia de navegación es obligatoria." },
     "cta": { "eyebrow": "El precio, en persona", "title": "Conócenos y te contamos el precio", "description": "Preferimos darte los números en persona, sin compromiso. Reserva una visita y te lo explicamos todo.", "button": "Conócenos" }
   },
   "homePort": {
@@ -141,8 +141,8 @@
       "titleAccent": "bolsillo.",
       "description": "Reserva sin límites, recarga combustible y gestiona tu membresía desde una sola app. Sin llamadas, sin esperas.",
       "f1": "Reservas ilimitadas desde la app",
-      "f2": "Recarga tus cupones de combustible en la app",
-      "f3": "Minibar incluido en cada barco"
+      "f2": "Recarga tu saldo de combustible en la app",
+      "f3": "Provisiones de a bordo en cada barco"
     },
     "gallery": {
       "title": "Una vida en el mar"
