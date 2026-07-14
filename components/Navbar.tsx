@@ -159,7 +159,7 @@ export default function Navbar({ locale }: NavbarProps) {
                 >
                   <Link
                     href={href}
-                    className="font-sans text-4xl sm:text-5xl font-extralight text-ink hover:text-sea transition-colors block py-3 leading-tight tracking-tight"
+                    className="font-sans text-2xl font-extralight text-ink hover:text-sea transition-colors block py-2.5 leading-snug tracking-tight"
                   >
                     {label}
                   </Link>
@@ -174,7 +174,7 @@ export default function Navbar({ locale }: NavbarProps) {
                 <button
                   type="button"
                   onClick={openLetsMeet}
-                  className="font-sans text-4xl sm:text-5xl font-extralight text-sea hover:text-ink transition-colors block py-3 leading-tight tracking-tight text-left"
+                  className="font-sans text-2xl font-extralight text-sea hover:text-ink transition-colors block py-2.5 leading-snug tracking-tight text-left"
                 >
                   {t('letsMeet')}
                 </button>
