@@ -32,8 +32,9 @@ export default function ComoFuncionaPage({ params: { locale } }: { params: { loc
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <ScrollReveal direction="right">
+              {/* Helm of the club's Sea Ray — you steer, hence the licence */}
               <ParallaxImage
-                src="/images/life-3.jpg"
+                src="/images/searay-5.jpg"
                 alt=""
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}

@@ -83,17 +83,17 @@
     "step1": {
       "number": "01",
       "title": "Bli medlem",
-      "desc": "Välj ditt medlemskap och bli medlem i klubben på några minuter."
+      "desc": "Träffa oss i Puerto Banús: vi visar dig klubben och båten, och du väljer ditt medlemskap."
     },
     "step2": {
       "number": "02",
       "title": "Förarintyg",
-      "desc": "Det är obligatoriskt. Om du inte har ett hjälper vi dig att skaffa det."
+      "desc": "Det är obligatoriskt för att köra båten. Har du inget än? Vi hjälper dig att skaffa det."
     },
     "step3": {
       "number": "03",
       "title": "Ladda ner appen och boka",
-      "desc": "Ladda ner klubbappen och boka utan gränser, när du vill."
+      "desc": "Ladda ner klubbappen och boka din nästa tur när du vill. Bekräftelse direkt."
     },
     "license": {
       "eyebrow": "Ett absolut krav",

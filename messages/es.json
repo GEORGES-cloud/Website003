@@ -76,9 +76,9 @@
   },
   "howItWorks": {
     "hero": { "eyebrow": "El proceso", "title": "Cómo funciona", "subtitle": "De socio a bordo en tres pasos. Simple, como debe ser." },
-    "step1": { "number": "01", "title": "Hazte socio", "desc": "Elige tu membresía y únete al club en pocos minutos." },
-    "step2": { "number": "02", "title": "Licencia de navegación", "desc": "Es obligatoria. Si no la tienes, te ayudamos a conseguirla." },
-    "step3": { "number": "03", "title": "Descarga la app y reserva", "desc": "Descarga la app del club y reserva sin límites, cuando quieras." },
+    "step1": { "number": "01", "title": "Hazte socio", "desc": "Conócenos en Puerto Banús: te enseñamos el club y el barco, y eliges tu membresía." },
+    "step2": { "number": "02", "title": "Licencia de navegación", "desc": "Es obligatoria para navegar. ¿Aún no la tienes? Te ayudamos a conseguirla." },
+    "step3": { "number": "03", "title": "Descarga la app y reserva", "desc": "Descarga la app del club y reserva tu próxima salida cuando quieras. Confirmación al instante." },
     "license": {
       "eyebrow": "Requisito imprescindible",
       "title": "La licencia de navegación es obligatoria",

@@ -83,17 +83,17 @@
     "step1": {
       "number": "01",
       "title": "Devenez membre",
-      "desc": "Choisissez votre adhésion et rejoignez le club en quelques minutes."
+      "desc": "Rencontrez-nous à Puerto Banús : nous vous présentons le club et le bateau, et vous choisissez votre adhésion."
     },
     "step2": {
       "number": "02",
       "title": "Permis bateau",
-      "desc": "Il est obligatoire. Si vous ne l’avez pas, nous vous aidons à l’obtenir."
+      "desc": "Il est obligatoire pour prendre la barre. Vous ne l’avez pas encore ? Nous vous aidons à l’obtenir."
     },
     "step3": {
       "number": "03",
       "title": "Téléchargez l’application et réservez",
-      "desc": "Téléchargez l’application du club et réservez sans limites, quand vous le souhaitez."
+      "desc": "Téléchargez l’application du club et réservez votre prochaine sortie quand vous le souhaitez. Confirmation immédiate."
     },
     "license": {
       "eyebrow": "Une exigence incontournable",

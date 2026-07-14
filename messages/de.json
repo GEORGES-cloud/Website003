@@ -83,17 +83,17 @@
     "step1": {
       "number": "01",
       "title": "Werde Mitglied",
-      "desc": "Wähle deine Mitgliedschaft und tritt dem Club in wenigen Minuten bei."
+      "desc": "Lerne uns in Puerto Banús kennen: Wir zeigen dir den Club und das Boot, und du wählst deine Mitgliedschaft."
     },
     "step2": {
       "number": "02",
       "title": "Bootsführerschein",
-      "desc": "Er ist Pflicht. Falls du keinen hast, helfen wir dir, ihn zu bekommen."
+      "desc": "Er ist Pflicht, um das Boot zu fahren. Noch keinen? Wir helfen dir, ihn zu bekommen."
     },
     "step3": {
       "number": "03",
       "title": "Lade die App und reserviere",
-      "desc": "Lade die Club-App herunter und reserviere ohne Limits, wann immer du möchtest."
+      "desc": "Lade die Club-App herunter und reserviere deinen nächsten Törn, wann immer du möchtest. Sofortige Bestätigung."
     },
     "license": {
       "eyebrow": "Unverzichtbare Voraussetzung",

@@ -76,9 +76,9 @@
   },
   "howItWorks": {
     "hero": { "eyebrow": "The process", "title": "How it works", "subtitle": "From member to on board in three steps. Simple, as it should be." },
-    "step1": { "number": "01", "title": "Become a member", "desc": "Choose your membership and join the club in minutes." },
-    "step2": { "number": "02", "title": "Boating licence", "desc": "It’s mandatory. If you don’t have one, we help you get it." },
-    "step3": { "number": "03", "title": "Download the app and book", "desc": "Download the club app and book without limits, whenever you like." },
+    "step1": { "number": "01", "title": "Become a member", "desc": "Meet us in Puerto Banús: we show you the club and the boat, and you choose your membership." },
+    "step2": { "number": "02", "title": "Boating licence", "desc": "It’s required to take the boat out. Don’t have one yet? We help you get it." },
+    "step3": { "number": "03", "title": "Download the app and book", "desc": "Download the club app and book your next outing whenever you like. Instant confirmation." },
     "license": {
       "eyebrow": "A non-negotiable requirement",
       "title": "A boating licence is mandatory",
