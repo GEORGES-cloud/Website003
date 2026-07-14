@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import HeroVideo from '@/components/HeroVideo';
+import ClubManifesto from '@/components/ClubManifesto';
 import Stats from '@/components/Stats';
 import AppShowcase from '@/components/AppShowcase';
 import LifestyleGallery from '@/components/LifestyleGallery';
@@ -16,8 +17,8 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
     <>
       <HeroVideo />
 
-      {/* Second hero — the real Sea Ray SPX 210 in the Mediterranean (client footage) */}
-      <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" showHeading={false} heightClass="h-[92svh] min-h-[560px]" />
+      {/* Club manifesto — real SPX footage + brand narrative (was a 2nd full-screen video) */}
+      <ClubManifesto locale={locale} />
 
       <Stats locale={locale} />
 
