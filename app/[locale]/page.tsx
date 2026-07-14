@@ -1,35 +1,16 @@
 import { useTranslations } from 'next-intl';
 import HeroVideo from '@/components/HeroVideo';
-import MembershipPitch from '@/components/MembershipPitch';
-import FleetPreviewSection from '@/components/FleetPreviewSection';
-import HowItWorks from '@/components/HowItWorks';
 import Stats from '@/components/Stats';
 import AppShowcase from '@/components/AppShowcase';
-import Destinations from '@/components/Destinations';
 import LifestyleGallery from '@/components/LifestyleGallery';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import CTAFinal from '@/components/CTAFinal';
 
+// The home keeps only landing-specific content. Fleet, How-it-works, Membership/Prices
+// and Destinations live solely in their menu pages (/flota, /como-funciona, /precios,
+// /puerto-base) — no duplicated information on the home.
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('home');
-
-  const steps = [
-    {
-      number: t('howItWorks.step1.number'),
-      title: t('howItWorks.step1.title'),
-      desc: t('howItWorks.step1.desc'),
-    },
-    {
-      number: t('howItWorks.step2.number'),
-      title: t('howItWorks.step2.title'),
-      desc: t('howItWorks.step2.desc'),
-    },
-    {
-      number: t('howItWorks.step3.number'),
-      title: t('howItWorks.step3.title'),
-      desc: t('howItWorks.step3.desc'),
-    },
-  ];
 
   return (
     <>
@@ -38,32 +19,9 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       {/* Second hero — the real Sea Ray SPX 210 in the Mediterranean (client footage) */}
       <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" showHeading={false} heightClass="h-[92svh] min-h-[560px]" />
 
-      <MembershipPitch
-        eyebrow={t('pitch.eyebrow')}
-        title={t('pitch.title')}
-        description={t('pitch.description')}
-        cta={t('pitch.cta')}
-        locale={locale}
-      />
-
-      <FleetPreviewSection
-        eyebrow={t('fleet.eyebrow')}
-        title={t('fleet.title')}
-        viewAll={t('fleet.viewAll')}
-        locale={locale}
-      />
-
-      <HowItWorks
-        eyebrow={t('howItWorks.eyebrow')}
-        title={t('howItWorks.title')}
-        steps={steps}
-      />
-
       <Stats locale={locale} />
 
       <AppShowcase />
-
-      <Destinations locale={locale} />
 
       <LifestyleGallery title={t('gallery.title')} />
 
