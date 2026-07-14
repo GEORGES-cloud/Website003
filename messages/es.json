@@ -63,12 +63,41 @@
     "description": "Club náutico de membresía en Puerto Banús, Marbella. Accede a una flota premium de yates sin compromisos."
   },
   "nav": {
-    "fleet": "Flota",
+    "howItWorks": "Cómo funciona",
+    "fleet": "Nuestros barcos",
     "membership": "Membresía",
     "experiences": "Experiencias",
+    "prices": "Precios",
+    "homePort": "Puerto base",
     "about": "Nosotros",
+    "letsMeet": "Conócenos",
     "contact": "Contacto",
     "join": "Hazte Socio"
+  },
+  "howItWorks": {
+    "hero": { "eyebrow": "El proceso", "title": "Cómo funciona", "subtitle": "De socio a bordo en tres pasos. Simple, como debe ser." },
+    "step1": { "number": "01", "title": "Hazte socio", "desc": "Elige tu membresía y únete al club en pocos minutos." },
+    "step2": { "number": "02", "title": "Licencia de navegación", "desc": "Es obligatoria. Si no la tienes, te ayudamos a conseguirla." },
+    "step3": { "number": "03", "title": "Descarga la app y reserva", "desc": "Descarga la app del club y reserva sin límites, cuando quieras." },
+    "license": {
+      "eyebrow": "Requisito imprescindible",
+      "title": "La licencia de navegación es obligatoria",
+      "body": "Para navegar con el club necesitas licencia. Si aún no la tienes, te acompañamos para que la obtengas — pero para formar parte de este club es imprescindible."
+    }
+  },
+  "prices": {
+    "hero": { "eyebrow": "Precios", "title": "Todo incluido. Una sola cuota.", "subtitle": "Sin costes ocultos ni sorpresas. Esto es lo que incluye tu membresía." },
+    "intro": { "title": "¿Qué incluye la membresía?", "body": "Reservas ilimitadas, minibar a bordo al estilo hotel, cupones de combustible recargables desde la app, seguro y mantenimiento. La licencia de navegación es obligatoria." },
+    "cta": { "eyebrow": "El precio, en persona", "title": "Conócenos y te contamos el precio", "description": "Preferimos darte los números en persona, sin compromiso. Reserva una visita y te lo explicamos todo.", "button": "Conócenos" }
+  },
+  "homePort": {
+    "hero": { "eyebrow": "Puerto base", "title": "Puerto Banús, tu punto de partida.", "subtitle": "El puerto más emblemático del Mediterráneo, y el corazón del club." },
+    "why": {
+      "eyebrow": "Por qué aquí",
+      "title": "El mejor puerto de la Costa del Sol",
+      "p1": "Puerto Banús es sinónimo de lujo, glamour y navegación. Amarrar aquí es empezar el día con el mar y Marbella a tus pies.",
+      "p2": "Desde nuestro amarre, tienes las mejores calas, puertos y travesías del Mediterráneo a un paso."
+    }
   },
   "home": {
     "hero": {
@@ -80,7 +109,7 @@
       "eyebrow": "Club náutico · Puerto Banús",
       "title": "El mar sin compromisos.",
       "description": "Desde el corazón de Puerto Banús, accede a una flota premium de yates con una membresía exclusiva. Tú eliges cuándo, dónde y con quién navegas. Nosotros nos encargamos del resto.",
-      "cta": "Ver membresías"
+      "cta": "Descubre cómo funciona"
     },
     "fleet": {
       "eyebrow": "Yates pensados para cada momento",
@@ -110,10 +139,10 @@
       "eyebrow": "La app del club",
       "titleLead": "Tu club, en el",
       "titleAccent": "bolsillo.",
-      "description": "Reserva tu yate, consulta la disponibilidad en tiempo real y gestiona tu membresía desde una sola app. Sin llamadas, sin esperas.",
-      "f1": "Reserva en segundos, 24/7",
-      "f2": "Disponibilidad de la flota en tiempo real",
-      "f3": "Sin gastos de mantenimiento ni combustible"
+      "description": "Reserva sin límites, recarga combustible y gestiona tu membresía desde una sola app. Sin llamadas, sin esperas.",
+      "f1": "Reservas ilimitadas desde la app",
+      "f2": "Recarga tus cupones de combustible en la app",
+      "f3": "Minibar incluido en cada barco"
     },
     "gallery": {
       "title": "Una vida en el mar"
@@ -143,7 +172,7 @@
     "length": "Eslora",
     "maxSpeed": "Velocidad máxima",
     "engines": "Motores",
-    "book": "Reservar este barco",
+    "book": "Reserva desde la app",
     "backToFleet": "← Volver a la flota"
   },
   "membership": {

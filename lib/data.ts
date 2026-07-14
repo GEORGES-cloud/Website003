@@ -24,6 +24,10 @@ export interface Testimonial {
   role: string;
 }
 
+// TODO(content): placeholder — the real single boat is still to be decided.
+// Change this one line to swap the displayed boat (the other boats stay hidden but in the data).
+export const ACTIVE_BOAT_SLUGS = ['wajer-55'];
+
 export const fleet: Boat[] = [
   {
     slug: 'wajer-55',

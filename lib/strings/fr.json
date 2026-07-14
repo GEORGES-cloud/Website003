@@ -40,19 +40,19 @@
       "tagline": "Toute la mer de Marbella, une seule adhésion.",
       "period": "",
       "features": [
-        "Accès à toute la flotte",
-        "Réservation depuis l'application 24h/24 et 7j/7",
+        "Réservations illimitées depuis l’application",
+        "Minibar inclus sur chaque bateau, façon hôtel",
+        "Coupons de carburant rechargeables depuis l’application",
         "Assurance, entretien et amarrage inclus",
-        "Skipper professionnel disponible",
-        "Invités à bord sans frais supplémentaires",
-        "Événements exclusifs du club"
+        "Permis bateau obligatoire (si vous ne l’avez pas, nous vous aidons à l’obtenir)",
+        "Invités à bord sans frais supplémentaires"
       ]
     }
   },
   "faqs": [
     {
       "q": "Ai-je besoin d'un permis bateau ?",
-      "a": "Non. Vous pouvez naviguer avec votre propre titre de navigation ou réserver l'un de nos skippers professionnels pour vous emmener où vous le souhaitez."
+      "a": "Oui, c’est indispensable. Pour naviguer avec le club, vous avez besoin d’un permis. Si vous ne l’avez pas encore, nous vous aidons à l’obtenir."
     },
     {
       "q": "Puis-je inviter des personnes à bord ?",
@@ -64,7 +64,7 @@
     },
     {
       "q": "Que comprend la cotisation ?",
-      "a": "L'accès à la flotte, l'assurance, l'entretien, le nettoyage et l'amarrage. Aucun frais caché : seul le carburant de chaque sortie reste à votre charge."
+      "a": "Réservations illimitées, minibar à bord, assurance, entretien, nettoyage et amarrage. Le carburant se gère avec des coupons rechargeables depuis l’application."
     },
     {
       "q": "D'où partent les bateaux ?",
@@ -94,7 +94,7 @@
     }
   ],
   "stats": [
-    { "label": "Marques premium dans la flotte" },
+    { "label": "Tout compris, sans surprises" },
     { "label": "Jours de navigation par an" },
     { "label": "De côte à votre portée" },
     { "label": "Port d'attache : Banús, Marbella" }

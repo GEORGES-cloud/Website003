@@ -63,12 +63,41 @@
     "description": "Yacht membership club based in Puerto Banús, Marbella. Access a premium fleet with no compromises."
   },
   "nav": {
-    "fleet": "Fleet",
+    "howItWorks": "How it works",
+    "fleet": "Our Boats",
     "membership": "Membership",
     "experiences": "Experiences",
-    "about": "About",
+    "prices": "Prices",
+    "homePort": "Home port",
+    "about": "About us",
+    "letsMeet": "Let’s Meet",
     "contact": "Contact",
     "join": "Join Now"
+  },
+  "howItWorks": {
+    "hero": { "eyebrow": "The process", "title": "How it works", "subtitle": "From member to on board in three steps. Simple, as it should be." },
+    "step1": { "number": "01", "title": "Become a member", "desc": "Choose your membership and join the club in minutes." },
+    "step2": { "number": "02", "title": "Boating licence", "desc": "It’s mandatory. If you don’t have one, we help you get it." },
+    "step3": { "number": "03", "title": "Download the app and book", "desc": "Download the club app and book without limits, whenever you like." },
+    "license": {
+      "eyebrow": "A non-negotiable requirement",
+      "title": "A boating licence is mandatory",
+      "body": "To sail with the club you need a licence. If you don’t have one yet, we’ll help you get it — but to be part of this club it’s required."
+    }
+  },
+  "prices": {
+    "hero": { "eyebrow": "Prices", "title": "Everything included. One single fee.", "subtitle": "No hidden costs, no surprises. Here’s what your membership includes." },
+    "intro": { "title": "What’s included in the membership?", "body": "Unlimited bookings, a hotel-style minibar on board, fuel coupons rechargeable in the app, insurance and maintenance. A boating licence is required." },
+    "cta": { "eyebrow": "The price, in person", "title": "Let’s meet and we’ll share the price", "description": "We’d rather give you the numbers in person, with no obligation. Book a visit and we’ll walk you through it all.", "button": "Let’s Meet" }
+  },
+  "homePort": {
+    "hero": { "eyebrow": "Home port", "title": "Puerto Banús, your point of departure.", "subtitle": "The Mediterranean’s most iconic marina — and the heart of the club." },
+    "why": {
+      "eyebrow": "Why here",
+      "title": "The finest marina on the Costa del Sol",
+      "p1": "Puerto Banús is a byword for luxury, glamour and sailing. Berthing here means starting the day with the sea and Marbella at your feet.",
+      "p2": "From our berth, the Mediterranean’s best coves, harbours and day voyages are moments away."
+    }
   },
   "home": {
     "hero": {
@@ -80,7 +109,7 @@
       "eyebrow": "Yacht club · Puerto Banús",
       "title": "The sea without compromise.",
       "description": "From the heart of Puerto Banús, access a premium fleet of yachts with an exclusive membership. You choose when, where, and with whom you sail. We handle the rest.",
-      "cta": "View memberships"
+      "cta": "See how it works"
     },
     "fleet": {
       "eyebrow": "Yachts designed for every moment",
@@ -110,10 +139,10 @@
       "eyebrow": "The club app",
       "titleLead": "Your club, in your",
       "titleAccent": "pocket.",
-      "description": "Book your yacht, check real-time availability, and manage your membership from a single app. No calls, no waiting.",
-      "f1": "Book in seconds, 24/7",
-      "f2": "Real-time fleet availability",
-      "f3": "No maintenance or fuel costs"
+      "description": "Book without limits, recharge fuel and manage your membership from a single app. No calls, no waiting.",
+      "f1": "Unlimited bookings from the app",
+      "f2": "Recharge your fuel coupons in the app",
+      "f3": "Minibar included on every boat"
     },
     "gallery": {
       "title": "A life at sea"
@@ -143,7 +172,7 @@
     "length": "Length",
     "maxSpeed": "Top speed",
     "engines": "Engines",
-    "book": "Book this boat",
+    "book": "Book from the app",
     "backToFleet": "← Back to fleet"
   },
   "membership": {

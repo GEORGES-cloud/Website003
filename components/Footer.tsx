@@ -11,9 +11,10 @@ export default function Footer({ locale }: FooterProps) {
   const tf = useTranslations('footer');
 
   const navLinks = [
+    { href: `/${locale}/como-funciona`, label: t('howItWorks') },
     { href: `/${locale}/flota`, label: t('fleet') },
-    { href: `/${locale}/membresia`, label: t('membership') },
-    { href: `/${locale}/experiencias`, label: t('experiences') },
+    { href: `/${locale}/precios`, label: t('prices') },
+    { href: `/${locale}/puerto-base`, label: t('homePort') },
     { href: `/${locale}/nosotros`, label: t('about') },
     { href: `/${locale}/contacto`, label: t('contact') },
   ];

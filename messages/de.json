@@ -63,12 +63,73 @@
     "description": "Yacht-Membership-Club in Puerto Banús, Marbella. Zugang zu einer Premium-Flotte – ohne Kompromisse."
   },
   "nav": {
-    "fleet": "Flotte",
+    "fleet": "Unsere Boote",
+    "howItWorks": "So funktioniert's",
+    "prices": "Preise",
+    "homePort": "Heimathafen",
+    "letsMeet": "Lern uns kennen",
     "membership": "Mitgliedschaft",
     "experiences": "Erlebnisse",
     "about": "Über uns",
     "contact": "Kontakt",
     "join": "Jetzt beitreten"
+  },
+  "howItWorks": {
+    "hero": {
+      "eyebrow": "Der Ablauf",
+      "title": "So funktioniert's",
+      "subtitle": "Vom Mitglied zum Törn in drei Schritten. Einfach, wie es sein soll."
+    },
+    "step1": {
+      "number": "01",
+      "title": "Werde Mitglied",
+      "desc": "Wähle deine Mitgliedschaft und tritt dem Club in wenigen Minuten bei."
+    },
+    "step2": {
+      "number": "02",
+      "title": "Bootsführerschein",
+      "desc": "Er ist Pflicht. Falls du keinen hast, helfen wir dir, ihn zu bekommen."
+    },
+    "step3": {
+      "number": "03",
+      "title": "Lade die App und reserviere",
+      "desc": "Lade die Club-App herunter und reserviere ohne Limits, wann immer du möchtest."
+    },
+    "license": {
+      "eyebrow": "Unverzichtbare Voraussetzung",
+      "title": "Der Bootsführerschein ist Pflicht",
+      "body": "Um mit dem Club aufs Meer zu fahren, brauchst du einen Bootsführerschein. Falls du noch keinen hast, begleiten wir dich, bis du ihn hast — aber um Teil dieses Clubs zu sein, ist er unverzichtbar."
+    }
+  },
+  "prices": {
+    "hero": {
+      "eyebrow": "Preise",
+      "title": "Alles inklusive. Ein einziger Beitrag.",
+      "subtitle": "Keine versteckten Kosten, keine Überraschungen. Das ist in deiner Mitgliedschaft enthalten."
+    },
+    "intro": {
+      "title": "Was ist in der Mitgliedschaft enthalten?",
+      "body": "Unbegrenzte Reservierungen, eine Minibar an Bord im Hotelstil, über die App aufladbare Treibstoff-Gutscheine, Versicherung und Wartung. Ein Bootsführerschein ist Pflicht."
+    },
+    "cta": {
+      "eyebrow": "Der Preis, ganz persönlich",
+      "title": "Lern uns kennen und wir verraten dir den Preis",
+      "description": "Wir nennen dir die Zahlen lieber persönlich, ganz unverbindlich. Buche einen Besuch und wir erklären dir alles.",
+      "button": "Lern uns kennen"
+    }
+  },
+  "homePort": {
+    "hero": {
+      "eyebrow": "Heimathafen",
+      "title": "Puerto Banús, dein Ausgangspunkt.",
+      "subtitle": "Der ikonischste Hafen des Mittelmeers — und das Herz des Clubs."
+    },
+    "why": {
+      "eyebrow": "Warum hier",
+      "title": "Der schönste Hafen der Costa del Sol",
+      "p1": "Puerto Banús ist ein Synonym für Luxus, Glamour und Seefahrt. Hier festzumachen heißt, den Tag mit dem Meer und Marbella zu deinen Füßen zu beginnen.",
+      "p2": "Von unserem Liegeplatz aus sind die schönsten Buchten, Häfen und Törns des Mittelmeers nur einen Steinwurf entfernt."
+    }
   },
   "home": {
     "hero": {
@@ -80,7 +141,7 @@
       "eyebrow": "Yacht Club · Puerto Banús",
       "title": "Das Meer ohne Kompromisse.",
       "description": "Vom Herzen Puerto Banús' aus erhalten Sie mit einer exklusiven Mitgliedschaft Zugang zu einer Premium-Flotte erlesener Yachten. Sie entscheiden, wann, wohin und mit wem Sie hinausfahren. Um den Rest kümmern wir uns.",
-      "cta": "Mitgliedschaften ansehen"
+      "cta": "Entdecke, wie es funktioniert"
     },
     "fleet": {
       "eyebrow": "Yachten für jeden Augenblick",
@@ -110,10 +171,10 @@
       "eyebrow": "Die Club-App",
       "titleLead": "Ihr Club, in Ihrer",
       "titleAccent": "Tasche.",
-      "description": "Reservieren Sie Ihre Yacht, prüfen Sie die Verfügbarkeit in Echtzeit und verwalten Sie Ihre Mitgliedschaft – alles aus einer einzigen App. Keine Anrufe, kein Warten.",
-      "f1": "Reservieren in Sekunden, rund um die Uhr",
-      "f2": "Flottenverfügbarkeit in Echtzeit",
-      "f3": "Keine Wartungs- oder Treibstoffkosten"
+      "description": "Reserviere ohne Limits, lade Treibstoff auf und verwalte deine Mitgliedschaft über eine einzige App. Keine Anrufe, kein Warten.",
+      "f1": "Unbegrenzte Reservierungen über die App",
+      "f2": "Lade deine Treibstoff-Gutscheine in der App auf",
+      "f3": "Minibar an Bord jedes Bootes inklusive"
     },
     "gallery": {
       "title": "Ein Leben auf dem Meer"
@@ -143,7 +204,7 @@
     "length": "Länge",
     "maxSpeed": "Höchstgeschwindigkeit",
     "engines": "Motoren",
-    "book": "Diese Yacht reservieren",
+    "book": "Reserviere über die App",
     "backToFleet": "← Zurück zur Flotte"
   },
   "membership": {

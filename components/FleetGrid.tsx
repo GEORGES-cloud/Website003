@@ -1,7 +1,7 @@
 'use client';
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getFleet } from '@/lib/localize';
+import { getActiveFleet } from '@/lib/localize';
 import FleetCard from './FleetCard';
 
 interface FleetGridProps {
@@ -21,7 +21,7 @@ function categoryOf(lengthM: string): Exclude<Cat, 'all'> {
 
 export default function FleetGrid({ locale, capacityLabel, lengthLabel }: FleetGridProps) {
   const [cat, setCat] = useState<Cat>('all');
-  const fleet = useMemo(() => getFleet(locale), [locale]);
+  const fleet = useMemo(() => getActiveFleet(locale), [locale]);
 
   const allLabel: Record<string, string> = { es: 'Toda la flota', en: 'Full fleet', sv: 'Hela flottan', ru: 'Весь флот', de: 'Gesamte Flotte', fr: 'Toute la flotte' };
   const yachtLabel: Record<string, string> = { es: 'Yates', en: 'Yachts', sv: 'Yachter', ru: 'Яхты', de: 'Yachten', fr: 'Yachts' };
@@ -39,23 +39,26 @@ export default function FleetGrid({ locale, capacityLabel, lengthLabel }: FleetG
 
   return (
     <div>
-      <div className="flex flex-wrap gap-x-8 gap-y-3 mb-12">
-        {filters.map((f) => {
-          const active = cat === f.id;
-          return (
-            <button
-              key={f.id}
-              onClick={() => setCat(f.id)}
-              aria-pressed={active}
-              className={`font-sans text-[11px] font-semibold uppercase tracking-wide2 pb-2 border-b transition-colors ${
-                active ? 'text-ink border-ink' : 'text-muted border-transparent hover:text-ink'
-              }`}
-            >
-              {f.label}
-            </button>
-          );
-        })}
-      </div>
+      {/* Filters only make sense with more than one boat */}
+      {fleet.length > 1 && (
+        <div className="flex flex-wrap gap-x-8 gap-y-3 mb-12">
+          {filters.map((f) => {
+            const active = cat === f.id;
+            return (
+              <button
+                key={f.id}
+                onClick={() => setCat(f.id)}
+                aria-pressed={active}
+                className={`font-sans text-[11px] font-semibold uppercase tracking-wide2 pb-2 border-b transition-colors ${
+                  active ? 'text-ink border-ink' : 'text-muted border-transparent hover:text-ink'
+                }`}
+              >
+                {f.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
         <AnimatePresence mode="popLayout">

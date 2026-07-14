@@ -1,9 +1,9 @@
 import type { MetadataRoute } from 'next';
-import { fleet } from '@/lib/data';
+import { ACTIVE_BOAT_SLUGS } from '@/lib/data';
 import { locales } from '@/lib/locales';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://flamingoyachtclub.com';
-const routes = ['', '/flota', '/membresia', '/experiencias', '/nosotros', '/contacto'];
+const routes = ['', '/como-funciona', '/flota', '/precios', '/puerto-base', '/nosotros', '/contacto'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -20,9 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       });
     }
-    for (const boat of fleet) {
+    for (const slug of ACTIVE_BOAT_SLUGS) {
       entries.push({
-        url: `${siteUrl}/${locale}/flota/${boat.slug}`,
+        url: `${siteUrl}/${locale}/flota/${slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.6,

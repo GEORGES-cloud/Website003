@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { fleet } from '@/lib/data';
+import { ACTIVE_BOAT_SLUGS } from '@/lib/data';
 import { getBoat } from '@/lib/localize';
 import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -11,8 +11,11 @@ interface Props {
   params: { locale: string; slug: string };
 }
 
+// Only the active boat(s) are reachable; hidden slugs 404 instead of rendering.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return fleet.map((b) => ({ slug: b.slug }));
+  return ACTIVE_BOAT_SLUGS.map((slug) => ({ slug }));
 }
 
 export default function BoatDetailPage({ params: { locale, slug } }: Props) {
@@ -20,7 +23,8 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
   if (!boat) notFound();
 
   const t = useTranslations('boatDetail');
-  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL ?? `/${locale}/contacto`;
+  const appStoreUrl = process.env.NEXT_PUBLIC_APP_STORE_URL ?? '#';
+  const playStoreUrl = process.env.NEXT_PUBLIC_PLAY_STORE_URL ?? '#';
   const guests: Record<string, string> = { es: 'personas', en: 'guests', sv: 'gäster', ru: 'гостей', de: 'Gäste', fr: 'invités' };
   const guestsLabel = guests[locale] ?? guests.en;
 
@@ -40,8 +44,13 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
                   &ldquo;{boat.tagline}&rdquo;
                 </p>
                 <p className="font-sans text-lg text-muted leading-relaxed">{boat.description}</p>
+                {/* Booking happens in the club app, not on the web */}
                 <div className="mt-12">
-                  <Link href={bookingUrl} className="btn-primary">{t('book')}</Link>
+                  <p className="eyebrow mb-5">{t('book')}</p>
+                  <div className="flex flex-wrap gap-x-8 gap-y-3">
+                    <Link href={appStoreUrl} className="link-underline">App Store</Link>
+                    <Link href={playStoreUrl} className="link-underline">Google Play</Link>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

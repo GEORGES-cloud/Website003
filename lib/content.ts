@@ -26,20 +26,20 @@ export const tiers: Tier[] = [
     tagline: 'Todo el mar de Marbella, una sola membresía.',
     taglineEn: 'All the sea of Marbella, one single membership.',
     features: [
-      'Acceso a toda la flota',
-      'Reserva desde la app 24/7',
+      'Reservas ilimitadas desde la app',
+      'Minibar incluido en cada barco, al estilo hotel',
+      'Cupones de combustible recargables desde la app',
       'Seguro, mantenimiento y amarre incluidos',
-      'Patrón profesional disponible',
+      'Licencia de navegación obligatoria (si no la tienes, te ayudamos a conseguirla)',
       'Invitados a bordo sin coste adicional',
-      'Eventos exclusivos del club',
     ],
     featuresEn: [
-      'Access to the entire fleet',
-      '24/7 booking from the app',
+      'Unlimited bookings from the app',
+      'Hotel-style minibar on board every boat',
+      'Fuel coupons, rechargeable in the app',
       'Insurance, maintenance and mooring included',
-      'Professional skipper available',
+      'Boating licence required (we help you get one if you don’t have it)',
       'Guests on board at no extra cost',
-      'Exclusive club events',
     ],
     featured: true,
   },
@@ -56,8 +56,8 @@ export const faqs: Faq[] = [
   {
     q: '¿Necesito licencia de navegación?',
     qEn: 'Do I need a boating licence?',
-    a: 'No. Puedes navegar con tu propia titulación o reservar uno de nuestros patrones profesionales para que te lleve a donde quieras.',
-    aEn: 'No. You can sail with your own licence or book one of our professional skippers to take you wherever you wish.',
+    a: 'Sí, es imprescindible. Para navegar con el club necesitas licencia. Si aún no la tienes, te ayudamos a conseguirla.',
+    aEn: 'Yes, it is required. To sail with the club you need a licence. If you don’t have one yet, we help you get it.',
   },
   {
     q: '¿Puedo llevar invitados a bordo?',
@@ -74,8 +74,8 @@ export const faqs: Faq[] = [
   {
     q: '¿Qué incluye la cuota?',
     qEn: 'What does the membership fee include?',
-    a: 'Acceso a la flota, seguro, mantenimiento, limpieza y amarre. Sin gastos ocultos: solo el combustible de cada salida corre de tu cuenta.',
-    aEn: 'Access to the fleet, insurance, maintenance, cleaning and mooring. No hidden costs: you only cover the fuel for each outing.',
+    a: 'Reservas ilimitadas, minibar a bordo, seguro, mantenimiento, limpieza y amarre. El combustible se gestiona con cupones recargables desde la app.',
+    aEn: 'Unlimited bookings, an on-board minibar, insurance, maintenance, cleaning and mooring. Fuel is handled with rechargeable coupons in the app.',
   },
   {
     q: '¿Desde dónde salen los barcos?',
@@ -138,7 +138,7 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { value: 9, label: 'Marcas premium en flota', labelEn: 'Premium brands in the fleet' },
+  { value: 100, suffix: '%', label: 'Todo incluido, sin sorpresas', labelEn: 'All included, no surprises' },
   { value: 300, suffix: '+', label: 'Días navegables al año', labelEn: 'Sailing days a year' },
   { value: 40, suffix: ' NM', label: 'De costa a tu alcance', labelEn: 'Of coastline within reach' },
   { value: 1, label: 'Puerto: Banús, Marbella', labelEn: 'Home port: Banús, Marbella' },

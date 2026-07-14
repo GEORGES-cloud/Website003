@@ -40,19 +40,19 @@
       "tagline": "Das ganze Meer von Marbella, eine einzige Mitgliedschaft.",
       "period": "",
       "features": [
-        "Zugang zur gesamten Flotte",
-        "Reservierung über die App, rund um die Uhr",
+        "Unbegrenzte Reservierungen über die App",
+        "Minibar an Bord jedes Bootes, im Hotelstil",
+        "Treibstoff-Gutscheine, aufladbar über die App",
         "Versicherung, Wartung und Liegeplatz inklusive",
-        "Professioneller Skipper auf Wunsch",
-        "Gäste an Bord ohne Aufpreis",
-        "Exklusive Club-Events"
+        "Bootsführerschein erforderlich (falls du keinen hast, helfen wir dir, einen zu bekommen)",
+        "Gäste an Bord ohne Aufpreis"
       ]
     }
   },
   "faqs": [
     {
       "q": "Benötige ich einen Bootsführerschein?",
-      "a": "Nein. Sie können mit Ihrem eigenen Führerschein fahren oder einen unserer professionellen Skipper buchen, der Sie überallhin bringt, wohin Sie möchten."
+      "a": "Ja, er ist unverzichtbar. Um mit dem Club aufs Meer zu fahren, brauchst du einen Bootsführerschein. Falls du noch keinen hast, helfen wir dir, ihn zu bekommen."
     },
     {
       "q": "Darf ich Gäste an Bord mitnehmen?",
@@ -64,7 +64,7 @@
     },
     {
       "q": "Was ist im Beitrag enthalten?",
-      "a": "Zugang zur Flotte, Versicherung, Wartung, Reinigung und Liegeplatz. Keine versteckten Kosten: Lediglich den Treibstoff jeder Ausfahrt übernehmen Sie selbst."
+      "a": "Unbegrenzte Reservierungen, eine Minibar an Bord, Versicherung, Wartung, Reinigung und Liegeplatz. Der Treibstoff wird über aufladbare Gutscheine in der App verwaltet."
     },
     {
       "q": "Von wo aus laufen die Yachten aus?",
@@ -94,7 +94,7 @@
     }
   ],
   "stats": [
-    { "label": "Premium-Marken in der Flotte" },
+    { "label": "Alles inklusive, keine Überraschungen" },
     { "label": "Befahrbare Tage im Jahr" },
     { "label": "Küste in Ihrer Reichweite" },
     { "label": "Heimathafen: Banús, Marbella" }

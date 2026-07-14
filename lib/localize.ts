@@ -1,4 +1,4 @@
-import { fleet, testimonials } from './data';
+import { fleet, testimonials, ACTIVE_BOAT_SLUGS } from './data';
 import type { Boat } from './data';
 import { tiers, faqs, routes, stats } from './content';
 import { legal } from './legal';
@@ -63,6 +63,11 @@ export function getFleet(locale: string): LocalBoat[] {
 
 export function getBoat(locale: string, slug: string): LocalBoat | undefined {
   return getFleet(locale).find((b) => b.slug === slug);
+}
+
+// Only the boats currently active in the club (one for now). Others stay in the data, hidden.
+export function getActiveFleet(locale: string): LocalBoat[] {
+  return getFleet(locale).filter((b) => ACTIVE_BOAT_SLUGS.includes(b.slug));
 }
 
 export function getTestimonials(locale: string) {

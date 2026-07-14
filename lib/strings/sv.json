@@ -40,19 +40,19 @@
       "tagline": "Hela Marbellas hav, ett enda medlemskap.",
       "period": "",
       "features": [
-        "Tillgång till hela flottan",
-        "Boka från appen dygnet runt",
+        "Obegränsade bokningar från appen",
+        "Minibar i hotellstil ombord på varje båt",
+        "Bränslekuponger, som du fyller på i appen",
         "Försäkring, underhåll och förtöjning ingår",
-        "Professionell skeppare tillgänglig",
-        "Gäster ombord utan extra kostnad",
-        "Exklusiva klubbevenemang"
+        "Förarintyg krävs (vi hjälper dig att skaffa ett om du inte har det)",
+        "Gäster ombord utan extra kostnad"
       ]
     }
   },
   "faqs": [
     {
       "q": "Behöver jag förarintyg för båt?",
-      "a": "Nej. Du kan segla med din egen behörighet eller boka en av våra professionella skeppare som tar dig vart du vill."
+      "a": "Ja, det är obligatoriskt. För att segla med klubben behöver du förarintyg. Om du ännu inte har ett hjälper vi dig att skaffa det."
     },
     {
       "q": "Får jag ta med gäster ombord?",
@@ -64,7 +64,7 @@
     },
     {
       "q": "Vad ingår i avgiften?",
-      "a": "Tillgång till flottan, försäkring, underhåll, städning och förtöjning. Inga dolda kostnader: bara bränslet för varje utflykt står du för."
+      "a": "Obegränsade bokningar, en minibar ombord, försäkring, underhåll, städning och förtöjning. Bränslet hanteras med kuponger som du fyller på i appen."
     },
     {
       "q": "Varifrån avgår båtarna?",
@@ -94,7 +94,7 @@
     }
   ],
   "stats": [
-    { "label": "Premiummärken i flottan" },
+    { "label": "Allt ingår, inga överraskningar" },
     { "label": "Seglingsdagar per år" },
     { "label": "Kust inom räckhåll" },
     { "label": "Hemmahamn: Banús, Marbella" }

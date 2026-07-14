@@ -63,12 +63,73 @@
     "description": "Club de membres yachts basé à Puerto Banús, Marbella. Accédez à une flotte premium, sans aucun compromis."
   },
   "nav": {
-    "fleet": "Flotte",
+    "fleet": "Nos bateaux",
+    "howItWorks": "Comment ça marche",
+    "prices": "Tarifs",
+    "homePort": "Port d’attache",
+    "letsMeet": "Rencontrons-nous",
     "membership": "Adhésion",
     "experiences": "Expériences",
     "about": "À propos",
     "contact": "Contact",
     "join": "Rejoindre"
+  },
+  "howItWorks": {
+    "hero": {
+      "eyebrow": "Le processus",
+      "title": "Comment ça marche",
+      "subtitle": "De membre à bord en trois étapes. Simple, comme il se doit."
+    },
+    "step1": {
+      "number": "01",
+      "title": "Devenez membre",
+      "desc": "Choisissez votre adhésion et rejoignez le club en quelques minutes."
+    },
+    "step2": {
+      "number": "02",
+      "title": "Permis bateau",
+      "desc": "Il est obligatoire. Si vous ne l’avez pas, nous vous aidons à l’obtenir."
+    },
+    "step3": {
+      "number": "03",
+      "title": "Téléchargez l’application et réservez",
+      "desc": "Téléchargez l’application du club et réservez sans limites, quand vous le souhaitez."
+    },
+    "license": {
+      "eyebrow": "Une exigence incontournable",
+      "title": "Le permis bateau est obligatoire",
+      "body": "Pour naviguer avec le club, vous avez besoin d’un permis. Si vous ne l’avez pas encore, nous vous accompagnons pour l’obtenir — mais pour faire partie de ce club, il est indispensable."
+    }
+  },
+  "prices": {
+    "hero": {
+      "eyebrow": "Tarifs",
+      "title": "Tout compris. Une seule cotisation.",
+      "subtitle": "Aucun coût caché, aucune surprise. Voici ce que comprend votre adhésion."
+    },
+    "intro": {
+      "title": "Que comprend l’adhésion ?",
+      "body": "Réservations illimitées, minibar à bord façon hôtel, coupons de carburant rechargeables depuis l’application, assurance et entretien. Le permis bateau est obligatoire."
+    },
+    "cta": {
+      "eyebrow": "Le prix, en personne",
+      "title": "Rencontrons-nous et nous vous communiquerons le prix",
+      "description": "Nous préférons vous donner les chiffres en personne, sans engagement. Réservez une visite et nous vous expliquons tout.",
+      "button": "Rencontrons-nous"
+    }
+  },
+  "homePort": {
+    "hero": {
+      "eyebrow": "Port d’attache",
+      "title": "Puerto Banús, votre point de départ.",
+      "subtitle": "La marina la plus emblématique de la Méditerranée — et le cœur du club."
+    },
+    "why": {
+      "eyebrow": "Pourquoi ici",
+      "title": "La plus belle marina de la Costa del Sol",
+      "p1": "Puerto Banús est synonyme de luxe, de glamour et de navigation. Y amarrer, c’est commencer la journée avec la mer et Marbella à vos pieds.",
+      "p2": "Depuis notre amarrage, les plus belles criques, ports et traversées à la journée de la Méditerranée sont à quelques instants."
+    }
   },
   "home": {
     "hero": {
@@ -80,7 +141,7 @@
       "eyebrow": "Club de yachts · Puerto Banús",
       "title": "La mer sans compromis.",
       "description": "Au cœur de Puerto Banús, accédez à une flotte premium de yachts grâce à une adhésion exclusive. Vous choisissez quand, où et avec qui naviguer. Nous nous occupons du reste.",
-      "cta": "Voir les adhésions"
+      "cta": "Découvrez comment ça marche"
     },
     "fleet": {
       "eyebrow": "Des yachts pensés pour chaque instant",
@@ -110,10 +171,10 @@
       "eyebrow": "L'application du club",
       "titleLead": "Votre club, dans votre",
       "titleAccent": "poche.",
-      "description": "Réservez votre yacht, consultez les disponibilités en temps réel et gérez votre adhésion depuis une seule application. Aucun appel, aucune attente.",
-      "f1": "Réservez en quelques secondes, 24h/24 et 7j/7",
-      "f2": "Disponibilité de la flotte en temps réel",
-      "f3": "Aucun frais d'entretien ni de carburant"
+      "description": "Réservez sans limites, rechargez le carburant et gérez votre adhésion depuis une seule application. Aucun appel, aucune attente.",
+      "f1": "Réservations illimitées depuis l’application",
+      "f2": "Rechargez vos coupons de carburant dans l’application",
+      "f3": "Minibar inclus sur chaque bateau"
     },
     "gallery": {
       "title": "Une vie en mer"
@@ -143,7 +204,7 @@
     "length": "Longueur",
     "maxSpeed": "Vitesse maximale",
     "engines": "Motorisation",
-    "book": "Réserver ce bateau",
+    "book": "Réservez depuis l’application",
     "backToFleet": "← Retour à la flotte"
   },
   "membership": {

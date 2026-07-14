@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { getFleet } from '@/lib/localize';
+import { getActiveFleet } from '@/lib/localize';
 import ScrollReveal from './ScrollReveal';
 
 interface FleetPreviewSectionProps {
@@ -13,7 +13,7 @@ interface FleetPreviewSectionProps {
 }
 
 export default function FleetPreviewSection({ eyebrow, title, viewAll, locale }: FleetPreviewSectionProps) {
-  const preview = getFleet(locale).slice(0, 4);
+  const preview = getActiveFleet(locale);
 
   return (
     <section className="py-24 md:py-36 bg-bone overflow-hidden">

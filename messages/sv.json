@@ -63,12 +63,73 @@
     "description": "Yachtklubb med medlemskap baserad i Puerto Banús, Marbella. Få tillgång till en premiumflotta utan kompromisser."
   },
   "nav": {
-    "fleet": "Flotta",
+    "fleet": "Våra båtar",
+    "howItWorks": "Så fungerar det",
+    "prices": "Priser",
+    "homePort": "Hemmahamn",
+    "letsMeet": "Träffa oss",
     "membership": "Medlemskap",
     "experiences": "Upplevelser",
     "about": "Om oss",
     "contact": "Kontakt",
     "join": "Bli medlem"
+  },
+  "howItWorks": {
+    "hero": {
+      "eyebrow": "Processen",
+      "title": "Så fungerar det",
+      "subtitle": "Från medlem till ombord i tre steg. Enkelt, precis som det ska vara."
+    },
+    "step1": {
+      "number": "01",
+      "title": "Bli medlem",
+      "desc": "Välj ditt medlemskap och bli medlem i klubben på några minuter."
+    },
+    "step2": {
+      "number": "02",
+      "title": "Förarintyg",
+      "desc": "Det är obligatoriskt. Om du inte har ett hjälper vi dig att skaffa det."
+    },
+    "step3": {
+      "number": "03",
+      "title": "Ladda ner appen och boka",
+      "desc": "Ladda ner klubbappen och boka utan gränser, när du vill."
+    },
+    "license": {
+      "eyebrow": "Ett absolut krav",
+      "title": "Förarintyg är obligatoriskt",
+      "body": "För att segla med klubben behöver du förarintyg. Om du ännu inte har ett hjälper vi dig att skaffa det – men för att vara med i den här klubben är det ett krav."
+    }
+  },
+  "prices": {
+    "hero": {
+      "eyebrow": "Priser",
+      "title": "Allt ingår. En enda avgift.",
+      "subtitle": "Inga dolda kostnader, inga överraskningar. Här är vad ditt medlemskap innehåller."
+    },
+    "intro": {
+      "title": "Vad ingår i medlemskapet?",
+      "body": "Obegränsade bokningar, en minibar ombord i hotellstil, bränslekuponger som du fyller på i appen, försäkring och underhåll. Förarintyg är obligatoriskt."
+    },
+    "cta": {
+      "eyebrow": "Priset, personligen",
+      "title": "Träffa oss så berättar vi priset",
+      "description": "Vi berättar hellre siffrorna personligen, helt utan förpliktelser. Boka ett besök så går vi igenom allt.",
+      "button": "Träffa oss"
+    }
+  },
+  "homePort": {
+    "hero": {
+      "eyebrow": "Hemmahamn",
+      "title": "Puerto Banús, din startpunkt.",
+      "subtitle": "Medelhavets mest ikoniska hamn – och klubbens hjärta."
+    },
+    "why": {
+      "eyebrow": "Varför här",
+      "title": "Den finaste hamnen på Costa del Sol",
+      "p1": "Puerto Banús är synonymt med lyx, glamour och segling. Att förtöja här är att inleda dagen med havet och Marbella för dina fötter.",
+      "p2": "Från vår kajplats har du Medelhavets bästa vikar, hamnar och dagsseglatser bara ett stenkast bort."
+    }
   },
   "home": {
     "hero": {
@@ -80,7 +141,7 @@
       "eyebrow": "Yachtklubb · Puerto Banús",
       "title": "Havet utan kompromisser.",
       "description": "Från hjärtat av Puerto Banús får du tillgång till en premiumflotta av yachter med ett exklusivt medlemskap. Du väljer när, var och med vem du seglar. Vi tar hand om resten.",
-      "cta": "Se medlemskap"
+      "cta": "Se hur det fungerar"
     },
     "fleet": {
       "eyebrow": "Yachter formade för varje ögonblick",
@@ -110,10 +171,10 @@
       "eyebrow": "Klubbappen",
       "titleLead": "Din klubb, i din",
       "titleAccent": "ficka.",
-      "description": "Boka din yacht, se tillgängligheten i realtid och hantera ditt medlemskap från en enda app. Inga samtal, ingen väntan.",
-      "f1": "Boka på sekunder, dygnet runt",
-      "f2": "Flottans tillgänglighet i realtid",
-      "f3": "Inga kostnader för underhåll eller bränsle"
+      "description": "Boka utan gränser, fyll på bränsle och hantera ditt medlemskap från en enda app. Inga samtal, ingen väntan.",
+      "f1": "Obegränsade bokningar från appen",
+      "f2": "Fyll på dina bränslekuponger i appen",
+      "f3": "Minibar ingår på varje båt"
     },
     "gallery": {
       "title": "Ett liv till havs"
@@ -143,7 +204,7 @@
     "length": "Längd",
     "maxSpeed": "Toppfart",
     "engines": "Motorer",
-    "book": "Boka denna båt",
+    "book": "Boka från appen",
     "backToFleet": "← Tillbaka till flottan"
   },
   "membership": {

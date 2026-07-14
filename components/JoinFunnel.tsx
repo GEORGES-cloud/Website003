@@ -300,7 +300,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                 </a>
                 <div className="flex items-center gap-6">
                   <Link
-                    href={`/${locale}/membresia`}
+                    href={`/${locale}/precios`}
                     onClick={closeFunnel}
                     className="font-sans text-[12px] font-semibold uppercase tracking-wide2 text-muted hover:text-ink transition-colors"
                   >
