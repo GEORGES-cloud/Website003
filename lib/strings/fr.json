@@ -1,8 +1,16 @@
 {
   "fleet": {
     "sea-ray-spx-210": {
-      "tagline": "Le day boat qui fait tout.",
-      "description": "Le Sea Ray SPX 210 est le day boat idéal pour vivre la côte de Marbella à son rythme : agile, lumineux et pensé pour la baignade dans une crique tranquille, le wakesurf et les couchers de soleil à bord. Une construction américaine sportive aux finitions soignées qui transforme chaque sortie depuis Puerto Banús en journée parfaite."
+      "tagline": "Voici Blue — prêt pour toutes les aventures.",
+      "description": "Blue, notre Sea Ray SPX 210, est le bateau parfait pour des journées inoubliables en Méditerranée. Propulsé par un moteur Mercury FourStroke de 200 ch, il est amusant, confortable et facile à vivre : longer la côte de Marbella, jeter l’ancre pour une baignade, déjeuner sur l’eau ou passer une journée entière en famille et entre amis. Entretenu de manière professionnelle par Marina Marbella et préparé avant chaque sortie — avec seulement sept membres par bateau, pour une excellente disponibilité."
+    },
+    "navan-c30": {
+      "tagline": "Un caractère nordique, fait pour aller plus loin.",
+      "description": "Le NAVAN C30 est notre aventurier nordique : un walkaround robuste et marin avec T-top, une cabine pour se reposer ou se changer et deux Mercury V8 qui en font le choix parfait pour les longues journées en mer. La côte de Marbella, des criques cristallines, du paddle et des baignades hors saison — à bord du C30, la Méditerranée s’agrandit."
+    },
+    "level-43st": {
+      "tagline": "Le navire amiral du club — espace et prestance.",
+      "description": "Le Level Yachts 43ST est le navire amiral de la flotte : un sport walkaround de 13 mètres avec bains de soleil à l’avant et à l’arrière, une ombre généreuse et un pont conçu pour partager une journée entière sur l’eau. Prestance, confort et de la place pour tous — le choix naturel des grandes occasions."
     },
     "wajer-55": {
       "tagline": "Le day boat absolu.",
@@ -41,13 +49,14 @@
   ],
   "tiers": {
     "club": {
-      "tagline": "Toute la mer de Marbella, une seule adhésion.",
+      "tagline": "Simple. Transparent. Tout ce qu’il vous faut pour profiter de la vie sur l’eau.",
       "period": "",
       "features": [
-        "Réservations illimitées depuis l’application",
-        "Provisions de bord incluses sur chaque bateau",
-        "Solde de carburant rechargeable dans l’application",
-        "Assurance, entretien et amarrage inclus",
+        "Utilisation annuelle illimitée, à réserver depuis l’application du club",
+        "Préparation professionnelle du bateau avant chaque sortie",
+        "Accompagnement à vos débuts et assistance aux membres",
+        "Serviettes de plage, boissons fraîches offertes, paddles et équipement de snorkeling à bord",
+        "Aucun entretien, aucune assurance, aucune révision ni hivernage à gérer",
         "Permis bateau obligatoire (si vous ne l’avez pas, nous vous aidons à l’obtenir)",
         "Invités à bord sans frais supplémentaires"
       ]
@@ -68,7 +77,7 @@
     },
     {
       "q": "Que comprend la cotisation ?",
-      "a": "Réservations illimitées, provisions de bord, assurance, entretien, nettoyage et amarrage. Le carburant se gère avec un solde rechargeable dans l’application."
+      "a": "Utilisation annuelle illimitée, application de réservation, préparation professionnelle du bateau avant chaque sortie, accompagnement à vos débuts et assistance aux membres — sans oublier serviettes de plage, boissons fraîches offertes, paddles et équipement de snorkeling à bord. Aucun entretien, aucune assurance ni hivernage à gérer."
     },
     {
       "q": "D'où partent les bateaux ?",
@@ -77,6 +86,10 @@
     {
       "q": "Y a-t-il un engagement minimum ?",
       "a": "L'adhésion est annuelle. Écrivez-nous et nous vous présenterons les conditions, sans engagement."
+    },
+    {
+      "q": "Combien de membres se partagent chaque bateau ?",
+      "a": "Sept membres par bateau seulement. De quoi garantir une excellente disponibilité et plus de temps en mer pour chaque membre."
     }
   ],
   "routes": [

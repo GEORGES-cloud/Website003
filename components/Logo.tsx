@@ -52,7 +52,7 @@ export default function Logo({
         </span>
         {withTagline && (
           <span className="font-sans text-[8px] font-semibold tracking-[0.3em] uppercase opacity-55 mt-2.5">
-            powered by Marina Banus
+            powered by Marina Marbella
           </span>
         )}
       </span>
@@ -70,7 +70,7 @@ export default function Logo({
         </span>
         {withTagline && (
           <span className="font-sans text-[7px] font-semibold tracking-[0.26em] uppercase opacity-55 mt-1.5">
-            powered by Marina Banus
+            powered by Marina Marbella
           </span>
         )}
       </span>

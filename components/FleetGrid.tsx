@@ -25,12 +25,14 @@ export default function FleetGrid({ locale, capacityLabel, lengthLabel }: FleetG
 
   const allLabel: Record<string, string> = { es: 'Toda la flota', en: 'Full fleet', sv: 'Hela flottan', ru: 'Весь флот', de: 'Gesamte Flotte', fr: 'Toute la flotte' };
   const yachtLabel: Record<string, string> = { es: 'Yates', en: 'Yachts', sv: 'Yachter', ru: 'Яхты', de: 'Yachten', fr: 'Yachts' };
-  const filters: { id: Cat; label: string }[] = [
+  const present = useMemo(() => new Set(fleet.map((b) => categoryOf(b.lengthM))), [fleet]);
+  const allFilters: { id: Cat; label: string }[] = [
     { id: 'all', label: allLabel[locale] ?? allLabel.en },
     { id: 'day', label: 'Day boats' },
     { id: 'sport', label: 'Sport' },
     { id: 'yacht', label: yachtLabel[locale] ?? yachtLabel.en },
   ];
+  const filters = allFilters.filter((f) => f.id === 'all' || present.has(f.id as Exclude<Cat, 'all'>));
 
   const visible = useMemo(
     () => (cat === 'all' ? fleet : fleet.filter((b) => categoryOf(b.lengthM) === cat)),

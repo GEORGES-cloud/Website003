@@ -59,7 +59,7 @@
     }
   },
   "meta": {
-    "title": "Flamingo Yacht Club powered by Marina Banus | Yachtklubb med medlemskap",
+    "title": "Flamingo Yacht Club powered by Marina Marbella | Yachtklubb med medlemskap",
     "description": "Yachtklubb med medlemskap baserad i Puerto Banús, Marbella. Få tillgång till en premiumflotta utan kompromisser."
   },
   "nav": {
@@ -78,12 +78,12 @@
     "hero": {
       "eyebrow": "Processen",
       "title": "Så fungerar det",
-      "subtitle": "Från medlem till ombord i tre steg. Enkelt, precis som det ska vara."
+      "subtitle": "Från medlem till ombord i tre steg. Vi gör båtlivet enkelt, så att du får mer tid att skapa minnen på havet."
     },
     "step1": {
       "number": "01",
       "title": "Bli medlem",
-      "desc": "Träffa oss i Puerto Banús: vi visar dig klubben och båten, och du väljer ditt medlemskap."
+      "desc": "Träffa oss i Puerto Banús: vi visar dig klubben och båten. Ett enkelt årsmedlemskap ger dig obegränsad tillgång."
     },
     "step2": {
       "number": "02",
@@ -93,7 +93,7 @@
     "step3": {
       "number": "03",
       "title": "Ladda ner appen och boka",
-      "desc": "Ladda ner klubbappen och boka din nästa tur när du vill. Bekräftelse direkt."
+      "desc": "Boka din båt på några sekunder i klubbappen och kliv ombord i Puerto Banús: ren, fulltankad och redo att kasta loss. När du är klar tar vi hand om resten."
     },
     "license": {
       "eyebrow": "Ett absolut krav",
@@ -109,7 +109,7 @@
     },
     "intro": {
       "title": "Vad ingår i medlemskapet?",
-      "body": "Obegränsade bokningar, proviant ombord, ett laddningsbart bränslesaldo i appen, försäkring och underhåll. Förarintyg är obligatoriskt."
+      "body": "Obegränsad användning året runt, bokningsappen, professionell förberedelse av båten inför varje tur, introduktion och medlemssupport – plus badhanddukar, kostnadsfria läskedrycker, paddelbrädor och snorkelutrustning ombord. Förarintyg är obligatoriskt."
     },
     "cta": {
       "eyebrow": "Priset, personligen",
@@ -122,13 +122,13 @@
     "hero": {
       "eyebrow": "Hemmahamn",
       "title": "Puerto Banús, din startpunkt.",
-      "subtitle": "Medelhavets mest ikoniska hamn – och klubbens hjärta."
+      "subtitle": "En av Europas mest ikoniska hamnar – och klubbens hjärta."
     },
     "why": {
       "eyebrow": "Varför här",
       "title": "Den finaste hamnen på Costa del Sol",
-      "p1": "Puerto Banús är synonymt med lyx, glamour och segling. Att förtöja här är att inleda dagen med havet och Marbella för dina fötter.",
-      "p2": "Från vår kajplats har du Medelhavets bästa vikar, hamnar och dagsseglatser bara ett stenkast bort."
+      "p1": "Puerto Banús är synonymt med lyx, glamour och segling. Med sitt perfekta läge i hjärtat av Costa del Sol ger hamnen omedelbar tillgång till vackra farvatten, dolda vikar, beach clubs och restauranger vid vattnet.",
+      "p2": "Oavsett om du styr österut mot Málaga eller västerut mot Estepona och Sotogrande börjar ditt nästa äventyr bara några steg från kajen."
     }
   },
   "home": {
@@ -140,8 +140,8 @@
     "manifesto": {
       "eyebrow": "Klubben",
       "title": "Havet, utan kompromisser.",
-      "p1": "Flamingo Yacht Club är ett privat medlemskap i hjärtat av Puerto Banús: en oklanderlig båt, alltid redo att kasta loss, utan ägandets bördor.",
-      "p2": "Obegränsade bokningar från appen, allt inkluderat – förtöjning, försäkring, underhåll och proviant ombord – och ett team som sköter allt. Du väljer bara dagen.",
+      "p1": "Oavsett om du drömmer om en egen båt en dag eller bara vill ha ett enkelt sätt att njuta av livet på havet är Flamingo Yacht Club det flexibla sättet att uppleva båtlivet från hjärtat av Puerto Banús.",
+      "p2": "Ett enkelt årsmedlemskap, obegränsad tillgång till en premiumbåt och ett team som sköter underhåll, service och förberedelser. Du väljer bara dagen.",
       "cta": "Se hur det fungerar"
     },
     "pitch": {
@@ -178,10 +178,10 @@
       "eyebrow": "Klubbappen",
       "titleLead": "Din klubb, i din",
       "titleAccent": "ficka.",
-      "description": "Boka utan gränser, fyll på bränsle och hantera ditt medlemskap från en enda app. Inga samtal, ingen väntan.",
+      "description": "Boka utan gränser och hantera ditt medlemskap från en enda app. Inga samtal, ingen väntan.",
       "f1": "Obegränsade bokningar från appen",
-      "f2": "Fyll på ditt bränslesaldo i appen",
-      "f3": "Proviant ombord på varje båt"
+      "f2": "Din båt förberedd, ren och fulltankad inför varje tur",
+      "f3": "Badhanddukar, läskedrycker, paddelbrädor och snorkelutrustning ombord"
     },
     "gallery": {
       "title": "Ett liv till havs"
@@ -197,7 +197,7 @@
     "hero": {
       "eyebrow": "Vår flotta",
       "title": "Varje båt, en historia.",
-      "subtitle": "Yachter omsorgsfullt utvalda för att ge den bästa upplevelsen på varje resa."
+      "subtitle": "Professionellt underhållna och förberedda inför varje tur – och begränsade till endast sju medlemmar per båt, vilket säkerställer utmärkt tillgänglighet."
     },
     "capacity": "personer",
     "length": "längd",
@@ -278,13 +278,13 @@
     "hero": {
       "eyebrow": "Vilka vi är",
       "title": "Född ur havet. Vi lever för det.",
-      "subtitle": "Ett nytt initiativ powered by Marina Banus med ett enda uppdrag: att göra seglingen från Puerto Banús tillgänglig, enkel och extraordinär."
+      "subtitle": "Stolt powered by Marina Marbella, ett av de mest respekterade marina företagen på Costa del Sol, med mer än 60 års erfarenhet."
     },
     "story": {
-      "title": "Vår historia",
-      "p1": "Flamingo Yacht Club föds ur Marina Banus åtagande att göra den nautiska upplevelsen tillgänglig för alla. Från en av världens mest exklusiva hamnar för vi Medelhavet till dem som alltid drömt om att segla det.",
-      "p2": "En klubb där upplevelsen kommer först. Inga ägandekostnader, inga hamnavgifter, inget krångel med försäkringar. Premiumflotta, bokningsapp och stödet från Marina Banus.",
-      "p3": "Bara du, båten och Medelhavet."
+      "title": "Mer än en båtklubb",
+      "p1": "Till skillnad från många båtklubbar förvaltar vi inte bara en flotta – vi har Marina Marbellas kompletta marina infrastruktur i ryggen: professionella tekniker, underhållsanläggningar och årtionden av lokal båtkunskap.",
+      "p2": "Den grunden gör att vi kan underhålla våra båtar enligt högsta standard, leverera exceptionell tillförlitlighet och erbjuda en servicenivå som skiljer oss från mängden.",
+      "p3": "När du blir medlem i Flamingo Yacht Club går du inte bara med i en båtklubb – du blir en del av Marina Marbella-familjen."
     },
     "values": {
       "title": "Vad som driver oss",
@@ -297,7 +297,7 @@
     "hero": {
       "eyebrow": "Kontakt",
       "title": "Vi finns här för att hjälpa dig.",
-      "subtitle": "Frågor om medlemskap eller flottan? Skriv till oss."
+      "subtitle": "Det bästa sättet att uppleva klubben är att besöka oss i Puerto Banús: vi visar dig båten, förklarar hur allt fungerar och hjälper dig att välja det medlemskap som passar dig."
     },
     "form": {
       "name": "Fullständigt namn",

@@ -6,7 +6,7 @@ export default function JsonLd({ locale }: { locale: string }) {
     '@type': 'LocalBusiness',
     '@id': `${siteUrl}/#organization`,
     name: 'Flamingo Yacht Club',
-    alternateName: 'Flamingo Yacht Club powered by Marina Banus',
+    alternateName: 'Flamingo Yacht Club powered by Marina Marbella',
     description:
       locale === 'es'
         ? 'Club náutico de membresía en Puerto Banús, Marbella. Accede a una flota premium de yates sin compromisos.'

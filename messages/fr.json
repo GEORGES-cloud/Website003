@@ -59,7 +59,7 @@
     }
   },
   "meta": {
-    "title": "Flamingo Yacht Club powered by Marina Banus | Club de Membres Yachts",
+    "title": "Flamingo Yacht Club powered by Marina Marbella | Club de Membres Yachts",
     "description": "Club de membres yachts basé à Puerto Banús, Marbella. Accédez à une flotte premium, sans aucun compromis."
   },
   "nav": {
@@ -78,12 +78,12 @@
     "hero": {
       "eyebrow": "Le processus",
       "title": "Comment ça marche",
-      "subtitle": "De membre à bord en trois étapes. Simple, comme il se doit."
+      "subtitle": "De membre à bord en trois étapes. Naviguer devient simple, pour que vous passiez plus de temps à créer des souvenirs sur l’eau."
     },
     "step1": {
       "number": "01",
       "title": "Devenez membre",
-      "desc": "Rencontrez-nous à Puerto Banús : nous vous présentons le club et le bateau, et vous choisissez votre adhésion."
+      "desc": "Rencontrez-nous à Puerto Banús : nous vous présentons le club et le bateau. Une adhésion annuelle toute simple vous donne un accès illimité."
     },
     "step2": {
       "number": "02",
@@ -93,7 +93,7 @@
     "step3": {
       "number": "03",
       "title": "Téléchargez l’application et réservez",
-      "desc": "Téléchargez l’application du club et réservez votre prochaine sortie quand vous le souhaitez. Confirmation immédiate."
+      "desc": "Réservez votre bateau en quelques secondes depuis l’application du club et montez à bord à Puerto Banús : propre, le plein fait, prêt à appareiller. À votre retour, nous nous occupons du reste."
     },
     "license": {
       "eyebrow": "Une exigence incontournable",
@@ -109,7 +109,7 @@
     },
     "intro": {
       "title": "Que comprend l’adhésion ?",
-      "body": "Réservations illimitées, provisions de bord, solde de carburant rechargeable dans l’application, assurance et entretien. Le permis bateau est obligatoire."
+      "body": "Utilisation annuelle illimitée, application de réservation, préparation professionnelle du bateau avant chaque sortie, accompagnement à vos débuts et assistance aux membres — sans oublier serviettes de plage, boissons fraîches offertes, paddles et équipement de snorkeling à bord. Le permis bateau est obligatoire."
     },
     "cta": {
       "eyebrow": "Le prix, en personne",
@@ -122,13 +122,13 @@
     "hero": {
       "eyebrow": "Port d’attache",
       "title": "Puerto Banús, votre point de départ.",
-      "subtitle": "La marina la plus emblématique de la Méditerranée — et le cœur du club."
+      "subtitle": "L’une des marinas les plus emblématiques d’Europe — et le cœur du club."
     },
     "why": {
       "eyebrow": "Pourquoi ici",
       "title": "La plus belle marina de la Costa del Sol",
-      "p1": "Puerto Banús est synonyme de luxe, de glamour et de navigation. Y amarrer, c’est commencer la journée avec la mer et Marbella à vos pieds.",
-      "p2": "Depuis notre amarrage, les plus belles criques, ports et traversées à la journée de la Méditerranée sont à quelques instants."
+      "p1": "Puerto Banús est synonyme de luxe, de glamour et de navigation. Idéalement situé au cœur de la Costa del Sol, il offre un accès immédiat à de superbes zones de navigation, des criques secrètes, des beach clubs et des restaurants au bord de l’eau.",
+      "p2": "Que vous mettiez le cap à l’est vers Málaga ou à l’ouest vers Estepona et Sotogrande, votre prochaine aventure commence à quelques pas du quai."
     }
   },
   "home": {
@@ -140,8 +140,8 @@
     "manifesto": {
       "eyebrow": "Le club",
       "title": "La mer, sans compromis.",
-      "p1": "Le Flamingo Yacht Club est une adhésion privée au cœur de Puerto Banús : un bateau impeccable, toujours prêt à appareiller, sans les contraintes de la propriété.",
-      "p2": "Réservations illimitées depuis l’application, tout compris — amarrage, assurance, entretien et provisions de bord — et une équipe qui s’occupe de tout. Vous n’avez qu’à choisir le jour.",
+      "p1": "Que vous rêviez d’avoir un jour votre propre bateau ou que vous souhaitiez simplement profiter de la mer en toute simplicité, le Flamingo Yacht Club est la façon flexible de vivre la navigation depuis le cœur de Puerto Banús.",
+      "p2": "Une adhésion annuelle toute simple, un accès illimité à un bateau premium, et une équipe qui s’occupe de l’entretien, des révisions et de la préparation. Vous n’avez qu’à choisir le jour.",
       "cta": "Découvrez comment ça marche"
     },
     "pitch": {
@@ -178,10 +178,10 @@
       "eyebrow": "L'application du club",
       "titleLead": "Votre club, dans votre",
       "titleAccent": "poche.",
-      "description": "Réservez sans limites, rechargez le carburant et gérez votre adhésion depuis une seule application. Aucun appel, aucune attente.",
+      "description": "Réservez sans limites et gérez votre adhésion depuis une seule application. Aucun appel, aucune attente.",
       "f1": "Réservations illimitées depuis l’application",
-      "f2": "Rechargez votre solde de carburant dans l’application",
-      "f3": "Provisions de bord sur chaque bateau"
+      "f2": "Votre bateau préparé, propre et le plein fait avant chaque sortie",
+      "f3": "Serviettes de plage, boissons fraîches, paddles et équipement de snorkeling à bord"
     },
     "gallery": {
       "title": "Une vie en mer"
@@ -197,7 +197,7 @@
     "hero": {
       "eyebrow": "Notre flotte",
       "title": "Chaque bateau, une histoire.",
-      "subtitle": "Des yachts soigneusement sélectionnés pour offrir la plus belle expérience à chaque sortie."
+      "subtitle": "Une flotte entretenue par des professionnels et préparée avant chaque sortie — avec seulement sept membres par bateau, pour une excellente disponibilité."
     },
     "capacity": "personnes",
     "length": "longueur",
@@ -278,13 +278,13 @@
     "hero": {
       "eyebrow": "Qui nous sommes",
       "title": "Nés de la mer. Nous vivons pour elle.",
-      "subtitle": "Une nouvelle aventure portée par Marina Banus, avec une mission : rendre la navigation au départ de Puerto Banús accessible, simple et extraordinaire."
+      "subtitle": "Fièrement porté par Marina Marbella, l'une des entreprises nautiques les plus respectées de la Costa del Sol, forte de plus de 60 ans d'expérience."
     },
     "story": {
-      "title": "Notre histoire",
-      "p1": "Flamingo Yacht Club naît de l'engagement de Marina Banus à rendre l'expérience nautique accessible à tous. Depuis l'un des ports les plus exclusifs au monde, nous offrons la Méditerranée à ceux qui ont toujours rêvé de la parcourir.",
-      "p2": "Un club où l'expérience prime avant tout. Aucun coût de propriété, aucun frais d'amarrage, aucun tracas d'assurance. Une flotte premium, une application de réservation et la garantie de Marina Banus.",
-      "p3": "Rien que vous, le bateau et la Méditerranée."
+      "title": "Bien plus qu'un club nautique",
+      "p1": "Contrairement à de nombreux clubs nautiques, nous ne nous contentons pas de gérer une flotte — nous nous appuyons sur toute l'infrastructure nautique de Marina Marbella : techniciens professionnels, installations d'entretien et des décennies de savoir-faire nautique local.",
+      "p2": "Ce socle nous permet d'entretenir nos bateaux selon les plus hauts standards, d'offrir une fiabilité exceptionnelle et de proposer un niveau de service qui nous distingue.",
+      "p3": "En rejoignant le Flamingo Yacht Club, vous n'intégrez pas seulement un club nautique — vous entrez dans la famille Marina Marbella."
     },
     "values": {
       "title": "Ce qui nous anime",
@@ -297,7 +297,7 @@
     "hero": {
       "eyebrow": "Contact",
       "title": "Nous sommes là pour vous accompagner.",
-      "subtitle": "Des questions sur l'adhésion ou la flotte ? Écrivez-nous."
+      "subtitle": "La meilleure façon de découvrir le club est de nous rendre visite à Puerto Banús : nous vous présentons le bateau, vous expliquons comment tout fonctionne et vous aidons à choisir l'adhésion qui vous correspond."
     },
     "form": {
       "name": "Nom complet",

@@ -1,8 +1,16 @@
 {
   "fleet": {
     "sea-ray-spx-210": {
-      "tagline": "Day boaten som klarar allt.",
-      "description": "Sea Ray SPX 210 är den perfekta day boaten för att uppleva Marbellas kust i din egen takt: smidig, ljus och gjord för bad i en stilla vik, wakesurf och solnedgångar ombord. Ett sportigt amerikanskt bygge med omsorgsfull finish som gör varje tur från Puerto Banús till en fulländad dag."
+      "tagline": "Möt Blue – redo för varje äventyr.",
+      "description": "Blue, vår Sea Ray SPX 210, är den perfekta båten för oförglömliga dagar på Medelhavet. Med en Mercury FourStroke-motor på 200 hk är hon rolig, bekväm och lätt att njuta av: kryssa längs Marbellas kust, ankra för ett dopp, luncha på vattnet eller tillbringa en hel dag med familj och vänner. Professionellt underhållen av Marina Marbella och förberedd inför varje tur – med endast sju medlemmar per båt, vilket säkerställer utmärkt tillgänglighet."
+    },
+    "navan-c30": {
+      "tagline": "Nordisk karaktär, byggd för att nå längre.",
+      "description": "NAVAN C30 är vår nordiska äventyrare: en robust och sjövärdig walkaround med T-top, en kabin för vila eller ombyte och dubbla Mercury V8 som gör henne till det perfekta valet för långa dagar på havet. Marbellas kust, kristallklara vikar, paddleboard och bad utanför säsongen – ombord på C30 blir Medelhavet större."
+    },
+    "level-43st": {
+      "tagline": "Klubbens flaggskepp – rymd och pondus.",
+      "description": "Level Yachts 43ST är flottans flaggskepp: en 13 meter lång sport-walkaround med solbäddar i för och akter, generös skugga och ett däck gjort för att dela en hel dag på vattnet. Pondus, komfort och plats för alla – det självklara valet för de stora tillfällena."
     },
     "wajer-55": {
       "tagline": "Den ultimata day boaten.",
@@ -41,13 +49,14 @@
   ],
   "tiers": {
     "club": {
-      "tagline": "Hela Marbellas hav, ett enda medlemskap.",
+      "tagline": "Enkelt. Transparent. Allt du behöver för att njuta av livet på havet.",
       "period": "",
       "features": [
-        "Obegränsade bokningar från appen",
-        "Proviant ombord ingår på varje båt",
-        "Laddningsbart bränslesaldo i appen",
-        "Försäkring, underhåll och förtöjning ingår",
+        "Obegränsad användning året runt, bokas i klubbappen",
+        "Professionell förberedelse av båten inför varje tur",
+        "Introduktion och medlemssupport",
+        "Badhanddukar, kostnadsfria läskedrycker, paddelbrädor och snorkelutrustning ombord",
+        "Slipp tänka på underhåll, försäkring, service och vinterförvaring",
         "Förarintyg krävs (vi hjälper dig att skaffa ett om du inte har det)",
         "Gäster ombord utan extra kostnad"
       ]
@@ -68,7 +77,7 @@
     },
     {
       "q": "Vad ingår i avgiften?",
-      "a": "Obegränsade bokningar, proviant ombord, försäkring, underhåll, städning och förtöjning. Bränslet hanteras med ett laddningsbart saldo i appen."
+      "a": "Obegränsad användning året runt, bokningsappen, professionell förberedelse av båten inför varje tur, introduktion och medlemssupport – plus badhanddukar, kostnadsfria läskedrycker, paddelbrädor och snorkelutrustning ombord. Slipp tänka på underhåll, försäkring och vinterförvaring."
     },
     {
       "q": "Varifrån avgår båtarna?",
@@ -77,6 +86,10 @@
     {
       "q": "Finns det någon minsta bindningstid?",
       "a": "Medlemskapet är årligt. Hör av dig så går vi igenom villkoren helt utan förpliktelser."
+    },
+    {
+      "q": "Hur många medlemmar delar på varje båt?",
+      "a": "Endast sju medlemmar per båt. Det säkerställer utmärkt tillgänglighet och mer tid på havet för varje medlem."
     }
   ],
   "routes": [

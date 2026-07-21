@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://flamingoyachtclub.c
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Flamingo Yacht Club powered by Marina Banus | Club Náutico de Membresía',
+    default: 'Flamingo Yacht Club powered by Marina Marbella | Club Náutico de Membresía',
     template: '%s · Flamingo Yacht Club',
   },
   description:
@@ -19,9 +19,10 @@ export const metadata: Metadata = {
     'Puerto Banús',
     'alquiler de yates Marbella',
     'boat club Marbella',
-    'Wajer',
-    'Frauscher',
-    'Marina Banus',
+    'Sea Ray',
+    'NAVAN',
+    'Level Yachts',
+    'Marina Marbella',
   ],
   openGraph: {
     type: 'website',

@@ -26,9 +26,9 @@ export interface Testimonial {
   role: string;
 }
 
-// The club's single active boat. Change this one line to swap the displayed boat
-// (the other boats stay hidden but in the data).
-export const ACTIVE_BOAT_SLUGS = ['sea-ray-spx-210'];
+// The boats currently active in the club. Edit this list to show/hide boats
+// (the rest stay hidden but in the data).
+export const ACTIVE_BOAT_SLUGS = ['sea-ray-spx-210', 'navan-c30', 'level-43st'];
 
 export const fleet: Boat[] = [
   {
@@ -37,17 +37,17 @@ export const fleet: Boat[] = [
     lengthM: '6.6 m',
     capacity: 10,
     year: 2025,
-    tagline: 'El day boat que lo hace todo.',
-    taglineEn: 'The day boat that does it all.',
+    tagline: 'Te presentamos a Blue: lista para cada aventura.',
+    taglineEn: 'Meet Blue — ready for every adventure.',
     description:
-      'La Sea Ray SPX 210 es el day boat perfecto para vivir la costa de Marbella a tu ritmo: ágil, luminosa y pensada para el baño en cala, el wakesurf y los atardeceres a bordo. Un deportivo americano de acabados cuidados que convierte cada salida desde Puerto Banús en un plan redondo.',
+      'Blue, nuestra Sea Ray SPX 210, es el barco perfecto para días inolvidables en el Mediterráneo. Con su motor Mercury FourStroke de 200 CV es divertida, cómoda y fácil de disfrutar: costa de Marbella, fondeos para un baño, almuerzos en el agua o un día entero con familia y amigos. Mantenida profesionalmente por Marina Marbella y preparada antes de cada salida, con un máximo de siete socios por barco para garantizar una disponibilidad excelente.',
     descriptionEn:
-      'The Sea Ray SPX 210 is the perfect day boat for living the Marbella coast at your own pace: agile, bright and made for swims in a quiet cove, wakesurfing and sunsets on board. A sporty American build with refined finishes that turns every outing from Puerto Banús into the perfect plan.',
+      'Blue, our Sea Ray SPX 210, is the perfect boat for unforgettable days on the Mediterranean. Powered by a Mercury 200HP FourStroke engine, she is fun, comfortable and easy to enjoy: cruising the Marbella coastline, dropping anchor for a swim, lunch on the water or a full day with family and friends. Professionally maintained by Marina Marbella and prepared before every trip — with just seven members per boat, ensuring excellent availability.',
     specs: {
       length: '6.60 m',
       beam: '2.59 m',
-      maxSpeed: '38 kn',
-      engines: 'MerCruiser 4.5L · 250 CV',
+      maxSpeed: '35 kn',
+      engines: 'Mercury FourStroke · 200 CV',
     },
     image: '/images/fleet-searay.jpg',
     gallery: [
@@ -59,6 +59,64 @@ export const fleet: Boat[] = [
       '/images/searay-6.jpg',
       '/images/searay-7.jpg',
       '/images/searay-8.jpg',
+    ],
+  },
+  {
+    slug: 'navan-c30',
+    name: 'NAVAN C30',
+    lengthM: '9.4 m',
+    capacity: 8,
+    // TODO confirmar specs con el cliente (motorización/año/capacidad provisionales)
+    year: 2024,
+    tagline: 'Carácter nórdico para llegar más lejos.',
+    taglineEn: 'Nordic character, built to go further.',
+    description:
+      'La NAVAN C30 es nuestra aventurera nórdica: un walkaround robusto y marinero con T-top, cabina para descansar o cambiarse y dos Mercury V8 que la convierten en la elección perfecta para jornadas largas. Costa de Marbella, calas de aguas transparentes, paddle surf y baños fuera de temporada: con la C30, el Mediterráneo se hace grande.',
+    descriptionEn:
+      'The NAVAN C30 is our Nordic adventurer: a rugged, seaworthy walkaround with a T-top, a cabin to rest or change in and twin Mercury V8s that make her the perfect choice for long days out. The Marbella coastline, crystal-clear coves, paddleboarding and off-season swims — aboard the C30, the Mediterranean gets bigger.',
+    specs: {
+      length: '9.35 m',
+      beam: '2.95 m',
+      maxSpeed: '42 kn',
+      engines: '2 × Mercury V8 Verado 300 CV',
+    },
+    image: '/images/fleet-navan.jpg',
+    gallery: [
+      '/images/navan-1.jpg',
+      '/images/navan-2.jpg',
+      '/images/navan-3.jpg',
+      '/images/navan-4.jpg',
+      '/images/navan-5.jpg',
+      '/images/navan-6.jpg',
+      '/images/navan-7.jpg',
+      '/images/navan-8.jpg',
+    ],
+  },
+  {
+    slug: 'level-43st',
+    name: 'Level Yachts 43ST',
+    lengthM: '13.2 m',
+    capacity: 12,
+    // TODO confirmar specs con el cliente (eslora/manga/motorización/año provisionales)
+    year: 2024,
+    tagline: 'La insignia del club: espacio y presencia.',
+    taglineEn: 'The club flagship — space and presence.',
+    description:
+      'La Level Yachts 43ST es la insignia de la flota: un sport walkaround de 13 metros con solárium de proa y popa, sombra generosa y una cubierta pensada para compartir el día entero en el agua. Presencia, confort y espacio para todos — la elección natural para las grandes ocasiones.',
+    descriptionEn:
+      'The Level Yachts 43ST is the flagship of the fleet: a 13-metre sport walkaround with bow and stern sun loungers, generous shade and a deck designed for sharing a full day on the water. Presence, comfort and room for everyone — the natural choice for the big occasions.',
+    specs: {
+      length: '13.20 m',
+      beam: '3.90 m',
+      maxSpeed: '35 kn',
+    },
+    image: '/images/fleet-level.jpg',
+    gallery: [
+      '/images/level-1.jpg',
+      '/images/level-2.jpg',
+      '/images/level-3.jpg',
+      '/images/level-4.jpg',
+      '/images/level-5.jpg',
     ],
   },
   {

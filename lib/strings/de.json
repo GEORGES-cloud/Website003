@@ -1,8 +1,16 @@
 {
   "fleet": {
     "sea-ray-spx-210": {
-      "tagline": "Das Day Boat, das alles kann.",
-      "description": "Die Sea Ray SPX 210 ist das perfekte Day Boat, um die Küste von Marbella im eigenen Tempo zu erleben: wendig, licht und gemacht für das Bad in einer stillen Bucht, Wakesurfen und Sonnenuntergänge an Bord. Ein sportlicher amerikanischer Bau mit sorgfältiger Verarbeitung, der jeden Törn ab Puerto Banús zu einem rundum gelungenen Tag macht."
+      "tagline": "Das ist Blue – bereit für jedes Abenteuer.",
+      "description": "Blue, unsere Sea Ray SPX 210, ist das perfekte Boot für unvergessliche Tage auf dem Mittelmeer. Angetrieben von einem Mercury FourStroke mit 200 PS ist sie spritzig, komfortabel und unkompliziert zu genießen: entlang der Küste von Marbella cruisen, für ein Bad vor Anker gehen, ein Mittagessen auf dem Wasser oder ein ganzer Tag mit Familie und Freunden. Professionell gewartet von Marina Marbella und vor jedem Törn vorbereitet – mit nur sieben Mitgliedern pro Boot für hervorragende Verfügbarkeit."
+    },
+    "navan-c30": {
+      "tagline": "Nordischer Charakter, gebaut, um weiter zu kommen.",
+      "description": "Die NAVAN C30 ist unsere nordische Abenteurerin: ein robuster, seetüchtiger Walkaround mit T-Top, einer Kabine zum Ausruhen oder Umziehen und zwei Mercury V8, die sie zur perfekten Wahl für lange Tage auf dem Wasser machen. Die Küste von Marbella, glasklare Buchten, Paddleboarding und Bäder außerhalb der Saison – an Bord der C30 wird das Mittelmeer größer."
+    },
+    "level-43st": {
+      "tagline": "Das Flaggschiff des Clubs – Raum und Präsenz.",
+      "description": "Die Level Yachts 43ST ist das Flaggschiff der Flotte: ein 13-Meter-Sport-Walkaround mit Sonnenliegen an Bug und Heck, großzügigem Schatten und einem Deck, das dafür gemacht ist, einen ganzen Tag auf dem Wasser zu teilen. Präsenz, Komfort und Platz für alle – die natürliche Wahl für die großen Anlässe."
     },
     "wajer-55": {
       "tagline": "Das ultimative Day Boat.",
@@ -41,13 +49,14 @@
   ],
   "tiers": {
     "club": {
-      "tagline": "Das ganze Meer von Marbella, eine einzige Mitgliedschaft.",
+      "tagline": "Einfach. Transparent. Alles, was du brauchst, um das Leben auf dem Wasser zu genießen.",
       "period": "",
       "features": [
-        "Unbegrenzte Reservierungen über die App",
-        "Proviant an Bord jedes Bootes inklusive",
-        "Aufladbares Treibstoffguthaben in der App",
-        "Versicherung, Wartung und Liegeplatz inklusive",
+        "Unbegrenzte Nutzung das ganze Jahr, reserviert über die Club-App",
+        "Professionelle Vorbereitung des Bootes vor jedem Törn",
+        "Onboarding und Mitglieder-Support",
+        "Strandtücher, kostenlose Softdrinks, Paddleboards und Schnorchelausrüstung an Bord",
+        "Keine Gedanken an Wartung, Versicherung, Service oder Winterlager",
         "Bootsführerschein erforderlich (falls du keinen hast, helfen wir dir, einen zu bekommen)",
         "Gäste an Bord ohne Aufpreis"
       ]
@@ -68,7 +77,7 @@
     },
     {
       "q": "Was ist im Beitrag enthalten?",
-      "a": "Unbegrenzte Reservierungen, Proviant an Bord, Versicherung, Wartung, Reinigung und Liegeplatz. Der Treibstoff läuft über ein aufladbares Guthaben in der App."
+      "a": "Unbegrenzte Nutzung das ganze Jahr, die Reservierungs-App, professionelle Vorbereitung des Bootes vor jedem Törn, Onboarding und Mitglieder-Support – dazu Strandtücher, kostenlose Softdrinks, Paddleboards und Schnorchelausrüstung an Bord. Keine Gedanken an Wartung, Versicherung oder Winterlager."
     },
     {
       "q": "Von wo aus laufen die Yachten aus?",
@@ -77,6 +86,10 @@
     {
       "q": "Gibt es eine Mindestlaufzeit?",
       "a": "Die Mitgliedschaft ist jährlich. Schreiben Sie uns, und wir erläutern Ihnen unverbindlich die Konditionen."
+    },
+    {
+      "q": "Wie viele Mitglieder teilen sich ein Boot?",
+      "a": "Nur sieben Mitglieder pro Boot. Das sorgt für hervorragende Verfügbarkeit und mehr Zeit auf dem Wasser für jedes Mitglied."
     }
   ],
   "routes": [
