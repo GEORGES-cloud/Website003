@@ -60,7 +60,15 @@
   },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Marbella | Yacht-Membership-Club",
-    "description": "Yacht-Membership-Club in Puerto Banús, Marbella. Zugang zu einer Premium-Flotte – ohne Kompromisse."
+    "description": "Bootsclub-Mitgliedschaft in Puerto Banús, Marbella. Ein Jahresbeitrag, unbegrenzter Zugang zu Premium-Booten, gewartet von Marina Marbella – ohne Wartung, Liegeplatz und Aufwand.",
+    "pages": {
+      "howItWorks": { "title": "So funktioniert die Mitgliedschaft", "description": "Eine Jahresmitgliedschaft, unbegrenzter Zugang zu einem Premium-Boot in Puerto Banús. In der App reservieren, an Bord gehen, ablegen – wir kümmern uns um alles." },
+      "fleet": { "title": "Unsere Flotte", "description": "Das ist Blue, unsere Sea Ray SPX 210 – dazu die Clubflotte: NAVAN C30 und Level Yachts 43ST. Gewartet von Marina Marbella, mit nur 7 Mitgliedern pro Boot." },
+      "prices": { "title": "Mitgliedschaft und Preise", "description": "Ein Jahresbeitrag, alles inklusive: unbegrenzte Nutzung, professionelle Vorbereitung, Reservierungs-App, Handtücher, Paddleboards und Schnorchelausrüstung. Ohne Wartung und Winterlager." },
+      "homePort": { "title": "Heimathafen: Puerto Banús, Marbella", "description": "Legen Sie ab in Puerto Banús, einem der ikonischsten Häfen Europas: versteckte Buchten, Beach Clubs und die schönste Küste des Mittelmeers, nur wenige Schritte vom Liegeplatz." },
+      "about": { "title": "Über uns – powered by Marina Marbella", "description": "Mehr als ein Bootsclub: getragen von Marina Marbella, mit über 60 Jahren Erfahrung, professionellen Technikern und kompletter mariner Infrastruktur an der Costa del Sol." },
+      "contact": { "title": "Besuch in Puerto Banús buchen", "description": "Lernen Sie den Club kennen: Wir zeigen Ihnen die Boote bei einem erfrischenden Getränk und einer persönlichen Tour und helfen bei der Wahl der Mitgliedschaft. Buchen Sie noch heute Ihre private Beratung." }
+    }
   },
   "nav": {
     "fleet": "Flotte",
@@ -297,8 +305,9 @@
     "hero": {
       "eyebrow": "Kontakt",
       "title": "Wir sind für Sie da.",
-      "subtitle": "Am besten erleben Sie den Club bei einem Besuch in Puerto Banús: Wir zeigen Ihnen das Boot, erklären, wie alles funktioniert, und helfen Ihnen, die passende Mitgliedschaft zu finden."
+      "subtitle": "Am besten erleben Sie den Club bei einem Besuch in Puerto Banús: Wir empfangen Sie mit einem erfrischenden Getränk und einer persönlichen Tour, zeigen Ihnen die Boote und helfen Ihnen, die passende Mitgliedschaft zu finden."
     },
+    "consult": "Buchen Sie noch heute Ihre private Beratung – die Boote liegen bereit.",
     "form": {
       "name": "Vollständiger Name",
       "email": "E-Mail-Adresse",

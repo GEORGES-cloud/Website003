@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import PageHero from '@/components/PageHero';
 import ContactForm from '@/components/ContactForm';
 import ScrollReveal from '@/components/ScrollReveal';
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'meta.pages.contact' });
+  return { title: t('title'), description: t('description') };
+}
 
 export default function ContactoPage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('contact');
@@ -14,6 +21,7 @@ export default function ContactoPage({ params: { locale } }: { params: { locale:
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
             <ScrollReveal>
+              <p className="display text-xl md:text-2xl text-ink mb-10">{t('consult')}</p>
               <ContactForm />
             </ScrollReveal>
 

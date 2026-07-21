@@ -48,7 +48,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'meta' });
   return {
-    title: { absolute: t('title') },
+    title: { absolute: t('title'), template: '%s · Flamingo Yacht Club' },
     description: t('description'),
     alternates: {
       canonical: `/${locale}`,

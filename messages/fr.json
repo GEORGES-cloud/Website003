@@ -60,7 +60,15 @@
   },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Marbella | Club de Membres Yachts",
-    "description": "Club de membres yachts basé à Puerto Banús, Marbella. Accédez à une flotte premium, sans aucun compromis."
+    "description": "Club nautique par adhésion à Puerto Banús, Marbella. Une cotisation annuelle, un accès illimité à des bateaux premium entretenus par Marina Marbella — sans entretien, sans amarrage, sans souci.",
+    "pages": {
+      "howItWorks": { "title": "Comment fonctionne l’adhésion", "description": "Une adhésion annuelle, un accès illimité à un bateau premium à Puerto Banús. Réservez depuis l’app, montez à bord et partez : nous nous occupons de tout." },
+      "fleet": { "title": "Notre flotte", "description": "Voici Blue, notre Sea Ray SPX 210, et la flotte du club : NAVAN C30 et Level Yachts 43ST. Entretenus par Marina Marbella, avec seulement 7 membres par bateau." },
+      "prices": { "title": "Adhésion et tarifs", "description": "Une seule cotisation annuelle, tout inclus : usage illimité, préparation professionnelle, app de réservation, serviettes, paddles et équipement de snorkeling. Sans entretien ni hivernage." },
+      "homePort": { "title": "Port d’attache : Puerto Banús, Marbella", "description": "Larguez les amarres à Puerto Banús, l’une des marinas les plus emblématiques d’Europe : criques cachées, beach clubs et le plus beau littoral de la Méditerranée à quelques pas du quai." },
+      "about": { "title": "À propos — powered by Marina Marbella", "description": "Bien plus qu’un club nautique : le soutien de Marina Marbella, plus de 60 ans d’expérience, des techniciens professionnels et une infrastructure marine complète sur la Costa del Sol." },
+      "contact": { "title": "Réservez votre visite à Puerto Banús", "description": "Venez découvrir le club : nous vous montrons les bateaux autour d’une boisson fraîche et d’une visite personnelle, et vous aidons à choisir votre adhésion. Réservez votre consultation privée dès aujourd’hui." }
+    }
   },
   "nav": {
     "fleet": "Flotte",
@@ -72,7 +80,7 @@
     "experiences": "Expériences",
     "about": "À propos",
     "contact": "Contact",
-    "join": "Rejoindre"
+    "join": "Rejoindre le club"
   },
   "howItWorks": {
     "hero": {
@@ -297,8 +305,9 @@
     "hero": {
       "eyebrow": "Contact",
       "title": "Nous sommes là pour vous accompagner.",
-      "subtitle": "La meilleure façon de découvrir le club est de nous rendre visite à Puerto Banús : nous vous présentons le bateau, vous expliquons comment tout fonctionne et vous aidons à choisir l'adhésion qui vous correspond."
+      "subtitle": "La meilleure façon de découvrir le club est de nous rendre visite à Puerto Banús : nous vous accueillons avec une boisson fraîche et une visite personnelle, vous montrons les bateaux et vous aidons à choisir l'adhésion qui vous correspond."
     },
+    "consult": "Réservez votre consultation privée dès aujourd’hui — les bateaux seront prêts.",
     "form": {
       "name": "Nom complet",
       "email": "Adresse e-mail",

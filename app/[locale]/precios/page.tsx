@@ -1,8 +1,15 @@
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import MembershipTiers from '@/components/MembershipTiers';
 import CTAFinal from '@/components/CTAFinal';
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'meta.pages.prices' });
+  return { title: t('title'), description: t('description') };
+}
 
 export default function PreciosPage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('prices');

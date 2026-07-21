@@ -60,7 +60,15 @@
   },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Marbella | Yachtklubb med medlemskap",
-    "description": "Yachtklubb med medlemskap baserad i Puerto Banús, Marbella. Få tillgång till en premiumflotta utan kompromisser."
+    "description": "Båtklubb med medlemskap i Puerto Banús, Marbella. En årsavgift och obegränsad tillgång till premiumbåtar som underhålls av Marina Marbella – utan underhåll, kajplats eller krångel.",
+    "pages": {
+      "howItWorks": { "title": "Så fungerar medlemskapet", "description": "Ett årsmedlemskap, obegränsad tillgång till en premiumbåt i Puerto Banús. Boka i appen, kliv ombord och åk – vi tar hand om allt." },
+      "fleet": { "title": "Vår flotta", "description": "Möt Blue, vår Sea Ray SPX 210, samt klubbens flotta: NAVAN C30 och Level Yachts 43ST. Underhållna av Marina Marbella, med endast 7 medlemmar per båt." },
+      "prices": { "title": "Medlemskap och priser", "description": "En årsavgift, allt ingår: obegränsad användning, professionell förberedelse, bokningsapp, handdukar, paddelbrädor och snorkelutrustning. Inget underhåll, ingen vinterförvaring." },
+      "homePort": { "title": "Hemmahamn: Puerto Banús, Marbella", "description": "Kasta loss från Puerto Banús, en av Europas mest ikoniska hamnar: dolda vikar, beach clubs och Medelhavets finaste kust bara några steg från kajen." },
+      "about": { "title": "Om oss – powered by Marina Marbella", "description": "Mer än en båtklubb: med stöd av Marina Marbella, över 60 års erfarenhet, professionella tekniker och en komplett marin infrastruktur på Costa del Sol." },
+      "contact": { "title": "Boka ditt besök i Puerto Banús", "description": "Kom och upplev klubben: vi visar båtarna över en uppfriskande dryck och en personlig rundtur, och hjälper dig att välja ditt medlemskap. Boka din privata konsultation idag." }
+    }
   },
   "nav": {
     "fleet": "Flotta",
@@ -297,8 +305,9 @@
     "hero": {
       "eyebrow": "Kontakt",
       "title": "Vi finns här för att hjälpa dig.",
-      "subtitle": "Det bästa sättet att uppleva klubben är att besöka oss i Puerto Banús: vi visar dig båten, förklarar hur allt fungerar och hjälper dig att välja det medlemskap som passar dig."
+      "subtitle": "Det bästa sättet att uppleva klubben är att besöka oss i Puerto Banús: vi välkomnar dig med en uppfriskande dryck och en personlig rundtur, visar båtarna och hjälper dig att välja det medlemskap som passar dig."
     },
+    "consult": "Boka din privata konsultation idag – vi har båtarna redo.",
     "form": {
       "name": "Fullständigt namn",
       "email": "E-postadress",

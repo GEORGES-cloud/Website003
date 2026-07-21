@@ -115,9 +115,17 @@ export default function Navbar({ locale }: NavbarProps) {
             <Wordmark />
           </Link>
 
-          {/* RIGHT — language */}
-          <div className="flex items-center">
+          {/* RIGHT — language + Join the Club (enlaza a la página de consulta) */}
+          <div className="flex items-center gap-4 md:gap-6">
             <LanguageSwitcher locale={locale} dark={!onLight} />
+            <Link
+              href={`/${locale}/contacto`}
+              className={`hidden sm:inline-flex items-center justify-center font-sans text-[11px] font-semibold uppercase tracking-[0.18em] px-5 py-2.5 transition-colors duration-300 ${
+                onLight ? 'bg-ink text-white hover:bg-sea' : 'bg-white text-ink hover:bg-sea hover:text-white'
+              }`}
+            >
+              {t('join')}
+            </Link>
           </div>
         </div>
       </header>

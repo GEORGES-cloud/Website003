@@ -60,7 +60,15 @@
   },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Marbella | Yacht Membership Club",
-    "description": "Yacht membership club based in Puerto Banús, Marbella. Access a premium fleet with no compromises."
+    "description": "Boat club membership in Puerto Banús, Marbella. One annual fee, unlimited access to premium boats maintained by Marina Marbella — no maintenance, no mooring, no hassle.",
+    "pages": {
+      "howItWorks": { "title": "How the membership works", "description": "One annual membership, unlimited access to a premium boat in Puerto Banús. Book from the app, step aboard and go — we take care of everything." },
+      "fleet": { "title": "Our fleet of boats", "description": "Meet Blue, our Sea Ray SPX 210, plus the club fleet: NAVAN C30 and Level Yachts 43ST. Maintained by Marina Marbella, with just 7 members per boat." },
+      "prices": { "title": "Membership & prices", "description": "One annual fee, everything included: unlimited usage, professional preparation, booking app, towels, paddleboards and snorkelling gear. No maintenance or winter storage." },
+      "homePort": { "title": "Home port: Puerto Banús, Marbella", "description": "Set off from Puerto Banús, one of Europe's most iconic marinas: hidden coves, beach clubs and the Mediterranean's finest coastline just steps from the dock." },
+      "about": { "title": "About us — powered by Marina Marbella", "description": "More than a boat club: backed by Marina Marbella, with 60+ years of experience, professional technicians and a complete marine infrastructure on the Costa del Sol." },
+      "contact": { "title": "Book your visit in Puerto Banús", "description": "Come and see the club: we'll show you the boats over a refreshing drink and a personal tour, and help you choose your membership. Book your private consultation today." }
+    }
   },
   "nav": {
     "howItWorks": "How it works",
@@ -72,7 +80,7 @@
     "about": "About us",
     "letsMeet": "Let’s Meet",
     "contact": "Contact",
-    "join": "Join Now"
+    "join": "Join the Club"
   },
   "howItWorks": {
     "hero": { "eyebrow": "The process", "title": "How it works", "subtitle": "From member to on board in three steps. Boating made easy, so you spend more time making memories on the water." },
@@ -265,8 +273,9 @@
     "hero": {
       "eyebrow": "Contact",
       "title": "We are here to help you.",
-      "subtitle": "The best way to experience the club is to visit us in Puerto Banús: we’ll show you the boat, explain how it all works and help you choose the membership that’s right for you."
+      "subtitle": "The best way to experience the club is to visit us in Puerto Banús: we’ll welcome you with a refreshing drink and a personal tour, show you the boats and help you choose the membership that’s right for you."
     },
+    "consult": "Book your private consultation today — we’ll have the boats ready.",
     "form": {
       "name": "Full name",
       "email": "Email address",

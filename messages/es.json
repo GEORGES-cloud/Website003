@@ -60,7 +60,15 @@
   },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Marbella | Club Náutico de Membresía",
-    "description": "Club náutico de membresía en Puerto Banús, Marbella. Accede a una flota premium de yates sin compromisos."
+    "description": "Club náutico de membresía en Puerto Banús, Marbella. Una cuota anual y acceso ilimitado a barcos premium mantenidos por Marina Marbella — sin mantenimiento, sin amarre, sin complicaciones.",
+    "pages": {
+      "howItWorks": { "title": "Cómo funciona la membresía", "description": "Una membresía anual, acceso ilimitado a un barco premium en Puerto Banús. Reserva desde la app, sube a bordo y navega: nos ocupamos de todo." },
+      "fleet": { "title": "Nuestra flota de barcos", "description": "Conoce a Blue, nuestra Sea Ray SPX 210, y la flota del club: NAVAN C30 y Level Yachts 43ST. Barcos mantenidos por Marina Marbella, con solo 7 socios por barco." },
+      "prices": { "title": "Membresía y precios", "description": "Una sola cuota anual, todo incluido: uso ilimitado, preparación profesional, app de reservas, toallas, paddleboards y snorkel. Sin mantenimiento ni invernaje." },
+      "homePort": { "title": "Puerto base: Puerto Banús, Marbella", "description": "Zarpa desde Puerto Banús, uno de los puertos más icónicos de Europa: calas escondidas, beach clubs y la mejor costa del Mediterráneo a unos pasos del amarre." },
+      "about": { "title": "Nosotros — powered by Marina Marbella", "description": "Más que un club náutico: el respaldo de Marina Marbella, más de 60 años de experiencia, técnicos profesionales e infraestructura marina completa en la Costa del Sol." },
+      "contact": { "title": "Reserva tu visita en Puerto Banús", "description": "Ven a conocer el club: te enseñamos los barcos con una bebida fría y un tour personal, y te ayudamos a elegir tu membresía. Reserva tu consulta privada hoy." }
+    }
   },
   "nav": {
     "howItWorks": "Cómo funciona",
@@ -72,7 +80,7 @@
     "about": "Nosotros",
     "letsMeet": "Conócenos",
     "contact": "Contacto",
-    "join": "Hazte Socio"
+    "join": "Únete al club"
   },
   "howItWorks": {
     "hero": { "eyebrow": "El proceso", "title": "Cómo funciona", "subtitle": "De socio a bordo en tres pasos. Navegar fácil, para que pases más tiempo creando recuerdos en el mar." },
@@ -265,8 +273,9 @@
     "hero": {
       "eyebrow": "Contacto",
       "title": "Estamos aquí para ayudarte.",
-      "subtitle": "La mejor manera de conocer el club es visitarnos en Puerto Banús: te enseñamos el barco, te explicamos cómo funciona todo y te ayudamos a elegir la membresía que mejor encaja contigo."
+      "subtitle": "La mejor manera de conocer el club es visitarnos en Puerto Banús: te recibimos con una bebida fría y un tour personal, te enseñamos los barcos y te ayudamos a elegir la membresía que mejor encaja contigo."
     },
+    "consult": "Reserva tu consulta privada hoy — tendremos los barcos listos.",
     "form": {
       "name": "Nombre completo",
       "email": "Correo electrónico",

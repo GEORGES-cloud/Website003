@@ -1,10 +1,17 @@
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
 import HowItWorksTimeline from '@/components/HowItWorksTimeline';
 import Faq from '@/components/Faq';
 import CTAFinal from '@/components/CTAFinal';
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'meta.pages.howItWorks' });
+  return { title: t('title'), description: t('description') };
+}
 
 export default function ComoFuncionaPage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('howItWorks');

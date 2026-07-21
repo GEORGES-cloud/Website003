@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
@@ -16,6 +17,15 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return ACTIVE_BOAT_SLUGS.map((slug) => ({ slug }));
+}
+
+export function generateMetadata({ params: { locale, slug } }: Props): Metadata {
+  const boat = ACTIVE_BOAT_SLUGS.includes(slug) ? getBoat(locale, slug) : null;
+  if (!boat) return {};
+  // Meta description: tagline + descripción, recortada en un espacio antes de ~160 chars.
+  const raw = `${boat.tagline} ${boat.description}`;
+  const description = raw.length > 160 ? `${raw.slice(0, raw.lastIndexOf(' ', 157))}…` : raw;
+  return { title: `${boat.name} — ${boat.lengthM}`, description };
 }
 
 export default function BoatDetailPage({ params: { locale, slug } }: Props) {
