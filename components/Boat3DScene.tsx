@@ -12,7 +12,8 @@
  * (secciones quilla→pantoque→brusca→regala) con fondo en V, arrufo que sube
  * a proa y abanico en la amura — como un casco de verdad. El fileteado rojo
  * recorre la regala con un tubo sobre una curva Catmull-Rom, y un entorno de
- * estudio propio (sin peticiones externas) da reflejos de gelcoat.
+ * estudio propio (sin peticiones externas) da reflejos de gelcoat. En popa
+ * cuelga un fueraborda Mercury FourStroke 200 ("Blue" es la versión OB).
  *
  * 🔁 SI ALGÚN DÍA HAY UN .glb ESCANEADO/FIEL (ver docs/guia-modelo-3d-barco.md):
  *   1. Colócalo en public/models/searay-spx-210.glb
@@ -82,23 +83,37 @@ const CHROME = { color: '#cdd2d7', metalness: 0.95, roughness: 0.12, envMapInten
 /**
  * Cuadernas del casco (media sección → espejada a babor):
  * x = posición longitudinal (proa +X) · ys/w = regala (altura/semimanga)
- * yc/wc = brusca (chine) · yk = quilla. Valores leídos de las fotos:
- * arrufo ascendente a proa, V de fondo, abanico en la amura, espejo curvo.
+ * yc/wc = brusca (chine) · yk = quilla. Perfil SLEEK de bowrider (leído de las
+ * fotos de la SPX 210): francobordo bajo, popa baja, arrufo suave que sube a
+ * proa, entrada FINA y roda LANZADA (bow tip volado a +X), fondo en V.
  */
 const STATIONS = [
-  { x: -3.3, ys: 1.0, w: 1.02, yc: 0.34, wc: 0.9, yk: 0.16 },
-  { x: -2.6, ys: 0.99, w: 1.13, yc: 0.28, wc: 1.0, yk: 0.09 },
-  { x: -1.7, ys: 0.99, w: 1.23, yc: 0.25, wc: 1.08, yk: 0.05 },
-  { x: -0.7, ys: 1.0, w: 1.28, yc: 0.25, wc: 1.1, yk: 0.04 },
-  { x: 0.3, ys: 1.03, w: 1.25, yc: 0.27, wc: 1.05, yk: 0.05 },
-  { x: 1.2, ys: 1.07, w: 1.13, yc: 0.32, wc: 0.9, yk: 0.09 },
-  { x: 2.0, ys: 1.12, w: 0.92, yc: 0.42, wc: 0.66, yk: 0.17 },
-  { x: 2.7, ys: 1.19, w: 0.6, yc: 0.6, wc: 0.36, yk: 0.34 },
-  { x: 3.15, ys: 1.26, w: 0.24, yc: 0.88, wc: 0.1, yk: 0.62 },
-  { x: 3.32, ys: 1.3, w: 0.03, yc: 1.05, wc: 0.02, yk: 0.95 },
+  { x: -3.3, ys: 0.86, w: 1.02, yc: 0.4, wc: 0.94, yk: 0.34 },
+  { x: -2.55, ys: 0.85, w: 1.15, yc: 0.3, wc: 1.05, yk: 0.13 },
+  { x: -1.65, ys: 0.86, w: 1.26, yc: 0.24, wc: 1.13, yk: 0.04 },
+  { x: -0.6, ys: 0.9, w: 1.29, yc: 0.23, wc: 1.14, yk: 0.02 },
+  { x: 0.4, ys: 0.96, w: 1.25, yc: 0.27, wc: 1.06, yk: 0.05 },
+  { x: 1.3, ys: 1.02, w: 1.1, yc: 0.35, wc: 0.86, yk: 0.14 },
+  { x: 2.1, ys: 1.08, w: 0.82, yc: 0.48, wc: 0.56, yk: 0.34 },
+  { x: 2.78, ys: 1.13, w: 0.46, yc: 0.7, wc: 0.28, yk: 0.66 },
+  { x: 3.24, ys: 1.19, w: 0.16, yc: 0.98, wc: 0.08, yk: 1.0 },
+  { x: 3.46, ys: 1.22, w: 0.02, yc: 1.12, wc: 0.015, yk: 1.18 },
 ] as const;
 
 const RING = 7; // puntos por cuaderna: regala+ · brusca+ · pantoque+ · quilla · pantoque− · brusca− · regala−
+
+/** Altura de la regala (deck line) interpolada en cualquier x → anclar muebles. */
+function deckY(x: number): number {
+  const S = STATIONS;
+  if (x <= S[0].x) return S[0].ys;
+  for (let i = 0; i < S.length - 1; i++) {
+    if (x >= S[i].x && x <= S[i + 1].x) {
+      const t = (x - S[i].x) / (S[i + 1].x - S[i].x);
+      return S[i].ys + (S[i + 1].ys - S[i].ys) * t;
+    }
+  }
+  return S[S.length - 1].ys;
+}
 
 function buildHullGeometries() {
   const N = STATIONS.length;
@@ -151,9 +166,9 @@ function buildHullGeometries() {
   const dPos: number[] = [];
   const dIdx: number[] = [];
   for (const s of STATIONS) {
-    dPos.push(s.x, s.ys + 0.005, +s.w * 0.965);
-    dPos.push(s.x, s.ys + 0.07, 0);
-    dPos.push(s.x, s.ys + 0.005, -s.w * 0.965);
+    dPos.push(s.x, s.ys + 0.004, +s.w * 0.965);
+    dPos.push(s.x, s.ys + 0.035, 0);
+    dPos.push(s.x, s.ys + 0.004, -s.w * 0.965);
   }
   for (let i = 0; i < N - 1; i++) {
     for (let j = 0; j < 2; j++) {
@@ -171,15 +186,86 @@ function buildHullGeometries() {
 
   // Fileteado rojo: tubo sobre la línea de regala (ambas bandas, lazo cerrado)
   const sheer: THREE.Vector3[] = [];
-  for (const s of STATIONS) sheer.push(new THREE.Vector3(s.x, s.ys + 0.01, +(s.w + 0.012)));
+  for (const s of STATIONS) sheer.push(new THREE.Vector3(s.x, s.ys - 0.02, +(s.w + 0.006)));
   for (let i = N - 1; i >= 0; i--) {
     const s = STATIONS[i];
-    sheer.push(new THREE.Vector3(s.x, s.ys + 0.01, -(s.w + 0.012)));
+    sheer.push(new THREE.Vector3(s.x, s.ys - 0.02, -(s.w + 0.006)));
   }
   const stripeCurve = new THREE.CatmullRomCurve3(sheer, true, 'catmullrom', 0.1);
-  const stripe = new THREE.TubeGeometry(stripeCurve, 240, 0.022, 8, true);
+  const stripe = new THREE.TubeGeometry(stripeCurve, 260, 0.014, 8, true);
 
   return { hull, deck, stripe };
+}
+
+/**
+ * Fueraborda Mercury FourStroke 200 (V6) — colgado del espejo de popa.
+ * Capó negro con banda cromada y panel claro (guiño al decal FourStroke),
+ * tronco, placa antiventilación y cola con hélice de tres palas. El grupo
+ * cuelga de la regala (deckY) y rakea ligeramente hacia popa.
+ */
+function MercuryOutboard200() {
+  return (
+    <group position={[-3.32, deckY(-3.3), 0]} rotation={[0, 0, 0.07]}>
+      {/* Abrazadera al espejo */}
+      <mesh position={[-0.05, -0.08, 0]}>
+        <boxGeometry args={[0.18, 0.32, 0.26]} />
+        <meshStandardMaterial {...DARK_TRIM} />
+      </mesh>
+      {/* Capó negro brillante */}
+      <RoundedBox args={[0.5, 0.52, 0.36]} radius={0.09} smoothness={4} position={[-0.34, 0.2, 0]}>
+        <meshStandardMaterial {...TOWER_BLACK} />
+      </RoundedBox>
+      <RoundedBox args={[0.4, 0.09, 0.28]} radius={0.035} smoothness={4} position={[-0.32, 0.48, 0]}>
+        <meshStandardMaterial {...TOWER_BLACK} />
+      </RoundedBox>
+      {/* Banda cromada inferior + paneles laterales claros */}
+      <mesh position={[-0.34, -0.08, 0]}>
+        <boxGeometry args={[0.52, 0.05, 0.38]} />
+        <meshStandardMaterial {...CHROME} />
+      </mesh>
+      {([1, -1] as const).map((s) => (
+        <mesh key={s} position={[-0.34, 0.22, s * 0.185]}>
+          <boxGeometry args={[0.28, 0.15, 0.012]} />
+          <meshStandardMaterial {...DECK_WHITE} />
+        </mesh>
+      ))}
+      {/* Tronco hasta la placa antiventilación */}
+      <mesh position={[-0.32, -0.4, 0]}>
+        <boxGeometry args={[0.19, 0.6, 0.15]} />
+        <meshStandardMaterial {...DARK_TRIM} />
+      </mesh>
+      <mesh position={[-0.32, -0.7, 0]}>
+        <boxGeometry args={[0.34, 0.02, 0.2]} />
+        <meshStandardMaterial {...DARK_TRIM} />
+      </mesh>
+      {/* Cola: aleta, torpedo y cono de proa */}
+      <mesh position={[-0.32, -0.78, 0]}>
+        <boxGeometry args={[0.14, 0.16, 0.055]} />
+        <meshStandardMaterial {...DARK_TRIM} />
+      </mesh>
+      <mesh position={[-0.32, -0.84, 0]} rotation={[0, 0, Math.PI / 2]}>
+        <cylinderGeometry args={[0.048, 0.048, 0.3, 12]} />
+        <meshStandardMaterial {...DARK_TRIM} />
+      </mesh>
+      <mesh position={[-0.14, -0.84, 0]} rotation={[0, 0, -Math.PI / 2]}>
+        <coneGeometry args={[0.048, 0.1, 12]} />
+        <meshStandardMaterial {...DARK_TRIM} />
+      </mesh>
+      {/* Hélice de tres palas + buje cromados */}
+      <mesh position={[-0.51, -0.84, 0]} rotation={[0, 0, Math.PI / 2]}>
+        <coneGeometry args={[0.03, 0.09, 10]} />
+        <meshStandardMaterial {...CHROME} />
+      </mesh>
+      {([0, (2 * Math.PI) / 3, (4 * Math.PI) / 3] as const).map((a) => (
+        <group key={a} position={[-0.49, -0.84, 0]} rotation={[a, 0, 0]}>
+          <mesh position={[0, 0.07, 0]} rotation={[0.5, 0, 0]}>
+            <boxGeometry args={[0.018, 0.12, 0.07]} />
+            <meshStandardMaterial {...CHROME} />
+          </mesh>
+        </group>
+      ))}
+    </group>
+  );
 }
 
 /** Recreación procedimental de la Sea Ray SPX 210 (ver cabecera). */
@@ -199,161 +285,148 @@ function SeaRaySpx210() {
         <meshStandardMaterial {...RED_STRIPE} />
       </mesh>
 
-      {/* ── Proa abierta (bowrider): solárium en V + respaldos ──────── */}
-      <mesh position={[1.6, 1.18, 0]} rotation={[0, 0, 0.07]}>
-        <boxGeometry args={[1.6, 0.06, 0.95]} />
-        <meshStandardMaterial {...DARK_TRIM} />
-      </mesh>
-      <RoundedBox args={[1.5, 0.14, 0.42]} radius={0.04} smoothness={4} position={[1.72, 1.27, 0.45]} rotation={[0, 0.28, 0.07]}>
+      {/* ── Proa abierta (bowrider): asientos en V + solárium ───────── */}
+      <RoundedBox args={[1.5, 0.13, 0.4]} radius={0.05} smoothness={4} position={[1.75, 1.0, 0.42]} rotation={[0, 0.26, 0]}>
         <meshStandardMaterial {...CUSHION} />
       </RoundedBox>
-      <RoundedBox args={[1.5, 0.14, 0.42]} radius={0.04} smoothness={4} position={[1.72, 1.27, -0.45]} rotation={[0, -0.28, 0.07]}>
+      <RoundedBox args={[1.5, 0.13, 0.4]} radius={0.05} smoothness={4} position={[1.75, 1.0, -0.42]} rotation={[0, -0.26, 0]}>
         <meshStandardMaterial {...CUSHION} />
       </RoundedBox>
-      <RoundedBox args={[0.5, 0.14, 0.5]} radius={0.04} smoothness={4} position={[2.56, 1.33, 0]} rotation={[0, Math.PI / 4, 0.08]}>
+      <RoundedBox args={[1.15, 0.1, 0.62]} radius={0.05} smoothness={4} position={[1.95, 0.99, 0]}>
         <meshStandardMaterial {...CUSHION} />
       </RoundedBox>
-      {/* Respaldos contra el parabrisas */}
-      <RoundedBox args={[0.12, 0.34, 0.7]} radius={0.03} smoothness={4} position={[1.02, 1.35, 0.52]} rotation={[0, 0.12, 0.18]}>
-        <meshStandardMaterial {...CUSHION} />
-      </RoundedBox>
-      <RoundedBox args={[0.12, 0.34, 0.7]} radius={0.03} smoothness={4} position={[1.02, 1.35, -0.52]} rotation={[0, -0.12, 0.18]}>
+      <RoundedBox args={[0.5, 0.12, 0.36]} radius={0.04} smoothness={4} position={[2.5, 1.06, 0]} rotation={[0, Math.PI / 4, 0]}>
         <meshStandardMaterial {...CUSHION} />
       </RoundedBox>
 
       {/* ── Parabrisas envolvente walk-through (marco oscuro + cristal) ─ */}
-      <mesh position={[0.88, 1.52, 0.32]} rotation={[0, -0.28, -0.3]}>
-        <boxGeometry args={[0.04, 0.52, 0.58]} />
+      <mesh position={[0.85, 1.2, 0.34]} rotation={[0, -0.28, -0.32]}>
+        <boxGeometry args={[0.04, 0.44, 0.55]} />
         <meshStandardMaterial {...GLASS} />
       </mesh>
-      <mesh position={[0.88, 1.52, -0.32]} rotation={[0, 0.28, -0.3]}>
-        <boxGeometry args={[0.04, 0.52, 0.58]} />
+      <mesh position={[0.85, 1.2, -0.34]} rotation={[0, 0.28, -0.32]}>
+        <boxGeometry args={[0.04, 0.44, 0.55]} />
         <meshStandardMaterial {...GLASS} />
       </mesh>
-      <mesh position={[0.4, 1.5, 0.82]} rotation={[0, 0.62, -0.22]}>
-        <boxGeometry args={[0.85, 0.48, 0.04]} />
+      <mesh position={[0.36, 1.18, 0.78]} rotation={[0, 0.6, -0.24]}>
+        <boxGeometry args={[0.8, 0.4, 0.04]} />
         <meshStandardMaterial {...GLASS} />
       </mesh>
-      <mesh position={[0.4, 1.5, -0.82]} rotation={[0, -0.62, -0.22]}>
-        <boxGeometry args={[0.85, 0.48, 0.04]} />
+      <mesh position={[0.36, 1.18, -0.78]} rotation={[0, -0.6, -0.24]}>
+        <boxGeometry args={[0.8, 0.4, 0.04]} />
         <meshStandardMaterial {...GLASS} />
       </mesh>
       {/* Marco superior (moldura negra) */}
-      <mesh position={[0.8, 1.78, 0.48]} rotation={[0, -0.28, -0.3]}>
-        <boxGeometry args={[0.05, 0.05, 0.7]} />
+      <mesh position={[0.78, 1.42, 0.5]} rotation={[0, -0.28, -0.32]}>
+        <boxGeometry args={[0.05, 0.05, 0.62]} />
         <meshStandardMaterial {...DARK_TRIM} />
       </mesh>
-      <mesh position={[0.8, 1.78, -0.48]} rotation={[0, 0.28, -0.3]}>
-        <boxGeometry args={[0.05, 0.05, 0.7]} />
+      <mesh position={[0.78, 1.42, -0.5]} rotation={[0, 0.28, -0.32]}>
+        <boxGeometry args={[0.05, 0.05, 0.62]} />
         <meshStandardMaterial {...DARK_TRIM} />
       </mesh>
 
-      {/* ── Puesto de mando ─────────────────────────────────────────── */}
-      <mesh position={[0.44, 1.36, -0.5]}>
-        <boxGeometry args={[0.55, 0.42, 0.6]} />
+      {/* ── Puesto de mando (estribor) + asientos bucket ─────────────── */}
+      <mesh position={[0.42, 0.92, -0.5]}>
+        <boxGeometry args={[0.5, 0.62, 0.6]} />
         <meshStandardMaterial {...DARK_TRIM} />
       </mesh>
-      <mesh position={[0.58, 1.58, -0.5]} rotation={[0, 0, -0.5]}>
-        <boxGeometry args={[0.3, 0.08, 0.56]} />
+      <mesh position={[0.54, 1.2, -0.5]} rotation={[0, 0, -0.5]}>
+        <boxGeometry args={[0.26, 0.07, 0.56]} />
         <meshStandardMaterial {...DARK_TRIM} />
       </mesh>
-      <mesh position={[0.22, 1.52, -0.5]} rotation={[0, Math.PI / 2, 0]}>
-        <torusGeometry args={[0.13, 0.02, 10, 28]} />
+      <mesh position={[0.24, 1.13, -0.5]} rotation={[0, Math.PI / 2, 0.2]}>
+        <torusGeometry args={[0.12, 0.018, 10, 28]} />
         <meshStandardMaterial {...CHROME} />
       </mesh>
-      {/* Asientos bucket (piloto y copiloto) */}
-      {([-0.55, 0.55] as const).map((z) => (
-        <group key={z} position={[-0.4, 0.08, z]}>
-          <mesh position={[0, 1.06, 0]}>
-            <cylinderGeometry args={[0.07, 0.09, 0.22, 10]} />
+      {([-0.5, 0.5] as const).map((z) => (
+        <group key={z} position={[-0.45, 0, z]}>
+          <mesh position={[0, 0.72, 0]}>
+            <cylinderGeometry args={[0.06, 0.08, 0.24, 10]} />
             <meshStandardMaterial {...DARK_TRIM} />
           </mesh>
-          <RoundedBox args={[0.46, 0.13, 0.46]} radius={0.04} smoothness={4} position={[0, 1.24, 0]}>
+          <RoundedBox args={[0.44, 0.12, 0.44]} radius={0.04} smoothness={4} position={[0, 0.9, 0]}>
             <meshStandardMaterial {...CUSHION} />
           </RoundedBox>
-          <RoundedBox args={[0.12, 0.5, 0.44]} radius={0.04} smoothness={4} position={[-0.2, 1.52, 0]} rotation={[0, 0, 0.14]}>
+          <RoundedBox args={[0.12, 0.44, 0.42]} radius={0.04} smoothness={4} position={[-0.2, 1.14, 0]} rotation={[0, 0, 0.16]}>
             <meshStandardMaterial {...CUSHION} />
           </RoundedBox>
         </group>
       ))}
 
-      {/* ── Bañera: suelo EVA gris + banco en L (babor) ─────────────── */}
-      <mesh position={[-1.15, 1.08, 0]}>
-        <boxGeometry args={[2.5, 0.05, 1.45]} />
+      {/* ── Bañera: suelo EVA gris (recogido) + banco en L a babor ───── */}
+      <mesh position={[-1.05, 0.62, 0]}>
+        <boxGeometry args={[2.5, 0.05, 1.4]} />
         <meshStandardMaterial {...EVA_GRAY} />
       </mesh>
-      <RoundedBox args={[1.7, 0.28, 0.42]} radius={0.05} smoothness={4} position={[-1.45, 1.26, 0.68]}>
+      <RoundedBox args={[1.7, 0.26, 0.4]} radius={0.05} smoothness={4} position={[-1.4, 0.86, 0.62]}>
         <meshStandardMaterial {...CUSHION} />
       </RoundedBox>
-      <RoundedBox args={[1.7, 0.3, 0.1]} radius={0.04} smoothness={4} position={[-1.45, 1.49, 0.9]} rotation={[-0.16, 0, 0]}>
+      <RoundedBox args={[1.7, 0.28, 0.1]} radius={0.04} smoothness={4} position={[-1.4, 1.08, 0.82]} rotation={[-0.16, 0, 0]}>
         <meshStandardMaterial {...CUSHION} />
       </RoundedBox>
 
-      {/* ── Popa: solárium sobre el motor + plataforma de baño ─────── */}
-      <RoundedBox args={[0.95, 0.16, 1.75]} radius={0.05} smoothness={4} position={[-2.7, 1.16, 0]}>
+      {/* ── Popa: solárium + plataformas de baño partidas (layout OB) ── */}
+      <RoundedBox args={[0.9, 0.15, 1.7]} radius={0.05} smoothness={4} position={[-2.7, 0.88, 0]}>
         <meshStandardMaterial {...CUSHION} />
       </RoundedBox>
-      <RoundedBox args={[0.3, 0.09, 1.6]} radius={0.04} smoothness={4} position={[-2.32, 1.26, 0]} rotation={[0, 0, -0.35]}>
+      <RoundedBox args={[0.28, 0.08, 1.55]} radius={0.04} smoothness={4} position={[-2.34, 0.98, 0]} rotation={[0, 0, -0.32]}>
         <meshStandardMaterial {...CUSHION} />
       </RoundedBox>
-      <mesh position={[-3.6, 0.88, 0]}>
-        <boxGeometry args={[0.55, 0.07, 1.7]} />
-        <meshStandardMaterial {...DECK_WHITE} />
-      </mesh>
-      <mesh position={[-3.6, 0.925, 0]}>
-        <boxGeometry args={[0.45, 0.02, 1.45]} />
-        <meshStandardMaterial {...EVA_GRAY} />
-      </mesh>
-      {/* Cola del MerCruiser (sterndrive) */}
-      <mesh position={[-3.52, 0.42, 0]}>
-        <boxGeometry args={[0.3, 0.34, 0.2]} />
-        <meshStandardMaterial {...DARK_TRIM} />
-      </mesh>
-      <mesh position={[-3.58, 0.18, 0]}>
-        <boxGeometry args={[0.34, 0.16, 0.06]} />
-        <meshStandardMaterial {...DARK_TRIM} />
-      </mesh>
+      {/* Dos medias plataformas flanqueando el motor, como en la SPX 210 OB */}
+      {([1, -1] as const).map((s) => (
+        <group key={s}>
+          <mesh position={[-3.56, 0.6, s * 0.52]}>
+            <boxGeometry args={[0.5, 0.07, 0.58]} />
+            <meshStandardMaterial {...DECK_WHITE} />
+          </mesh>
+          <mesh position={[-3.56, 0.645, s * 0.52]}>
+            <boxGeometry args={[0.4, 0.02, 0.46]} />
+            <meshStandardMaterial {...EVA_GRAY} />
+          </mesh>
+        </group>
+      ))}
+      <MercuryOutboard200 />
 
-      {/* ── Torre de wake NEGRA, inclinada a popa, con tabla arriba ── */}
+      {/* ── Torre de wake NEGRA (baja, reforzada, A-frame) con tabla ── */}
       <group>
-        <mesh position={[-0.33, 1.85, 0.78]} rotation={[0.24, 0, 0.48]}>
-          <cylinderGeometry args={[0.045, 0.05, 1.7, 12]} />
+        {/* Patas delanteras (casi verticales, abren hacia fuera) */}
+        <mesh position={[-0.35, 1.5, 0.72]} rotation={[0.12, 0, 0.28]}>
+          <cylinderGeometry args={[0.055, 0.06, 1.25, 12]} />
           <meshStandardMaterial {...TOWER_BLACK} />
         </mesh>
-        <mesh position={[-0.33, 1.85, -0.78]} rotation={[-0.24, 0, 0.48]}>
-          <cylinderGeometry args={[0.045, 0.05, 1.7, 12]} />
+        <mesh position={[-0.35, 1.5, -0.72]} rotation={[-0.12, 0, 0.28]}>
+          <cylinderGeometry args={[0.055, 0.06, 1.25, 12]} />
           <meshStandardMaterial {...TOWER_BLACK} />
         </mesh>
-        <mesh position={[-1.05, 1.83, 0.72]} rotation={[0.17, 0, -0.14]}>
-          <cylinderGeometry args={[0.045, 0.05, 1.55, 12]} />
+        {/* Patas traseras (rakean hacia delante para juntarse arriba) */}
+        <mesh position={[-0.95, 1.5, 0.7]} rotation={[0.12, 0, -0.42]}>
+          <cylinderGeometry args={[0.055, 0.06, 1.3, 12]} />
           <meshStandardMaterial {...TOWER_BLACK} />
         </mesh>
-        <mesh position={[-1.05, 1.83, -0.72]} rotation={[-0.17, 0, -0.14]}>
-          <cylinderGeometry args={[0.045, 0.05, 1.55, 12]} />
+        <mesh position={[-0.95, 1.5, -0.7]} rotation={[-0.12, 0, -0.42]}>
+          <cylinderGeometry args={[0.055, 0.06, 1.3, 12]} />
           <meshStandardMaterial {...TOWER_BLACK} />
         </mesh>
-        <mesh position={[-0.85, 2.58, 0.58]} rotation={[0, 0, Math.PI / 2]}>
-          <cylinderGeometry args={[0.04, 0.04, 0.75, 10]} />
+        {/* Largueros superiores + travesaño */}
+        <mesh position={[-0.6, 2.06, 0.5]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.05, 0.05, 0.5, 10]} />
           <meshStandardMaterial {...TOWER_BLACK} />
         </mesh>
-        <mesh position={[-0.85, 2.58, -0.58]} rotation={[0, 0, Math.PI / 2]}>
-          <cylinderGeometry args={[0.04, 0.04, 0.75, 10]} />
+        <mesh position={[-0.6, 2.06, -0.5]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.05, 0.05, 0.5, 10]} />
           <meshStandardMaterial {...TOWER_BLACK} />
         </mesh>
-        <mesh position={[-0.85, 2.6, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <cylinderGeometry args={[0.04, 0.04, 1.2, 10]} />
+        <mesh position={[-0.6, 2.08, 0]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.05, 0.05, 1.1, 10]} />
           <meshStandardMaterial {...TOWER_BLACK} />
         </mesh>
-        {/* Soportes + tabla de wakeboard (roja, como en las fotos) */}
-        <mesh position={[-0.85, 2.69, 0.24]}>
-          <cylinderGeometry args={[0.025, 0.025, 0.16, 8]} />
-          <meshStandardMaterial {...TOWER_BLACK} />
+        {/* Rack lateral + tabla de wake (roja, como en las fotos) */}
+        <mesh position={[-0.6, 2.06, 0.72]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.03, 0.03, 0.3, 8]} />
+          <meshStandardMaterial {...CHROME} />
         </mesh>
-        <mesh position={[-0.85, 2.69, -0.24]}>
-          <cylinderGeometry args={[0.025, 0.025, 0.16, 8]} />
-          <meshStandardMaterial {...TOWER_BLACK} />
-        </mesh>
-        <RoundedBox args={[0.16, 0.045, 1.2]} radius={0.02} smoothness={4} position={[-0.85, 2.78, 0]}>
+        <RoundedBox args={[0.9, 0.05, 0.24]} radius={0.02} smoothness={4} position={[-0.6, 2.06, 0.92]} rotation={[0, 0, 0.1]}>
           <meshStandardMaterial color="#8e2b26" metalness={0.3} roughness={0.35} envMapIntensity={0.8} />
         </RoundedBox>
       </group>
@@ -361,18 +434,18 @@ function SeaRaySpx210() {
       {/* ── Detalles: cornamusas cromadas y luz de proa ─────────────── */}
       {([1, -1] as const).map((s) => (
         <group key={s}>
-          <mesh position={[2.15, 1.17, s * 0.79]}>
-            <boxGeometry args={[0.2, 0.045, 0.05]} />
+          <mesh position={[2.1, 1.0, s * 0.72]}>
+            <boxGeometry args={[0.18, 0.04, 0.05]} />
             <meshStandardMaterial {...CHROME} />
           </mesh>
-          <mesh position={[-2.85, 1.05, s * 0.98]}>
-            <boxGeometry args={[0.2, 0.045, 0.05]} />
+          <mesh position={[-2.95, 0.86, s * 0.95]}>
+            <boxGeometry args={[0.18, 0.04, 0.05]} />
             <meshStandardMaterial {...CHROME} />
           </mesh>
         </group>
       ))}
-      <mesh position={[3.16, 1.33, 0]}>
-        <sphereGeometry args={[0.04, 10, 10]} />
+      <mesh position={[3.28, 1.16, 0]}>
+        <sphereGeometry args={[0.035, 10, 10]} />
         <meshStandardMaterial {...CHROME} />
       </mesh>
     </group>
