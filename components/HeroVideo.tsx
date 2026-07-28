@@ -26,7 +26,7 @@ export default function HeroVideo({
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.18]);
 
   return (
-    <section ref={ref} className={`relative w-full overflow-hidden bg-ink ${heightClass}`}>
+    <section ref={ref} data-navbar-on-dark className={`relative w-full overflow-hidden bg-ink ${heightClass}`}>
       {/* Main heading kept for SEO/a11y; the visible brand lives in the header lockup (Wally-style). */}
       {showHeading && (
         <h1 className="sr-only">Flamingo Yacht Club — Club náutico de membresía en Puerto Banús, Marbella</h1>

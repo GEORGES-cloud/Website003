@@ -41,6 +41,9 @@ function Wordmark({ className = '' }: { className?: string }) {
 
 export default function Navbar({ locale }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
+  // Solo las páginas cuyo hero es oscuro (marcado con data-navbar-on-dark)
+  // arrancan con la navbar en blanco; el resto usa tinta desde el inicio.
+  const [overDark, setOverDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const t = useTranslations('nav');
   const pathname = usePathname();
@@ -63,6 +66,7 @@ export default function Navbar({ locale }: NavbarProps) {
 
   useEffect(() => {
     setMenuOpen(false);
+    setOverDark(Boolean(document.querySelector('[data-navbar-on-dark]')));
   }, [pathname]);
 
   useEffect(() => {
@@ -88,8 +92,9 @@ export default function Navbar({ locale }: NavbarProps) {
     { href: `/${locale}/contacto`, label: t('contact') },
   ];
 
-  // On hero (not scrolled): white text over the video. After scroll: solid light bg, ink text.
-  const onLight = scrolled;
+  // Sobre un hero oscuro (sin scroll): texto blanco. Tras el scroll, o en
+  // páginas de hero claro (/flota, /contacto, legales): fondo claro, tinta.
+  const onLight = scrolled || !overDark;
   const textColor = onLight ? 'text-ink' : 'text-white';
   const barColor = onLight ? 'bg-ink' : 'bg-white';
 

@@ -206,6 +206,7 @@
     "book": "Reservar"
   },
   "boatDetail": {
+    "beam": "Manga",
     "specs": "Especificaciones",
     "capacity": "Capacidad",
     "length": "Eslora",

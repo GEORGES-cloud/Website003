@@ -238,6 +238,7 @@
     "book": "Boka"
   },
   "boatDetail": {
+    "beam": "Bredd",
     "specs": "Specifikationer",
     "capacity": "Kapacitet",
     "length": "Längd",

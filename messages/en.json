@@ -206,6 +206,7 @@
     "book": "Book"
   },
   "boatDetail": {
+    "beam": "Beam",
     "specs": "Specifications",
     "capacity": "Capacity",
     "length": "Length",

@@ -8,10 +8,11 @@ interface PageHeroProps {
 }
 
 export default function PageHero({ eyebrow, title, subtitle, image }: PageHeroProps) {
-  // Image variant — full-bleed photo with overlay (used on most inner pages)
+  // Image variant — full-bleed photo with overlay (used on most inner pages).
+  // data-navbar-on-dark: señal para que la Navbar arranque en blanco sobre este hero.
   if (image) {
     return (
-      <section className="relative pt-[var(--header-h)] h-[70svh] min-h-[480px] overflow-hidden">
+      <section data-navbar-on-dark className="relative pt-[var(--header-h)] h-[70svh] min-h-[480px] overflow-hidden">
         <Image src={image} alt="" fill priority sizes="100vw" className="object-cover animate-kenburns" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/20 to-ink/30" />
         <div className="relative h-full max-w-[1480px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-16">

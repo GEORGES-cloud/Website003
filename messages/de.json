@@ -238,10 +238,11 @@
     "book": "Reservieren"
   },
   "boatDetail": {
+    "beam": "Breite",
     "specs": "Technische Daten",
     "capacity": "Kapazität",
     "length": "Länge",
-    "maxSpeed": "Höchstgeschwindigkeit",
+    "maxSpeed": "Top-Speed",
     "engines": "Motoren",
     "book": "Reserviere über die App",
     "backToFleet": "← Zurück zur Flotte"
