@@ -1,6 +1,8 @@
 export interface Boat {
   slug: string;
   name: string;
+  /** Código de modelo corto para el menú tipo "range" (p. ej. "SPX 210"). */
+  shortName?: string;
   lengthM: string;
   capacity: number;
   year: number;
@@ -34,6 +36,7 @@ export const fleet: Boat[] = [
   {
     slug: 'sea-ray-spx-210',
     name: 'Sea Ray SPX 210',
+    shortName: 'SPX 210',
     lengthM: '6.6 m',
     capacity: 10,
     year: 2025,
@@ -64,6 +67,7 @@ export const fleet: Boat[] = [
   {
     slug: 'navan-c30',
     name: 'NAVAN C30',
+    shortName: 'C30',
     lengthM: '9.4 m',
     capacity: 8,
     // TODO confirmar specs con el cliente (motorización/año/capacidad provisionales)
@@ -95,6 +99,7 @@ export const fleet: Boat[] = [
   {
     slug: 'level-43st',
     name: 'Level Yachts 43ST',
+    shortName: '43ST',
     lengthM: '13.2 m',
     capacity: 12,
     // TODO confirmar specs con el cliente (eslora/manga/motorización/año provisionales)

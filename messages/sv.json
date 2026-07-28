@@ -58,6 +58,29 @@
       "closing": "Ska vi höras?"
     }
   },
+  "quiz": {
+    "eyebrow": "Flamingo-utmaningen",
+    "title": "Tre frågor. En exklusiv förmån.",
+    "subtitle": "Svara rätt på dessa tre frågor och lås upp en särskild välkomstrabatt i klubben.",
+    "start": "Anta utmaningen",
+    "dismiss": "Inte nu",
+    "close": "Stäng",
+    "progress": "Fråga {current} av {total}",
+    "wrong": "Nästan – försök igen.",
+    "q1": { "title": "Från vilken hamn seglar klubben?", "options": ["Sotogrande", "Puerto Banús", "Estepona"] },
+    "q2": { "title": "Hur många medlemmar delar högst på varje båt?", "options": ["Sju", "Femton", "Tjugofem"] },
+    "q3": { "title": "Vad heter vår Sea Ray SPX 210?", "options": ["Coral", "Marina", "Blue"] },
+    "win": {
+      "eyebrow": "Utmaning klarad",
+      "title": "Grattis – du är en av oss",
+      "subtitle": "Du har låst upp en särskild välkomstrabatt på ditt medlemskap.",
+      "codeLabel": "Din kod",
+      "hint": "Nämn koden när du bokar ditt besök så drar vi av den på din inträdesavgift.",
+      "whatsapp": "Lös in via WhatsApp",
+      "plans": "Se medlemskap"
+    },
+    "wa": "Hej! Jag har klarat Flamingo-utmaningen och vill lösa in min kod {code} för välkomstrabatten."
+  },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Marbella | Yachtklubb med medlemskap",
     "description": "Båtklubb med medlemskap i Puerto Banús, Marbella. En årsavgift och obegränsad tillgång till premiumbåtar som underhålls av Marina Marbella – utan underhåll, kajplats eller krångel.",
@@ -71,6 +94,7 @@
     }
   },
   "nav": {
+    "allFleet": "Se hela flottan",
     "fleet": "Flotta",
     "howItWorks": "Så fungerar det",
     "prices": "Priser",

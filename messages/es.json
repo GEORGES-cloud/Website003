@@ -58,6 +58,29 @@
       "closing": "¿Hablamos?"
     }
   },
+  "quiz": {
+    "eyebrow": "El reto Flamingo",
+    "title": "Tres preguntas. Una ventaja exclusiva.",
+    "subtitle": "Acierta estas tres preguntas y desbloquea un descuento especial de bienvenida al club.",
+    "start": "Aceptar el reto",
+    "dismiss": "Ahora no",
+    "close": "Cerrar",
+    "progress": "Pregunta {current} de {total}",
+    "wrong": "Casi… inténtalo de nuevo.",
+    "q1": { "title": "¿Desde qué puerto zarpa el club?", "options": ["Sotogrande", "Puerto Banús", "Estepona"] },
+    "q2": { "title": "¿Cuántos socios comparten cada barco como máximo?", "options": ["Siete", "Quince", "Veinticinco"] },
+    "q3": { "title": "¿Cómo se llama nuestra Sea Ray SPX 210?", "options": ["Coral", "Marina", "Blue"] },
+    "win": {
+      "eyebrow": "Reto superado",
+      "title": "Enhorabuena, ya eres de los nuestros",
+      "subtitle": "Has desbloqueado un descuento especial de bienvenida en tu membresía.",
+      "codeLabel": "Tu código",
+      "hint": "Menciona este código al reservar tu visita y lo aplicaremos a tu cuota de entrada.",
+      "whatsapp": "Canjear por WhatsApp",
+      "plans": "Ver membresías"
+    },
+    "wa": "¡Hola! He superado el reto Flamingo y quiero canjear mi código {code} para el descuento de bienvenida."
+  },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Marbella | Club Náutico de Membresía",
     "description": "Club náutico de membresía en Puerto Banús, Marbella. Una cuota anual y acceso ilimitado a barcos premium mantenidos por Marina Marbella — sin mantenimiento, sin amarre, sin complicaciones.",
@@ -71,6 +94,7 @@
     }
   },
   "nav": {
+    "allFleet": "Ver toda la flota",
     "howItWorks": "Cómo funciona",
     "fleet": "Flota",
     "membership": "Membresía",

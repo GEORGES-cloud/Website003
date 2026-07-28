@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useJoinFunnel } from './JoinFunnelProvider';
+import { fleet, ACTIVE_BOAT_SLUGS } from '@/lib/data';
 
 interface NavbarProps {
   locale: string;
@@ -66,15 +67,25 @@ export default function Navbar({ locale }: NavbarProps) {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMenuOpen(false);
+    if (menuOpen) document.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKey);
+    };
   }, [menuOpen]);
 
-  const navLinks = [
+  // Menú tipo "range": la flota en grande a la izquierda, navegación a la derecha
+  const models = ACTIVE_BOAT_SLUGS
+    .map((slug) => fleet.find((b) => b.slug === slug))
+    .filter((b): b is (typeof fleet)[number] => Boolean(b));
+
+  const overlayLinks = [
     { href: `/${locale}/como-funciona`, label: t('howItWorks') },
-    { href: `/${locale}/flota`, label: t('fleet') },
     { href: `/${locale}/precios`, label: t('prices') },
     { href: `/${locale}/puerto-base`, label: t('homePort') },
     { href: `/${locale}/nosotros`, label: t('about') },
+    { href: `/${locale}/contacto`, label: t('contact') },
   ];
 
   // On hero (not scrolled): white text over the video. After scroll: solid light bg, ink text.
@@ -157,29 +168,87 @@ export default function Navbar({ locale }: NavbarProps) {
               </button>
             </div>
 
-            <nav className="flex-1 flex flex-col justify-center px-8 gap-1">
-              {navLinks.map(({ href, label }, i) => (
-                <motion.div
-                  key={href}
-                  initial={{ opacity: 0, x: -24 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.06 + 0.1, duration: 0.4 }}
-                >
-                  <Link
-                    href={href}
-                    className="font-sans text-2xl font-extralight text-ink hover:text-sea transition-colors block py-2.5 leading-snug tracking-tight"
+            {/* Cuerpo — dos columnas estilo "range": flota en display a la izquierda,
+                navegación secundaria a la derecha */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="max-w-[1480px] mx-auto px-8 md:px-14 py-10 md:py-16 grid md:grid-cols-[1.5fr_1fr] gap-x-12 gap-y-12">
+                {/* LA FLOTA */}
+                <div>
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.08, duration: 0.4 }}
+                    className="eyebrow mb-5 md:mb-7"
                   >
-                    {label}
-                  </Link>
-                </motion.div>
-              ))}
-            </nav>
+                    {t('fleet')}
+                  </motion.p>
+                  {models.map((b, i) => (
+                    <motion.div
+                      key={b.slug}
+                      initial={{ opacity: 0, x: -28 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.12 + i * 0.07, duration: 0.45 }}
+                    >
+                      <Link
+                        href={`/${locale}/flota/${b.slug}`}
+                        className="group flex items-baseline gap-4 py-1 md:py-1.5"
+                      >
+                        <span
+                          className="font-display font-black uppercase leading-none text-ink group-hover:text-sea transition-colors duration-300"
+                          style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)', letterSpacing: '-0.015em' }}
+                        >
+                          {b.shortName ?? b.name}
+                        </span>
+                        <span className="hidden sm:inline font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted group-hover:text-sea transition-colors duration-300">
+                          {b.name}
+                        </span>
+                      </Link>
+                    </motion.div>
+                  ))}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.36, duration: 0.4 }}
+                  >
+                    <Link href={`/${locale}/flota`} className="link-underline mt-7 md:mt-9 inline-flex">
+                      {t('allFleet')}
+                    </Link>
+                  </motion.div>
+                </div>
 
-            <div className="px-8 pb-10 pt-6 border-t border-line space-y-5">
-              <LanguageSwitcher locale={locale} variant="inline" className="-mx-2.5" />
-              <button type="button" onClick={openLetsMeet} className="btn-primary w-full">
-                {t('letsMeet')}
-              </button>
+                {/* NAVEGACIÓN SECUNDARIA */}
+                <div className="flex flex-col md:pt-12">
+                  <nav className="flex flex-col">
+                    {overlayLinks.map(({ href, label }, i) => (
+                      <motion.div
+                        key={href}
+                        initial={{ opacity: 0, x: 24 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.16 + i * 0.05, duration: 0.4 }}
+                      >
+                        <Link
+                          href={href}
+                          className="font-sans font-extralight uppercase text-ink/40 hover:text-ink transition-colors block py-1.5 md:py-2 tracking-[0.05em]"
+                          style={{ fontSize: 'clamp(1.35rem, 2.3vw, 1.85rem)' }}
+                        >
+                          {label}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </nav>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.42, duration: 0.4 }}
+                    className="mt-9 md:mt-11 flex flex-col items-start gap-7"
+                  >
+                    <button type="button" onClick={openLetsMeet} className="btn-primary">
+                      {t('letsMeet')}
+                    </button>
+                    <LanguageSwitcher locale={locale} variant="inline" className="-mx-2.5" />
+                  </motion.div>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
