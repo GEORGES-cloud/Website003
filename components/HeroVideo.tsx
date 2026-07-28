@@ -23,7 +23,7 @@ export default function HeroVideo({
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   // Cinematic: the video zooms in slightly as you scroll past.
-  const videoScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.18]);
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.08]);
 
   return (
     <section ref={ref} data-navbar-on-dark className={`relative w-full overflow-hidden bg-ink ${heightClass}`}>

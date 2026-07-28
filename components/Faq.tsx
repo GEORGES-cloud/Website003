@@ -11,9 +11,9 @@ export default function Faq({ locale }: { locale: string }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-36 bg-bone">
+    <section className="py-24 md:py-36 bg-sand">
       <div className="max-w-3xl mx-auto px-6 md:px-10">
-        <div className="mb-12 md:mb-14">
+        <div className="mb-14 md:mb-16">
           <ScrollReveal>
             <p className="eyebrow mb-5">{t('eyebrow')}</p>
           </ScrollReveal>
@@ -39,7 +39,7 @@ export default function Faq({ locale }: { locale: string }) {
                       {f.q}
                     </span>
                     <span
-                      className={`flex-none w-6 h-6 relative transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}
+                      className={`flex-none w-6 h-6 relative transition-transform duration-300 ease-smooth ${isOpen ? 'rotate-45' : ''}`}
                       aria-hidden
                     >
                       <span className="absolute top-1/2 left-0 w-full h-px bg-ink -translate-y-1/2" />

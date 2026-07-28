@@ -55,7 +55,30 @@
   }
 
   .link-underline {
-    @apply inline-flex items-center gap-2 font-sans text-[12px] font-semibold uppercase tracking-[0.18em] text-ink border-b border-ink/30 pb-1 transition-colors hover:border-ink;
+    @apply relative inline-flex items-center gap-2 font-sans text-[12px] font-semibold uppercase tracking-[0.18em] text-ink border-b border-ink/30 pb-1 transition-colors hover:border-ink;
+  }
+  /* Trazo que se dibuja de izquierda a derecha sobre el border tenue */
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  /* Gradación editorial única para toda la fotografía del site:
+     -15% saturación + velo cálido sutil = las fotos leen como una misma sesión. */
+  .img-grade {
+    filter: saturate(0.85) sepia(0.045) contrast(1.02);
   }
 }
 
@@ -73,25 +96,24 @@
 }
 
 /* ---- Luxurious motion ---- */
-@keyframes kenburns {
-  0% { transform: scale(1.02) translate3d(0, 0, 0); }
-  100% { transform: scale(1.14) translate3d(-1.5%, -1.5%, 0); }
+/* Entrada coreografiada del hero de página (CSS-only, sin JS) */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
 }
-.animate-kenburns {
-  animation: kenburns 18s ease-in-out infinite alternate;
+/* Un único asentamiento de la foto del hero (sustituye al ken-burns infinito) */
+@keyframes heroSettle {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+.animate-hero {
+  animation: heroRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-hero-d1 { animation-delay: 0.08s; }
+.animate-hero-d2 { animation-delay: 0.16s; }
+.animate-hero-img {
+  animation: heroSettle 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
   will-change: transform;
-}
-
-/* soft gold sheen sweep for accents/buttons */
-@keyframes sheen {
-  0% { background-position: -150% 0; }
-  100% { background-position: 250% 0; }
-}
-
-/* slow reveal of a thin rule */
-@keyframes growLine {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
 }
 
 /* ---- Lenis smooth scroll ---- */
@@ -118,11 +140,11 @@ html.lenis body {
 /* keep mouse clicks clean; only show ring for keyboard users (handled by :focus-visible) */
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-kenburns { animation: none; }
   *,
   *::before,
   *::after {
     animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;

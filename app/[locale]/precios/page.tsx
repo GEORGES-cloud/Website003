@@ -23,8 +23,8 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
         image="/images/life-1.jpg"
       />
 
-      {/* Intro — what's included */}
-      <section className="py-24 md:py-36 bg-bone">
+      {/* Intro — what's included (escala media: bloque breve, no sección completa) */}
+      <section className="py-20 md:py-28 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="max-w-3xl">
             <ScrollReveal>

@@ -24,11 +24,11 @@ export default function TestimonialsSection({ locale }: TestimonialsSectionProps
   const rest = all.filter((t) => t !== featured);
 
   return (
-    <section className="py-24 md:py-36 bg-bone">
+    <section className="py-24 md:py-36 bg-sand">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
-            <p className="eyebrow mb-10">{EYEBROW[locale] ?? EYEBROW.en}</p>
+            <p className="eyebrow mb-7">{EYEBROW[locale] ?? EYEBROW.en}</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <blockquote

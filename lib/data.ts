@@ -53,14 +53,11 @@ export const fleet: Boat[] = [
       engines: 'Mercury FourStroke · 200 CV',
     },
     image: '/images/fleet-searay.jpg',
+    // Solo tomas con casco/entorno on-brand (searay-4..7 muestran cascos rojos)
     gallery: [
       '/images/searay-1.jpg',
       '/images/searay-2.jpg',
       '/images/searay-3.jpg',
-      '/images/searay-4.jpg',
-      '/images/searay-5.jpg',
-      '/images/searay-6.jpg',
-      '/images/searay-7.jpg',
       '/images/searay-8.jpg',
     ],
   },
@@ -84,10 +81,11 @@ export const fleet: Boat[] = [
       maxSpeed: '42 kn',
       engines: '2 × Mercury V8 Verado 300 CV',
     },
-    image: '/images/fleet-navan.jpg',
+    // navan-2: la C30 protagonista en cala turquesa (fleet-navan queda en la galería)
+    image: '/images/navan-2.jpg',
     gallery: [
       '/images/navan-1.jpg',
-      '/images/navan-2.jpg',
+      '/images/fleet-navan.jpg',
       '/images/navan-3.jpg',
       '/images/navan-4.jpg',
       '/images/navan-5.jpg',
@@ -116,12 +114,12 @@ export const fleet: Boat[] = [
       maxSpeed: '35 kn',
     },
     image: '/images/fleet-level.jpg',
+    // Sin level-2 (toallas naranja del astillero); level-4 relegada al final
     gallery: [
       '/images/level-1.jpg',
-      '/images/level-2.jpg',
       '/images/level-3.jpg',
-      '/images/level-4.jpg',
       '/images/level-5.jpg',
+      '/images/level-4.jpg',
     ],
   },
   {

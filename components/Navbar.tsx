@@ -22,6 +22,7 @@ const MENU_LABEL: Record<string, string> = {
 };
 
 const display = { fontFamily: 'var(--font-display), "Arial Black", Impact, sans-serif' } as const;
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 function Wordmark({ className = '' }: { className?: string }) {
   return (
@@ -41,6 +42,8 @@ function Wordmark({ className = '' }: { className?: string }) {
 
 export default function Navbar({ locale }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
+  // La barra se retira al bajar y reaparece al subir (patrón "mayordomo")
+  const [hidden, setHidden] = useState(false);
   // Solo las páginas cuyo hero es oscuro (marcado con data-navbar-on-dark)
   // arrancan con la navbar en blanco; el resto usa tinta desde el inicio.
   const [overDark, setOverDark] = useState(false);
@@ -58,7 +61,15 @@ export default function Navbar({ locale }: NavbarProps) {
   };
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 60);
+      if (Math.abs(y - lastY) > 8) {
+        setHidden(y > lastY && y > 400);
+        lastY = y;
+      }
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -66,7 +77,13 @@ export default function Navbar({ locale }: NavbarProps) {
 
   useEffect(() => {
     setMenuOpen(false);
-    setOverDark(Boolean(document.querySelector('[data-navbar-on-dark]')));
+    // El contenido de la página puede llegar en streaming después de que la
+    // Navbar hidrate: re-comprobamos el marcador cuando el DOM cambia.
+    const check = () => setOverDark(Boolean(document.querySelector('[data-navbar-on-dark]')));
+    check();
+    const mo = new MutationObserver(check);
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => mo.disconnect();
   }, [pathname]);
 
   useEffect(() => {
@@ -101,9 +118,9 @@ export default function Navbar({ locale }: NavbarProps) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          scrolled ? 'bg-bone/95 backdrop-blur-md border-b border-line' : 'bg-transparent'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-[transform,background-color,border-color] duration-500 ease-smooth ${
+          hidden && !menuOpen ? '-translate-y-full' : 'translate-y-0'
+        } ${scrolled ? 'bg-bone/95 backdrop-blur-md border-b border-line' : 'bg-transparent'}`}
       >
         <div className="relative max-w-[1480px] mx-auto px-6 md:px-10 h-[var(--header-h)] flex items-center justify-between">
           {/* LEFT — menu trigger */}
@@ -131,17 +148,18 @@ export default function Navbar({ locale }: NavbarProps) {
             <Wordmark />
           </Link>
 
-          {/* RIGHT — language + Join the Club (enlaza a la página de consulta) */}
+          {/* RIGHT — language + Únete al club (abre el mismo funnel que "Hazte socio") */}
           <div className="flex items-center gap-4 md:gap-6">
             <LanguageSwitcher locale={locale} dark={!onLight} />
-            <Link
-              href={`/${locale}/contacto`}
+            <button
+              type="button"
+              onClick={openFunnel}
               className={`hidden sm:inline-flex items-center justify-center font-sans text-[11px] font-semibold uppercase tracking-[0.18em] px-5 py-2.5 transition-colors duration-300 ${
                 onLight ? 'bg-ink text-white hover:bg-sea' : 'bg-white text-ink hover:bg-sea hover:text-white'
               }`}
             >
               {t('join')}
-            </Link>
+            </button>
           </div>
         </div>
       </header>
@@ -150,13 +168,13 @@ export default function Navbar({ locale }: NavbarProps) {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            initial={{ opacity: 0, y: '-3%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, transition: { duration: 0.3, ease: EASE } }}
+            transition={{ duration: 0.55, ease: EASE }}
             className="fixed inset-0 z-50 bg-bone flex flex-col"
           >
-            <div className="relative flex justify-between items-center px-6 h-[var(--header-h)] border-b border-line">
+            <div className="relative flex justify-between items-center px-6 md:px-10 h-[var(--header-h)] border-b border-line">
               <span className="w-8" aria-hidden />
               <Link href={`/${locale}`} aria-label="Flamingo Yacht Club" className="absolute left-1/2 -translate-x-1/2 text-ink">
                 <Wordmark />
@@ -176,44 +194,46 @@ export default function Navbar({ locale }: NavbarProps) {
             {/* Cuerpo — dos columnas estilo "range": flota en display a la izquierda,
                 navegación secundaria a la derecha */}
             <div className="flex-1 overflow-y-auto">
-              <div className="max-w-[1480px] mx-auto px-8 md:px-14 py-10 md:py-16 grid md:grid-cols-[1.5fr_1fr] gap-x-12 gap-y-12">
+              <div className="max-w-[1480px] mx-auto px-6 md:px-10 py-10 md:py-16 grid md:grid-cols-[1.5fr_1fr] gap-x-12 gap-y-12">
                 {/* LA FLOTA */}
                 <div>
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.08, duration: 0.4 }}
+                    transition={{ delay: 0.08, duration: 0.4, ease: EASE }}
                     className="eyebrow mb-5 md:mb-7"
                   >
                     {t('fleet')}
                   </motion.p>
                   {models.map((b, i) => (
-                    <motion.div
-                      key={b.slug}
-                      initial={{ opacity: 0, x: -28 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.12 + i * 0.07, duration: 0.45 }}
-                    >
-                      <Link
-                        href={`/${locale}/flota/${b.slug}`}
-                        className="group flex items-baseline gap-4 py-1 md:py-1.5"
+                    <div key={b.slug} className="overflow-hidden">
+                      {/* Masked reveal: el nombre sube desde su línea base */}
+                      <motion.div
+                        initial={{ y: '110%' }}
+                        animate={{ y: 0 }}
+                        transition={{ delay: 0.15 + i * 0.06, duration: 0.7, ease: EASE }}
                       >
-                        <span
-                          className="font-display font-black uppercase leading-none text-ink group-hover:text-sea transition-colors duration-300"
-                          style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)', letterSpacing: '-0.015em' }}
+                        <Link
+                          href={`/${locale}/flota/${b.slug}`}
+                          className="group flex items-baseline gap-4 py-1 md:py-1.5"
                         >
-                          {b.shortName ?? b.name}
-                        </span>
-                        <span className="hidden sm:inline font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted group-hover:text-sea transition-colors duration-300">
-                          {b.name}
-                        </span>
-                      </Link>
-                    </motion.div>
+                          <span
+                            className="font-display font-black uppercase leading-none text-ink group-hover:text-sea transition-colors duration-300"
+                            style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)', letterSpacing: '-0.015em' }}
+                          >
+                            {b.shortName ?? b.name}
+                          </span>
+                          <span className="hidden sm:inline font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted group-hover:text-sea transition-colors duration-300">
+                            {b.name}
+                          </span>
+                        </Link>
+                      </motion.div>
+                    </div>
                   ))}
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.36, duration: 0.4 }}
+                    transition={{ delay: 0.36, duration: 0.4, ease: EASE }}
                   >
                     <Link href={`/${locale}/flota`} className="link-underline mt-7 md:mt-9 inline-flex">
                       {t('allFleet')}
@@ -227,9 +247,9 @@ export default function Navbar({ locale }: NavbarProps) {
                     {overlayLinks.map(({ href, label }, i) => (
                       <motion.div
                         key={href}
-                        initial={{ opacity: 0, x: 24 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.16 + i * 0.05, duration: 0.4 }}
+                        initial={{ opacity: 0, y: 18 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.16 + i * 0.05, duration: 0.4, ease: EASE }}
                       >
                         <Link
                           href={href}
@@ -244,7 +264,7 @@ export default function Navbar({ locale }: NavbarProps) {
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.42, duration: 0.4 }}
+                    transition={{ delay: 0.42, duration: 0.4, ease: EASE }}
                     className="mt-9 md:mt-11 flex flex-col items-start gap-7"
                   >
                     <button type="button" onClick={openLetsMeet} className="btn-primary">

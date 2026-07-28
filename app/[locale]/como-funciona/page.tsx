@@ -5,6 +5,7 @@ import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
 import HowItWorksTimeline from '@/components/HowItWorksTimeline';
+import AppDevices from '@/components/AppDevices';
 import Faq from '@/components/Faq';
 import CTAFinal from '@/components/CTAFinal';
 
@@ -37,15 +38,14 @@ export default function ComoFuncionaPage({ params: { locale } }: { params: { loc
       {/* Licence — mandatory requirement */}
       <section className="py-24 md:py-36 bg-sand">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal direction="right">
               {/* Helm of the club's Sea Ray — you steer, hence the licence */}
               <ParallaxImage
-                src="/images/searay-5.jpg"
+                src="/images/searay-2.jpg"
                 alt=""
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}
-                kenBurns
                 className="aspect-[4/5] lg:aspect-[5/6]"
               />
             </ScrollReveal>
@@ -61,6 +61,9 @@ export default function ComoFuncionaPage({ params: { locale } }: { params: { loc
           </div>
         </div>
       </section>
+
+      {/* La app del club — el paso 3 en pantalla: portátil + teléfono */}
+      <AppDevices />
 
       <Faq locale={locale} />
 

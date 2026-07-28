@@ -18,11 +18,10 @@ export default function AppShowcase() {
         {/* Image — bleeds to the section edge */}
         <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[680px]">
           <ParallaxImage
-            src="/images/life-2.jpg"
+            src="/images/searay-1.jpg"
             alt=""
             sizes="(max-width: 1024px) 100vw, 50vw"
             strength={50}
-            kenBurns
             className="absolute inset-0"
           />
         </div>

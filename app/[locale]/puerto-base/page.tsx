@@ -35,13 +35,12 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
                 alt=""
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}
-                kenBurns
                 className="aspect-[4/5]"
               />
             </ScrollReveal>
             <ScrollReveal>
               <div>
-                <p className="eyebrow mb-7">{t('why.eyebrow')}</p>
+                <p className="eyebrow mb-6">{t('why.eyebrow')}</p>
                 <h2 className="display text-ink mb-7" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
                   {t('why.title')}
                 </h2>

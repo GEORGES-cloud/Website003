@@ -41,9 +41,9 @@ export default function FleetPreviewSection({ eyebrow, title, viewAll, locale }:
         {preview.map((boat, i) => (
           <motion.div
             key={boat.slug}
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: i * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.08, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true, margin: '-50px' }}
             className="flex-none w-[290px] md:w-[380px] snap-start"
           >
@@ -54,7 +54,7 @@ export default function FleetPreviewSection({ eyebrow, title, viewAll, locale }:
                   alt={boat.name}
                   fill
                   sizes="380px"
-                  className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.05]"
+                  className="img-grade object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.05]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/5 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">

@@ -42,7 +42,7 @@ export default function BoatGallery({ images, name }: { images: string[]; name: 
               alt={`${name} ${i + 1}`}
               fill
               sizes="(max-width: 768px) 50vw, 25vw"
-              className="object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.05]"
+              className="img-grade object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.05]"
             />
             <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors" />
           </button>

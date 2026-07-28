@@ -11,6 +11,7 @@ import DiscountQuiz from '@/components/DiscountQuiz';
 import FloatingContact from '@/components/FloatingContact';
 import SmoothScroll from '@/components/SmoothScroll';
 import JoinFunnelProvider from '@/components/JoinFunnelProvider';
+import MotionProvider from '@/components/MotionProvider';
 import JoinFunnel from '@/components/JoinFunnel';
 import { locales, isLocale } from '@/lib/locales';
 
@@ -80,6 +81,7 @@ export default async function LocaleLayout({
           {({ es: 'Saltar al contenido', en: 'Skip to content', sv: 'Hoppa till innehåll', ru: 'Перейти к содержимому', de: 'Zum Inhalt springen', fr: 'Aller au contenu' } as Record<string, string>)[locale] ?? 'Skip to content'}
         </a>
         <NextIntlClientProvider messages={messages} locale={locale}>
+          <MotionProvider>
           <JoinFunnelProvider>
             <SmoothScroll />
             <Navbar locale={locale} />
@@ -90,6 +92,7 @@ export default async function LocaleLayout({
             <DiscountQuiz locale={locale} />
             <JoinFunnel locale={locale} />
           </JoinFunnelProvider>
+          </MotionProvider>
         </NextIntlClientProvider>
         <JsonLd locale={locale} />
       </body>

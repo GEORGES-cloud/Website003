@@ -143,7 +143,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
       {step >= 2 && step <= TOTAL_Q + 1 && (
         <div className="h-[3px] bg-line flex-none">
           <div
-            className="h-full bg-sea transition-all duration-500 ease-out"
+            className="h-full bg-sea transition-[width] duration-500 ease-smooth"
             style={{ width: `${(qNum / TOTAL_Q) * 100}%` }}
           />
         </div>

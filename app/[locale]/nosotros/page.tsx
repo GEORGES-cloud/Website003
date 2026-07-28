@@ -23,7 +23,7 @@ export default function NosotrosPage() {
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        image="/images/about.jpg"
+        image="/images/exp-private.jpg"
       />
 
       {/* Story */}
@@ -32,18 +32,17 @@ export default function NosotrosPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal direction="right">
               <ParallaxImage
-                src="/images/life-1.jpg"
+                src="/images/fleet-navan.jpg"
                 alt="Navegando por el Mediterráneo"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}
-                kenBurns
                 className="aspect-[4/5]"
               />
             </ScrollReveal>
 
             <ScrollReveal>
               <div>
-                <p className="eyebrow mb-7">{t('story.title')}</p>
+                <p className="eyebrow mb-6">{t('story.title')}</p>
                 <p className="display text-2xl md:text-3xl text-ink leading-snug mb-7">
                   {t('story.p1')}
                 </p>
@@ -59,7 +58,7 @@ export default function NosotrosPage() {
       <section className="py-24 md:py-36 bg-sand">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <ScrollReveal>
-            <h2 className="display text-ink mb-16" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+            <h2 className="display text-ink mb-14 md:mb-16" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
               {t('values.title')}
             </h2>
           </ScrollReveal>

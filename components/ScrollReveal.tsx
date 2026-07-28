@@ -25,7 +25,8 @@ export default function ScrollReveal({
   const reduce = useReducedMotion();
 
   // transform + opacity only — GPU-composited, no layout/paint thrash
-  const offset = 44;
+  // 28px: viaje corto, tono minimalista (44 resultaba teatral)
+  const offset = 28;
   const initial = reduce
     ? { opacity: 0 }
     : {

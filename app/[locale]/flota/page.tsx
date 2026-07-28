@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import PageHero from '@/components/PageHero';
 import FleetShowcase from '@/components/FleetShowcase';
 import CTAFinal from '@/components/CTAFinal';
+import { ACTIVE_BOAT_SLUGS } from '@/lib/data';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'meta.pages.fleet' });
@@ -16,7 +17,12 @@ export default function FlotaPage({ params: { locale } }: { params: { locale: st
 
   return (
     <>
-      <PageHero eyebrow={t('hero.eyebrow')} title={t('hero.title')} subtitle={t('hero.subtitle')} />
+      <PageHero
+        eyebrow={t('hero.eyebrow')}
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+        meta={{ index: String(ACTIVE_BOAT_SLUGS.length).padStart(2, '0'), label: 'Puerto Banús · Marbella' }}
+      />
 
       <FleetShowcase locale={locale} />
 
@@ -25,7 +31,7 @@ export default function FlotaPage({ params: { locale } }: { params: { locale: st
         title={th('title')}
         description={th('description')}
         button={th('button')}
-        image="/images/life-5.jpg"
+        image="/images/level-1.jpg"
       />
     </>
   );

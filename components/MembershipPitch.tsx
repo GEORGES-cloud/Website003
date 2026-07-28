@@ -30,7 +30,6 @@ export default function MembershipPitch({ eyebrow, title, description, cta, loca
               alt="Estilo de vida del club náutico"
               sizes="(max-width: 1024px) 100vw, 50vw"
               strength={40}
-              kenBurns
               className="aspect-[4/5] lg:aspect-[5/6]"
             />
           </motion.div>

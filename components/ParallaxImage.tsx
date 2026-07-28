@@ -9,8 +9,6 @@ interface ParallaxImageProps {
   sizes?: string;
   /** parallax travel in px (image drifts +/- this as it crosses the viewport) */
   strength?: number;
-  /** slow continuous zoom (ken-burns) */
-  kenBurns?: boolean;
   priority?: boolean;
   className?: string;
   overlayClassName?: string;
@@ -25,7 +23,6 @@ export default function ParallaxImage({
   alt,
   sizes = '(max-width: 1024px) 100vw, 50vw',
   strength = 48,
-  kenBurns = false,
   priority = false,
   className = '',
   overlayClassName,
@@ -39,14 +36,7 @@ export default function ParallaxImage({
   return (
     <div ref={ref} className={`overflow-hidden ${positioned ? '' : 'relative'} ${className}`}>
       <motion.div style={{ y }} className="absolute -inset-y-[22%] inset-x-0">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes={sizes}
-          priority={priority}
-          className={`object-cover ${kenBurns && !reduce ? 'animate-kenburns' : ''}`}
-        />
+        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="img-grade object-cover" />
       </motion.div>
       {overlayClassName && <div className={`absolute inset-0 ${overlayClassName}`} />}
     </div>

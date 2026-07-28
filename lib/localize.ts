@@ -38,6 +38,7 @@ function pick(locale: string, es: string, en: string, ex?: string): string {
 export interface LocalBoat {
   slug: string;
   name: string;
+  shortName?: string;
   lengthM: string;
   capacity: number;
   year: number;
@@ -52,6 +53,7 @@ export function getFleet(locale: string): LocalBoat[] {
   return fleet.map((b) => ({
     slug: b.slug,
     name: b.name,
+    shortName: b.shortName,
     lengthM: b.lengthM,
     capacity: b.capacity,
     year: b.year,

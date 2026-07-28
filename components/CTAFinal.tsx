@@ -10,10 +10,10 @@ interface CTAFinalProps {
   image?: string;
 }
 
-export default function CTAFinal({ eyebrow, title, description, button, image = '/images/cta.jpg' }: CTAFinalProps) {
+export default function CTAFinal({ eyebrow, title, description, button, image = '/images/hero-poster.jpg' }: CTAFinalProps) {
   return (
     <section className="relative py-32 md:py-44 overflow-hidden">
-      <ParallaxImage src={image} alt="" sizes="100vw" strength={70} kenBurns className="absolute inset-0" />
+      <ParallaxImage src={image} alt="" sizes="100vw" strength={70} className="absolute inset-0" />
       <div className="absolute inset-0 bg-ink/55" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
 
@@ -22,7 +22,7 @@ export default function CTAFinal({ eyebrow, title, description, button, image = 
           <p className="eyebrow-invert mb-7">{eyebrow}</p>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="display text-white mb-9" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)' }}>
+          <h2 className="display text-white mb-8" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)' }}>
             {title}
           </h2>
         </ScrollReveal>
