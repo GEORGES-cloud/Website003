@@ -64,12 +64,20 @@ export const fleet: Boat[] = [
     // Vídeo oficial SPX 210 (Mandelieu, Costa Azul) — 720p sin audio, autoplay silencioso
     video: '/videos/blue-spx210.mp4',
     videoPoster: '/images/blue-video-poster.jpg',
-    // Solo tomas con casco/entorno on-brand (searay-4..7 muestran cascos rojos)
+    // Galería abundante: navegación, vida a bordo, detalle y puerto (sin cascos rojos)
     gallery: [
       '/images/searay-1.jpg',
-      '/images/searay-2.jpg',
+      '/images/blue-cockpit-friends.jpg',
       '/images/helm-empty.jpg',
+      '/images/blue-overhead-anchor.jpg',
+      '/images/searay-2.jpg',
+      '/images/searay-dive-split.jpg',
+      '/images/blue-bow-sunpad.jpg',
+      '/images/blue-castle-stern.jpg',
+      '/images/blue-bow-detail.jpg',
+      '/images/blue-marina-golden.jpg',
       '/images/searay-3.jpg',
+      '/images/wake-circle.jpg',
       '/images/searay-8.jpg',
       '/images/teak-water.jpg',
     ],
@@ -100,13 +108,21 @@ export const fleet: Boat[] = [
     heroImage: '/images/navan-aerial.jpg',
     gallery: [
       '/images/navan-1.jpg',
+      '/images/navan-dive.jpg',
       '/images/navan-2.jpg',
+      '/images/navan-cala.jpg',
       '/images/navan-3.jpg',
+      '/images/navan-helm.jpg',
       '/images/navan-4.jpg',
       '/images/navan-leather.jpg',
+      '/images/navan-clearcove.jpg',
       '/images/navan-6.jpg',
+      '/images/navan-fish.jpg',
       '/images/navan-engines.jpg',
+      '/images/navan-beach.jpg',
       '/images/navan-8.jpg',
+      '/images/navan-shade.jpg',
+      '/images/navan-glide.jpg',
       '/images/navan-splitwater.jpg',
     ],
   },
@@ -133,12 +149,17 @@ export const fleet: Boat[] = [
     image: '/images/level-running.jpg',
     // Hero de ficha: cenital con doble estela simétrica
     heroImage: '/images/level-aerial-run.jpg',
-    // Sin level-2 (toallas naranja del astillero); level-4 relegada al final
+    // Galería ampliada con el material oficial Level (sin level-2)
     gallery: [
       '/images/level-1.jpg',
+      '/images/level-aerial-anchor.jpg',
       '/images/fleet-level.jpg',
+      '/images/level-terrace.jpg',
       '/images/level-3.jpg',
+      '/images/level-deck-table.jpg',
       '/images/level-5.jpg',
+      '/images/level-cockpit.jpg',
+      '/images/level-sunpad.jpg',
       '/images/level-4.jpg',
     ],
   },

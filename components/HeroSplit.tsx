@@ -1,10 +1,13 @@
 import Image from 'next/image';
+import MediaSlideshow, { type Slide } from './MediaSlideshow';
 
 interface HeroSplitProps {
   eyebrow: string;
   title: string;
   subtitle?: string;
   image: string;
+  /** Pase de fotos opcional (crossfade tipo vídeo); si falta, foto única. */
+  slides?: Slide[];
 }
 
 /* Hero 50/50 asimétrico: tipografía sobre bone a la izquierda (alineada al
@@ -12,7 +15,7 @@ interface HeroSplitProps {
    La foto es la mitad derecha de la sección en porcentaje (no vw: la scrollbar
    de Windows descuadraría el raíl) y empieza BAJO la navbar para que la barra
    en tinta nunca caiga sobre la imagen. */
-export default function HeroSplit({ eyebrow, title, subtitle, image }: HeroSplitProps) {
+export default function HeroSplit({ eyebrow, title, subtitle, image, slides }: HeroSplitProps) {
   return (
     <section className="relative pt-[var(--header-h)] bg-bone">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
@@ -33,14 +36,23 @@ export default function HeroSplit({ eyebrow, title, subtitle, image }: HeroSplit
       </div>
       {/* Foto: mitad derecha de la sección, de debajo del header al borde inferior */}
       <div className="relative h-[52svh] min-h-[380px] md:absolute md:top-[var(--header-h)] md:bottom-0 md:right-0 md:w-1/2 md:h-auto md:min-h-0 overflow-hidden">
-        <Image
-          src={image}
-          alt=""
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="img-grade animate-hero-img object-cover"
-        />
+        {slides && slides.length > 1 ? (
+          <MediaSlideshow
+            slides={slides}
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="animate-hero-img"
+          />
+        ) : (
+          <Image
+            src={image}
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="img-grade animate-hero-img object-cover"
+          />
+        )}
       </div>
     </section>
   );

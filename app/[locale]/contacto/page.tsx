@@ -22,6 +22,11 @@ export default function ContactoPage({ params: { locale } }: { params: { locale:
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
         image="/images/marina-dawn.jpg"
+        slides={[
+          { src: '/images/sunset-palms.jpg', position: '60% center' },
+          { src: '/images/marina-dawn.jpg' },
+          { src: '/images/teak-water.jpg' },
+        ]}
       />
 
       <section className="pt-8 md:pt-16 pb-24 md:pb-36 bg-bone">

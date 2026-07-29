@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ImageReveal from './ImageReveal';
+import MediaSlideshow, { type Slide } from './MediaSlideshow';
 
 interface Fact {
   value: string;
@@ -12,13 +13,15 @@ interface HeroLedgerProps {
   subtitle?: string;
   image: string;
   facts: Fact[];
+  /** Pase de fotos opcional en la banda (crossfade tipo vídeo). */
+  slides?: Slide[];
 }
 
 /* El hero más desnudo: tipografía grande + regla de datos valor-primero
    (mismo patrón que la ficha técnica de FleetShowcase) y una banda de foto
    panorámica a sangre debajo. El LCP es el titular — la banda entra con
    cortina y sin priority. */
-export default function HeroLedger({ eyebrow, title, subtitle, image, facts }: HeroLedgerProps) {
+export default function HeroLedger({ eyebrow, title, subtitle, image, facts, slides }: HeroLedgerProps) {
   return (
     <section className="pt-[calc(var(--header-h)+3rem)] bg-bone">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
@@ -49,13 +52,17 @@ export default function HeroLedger({ eyebrow, title, subtitle, image, facts }: H
       <div className="mt-12 md:mt-16">
         <ImageReveal>
           <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden">
-            <Image
-              src={image}
-              alt=""
-              fill
-              sizes="100vw"
-              className="img-grade object-cover"
-            />
+            {slides && slides.length > 1 ? (
+              <MediaSlideshow slides={slides} sizes="100vw" />
+            ) : (
+              <Image
+                src={image}
+                alt=""
+                fill
+                sizes="100vw"
+                className="img-grade object-cover"
+              />
+            )}
           </div>
         </ImageReveal>
       </div>

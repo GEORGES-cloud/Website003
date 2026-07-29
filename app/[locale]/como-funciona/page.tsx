@@ -31,6 +31,12 @@ export default function ComoFuncionaPage({ params: { locale } }: { params: { loc
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
         image="/images/blue-vertical.jpg"
+        slides={[
+          { src: '/images/blue-vertical.jpg', position: 'center 68%' },
+          { src: '/images/navan-vertical.jpg', position: '50% 52%' },
+          { src: '/images/platform-dawn.jpg', position: '55% center' },
+          { src: '/images/navan-sterndawn.jpg', position: '50% 55%' },
+        ]}
       />
 
       {/* Steps — animated vertical timeline */}

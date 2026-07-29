@@ -22,6 +22,11 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
         image="/images/wake-circle.jpg"
+        slides={[
+          { src: '/images/wake-circle.jpg' },
+          { src: '/images/aerial-reef-1.jpg' },
+          { src: '/images/aerial-reef-2.jpg' },
+        ]}
         facts={[
           { value: t('hero.f1.value'), label: t('hero.f1.label') },
           { value: t('hero.f2.value'), label: t('hero.f2.label') },

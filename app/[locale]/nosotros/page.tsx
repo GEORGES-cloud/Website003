@@ -27,7 +27,29 @@ export default function NosotrosPage() {
         subtitle={t('hero.subtitle')}
         image="/images/bow-dusk.jpg"
         imagePosition="62% center"
+        slides={[
+          { src: '/images/bow-dusk.jpg', position: '62% center' },
+          { src: '/images/stern-couple.jpg', position: '50% 50%' },
+          { src: '/images/platform-dawn.jpg', position: '65% 50%' },
+        ]}
       />
+
+      {/* Momento de película: el helicóptero sobre el mar en calma, con deriva
+          lenta generada desde la foto original (bucle ida y vuelta) */}
+      <section className="relative w-full aspect-[16/9] max-h-[72svh] overflow-hidden bg-ink">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden
+          preload="metadata"
+          poster="/images/heli-flyover-poster.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/heli-flyover.mp4" type="video/mp4" />
+        </video>
+      </section>
 
       {/* Story */}
       <section className="py-24 md:py-36 bg-bone">

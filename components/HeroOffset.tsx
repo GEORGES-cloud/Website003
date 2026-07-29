@@ -1,10 +1,13 @@
 import Image from 'next/image';
+import MediaSlideshow, { type Slide } from './MediaSlideshow';
 
 interface HeroOffsetProps {
   eyebrow: string;
   title: string;
   subtitle?: string;
   image: string;
+  /** Pase de fotos opcional (crossfade tipo vídeo); si falta, foto única. */
+  slides?: Slide[];
 }
 
 interface HeroOffsetAllProps extends HeroOffsetProps {
@@ -16,7 +19,7 @@ interface HeroOffsetAllProps extends HeroOffsetProps {
    entrando por encima desde la izquierda. Mucho blanco. En móvil colapsa a
    texto → foto. En lg la foto toma su alto de la fila (inset-y-0 + aspect):
    nunca invade la navbar ni se recorta contra el pb. */
-export default function HeroOffset({ eyebrow, title, subtitle, image, imagePosition = 'center' }: HeroOffsetAllProps) {
+export default function HeroOffset({ eyebrow, title, subtitle, image, imagePosition = 'center', slides }: HeroOffsetAllProps) {
   return (
     <section className="pt-[calc(var(--header-h)+3rem)] pb-16 md:pb-24 bg-bone overflow-hidden">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
@@ -36,15 +39,24 @@ export default function HeroOffset({ eyebrow, title, subtitle, image, imagePosit
             )}
           </div>
           <div className="relative mt-12 w-full sm:w-2/3 aspect-[3/4] lg:absolute lg:right-0 lg:inset-y-0 lg:mt-0 lg:w-auto overflow-hidden bg-sand">
-            <Image
-              src={image}
-              alt=""
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              className="img-grade animate-hero-img object-cover"
-              style={{ objectPosition: imagePosition }}
-            />
+            {slides && slides.length > 1 ? (
+              <MediaSlideshow
+                slides={slides}
+                priority
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="animate-hero-img"
+              />
+            ) : (
+              <Image
+                src={image}
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="img-grade animate-hero-img object-cover"
+                style={{ objectPosition: imagePosition }}
+              />
+            )}
           </div>
         </div>
       </div>

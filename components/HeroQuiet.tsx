@@ -1,16 +1,19 @@
 import Image from 'next/image';
+import MediaSlideshow, { type Slide } from './MediaSlideshow';
 
 interface HeroQuietProps {
   eyebrow: string;
   title: string;
   subtitle?: string;
   image: string;
+  /** Pase de fotos opcional (crossfade tipo vídeo); si falta, foto única. */
+  slides?: Slide[];
 }
 
 /* Hero silencioso: tipografía a la izquierda y una foto 4:5 pequeña a la
    derecha, como una invitación. Cierra con el mismo asiento inferior que el
    hero plano (pb-16 md:pb-20) para no descolocar la sección siguiente. */
-export default function HeroQuiet({ eyebrow, title, subtitle, image }: HeroQuietProps) {
+export default function HeroQuiet({ eyebrow, title, subtitle, image, slides }: HeroQuietProps) {
   return (
     <section className="pt-[calc(var(--header-h)+3rem)] pb-16 md:pb-20 bg-bone">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
@@ -31,14 +34,23 @@ export default function HeroQuiet({ eyebrow, title, subtitle, image }: HeroQuiet
           </div>
           {/* La foto solo asienta (heroSettle) — el rise queda para el texto */}
           <div className="relative md:col-span-4 md:col-start-9 aspect-[4/5] overflow-hidden bg-sand">
-            <Image
-              src={image}
-              alt=""
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 33vw"
-              className="img-grade animate-hero-img object-cover"
-            />
+            {slides && slides.length > 1 ? (
+              <MediaSlideshow
+                slides={slides}
+                priority
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="animate-hero-img"
+              />
+            ) : (
+              <Image
+                src={image}
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="img-grade animate-hero-img object-cover"
+              />
+            )}
           </div>
         </div>
       </div>
