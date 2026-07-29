@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import PageHero from '@/components/PageHero';
+import HeroLedger from '@/components/HeroLedger';
 import ScrollReveal from '@/components/ScrollReveal';
 import MembershipTiers from '@/components/MembershipTiers';
 import CTAFinal from '@/components/CTAFinal';
@@ -16,11 +16,17 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
 
   return (
     <>
-      <PageHero
+      {/* Hero "ledger": tipografía + regla de datos + banda panorámica */}
+      <HeroLedger
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        image="/images/life-1.jpg"
+        image="/images/wake-circle.jpg"
+        facts={[
+          { value: t('hero.f1.value'), label: t('hero.f1.label') },
+          { value: t('hero.f2.value'), label: t('hero.f2.label') },
+          { value: t('hero.f3.value'), label: t('hero.f3.label') },
+        ]}
       />
 
       {/* Intro — what's included (escala media: bloque breve, no sección completa) */}

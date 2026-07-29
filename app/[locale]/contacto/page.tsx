@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import PageHero from '@/components/PageHero';
+import HeroQuiet from '@/components/HeroQuiet';
 import ContactForm from '@/components/ContactForm';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -15,7 +15,14 @@ export default function ContactoPage({ params: { locale } }: { params: { locale:
 
   return (
     <>
-      <PageHero eyebrow={t('hero.eyebrow')} title={t('hero.title')} subtitle={t('hero.subtitle')} />
+      {/* Hero silencioso: tipografía + invitación fotográfica (la popa del SPX
+          al amanecer saliendo de la bocana; el recorte 4:5 centra a la pareja) */}
+      <HeroQuiet
+        eyebrow={t('hero.eyebrow')}
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+        image="/images/marina-dawn.jpg"
+      />
 
       <section className="pt-8 md:pt-16 pb-24 md:pb-36 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">

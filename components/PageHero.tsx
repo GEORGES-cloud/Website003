@@ -30,6 +30,13 @@ export default function PageHero({ eyebrow, title, subtitle, image, meta }: Page
               {subtitle}
             </p>
           )}
+          {meta && (
+            <div className="mt-10 md:mt-12 flex items-center gap-5 animate-hero animate-hero-d2">
+              <span className="display-num text-sm text-white">{meta.index}</span>
+              <span aria-hidden className="h-px flex-1 bg-white/25" />
+              <span className="eyebrow-invert !text-white/85">{meta.label}</span>
+            </div>
+          )}
         </div>
       </section>
     );
@@ -55,7 +62,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, meta }: Page
           <div className="mt-12 md:mt-16 flex items-center gap-5 animate-hero animate-hero-d2">
             <span className="display-num text-sm text-ink">{meta.index}</span>
             <span aria-hidden className="h-px flex-1 bg-line" />
-            <span className="eyebrow !text-ink/55">{meta.label}</span>
+            <span className="eyebrow !text-ink/65">{meta.label}</span>
           </div>
         )}
       </div>

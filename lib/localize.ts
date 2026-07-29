@@ -44,6 +44,7 @@ export interface LocalBoat {
   year: number;
   specs: Boat['specs'];
   image: string;
+  heroImage?: string;
   gallery?: string[];
   tagline: string;
   description: string;
@@ -59,6 +60,7 @@ export function getFleet(locale: string): LocalBoat[] {
     year: b.year,
     specs: b.specs,
     image: b.image,
+    heroImage: b.heroImage,
     gallery: b.gallery,
     tagline: pick(locale, b.tagline, b.taglineEn, extra[locale]?.fleet?.[b.slug]?.tagline),
     description: pick(locale, b.description, b.descriptionEn, extra[locale]?.fleet?.[b.slug]?.description),

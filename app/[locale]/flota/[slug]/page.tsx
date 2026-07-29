@@ -43,8 +43,8 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
 
   return (
     <>
-      {/* Hero — shared PageHero (kenburns, svh heights, header offset) */}
-      <PageHero eyebrow={`${boat.lengthM} · ${boat.capacity} ${guestsLabel}`} title={boat.name} image={boat.image} />
+      {/* Hero — foto propia de ficha si existe (heroImage), si no la de catálogo */}
+      <PageHero eyebrow={`${boat.lengthM} · ${boat.capacity} ${guestsLabel}`} title={boat.name} image={boat.heroImage ?? boat.image} />
 
       {/* Content */}
       <section className="py-24 md:py-36 bg-bone">

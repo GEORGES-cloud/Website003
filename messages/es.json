@@ -118,7 +118,10 @@
     }
   },
   "prices": {
-    "hero": { "eyebrow": "Precios", "title": "Todo incluido. Una sola cuota.", "subtitle": "Sin costes ocultos ni sorpresas. Esto es lo que incluye tu membresía." },
+    "hero": {
+      "f1": { "value": "1", "label": "cuota anual" },
+      "f2": { "value": "∞", "label": "salidas incluidas" },
+      "f3": { "value": "7", "label": "socios por barco" }, "eyebrow": "Precios", "title": "Todo incluido. Una sola cuota.", "subtitle": "Sin costes ocultos ni sorpresas. Esto es lo que incluye tu membresía." },
     "intro": { "title": "¿Qué incluye la membresía?", "body": "Uso anual ilimitado, app de reservas, preparación profesional del barco antes de cada salida, onboarding y soporte a socios — además de toallas, refrescos, paddleboards y equipo de snorkel a bordo. La licencia de navegación es obligatoria." },
     "cta": { "eyebrow": "El precio, en persona", "title": "Conócenos y te contamos el precio", "description": "Preferimos darte los números en persona, sin compromiso. Reserva una visita y te lo explicamos todo.", "button": "Conócenos" }
   },

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import PageHero from '@/components/PageHero';
+import HeroOffset from '@/components/HeroOffset';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
 import CTAFinal from '@/components/CTAFinal';
@@ -19,11 +19,14 @@ export default function NosotrosPage() {
 
   return (
     <>
-      <PageHero
+      {/* Hero offset: el titular solapa la proa al anochecer (estilo editorial).
+          62% centra a la mujer del timón entera en el recorte 3/4. */}
+      <HeroOffset
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        image="/images/exp-private.jpg"
+        image="/images/bow-dusk.jpg"
+        imagePosition="62% center"
       />
 
       {/* Story */}
@@ -82,7 +85,6 @@ export default function NosotrosPage() {
         title={tc('title')}
         description={tc('description')}
         button={tc('button')}
-        image="/images/life-6.jpg"
       />
     </>
   );

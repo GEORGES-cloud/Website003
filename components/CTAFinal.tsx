@@ -10,7 +10,7 @@ interface CTAFinalProps {
   image?: string;
 }
 
-export default function CTAFinal({ eyebrow, title, description, button, image = '/images/hero-poster.jpg' }: CTAFinalProps) {
+export default function CTAFinal({ eyebrow, title, description, button, image = '/images/hero-final.jpg' }: CTAFinalProps) {
   return (
     <section className="relative py-32 md:py-44 overflow-hidden">
       <ParallaxImage src={image} alt="" sizes="100vw" strength={70} className="absolute inset-0" />

@@ -23,6 +23,7 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
         image="/images/hero.jpg"
+        meta={{ index: '36°29′N', label: '4°57′O · Puerto Banús, Marbella' }}
       />
 
       {/* Why Puerto Banús */}

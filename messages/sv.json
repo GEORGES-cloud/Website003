@@ -135,6 +135,9 @@
   },
   "prices": {
     "hero": {
+      "f1": { "value": "1", "label": "årsavgift" },
+      "f2": { "value": "∞", "label": "turer ingår" },
+      "f3": { "value": "7", "label": "medlemmar per båt" },
       "eyebrow": "Priser",
       "title": "Allt ingår. En enda avgift.",
       "subtitle": "Inga dolda kostnader, inga överraskningar. Här är vad ditt medlemskap innehåller."

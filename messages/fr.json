@@ -135,6 +135,9 @@
   },
   "prices": {
     "hero": {
+      "f1": { "value": "1", "label": "cotisation annuelle" },
+      "f2": { "value": "∞", "label": "sorties incluses" },
+      "f3": { "value": "7", "label": "membres par bateau" },
       "eyebrow": "Tarifs",
       "title": "Tout compris. Une seule cotisation.",
       "subtitle": "Aucun coût caché, aucune surprise. Voici ce que comprend votre adhésion."

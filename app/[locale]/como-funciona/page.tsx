@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import PageHero from '@/components/PageHero';
+import HeroSplit from '@/components/HeroSplit';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
 import HowItWorksTimeline from '@/components/HowItWorksTimeline';
@@ -25,11 +25,12 @@ export default function ComoFuncionaPage({ params: { locale } }: { params: { loc
 
   return (
     <>
-      <PageHero
+      {/* Hero split: tipografía a la izquierda, el SPX 210 azul del club en vertical */}
+      <HeroSplit
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        image="/images/membership.jpg"
+        image="/images/blue-vertical.jpg"
       />
 
       {/* Steps — animated vertical timeline */}
@@ -72,7 +73,6 @@ export default function ComoFuncionaPage({ params: { locale } }: { params: { loc
         title={tc('title')}
         description={tc('description')}
         button={tc('button')}
-        image="/images/hero.jpg"
       />
     </>
   );

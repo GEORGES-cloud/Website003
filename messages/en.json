@@ -118,7 +118,10 @@
     }
   },
   "prices": {
-    "hero": { "eyebrow": "Prices", "title": "Everything included. One single fee.", "subtitle": "No hidden costs, no surprises. Here’s what your membership includes." },
+    "hero": {
+      "f1": { "value": "1", "label": "annual fee" },
+      "f2": { "value": "∞", "label": "outings included" },
+      "f3": { "value": "7", "label": "members per boat" }, "eyebrow": "Prices", "title": "Everything included. One single fee.", "subtitle": "No hidden costs, no surprises. Here’s what your membership includes." },
     "intro": { "title": "What’s included in the membership?", "body": "Unlimited annual usage, the booking app, professional boat preparation before every trip, onboarding and member support — plus beach towels, complimentary soft drinks, paddleboards and snorkelling equipment on board. A boating licence is required." },
     "cta": { "eyebrow": "The price, in person", "title": "Let’s meet and we’ll share the price", "description": "We’d rather give you the numbers in person, with no obligation. Book a visit and we’ll walk you through it all.", "button": "Let’s Meet" }
   },

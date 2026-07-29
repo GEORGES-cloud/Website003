@@ -135,6 +135,9 @@
   },
   "prices": {
     "hero": {
+      "f1": { "value": "1", "label": "Jahresbeitrag" },
+      "f2": { "value": "∞", "label": "Ausfahrten inklusive" },
+      "f3": { "value": "7", "label": "Mitglieder pro Boot" },
       "eyebrow": "Preise",
       "title": "Alles inklusive. Ein einziger Beitrag.",
       "subtitle": "Keine versteckten Kosten, keine Überraschungen. Das ist in deiner Mitgliedschaft enthalten."
