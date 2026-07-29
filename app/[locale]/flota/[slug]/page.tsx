@@ -75,7 +75,7 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
                 <dl className="space-y-5">
                   {[
                     { label: t('length'), value: boat.specs.length },
-                    boat.specs.beam && { label: 'Manga / Beam', value: boat.specs.beam },
+                    boat.specs.beam && { label: t('beam'), value: boat.specs.beam },
                     boat.specs.maxSpeed && { label: t('maxSpeed'), value: boat.specs.maxSpeed },
                     boat.specs.engines && { label: t('engines'), value: boat.specs.engines },
                     { label: t('capacity'), value: `${boat.capacity} ${guestsLabel}` },
@@ -94,6 +94,29 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
               </div>
             </ScrollReveal>
           </div>
+
+          {/* Vídeo oficial — banda cinematográfica (solo barcos con metraje propio) */}
+          {boat.video && (
+            <div className="mt-20">
+              <ScrollReveal>
+                <p className="eyebrow mb-8">{({ es: 'En el agua', en: 'On the water', sv: 'På vattnet', ru: 'На воде', de: 'Auf dem Wasser', fr: "Sur l'eau" } as Record<string, string>)[locale] ?? 'On the water'}</p>
+                <div className="relative aspect-video overflow-hidden bg-ink">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-hidden
+                    preload="metadata"
+                    poster={boat.videoPoster}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  >
+                    <source src={boat.video} type="video/mp4" />
+                  </video>
+                </div>
+              </ScrollReveal>
+            </div>
+          )}
 
           <div className="mt-20">
             <ScrollReveal>

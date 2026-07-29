@@ -19,6 +19,9 @@ export interface Boat {
   image: string;
   /** Foto propia del hero de la ficha (si falta, la ficha usa image). */
   heroImage?: string;
+  /** Vídeo oficial del barco para la banda cinematográfica de la ficha. */
+  video?: string;
+  videoPoster?: string;
   /** Optional per-boat photography for the detail-page gallery. Falls back to [image]. */
   gallery?: string[];
 }
@@ -58,6 +61,9 @@ export const fleet: Boat[] = [
     image: '/images/blue-profile.jpg',
     // Hero de ficha: el barco azul real fondeado en cala turquesa
     heroImage: '/images/blue-cove.jpg',
+    // Vídeo oficial SPX 210 (Mandelieu, Costa Azul) — 720p sin audio, autoplay silencioso
+    video: '/videos/blue-spx210.mp4',
+    videoPoster: '/images/blue-video-poster.jpg',
     // Solo tomas con casco/entorno on-brand (searay-4..7 muestran cascos rojos)
     gallery: [
       '/images/searay-1.jpg',
