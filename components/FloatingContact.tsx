@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 
 export default async function FloatingContact({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'nav' });
-  const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34600000000';
+  const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
   const MSG: Record<string, string> = {
     es: 'Hola, me interesa la membresía del Flamingo Yacht Club.',
     en: 'Hello, I am interested in the Flamingo Yacht Club membership.',

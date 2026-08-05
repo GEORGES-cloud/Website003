@@ -17,7 +17,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   const t = useTranslations('funnel');
   const reduce = useReducedMotion();
   const membership = getTiers(locale)[0];
-  const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34600000000';
+  const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
 
   // step: 0 intro · 1 name · 2..6 questions · 7 close
   const [step, setStep] = useState(0);

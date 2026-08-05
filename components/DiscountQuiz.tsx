@@ -20,7 +20,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 export default function DiscountQuiz({ locale }: { locale: string }) {
   const t = useTranslations('quiz');
   const reduce = useReducedMotion();
-  const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34600000000';
+  const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
 
   const [open, setOpen] = useState(false);
   // step: 0 intro · 1..3 preguntas · 4 premio
