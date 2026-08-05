@@ -6,8 +6,8 @@
     "progress": "Fråga {current} av {total}",
     "intro": {
       "eyebrow": "En minut · Utan förpliktelser",
-      "title": "Ta reda på om klubben är något för dig",
-      "subtitle": "Berätta hur du upplever havet så visar vi vad medlemskapet kan göra för dig. Om det känns rätt bokar vi sedan ett besök så att du får lära känna klubben på djupet.",
+      "title": "Bli medlem på en minut",
+      "subtitle": "Berätta hur du vill bli kontaktad och boka gärna ett förutsättningslöst besök i klubben i Puerto Banús.",
       "start": "Börja"
     },
     "name": {
@@ -71,7 +71,7 @@
     },
     "result": {
       "eyebrow": "Skapat för dig",
-      "title": "{name}, klubben är som gjord för dig.",
+      "title": "{name}, klubben väntar på dig.",
       "whatsapp": "Chatta på WhatsApp",
       "allPlans": "Se medlemskapet",
       "restart": "Gör om testet"
@@ -79,7 +79,7 @@
     "wa": {
       "hello": "Hej 👋 Jag heter {name}.",
       "helloAnon": "Hej 👋",
-      "body": "Jag skulle vilja veta mer om medlemskapet i Flamingo Yacht Club. Min profil: {summary}.",
+      "body": "Jag skulle vilja veta mer om medlemskapet i Flamingo Yacht Club.",
       "cita": "Jag skulle gärna boka ett besök för att lära känna programmet: {when}.",
       "closing": "Ska vi höras?"
     },

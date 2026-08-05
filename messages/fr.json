@@ -6,8 +6,8 @@
     "progress": "Question {current} sur {total}",
     "intro": {
       "eyebrow": "Une minute · Sans engagement",
-      "title": "Découvrez si le club est fait pour vous",
-      "subtitle": "Dites-nous comment vous vivez la mer et nous vous montrerons ce que l’adhésion peut vous apporter. À la fin, si le club vous correspond, nous réservons un rendez-vous pour le découvrir en détail.",
+      "title": "Rejoignez le club en une minute",
+      "subtitle": "Dites-nous comment vous préférez être contacté et, si vous le souhaitez, réservez une visite sans engagement au club à Puerto Banús.",
       "start": "Commencer"
     },
     "name": {
@@ -71,7 +71,7 @@
     },
     "result": {
       "eyebrow": "Faite pour vous",
-      "title": "{name}, le club est fait pour vous.",
+      "title": "{name}, le club vous attend.",
       "whatsapp": "Discuter sur WhatsApp",
       "allPlans": "Voir l’adhésion",
       "restart": "Refaire le test"
@@ -79,7 +79,7 @@
     "wa": {
       "hello": "Bonjour 👋 Je suis {name}.",
       "helloAnon": "Bonjour 👋",
-      "body": "J’aimerais découvrir l’adhésion au Flamingo Yacht Club. Mon profil : {summary}.",
+      "body": "J'aimerais en savoir plus sur l'adhésion au Flamingo Yacht Club.",
       "cita": "J’aimerais beaucoup réserver une visite pour connaître le programme : {when}.",
       "closing": "On en parle ?"
     },

@@ -7,11 +7,11 @@ import { getTiers } from '@/lib/localize';
 import { useJoinFunnel } from './JoinFunnelProvider';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
-const TOTAL_Q = 5;
 
-/* Sales funnel: intro → full name (questions address the lead personally) →
-   five qualifying questions → close that nudges booking a visit. The WhatsApp
-   handoff carries the full lead profile + requested appointment slot. */
+/* Funnel de captación directo (el "quiz nuevo", petición del cliente):
+   intro → nombre → ¿cómo quieres que te contactemos? (WhatsApp = handoff
+   directo · email/llamada = deja su dato y contacta el club) + cita opcional.
+   El test de 5 preguntas se eliminó a petición del cliente (ago-2026). */
 export default function JoinFunnel({ locale }: { locale: string }) {
   const { open, closeFunnel } = useJoinFunnel();
   const t = useTranslations('funnel');
@@ -19,10 +19,9 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   const membership = getTiers(locale)[0];
   const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
 
-  // step: 0 intro · 1 name · 2..6 questions · 7 close · 8 enviado
+  // step: 0 intro · 1 name · 2 close (canal + cita) · 3 enviado
   const [step, setStep] = useState(0);
   const [name, setName] = useState('');
-  const [answers, setAnswers] = useState<number[]>([]);
   const [day, setDay] = useState<number | null>(null);
   const [time, setTime] = useState<number | null>(null);
   // Canal de contacto preferido en el cierre: WhatsApp (handoff directo),
@@ -39,7 +38,6 @@ export default function JoinFunnel({ locale }: { locale: string }) {
     if (!open) return;
     setStep(0);
     setName('');
-    setAnswers([]);
     setDay(null);
     setTime(null);
     setChannel('whatsapp');
@@ -76,33 +74,14 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   const firstName = fullName.split(' ')[0] ?? '';
   const nameValid = fullName.length >= 2;
 
-  const qNum = step - 1; // question number for steps 2..6
-  const choose = (optIndex: number) => {
-    const next = [...answers];
-    next[qNum - 1] = optIndex;
-    setAnswers(next);
-    setStep(step < TOTAL_Q + 1 ? step + 1 : 7);
-  };
-
-  const restart = () => {
-    setAnswers([]);
-    setDay(null);
-    setTime(null);
-    setStep(1);
-  };
-
   const dayOpts = t.raw('cita.day') as string[];
   const timeOpts = t.raw('cita.time') as string[];
   const hasCita = day !== null || time !== null;
 
-  // WhatsApp handoff — full lead profile (+ appointment request when chosen)
+  // WhatsApp handoff — saludo con nombre (+ cita cuando se elige)
   const waMessage = (() => {
     const hello = nameValid ? t('wa.hello', { name: fullName }) : t('wa.helloAnon');
-    const summary = answers
-      .slice(0, TOTAL_Q)
-      .map((a, i) => (t.raw(`q${i + 1}.options`) as string[])[a])
-      .join(' · ');
-    let msg = `${hello} ${t('wa.body', { summary })}`;
+    let msg = `${hello} ${t('wa.body')}`;
     if (hasCita) {
       const when = [day !== null ? dayOpts[day] : null, time !== null ? timeOpts[time] : null]
         .filter(Boolean)
@@ -125,10 +104,6 @@ export default function JoinFunnel({ locale }: { locale: string }) {
     if (!canSend) return;
     setSending(true);
     setSendError(false);
-    const summary = answers
-      .slice(0, TOTAL_Q)
-      .map((a, i) => (t.raw(`q${i + 1}.options`) as string[])[a])
-      .join(' · ');
     const when = [day !== null ? dayOpts[day] : null, time !== null ? timeOpts[time] : null]
       .filter(Boolean)
       .join(', ');
@@ -140,11 +115,11 @@ export default function JoinFunnel({ locale }: { locale: string }) {
           name: fullName,
           email: isEmail ? contact.trim() : undefined,
           phone: isEmail ? undefined : contact.trim(),
-          message: `Lead del funnel "Únete al club" — prefiere contacto por ${isEmail ? 'email' : 'llamada'}. Perfil: ${summary}.${when ? ` Cita: ${when}.` : ''}`,
+          message: `Lead del funnel "Únete al club" — prefiere contacto por ${isEmail ? 'email' : 'llamada'}.${when ? ` Cita: ${when}.` : ''}`,
         }),
       });
       if (!res.ok) throw new Error('send failed');
-      setStep(8);
+      setStep(3);
     } catch {
       setSendError(true);
     } finally {
@@ -186,16 +161,6 @@ export default function JoinFunnel({ locale }: { locale: string }) {
           </svg>
         </button>
       </div>
-
-      {/* Progress (questions only) */}
-      {step >= 2 && step <= TOTAL_Q + 1 && (
-        <div className="h-[3px] bg-line flex-none">
-          <div
-            className="h-full bg-sea transition-[width] duration-500 ease-smooth"
-            style={{ width: `${(qNum / TOTAL_Q) * 100}%` }}
-          />
-        </div>
-      )}
 
       {/* Content — block layout + my-auto so tall steps scroll from the top
           instead of clipping (centered-flex-in-overflow bug on small phones) */}
@@ -259,44 +224,8 @@ export default function JoinFunnel({ locale }: { locale: string }) {
             </>
           )}
 
-          {/* QUESTIONS */}
-          {step >= 2 && step <= TOTAL_Q + 1 && (
-            <>
-              <p className="font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted mb-5">
-                {t('progress', { current: qNum, total: TOTAL_Q })}
-              </p>
-              <h2 className="display text-ink mb-10" style={{ fontSize: 'clamp(1.6rem, 4vw, 2.6rem)' }}>
-                {t(`q${qNum}.title`, { name: firstName })}
-              </h2>
-              <div className="flex flex-col gap-3.5 text-left">
-                {(t.raw(`q${qNum}.options`) as string[]).map((opt, i) => (
-                  <button
-                    key={i}
-                    onClick={() => choose(i)}
-                    className={`group flex items-center justify-between gap-4 w-full border px-6 py-5 transition-colors duration-200 ${
-                      answers[qNum - 1] === i ? 'border-sea bg-sand' : 'border-line hover:border-sea hover:bg-sand'
-                    }`}
-                  >
-                    <span className="font-sans text-[15px] sm:text-base text-ink leading-snug">{opt}</span>
-                    <span className="flex-none text-sea opacity-0 group-hover:opacity-100 transition-opacity">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </span>
-                  </button>
-                ))}
-              </div>
-              <button
-                onClick={() => setStep(step - 1)}
-                className="mt-8 font-sans text-[12px] font-semibold uppercase tracking-wide2 text-muted hover:text-ink transition-colors"
-              >
-                {t('back')}
-              </button>
-            </>
-          )}
-
           {/* CLOSE — membership + appointment */}
-          {step === 7 && (
+          {step === 2 && (
             <>
               <p className="eyebrow mb-4">{t('result.eyebrow')}</p>
               <h2 className="display text-ink mb-3" style={{ fontSize: 'clamp(1.9rem, 5vw, 2.9rem)' }}>
@@ -405,19 +334,13 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                   >
                     {t('result.allPlans')}
                   </Link>
-                  <button
-                    onClick={restart}
-                    className="font-sans text-[12px] font-semibold uppercase tracking-wide2 text-muted hover:text-ink transition-colors"
-                  >
-                    {t('result.restart')}
-                  </button>
                 </div>
               </div>
             </>
           )}
 
           {/* ENVIADO — el club contacta al lead por el canal elegido */}
-          {step === 8 && (
+          {step === 3 && (
             <>
               <p className="eyebrow mb-4">{t('result.eyebrow')}</p>
               <h2 className="display text-ink mb-5" style={{ fontSize: 'clamp(1.9rem, 5vw, 2.9rem)' }}>
