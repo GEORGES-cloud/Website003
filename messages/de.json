@@ -96,7 +96,8 @@
       "sentTitle": "Alles klar – wir melden uns sehr bald",
       "sentBody": "Wir haben deine Daten. Wir schreiben dir oder rufen dich in Kürze an, um deinen Besuch in Puerto Banús zu vereinbaren.",
       "done": "Alles klar"
-    }
+    },
+    "waNow": "Schreib uns jetzt auf WhatsApp"
   },
   "quiz": {
     "eyebrow": "Willkommen bei Flamingo",
@@ -134,7 +135,8 @@
       "whatsapp": "Schreib uns auf WhatsApp",
       "plans": "Mitgliedschaften ansehen"
     },
-    "wa": "Hallo! Ich habe die Flamingo-Challenge bestanden und möchte meinen Code {code} für den Willkommensrabatt einlösen."
+    "wa": "Hallo! Ich habe die Flamingo-Challenge bestanden und möchte meinen Code {code} für den Willkommensrabatt einlösen.",
+    "waNow": "Schreib uns jetzt auf WhatsApp"
   },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Marbella | Yacht-Membership-Club",

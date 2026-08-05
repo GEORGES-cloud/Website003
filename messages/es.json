@@ -96,7 +96,8 @@
       "sentTitle": "Listo — te contactamos muy pronto",
       "sentBody": "Hemos recibido tus datos. Te escribiremos o llamaremos en breve para organizar tu visita en Puerto Banús.",
       "done": "Entendido"
-    }
+    },
+    "waNow": "Escríbenos ahora por WhatsApp"
   },
   "quiz": {
     "eyebrow": "Bienvenida Flamingo",
@@ -134,7 +135,8 @@
       "whatsapp": "Escribirnos por WhatsApp",
       "plans": "Ver membresías"
     },
-    "wa": "¡Hola! He superado el reto Flamingo y quiero canjear mi código {code} para el descuento de bienvenida."
+    "wa": "¡Hola! He superado el reto Flamingo y quiero canjear mi código {code} para el descuento de bienvenida.",
+    "waNow": "Escríbenos ahora por WhatsApp"
   },
   "meta": {
     "title": "Flamingo Yacht Club powered by Marina Marbella | Club Náutico de Membresía",

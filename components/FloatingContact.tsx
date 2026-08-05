@@ -1,18 +1,9 @@
 import { getTranslations } from 'next-intl/server';
+import { waInterestHref } from '@/lib/whatsapp';
 
 export default async function FloatingContact({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'nav' });
-  const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
-  const MSG: Record<string, string> = {
-    es: 'Hola, me interesa la membresía del Flamingo Yacht Club.',
-    en: 'Hello, I am interested in the Flamingo Yacht Club membership.',
-    sv: 'Hej, jag är intresserad av medlemskap hos Flamingo Yacht Club.',
-    ru: 'Здравствуйте, меня интересует членство в Flamingo Yacht Club.',
-    de: 'Hallo, ich interessiere mich für die Mitgliedschaft im Flamingo Yacht Club.',
-    fr: 'Bonjour, je suis intéressé(e) par l’adhésion au Flamingo Yacht Club.',
-  };
-  const msg = encodeURIComponent(MSG[locale] ?? MSG.en);
-  const href = `https://wa.me/${phone}?text=${msg}`;
+  const href = waInterestHref(locale);
 
   return (
     <a

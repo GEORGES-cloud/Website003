@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import HeroLedger from '@/components/HeroLedger';
 import ScrollReveal from '@/components/ScrollReveal';
 import MembershipTiers from '@/components/MembershipTiers';
 import HowItWorksTimeline from '@/components/HowItWorksTimeline';
-import AppDevices from '@/components/AppDevices';
 import Faq from '@/components/Faq';
 import CTAFinal from '@/components/CTAFinal';
 
@@ -56,15 +56,43 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
         </div>
       </section>
 
-      {/* The single membership card (features, no price) */}
-      <MembershipTiers locale={locale} />
-
-      {/* Cómo funciona — pasos como timeline animado, dentro de Membresía.
+      {/* Cómo funciona — al principio de la página (petición del cliente).
           Sin badge de "obligatoria": la licencia se cuenta en positivo (paso 2). */}
       <HowItWorksTimeline steps={steps} locale={locale} licenseStepIndex={-1} />
 
-      {/* La app del club — portátil + teléfono */}
-      <AppDevices />
+      {/* La app real del club (MOXSEA) — las dos maquetas oficiales rematan
+          el paso 3 ("descarga la app y reserva"). Sin img-grade: es UI. */}
+      <section className="py-24 md:py-36 bg-sand">
+        <div className="max-w-[1480px] mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
+            <ScrollReveal>
+              <div className="relative aspect-[1961/2339] bg-[#e4e6e9] h-full">
+                <Image
+                  src="/images/app-mockup-moxsea.jpg"
+                  alt="La app del club: reservas, check-in y check-out desde el móvil"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-contain"
+                />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <div className="relative aspect-[3/2] lg:aspect-auto bg-white h-full min-h-[320px]">
+                <Image
+                  src="/images/app-mockup-moxsea-2.jpg"
+                  alt="La app del club: calendario de reservas y puerto base Puerto Banús"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-contain"
+                />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* The single membership card (features, no price) */}
+      <MembershipTiers locale={locale} />
 
       <Faq locale={locale} />
 
