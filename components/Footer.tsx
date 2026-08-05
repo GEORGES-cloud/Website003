@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import Logo from './Logo';
+import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
 
 interface FooterProps {
   locale: string;
@@ -11,16 +12,12 @@ export default function Footer({ locale }: FooterProps) {
   const tf = useTranslations('footer');
 
   const navLinks = [
-    { href: `/${locale}/como-funciona`, label: t('howItWorks') },
+    { href: `/${locale}/precios`, label: t('membership') },
     { href: `/${locale}/flota`, label: t('fleet') },
-    { href: `/${locale}/precios`, label: t('prices') },
     { href: `/${locale}/puerto-base`, label: t('homePort') },
     { href: `/${locale}/nosotros`, label: t('about') },
     { href: `/${locale}/contacto`, label: t('contact') },
   ];
-
-  const appStoreUrl = process.env.NEXT_PUBLIC_APP_STORE_URL ?? '#';
-  const playStoreUrl = process.env.NEXT_PUBLIC_PLAY_STORE_URL ?? '#';
 
   return (
     <footer className="bg-ink text-white">
@@ -38,6 +35,17 @@ export default function Footer({ locale }: FooterProps) {
             <p className="font-sans text-sm text-white/60 mt-6 leading-relaxed max-w-xs">
               {tf('tagline')}
             </p>
+            {/* Ubicación del club (base Marina Marbella en Puerto Banús) → Google Maps */}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Marina+Marbella%2C+Edificio+Levante%2C+Puerto+Ban%C3%BAs%2C+Marbella"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-sm text-white/60 hover:text-white transition-colors mt-4 block max-w-xs leading-relaxed"
+            >
+              Edificio Levante, local 9-10
+              <br />
+              Puerto Banús · 29660 Marbella
+            </a>
           </div>
 
           {/* Navigation */}

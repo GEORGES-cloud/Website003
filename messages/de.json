@@ -18,29 +18,55 @@
     },
     "q1": {
       "title": "{name}, wie oft siehst du dich aufs Meer hinausfahren?",
-      "options": ["Ein paar Ausflüge im Jahr", "Ein paarmal im Monat", "Jede Woche – es ist mein Lebensstil"]
+      "options": [
+        "Ein paar Ausflüge im Jahr",
+        "Ein paarmal im Monat",
+        "Jede Woche – es ist mein Lebensstil"
+      ]
     },
     "q2": {
       "title": "Wie sähe dein perfekter Tag an Bord aus?",
-      "options": ["Ein Bad in den Buchten am Mittag", "Ein Wochenende, um die Küste zu erkunden", "Ein privater Törn, bei dem alles geregelt ist"]
+      "options": [
+        "Ein Bad in den Buchten am Mittag",
+        "Ein Wochenende, um die Küste zu erkunden",
+        "Ein privater Törn, bei dem alles geregelt ist"
+      ]
     },
     "q3": {
       "title": "Mit wem legst du normalerweise ab?",
-      "options": ["Zu zweit", "Mit Familie und Freunden", "Events, Kunden und besondere Anlässe"]
+      "options": [
+        "Zu zweit",
+        "Mit Familie und Freunden",
+        "Events, Kunden und besondere Anlässe"
+      ]
     },
     "q4": {
       "title": "Wie viel Erfahrung hast du auf dem Meer?",
-      "options": ["Ich habe einen Bootsführerschein", "Ich war schon auf See, aber ohne Schein", "Ich bin ganz neu dabei"]
+      "options": [
+        "Ich habe einen Bootsführerschein",
+        "Ich war schon auf See, aber ohne Schein",
+        "Ich bin ganz neu dabei"
+      ]
     },
     "q5": {
       "title": "Wann würdest du gern starten?",
-      "options": ["Noch in dieser Saison", "In den nächsten Monaten", "Im Moment schaue ich mich nur um"]
+      "options": [
+        "Noch in dieser Saison",
+        "In den nächsten Monaten",
+        "Im Moment schaue ich mich nur um"
+      ]
     },
     "cita": {
       "title": "Buche einen unverbindlichen Besuch",
       "subtitle": "Wir zeigen dir das Programm, die Flotte und Puerto Banús. Du entscheidest, wann:",
-      "day": ["Unter der Woche", "Am Wochenende"],
-      "time": ["Vormittags", "Nachmittags"],
+      "day": [
+        "Unter der Woche",
+        "Am Wochenende"
+      ],
+      "time": [
+        "Vormittags",
+        "Nachmittags"
+      ],
       "cta": "Termin per WhatsApp buchen"
     },
     "result": {
@@ -67,9 +93,30 @@
     "close": "Schließen",
     "progress": "Frage {current} von {total}",
     "wrong": "Fast … versuchen Sie es noch einmal.",
-    "q1": { "title": "Von welchem Hafen aus sticht der Club in See?", "options": ["Sotogrande", "Puerto Banús", "Estepona"] },
-    "q2": { "title": "Wie viele Mitglieder teilen sich höchstens ein Boot?", "options": ["Sieben", "Fünfzehn", "Fünfundzwanzig"] },
-    "q3": { "title": "Wie heißt unsere Sea Ray SPX 210?", "options": ["Coral", "Marina", "Blue"] },
+    "q1": {
+      "title": "Von welchem Hafen aus sticht der Club in See?",
+      "options": [
+        "Sotogrande",
+        "Puerto Banús",
+        "Estepona"
+      ]
+    },
+    "q2": {
+      "title": "Wie viele Mitglieder teilen sich höchstens ein Boot?",
+      "options": [
+        "Sieben",
+        "Fünfzehn",
+        "Fünfundzwanzig"
+      ]
+    },
+    "q3": {
+      "title": "Wie heißt unsere Sea Ray SPX 210?",
+      "options": [
+        "Coral",
+        "Marina",
+        "Blue"
+      ]
+    },
     "win": {
       "eyebrow": "Challenge gemeistert",
       "title": "Glückwunsch – Sie gehören dazu",
@@ -85,12 +132,30 @@
     "title": "Flamingo Yacht Club powered by Marina Marbella | Yacht-Membership-Club",
     "description": "Bootsclub-Mitgliedschaft in Puerto Banús, Marbella. Ein Jahresbeitrag, unbegrenzter Zugang zu Premium-Booten, gewartet von Marina Marbella – ohne Wartung, Liegeplatz und Aufwand.",
     "pages": {
-      "howItWorks": { "title": "So funktioniert die Mitgliedschaft", "description": "Eine Jahresmitgliedschaft, unbegrenzter Zugang zu einem Premium-Boot in Puerto Banús. In der App reservieren, an Bord gehen, ablegen – wir kümmern uns um alles." },
-      "fleet": { "title": "Unsere Flotte", "description": "Das ist Blue, unsere Sea Ray SPX 210 – dazu die Clubflotte: NAVAN C30 und Level Yachts 43ST. Gewartet von Marina Marbella, mit nur 7 Mitgliedern pro Boot." },
-      "prices": { "title": "Mitgliedschaft und Preise", "description": "Ein Jahresbeitrag, alles inklusive: unbegrenzte Nutzung, professionelle Vorbereitung, Reservierungs-App, Handtücher, Paddleboards und Schnorchelausrüstung. Ohne Wartung und Winterlager." },
-      "homePort": { "title": "Heimathafen: Puerto Banús, Marbella", "description": "Legen Sie ab in Puerto Banús, einem der ikonischsten Häfen Europas: versteckte Buchten, Beach Clubs und die schönste Küste des Mittelmeers, nur wenige Schritte vom Liegeplatz." },
-      "about": { "title": "Über uns – powered by Marina Marbella", "description": "Mehr als ein Bootsclub: getragen von Marina Marbella, mit über 60 Jahren Erfahrung, professionellen Technikern und kompletter mariner Infrastruktur an der Costa del Sol." },
-      "contact": { "title": "Besuch in Puerto Banús buchen", "description": "Lernen Sie den Club kennen: Wir zeigen Ihnen die Boote bei einem erfrischenden Getränk und einer persönlichen Tour und helfen bei der Wahl der Mitgliedschaft. Buchen Sie noch heute Ihre private Beratung." }
+      "howItWorks": {
+        "title": "So funktioniert die Mitgliedschaft",
+        "description": "Eine Jahresmitgliedschaft, unbegrenzter Zugang zu einem Premium-Boot in Puerto Banús. In der App reservieren, an Bord gehen, ablegen – wir kümmern uns um alles."
+      },
+      "fleet": {
+        "title": "Unsere Flotte",
+        "description": "Das ist Blue, unsere Sea Ray SPX 210 – dazu die Clubflotte: NAVAN C30 und Level Yachts 43ST. Gewartet von Marina Marbella, mit nur 7 Mitgliedern pro Boot."
+      },
+      "prices": {
+        "title": "Mitgliedschaft und Preise",
+        "description": "Ein Jahresbeitrag, alles inklusive: unbegrenzte Nutzung, professionelle Vorbereitung, Reservierungs-App, Handtücher, Paddleboards und Schnorchelausrüstung. Ohne Wartung und Winterlager."
+      },
+      "homePort": {
+        "title": "Heimathafen: Puerto Banús, Marbella",
+        "description": "Legen Sie ab in Puerto Banús, einem der ikonischsten Häfen Europas: versteckte Buchten, Beach Clubs und die schönste Küste des Mittelmeers, nur wenige Schritte vom Liegeplatz."
+      },
+      "about": {
+        "title": "Über uns – powered by Marina Marbella",
+        "description": "Mehr als ein Bootsclub: getragen von Marina Marbella, mit über 60 Jahren Erfahrung, professionellen Technikern und kompletter mariner Infrastruktur an der Costa del Sol."
+      },
+      "contact": {
+        "title": "Besuch in Puerto Banús buchen",
+        "description": "Lernen Sie den Club kennen: Wir zeigen Ihnen die Boote bei einem erfrischenden Getränk und einer persönlichen Tour und helfen bei der Wahl der Mitgliedschaft. Buchen Sie noch heute Ihre private Beratung."
+      }
     }
   },
   "nav": {
@@ -119,8 +184,8 @@
     },
     "step2": {
       "number": "02",
-      "title": "Bootsführerschein",
-      "desc": "Er ist Pflicht, um das Boot zu fahren. Noch keinen? Wir helfen dir, ihn zu bekommen."
+      "title": "Führerschein leicht gemacht",
+      "desc": "Noch keinen Bootsführerschein? Wir machen es dir leicht und begleiten dich auf dem Weg dorthin."
     },
     "step3": {
       "number": "03",
@@ -135,16 +200,25 @@
   },
   "prices": {
     "hero": {
-      "f1": { "value": "1", "label": "Jahresbeitrag" },
-      "f2": { "value": "∞", "label": "Ausfahrten inklusive" },
-      "f3": { "value": "7", "label": "Mitglieder pro Boot" },
-      "eyebrow": "Preise",
+      "f1": {
+        "value": "1",
+        "label": "Jahresbeitrag"
+      },
+      "f2": {
+        "value": "∞",
+        "label": "Ausfahrten inklusive"
+      },
+      "f3": {
+        "value": "7",
+        "label": "Mitglieder pro Boot"
+      },
+      "eyebrow": "Mitgliedschaft",
       "title": "Alles inklusive. Ein einziger Beitrag.",
       "subtitle": "Keine versteckten Kosten, keine Überraschungen. Das ist in deiner Mitgliedschaft enthalten."
     },
     "intro": {
       "title": "Was ist in der Mitgliedschaft enthalten?",
-      "body": "Unbegrenzte Nutzung das ganze Jahr, die Reservierungs-App, professionelle Vorbereitung des Bootes vor jedem Törn, Onboarding und Mitglieder-Support — dazu Strandtücher, kostenlose Softdrinks, Paddleboards und Schnorchelausrüstung an Bord. Ein Bootsführerschein ist Pflicht."
+      "body": "Unbegrenzte Nutzung das ganze Jahr, die Reservierungs-App, professionelle Vorbereitung des Bootes vor jedem Törn, Onboarding und Mitglieder-Support — dazu Strandtücher, kostenlose Softdrinks, Paddleboards und Schnorchelausrüstung an Bord. Noch kein Bootsführerschein? Wir helfen dir dabei."
     },
     "cta": {
       "eyebrow": "Der Preis, ganz persönlich",
@@ -164,6 +238,11 @@
       "title": "Der schönste Hafen der Costa del Sol",
       "p1": "Puerto Banús ist ein Synonym für Luxus, Glamour und Seefahrt. Perfekt gelegen im Herzen der Costa del Sol, bietet er direkten Zugang zu traumhaften Revieren, versteckten Buchten, Beachclubs und Restaurants direkt am Wasser.",
       "p2": "Ob es dich nach Osten Richtung Málaga zieht oder nach Westen Richtung Estepona und Sotogrande — dein nächstes Abenteuer beginnt nur wenige Schritte vom Anleger entfernt."
+    },
+    "map": {
+      "eyebrow": "Lage",
+      "title": "Sie finden uns in Puerto Banús",
+      "address": "Edificio Levante, local 9-10 · Puerto Banús, Marbella"
     }
   },
   "home": {
@@ -324,9 +403,18 @@
     },
     "values": {
       "title": "Was uns antreibt",
-      "v1": { "title": "Freiheit", "desc": "Fahren Sie, wann Sie wollen, wohin Sie wollen." },
-      "v2": { "title": "Qualität", "desc": "Eine Premium-Flotte, stets in tadellosem Zustand." },
-      "v3": { "title": "Einfachheit", "desc": "Reservieren in Minuten. Kein Papierkram, keine Überraschungen." }
+      "v1": {
+        "title": "Freiheit",
+        "desc": "Fahren Sie, wann Sie wollen, wohin Sie wollen."
+      },
+      "v2": {
+        "title": "Qualität",
+        "desc": "Eine Premium-Flotte, stets in tadellosem Zustand."
+      },
+      "v3": {
+        "title": "Einfachheit",
+        "desc": "Reservieren in Minuten. Kein Papierkram, keine Überraschungen."
+      }
     }
   },
   "contact": {

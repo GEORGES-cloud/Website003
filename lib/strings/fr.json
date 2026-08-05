@@ -53,11 +53,12 @@
       "period": "",
       "features": [
         "Utilisation annuelle illimitée, à réserver depuis l’application du club",
+        "Réservez jusqu’à deux créneaux d’affilée : assurez votre place, le bateau est à vous toute la journée",
         "Préparation professionnelle du bateau avant chaque sortie",
         "Accompagnement à vos débuts et assistance aux membres",
         "Serviettes de plage, boissons fraîches offertes, paddles et équipement de snorkeling à bord",
         "Aucun entretien, aucune assurance, aucune révision ni hivernage à gérer",
-        "Permis bateau obligatoire (si vous ne l’avez pas, nous vous aidons à l’obtenir)",
+        "Pas encore de permis bateau ? On vous facilite les choses et on vous aide à l’obtenir",
         "Invités à bord sans frais supplémentaires"
       ]
     }
@@ -65,7 +66,7 @@
   "faqs": [
     {
       "q": "Ai-je besoin d'un permis bateau ?",
-      "a": "Oui, c’est indispensable. Pour naviguer avec le club, vous avez besoin d’un permis. Si vous ne l’avez pas encore, nous vous aidons à l’obtenir."
+      "a": "Oui – et si vous ne l’avez pas encore, on vous facilite les choses : on vous accompagne tout au long du processus, rapidement et sans complication."
     },
     {
       "q": "Puis-je inviter des personnes à bord ?",
@@ -111,10 +112,18 @@
     }
   ],
   "stats": [
-    { "label": "Tout compris, sans surprises" },
-    { "label": "Jours de navigation par an" },
-    { "label": "De côte à votre portée" },
-    { "label": "Port d'attache : Banús, Marbella" }
+    {
+      "label": "Tout compris, sans surprises"
+    },
+    {
+      "label": "Jours de navigation par an"
+    },
+    {
+      "label": "De côte à votre portée"
+    },
+    {
+      "label": "Port d'attache : Banús, Marbella"
+    }
   ],
   "legal": {
     "privacy": {
@@ -122,13 +131,48 @@
       "updated": "Dernière mise à jour : juin 2026",
       "intro": "Chez Flamingo Yacht Club (exploité par [RAZÓN SOCIAL], numéro fiscal [CIF/NIF]), nous respectons votre vie privée et traitons vos données conformément au Règlement (UE) 2016/679 (RGPD).",
       "sections": [
-        { "heading": "Responsable du traitement", "body": ["[RAZÓN SOCIAL] · Numéro fiscal [CIF/NIF] · Puerto Banús, 29660 Marbella, Málaga · info@flamingoyachtclub.com."] },
-        { "heading": "Données que nous collectons", "body": ["Les données d'identification et de contact que vous nous communiquez via le formulaire de contact ou le processus d'adhésion (nom, e-mail, téléphone et contenu de votre message), ainsi que les données de navigation au moyen de cookies."] },
-        { "heading": "Finalité", "body": ["Répondre à vos demandes, gérer votre adhésion et, avec votre consentement, vous adresser des communications relatives au club. Nous ne procédons à aucune prise de décision automatisée."] },
-        { "heading": "Base légale", "body": ["Le consentement que vous donnez en nous contactant, l'exécution de la relation d'adhésion et notre intérêt légitime à répondre à vos demandes."] },
-        { "heading": "Conservation", "body": ["Nous conservons vos données pendant toute la durée de la relation puis, ensuite, durant les délais légalement requis."] },
-        { "heading": "Destinataires", "body": ["Nous ne communiquons vos données à des tiers que lorsque la loi l'exige ou à des prestataires de services (par exemple la gestion des réservations), toujours dans le cadre d'un contrat de sous-traitance des données."] },
-        { "heading": "Vos droits", "body": ["Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité en écrivant à info@flamingoyachtclub.com."] }
+        {
+          "heading": "Responsable du traitement",
+          "body": [
+            "[RAZÓN SOCIAL] · Numéro fiscal [CIF/NIF] · Puerto Banús, 29660 Marbella, Málaga · info@flamingoyachtclub.com."
+          ]
+        },
+        {
+          "heading": "Données que nous collectons",
+          "body": [
+            "Les données d'identification et de contact que vous nous communiquez via le formulaire de contact ou le processus d'adhésion (nom, e-mail, téléphone et contenu de votre message), ainsi que les données de navigation au moyen de cookies."
+          ]
+        },
+        {
+          "heading": "Finalité",
+          "body": [
+            "Répondre à vos demandes, gérer votre adhésion et, avec votre consentement, vous adresser des communications relatives au club. Nous ne procédons à aucune prise de décision automatisée."
+          ]
+        },
+        {
+          "heading": "Base légale",
+          "body": [
+            "Le consentement que vous donnez en nous contactant, l'exécution de la relation d'adhésion et notre intérêt légitime à répondre à vos demandes."
+          ]
+        },
+        {
+          "heading": "Conservation",
+          "body": [
+            "Nous conservons vos données pendant toute la durée de la relation puis, ensuite, durant les délais légalement requis."
+          ]
+        },
+        {
+          "heading": "Destinataires",
+          "body": [
+            "Nous ne communiquons vos données à des tiers que lorsque la loi l'exige ou à des prestataires de services (par exemple la gestion des réservations), toujours dans le cadre d'un contrat de sous-traitance des données."
+          ]
+        },
+        {
+          "heading": "Vos droits",
+          "body": [
+            "Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité en écrivant à info@flamingoyachtclub.com."
+          ]
+        }
       ]
     },
     "terms": {
@@ -136,12 +180,42 @@
       "updated": "Dernière mise à jour : juin 2026",
       "intro": "Les présentes conditions régissent l'utilisation de ce site web et les informations relatives au club d'adhésion Flamingo Yacht Club.",
       "sections": [
-        { "heading": "Objet", "body": ["Ce site a une vocation informative concernant le club de membres yachts Flamingo Yacht Club. L'adhésion et les réservations sont régies par les conditions particulières communiquées dans chaque cas."] },
-        { "heading": "Utilisation du site", "body": ["Vous vous engagez à utiliser le site de manière licite et à ne rien entreprendre qui puisse nuire à son fonctionnement ou aux droits de tiers."] },
-        { "heading": "Adhésion et réservations", "body": ["Les caractéristiques, prix et disponibilités de la flotte sont susceptibles d'évoluer. Les informations publiées ne constituent pas une offre ferme tant que l'adhésion n'a pas été formalisée."] },
-        { "heading": "Propriété intellectuelle", "body": ["Les contenus, marques et le design de ce site sont protégés et ne peuvent être reproduits sans autorisation."] },
-        { "heading": "Responsabilité", "body": ["Nous déclinons toute responsabilité en cas d'erreurs ou d'omissions dans les contenus, ainsi qu'en cas d'interruptions de service échappant à notre contrôle."] },
-        { "heading": "Droit applicable", "body": ["Les présentes conditions sont régies par le droit espagnol et relèvent de la compétence des tribunaux de Marbella, sauf disposition impérative contraire."] }
+        {
+          "heading": "Objet",
+          "body": [
+            "Ce site a une vocation informative concernant le club de membres yachts Flamingo Yacht Club. L'adhésion et les réservations sont régies par les conditions particulières communiquées dans chaque cas."
+          ]
+        },
+        {
+          "heading": "Utilisation du site",
+          "body": [
+            "Vous vous engagez à utiliser le site de manière licite et à ne rien entreprendre qui puisse nuire à son fonctionnement ou aux droits de tiers."
+          ]
+        },
+        {
+          "heading": "Adhésion et réservations",
+          "body": [
+            "Les caractéristiques, prix et disponibilités de la flotte sont susceptibles d'évoluer. Les informations publiées ne constituent pas une offre ferme tant que l'adhésion n'a pas été formalisée."
+          ]
+        },
+        {
+          "heading": "Propriété intellectuelle",
+          "body": [
+            "Les contenus, marques et le design de ce site sont protégés et ne peuvent être reproduits sans autorisation."
+          ]
+        },
+        {
+          "heading": "Responsabilité",
+          "body": [
+            "Nous déclinons toute responsabilité en cas d'erreurs ou d'omissions dans les contenus, ainsi qu'en cas d'interruptions de service échappant à notre contrôle."
+          ]
+        },
+        {
+          "heading": "Droit applicable",
+          "body": [
+            "Les présentes conditions sont régies par le droit espagnol et relèvent de la compétence des tribunaux de Marbella, sauf disposition impérative contraire."
+          ]
+        }
       ]
     },
     "notice": {
@@ -149,9 +223,27 @@
       "updated": "Dernière mise à jour : juin 2026",
       "intro": "Conformément à la loi espagnole 34/2002 (LSSI-CE), les données d'identification du titulaire de ce site web sont communiquées ci-après.",
       "sections": [
-        { "heading": "Titulaire", "body": ["Dénomination : [RAZÓN SOCIAL].", "Numéro fiscal : [CIF/NIF].", "Adresse : Puerto Banús, 29660 Marbella, Málaga.", "E-mail : info@flamingoyachtclub.com."] },
-        { "heading": "Conditions d'utilisation", "body": ["L'accès à ce site confère la qualité d'utilisateur et implique l'acceptation des présentes mentions légales."] },
-        { "heading": "Propriété intellectuelle", "body": ["L'ensemble des droits sur les contenus du site appartiennent à son titulaire ou à des tiers qui en ont autorisé l'usage."] }
+        {
+          "heading": "Titulaire",
+          "body": [
+            "Dénomination : [RAZÓN SOCIAL].",
+            "Numéro fiscal : [CIF/NIF].",
+            "Adresse : Puerto Banús, 29660 Marbella, Málaga.",
+            "E-mail : info@flamingoyachtclub.com."
+          ]
+        },
+        {
+          "heading": "Conditions d'utilisation",
+          "body": [
+            "L'accès à ce site confère la qualité d'utilisateur et implique l'acceptation des présentes mentions légales."
+          ]
+        },
+        {
+          "heading": "Propriété intellectuelle",
+          "body": [
+            "L'ensemble des droits sur les contenus du site appartiennent à son titulaire ou à des tiers qui en ont autorisé l'usage."
+          ]
+        }
       ]
     }
   }

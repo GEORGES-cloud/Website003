@@ -27,20 +27,22 @@ export const tiers: Tier[] = [
     taglineEn: 'Simple. Transparent. Everything you need to enjoy life on the water.',
     features: [
       'Uso anual ilimitado, con reservas desde la app del club',
+      'Acumula hasta dos reservas seguidas: asegura tu sitio y el barco es tuyo todo el día',
       'Preparación profesional del barco antes de cada salida',
       'Onboarding y soporte a socios',
       'Toallas, refrescos, paddleboards y equipo de snorkel a bordo',
       'Sin mantenimiento, seguro, servicio ni invernaje que gestionar',
-      'Licencia de navegación obligatoria (si no la tienes, te ayudamos a conseguirla)',
+      '¿Sin licencia de navegación? Te la ponemos fácil: te ayudamos a conseguirla',
       'Invitados a bordo sin coste adicional',
     ],
     featuresEn: [
       'Unlimited annual usage, booked from the club app',
+      'Stack up to two back-to-back bookings: secure your spot and make the boat yours all day',
       'Professional boat preparation before every trip',
       'Onboarding and member support',
       'Beach towels, complimentary soft drinks, paddleboards and snorkelling equipment on board',
       'No maintenance, insurance, servicing or winter storage to think about',
-      'Boating licence required (we help you get one if you don’t have it)',
+      'No boating licence yet? We make it easy — we help you get one',
       'Guests on board at no extra cost',
     ],
     featured: true,
@@ -58,8 +60,8 @@ export const faqs: Faq[] = [
   {
     q: '¿Necesito licencia de navegación?',
     qEn: 'Do I need a boating licence?',
-    a: 'Sí, es imprescindible. Para navegar con el club necesitas licencia. Si aún no la tienes, te ayudamos a conseguirla.',
-    aEn: 'Yes, it is required. To sail with the club you need a licence. If you don’t have one yet, we help you get it.',
+    a: 'Sí. Y si aún no la tienes, te lo ponemos fácil: te acompañamos en todo el proceso para que la consigas rápido y sin complicaciones.',
+    aEn: 'Yes — and if you don’t have one yet, we make it easy: we guide you through the whole process so you get it quickly, hassle-free.',
   },
   {
     q: '¿Puedo llevar invitados a bordo?',
@@ -147,7 +149,7 @@ export interface Stat {
 
 export const stats: Stat[] = [
   { value: 100, suffix: '%', label: 'Todo incluido, sin sorpresas', labelEn: 'All included, no surprises' },
-  { value: 300, suffix: '+', label: 'Días navegables al año', labelEn: 'Sailing days a year' },
+  { value: 365, label: 'Días navegables al año', labelEn: 'Sailing days a year' },
   { value: 40, suffix: ' NM', label: 'De costa a tu alcance', labelEn: 'Of coastline within reach' },
   { value: 1, label: 'Puerto: Banús, Marbella', labelEn: 'Home port: Banús, Marbella' },
 ];

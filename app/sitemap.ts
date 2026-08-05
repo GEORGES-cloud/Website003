@@ -3,7 +3,7 @@ import { ACTIVE_BOAT_SLUGS } from '@/lib/data';
 import { locales } from '@/lib/locales';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://flamingoyachtclub.com';
-const routes = ['', '/como-funciona', '/flota', '/precios', '/puerto-base', '/nosotros', '/contacto'];
+const routes = ['', '/flota', '/precios', '/puerto-base', '/nosotros', '/contacto'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

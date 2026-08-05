@@ -1,28 +1,28 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from './ScrollReveal';
-import ParallaxImage from './ParallaxImage';
+import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
 
 /* Cinematic editorial split: full-bleed photography instead of device mockups.
    The app story is told in copy; the imagery stays on-brand (sea, not screens). */
 export default function AppShowcase() {
   const t = useTranslations('home.app');
-  const appStoreUrl = process.env.NEXT_PUBLIC_APP_STORE_URL ?? '#';
-  const playStoreUrl = process.env.NEXT_PUBLIC_PLAY_STORE_URL ?? '#';
 
   const features = ['f1', 'f2', 'f3'] as const;
 
   return (
     <section className="bg-sand overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        {/* Image — bleeds to the section edge */}
-        <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[680px]">
-          <ParallaxImage
-            src="/images/searay-1.jpg"
-            alt=""
+        {/* Mockup oficial de la app (MOXSEA) — contenida, sin recorte ni gradación:
+            es interfaz, no fotografía. El fondo replica el gris del propio mockup. */}
+        <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[680px] bg-[#e4e6e9]">
+          <Image
+            src="/images/app-mockup-moxsea.jpg"
+            alt="La app del club: reservas, check-in y check-out desde el móvil"
+            fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            strength={50}
-            className="absolute inset-0"
+            className="object-contain"
           />
         </div>
 

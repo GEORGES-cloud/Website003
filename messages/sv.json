@@ -18,29 +18,55 @@
     },
     "q1": {
       "title": "{name}, hur ofta ser du dig själv ge dig ut på havet?",
-      "options": ["Några utflykter om året", "Ett par gånger i månaden", "Varje vecka – det är min livsstil"]
+      "options": [
+        "Några utflykter om året",
+        "Ett par gånger i månaden",
+        "Varje vecka – det är min livsstil"
+      ]
     },
     "q2": {
       "title": "Hur skulle din perfekta dag ombord se ut?",
-      "options": ["Ett dopp i vikarna mitt på dagen", "En helg där du utforskar kusten", "En privat kryssning där allt är ordnat"]
+      "options": [
+        "Ett dopp i vikarna mitt på dagen",
+        "En helg där du utforskar kusten",
+        "En privat kryssning där allt är ordnat"
+      ]
     },
     "q3": {
       "title": "Vem kommer du oftast att kasta loss med?",
-      "options": ["Som par", "Med familj och vänner", "Event, kunder och speciella tillfällen"]
+      "options": [
+        "Som par",
+        "Med familj och vänner",
+        "Event, kunder och speciella tillfällen"
+      ]
     },
     "q4": {
       "title": "Vilken erfarenhet har du av havet?",
-      "options": ["Jag har förarintyg", "Jag har seglat, men utan intyg", "Jag är ny på det här"]
+      "options": [
+        "Jag har förarintyg",
+        "Jag har seglat, men utan intyg",
+        "Jag är ny på det här"
+      ]
     },
     "q5": {
       "title": "När skulle du vilja börja?",
-      "options": ["Redan denna säsong", "Inom de närmaste månaderna", "Jag utforskar bara just nu"]
+      "options": [
+        "Redan denna säsong",
+        "Inom de närmaste månaderna",
+        "Jag utforskar bara just nu"
+      ]
     },
     "cita": {
       "title": "Boka ett besök utan förpliktelser",
       "subtitle": "Vi visar dig programmet, flottan och Puerto Banús. Du väljer när:",
-      "day": ["Vardagar", "Helg"],
-      "time": ["På förmiddagen", "På eftermiddagen"],
+      "day": [
+        "Vardagar",
+        "Helg"
+      ],
+      "time": [
+        "På förmiddagen",
+        "På eftermiddagen"
+      ],
       "cta": "Boka besök via WhatsApp"
     },
     "result": {
@@ -67,9 +93,30 @@
     "close": "Stäng",
     "progress": "Fråga {current} av {total}",
     "wrong": "Nästan – försök igen.",
-    "q1": { "title": "Från vilken hamn seglar klubben?", "options": ["Sotogrande", "Puerto Banús", "Estepona"] },
-    "q2": { "title": "Hur många medlemmar delar högst på varje båt?", "options": ["Sju", "Femton", "Tjugofem"] },
-    "q3": { "title": "Vad heter vår Sea Ray SPX 210?", "options": ["Coral", "Marina", "Blue"] },
+    "q1": {
+      "title": "Från vilken hamn seglar klubben?",
+      "options": [
+        "Sotogrande",
+        "Puerto Banús",
+        "Estepona"
+      ]
+    },
+    "q2": {
+      "title": "Hur många medlemmar delar högst på varje båt?",
+      "options": [
+        "Sju",
+        "Femton",
+        "Tjugofem"
+      ]
+    },
+    "q3": {
+      "title": "Vad heter vår Sea Ray SPX 210?",
+      "options": [
+        "Coral",
+        "Marina",
+        "Blue"
+      ]
+    },
     "win": {
       "eyebrow": "Utmaning klarad",
       "title": "Grattis – du är en av oss",
@@ -85,12 +132,30 @@
     "title": "Flamingo Yacht Club powered by Marina Marbella | Yachtklubb med medlemskap",
     "description": "Båtklubb med medlemskap i Puerto Banús, Marbella. En årsavgift och obegränsad tillgång till premiumbåtar som underhålls av Marina Marbella – utan underhåll, kajplats eller krångel.",
     "pages": {
-      "howItWorks": { "title": "Så fungerar medlemskapet", "description": "Ett årsmedlemskap, obegränsad tillgång till en premiumbåt i Puerto Banús. Boka i appen, kliv ombord och åk – vi tar hand om allt." },
-      "fleet": { "title": "Vår flotta", "description": "Möt Blue, vår Sea Ray SPX 210, samt klubbens flotta: NAVAN C30 och Level Yachts 43ST. Underhållna av Marina Marbella, med endast 7 medlemmar per båt." },
-      "prices": { "title": "Medlemskap och priser", "description": "En årsavgift, allt ingår: obegränsad användning, professionell förberedelse, bokningsapp, handdukar, paddelbrädor och snorkelutrustning. Inget underhåll, ingen vinterförvaring." },
-      "homePort": { "title": "Hemmahamn: Puerto Banús, Marbella", "description": "Kasta loss från Puerto Banús, en av Europas mest ikoniska hamnar: dolda vikar, beach clubs och Medelhavets finaste kust bara några steg från kajen." },
-      "about": { "title": "Om oss – powered by Marina Marbella", "description": "Mer än en båtklubb: med stöd av Marina Marbella, över 60 års erfarenhet, professionella tekniker och en komplett marin infrastruktur på Costa del Sol." },
-      "contact": { "title": "Boka ditt besök i Puerto Banús", "description": "Kom och upplev klubben: vi visar båtarna över en uppfriskande dryck och en personlig rundtur, och hjälper dig att välja ditt medlemskap. Boka din privata konsultation idag." }
+      "howItWorks": {
+        "title": "Så fungerar medlemskapet",
+        "description": "Ett årsmedlemskap, obegränsad tillgång till en premiumbåt i Puerto Banús. Boka i appen, kliv ombord och åk – vi tar hand om allt."
+      },
+      "fleet": {
+        "title": "Vår flotta",
+        "description": "Möt Blue, vår Sea Ray SPX 210, samt klubbens flotta: NAVAN C30 och Level Yachts 43ST. Underhållna av Marina Marbella, med endast 7 medlemmar per båt."
+      },
+      "prices": {
+        "title": "Medlemskap och priser",
+        "description": "En årsavgift, allt ingår: obegränsad användning, professionell förberedelse, bokningsapp, handdukar, paddelbrädor och snorkelutrustning. Inget underhåll, ingen vinterförvaring."
+      },
+      "homePort": {
+        "title": "Hemmahamn: Puerto Banús, Marbella",
+        "description": "Kasta loss från Puerto Banús, en av Europas mest ikoniska hamnar: dolda vikar, beach clubs och Medelhavets finaste kust bara några steg från kajen."
+      },
+      "about": {
+        "title": "Om oss – powered by Marina Marbella",
+        "description": "Mer än en båtklubb: med stöd av Marina Marbella, över 60 års erfarenhet, professionella tekniker och en komplett marin infrastruktur på Costa del Sol."
+      },
+      "contact": {
+        "title": "Boka ditt besök i Puerto Banús",
+        "description": "Kom och upplev klubben: vi visar båtarna över en uppfriskande dryck och en personlig rundtur, och hjälper dig att välja ditt medlemskap. Boka din privata konsultation idag."
+      }
     }
   },
   "nav": {
@@ -119,8 +184,8 @@
     },
     "step2": {
       "number": "02",
-      "title": "Förarintyg",
-      "desc": "Det är obligatoriskt för att köra båten. Har du inget än? Vi hjälper dig att skaffa det."
+      "title": "Förarintyg utan krångel",
+      "desc": "Har du inget förarintyg ännu? Vi gör det enkelt och hjälper dig hela vägen."
     },
     "step3": {
       "number": "03",
@@ -135,16 +200,25 @@
   },
   "prices": {
     "hero": {
-      "f1": { "value": "1", "label": "årsavgift" },
-      "f2": { "value": "∞", "label": "turer ingår" },
-      "f3": { "value": "7", "label": "medlemmar per båt" },
-      "eyebrow": "Priser",
+      "f1": {
+        "value": "1",
+        "label": "årsavgift"
+      },
+      "f2": {
+        "value": "∞",
+        "label": "turer ingår"
+      },
+      "f3": {
+        "value": "7",
+        "label": "medlemmar per båt"
+      },
+      "eyebrow": "Medlemskap",
       "title": "Allt ingår. En enda avgift.",
       "subtitle": "Inga dolda kostnader, inga överraskningar. Här är vad ditt medlemskap innehåller."
     },
     "intro": {
       "title": "Vad ingår i medlemskapet?",
-      "body": "Obegränsad användning året runt, bokningsappen, professionell förberedelse av båten inför varje tur, introduktion och medlemssupport – plus badhanddukar, kostnadsfria läskedrycker, paddelbrädor och snorkelutrustning ombord. Förarintyg är obligatoriskt."
+      "body": "Obegränsad användning året runt, bokningsappen, professionell förberedelse av båten inför varje tur, introduktion och medlemssupport – plus badhanddukar, kostnadsfria läskedrycker, paddelbrädor och snorkelutrustning ombord. Inget förarintyg ännu? Vi hjälper dig att fixa det."
     },
     "cta": {
       "eyebrow": "Priset, personligen",
@@ -164,6 +238,11 @@
       "title": "Den finaste hamnen på Costa del Sol",
       "p1": "Puerto Banús är synonymt med lyx, glamour och segling. Med sitt perfekta läge i hjärtat av Costa del Sol ger hamnen omedelbar tillgång till vackra farvatten, dolda vikar, beach clubs och restauranger vid vattnet.",
       "p2": "Oavsett om du styr österut mot Málaga eller västerut mot Estepona och Sotogrande börjar ditt nästa äventyr bara några steg från kajen."
+    },
+    "map": {
+      "eyebrow": "Plats",
+      "title": "Hitta oss i Puerto Banús",
+      "address": "Edificio Levante, local 9-10 · Puerto Banús, Marbella"
     }
   },
   "home": {
@@ -324,9 +403,18 @@
     },
     "values": {
       "title": "Vad som driver oss",
-      "v1": { "title": "Frihet", "desc": "Segla när du vill, vart du vill." },
-      "v2": { "title": "Kvalitet", "desc": "En premiumflotta, alltid i perfekt skick." },
-      "v3": { "title": "Enkelhet", "desc": "Boka på några minuter. Inget pappersarbete, inga överraskningar." }
+      "v1": {
+        "title": "Frihet",
+        "desc": "Segla när du vill, vart du vill."
+      },
+      "v2": {
+        "title": "Kvalitet",
+        "desc": "En premiumflotta, alltid i perfekt skick."
+      },
+      "v3": {
+        "title": "Enkelhet",
+        "desc": "Boka på några minuter. Inget pappersarbete, inga överraskningar."
+      }
     }
   },
   "contact": {

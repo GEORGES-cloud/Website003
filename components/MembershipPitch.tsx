@@ -48,7 +48,7 @@ export default function MembershipPitch({ eyebrow, title, description, cta, loca
               <p className="font-sans text-lg text-muted leading-relaxed mb-10 max-w-md">{description}</p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <Link href={`/${locale}/como-funciona`} className="link-underline">
+              <Link href={`/${locale}/precios`} className="link-underline">
                 {cta}
               </Link>
             </ScrollReveal>

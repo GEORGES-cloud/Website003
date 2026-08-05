@@ -53,11 +53,12 @@
       "period": "",
       "features": [
         "Unbegrenzte Nutzung das ganze Jahr, reserviert über die Club-App",
+        "Buche bis zu zwei Slots hintereinander: sichere dir deinen Platz und mach das Boot den ganzen Tag zu deinem",
         "Professionelle Vorbereitung des Bootes vor jedem Törn",
         "Onboarding und Mitglieder-Support",
         "Strandtücher, kostenlose Softdrinks, Paddleboards und Schnorchelausrüstung an Bord",
         "Keine Gedanken an Wartung, Versicherung, Service oder Winterlager",
-        "Bootsführerschein erforderlich (falls du keinen hast, helfen wir dir, einen zu bekommen)",
+        "Noch keinen Bootsführerschein? Wir machen es dir leicht und helfen dir dabei",
         "Gäste an Bord ohne Aufpreis"
       ]
     }
@@ -65,7 +66,7 @@
   "faqs": [
     {
       "q": "Benötige ich einen Bootsführerschein?",
-      "a": "Ja, er ist unverzichtbar. Um mit dem Club aufs Meer zu fahren, brauchst du einen Bootsführerschein. Falls du noch keinen hast, helfen wir dir, ihn zu bekommen."
+      "a": "Ja – und falls du ihn noch nicht hast, machen wir es dir leicht: wir begleiten dich durch den gesamten Prozess, schnell und unkompliziert."
     },
     {
       "q": "Darf ich Gäste an Bord mitnehmen?",
@@ -111,10 +112,18 @@
     }
   ],
   "stats": [
-    { "label": "Alles inklusive, keine Überraschungen" },
-    { "label": "Befahrbare Tage im Jahr" },
-    { "label": "Küste in Ihrer Reichweite" },
-    { "label": "Heimathafen: Banús, Marbella" }
+    {
+      "label": "Alles inklusive, keine Überraschungen"
+    },
+    {
+      "label": "Befahrbare Tage im Jahr"
+    },
+    {
+      "label": "Küste in Ihrer Reichweite"
+    },
+    {
+      "label": "Heimathafen: Banús, Marbella"
+    }
   ],
   "legal": {
     "privacy": {
@@ -124,31 +133,45 @@
       "sections": [
         {
           "heading": "Verantwortlicher",
-          "body": ["[RAZÓN SOCIAL] · Steuernummer [CIF/NIF] · Puerto Banús, 29660 Marbella, Málaga · info@flamingoyachtclub.com."]
+          "body": [
+            "[RAZÓN SOCIAL] · Steuernummer [CIF/NIF] · Puerto Banús, 29660 Marbella, Málaga · info@flamingoyachtclub.com."
+          ]
         },
         {
           "heading": "Daten, die wir erheben",
-          "body": ["Identifikations- und Kontaktdaten, die Sie über das Kontaktformular oder im Rahmen des Mitgliedschaftsprozesses bereitstellen (Name, E-Mail, Telefon und Ihre Nachricht), sowie Navigationsdaten über Cookies."]
+          "body": [
+            "Identifikations- und Kontaktdaten, die Sie über das Kontaktformular oder im Rahmen des Mitgliedschaftsprozesses bereitstellen (Name, E-Mail, Telefon und Ihre Nachricht), sowie Navigationsdaten über Cookies."
+          ]
         },
         {
           "heading": "Zweck",
-          "body": ["Um Ihre Anfragen zu beantworten, Ihre Mitgliedschaft zu verwalten und Ihnen mit Ihrer Einwilligung Mitteilungen über den Club zuzusenden. Wir treffen keine automatisierten Entscheidungen."]
+          "body": [
+            "Um Ihre Anfragen zu beantworten, Ihre Mitgliedschaft zu verwalten und Ihnen mit Ihrer Einwilligung Mitteilungen über den Club zuzusenden. Wir treffen keine automatisierten Entscheidungen."
+          ]
         },
         {
           "heading": "Rechtsgrundlage",
-          "body": ["Ihre Einwilligung bei der Kontaktaufnahme, die Erfüllung des Mitgliedschaftsverhältnisses und unser berechtigtes Interesse an der Beantwortung Ihrer Anliegen."]
+          "body": [
+            "Ihre Einwilligung bei der Kontaktaufnahme, die Erfüllung des Mitgliedschaftsverhältnisses und unser berechtigtes Interesse an der Beantwortung Ihrer Anliegen."
+          ]
         },
         {
           "heading": "Aufbewahrung",
-          "body": ["Wir bewahren Ihre Daten für die Dauer der Beziehung und anschließend für die gesetzlich vorgeschriebenen Zeiträume auf."]
+          "body": [
+            "Wir bewahren Ihre Daten für die Dauer der Beziehung und anschließend für die gesetzlich vorgeschriebenen Zeiträume auf."
+          ]
         },
         {
           "heading": "Empfänger",
-          "body": ["Wir geben Ihre Daten nicht an Dritte weiter, außer bei gesetzlicher Verpflichtung oder an Dienstleister (z. B. Reservierungsverwaltung), stets im Rahmen eines Auftragsverarbeitungsvertrags."]
+          "body": [
+            "Wir geben Ihre Daten nicht an Dritte weiter, außer bei gesetzlicher Verpflichtung oder an Dienstleister (z. B. Reservierungsverwaltung), stets im Rahmen eines Auftragsverarbeitungsvertrags."
+          ]
         },
         {
           "heading": "Ihre Rechte",
-          "body": ["Sie können Ihre Rechte auf Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung und Datenübertragbarkeit ausüben, indem Sie an info@flamingoyachtclub.com schreiben."]
+          "body": [
+            "Sie können Ihre Rechte auf Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung und Datenübertragbarkeit ausüben, indem Sie an info@flamingoyachtclub.com schreiben."
+          ]
         }
       ]
     },
@@ -159,27 +182,39 @@
       "sections": [
         {
           "heading": "Gegenstand",
-          "body": ["Diese Website hat informativen Charakter über den Yacht-Membership-Club Flamingo Yacht Club. Mitgliedschaft und Reservierungen unterliegen den jeweils im Einzelfall bereitgestellten besonderen Bedingungen."]
+          "body": [
+            "Diese Website hat informativen Charakter über den Yacht-Membership-Club Flamingo Yacht Club. Mitgliedschaft und Reservierungen unterliegen den jeweils im Einzelfall bereitgestellten besonderen Bedingungen."
+          ]
         },
         {
           "heading": "Nutzung der Website",
-          "body": ["Sie verpflichten sich, die Website rechtmäßig zu nutzen und nichts zu unternehmen, was ihren Betrieb oder die Rechte Dritter beeinträchtigen könnte."]
+          "body": [
+            "Sie verpflichten sich, die Website rechtmäßig zu nutzen und nichts zu unternehmen, was ihren Betrieb oder die Rechte Dritter beeinträchtigen könnte."
+          ]
         },
         {
           "heading": "Mitgliedschaft und Reservierungen",
-          "body": ["Ausstattung, Preise und Verfügbarkeit der Flotte können sich ändern. Die veröffentlichten Informationen stellen bis zur Formalisierung der Mitgliedschaft kein verbindliches Angebot dar."]
+          "body": [
+            "Ausstattung, Preise und Verfügbarkeit der Flotte können sich ändern. Die veröffentlichten Informationen stellen bis zur Formalisierung der Mitgliedschaft kein verbindliches Angebot dar."
+          ]
         },
         {
           "heading": "Geistiges Eigentum",
-          "body": ["Die Inhalte, Marken und das Design dieser Website sind geschützt und dürfen ohne Genehmigung nicht vervielfältigt werden."]
+          "body": [
+            "Die Inhalte, Marken und das Design dieser Website sind geschützt und dürfen ohne Genehmigung nicht vervielfältigt werden."
+          ]
         },
         {
           "heading": "Haftung",
-          "body": ["Wir haften nicht für Fehler oder Auslassungen in den Inhalten oder für Betriebsunterbrechungen, die außerhalb unserer Kontrolle liegen."]
+          "body": [
+            "Wir haften nicht für Fehler oder Auslassungen in den Inhalten oder für Betriebsunterbrechungen, die außerhalb unserer Kontrolle liegen."
+          ]
         },
         {
           "heading": "Anwendbares Recht",
-          "body": ["Diese Bedingungen unterliegen dem spanischen Recht und der Zuständigkeit der Gerichte von Marbella, sofern keine zwingenden Vorschriften etwas anderes vorsehen."]
+          "body": [
+            "Diese Bedingungen unterliegen dem spanischen Recht und der Zuständigkeit der Gerichte von Marbella, sofern keine zwingenden Vorschriften etwas anderes vorsehen."
+          ]
         }
       ]
     },
@@ -190,15 +225,24 @@
       "sections": [
         {
           "heading": "Inhaber",
-          "body": ["Firma: [RAZÓN SOCIAL].", "Steuernummer: [CIF/NIF].", "Anschrift: Puerto Banús, 29660 Marbella, Málaga.", "E-Mail: info@flamingoyachtclub.com."]
+          "body": [
+            "Firma: [RAZÓN SOCIAL].",
+            "Steuernummer: [CIF/NIF].",
+            "Anschrift: Puerto Banús, 29660 Marbella, Málaga.",
+            "E-Mail: info@flamingoyachtclub.com."
+          ]
         },
         {
           "heading": "Nutzungsbedingungen",
-          "body": ["Der Zugang zu dieser Website verleiht den Status eines Nutzers und impliziert die Annahme dieses Impressums."]
+          "body": [
+            "Der Zugang zu dieser Website verleiht den Status eines Nutzers und impliziert die Annahme dieses Impressums."
+          ]
         },
         {
           "heading": "Geistiges Eigentum",
-          "body": ["Alle Rechte an den Inhalten der Website gehören ihrem Inhaber oder Dritten, die ihre Nutzung genehmigt haben."]
+          "body": [
+            "Alle Rechte an den Inhalten der Website gehören ihrem Inhaber oder Dritten, die ihre Nutzung genehmigt haben."
+          ]
         }
       ]
     }

@@ -7,6 +7,7 @@ import { getBoat } from '@/lib/localize';
 import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import BoatGallery from '@/components/BoatGallery';
+import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
 
 interface Props {
   params: { locale: string; slug: string };
@@ -36,8 +37,6 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
   if (!boat) notFound();
 
   const t = useTranslations('boatDetail');
-  const appStoreUrl = process.env.NEXT_PUBLIC_APP_STORE_URL ?? '#';
-  const playStoreUrl = process.env.NEXT_PUBLIC_PLAY_STORE_URL ?? '#';
   const guests: Record<string, string> = { es: 'personas', en: 'guests', sv: 'gäster', ru: 'гостей', de: 'Gäste', fr: 'invités' };
   const guestsLabel = guests[locale] ?? guests.en;
 

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from './ScrollReveal';
+import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
 
 /* La app del club en sus dispositivos (portátil + teléfono, maquetados en CSS).
    Rescatado del diseño original y alineado con la flota y el motion actuales. */
@@ -60,8 +61,6 @@ function DashboardMock() {
 
 export default function AppDevices() {
   const t = useTranslations('home.app');
-  const appStoreUrl = process.env.NEXT_PUBLIC_APP_STORE_URL ?? '#';
-  const playStoreUrl = process.env.NEXT_PUBLIC_PLAY_STORE_URL ?? '#';
   const features = ['f1', 'f2', 'f3'] as const;
 
   return (

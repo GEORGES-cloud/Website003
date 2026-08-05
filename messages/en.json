@@ -18,29 +18,55 @@
     },
     "q1": {
       "title": "{name}, how often do you picture yourself out at sea?",
-      "options": ["A few getaways a year", "A couple of times a month", "Every week — it’s my lifestyle"]
+      "options": [
+        "A few getaways a year",
+        "A couple of times a month",
+        "Every week — it’s my lifestyle"
+      ]
     },
     "q2": {
       "title": "What would your perfect day on board look like?",
-      "options": ["A midday swim in the coves", "A weekend exploring the coast", "A private cruise with everything taken care of"]
+      "options": [
+        "A midday swim in the coves",
+        "A weekend exploring the coast",
+        "A private cruise with everything taken care of"
+      ]
     },
     "q3": {
       "title": "Who will you usually set sail with?",
-      "options": ["As a couple", "With family and friends", "Events, clients and special occasions"]
+      "options": [
+        "As a couple",
+        "With family and friends",
+        "Events, clients and special occasions"
+      ]
     },
     "q4": {
       "title": "What’s your experience at sea?",
-      "options": ["I hold a boating licence", "I’ve sailed, but without a licence", "I’m new to this"]
+      "options": [
+        "I hold a boating licence",
+        "I’ve sailed, but without a licence",
+        "I’m new to this"
+      ]
     },
     "q5": {
       "title": "When would you like to start?",
-      "options": ["This very season", "In the coming months", "Just exploring for now"]
+      "options": [
+        "This very season",
+        "In the coming months",
+        "Just exploring for now"
+      ]
     },
     "cita": {
       "title": "Book a no-obligation visit",
       "subtitle": "We’ll show you the programme, the fleet and Puerto Banús. You choose when:",
-      "day": ["On a weekday", "At the weekend"],
-      "time": ["In the morning", "In the afternoon"],
+      "day": [
+        "On a weekday",
+        "At the weekend"
+      ],
+      "time": [
+        "In the morning",
+        "In the afternoon"
+      ],
       "cta": "Book a visit via WhatsApp"
     },
     "result": {
@@ -67,9 +93,30 @@
     "close": "Close",
     "progress": "Question {current} of {total}",
     "wrong": "Almost — try again.",
-    "q1": { "title": "Which port does the club sail from?", "options": ["Sotogrande", "Puerto Banús", "Estepona"] },
-    "q2": { "title": "At most, how many members share each boat?", "options": ["Seven", "Fifteen", "Twenty-five"] },
-    "q3": { "title": "What's the name of our Sea Ray SPX 210?", "options": ["Coral", "Marina", "Blue"] },
+    "q1": {
+      "title": "Which port does the club sail from?",
+      "options": [
+        "Sotogrande",
+        "Puerto Banús",
+        "Estepona"
+      ]
+    },
+    "q2": {
+      "title": "At most, how many members share each boat?",
+      "options": [
+        "Seven",
+        "Fifteen",
+        "Twenty-five"
+      ]
+    },
+    "q3": {
+      "title": "What's the name of our Sea Ray SPX 210?",
+      "options": [
+        "Coral",
+        "Marina",
+        "Blue"
+      ]
+    },
     "win": {
       "eyebrow": "Challenge complete",
       "title": "Congratulations — you're one of us",
@@ -85,12 +132,30 @@
     "title": "Flamingo Yacht Club powered by Marina Marbella | Yacht Membership Club",
     "description": "Boat club membership in Puerto Banús, Marbella. One annual fee, unlimited access to premium boats maintained by Marina Marbella — no maintenance, no mooring, no hassle.",
     "pages": {
-      "howItWorks": { "title": "How the membership works", "description": "One annual membership, unlimited access to a premium boat in Puerto Banús. Book from the app, step aboard and go — we take care of everything." },
-      "fleet": { "title": "Our fleet of boats", "description": "Meet Blue, our Sea Ray SPX 210, plus the club fleet: NAVAN C30 and Level Yachts 43ST. Maintained by Marina Marbella, with just 7 members per boat." },
-      "prices": { "title": "Membership & prices", "description": "One annual fee, everything included: unlimited usage, professional preparation, booking app, towels, paddleboards and snorkelling gear. No maintenance or winter storage." },
-      "homePort": { "title": "Home port: Puerto Banús, Marbella", "description": "Set off from Puerto Banús, one of Europe's most iconic marinas: hidden coves, beach clubs and the Mediterranean's finest coastline just steps from the dock." },
-      "about": { "title": "About us — powered by Marina Marbella", "description": "More than a boat club: backed by Marina Marbella, with 60+ years of experience, professional technicians and a complete marine infrastructure on the Costa del Sol." },
-      "contact": { "title": "Book your visit in Puerto Banús", "description": "Come and see the club: we'll show you the boats over a refreshing drink and a personal tour, and help you choose your membership. Book your private consultation today." }
+      "howItWorks": {
+        "title": "How the membership works",
+        "description": "One annual membership, unlimited access to a premium boat in Puerto Banús. Book from the app, step aboard and go — we take care of everything."
+      },
+      "fleet": {
+        "title": "Our fleet of boats",
+        "description": "Meet Blue, our Sea Ray SPX 210, plus the club fleet: NAVAN C30 and Level Yachts 43ST. Maintained by Marina Marbella, with just 7 members per boat."
+      },
+      "prices": {
+        "title": "Membership & prices",
+        "description": "One annual fee, everything included: unlimited usage, professional preparation, booking app, towels, paddleboards and snorkelling gear. No maintenance or winter storage."
+      },
+      "homePort": {
+        "title": "Home port: Puerto Banús, Marbella",
+        "description": "Set off from Puerto Banús, one of Europe's most iconic marinas: hidden coves, beach clubs and the Mediterranean's finest coastline just steps from the dock."
+      },
+      "about": {
+        "title": "About us — powered by Marina Marbella",
+        "description": "More than a boat club: backed by Marina Marbella, with 60+ years of experience, professional technicians and a complete marine infrastructure on the Costa del Sol."
+      },
+      "contact": {
+        "title": "Book your visit in Puerto Banús",
+        "description": "Come and see the club: we'll show you the boats over a refreshing drink and a personal tour, and help you choose your membership. Book your private consultation today."
+      }
     }
   },
   "nav": {
@@ -107,10 +172,26 @@
     "join": "Join the Club"
   },
   "howItWorks": {
-    "hero": { "eyebrow": "The process", "title": "How it works", "subtitle": "From member to on board in three steps. Boating made easy, so you spend more time making memories on the water." },
-    "step1": { "number": "01", "title": "Become a member", "desc": "Meet us in Puerto Banús: we show you the club and the boat. One simple annual membership gives you unlimited access." },
-    "step2": { "number": "02", "title": "Boating licence", "desc": "It’s required to take the boat out. Don’t have one yet? We help you get it." },
-    "step3": { "number": "03", "title": "Download the app and book", "desc": "Reserve your boat in seconds from the club app and step aboard in Puerto Banús: clean, fuelled and ready to go. When you’re done, we take care of the rest." },
+    "hero": {
+      "eyebrow": "The process",
+      "title": "How it works",
+      "subtitle": "From member to on board in three steps. Boating made easy, so you spend more time making memories on the water."
+    },
+    "step1": {
+      "number": "01",
+      "title": "Become a member",
+      "desc": "Meet us in Puerto Banús: we show you the club and the boat. One simple annual membership gives you unlimited access."
+    },
+    "step2": {
+      "number": "02",
+      "title": "Licence made easy",
+      "desc": "No boating licence yet? We make it simple — we help you get it quickly, hassle-free."
+    },
+    "step3": {
+      "number": "03",
+      "title": "Download the app and book",
+      "desc": "Reserve your boat in seconds from the club app and step aboard in Puerto Banús: clean, fuelled and ready to go. When you’re done, we take care of the rest."
+    },
     "license": {
       "eyebrow": "A non-negotiable requirement",
       "title": "A boating licence is mandatory",
@@ -119,19 +200,49 @@
   },
   "prices": {
     "hero": {
-      "f1": { "value": "1", "label": "annual fee" },
-      "f2": { "value": "∞", "label": "outings included" },
-      "f3": { "value": "7", "label": "members per boat" }, "eyebrow": "Prices", "title": "Everything included. One single fee.", "subtitle": "No hidden costs, no surprises. Here’s what your membership includes." },
-    "intro": { "title": "What’s included in the membership?", "body": "Unlimited annual usage, the booking app, professional boat preparation before every trip, onboarding and member support — plus beach towels, complimentary soft drinks, paddleboards and snorkelling equipment on board. A boating licence is required." },
-    "cta": { "eyebrow": "The price, in person", "title": "Let’s meet and we’ll share the price", "description": "We’d rather give you the numbers in person, with no obligation. Book a visit and we’ll walk you through it all.", "button": "Let’s Meet" }
+      "f1": {
+        "value": "1",
+        "label": "annual fee"
+      },
+      "f2": {
+        "value": "∞",
+        "label": "outings included"
+      },
+      "f3": {
+        "value": "7",
+        "label": "members per boat"
+      },
+      "eyebrow": "Membership",
+      "title": "Everything included. One single fee.",
+      "subtitle": "No hidden costs, no surprises. Here’s what your membership includes."
+    },
+    "intro": {
+      "title": "What’s included in the membership?",
+      "body": "Unlimited annual usage, the booking app, professional boat preparation before every trip, onboarding and member support — plus beach towels, complimentary soft drinks, paddleboards and snorkelling equipment on board. No boating licence yet? We help you get one."
+    },
+    "cta": {
+      "eyebrow": "The price, in person",
+      "title": "Let’s meet and we’ll share the price",
+      "description": "We’d rather give you the numbers in person, with no obligation. Book a visit and we’ll walk you through it all.",
+      "button": "Let’s Meet"
+    }
   },
   "homePort": {
-    "hero": { "eyebrow": "Home port", "title": "Puerto Banús, your point of departure.", "subtitle": "One of Europe’s most iconic marinas — and the heart of the club." },
+    "hero": {
+      "eyebrow": "Home port",
+      "title": "Puerto Banús, your point of departure.",
+      "subtitle": "One of Europe’s most iconic marinas — and the heart of the club."
+    },
     "why": {
       "eyebrow": "Why here",
       "title": "The finest marina on the Costa del Sol",
       "p1": "Puerto Banús is a byword for luxury, glamour and sailing. Perfectly located in the heart of the Costa del Sol, it offers immediate access to beautiful cruising grounds, hidden coves, beach clubs and waterfront restaurants.",
       "p2": "Whether you’re heading east towards Málaga or west towards Estepona and Sotogrande, your next adventure begins just a few steps from the dock."
+    },
+    "map": {
+      "eyebrow": "Location",
+      "title": "Find us in Puerto Banús",
+      "address": "Edificio Levante, local 9-10 · Puerto Banús, Marbella"
     }
   },
   "home": {
@@ -292,9 +403,18 @@
     },
     "values": {
       "title": "What drives us",
-      "v1": { "title": "Freedom", "desc": "Sail when you want, where you want." },
-      "v2": { "title": "Quality", "desc": "A premium fleet, always in perfect condition." },
-      "v3": { "title": "Simplicity", "desc": "Book in minutes. No paperwork, no surprises." }
+      "v1": {
+        "title": "Freedom",
+        "desc": "Sail when you want, where you want."
+      },
+      "v2": {
+        "title": "Quality",
+        "desc": "A premium fleet, always in perfect condition."
+      },
+      "v3": {
+        "title": "Simplicity",
+        "desc": "Book in minutes. No paperwork, no surprises."
+      }
     }
   },
   "contact": {

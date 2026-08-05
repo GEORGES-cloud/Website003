@@ -23,24 +23,49 @@ export default function MembershipTiers({ locale }: { locale: string }) {
           </ScrollReveal>
         </div>
 
+        {/* Tarjeta "imponente": declaración en serif a la izquierda, prestaciones
+            numeradas con filos finos a la derecha — el mismo lenguaje ledger del
+            hero y la ficha técnica de la flota. */}
         <ScrollReveal zoom>
-          <div className="max-w-2xl flex flex-col p-8 sm:p-10 lg:p-12 bg-ink text-white">
-            <p className="font-sans text-lg sm:text-xl text-white/75 leading-relaxed mb-9">
-              {membership.tagline}
-            </p>
+          <div className="bg-ink text-white">
+            <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr]">
+              {/* Statement */}
+              <div className="p-8 sm:p-12 lg:p-14 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col">
+                <p className="font-sans text-[10px] font-semibold uppercase tracking-eyebrow text-sea-light mb-8">
+                  Flamingo Yacht Club
+                </p>
+                <p className="display leading-snug text-white/95" style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2.25rem)' }}>
+                  {membership.tagline}
+                </p>
+                <div className="hidden lg:block mt-auto pt-12">
+                  <JoinCTA className="inline-block w-full font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-sea-light">
+                    {t('cta')}
+                  </JoinCTA>
+                </div>
+              </div>
 
-            <ul className="space-y-4 mb-11">
-              {membership.features.map((f) => (
-                <li key={f} className="flex items-start gap-3">
-                  <span className="mt-[7px] w-1.5 h-1.5 rounded-full flex-none bg-sea-light" />
-                  <span className="font-sans text-[15px] sm:text-base leading-snug text-white/85">{f}</span>
-                </li>
-              ))}
-            </ul>
-
-            <JoinCTA className="font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-sea-light">
-              {t('cta')}
-            </JoinCTA>
+              {/* Features — ledger numerado */}
+              <div className="p-8 sm:p-12 lg:p-14">
+                <ul>
+                  {membership.features.map((f, i) => (
+                    <li
+                      key={f}
+                      className="flex items-baseline gap-5 py-[15px] first:pt-0 border-b border-white/10 last:border-b-0"
+                    >
+                      <span className="font-sans text-[11px] tracking-wide2 text-sea-light flex-none tabular-nums">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span className="font-sans text-[15px] sm:text-base leading-snug text-white/85">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="lg:hidden mt-10">
+                  <JoinCTA className="inline-block w-full font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-sea-light">
+                    {t('cta')}
+                  </JoinCTA>
+                </div>
+              </div>
+            </div>
           </div>
         </ScrollReveal>
 

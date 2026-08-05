@@ -4,6 +4,9 @@ import { getTranslations } from 'next-intl/server';
 import HeroLedger from '@/components/HeroLedger';
 import ScrollReveal from '@/components/ScrollReveal';
 import MembershipTiers from '@/components/MembershipTiers';
+import HowItWorksTimeline from '@/components/HowItWorksTimeline';
+import AppDevices from '@/components/AppDevices';
+import Faq from '@/components/Faq';
 import CTAFinal from '@/components/CTAFinal';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -13,6 +16,14 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 export default function PreciosPage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('prices');
+  // "Cómo funciona" vive ahora dentro de Membresía (petición del cliente):
+  // pasos, licencia, app y FAQ se sirven desde esta misma página.
+  const th = useTranslations('howItWorks');
+  const steps = (['step1', 'step2', 'step3'] as const).map((s) => ({
+    number: th(`${s}.number`),
+    title: th(`${s}.title`),
+    desc: th(`${s}.desc`),
+  }));
 
   return (
     <>
@@ -26,11 +37,6 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
           { src: '/images/wake-circle.jpg' },
           { src: '/images/aerial-reef-1.jpg' },
           { src: '/images/aerial-reef-2.jpg' },
-        ]}
-        facts={[
-          { value: t('hero.f1.value'), label: t('hero.f1.label') },
-          { value: t('hero.f2.value'), label: t('hero.f2.label') },
-          { value: t('hero.f3.value'), label: t('hero.f3.label') },
         ]}
       />
 
@@ -52,6 +58,15 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
 
       {/* The single membership card (features, no price) */}
       <MembershipTiers locale={locale} />
+
+      {/* Cómo funciona — pasos como timeline animado, dentro de Membresía.
+          Sin badge de "obligatoria": la licencia se cuenta en positivo (paso 2). */}
+      <HowItWorksTimeline steps={steps} locale={locale} licenseStepIndex={-1} />
+
+      {/* La app del club — portátil + teléfono */}
+      <AppDevices />
+
+      <Faq locale={locale} />
 
       {/* Price in person → funnel */}
       <CTAFinal

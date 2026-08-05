@@ -101,9 +101,11 @@ export default function Navbar({ locale }: NavbarProps) {
     .map((slug) => fleet.find((b) => b.slug === slug))
     .filter((b): b is (typeof fleet)[number] => Boolean(b));
 
+  // Orden pedido por el cliente: Membresía (con "cómo funciona" dentro), Flota,
+  // Puerto base, Nosotros, Contacto. "Cómo funciona" ya no es item propio.
   const overlayLinks = [
-    { href: `/${locale}/como-funciona`, label: t('howItWorks') },
-    { href: `/${locale}/precios`, label: t('prices') },
+    { href: `/${locale}/precios`, label: t('membership') },
+    { href: `/${locale}/flota`, label: t('fleet') },
     { href: `/${locale}/puerto-base`, label: t('homePort') },
     { href: `/${locale}/nosotros`, label: t('about') },
     { href: `/${locale}/contacto`, label: t('contact') },

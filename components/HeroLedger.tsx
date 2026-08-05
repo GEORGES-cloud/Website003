@@ -12,7 +12,7 @@ interface HeroLedgerProps {
   title: string;
   subtitle?: string;
   image: string;
-  facts: Fact[];
+  facts?: Fact[];
   /** Pase de fotos opcional en la banda (crossfade tipo vídeo). */
   slides?: Slide[];
 }
@@ -38,14 +38,16 @@ export default function HeroLedger({ eyebrow, title, subtitle, image, facts, sli
           </p>
         )}
 
-        <dl className="mt-12 md:mt-16 border-t border-line grid grid-cols-3 gap-x-4 md:flex md:divide-x md:divide-line animate-hero animate-hero-d2">
-          {facts.map((f) => (
-            <div key={f.label} className="flex flex-col-reverse gap-1 py-5 md:px-8 md:first:pl-0 md:flex-none">
-              <dt className="eyebrow !text-[9px] !text-ink/65 break-words">{f.label}</dt>
-              <dd className="display text-2xl md:text-[2rem] text-ink">{f.value}</dd>
-            </div>
-          ))}
-        </dl>
+        {facts && facts.length > 0 && (
+          <dl className="mt-12 md:mt-16 border-t border-line grid grid-cols-3 gap-x-4 md:flex md:divide-x md:divide-line animate-hero animate-hero-d2">
+            {facts.map((f) => (
+              <div key={f.label} className="flex flex-col-reverse gap-1 py-5 md:px-8 md:first:pl-0 md:flex-none">
+                <dt className="eyebrow !text-[9px] !text-ink/65 break-words">{f.label}</dt>
+                <dd className="display text-2xl md:text-[2rem] text-ink">{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
       </div>
 
       {/* Banda panorámica a sangre */}

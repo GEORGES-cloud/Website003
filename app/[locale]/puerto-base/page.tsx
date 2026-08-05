@@ -53,6 +53,38 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
         </div>
       </section>
 
+      {/* Mapa satélite interactivo — la base del club en Puerto Banús
+          (Edificio Levante, junto a Marina Marbella) */}
+      <section className="py-24 md:py-36 bg-bone">
+        <div className="max-w-[1480px] mx-auto px-6 md:px-10">
+          <div className="max-w-2xl mb-12 md:mb-14">
+            <ScrollReveal>
+              <p className="eyebrow mb-5">{t('map.eyebrow')}</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="display text-ink mb-5" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+                {t('map.title')}
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="font-sans text-base text-muted">{t('map.address')}</p>
+            </ScrollReveal>
+          </div>
+          <ScrollReveal zoom>
+            <div className="aspect-[4/3] md:aspect-[21/9] border border-line overflow-hidden">
+              <iframe
+                src={`https://maps.google.com/maps?q=36.48862,-4.94988&t=k&z=17&output=embed&hl=${locale}`}
+                title={t('map.title')}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full border-0"
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Reachable destinations (reused) */}
       <Destinations locale={locale} />
 

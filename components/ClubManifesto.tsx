@@ -45,7 +45,7 @@ export default function ClubManifesto({ locale }: { locale: string }) {
               <p className="font-sans text-lg text-muted leading-relaxed mt-5">{t('p2')}</p>
             </ScrollReveal>
             <ScrollReveal delay={0.4}>
-              <Link href={`/${locale}/como-funciona`} className="link-underline mt-10">
+              <Link href={`/${locale}/precios`} className="link-underline mt-10">
                 {t('cta')}
               </Link>
             </ScrollReveal>
