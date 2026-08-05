@@ -1,8 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 /* Recibe los leads de la web (formulario de contacto, banner de bienvenida y
-   JoinFunnel) y los reenvía por email al club vía Resend. Sin RESEND_API_KEY
-   (p. ej. en desarrollo) solo se registran en el log del servidor. */
+   JoinFunnel) y los reenvía por email al club.
+
+   Prioridad de envío:
+   1. SMTP de Hostinger (el propio buzón Hello@flamingoyachtclub.com) si hay
+      SMTP_PASS configurada — sin cuentas externas.
+   2. Resend, si hay RESEND_API_KEY.
+   3. Sin nada configurado (desarrollo): solo log en el servidor. */
 
 const esc = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -19,33 +25,55 @@ export async function POST(req: NextRequest) {
     }
 
     const contactEmail = process.env.CONTACT_EMAIL ?? 'Hello@flamingoyachtclub.com';
-    const apiKey = process.env.RESEND_API_KEY;
-    // Hasta verificar el dominio en Resend, onboarding@resend.dev permite
-    // enviar al buzón del propietario de la cuenta. Con el dominio verificado:
-    // RESEND_FROM="Flamingo Yacht Club <noreply@flamingoyachtclub.com>"
-    const from = process.env.RESEND_FROM ?? 'Flamingo Yacht Club <onboarding@resend.dev>';
-
     console.log('[Contact form]', { name, email, phone, message, to: contactEmail });
 
-    if (apiKey) {
-      const html = `
-        <h2>Nuevo lead de la web</h2>
-        <p><strong>Nombre:</strong> ${esc(String(name))}</p>
-        ${email ? `<p><strong>Email:</strong> ${esc(String(email))}</p>` : ''}
-        ${phone ? `<p><strong>Teléfono:</strong> ${esc(String(phone))}</p>` : ''}
-        <p><strong>Mensaje:</strong></p>
-        <p>${esc(String(message))}</p>
-      `;
+    const subject = `Nuevo lead — ${name}`;
+    const html = `
+      <h2>Nuevo lead de la web</h2>
+      <p><strong>Nombre:</strong> ${esc(String(name))}</p>
+      ${email ? `<p><strong>Email:</strong> ${esc(String(email))}</p>` : ''}
+      ${phone ? `<p><strong>Teléfono:</strong> ${esc(String(phone))}</p>` : ''}
+      <p><strong>Mensaje:</strong></p>
+      <p>${esc(String(message))}</p>
+    `;
+
+    const smtpPass = process.env.SMTP_PASS;
+    const resendKey = process.env.RESEND_API_KEY;
+
+    if (smtpPass) {
+      // — SMTP de Hostinger: envía el propio buzón del club —
+      const smtpUser = process.env.SMTP_USER ?? contactEmail;
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST ?? 'smtp.hostinger.com',
+        port: Number(process.env.SMTP_PORT ?? 465),
+        secure: (process.env.SMTP_PORT ?? '465') === '465',
+        auth: { user: smtpUser, pass: smtpPass },
+      });
+      try {
+        await transporter.sendMail({
+          from: `Flamingo Yacht Club <${smtpUser}>`,
+          to: contactEmail,
+          subject,
+          html,
+          ...(email ? { replyTo: String(email) } : {}),
+        });
+      } catch (e) {
+        console.error('[Contact form] SMTP error', e);
+        return NextResponse.json({ error: 'Email delivery failed' }, { status: 502 });
+      }
+    } else if (resendKey) {
+      // — Resend (alternativa) —
+      const from = process.env.RESEND_FROM ?? 'Flamingo Yacht Club <onboarding@resend.dev>';
       const res = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${resendKey}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           from,
           to: [contactEmail],
-          subject: `Nuevo lead — ${name}`,
+          subject,
           html,
           ...(email ? { reply_to: [email] } : {}),
         }),
