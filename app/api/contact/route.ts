@@ -5,7 +5,9 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { name, email, phone, message } = body;
 
-    if (!name || !email || !message) {
+    // Basta con un medio de contacto: email o teléfono (el banner de
+    // bienvenida deja elegir el canal preferido).
+    if (!name || !(email || phone) || !message) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
     }
 

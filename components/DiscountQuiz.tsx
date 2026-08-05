@@ -4,29 +4,30 @@ import Link from 'next/link';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
-const KEY = 'navigante-quiz-v1';
+const KEY = 'navigante-quiz-v2';
 const OPEN_DELAY = 6000;
-const TOTAL_Q = 3;
-/* Índice de la opción correcta por pregunta. El orden de las opciones debe
-   ser idéntico en quiz.qN.options de todos los messages/<locale>.json:
-   q1 → Puerto Banús · q2 → Siete · q3 → Blue */
-const CORRECT = [1, 0, 2];
 const CODE = 'FLAMINGO3';
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-/* Quiz de captación: aparece una vez por visitante tras unos segundos.
-   Tres preguntas sobre el club; al acertarlas se desbloquea un código de
-   descuento de bienvenida con handoff a WhatsApp (mismo patrón que JoinFunnel). */
+type Channel = 'whatsapp' | 'phone' | 'email';
+
+/* Banner de captación: aparece una vez por visitante tras unos segundos.
+   El gancho es el descuento de bienvenida; el flujo pregunta cómo prefiere
+   ser contactado (WhatsApp / llamada / email), recoge el dato y lo envía a
+   /api/contact. Al terminar muestra el código FLAMINGO3. */
 export default function DiscountQuiz({ locale }: { locale: string }) {
   const t = useTranslations('quiz');
   const reduce = useReducedMotion();
-  const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
+  const waPhone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
 
   const [open, setOpen] = useState(false);
-  // step: 0 intro · 1..3 preguntas · 4 premio
+  // step: 0 intro · 1 canal · 2 datos · 3 gracias + código
   const [step, setStep] = useState(0);
-  const [missed, setMissed] = useState<number[]>([]); // opciones falladas de la pregunta actual
-  const [hit, setHit] = useState<number | null>(null); // acierto en pausa breve antes de avanzar
+  const [channel, setChannel] = useState<Channel>('whatsapp');
+  const [name, setName] = useState('');
+  const [contact, setContact] = useState('');
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     let id: number | undefined;
@@ -59,33 +60,54 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
     };
   }, [open, dismiss]);
 
-  const choose = (i: number) => {
-    if (hit !== null) return;
-    if (i === CORRECT[step - 1]) {
-      setHit(i);
-      window.setTimeout(() => {
-        setHit(null);
-        setMissed([]);
-        if (step === TOTAL_Q) {
-          try {
-            localStorage.setItem(KEY, 'won');
-          } catch {
-            /* ignore */
-          }
-          setStep(4);
-        } else {
-          setStep(step + 1);
-        }
-      }, 500);
-    } else if (!missed.includes(i)) {
-      setMissed([...missed, i]);
+  const pickChannel = (c: Channel) => {
+    setChannel(c);
+    setError(false);
+    setStep(2);
+  };
+
+  const isEmail = channel === 'email';
+  const contactValid = isEmail
+    ? /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact.trim())
+    : contact.replace(/[^\d]/g, '').length >= 9;
+  const canSubmit = name.trim().length >= 2 && contactValid && !sending;
+
+  const submit = async () => {
+    if (!canSubmit) return;
+    setSending(true);
+    setError(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: isEmail ? contact.trim() : undefined,
+          phone: isEmail ? undefined : contact.trim(),
+          message: `Lead del banner de bienvenida — prefiere contacto por ${channel}. Código ${CODE}.`,
+        }),
+      });
+      if (!res.ok) throw new Error('send failed');
+      try {
+        localStorage.setItem(KEY, 'won');
+      } catch {
+        /* ignore */
+      }
+      setStep(3);
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
     }
   };
 
-  const waHref = `https://wa.me/${phone}?text=${encodeURIComponent(t('wa', { code: CODE }))}`;
+  const waHref = `https://wa.me/${waPhone}?text=${encodeURIComponent(t('wa', { code: CODE }))}`;
 
   const panelInit = reduce ? { opacity: 0 } : { opacity: 0, y: 18, scale: 0.98 };
   const panelShown = reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 };
+
+  const inputCls =
+    'w-full border border-line bg-white px-5 py-3.5 font-sans text-[15px] text-ink placeholder:text-muted/60 focus:outline-none focus:border-sea transition-colors';
 
   return (
     <AnimatePresence>
@@ -120,16 +142,6 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
               </svg>
             </button>
 
-            {/* Barra de progreso (solo preguntas) */}
-            {step >= 1 && step <= TOTAL_Q && (
-              <div className="h-[3px] bg-line">
-                <div
-                  className="h-full bg-sea transition-[width] duration-500 ease-smooth"
-                  style={{ width: `${((step - 1) / TOTAL_Q) * 100}%` }}
-                />
-              </div>
-            )}
-
             <div className="px-7 py-10 sm:px-10 sm:py-12 text-center">
               <motion.div key={step} initial={panelInit} animate={panelShown} transition={{ duration: reduce ? 0.2 : 0.4, ease: EASE }}>
                 {/* INTRO */}
@@ -154,48 +166,77 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
                   </>
                 )}
 
-                {/* PREGUNTAS */}
-                {step >= 1 && step <= TOTAL_Q && (
+                {/* CANAL — ¿cómo prefieres que te contactemos? */}
+                {step === 1 && (
                   <>
-                    <p className="font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted mb-4">
-                      {t('progress', { current: step, total: TOTAL_Q })}
-                    </p>
                     <h2 className="display text-ink mb-8" style={{ fontSize: 'clamp(1.4rem, 3.6vw, 1.9rem)' }}>
-                      {t(`q${step}.title`)}
+                      {t('channel.title')}
                     </h2>
                     <div className="flex flex-col gap-3 text-left">
-                      {(t.raw(`q${step}.options`) as string[]).map((opt, i) => {
-                        const wrong = missed.includes(i);
-                        const right = hit === i;
-                        return (
-                          <button
-                            key={i}
-                            onClick={() => choose(i)}
-                            disabled={wrong}
-                            className={`w-full border px-6 py-4 font-sans text-[15px] leading-snug transition-colors duration-200 ${
-                              right
-                                ? 'border-sea bg-sand text-ink'
-                                : wrong
-                                  ? 'border-line text-muted/40 line-through cursor-not-allowed'
-                                  : 'border-line text-ink hover:border-sea hover:bg-sand'
-                            }`}
-                          >
-                            {opt}
-                          </button>
-                        );
-                      })}
+                      {(['whatsapp', 'phone', 'email'] as const).map((c) => (
+                        <button
+                          key={c}
+                          onClick={() => pickChannel(c)}
+                          className="w-full border border-line px-6 py-4 font-sans text-[15px] leading-snug text-ink transition-colors duration-200 hover:border-sea hover:bg-sand"
+                        >
+                          {t(`channel.${c}`)}
+                        </button>
+                      ))}
                     </div>
-                    <p
-                      aria-live="polite"
-                      className={`font-sans text-sm text-sea mt-5 transition-opacity duration-300 ${missed.length > 0 ? 'opacity-100' : 'opacity-0'}`}
-                    >
-                      {t('wrong')}
-                    </p>
                   </>
                 )}
 
-                {/* PREMIO */}
-                {step === 4 && (
+                {/* DATOS — nombre + teléfono o email según canal */}
+                {step === 2 && (
+                  <>
+                    <h2 className="display text-ink mb-8" style={{ fontSize: 'clamp(1.4rem, 3.6vw, 1.9rem)' }}>
+                      {t(`form.title.${channel}`)}
+                    </h2>
+                    <form
+                      className="flex flex-col gap-3 text-left"
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        submit();
+                      }}
+                    >
+                      <input
+                        type="text"
+                        autoComplete="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder={t('form.name')}
+                        className={inputCls}
+                      />
+                      <input
+                        type={isEmail ? 'email' : 'tel'}
+                        inputMode={isEmail ? 'email' : 'tel'}
+                        autoComplete={isEmail ? 'email' : 'tel'}
+                        value={contact}
+                        onChange={(e) => setContact(e.target.value)}
+                        placeholder={isEmail ? t('form.email') : t('form.phone')}
+                        className={inputCls}
+                      />
+                      <button type="submit" disabled={!canSubmit} className="btn-primary mt-3 disabled:opacity-40 disabled:cursor-not-allowed">
+                        {sending ? t('form.sending') : t('form.submit')}
+                      </button>
+                    </form>
+                    <p
+                      aria-live="polite"
+                      className={`font-sans text-sm text-sea mt-5 transition-opacity duration-300 ${error ? 'opacity-100' : 'opacity-0'}`}
+                    >
+                      {t('form.error')}
+                    </p>
+                    <button
+                      onClick={() => setStep(1)}
+                      className="font-sans text-[12px] font-semibold uppercase tracking-wide2 text-muted hover:text-ink transition-colors mt-4"
+                    >
+                      {t('form.back')}
+                    </button>
+                  </>
+                )}
+
+                {/* GRACIAS + CÓDIGO */}
+                {step === 3 && (
                   <>
                     <p className="eyebrow mb-4">{t('win.eyebrow')}</p>
                     <h2 className="display text-ink mb-4" style={{ fontSize: 'clamp(1.6rem, 4.2vw, 2.2rem)' }}>

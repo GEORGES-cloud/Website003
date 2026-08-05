@@ -85,45 +85,39 @@
     }
   },
   "quiz": {
-    "eyebrow": "Le défi Flamingo",
-    "title": "Trois questions. Un avantage exclusif.",
-    "subtitle": "Répondez correctement à ces trois questions et débloquez une remise de bienvenue exclusive au club.",
-    "start": "Relever le défi",
+    "eyebrow": "Bienvenue chez Flamingo",
+    "title": "Votre remise de bienvenue, à un pas.",
+    "subtitle": "Dites-nous comment vous préférez être contacté et débloquez une remise spéciale de bienvenue au club.",
+    "start": "Je veux ma remise",
     "dismiss": "Pas maintenant",
     "close": "Fermer",
-    "progress": "Question {current} sur {total}",
-    "wrong": "Presque… réessayez.",
-    "q1": {
-      "title": "De quel port le club part-il ?",
-      "options": [
-        "Sotogrande",
-        "Puerto Banús",
-        "Estepona"
-      ]
+    "channel": {
+      "title": "Comment préférez-vous être contacté ?",
+      "whatsapp": "Par WhatsApp",
+      "phone": "Par téléphone",
+      "email": "Par e-mail"
     },
-    "q2": {
-      "title": "Combien de membres partagent chaque bateau au maximum ?",
-      "options": [
-        "Sept",
-        "Quinze",
-        "Vingt-cinq"
-      ]
-    },
-    "q3": {
-      "title": "Comment s'appelle notre Sea Ray SPX 210 ?",
-      "options": [
-        "Coral",
-        "Marina",
-        "Blue"
-      ]
+    "form": {
+      "title": {
+        "whatsapp": "À quel numéro pouvons-nous vous écrire ?",
+        "phone": "À quel numéro pouvons-nous vous appeler ?",
+        "email": "À quelle adresse pouvons-nous vous écrire ?"
+      },
+      "name": "Votre nom",
+      "phone": "Votre téléphone",
+      "email": "Votre e-mail",
+      "submit": "Envoyer",
+      "sending": "Envoi…",
+      "error": "L'envoi a échoué. Veuillez réessayer.",
+      "back": "Choisir un autre canal"
     },
     "win": {
-      "eyebrow": "Défi relevé",
-      "title": "Félicitations — vous êtes des nôtres",
-      "subtitle": "Vous avez débloqué une remise de bienvenue spéciale sur votre adhésion.",
+      "eyebrow": "C'est noté",
+      "title": "Merci — nous vous contactons très vite",
+      "subtitle": "En attendant, voici votre remise spéciale de bienvenue au club.",
       "codeLabel": "Votre code",
       "hint": "Mentionnez ce code lors de la réservation de votre visite : nous l'appliquerons à vos frais d'entrée.",
-      "whatsapp": "Utiliser via WhatsApp",
+      "whatsapp": "Nous écrire sur WhatsApp",
       "plans": "Voir les adhésions"
     },
     "wa": "Bonjour ! J'ai relevé le défi Flamingo et je souhaite utiliser mon code {code} pour la remise de bienvenue."

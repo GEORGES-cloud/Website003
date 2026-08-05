@@ -85,45 +85,39 @@
     }
   },
   "quiz": {
-    "eyebrow": "The Flamingo Challenge",
-    "title": "Three questions. One exclusive reward.",
-    "subtitle": "Answer these three questions correctly and unlock a special welcome discount at the club.",
-    "start": "Take the challenge",
+    "eyebrow": "Flamingo welcome",
+    "title": "Your welcome discount, one step away.",
+    "subtitle": "Tell us how you would like to be contacted and unlock a special welcome discount to the club.",
+    "start": "Get my discount",
     "dismiss": "Not now",
     "close": "Close",
-    "progress": "Question {current} of {total}",
-    "wrong": "Almost — try again.",
-    "q1": {
-      "title": "Which port does the club sail from?",
-      "options": [
-        "Sotogrande",
-        "Puerto Banús",
-        "Estepona"
-      ]
+    "channel": {
+      "title": "How would you like us to contact you?",
+      "whatsapp": "On WhatsApp",
+      "phone": "With a phone call",
+      "email": "By email"
     },
-    "q2": {
-      "title": "At most, how many members share each boat?",
-      "options": [
-        "Seven",
-        "Fifteen",
-        "Twenty-five"
-      ]
-    },
-    "q3": {
-      "title": "What's the name of our Sea Ray SPX 210?",
-      "options": [
-        "Coral",
-        "Marina",
-        "Blue"
-      ]
+    "form": {
+      "title": {
+        "whatsapp": "What number should we message?",
+        "phone": "What number should we call?",
+        "email": "What email should we write to?"
+      },
+      "name": "Your name",
+      "phone": "Your phone",
+      "email": "Your email",
+      "submit": "Send",
+      "sending": "Sending…",
+      "error": "Something went wrong. Please try again.",
+      "back": "Choose another channel"
     },
     "win": {
-      "eyebrow": "Challenge complete",
-      "title": "Congratulations — you're one of us",
-      "subtitle": "You've unlocked a special welcome discount on your membership.",
+      "eyebrow": "All set",
+      "title": "Thank you — we will be in touch very soon",
+      "subtitle": "In the meantime, here is your special welcome discount to the club.",
       "codeLabel": "Your code",
       "hint": "Mention this code when booking your visit and we'll apply it to your joining fee.",
-      "whatsapp": "Redeem via WhatsApp",
+      "whatsapp": "Message us on WhatsApp",
       "plans": "See memberships"
     },
     "wa": "Hi! I've completed the Flamingo Challenge and I'd like to redeem my code {code} for the welcome discount."

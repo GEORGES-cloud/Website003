@@ -85,45 +85,39 @@
     }
   },
   "quiz": {
-    "eyebrow": "Flamingo-utmaningen",
-    "title": "Tre frågor. En exklusiv förmån.",
-    "subtitle": "Svara rätt på dessa tre frågor och lås upp en särskild välkomstrabatt i klubben.",
-    "start": "Anta utmaningen",
+    "eyebrow": "Välkommen till Flamingo",
+    "title": "Din välkomstrabatt – ett steg bort.",
+    "subtitle": "Berätta hur du vill bli kontaktad och lås upp en särskild välkomstrabatt till klubben.",
+    "start": "Ge mig min rabatt",
     "dismiss": "Inte nu",
     "close": "Stäng",
-    "progress": "Fråga {current} av {total}",
-    "wrong": "Nästan – försök igen.",
-    "q1": {
-      "title": "Från vilken hamn seglar klubben?",
-      "options": [
-        "Sotogrande",
-        "Puerto Banús",
-        "Estepona"
-      ]
+    "channel": {
+      "title": "Hur vill du att vi kontaktar dig?",
+      "whatsapp": "Via WhatsApp",
+      "phone": "Med ett samtal",
+      "email": "Via e-post"
     },
-    "q2": {
-      "title": "Hur många medlemmar delar högst på varje båt?",
-      "options": [
-        "Sju",
-        "Femton",
-        "Tjugofem"
-      ]
-    },
-    "q3": {
-      "title": "Vad heter vår Sea Ray SPX 210?",
-      "options": [
-        "Coral",
-        "Marina",
-        "Blue"
-      ]
+    "form": {
+      "title": {
+        "whatsapp": "Vilket nummer ska vi skriva till?",
+        "phone": "Vilket nummer ska vi ringa?",
+        "email": "Vilken e-postadress ska vi skriva till?"
+      },
+      "name": "Ditt namn",
+      "phone": "Ditt telefonnummer",
+      "email": "Din e-post",
+      "submit": "Skicka",
+      "sending": "Skickar…",
+      "error": "Det gick inte att skicka. Försök igen.",
+      "back": "Välj en annan kanal"
     },
     "win": {
-      "eyebrow": "Utmaning klarad",
-      "title": "Grattis – du är en av oss",
-      "subtitle": "Du har låst upp en särskild välkomstrabatt på ditt medlemskap.",
+      "eyebrow": "Klart",
+      "title": "Tack – vi hör av oss mycket snart",
+      "subtitle": "Här är din särskilda välkomstrabatt till klubben under tiden.",
       "codeLabel": "Din kod",
       "hint": "Nämn koden när du bokar ditt besök så drar vi av den på din inträdesavgift.",
-      "whatsapp": "Lös in via WhatsApp",
+      "whatsapp": "Skriv till oss på WhatsApp",
       "plans": "Se medlemskap"
     },
     "wa": "Hej! Jag har klarat Flamingo-utmaningen och vill lösa in min kod {code} för välkomstrabatten."

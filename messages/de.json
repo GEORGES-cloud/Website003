@@ -85,45 +85,39 @@
     }
   },
   "quiz": {
-    "eyebrow": "Die Flamingo-Challenge",
-    "title": "Drei Fragen. Ein exklusiver Vorteil.",
-    "subtitle": "Beantworten Sie diese drei Fragen richtig und sichern Sie sich einen besonderen Willkommensrabatt im Club.",
-    "start": "Challenge annehmen",
+    "eyebrow": "Willkommen bei Flamingo",
+    "title": "Dein Willkommensrabatt – nur einen Schritt entfernt.",
+    "subtitle": "Sag uns, wie wir dich kontaktieren dürfen, und sichere dir einen besonderen Willkommensrabatt im Club.",
+    "start": "Rabatt sichern",
     "dismiss": "Jetzt nicht",
     "close": "Schließen",
-    "progress": "Frage {current} von {total}",
-    "wrong": "Fast … versuchen Sie es noch einmal.",
-    "q1": {
-      "title": "Von welchem Hafen aus sticht der Club in See?",
-      "options": [
-        "Sotogrande",
-        "Puerto Banús",
-        "Estepona"
-      ]
+    "channel": {
+      "title": "Wie dürfen wir dich kontaktieren?",
+      "whatsapp": "Per WhatsApp",
+      "phone": "Mit einem Anruf",
+      "email": "Per E-Mail"
     },
-    "q2": {
-      "title": "Wie viele Mitglieder teilen sich höchstens ein Boot?",
-      "options": [
-        "Sieben",
-        "Fünfzehn",
-        "Fünfundzwanzig"
-      ]
-    },
-    "q3": {
-      "title": "Wie heißt unsere Sea Ray SPX 210?",
-      "options": [
-        "Coral",
-        "Marina",
-        "Blue"
-      ]
+    "form": {
+      "title": {
+        "whatsapp": "An welche Nummer dürfen wir schreiben?",
+        "phone": "Unter welcher Nummer dürfen wir dich anrufen?",
+        "email": "An welche E-Mail-Adresse dürfen wir schreiben?"
+      },
+      "name": "Dein Name",
+      "phone": "Deine Telefonnummer",
+      "email": "Deine E-Mail",
+      "submit": "Absenden",
+      "sending": "Wird gesendet…",
+      "error": "Senden fehlgeschlagen. Bitte versuch es erneut.",
+      "back": "Anderen Kanal wählen"
     },
     "win": {
-      "eyebrow": "Challenge gemeistert",
-      "title": "Glückwunsch – Sie gehören dazu",
-      "subtitle": "Sie haben einen besonderen Willkommensrabatt auf Ihre Mitgliedschaft freigeschaltet.",
+      "eyebrow": "Alles bereit",
+      "title": "Danke – wir melden uns sehr bald",
+      "subtitle": "Hier ist schon mal dein besonderer Willkommensrabatt im Club.",
       "codeLabel": "Ihr Code",
       "hint": "Nennen Sie diesen Code bei der Buchung Ihres Besuchs – wir rechnen ihn auf Ihre Aufnahmegebühr an.",
-      "whatsapp": "Per WhatsApp einlösen",
+      "whatsapp": "Schreib uns auf WhatsApp",
       "plans": "Mitgliedschaften ansehen"
     },
     "wa": "Hallo! Ich habe die Flamingo-Challenge bestanden und möchte meinen Code {code} für den Willkommensrabatt einlösen."
