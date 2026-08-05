@@ -82,6 +82,20 @@
       "body": "Ich würde gern mehr über die Mitgliedschaft im Flamingo Yacht Club erfahren. Mein Profil: {summary}.",
       "cita": "Sehr gern würde ich einen Termin vereinbaren, um das Programm kennenzulernen: {when}.",
       "closing": "Sprechen wir?"
+    },
+    "contact": {
+      "title": "Wie dürfen wir dich kontaktieren?",
+      "whatsapp": "Per WhatsApp",
+      "email": "Per E-Mail",
+      "phone": "Mit einem Anruf",
+      "emailPlaceholder": "Deine E-Mail",
+      "phonePlaceholder": "Deine Telefonnummer",
+      "send": "Absenden",
+      "sending": "Wird gesendet…",
+      "error": "Senden fehlgeschlagen. Bitte versuch es erneut.",
+      "sentTitle": "Alles klar – wir melden uns sehr bald",
+      "sentBody": "Wir haben deine Daten. Wir schreiben dir oder rufen dich in Kürze an, um deinen Besuch in Puerto Banús zu vereinbaren.",
+      "done": "Alles klar"
     }
   },
   "quiz": {

@@ -82,6 +82,20 @@
       "body": "I’d like to learn about the Flamingo Yacht Club membership. My profile: {summary}.",
       "cita": "I’d love to book a visit to see the programme: {when}.",
       "closing": "Shall we talk?"
+    },
+    "contact": {
+      "title": "How would you like us to contact you?",
+      "whatsapp": "On WhatsApp",
+      "email": "By email",
+      "phone": "With a call",
+      "emailPlaceholder": "Your email",
+      "phonePlaceholder": "Your phone",
+      "send": "Send",
+      "sending": "Sending…",
+      "error": "Something went wrong. Please try again.",
+      "sentTitle": "All set — we will be in touch very soon",
+      "sentBody": "We have your details. We will write or call you shortly to arrange your visit in Puerto Banús.",
+      "done": "Got it"
     }
   },
   "quiz": {

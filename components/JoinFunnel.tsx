@@ -19,12 +19,18 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   const membership = getTiers(locale)[0];
   const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
 
-  // step: 0 intro · 1 name · 2..6 questions · 7 close
+  // step: 0 intro · 1 name · 2..6 questions · 7 close · 8 enviado
   const [step, setStep] = useState(0);
   const [name, setName] = useState('');
   const [answers, setAnswers] = useState<number[]>([]);
   const [day, setDay] = useState<number | null>(null);
   const [time, setTime] = useState<number | null>(null);
+  // Canal de contacto preferido en el cierre: WhatsApp (handoff directo),
+  // email o llamada (dejan su dato y contacta el club).
+  const [channel, setChannel] = useState<'whatsapp' | 'email' | 'phone'>('whatsapp');
+  const [contact, setContact] = useState('');
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
 
@@ -36,6 +42,10 @@ export default function JoinFunnel({ locale }: { locale: string }) {
     setAnswers([]);
     setDay(null);
     setTime(null);
+    setChannel('whatsapp');
+    setContact('');
+    setSending(false);
+    setSendError(false);
   }, [open]);
 
   // Body scroll lock + Escape to close
@@ -103,6 +113,44 @@ export default function JoinFunnel({ locale }: { locale: string }) {
     return msg;
   })();
   const waHref = `https://wa.me/${phone}?text=${encodeURIComponent(waMessage)}`;
+
+  // Email / llamada: el club contacta al lead — el perfil completo viaja a /api/contact
+  const isEmail = channel === 'email';
+  const contactValid = isEmail
+    ? /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact.trim())
+    : contact.replace(/[^\d]/g, '').length >= 9;
+  const canSend = nameValid && contactValid && !sending;
+
+  const sendLead = async () => {
+    if (!canSend) return;
+    setSending(true);
+    setSendError(false);
+    const summary = answers
+      .slice(0, TOTAL_Q)
+      .map((a, i) => (t.raw(`q${i + 1}.options`) as string[])[a])
+      .join(' · ');
+    const when = [day !== null ? dayOpts[day] : null, time !== null ? timeOpts[time] : null]
+      .filter(Boolean)
+      .join(', ');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fullName,
+          email: isEmail ? contact.trim() : undefined,
+          phone: isEmail ? undefined : contact.trim(),
+          message: `Lead del funnel "Únete al club" — prefiere contacto por ${isEmail ? 'email' : 'llamada'}. Perfil: ${summary}.${when ? ` Cita: ${when}.` : ''}`,
+        }),
+      });
+      if (!res.ok) throw new Error('send failed');
+      setStep(8);
+    } catch {
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
+  };
 
   const panelInit = reduce ? { opacity: 0 } : { opacity: 0, y: 22 };
   const panelShown = reduce ? { opacity: 1 } : { opacity: 1, y: 0 };
@@ -285,19 +333,70 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                 </div>
               </div>
 
-              <div className="flex flex-col items-center gap-4">
-                <a
-                  href={waHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={closeFunnel}
-                  className="btn-primary inline-flex items-center gap-2.5"
+              {/* ¿Cómo quieres que te contactemos? — WhatsApp / email / llamada */}
+              <div className="border border-line px-6 py-7 mb-8">
+                <p className="font-sans text-base font-medium text-ink mb-5">{t('contact.title')}</p>
+                <div className="flex flex-wrap justify-center gap-2.5 mb-6">
+                  {(['whatsapp', 'email', 'phone'] as const).map((c) => (
+                    <button
+                      key={c}
+                      onClick={() => {
+                        setChannel(c);
+                        setSendError(false);
+                      }}
+                      className={chip(channel === c)}
+                      aria-pressed={channel === c}
+                    >
+                      {t(`contact.${c}`)}
+                    </button>
+                  ))}
+                </div>
+
+                {channel === 'whatsapp' ? (
+                  <a
+                    href={waHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeFunnel}
+                    className="btn-primary inline-flex items-center gap-2.5"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.52 11.97c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z" />
+                    </svg>
+                    {hasCita ? t('cita.cta') : t('result.whatsapp')}
+                  </a>
+                ) : (
+                  <form
+                    className="flex flex-col sm:flex-row justify-center gap-3 max-w-md mx-auto"
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      sendLead();
+                    }}
+                  >
+                    <input
+                      type={isEmail ? 'email' : 'tel'}
+                      inputMode={isEmail ? 'email' : 'tel'}
+                      autoComplete={isEmail ? 'email' : 'tel'}
+                      value={contact}
+                      onChange={(e) => setContact(e.target.value)}
+                      placeholder={isEmail ? t('contact.emailPlaceholder') : t('contact.phonePlaceholder')}
+                      aria-label={isEmail ? t('contact.emailPlaceholder') : t('contact.phonePlaceholder')}
+                      className="flex-1 border border-line bg-white px-5 py-3.5 font-sans text-[15px] text-ink placeholder:text-muted/60 focus:outline-none focus:border-sea transition-colors"
+                    />
+                    <button type="submit" disabled={!canSend} className="btn-primary disabled:opacity-40 disabled:cursor-not-allowed">
+                      {sending ? t('contact.sending') : t('contact.send')}
+                    </button>
+                  </form>
+                )}
+                <p
+                  aria-live="polite"
+                  className={`font-sans text-sm text-sea mt-4 transition-opacity duration-300 ${sendError ? 'opacity-100' : 'opacity-0'}`}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.52 11.97c-.25-.12-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z" />
-                  </svg>
-                  {hasCita ? t('cita.cta') : t('result.whatsapp')}
-                </a>
+                  {t('contact.error')}
+                </p>
+              </div>
+
+              <div className="flex flex-col items-center gap-4">
                 <div className="flex items-center gap-6">
                   <Link
                     href={`/${locale}/precios`}
@@ -313,6 +412,31 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                     {t('result.restart')}
                   </button>
                 </div>
+              </div>
+            </>
+          )}
+
+          {/* ENVIADO — el club contacta al lead por el canal elegido */}
+          {step === 8 && (
+            <>
+              <p className="eyebrow mb-4">{t('result.eyebrow')}</p>
+              <h2 className="display text-ink mb-5" style={{ fontSize: 'clamp(1.9rem, 5vw, 2.9rem)' }}>
+                {t('contact.sentTitle')}
+              </h2>
+              <p className="font-sans text-lg text-muted leading-relaxed mb-10 max-w-md mx-auto">
+                {t('contact.sentBody')}
+              </p>
+              <div className="flex flex-col items-center gap-5">
+                <button onClick={closeFunnel} className="btn-primary">
+                  {t('contact.done')}
+                </button>
+                <Link
+                  href={`/${locale}/precios`}
+                  onClick={closeFunnel}
+                  className="font-sans text-[12px] font-semibold uppercase tracking-wide2 text-muted hover:text-ink transition-colors"
+                >
+                  {t('result.allPlans')}
+                </Link>
               </div>
             </>
           )}

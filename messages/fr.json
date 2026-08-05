@@ -82,6 +82,20 @@
       "body": "J’aimerais découvrir l’adhésion au Flamingo Yacht Club. Mon profil : {summary}.",
       "cita": "J’aimerais beaucoup réserver une visite pour connaître le programme : {when}.",
       "closing": "On en parle ?"
+    },
+    "contact": {
+      "title": "Comment préférez-vous être contacté ?",
+      "whatsapp": "Par WhatsApp",
+      "email": "Par e-mail",
+      "phone": "Par téléphone",
+      "emailPlaceholder": "Votre e-mail",
+      "phonePlaceholder": "Votre téléphone",
+      "send": "Envoyer",
+      "sending": "Envoi…",
+      "error": "L'envoi a échoué. Veuillez réessayer.",
+      "sentTitle": "C’est noté — nous vous contactons très vite",
+      "sentBody": "Nous avons vos coordonnées. Nous vous écrirons ou appellerons bientôt pour organiser votre visite à Puerto Banús.",
+      "done": "Compris"
     }
   },
   "quiz": {
