@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
     }
 
-    const contactEmail = process.env.CONTACT_EMAIL ?? 'info@flamingoyachtclub.com';
+    const contactEmail = process.env.CONTACT_EMAIL ?? 'Hello@flamingoyachtclub.com';
 
     // TODO: Replace with Resend / Nodemailer for production
     // Example with Resend:
