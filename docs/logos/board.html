@@ -5,11 +5,13 @@
 <title>Flamingo Yacht Club — 30 propuestas de identidad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@200;300;400;600&family=Montserrat:wght@500;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@200;300;400;600&family=Montserrat:wght@500;900&family=Yellowtail&family=Monoton&family=Poiret+One&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1A1916; --bone:#FAF9F6; --sand:#F1EEE8; --sea:#2C4A4F; --line:#E6E2DA;
     --muted:#6E6A62; --rosa:#C4808A; --magenta:#E62A64;
+    /* Miami Vice */
+    --neon:#FF2D95; --aqua:#1BC9BD; --sunset:#FF8A50; --night:#12101C;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   @page{size:A4 landscape;margin:0}
@@ -61,6 +63,14 @@
   /* fila horizontal (navbar lockups) */
   .lk-row{display:flex;align-items:center;gap:4mm;text-align:left}
   .lk-row .col{display:flex;flex-direction:column;line-height:1}
+
+  /* ---------- Miami Vice ---------- */
+  .script{font-family:'Yellowtail',cursive;text-transform:none}
+  .monoton{font-family:'Monoton',cursive;text-transform:uppercase}
+  .poiret{font-family:'Poiret One',cursive;text-transform:uppercase}
+  .miami .card.dark{background:var(--night);border-color:var(--night)}
+  .card.dark .glow-pink{filter:drop-shadow(0 0 2.2px rgba(255,45,149,.9)) drop-shadow(0 0 7px rgba(255,45,149,.55))}
+  .card.dark .glow-aqua{filter:drop-shadow(0 0 2.2px rgba(27,201,189,.9)) drop-shadow(0 0 7px rgba(27,201,189,.5))}
 
   /* ---------- página de contexto ---------- */
   .ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:5mm;height:158mm}
@@ -123,13 +133,43 @@
       <path d="M168 54 L184 62 C179 70 169 70 164 64 Z" fill="currentColor" stroke-width="1.4"/>
       <circle cx="155" cy="46" r="1.9" fill="currentColor" stroke="none"/>
     </g>
+
+    <!-- Sol retro con líneas (Miami) -->
+    <linearGradient id="grad-sunset" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--sunset)"/>
+      <stop offset="1" stop-color="var(--neon)"/>
+    </linearGradient>
+    <linearGradient id="grad-vice" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="var(--neon)"/>
+      <stop offset="1" stop-color="var(--aqua)"/>
+    </linearGradient>
+    <mask id="sun-mask">
+      <circle cx="110" cy="100" r="76" fill="#fff"/>
+      <rect x="20" y="112" width="180" height="5" fill="#000"/>
+      <rect x="20" y="128" width="180" height="7" fill="#000"/>
+      <rect x="20" y="146" width="180" height="9" fill="#000"/>
+      <rect x="20" y="166" width="180" height="11" fill="#000"/>
+    </mask>
+    <g id="sun-retro">
+      <circle cx="110" cy="100" r="76" fill="url(#grad-sunset)" mask="url(#sun-mask)"/>
+    </g>
+
+    <!-- Palmera de línea -->
+    <g id="palm" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M104 230 C110 196 114 160 106 128"/>
+      <path d="M106 128 C86 112 62 112 46 126 C68 118 92 122 106 128 Z"/>
+      <path d="M106 128 C96 106 76 96 56 100 C78 100 96 112 106 128 Z"/>
+      <path d="M106 128 C108 104 124 88 146 86 C126 94 112 110 106 128 Z"/>
+      <path d="M106 128 C126 114 150 116 164 132 C144 122 120 122 106 128 Z"/>
+      <path d="M106 128 C112 116 116 104 114 92"/>
+    </g>
   </defs>
 </svg>
 
 <!-- ============ PORTADA ============ -->
 <div class="page cover">
   <div class="eyebrow">Flamingo Yacht Club · Puerto Banús</div>
-  <h1>Treinta caminos<br>para una misma marca.</h1>
+  <h1>Cuarenta caminos<br>para una misma marca.</h1>
   <div class="sub">Seis familias de identidad — del emblema náutico clásico al minimalismo contemporáneo — dibujadas para convivir con la fotografía, la web y la flota del club.</div>
   <div class="instr">Elige tus 3 favoritas</div>
 </div>
@@ -459,6 +499,113 @@
 
   </div>
   <div class="pfoot"><span>Familia F · 26–30</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
+</div>
+
+<!-- ============ FAMILIA G — Miami Vice ============ -->
+<div class="page miami">
+  <div class="phead"><span class="fam">G</span><span class="ftitle">Miami Vice</span><span class="fdesc">Neón, script y sol retro: los 80 de Ocean Drive, con el flamenco como estrella.</span></div>
+  <div class="grid">
+
+    <div class="cell"><div class="num">31<span>vice classic</span></div>
+      <div class="card light"><div class="lk">
+        <div class="script glow-pink" style="font-size:9.6mm;color:var(--neon)">Flamingo</div>
+        <div class="yc-manro glow-aqua" style="color:var(--aqua);font-weight:600;margin-top:2mm">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">32<span>neón</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="76" viewBox="0 0 220 245" class="glow-pink" style="color:var(--neon)"><use href="#flamingo-line"/></svg>
+        <div class="yc-manro glow-aqua" style="color:var(--aqua);font-weight:600;margin-top:2.6mm">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">33<span>sol retro</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="74" viewBox="0 0 220 236">
+          <use href="#sun-retro"/>
+          <g transform="translate(28,26) scale(0.82)" style="color:currentColor"><use href="#flamingo-full"/></g>
+        </svg>
+        <div class="fl-mont" style="font-size:5mm;margin-top:2.6mm">Flamingo</div>
+        <div class="yc-mont" style="font-size:2.3mm">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">34<span>art déco</span></div>
+      <div class="card light"><div class="lk">
+        <div style="border:1px solid var(--aqua);padding:4.5mm 6mm;position:relative">
+          <div style="position:absolute;inset:1.4mm;border:.3mm solid var(--neon)"></div>
+          <div class="poiret" style="font-size:6.4mm;letter-spacing:.3em;padding-left:.3em;position:relative">Flamingo</div>
+          <div class="yc-manro" style="margin-top:2.2mm;position:relative">Yacht Club</div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">35<span>rótulo neón</span></div>
+      <div class="card light"><div class="lk">
+        <div class="monoton glow-pink" style="font-size:5.6mm;letter-spacing:.06em;color:var(--neon)">Flamingo</div>
+        <div class="yc-manro glow-aqua" style="color:var(--aqua);font-weight:600;margin-top:2.6mm">Yacht Club · Puerto Banús</div>
+      </div></div>
+    </div>
+
+  </div>
+  <div class="pfoot"><span>Familia G · 31–35</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
+</div>
+
+<!-- ============ FAMILIA H — Miami suave ============ -->
+<div class="page">
+  <div class="phead"><span class="fam">H</span><span class="ftitle">Miami, en voz baja</span><span class="fdesc">El espíritu de los 80 en la paleta serena de la web: empolvado, aqua profundo y tinta.</span></div>
+  <div class="grid">
+
+    <div class="cell"><div class="num">36<span>script empolvado</span></div>
+      <div class="card light"><div class="lk">
+        <div class="script" style="font-size:9.2mm;color:var(--rosa)">Flamingo</div>
+        <div class="yc-manro" style="color:var(--sea);font-weight:600;margin-top:2mm">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">37<span>bicolor</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="82" viewBox="0 0 200 250">
+          <g style="color:var(--rosa)"><use href="#flamingo-full"/></g>
+          <g transform="translate(-11,208) scale(0.93)" style="color:var(--sea)"><use href="#waves"/></g>
+        </svg>
+        <div class="fl-mont" style="font-size:5.4mm;margin-top:2.8mm">Flamingo</div>
+        <div class="yc-mont" style="font-size:2.4mm">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">38<span>horizonte</span></div>
+      <div class="card light"><div class="lk">
+        <div class="fl-mont" style="font-size:6.2mm">Flamingo</div>
+        <svg width="118" height="8" viewBox="0 0 240 14" style="margin-top:2.6mm"><rect x="0" y="4" width="240" height="6" rx="3" fill="url(#grad-vice)"/></svg>
+        <div class="yc-mont" style="font-size:2.4mm;margin-top:2.4mm">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">39<span>palmera y flamenco</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="92" viewBox="0 0 340 250">
+          <g transform="translate(150,4)" style="color:var(--rosa)"><use href="#flamingo-full"/></g>
+          <g transform="translate(0,10)" style="color:var(--sea)"><use href="#palm"/></g>
+        </svg>
+        <div class="yc-manro" style="margin-top:2.6mm">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">40<span>rayas retro</span></div>
+      <div class="card light"><div class="lk">
+        <div style="display:flex;align-items:center;gap:3mm">
+          <svg width="26" height="14" viewBox="0 0 60 30"><rect y="2" width="60" height="4" rx="2" fill="var(--rosa)"/><rect y="13" width="60" height="4" rx="2" fill="var(--sunset)"/><rect y="24" width="60" height="4" rx="2" fill="var(--aqua)"/></svg>
+          <div class="fl-mont" style="font-size:5.6mm">Flamingo</div>
+          <svg width="26" height="14" viewBox="0 0 60 30"><rect y="2" width="60" height="4" rx="2" fill="var(--aqua)"/><rect y="13" width="60" height="4" rx="2" fill="var(--sunset)"/><rect y="24" width="60" height="4" rx="2" fill="var(--rosa)"/></svg>
+        </div>
+        <div class="yc-mont" style="font-size:2.4mm;margin-top:2.4mm">Yacht Club</div>
+      </div></div>
+    </div>
+
+  </div>
+  <div class="pfoot"><span>Familia H · 36–40</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
 </div>
 
 <!-- ============ CONTEXTO ============ -->
