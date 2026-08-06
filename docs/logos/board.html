@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Flamingo Yacht Club — 30 propuestas de identidad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@200;300;400;600&family=Montserrat:wght@500;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A1916; --bone:#FAF9F6; --sand:#F1EEE8; --sea:#2C4A4F; --line:#E6E2DA;
+    --muted:#6E6A62; --rosa:#C4808A; --magenta:#E62A64;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{size:A4 landscape;margin:0}
+  body{font-family:'Manrope',sans-serif;background:#888}
+  .page{width:297mm;height:210mm;background:var(--bone);page-break-after:always;position:relative;overflow:hidden;padding:11mm 13mm 9mm}
+  .serif{font-family:'Cormorant Garamond',serif}
+  .mont{font-family:'Montserrat',sans-serif}
+
+  /* ---------- cabecera / pie de página ---------- */
+  .phead{display:flex;align-items:baseline;gap:6mm;border-bottom:1px solid var(--line);padding-bottom:4mm;margin-bottom:6mm}
+  .phead .fam{font-family:'Montserrat';font-weight:900;font-size:11mm;color:var(--ink);line-height:1}
+  .phead .ftitle{font-size:3.6mm;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--sea)}
+  .phead .fdesc{margin-left:auto;font-size:3mm;font-weight:300;color:var(--muted);max-width:90mm;text-align:right}
+  .pfoot{position:absolute;left:13mm;right:13mm;bottom:6mm;display:flex;justify-content:space-between;font-size:2.6mm;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- rejilla de tarjetas ---------- */
+  .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5mm;height:158mm}
+  .cell{display:flex;flex-direction:column;gap:3mm;min-width:0}
+  .num{font-family:'Montserrat';font-weight:900;font-size:4.2mm;color:var(--ink)}
+  .num span{font-weight:500;font-size:2.6mm;letter-spacing:.28em;color:var(--muted);margin-left:2mm}
+  .card{flex:1;display:flex;align-items:center;justify-content:center;padding:4mm;border:1px solid var(--line);overflow:hidden}
+  .card.light{background:var(--bone);color:var(--ink)}
+  .card.dark{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+  .card svg{display:block}
+
+  /* ---------- portada ---------- */
+  .cover{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .cover .eyebrow{font-size:3.2mm;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--sea);margin-bottom:9mm}
+  .cover h1{font-family:'Cormorant Garamond';font-weight:400;font-size:19mm;line-height:1.05;color:var(--ink);max-width:200mm}
+  .cover .sub{margin-top:9mm;font-weight:300;font-size:4.4mm;color:var(--muted);max-width:150mm;line-height:1.7}
+  .cover .instr{margin-top:14mm;display:inline-block;border:1px solid var(--ink);padding:4mm 9mm;font-size:3.2mm;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+
+  /* ---------- lockups tipográficos ---------- */
+  .lk{display:flex;flex-direction:column;align-items:center;text-align:center;line-height:1}
+  .lk > div, .lk-row .col > div{white-space:nowrap}
+  .lk .fl-mont{font-family:'Montserrat';font-weight:900;font-size:7.4mm;letter-spacing:.02em;text-transform:uppercase}
+  .lk .yc-mont{font-family:'Montserrat';font-weight:500;font-size:3mm;letter-spacing:.36em;text-transform:uppercase;margin-top:2.2mm;padding-left:.36em}
+  .lk .fl-serif{font-family:'Cormorant Garamond';font-weight:500;font-size:6.9mm;letter-spacing:.22em;text-transform:uppercase;padding-left:.22em}
+  .lk .fl-serif-b{font-family:'Cormorant Garamond';font-weight:600;font-size:6.9mm;letter-spacing:.18em;text-transform:uppercase;padding-left:.18em}
+  .lk .fl-manro{font-family:'Manrope';font-weight:200;font-size:6mm;letter-spacing:.3em;text-transform:uppercase;padding-left:.3em}
+  .lk .yc-rules{display:flex;align-items:center;gap:2.6mm;margin-top:2.8mm}
+  .lk .yc-rules i{display:block;width:8mm;height:.28mm;background:currentColor;opacity:.85}
+  .lk .yc-serif{font-family:'Cormorant Garamond';font-weight:500;font-size:3.4mm;letter-spacing:.34em;text-transform:uppercase}
+  .lk .yc-manro{font-family:'Manrope';font-weight:400;font-size:2.3mm;letter-spacing:.28em;text-transform:uppercase;margin-top:2.4mm;padding-left:.28em}
+  .lk .powered{font-family:'Manrope';font-weight:600;font-size:1.9mm;letter-spacing:.32em;text-transform:uppercase;opacity:.55;margin-top:3mm}
+  .lk .rule{width:26mm;height:.3mm;background:currentColor;opacity:.6;margin:2.6mm 0}
+  .lk .boxed{border:1px solid currentColor;padding:1.6mm 3.4mm;font-family:'Manrope';font-weight:400;font-size:2.6mm;letter-spacing:.42em;text-transform:uppercase;margin-top:2.8mm;padding-left:calc(3.4mm + .42em)}
+
+  /* fila horizontal (navbar lockups) */
+  .lk-row{display:flex;align-items:center;gap:4mm;text-align:left}
+  .lk-row .col{display:flex;flex-direction:column;line-height:1}
+
+  /* ---------- página de contexto ---------- */
+  .ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:5mm;height:158mm}
+  .ctx{position:relative;border:1px solid var(--line);background-size:cover;background-position:center 30%;display:flex;align-items:flex-start;justify-content:center;overflow:hidden}
+  .ctx .shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,25,22,.55),rgba(26,25,22,.12) 60%)}
+  .ctx .bar{position:relative;z-index:2;margin-top:7mm;color:#fff;display:flex;align-items:center;justify-content:center;width:100%}
+  .ctx .tag{position:absolute;left:4mm;bottom:3.5mm;z-index:2;color:#fff;font-size:2.7mm;letter-spacing:.26em;text-transform:uppercase;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+</style>
+</head>
+<body>
+
+<!-- ============ SÍMBOLOS SVG ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- Flamenco de pie (estilo del cliente, redibujado) -->
+    <g id="flamingo-full" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round">
+      <!-- cuerpo + pecho + cuello + cabeza -->
+      <path d="M40 152 C46 176 88 186 114 172 C132 162 140 148 140 130 C140 106 126 94 126 76 C126 54 142 42 157 44 C171 46 178 58 173 68 C169 76 159 78 152 73"/>
+      <!-- lomo / cola -->
+      <path d="M40 152 C54 130 92 124 118 138"/>
+      <!-- ala -->
+      <path d="M68 160 C88 170 106 166 118 154" stroke-width="3.8"/>
+      <!-- pata recta -->
+      <path d="M112 176 L112 236"/>
+      <!-- pata plegada -->
+      <path d="M103 175 L90 198 C88 204 92 208 98 205 L110 197" stroke-width="4"/>
+      <!-- pico -->
+      <path d="M173 66 L189 74 C184 82 174 82 169 76 Z" fill="currentColor" stroke-width="1.4"/>
+      <!-- ojo -->
+      <circle cx="159" cy="57" r="1.9" fill="currentColor" stroke="none"/>
+    </g>
+
+    <!-- Ondas de agua -->
+    <g id="waves" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round">
+      <path d="M8 12 C28 4 48 20 68 12 C88 4 108 20 128 12 C148 4 168 20 188 12 C202 6 218 14 232 10"/>
+      <path d="M36 28 C56 20 76 36 96 28 C116 20 136 36 156 28 C172 22 188 32 204 26"/>
+    </g>
+
+    <!-- Flamenco de trazo esencial: la silueta de A sin ala ni pata plegada -->
+    <g id="flamingo-line" fill="none" stroke="currentColor" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M40 152 C46 176 88 186 114 172 C132 162 140 148 140 130 C140 106 126 94 126 76 C126 54 142 42 157 44 C171 46 178 58 173 68 C169 76 159 78 152 73"/>
+      <path d="M40 152 C54 130 92 124 118 138"/>
+      <path d="M112 176 L112 232"/>
+      <path d="M173 66 L189 74 C184 82 174 82 169 76 Z" fill="currentColor" stroke-width="1.4"/>
+      <circle cx="159" cy="57" r="1.9" fill="currentColor" stroke="none"/>
+    </g>
+
+    <!-- Solo cuello y cabeza -->
+    <g id="flamingo-head" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M78 214 C70 170 74 128 98 106 C112 93 134 88 146 98 C158 108 156 124 144 130 C134 135 122 131 118 121"/>
+      <path d="M150 128 L172 141 C163 151 148 148 144 138 Z" fill="currentColor" stroke-width="1.4"/>
+      <circle cx="137" cy="111" r="2.4" fill="currentColor" stroke="none"/>
+    </g>
+
+    <!-- Flamenco geométrico: un círculo y una curva -->
+    <g id="flamingo-geo" fill="none" stroke="currentColor" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="106" cy="150" r="44"/>
+      <path d="M136 118 C150 96 126 86 126 60 C126 42 140 32 154 34 C166 36 172 46 168 55 C164 63 155 64 149 59"/>
+      <path d="M106 194 L106 232"/>
+      <path d="M168 54 L184 62 C179 70 169 70 164 64 Z" fill="currentColor" stroke-width="1.4"/>
+      <circle cx="155" cy="46" r="1.9" fill="currentColor" stroke="none"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- ============ PORTADA ============ -->
+<div class="page cover">
+  <div class="eyebrow">Flamingo Yacht Club · Puerto Banús</div>
+  <h1>Treinta caminos<br>para una misma marca.</h1>
+  <div class="sub">Seis familias de identidad — del emblema náutico clásico al minimalismo contemporáneo — dibujadas para convivir con la fotografía, la web y la flota del club.</div>
+  <div class="instr">Elige tus 3 favoritas</div>
+</div>
+
+<!-- ============ FAMILIA A — el logo del cliente, refinado ============ -->
+<div class="page">
+  <div class="phead"><span class="fam">A</span><span class="ftitle">El flamenco, refinado</span><span class="fdesc">La composición original del club, redibujada: trazo más fino, ondas serenas y color contenido.</span></div>
+  <div class="grid">
+
+    <div class="cell"><div class="num">01<span>tinta</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="88" viewBox="0 0 200 250"><use href="#flamingo-full"/><g transform="translate(-11,208) scale(0.93)"><use href="#waves"/></g></svg>
+        <div class="fl-serif" style="font-size:6.6mm;margin-top:3mm">Flamingo</div>
+        <div class="yc-rules"><i></i><div class="yc-serif">Yacht Club</div><i></i></div>
+        <div class="powered">Powered by Marina Marbella</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">02<span>rosa empolvado</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="88" viewBox="0 0 200 250"><g style="color:var(--rosa)"><use href="#flamingo-full"/></g><g transform="translate(-11,208) scale(0.93)"><use href="#waves"/></g></svg>
+        <div class="fl-serif" style="font-size:6.6mm;margin-top:3mm">Flamingo</div>
+        <div class="yc-rules"><i></i><div class="yc-serif">Yacht Club</div><i></i></div>
+        <div class="powered">Powered by Marina Marbella</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">03<span>tipografía web</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="82" viewBox="0 0 200 250"><use href="#flamingo-full"/><g transform="translate(-11,208) scale(0.93)"><use href="#waves"/></g></svg>
+        <div class="fl-mont" style="font-size:6.2mm;margin-top:3.4mm">Flamingo</div>
+        <div class="yc-mont">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">04<span>sin ondas</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="84" viewBox="0 0 200 245"><use href="#flamingo-full"/></svg>
+        <div class="fl-serif" style="font-size:6.8mm;margin-top:2mm">Flamingo</div>
+        <div class="boxed">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">05<span>horizontal navbar</span></div>
+      <div class="card light"><div class="lk-row">
+        <svg width="52" viewBox="0 0 200 250"><g style="color:var(--rosa)"><use href="#flamingo-full"/></g><g transform="translate(-11,208) scale(0.93)"><use href="#waves"/></g></svg>
+        <div class="col">
+          <div class="fl-serif" style="font-size:6mm">Flamingo</div>
+          <div class="yc-serif" style="margin-top:2mm;letter-spacing:.3em">Yacht Club</div>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+  <div class="pfoot"><span>Familia A · 01–05</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
+</div>
+
+<!-- ============ FAMILIA B — wordmark tipográfico ============ -->
+<div class="page">
+  <div class="phead"><span class="fam">B</span><span class="ftitle">Palabra pura</span><span class="fdesc">Sin símbolo: la marca es la tipografía. Máxima sobriedad, estilo De Antonio / Riva.</span></div>
+  <div class="grid">
+
+    <div class="cell"><div class="num">06<span>actual refinado</span></div>
+      <div class="card light"><div class="lk">
+        <div class="fl-mont">Flamingo</div>
+        <div class="yc-mont">Yacht Club</div>
+        <div class="powered">Powered by Marina Marbella</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">07<span>serif editorial</span></div>
+      <div class="card light"><div class="lk">
+        <div class="fl-serif">Flamingo</div>
+        <div class="yc-rules"><i></i><div class="yc-serif">Yacht Club</div><i></i></div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">08<span>extraligera</span></div>
+      <div class="card light"><div class="lk">
+        <div class="fl-manro">Flamingo</div>
+        <div class="yc-manro">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">09<span>apilado con filete</span></div>
+      <div class="card light"><div class="lk">
+        <div class="fl-mont" style="font-size:6.8mm">Flamingo</div>
+        <div class="rule"></div>
+        <div class="yc-manro" style="margin-top:0">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">10<span>caja espaciada</span></div>
+      <div class="card light"><div class="lk">
+        <div class="fl-serif-b" style="font-size:7.4mm">Flamingo</div>
+        <div class="boxed">Yacht Club · Puerto Banús</div>
+      </div></div>
+    </div>
+
+  </div>
+  <div class="pfoot"><span>Familia B · 06–10</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
+</div>
+
+<!-- ============ FAMILIA C — flamenco reinterpretado ============ -->
+<div class="page">
+  <div class="phead"><span class="fam">C</span><span class="ftitle">El flamenco, reinterpretado</span><span class="fdesc">El pájaro como marca gráfica contemporánea: una línea, una curva, una geometría.</span></div>
+  <div class="grid">
+
+    <div class="cell"><div class="num">11<span>una sola línea</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="80" viewBox="0 0 220 245"><use href="#flamingo-line"/></svg>
+        <div class="yc-manro" style="margin-top:3mm">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">12<span>la curva del cuello</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="72" viewBox="0 0 200 230"><use href="#flamingo-head"/></svg>
+        <div class="fl-serif" style="font-size:5.4mm;margin-top:3mm">Flamingo</div>
+        <div class="yc-manro">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">13<span>geométrico</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="76" viewBox="0 0 220 245"><use href="#flamingo-geo"/></svg>
+        <div class="yc-manro" style="margin-top:3mm">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">14<span>en negativo</span></div>
+      <div class="card light"><div class="lk">
+        <div style="background:var(--ink);color:var(--bone);width:34mm;height:34mm;display:flex;align-items:center;justify-content:center">
+          <svg width="66" viewBox="0 0 200 250"><use href="#flamingo-full"/></svg>
+        </div>
+        <div class="yc-manro" style="margin-top:3.2mm;color:var(--ink)">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">15<span>sobre la ola</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="86" viewBox="0 0 240 250">
+          <g transform="translate(20,0)"><use href="#flamingo-line"/></g>
+          <g transform="translate(0,214)"><use href="#waves"/></g>
+        </svg>
+        <div class="yc-manro" style="margin-top:2.6mm">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+  </div>
+  <div class="pfoot"><span>Familia C · 11–15</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
+</div>
+
+<!-- ============ FAMILIA D — emblemas náuticos ============ -->
+<div class="page">
+  <div class="phead"><span class="fam">D</span><span class="ftitle">Emblema náutico</span><span class="fdesc">Sello, escudo y banderín: la tradición de los clubes náuticos, en clave sobria.</span></div>
+  <div class="grid">
+
+    <div class="cell"><div class="num">16<span>sello circular</span></div>
+      <div class="card light">
+        <svg width="118" viewBox="0 0 220 220">
+          <defs><path id="circ" d="M110 28 a82 82 0 1 1 -0.01 0"/></defs>
+          <circle cx="110" cy="110" r="104" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          <circle cx="110" cy="110" r="60" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <text style="font-family:'Manrope';font-weight:600;font-size:13px;letter-spacing:.24em" fill="currentColor">
+            <textPath href="#circ" startOffset="0">FLAMINGO YACHT CLUB · PUERTO BANÚS ·</textPath>
+          </text>
+          <g transform="translate(62,58) scale(0.46)"><use href="#flamingo-head"/></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="cell"><div class="num">17<span>escudo</span></div>
+      <div class="card light">
+        <svg width="92" viewBox="0 0 200 240">
+          <path d="M30 24 H170 V120 C170 172 140 202 100 218 C60 202 30 172 30 120 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+          <g transform="translate(40,42) scale(0.6)"><use href="#flamingo-full"/></g>
+          <text x="100" y="196" text-anchor="middle" style="font-family:'Montserrat';font-weight:900;font-size:26px;letter-spacing:.14em" fill="currentColor">FYC</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="cell"><div class="num">18<span>burgee</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="104" viewBox="0 0 260 160">
+          <path d="M14 20 L246 80 L14 140 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M14 20 L14 140" stroke="currentColor" stroke-width="7"/>
+          <g transform="translate(30,28) scale(0.42)"><use href="#flamingo-full"/></g>
+        </svg>
+        <div class="yc-manro" style="margin-top:2.6mm">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">19<span>rombo</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="86" viewBox="0 0 220 220">
+          <path d="M110 8 L212 110 L110 212 L8 110 Z" fill="none" stroke="currentColor" stroke-width="3.6"/>
+          <text x="110" y="103" text-anchor="middle" style="font-family:'Cormorant Garamond';font-weight:500;font-size:52px;letter-spacing:.08em" fill="currentColor">FYC</text>
+          <g transform="translate(50,120) scale(0.5)"><use href="#waves"/></g>
+        </svg>
+        <div class="yc-manro" style="margin-top:2.6mm">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">20<span>monograma</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="88" viewBox="0 0 220 170">
+          <text x="52" y="120" text-anchor="middle" style="font-family:'Cormorant Garamond';font-weight:400;font-size:105px" fill="currentColor" opacity="0.9">F</text>
+          <text x="110" y="120" text-anchor="middle" style="font-family:'Cormorant Garamond';font-weight:400;font-size:105px" fill="currentColor" opacity="0.5">Y</text>
+          <text x="168" y="120" text-anchor="middle" style="font-family:'Cormorant Garamond';font-weight:400;font-size:105px" fill="currentColor" opacity="0.9">C</text>
+        </svg>
+        <div class="yc-manro" style="margin-top:2mm">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+  </div>
+  <div class="pfoot"><span>Familia D · 16–20</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
+</div>
+
+<!-- ============ FAMILIA E — lockups ============ -->
+<div class="page">
+  <div class="phead"><span class="fam">E</span><span class="ftitle">Símbolo + palabra</span><span class="fdesc">El flamenco y el nombre trabajando juntos, en horizontal y en vertical.</span></div>
+  <div class="grid">
+
+    <div class="cell"><div class="num">21<span>en fila</span></div>
+      <div class="card light"><div class="lk-row">
+        <svg width="40" viewBox="0 0 200 245"><use href="#flamingo-full"/></svg>
+        <div class="col">
+          <div class="fl-mont" style="font-size:5.6mm">Flamingo</div>
+          <div class="yc-mont" style="font-size:2.5mm">Yacht Club</div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">22<span>apilado compacto</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="58" viewBox="0 0 200 230"><use href="#flamingo-head"/></svg>
+        <div class="fl-mont" style="font-size:5.6mm;margin-top:3mm">Flamingo</div>
+        <div class="yc-mont" style="font-size:2.5mm">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">23<span>en la O</span></div>
+      <div class="card light"><div class="lk">
+        <div style="display:flex;align-items:baseline;white-space:nowrap">
+          <span class="fl-serif" style="font-size:6.6mm;letter-spacing:.1em;padding-left:0">FLAMING</span>
+          <svg width="24" viewBox="0 0 220 220" style="transform:translateY(2px)">
+            <circle cx="110" cy="110" r="96" fill="none" stroke="currentColor" stroke-width="8"/>
+            <g transform="translate(48,40) scale(0.6)"><use href="#flamingo-head"/></g>
+          </svg>
+        </div>
+        <div class="yc-rules"><i></i><div class="yc-serif">Yacht Club</div><i></i></div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">24<span>con lema</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="66" viewBox="0 0 220 245"><use href="#flamingo-line"/></svg>
+        <div class="fl-manro" style="font-size:5.2mm;margin-top:3mm">Flamingo</div>
+        <div class="yc-manro">Yacht Club</div>
+        <div class="powered">Powered by Marina Marbella</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">25<span>navbar ancho</span></div>
+      <div class="card light"><div class="lk-row">
+        <svg width="34" viewBox="0 0 200 230"><use href="#flamingo-head"/></svg>
+        <div class="col">
+          <div class="fl-manro" style="font-size:4.6mm;letter-spacing:.28em">Flamingo</div>
+          <div class="yc-manro" style="font-size:2.3mm;margin-top:1.8mm">Yacht Club · Puerto Banús</div>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+  <div class="pfoot"><span>Familia E · 21–25</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
+</div>
+
+<!-- ============ FAMILIA F — familia rosa ============ -->
+<div class="page">
+  <div class="phead"><span class="fam">F</span><span class="ftitle">El rosa, bien llevado</span><span class="fdesc">Rosa empolvado — presente pero elegante, pensado para convivir con la fotografía del club.</span></div>
+  <div class="grid">
+
+    <div class="cell"><div class="num">26<span>flamenco rosa</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="84" viewBox="0 0 200 245"><g style="color:var(--rosa)"><use href="#flamingo-full"/></g></svg>
+        <div class="fl-mont" style="font-size:5.8mm;margin-top:3mm">Flamingo</div>
+        <div class="yc-mont" style="font-size:2.5mm">Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">27<span>línea rosa</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="78" viewBox="0 0 220 245"><g style="color:var(--rosa)"><use href="#flamingo-line"/></g></svg>
+        <div class="yc-manro" style="margin-top:3mm">Flamingo Yacht Club</div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">28<span>serif + acento</span></div>
+      <div class="card light"><div class="lk">
+        <div class="fl-serif">Flamingo</div>
+        <div class="yc-rules"><i style="background:var(--rosa);opacity:1"></i><div class="yc-serif" style="color:var(--rosa)">Yacht Club</div><i style="background:var(--rosa);opacity:1"></i></div>
+      </div></div>
+    </div>
+
+    <div class="cell"><div class="num">29<span>sello rosa</span></div>
+      <div class="card light">
+        <svg width="112" viewBox="0 0 220 220" style="color:var(--rosa)">
+          <defs><path id="circ2" d="M110 28 a82 82 0 1 1 -0.01 0"/></defs>
+          <circle cx="110" cy="110" r="104" fill="none" stroke="currentColor" stroke-width="2.4"/>
+          <circle cx="110" cy="110" r="60" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <text style="font-family:'Manrope';font-weight:600;font-size:13px;letter-spacing:.24em" fill="var(--ink)">
+            <textPath href="#circ2" startOffset="0">FLAMINGO YACHT CLUB · PUERTO BANÚS ·</textPath>
+          </text>
+          <g transform="translate(62,58) scale(0.46)"><use href="#flamingo-head"/></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="cell"><div class="num">30<span>cabeza rosa</span></div>
+      <div class="card light"><div class="lk">
+        <svg width="70" viewBox="0 0 200 230"><g style="color:var(--rosa)"><use href="#flamingo-head"/></g></svg>
+        <div class="fl-serif" style="font-size:5.6mm;margin-top:3mm">Flamingo</div>
+        <div class="yc-manro">Yacht Club</div>
+      </div></div>
+    </div>
+
+  </div>
+  <div class="pfoot"><span>Familia F · 26–30</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
+</div>
+
+<!-- ============ CONTEXTO ============ -->
+<div class="page">
+  <div class="phead"><span class="fam">+</span><span class="ftitle">En su sitio</span><span class="fdesc">Los candidatos sobre la web real del club — así se ve cada opción en el primer segundo de visita.</span></div>
+  <div class="ctx-grid">
+
+    <div class="ctx" style="background-image:url('../../public/images/hero-final.jpg')">
+      <div class="shade"></div>
+      <div class="bar"><div class="lk" style="color:#fff">
+        <div class="fl-mont" style="font-size:5mm">Flamingo</div>
+        <div class="yc-mont" style="font-size:2.2mm">Yacht Club</div>
+      </div></div>
+      <div class="tag">Logo actual de la web</div>
+    </div>
+
+    <div class="ctx" style="background-image:url('../../public/images/hero-final.jpg')">
+      <div class="shade"></div>
+      <div class="bar"><div class="lk" style="color:#fff">
+        <svg width="34" viewBox="0 0 200 250"><g style="color:var(--magenta)"><use href="#flamingo-full"/></g><g transform="translate(-11,208) scale(0.93)"><use href="#waves"/></g></svg>
+        <div class="fl-serif" style="font-size:4.6mm;margin-top:1.6mm">Flamingo</div>
+        <div class="yc-rules" style="margin-top:1.6mm"><i></i><div class="yc-serif" style="font-size:2.6mm">Yacht Club</div><i></i></div>
+      </div></div>
+      <div class="tag">Logo propuesto por el club (tal cual)</div>
+    </div>
+
+    <div class="ctx" style="background-image:url('../../public/images/hero-final.jpg')">
+      <div class="shade"></div>
+      <div class="bar"><div class="lk" style="color:#fff">
+        <svg width="34" viewBox="0 0 200 250"><use href="#flamingo-full"/><g transform="translate(-11,208) scale(0.93)"><use href="#waves"/></g></svg>
+        <div class="fl-serif" style="font-size:4.6mm;margin-top:1.6mm">Flamingo</div>
+        <div class="yc-rules" style="margin-top:1.6mm"><i></i><div class="yc-serif" style="font-size:2.6mm">Yacht Club</div><i></i></div>
+      </div></div>
+      <div class="tag">Nº 01 — mismo logo, en tinta</div>
+    </div>
+
+    <div class="ctx" style="background-image:url('../../public/images/hero-final.jpg')">
+      <div class="shade"></div>
+      <div class="bar"><div class="lk" style="color:#fff">
+        <svg width="34" viewBox="0 0 200 250"><g style="color:var(--rosa)"><use href="#flamingo-full"/></g><g transform="translate(-11,208) scale(0.93)"><use href="#waves"/></g></svg>
+        <div class="fl-serif" style="font-size:4.6mm;margin-top:1.6mm">Flamingo</div>
+        <div class="yc-rules" style="margin-top:1.6mm"><i></i><div class="yc-serif" style="font-size:2.6mm">Yacht Club</div><i></i></div>
+      </div></div>
+      <div class="tag">Nº 02 — mismo logo, rosa empolvado</div>
+    </div>
+
+  </div>
+  <div class="pfoot"><span>Comparativa en contexto</span><span>Flamingo Yacht Club — propuestas de identidad</span></div>
+</div>
+
+<script>
+  // ?only=N — aísla una página (para capturas de revisión)
+  const only = new URLSearchParams(location.search).get('only');
+  if (only !== null) {
+    document.querySelectorAll('.page').forEach((p, i) => {
+      if (String(i) !== only) p.style.display = 'none';
+    });
+  }
+
+  // Clona cada tarjeta clara en su versión oscura (mismo logo, tinta invertida)
+  document.querySelectorAll('.grid .cell').forEach((cell) => {
+    const light = cell.querySelector('.card.light');
+    if (!light) return;
+    const dark = light.cloneNode(true);
+    dark.classList.remove('light');
+    dark.classList.add('dark');
+    cell.appendChild(dark);
+  });
+</script>
+</body>
+</html>
