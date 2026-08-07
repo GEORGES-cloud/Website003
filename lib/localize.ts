@@ -1,6 +1,6 @@
 import { fleet, testimonials, ACTIVE_BOAT_SLUGS } from './data';
 import type { Boat } from './data';
-import { tiers, faqs, routes, stats } from './content';
+import { tiers, faqs, routes, stats, milestones } from './content';
 import { legal } from './legal';
 import type { LegalDoc } from './legal';
 import sv from './strings/sv.json';
@@ -17,6 +17,7 @@ interface Strings {
   faqs?: { q?: string; a?: string }[];
   routes?: { name?: string; desc?: string }[];
   stats?: { label?: string }[];
+  milestones?: { title?: string; desc?: string }[];
   legal?: Partial<Record<Doc, LegalDoc>>;
 }
 
@@ -128,6 +129,15 @@ export function getStats(locale: string) {
     value: s.value,
     suffix: s.suffix,
     label: pick(locale, s.label, s.labelEn, extra[locale]?.stats?.[i]?.label),
+  }));
+}
+
+export function getMilestones(locale: string) {
+  return milestones.map((m, i) => ({
+    year: m.year,
+    highlight: m.highlight,
+    title: pick(locale, m.title, m.titleEn, extra[locale]?.milestones?.[i]?.title),
+    desc: pick(locale, m.desc, m.descEn, extra[locale]?.milestones?.[i]?.desc),
   }));
 }
 

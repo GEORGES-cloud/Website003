@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import HeroOffset from '@/components/HeroOffset';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
+import MilestonesTimeline from '@/components/MilestonesTimeline';
 import CTAFinal from '@/components/CTAFinal';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -11,7 +12,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   return { title: t('title'), description: t('description') };
 }
 
-export default function NosotrosPage() {
+export default function NosotrosPage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('about');
   const tc = useTranslations('home.cta');
 
@@ -78,6 +79,14 @@ export default function NosotrosPage() {
           </div>
         </div>
       </section>
+
+      {/* La historia que avala al club: de Marina Marbella (1965) a Flamingo */}
+      <MilestonesTimeline
+        locale={locale}
+        eyebrow={t('history.eyebrow')}
+        title={t('history.title')}
+        intro={t('history.intro')}
+      />
 
       {/* Values */}
       <section className="py-24 md:py-36 bg-sand">

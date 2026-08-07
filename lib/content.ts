@@ -153,3 +153,70 @@ export const stats: Stat[] = [
   { value: 40, suffix: ' NM', label: 'De costa a tu alcance', labelEn: 'Of coastline within reach' },
   { value: 1, label: 'Puerto: Banús, Marbella', labelEn: 'Home port: Banús, Marbella' },
 ];
+
+export interface Milestone {
+  /** Año del hito — no se traduce. */
+  year: string;
+  title: string;
+  titleEn: string;
+  desc: string;
+  descEn: string;
+  /** Marca el hito de Flamingo: se destaca como cierre de la línea. */
+  highlight?: boolean;
+}
+
+/* La historia que avala al club: seis décadas de Marina Marbella (fuente:
+   marinamarbella.net/nuestra-historia) desembocando en Flamingo Yacht Club.
+   El orden del array es la clave de traducción en lib/strings/*.json. */
+export const milestones: Milestone[] = [
+  {
+    year: '1965',
+    title: 'Dos hermanos y un galeón',
+    titleEn: 'Two brothers and a galleon',
+    desc: 'Lars y Göran Sundberg llegan desde Suecia navegando en un galeón de 1920 y fundan Marina Auto junto a Puerto Banús. Empieza todo.',
+    descEn: 'Lars and Göran Sundberg sail in from Sweden aboard a 1920 galleon and found Marina Auto beside Puerto Banús. Everything starts here.',
+  },
+  {
+    year: '1967',
+    title: 'La primera instalación náutica de Marbella',
+    titleEn: 'Marbella’s first nautical facility',
+    desc: 'Se construye el primer centro náutico de la ciudad. La Costa del Sol empieza a mirar al mar de otra manera.',
+    descEn: 'The city’s first marine centre is built. The Costa del Sol starts to look at the sea differently.',
+  },
+  {
+    year: '1982',
+    title: 'Varadero, astillero y Puerto Banús',
+    titleEn: 'Dry dock, shipyard and Puerto Banús',
+    desc: 'Nace el varadero del puerto de Marbella, con capacidad para más de 600 embarcaciones de 6 a 30 metros, y la oficina de Puerto Banús: la casa que aún hoy mantiene nuestra flota.',
+    descEn: 'The Marbella dry dock opens — room for over 600 boats from 6 to 30 metres — along with the Puerto Banús office: the home that still maintains our fleet today.',
+  },
+  {
+    year: '1991',
+    title: 'El mar no entiende de fronteras',
+    titleEn: 'The sea knows no borders',
+    desc: 'Inglaterra, Portugal, Marruecos y Baleares. La compañía cruza fronteras sin moverse de su puerto base.',
+    descEn: 'England, Portugal, Morocco and the Balearics. The company crosses borders without ever leaving its home port.',
+  },
+  {
+    year: '2005',
+    title: 'Cuarenta años y un puerto nuevo',
+    titleEn: 'Forty years and a new marina',
+    desc: 'Marina Marbella celebra su 40 aniversario y levanta un nuevo puerto y centro de servicio en Setúbal, Portugal.',
+    descEn: 'Marina Marbella celebrates its 40th anniversary and builds a new marina and service centre in Setúbal, Portugal.',
+  },
+  {
+    year: '2017',
+    title: 'Cinco países, dos continentes',
+    titleEn: 'Five countries, two continents',
+    desc: 'Veinte puntos de venta, catorce centros de servicio y tres puertos deportivos. Referente náutico europeo.',
+    descEn: 'Twenty sales points, fourteen service centres and three marinas. A European benchmark in boating.',
+  },
+  {
+    year: '2026',
+    title: 'Nace Flamingo Yacht Club',
+    titleEn: 'Flamingo Yacht Club is born',
+    desc: 'Lotta Sundberg, hija de Göran, abre la segunda generación con una idea sencilla: disfrutar del mar sin comprar barco. Una membresía, la flota lista y sesenta años de oficio detrás.',
+    descEn: 'Lotta Sundberg, Göran’s daughter, opens the second generation with a simple idea: enjoy the sea without buying a boat. One membership, the fleet ready, and sixty years of craft behind it.',
+    highlight: true,
+  },
+];

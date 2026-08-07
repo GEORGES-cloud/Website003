@@ -246,5 +246,35 @@
         }
       ]
     }
-  }
+  },
+  "milestones": [
+    {
+      "title": "Deux frères et un galion",
+      "desc": "Lars et Göran Sundberg arrivent de Suède à bord d’un galion de 1920 et fondent Marina Auto près de Puerto Banús. Tout commence ici."
+    },
+    {
+      "title": "La première installation nautique de Marbella",
+      "desc": "Le premier centre nautique de la ville voit le jour. La Costa del Sol commence à regarder la mer autrement."
+    },
+    {
+      "title": "Cale sèche, chantier et Puerto Banús",
+      "desc": "La cale sèche du port de Marbella ouvre — de la place pour plus de 600 bateaux de 6 à 30 mètres — avec le bureau de Puerto Banús : la maison qui entretient encore notre flotte aujourd’hui."
+    },
+    {
+      "title": "La mer ignore les frontières",
+      "desc": "Angleterre, Portugal, Maroc et Baléares. L’entreprise franchit les frontières sans quitter son port d’attache."
+    },
+    {
+      "title": "Quarante ans et un nouveau port",
+      "desc": "Marina Marbella fête ses 40 ans et construit un nouveau port et centre de service à Setúbal, au Portugal."
+    },
+    {
+      "title": "Cinq pays, deux continents",
+      "desc": "Vingt points de vente, quatorze centres de service et trois ports de plaisance. Une référence nautique européenne."
+    },
+    {
+      "title": "Naissance du Flamingo Yacht Club",
+      "desc": "Lotta Sundberg, fille de Göran, ouvre la deuxième génération avec une idée simple : profiter de la mer sans acheter de bateau. Une adhésion, la flotte prête et soixante ans de métier derrière."
+    }
+  ]
 }

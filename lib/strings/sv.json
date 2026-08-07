@@ -246,5 +246,35 @@
         }
       ]
     }
-  }
+  },
+  "milestones": [
+    {
+      "title": "Två bröder och en galeon",
+      "desc": "Lars och Göran Sundberg seglar in från Sverige ombord på en galeon från 1920 och grundar Marina Auto intill Puerto Banús. Allt börjar här."
+    },
+    {
+      "title": "Marbellas första båtanläggning",
+      "desc": "Stadens första marina center byggs. Costa del Sol börjar se på havet med andra ögon."
+    },
+    {
+      "title": "Torrdocka, varv och Puerto Banús",
+      "desc": "Torrdockan i Marbellas hamn öppnar – plats för över 600 båtar mellan 6 och 30 meter – tillsammans med kontoret i Puerto Banús: hemmet som än i dag sköter vår flotta."
+    },
+    {
+      "title": "Havet känner inga gränser",
+      "desc": "England, Portugal, Marocko och Balearerna. Företaget korsar gränser utan att lämna sin hemmahamn."
+    },
+    {
+      "title": "Fyrtio år och en ny hamn",
+      "desc": "Marina Marbella firar 40 år och bygger en ny hamn och ett servicecenter i Setúbal, Portugal."
+    },
+    {
+      "title": "Fem länder, två kontinenter",
+      "desc": "Tjugo försäljningsställen, fjorton servicecenter och tre marinor. Ett europeiskt riktmärke inom båtliv."
+    },
+    {
+      "title": "Flamingo Yacht Club föds",
+      "desc": "Lotta Sundberg, Görans dotter, inleder andra generationen med en enkel idé: njut av havet utan att köpa båt. Ett medlemskap, flottan redo och sextio års hantverk bakom sig."
+    }
+  ]
 }

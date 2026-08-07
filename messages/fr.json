@@ -425,6 +425,11 @@
         "title": "Simplicité",
         "desc": "Réservez en quelques minutes. Aucune paperasse, aucune surprise."
       }
+    },
+    "history": {
+      "eyebrow": "Notre histoire",
+      "title": "Soixante ans de mer. Une nouvelle façon de la naviguer.",
+      "intro": "Flamingo ne part pas de zéro : le club naît au sein de Marina Marbella, la maison qui prend soin des bateaux sur cette côte depuis 1965. Voici la ligne qui relie ce galion suédois à votre prochaine sortie."
     }
   },
   "contact": {

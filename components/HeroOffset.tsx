@@ -15,20 +15,23 @@ interface HeroOffsetAllProps extends HeroOffsetProps {
   imagePosition?: string;
 }
 
-/* Hero editorial con solape: retrato 3/4 anclado a la derecha y el titular
+/* Hero editorial con solape: retrato anclado a la derecha y el titular
    entrando por encima desde la izquierda. Mucho blanco. En móvil colapsa a
-   texto → foto. En lg la foto toma su alto de la fila (inset-y-0 + aspect):
-   nunca invade la navbar ni se recorta contra el pb. */
+   texto → foto.
+   En lg el ancho de la foto es un porcentaje fijo (38%) y NO se deriva de su
+   alto: con aspect-[3/4] + w-auto, un titular largo alargaba la fila, la fila
+   ensanchaba la foto y la foto se comía el texto (bucle de realimentación).
+   El texto ocupa el 56% restante, así que nunca colisionan. */
 export default function HeroOffset({ eyebrow, title, subtitle, image, imagePosition = 'center', slides }: HeroOffsetAllProps) {
   return (
     <section className="pt-[calc(var(--header-h)+3rem)] pb-16 md:pb-24 bg-bone overflow-hidden">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <div className="relative lg:min-h-[72svh] flex flex-col justify-center">
-          <div className="relative z-10 lg:max-w-[72%]">
+          <div className="relative z-10 lg:max-w-[56%]">
             <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
             <h1
-              className="display text-ink whitespace-pre-line animate-hero animate-hero-d1"
-              style={{ fontSize: 'clamp(2.75rem, 6vw, 5.5rem)' }}
+              className="display text-ink text-balance whitespace-pre-line animate-hero animate-hero-d1"
+              style={{ fontSize: 'clamp(2.5rem, 5vw, 4.75rem)' }}
             >
               {title}
             </h1>
@@ -38,7 +41,7 @@ export default function HeroOffset({ eyebrow, title, subtitle, image, imagePosit
               </p>
             )}
           </div>
-          <div className="relative mt-12 w-full sm:w-2/3 aspect-[3/4] lg:absolute lg:right-0 lg:inset-y-0 lg:mt-0 lg:w-auto overflow-hidden bg-sand">
+          <div className="relative mt-12 w-full sm:w-2/3 aspect-[3/4] lg:absolute lg:right-0 lg:inset-y-0 lg:mt-0 lg:w-[38%] lg:aspect-auto overflow-hidden bg-sand">
             {slides && slides.length > 1 ? (
               <MediaSlideshow
                 slides={slides}
