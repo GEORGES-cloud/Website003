@@ -76,7 +76,7 @@ export const fleet: Boat[] = [
     videoPoster: '/images/blue-video-poster.jpg',
     // Galería abundante: navegación, vida a bordo, detalle y puerto (sin cascos rojos)
     gallery: [
-      '/images/searay-1.jpg',
+      '/images/blue-stern-friends.jpg',
       '/images/blue-cockpit-friends.jpg',
       '/images/helm-empty.jpg',
       '/images/blue-overhead-anchor.jpg',
@@ -112,8 +112,16 @@ export const fleet: Boat[] = [
       maxSpeed: '42 kn',
       engines: '2 × Mercury V8 Verado 300 CV',
     },
-    // Perfil de la T30 navegando, T-top abierto (press oficial NAVAN)
+    // Tarjeta con pase de fotos: perfil navegando, cala, isla y baño.
+    // Exclusivas de la tarjeta — ninguna se repite en la galería ni en la home.
     image: '/images/navan-glide.jpg',
+    slides: [
+      '/images/navan-glide.jpg',
+      '/images/navan-slide-cove.jpg',
+      '/images/navan-slide-run.jpg',
+      '/images/navan-slide-island.jpg',
+      '/images/navan-slide-split.jpg',
+    ],
     // Hero de ficha: cenital dron sobre cala turquesa (sesión MILEOVISION)
     heroImage: '/images/navan-aerial.jpg',
     // Solo material del T-top abierto: fuera las fotos de la C30 con cabina
@@ -156,22 +164,27 @@ export const fleet: Boat[] = [
       beam: '3.90 m',
       maxSpeed: '35 kn',
     },
-    // El 43ST navegando 3/4 sobre marino (foto oficial Level)
+    // Tarjeta con pase de fotos: navegando, fondeada, cenital y terraza de popa.
     image: '/images/level-running.jpg',
-    // Hero de ficha: cenital con doble estela simétrica
-    heroImage: '/images/level-aerial-run.jpg',
-    // Galería ampliada con el material oficial Level (sin level-2)
-    gallery: [
+    slides: [
+      '/images/level-running.jpg',
       '/images/level-1.jpg',
       '/images/level-aerial-anchor.jpg',
-      '/images/fleet-level.jpg',
       '/images/level-terrace.jpg',
+    ],
+    // Hero de ficha: cenital con doble estela simétrica
+    heroImage: '/images/level-aerial-run.jpg',
+    // Galería con el resto del material oficial Level: sin repetir ninguna de
+    // las de la tarjeta (el fabricante solo ha entregado ~13 fotos en total).
+    gallery: [
       '/images/level-3.jpg',
       '/images/level-deck-table.jpg',
       '/images/level-5.jpg',
       '/images/level-cockpit.jpg',
       '/images/level-sunpad.jpg',
       '/images/level-4.jpg',
+      '/images/level-2.jpg',
+      '/images/fleet-level.jpg',
     ],
   },
   {
