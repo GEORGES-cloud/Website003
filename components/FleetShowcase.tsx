@@ -5,6 +5,7 @@ import { getActiveFleet } from '@/lib/localize';
 import ParallaxImage from './ParallaxImage';
 import ScrollReveal from './ScrollReveal';
 import ImageReveal from './ImageReveal';
+import MediaSlideshow from './MediaSlideshow';
 
 /* Presentación editorial de la flota: una pieza a gran formato por barco.
    La foto entra con cortina (ImageReveal) y responde al hover con un zoom
@@ -43,14 +44,22 @@ export default function FleetShowcase({ locale }: { locale: string }) {
                 >
                   <div className="absolute inset-0 transition-transform duration-[1400ms] ease-smooth group-hover:scale-[1.035] will-change-transform">
                     {/* alt vacío: el Link ya se anuncia con aria-label={boat.name} */}
-                    <ParallaxImage
-                      src={boat.image}
-                      alt=""
-                      strength={36}
-                      priority={i === 0}
-                      sizes="(max-width: 1024px) 100vw, 58vw"
-                      className="absolute inset-0"
-                    />
+                    {boat.slides && boat.slides.length > 1 ? (
+                      <MediaSlideshow
+                        slides={boat.slides.map((src) => ({ src }))}
+                        priority={i === 0}
+                        sizes="(max-width: 1024px) 100vw, 58vw"
+                      />
+                    ) : (
+                      <ParallaxImage
+                        src={boat.image}
+                        alt=""
+                        strength={36}
+                        priority={i === 0}
+                        sizes="(max-width: 1024px) 100vw, 58vw"
+                        className="absolute inset-0"
+                      />
+                    )}
                   </div>
                   <div
                     aria-hidden

@@ -17,6 +17,8 @@ export interface Boat {
     engines?: string;
   };
   image: string;
+  /** Pase de fotos de la tarjeta de flota (crossfade tipo vídeo). Si falta, foto única. */
+  slides?: string[];
   /** Foto propia del hero de la ficha (si falta, la ficha usa image). */
   heroImage?: string;
   /** Vídeo oficial del barco para la banda cinematográfica de la ficha. */
@@ -57,8 +59,16 @@ export const fleet: Boat[] = [
       maxSpeed: '35 kn',
       engines: 'Mercury FourStroke · 200 CV',
     },
-    // Perfil oficial del SPX 210 azul (campaña Sea Ray, alta resolución)
-    image: '/images/blue-profile.jpg',
+    // La tarjeta de flota pasa a ser un pase de fotos: navegando al atardecer,
+    // fondeada en cala, cenital, saliendo de la cala y baño con el barco al fondo.
+    image: '/images/blue-sunset-run.jpg',
+    slides: [
+      '/images/blue-sunset-run.jpg',
+      '/images/blue-cliff-cove.jpg',
+      '/images/blue-cove-aerial.jpg',
+      '/images/blue-cove-run.jpg',
+      '/images/blue-swim-split.jpg',
+    ],
     // Hero de ficha: el barco azul real fondeado en cala turquesa
     heroImage: '/images/blue-cove.jpg',
     // Vídeo oficial SPX 210 (Mandelieu, Costa Azul) — 720p sin audio, autoplay silencioso

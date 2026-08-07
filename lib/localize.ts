@@ -44,6 +44,7 @@ export interface LocalBoat {
   year: number;
   specs: Boat['specs'];
   image: string;
+  slides?: string[];
   heroImage?: string;
   video?: string;
   videoPoster?: string;
@@ -62,6 +63,7 @@ export function getFleet(locale: string): LocalBoat[] {
     year: b.year,
     specs: b.specs,
     image: b.image,
+    slides: b.slides,
     heroImage: b.heroImage,
     video: b.video,
     videoPoster: b.videoPoster,
