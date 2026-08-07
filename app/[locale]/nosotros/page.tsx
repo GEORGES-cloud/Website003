@@ -57,7 +57,7 @@ export default function NosotrosPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal direction="right">
               <ParallaxImage
-                src="/images/fleet-navan.jpg"
+                src="/images/navan-shade.jpg"
                 alt="Navegando por el Mediterráneo"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}

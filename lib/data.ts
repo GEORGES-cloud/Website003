@@ -35,7 +35,7 @@ export interface Testimonial {
 
 // The boats currently active in the club. Edit this list to show/hide boats
 // (the rest stay hidden but in the data).
-export const ACTIVE_BOAT_SLUGS = ['sea-ray-spx-210', 'navan-c30', 'level-43st'];
+export const ACTIVE_BOAT_SLUGS = ['sea-ray-spx-210', 'navan-t30', 'level-43st'];
 
 export const fleet: Boat[] = [
   {
@@ -83,9 +83,9 @@ export const fleet: Boat[] = [
     ],
   },
   {
-    slug: 'navan-c30',
-    name: 'NAVAN C30',
-    shortName: 'C30',
+    slug: 'navan-t30',
+    name: 'NAVAN T30',
+    shortName: 'T30',
     lengthM: '9.4 m',
     capacity: 8,
     // TODO confirmar specs con el cliente (motorización/año/capacidad provisionales)
@@ -93,19 +93,20 @@ export const fleet: Boat[] = [
     tagline: 'Carácter nórdico para llegar más lejos.',
     taglineEn: 'Nordic character, built to go further.',
     description:
-      'La NAVAN C30 es nuestra aventurera nórdica: un walkaround robusto y marinero con T-top, cabina para descansar o cambiarse y dos Mercury V8 que la convierten en la elección perfecta para jornadas largas. Costa de Marbella, calas de aguas transparentes, paddle surf y baños fuera de temporada: con la C30, el Mediterráneo se hace grande.',
+      'La NAVAN T30 es nuestra aventurera nórdica: un walkaround robusto y marinero con T-top abierto, cubierta despejada de proa a popa y dos Mercury V8 que la convierten en la elección perfecta para jornadas largas. Costa de Marbella, calas de aguas transparentes, paddle surf y baños al atardecer: con la T30, el Mediterráneo se hace grande.',
     descriptionEn:
-      'The NAVAN C30 is our Nordic adventurer: a rugged, seaworthy walkaround with a T-top, a cabin to rest or change in and twin Mercury V8s that make her the perfect choice for long days out. The Marbella coastline, crystal-clear coves, paddleboarding and off-season swims — aboard the C30, the Mediterranean gets bigger.',
+      'The NAVAN T30 is our Nordic adventurer: a rugged, seaworthy walkaround with an open T-top, a clear deck from bow to stern and twin Mercury V8s that make her the perfect choice for long days out. The Marbella coastline, crystal-clear coves, paddleboarding and sunset swims — aboard the T30, the Mediterranean gets bigger.',
     specs: {
       length: '9.35 m',
       beam: '2.95 m',
       maxSpeed: '42 kn',
       engines: '2 × Mercury V8 Verado 300 CV',
     },
-    // Perfil puro de la C30 sobre agua plana (press oficial NAVAN)
-    image: '/images/navan-onwater.jpg',
-    // Hero de ficha: cenital dron de la C30 (sesión MILEOVISION)
+    // Perfil de la T30 navegando, T-top abierto (press oficial NAVAN)
+    image: '/images/navan-glide.jpg',
+    // Hero de ficha: cenital dron sobre cala turquesa (sesión MILEOVISION)
     heroImage: '/images/navan-aerial.jpg',
+    // Solo material del T-top abierto: fuera las fotos de la C30 con cabina
     gallery: [
       '/images/navan-1.jpg',
       '/images/navan-dive.jpg',
@@ -115,14 +116,14 @@ export const fleet: Boat[] = [
       '/images/navan-helm.jpg',
       '/images/navan-4.jpg',
       '/images/navan-leather.jpg',
-      '/images/navan-clearcove.jpg',
+      '/images/navan-vertical.jpg',
       '/images/navan-6.jpg',
       '/images/navan-fish.jpg',
       '/images/navan-engines.jpg',
       '/images/navan-beach.jpg',
       '/images/navan-8.jpg',
       '/images/navan-shade.jpg',
-      '/images/navan-glide.jpg',
+      '/images/navan-ttop-helm.jpg',
       '/images/navan-splitwater.jpg',
     ],
   },

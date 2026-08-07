@@ -25,6 +25,12 @@ const nextConfig = {
         destination: '/:locale/puerto-base',
         permanent: true,
       },
+      // El barco del club es la T30 (T-top abierto), no la C30 de cabina.
+      {
+        source: '/:locale(es|en|sv|ru|de|fr)/flota/navan-c30',
+        destination: '/:locale/flota/navan-t30',
+        permanent: true,
+      },
     ];
   },
 };

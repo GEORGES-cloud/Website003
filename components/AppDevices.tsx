@@ -16,7 +16,7 @@ function DashboardMock() {
   const days = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
   const rows = [
     { name: 'Blue · SPX 210', blocks: [{ c: 'bg-sea/80', s: 1, w: 2 }, { c: 'bg-sea-light/70', s: 4, w: 1 }] },
-    { name: 'NAVAN C30', blocks: [{ c: 'bg-sea-light/70', s: 2, w: 2 }, { c: 'bg-sea/80', s: 5, w: 2 }] },
+    { name: 'NAVAN T30', blocks: [{ c: 'bg-sea-light/70', s: 2, w: 2 }, { c: 'bg-sea/80', s: 5, w: 2 }] },
     { name: 'Level 43ST', blocks: [{ c: 'bg-sea/60', s: 1, w: 1 }, { c: 'bg-sea-light/60', s: 3, w: 3 }] },
   ];
   return (
