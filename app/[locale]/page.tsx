@@ -15,10 +15,12 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
   return (
     <>
-      <HeroVideo />
+      {/* Abre el manifiesto con el metraje real del SPX; el vídeo panorámico
+          pasa a segundo golpe de vista. El logo queda sobre el fondo claro,
+          donde el flamenco y la serif se leen mejor que sobre agua brillante. */}
+      <ClubManifesto locale={locale} asHero />
 
-      {/* Club manifesto — real SPX footage + brand narrative (was a 2nd full-screen video) */}
-      <ClubManifesto locale={locale} />
+      <HeroVideo showHeading={false} navbarOnDark={false} />
 
       <Stats locale={locale} />
 

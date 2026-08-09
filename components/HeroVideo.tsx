@@ -9,6 +9,10 @@ interface HeroVideoProps {
   poster?: string;
   /** Render the sr-only <h1> (top hero only — avoid duplicating it). */
   showHeading?: boolean;
+  /** Pide a la barra que arranque en blanco. Solo vale si esta sección abre la
+   *  página: la Navbar busca la marca en todo el documento, así que dejarla
+   *  puesta más abajo teñía la barra de blanco sobre un fondo claro. */
+  navbarOnDark?: boolean;
   /** Height utility class. Defaults to a full-viewport hero. */
   heightClass?: string;
 }
@@ -17,6 +21,7 @@ export default function HeroVideo({
   src = '/videos/hero.mp4',
   poster = '/images/hero-poster.jpg',
   showHeading = true,
+  navbarOnDark = true,
   heightClass = 'h-[100svh] min-h-[640px]',
 }: HeroVideoProps) {
   const ref = useRef<HTMLElement>(null);
@@ -26,7 +31,11 @@ export default function HeroVideo({
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.08]);
 
   return (
-    <section ref={ref} data-navbar-on-dark className={`relative w-full overflow-hidden bg-ink ${heightClass}`}>
+    <section
+      ref={ref}
+      data-navbar-on-dark={navbarOnDark || undefined}
+      className={`relative w-full overflow-hidden bg-ink ${heightClass}`}
+    >
       {/* Main heading kept for SEO/a11y; the visible brand lives in the header lockup (Wally-style). */}
       {showHeading && (
         <h1 className="sr-only">Flamingo Yacht Club — Club náutico de membresía en Puerto Banús, Marbella</h1>
