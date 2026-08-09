@@ -15,9 +15,9 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 
   return (
     <>
-      {/* Hero: el metraje del SPX a pantalla completa con el lockup en grande.
-          El plano en movimiento baja al split del manifiesto. */}
-      <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" showLogo />
+      {/* Hero: el metraje del SPX a pantalla completa, sin texto ni lockup —
+          la marca la lleva la barra. El plano en movimiento baja al split. */}
+      <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" />
 
       <ClubManifesto locale={locale} />
 

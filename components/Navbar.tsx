@@ -24,30 +24,51 @@ const MENU_LABEL: Record<string, string> = {
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
- * Logo del cliente en la barra (variante SVG sin tagline). Se apilan las dos
- * tintas y se alterna su opacidad: ambas quedan cargadas de inicio, así el
- * cambio blanco→tinta al hacer scroll es un fundido limpio, sin parpadeo.
+ * Logo del cliente en la barra, en horizontal: flamenco a la izquierda y
+ * logotipo al lado. El lockup original es apilado (bird arriba, texto debajo),
+ * y dentro de una barra de 88 px eso dejaba el "FLAMINGO" en ~10 px. Puesto en
+ * fila, el mismo alto de barra permite un logotipo bastante mayor.
+ *
+ * Cada pieza va en dos tintas superpuestas alternando opacidad: ambas quedan
+ * cargadas de inicio, así el cambio blanco→tinta al hacer scroll es un fundido
+ * limpio, sin parpadeo.
  */
-function BrandLogo({ white, className = '' }: { white: boolean; className?: string }) {
+function LogoPart({
+  name,
+  white,
+  alt,
+  className,
+}: {
+  name: 'mark' | 'word';
+  white: boolean;
+  alt: string;
+  className: string;
+}) {
   return (
-    <span className={`relative block w-[104px] md:w-[124px] ${className}`}>
+    <span className={`relative block ${className}`}>
       {/* eslint-disable @next/next/no-img-element */}
       <img
-        src="/brand/logo-nav.svg"
-        alt="Flamingo Yacht Club"
-        width={2823}
-        height={1481}
-        className={`block w-full h-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
+        src={`/brand/logo-${name}.svg`}
+        alt={alt}
+        className={`block h-full w-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
       />
       <img
-        src="/brand/logo-nav-white.svg"
+        src={`/brand/logo-${name}-white.svg`}
         alt=""
         aria-hidden
-        width={2823}
-        height={1481}
-        className={`absolute inset-0 w-full h-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute inset-0 h-full w-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
       />
       {/* eslint-enable @next/next/no-img-element */}
+    </span>
+  );
+}
+
+function BrandLogo({ white, className = '' }: { white: boolean; className?: string }) {
+  return (
+    <span className={`flex items-center gap-2.5 md:gap-3.5 h-[38px] md:h-[54px] ${className}`}>
+      <LogoPart name="mark" white={white} alt="" className="h-full" />
+      {/* El logotipo a ~58% del alto: alinea su masa óptica con el flamenco */}
+      <LogoPart name="word" white={white} alt="Flamingo Yacht Club" className="h-[58%]" />
     </span>
   );
 }

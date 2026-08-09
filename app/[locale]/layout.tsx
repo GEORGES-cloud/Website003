@@ -9,6 +9,7 @@ import JsonLd from '@/components/JsonLd';
 import CookieBanner from '@/components/CookieBanner';
 import DiscountQuiz from '@/components/DiscountQuiz';
 import FloatingContact from '@/components/FloatingContact';
+import SeaConditions from '@/components/SeaConditions';
 import SmoothScroll from '@/components/SmoothScroll';
 import ScrollProgress from '@/components/ScrollProgress';
 import JoinFunnelProvider from '@/components/JoinFunnelProvider';
@@ -92,6 +93,7 @@ export default async function LocaleLayout({
             <main id="main">{children}</main>
             <Footer locale={locale} />
             <FloatingContact locale={locale} />
+            <SeaConditions locale={locale} />
             <CookieBanner locale={locale} />
             <DiscountQuiz locale={locale} />
             <JoinFunnel locale={locale} />
