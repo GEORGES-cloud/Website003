@@ -26,12 +26,14 @@ export default function FlotaPage({ params: { locale } }: { params: { locale: st
 
       <FleetShowcase locale={locale} />
 
+      {/* Fondo monocromo: estela circular sobre azul profundo, gráfico y
+          sin distracciones detrás del texto. */}
       <CTAFinal
         eyebrow={th('eyebrow')}
         title={th('title')}
         description={th('description')}
         button={th('button')}
-        image="/images/level-1.jpg"
+        image="/images/reel-wake-loop.jpg"
       />
     </>
   );

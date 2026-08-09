@@ -91,12 +91,14 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
       {/* Reachable destinations (reused) */}
       <Destinations locale={locale} />
 
+      {/* Fondo monocromo: solo textura de agua, sin sujeto — el titular
+          respira y encaja con la línea minimal del club. */}
       <CTAFinal
         eyebrow={tc('eyebrow')}
         title={tc('title')}
         description={tc('description')}
         button={tc('button')}
-        image="/images/life-6.jpg"
+        image="/images/reel-teal-water.jpg"
       />
     </>
   );
