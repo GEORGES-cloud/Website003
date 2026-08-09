@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import RevealText from './RevealText';
 
 interface PageHeroProps {
   eyebrow: string;
@@ -20,10 +21,10 @@ export default function PageHero({ eyebrow, title, subtitle, image, meta }: Page
         <div className="relative h-full max-w-[1480px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-16 md:pb-20">
           <p className="eyebrow-invert mb-5 animate-hero">{eyebrow}</p>
           <h1
-            className="display text-white max-w-3xl whitespace-pre-line animate-hero animate-hero-d1 display-1"
+            className="display text-white max-w-3xl display-1"
           >
-            {title}
-          </h1>
+          <RevealText>{title}</RevealText>
+        </h1>
           {subtitle && (
             <p className="font-sans text-lg text-white/75 max-w-xl leading-relaxed mt-6 animate-hero animate-hero-d2">
               {subtitle}
@@ -47,9 +48,9 @@ export default function PageHero({ eyebrow, title, subtitle, image, meta }: Page
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
         <h1
-          className="display text-ink max-w-3xl whitespace-pre-line animate-hero animate-hero-d1 display-xl"
+          className="display text-ink max-w-3xl display-xl"
         >
-          {title}
+          <RevealText>{title}</RevealText>
         </h1>
         {subtitle && (
           <p className="font-sans text-lg text-muted max-w-xl leading-relaxed mt-7 animate-hero animate-hero-d2">

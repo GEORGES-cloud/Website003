@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import MediaSlideshow, { type Slide } from './MediaSlideshow';
+import RevealText from './RevealText';
 
 interface HeroOffsetProps {
   eyebrow: string;
@@ -30,10 +31,10 @@ export default function HeroOffset({ eyebrow, title, subtitle, image, imagePosit
           <div className="relative z-10 lg:max-w-[56%]">
             <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
             <h1
-              className="display text-ink text-balance whitespace-pre-line animate-hero animate-hero-d1 display-1"
+              className="display text-ink text-balance display-1"
             >
-              {title}
-            </h1>
+          <RevealText>{title}</RevealText>
+        </h1>
             {subtitle && (
               <p className="font-sans text-lg text-muted max-w-lg leading-relaxed mt-7 animate-hero animate-hero-d2">
                 {subtitle}

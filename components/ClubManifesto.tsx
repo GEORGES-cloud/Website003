@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from './ScrollReveal';
+import RevealText from './RevealText';
 
 /* Editorial split: real Sea Ray SPX footage on one side, the club manifesto on
    the other. Replaces the second full-screen hero video — gives the home the
@@ -33,11 +34,9 @@ export default function ClubManifesto({ locale }: { locale: string }) {
             <ScrollReveal>
               <p className="eyebrow mb-6">{t('eyebrow')}</p>
             </ScrollReveal>
-            <ScrollReveal delay={0.1}>
               <h2 className="display text-ink mb-8 display-2">
-                {t('title')}
+                <RevealText delay={0.1}>{t('title')}</RevealText>
               </h2>
-            </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="font-sans text-lg text-muted leading-relaxed">{t('p1')}</p>
             </ScrollReveal>

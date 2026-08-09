@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from './ScrollReveal';
 import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
+import RevealText from './RevealText';
 
 /* Cinematic editorial split: full-bleed photography instead of device mockups.
    The app story is told in copy; the imagery stays on-brand (sea, not screens). */
@@ -32,11 +33,9 @@ export default function AppShowcase() {
             <ScrollReveal>
               <p className="eyebrow mb-6">{t('eyebrow')}</p>
             </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <h2 className="display text-ink mb-7 display-2">
-                {t('titleLead')} {t('titleAccent')}
-              </h2>
-            </ScrollReveal>
+            <h2 className="display text-ink mb-7 display-2">
+              <RevealText delay={0.08}>{`${t('titleLead')} ${t('titleAccent')}`}</RevealText>
+            </h2>
             <ScrollReveal delay={0.2}>
               <p className="font-sans text-lg text-muted leading-relaxed mb-12 max-w-md">{t('description')}</p>
             </ScrollReveal>

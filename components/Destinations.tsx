@@ -1,5 +1,6 @@
 import { getRoutes } from '@/lib/localize';
 import ScrollReveal from './ScrollReveal';
+import RevealText from './RevealText';
 
 const COPY: Record<string, { eyebrow: string; title: string; subtitle: string; distance: string; time: string }> = {
   es: { eyebrow: 'Desde Puerto Banús', title: 'El Mediterráneo, a tu alcance', subtitle: 'Calas escondidas, puertos con encanto y travesías de día. Todo empieza en el corazón de Marbella.', distance: 'Distancia', time: 'Tiempo' },
@@ -21,11 +22,9 @@ export default function Destinations({ locale }: { locale: string }) {
           <ScrollReveal>
             <p className="eyebrow mb-5">{copy.eyebrow}</p>
           </ScrollReveal>
-          <ScrollReveal delay={0.1}>
             <h2 className="display text-ink mb-6 display-2">
-              {copy.title}
+              <RevealText delay={0.1}>{copy.title}</RevealText>
             </h2>
-          </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="font-sans text-lg text-muted leading-relaxed">{copy.subtitle}</p>
           </ScrollReveal>

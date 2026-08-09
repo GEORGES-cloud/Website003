@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import ScrollReveal from './ScrollReveal';
 import ParallaxImage from './ParallaxImage';
+import RevealText from './RevealText';
 
 interface MembershipPitchProps {
   eyebrow: string;
@@ -39,11 +40,9 @@ export default function MembershipPitch({ eyebrow, title, description, cta, loca
             <ScrollReveal>
               <p className="eyebrow mb-6">{eyebrow}</p>
             </ScrollReveal>
-            <ScrollReveal delay={0.1}>
               <h2 className="display text-ink mb-8 display-2">
-                {title}
+                <RevealText delay={0.1}>{title}</RevealText>
               </h2>
-            </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="font-sans text-lg text-muted leading-relaxed mb-10 max-w-md">{description}</p>
             </ScrollReveal>

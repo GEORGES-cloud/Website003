@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import MediaSlideshow, { type Slide } from './MediaSlideshow';
+import RevealText from './RevealText';
 
 interface HeroQuietProps {
   eyebrow: string;
@@ -21,10 +22,10 @@ export default function HeroQuiet({ eyebrow, title, subtitle, image, slides }: H
           <div className="md:col-span-7">
             <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
             <h1
-              className="display text-ink whitespace-pre-line animate-hero animate-hero-d1 display-1"
+              className="display text-ink display-1"
             >
-              {title}
-            </h1>
+          <RevealText>{title}</RevealText>
+        </h1>
             {subtitle && (
               <p className="font-sans text-lg text-muted max-w-xl leading-relaxed mt-7 animate-hero animate-hero-d2">
                 {subtitle}

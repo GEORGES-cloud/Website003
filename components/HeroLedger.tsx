@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import ImageReveal from './ImageReveal';
 import MediaSlideshow, { type Slide } from './MediaSlideshow';
+import RevealText from './RevealText';
 
 interface Fact {
   value: string;
@@ -27,9 +28,9 @@ export default function HeroLedger({ eyebrow, title, subtitle, image, facts, sli
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
         <h1
-          className="display text-ink max-w-4xl whitespace-pre-line animate-hero animate-hero-d1 display-xl"
+          className="display text-ink max-w-4xl display-xl"
         >
-          {title}
+          <RevealText>{title}</RevealText>
         </h1>
         {subtitle && (
           <p className="font-sans text-lg text-muted max-w-xl leading-relaxed mt-7 animate-hero animate-hero-d2">

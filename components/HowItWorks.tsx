@@ -1,4 +1,5 @@
 import ScrollReveal from './ScrollReveal';
+import RevealText from './RevealText';
 
 interface Step {
   number: string;
@@ -21,11 +22,9 @@ export default function HowItWorks({ eyebrow, title, steps }: HowItWorksProps) {
           <ScrollReveal>
             <p className="eyebrow mb-4">{eyebrow}</p>
           </ScrollReveal>
-          <ScrollReveal delay={0.1}>
             <h2 className="display text-ink display-2">
-              {title}
+              <RevealText delay={0.1}>{title}</RevealText>
             </h2>
-          </ScrollReveal>
         </div>
 
         {/* Steps */}

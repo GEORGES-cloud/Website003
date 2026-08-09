@@ -1,26 +1,17 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
-import {
-  AnimatePresence,
-  motion,
-  useMotionValueEvent,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { getMilestones } from '@/lib/localize';
 import { FlamingoMark } from './Logo';
+import ScrollReveal from './ScrollReveal';
+import RevealText from './RevealText';
 
-/* Sesenta años de Marina Marbella contados como una travesía: la sección se
-   fija en pantalla y el scroll vertical desplaza los hitos en horizontal, con
-   el año detrás en gran formato. Fondo tinta — un corte oscuro entre dos
-   secciones claras de /nosotros. El último hito (Flamingo) cierra en rosa de
-   marca, el único color de la paleta.
+/* Sesenta años de Marina Marbella sobre un raíl vertical que se dibuja con el
+   scroll: cada hito enciende su nodo al entrar en cuadro y el último —Flamingo—
+   cierra en el rosa de marca. Fondo tinta: un corte oscuro en /nosotros. */
 
-   Con prefers-reduced-motion o en móvil no hay fijado: los mismos hitos se
-   apilan en vertical sobre el mismo fondo. */
-
-const EASE = [0.22, 1, 0.36, 1] as const;
+// El raíl va en el centro de la columna de nodos: 44px → 22px, 64px → 32px.
+const RAIL_LEFT = 'left-[22px] md:left-[32px]';
 
 interface Milestone {
   year: string;
@@ -29,69 +20,49 @@ interface Milestone {
   highlight?: boolean;
 }
 
-function Panel({
-  m,
-  i,
-  total,
-  active,
-  stacked = false,
-}: {
-  m: Milestone;
-  i: number;
-  total: number;
-  active: boolean;
-  stacked?: boolean;
-}) {
+function MilestoneRow({ m, reduce }: { m: Milestone; reduce: boolean }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: false, margin: '-30% 0px -40% 0px' });
+  const active = reduce || inView;
   const accent = m.highlight;
+
   return (
-    <li
-      className={
-        stacked
-          ? 'relative border-t border-white/15 pt-8'
-          : 'relative flex-none w-[74vw] lg:w-[42vw] xl:w-[34vw] border-t border-white/15 pt-9'
-      }
+    <div
+      ref={ref}
+      className="relative grid grid-cols-[44px_1fr] md:grid-cols-[64px_1fr] gap-5 md:gap-9 pb-16 md:pb-24 last:pb-0"
     >
-      {/* Índice + regla, como un pie de lámina editorial */}
-      <div className="flex items-center gap-4 mb-7">
+      {/* Nodo sobre el raíl — el hito de Flamingo lleva anillo doble en rosa */}
+      <div className="relative flex justify-center pt-3 md:pt-4">
         <span
-          className={`display-num text-[11px] transition-colors duration-700 ${
-            accent ? 'text-flamingo' : active ? 'text-white/70' : 'text-white/30'
+          className={`relative z-10 block rounded-full transition-all duration-500 ${
+            accent
+              ? 'h-4 w-4 bg-flamingo ring-[6px] ring-flamingo/25'
+              : active
+                ? 'h-3.5 w-3.5 bg-white ring-4 ring-white/20'
+                : 'h-3 w-3 bg-ink border border-white/40'
           }`}
-        >
-          {String(i + 1).padStart(2, '0')}
-        </span>
-        <span
           aria-hidden
-          className={`h-px flex-1 transition-colors duration-700 ${
-            accent ? 'bg-flamingo/45' : active ? 'bg-white/25' : 'bg-white/10'
-          }`}
         />
-        {accent && <FlamingoMark size={30} tone="white" className="opacity-90" />}
       </div>
 
-      <span
-        className={`display-num block mb-5 transition-colors duration-700 ${
-          accent ? 'text-flamingo' : active ? 'text-white' : 'text-white/25'
-        }`}
-        style={{ fontSize: stacked ? 'clamp(2.75rem, 13vw, 4rem)' : 'clamp(3rem, 5.6vw, 5.25rem)' }}
-      >
-        {m.year}
-      </span>
-
-      <h3
-        className="display text-white mb-4 text-balance"
-        style={{ fontSize: stacked ? '1.5rem' : 'clamp(1.35rem, 1.9vw, 1.9rem)' }}
-      >
-        {m.title}
-      </h3>
-      <p className="font-sans text-base text-white/55 leading-relaxed max-w-md">{m.desc}</p>
-
-      {!stacked && (
-        <span className="sr-only">
-          Hito {i + 1} de {total}
-        </span>
-      )}
-    </li>
+      <ScrollReveal delay={0.05}>
+        <div>
+          <span
+            className={`display-num block mb-3 transition-colors duration-500 ${
+              accent ? 'text-flamingo' : active ? 'text-white' : 'text-white/20'
+            }`}
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 4.25rem)' }}
+          >
+            {m.year}
+          </span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4">
+            <h3 className="display text-2xl md:text-4xl text-white">{m.title}</h3>
+            {accent && <FlamingoMark size={30} tone="white" className="opacity-90" />}
+          </div>
+          <p className="font-sans text-base md:text-lg text-white/55 leading-relaxed max-w-md">{m.desc}</p>
+        </div>
+      </ScrollReveal>
+    </div>
   );
 }
 
@@ -107,152 +78,62 @@ export default function MilestonesTimeline({
   title: string;
   intro?: string;
   /** Abre la página en lugar de un hero: deja sitio a la barra fija y le pide
-   *  que arranque en blanco (data-navbar-on-dark). */
+   *  a la barra que arranque en blanco (data-navbar-on-dark). */
   asHero?: boolean;
 }) {
   const reduce = useReducedMotion() ?? false;
+  const railRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: railRef, offset: ['start center', 'end center'] });
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const dotTop = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
   const items = getMilestones(locale) as Milestone[];
-
-  const trackRef = useRef<HTMLOListElement>(null);
-  const stageRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [travel, setTravel] = useState(0);
-  const [active, setActive] = useState(0);
-
-  // Recorrido horizontal real = ancho del carril menos el del escenario.
-  // Se mide tras el montaje y en cada resize; hasta entonces el carril no viaja.
-  useEffect(() => {
-    const measure = () => {
-      if (!trackRef.current || !stageRef.current) return;
-      setTravel(Math.max(0, trackRef.current.scrollWidth - stageRef.current.clientWidth));
-    };
-    measure();
-    window.addEventListener('resize', measure);
-    const ro = new ResizeObserver(measure);
-    if (trackRef.current) ro.observe(trackRef.current);
-    return () => {
-      window.removeEventListener('resize', measure);
-      ro.disconnect();
-    };
-  }, [items.length]);
-
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] });
-  const x = useTransform(scrollYProgress, [0, 1], [0, -travel]);
-  const railScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
-  useMotionValueEvent(scrollYProgress, 'change', (v) => {
-    const i = Math.round(v * (items.length - 1));
-    setActive(Math.min(items.length - 1, Math.max(0, i)));
-  });
 
   // Abriendo la página, el titular de la sección es el h1 del documento.
   const Heading = asHero ? 'h1' : 'h2';
-  const header = (
-    <div className="max-w-[1480px] mx-auto px-6 md:px-10">
-      <div className="max-w-2xl">
-        <p className="eyebrow-invert mb-5">{eyebrow}</p>
-        <Heading
-          className="display text-white text-balance"
-          style={{ fontSize: asHero ? 'clamp(2.5rem, 5.5vw, 4.75rem)' : 'clamp(2rem, 4.5vw, 3.75rem)' }}
-        >
-          {title}
-        </Heading>
-        {intro && <p className="font-sans text-lg text-white/55 leading-relaxed mt-7">{intro}</p>}
-      </div>
-    </div>
-  );
-
-  // Apilado — móvil y prefers-reduced-motion
-  const stacked = (
-    <section
-      data-navbar-on-dark={asHero || undefined}
-      className={`bg-ink pb-24 md:pb-32 ${asHero ? 'pt-[calc(var(--header-h)+3.5rem)]' : 'pt-24 md:pt-32'} ${
-        reduce ? '' : 'md:hidden'
-      }`}
-    >
-      {header}
-      <ol className="max-w-[1480px] mx-auto px-6 md:px-10 mt-14 md:mt-16 space-y-12">
-        {items.map((m, i) => (
-          <Panel key={m.year} m={m} i={i} total={items.length} active stacked />
-        ))}
-      </ol>
-    </section>
-  );
-
-  if (reduce) return stacked;
 
   return (
-    <>
-      {stacked}
-
-      {/* Travesía horizontal fijada al scroll — desde md */}
-      <section
-        data-navbar-on-dark={asHero || undefined}
-        className="hidden md:block bg-ink"
-        aria-label={title}
-      >
-        {/* La cabecera entra con el scroll normal; el fijado empieza después,
-            así el panel fijo solo carga carril y raíl y cabe en cualquier alto. */}
-        <div className={`pb-4 ${asHero ? 'pt-[calc(var(--header-h)+4rem)]' : 'pt-24 lg:pt-32'}`}>
-          {header}
+    <section
+      data-navbar-on-dark={asHero || undefined}
+      className={`bg-ink overflow-hidden pb-24 md:pb-36 ${
+        asHero ? 'pt-[calc(var(--header-h)+4rem)]' : 'pt-24 md:pt-36'
+      }`}
+    >
+      <div className="max-w-[1480px] mx-auto px-6 md:px-10">
+        <div className="max-w-2xl section-head">
+          <ScrollReveal>
+            <p className="eyebrow-invert mb-5">{eyebrow}</p>
+          </ScrollReveal>
+          <Heading className={`display text-white text-balance ${asHero ? 'display-1' : 'display-2'}`}>
+            <RevealText delay={0.08}>{title}</RevealText>
+          </Heading>
+          {intro && (
+            <ScrollReveal delay={0.2}>
+              <p className="font-sans text-lg text-white/55 leading-relaxed mt-7">{intro}</p>
+            </ScrollReveal>
+          )}
         </div>
 
-        <div ref={sectionRef} style={{ height: `${Math.max(240, items.length * 58)}vh` }}>
-          <div ref={stageRef} className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
-            {/* Año en gran formato al fondo: marca de agua que cambia con el hito */}
-            <AnimatePresence mode="popLayout">
-              <motion.span
-                key={items[active].year}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 0.05, y: 0 }}
-                exit={{ opacity: 0, y: -24 }}
-                transition={{ duration: 0.7, ease: EASE }}
-                aria-hidden
-                className="display-num pointer-events-none absolute -bottom-[8vh] right-[3vw] leading-none text-white select-none"
-                style={{ fontSize: '34vw' }}
-              >
-                {items[active].year}
-              </motion.span>
-            </AnimatePresence>
+        <div ref={railRef} className="relative max-w-3xl">
+          {/* Raíl estático */}
+          <div className={`absolute ${RAIL_LEFT} top-2 bottom-2 w-px bg-white/15`} aria-hidden />
+          {/* Raíl que se dibuja con el scroll */}
+          <motion.div
+            className={`absolute ${RAIL_LEFT} top-2 bottom-2 w-px bg-white/70 origin-top`}
+            style={{ scaleY: reduce ? 1 : scaleY }}
+            aria-hidden
+          />
+          {/* Punto guía */}
+          <motion.span
+            className={`absolute ${RAIL_LEFT} h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-white shadow-[0_0_0_4px_rgba(255,255,255,0.15)]`}
+            style={{ top: dotTop, opacity: reduce ? 0 : 1 }}
+            aria-hidden
+          />
 
-            {/* Carril */}
-            <motion.ol
-              ref={trackRef}
-              style={{ x }}
-              className="relative flex items-start gap-10 lg:gap-16 pl-6 md:pl-10 pr-[24vw] will-change-transform"
-            >
-              {items.map((m, i) => (
-                <Panel key={m.year} m={m} i={i} total={items.length} active={i === active} />
-              ))}
-            </motion.ol>
-
-            {/* Raíl de progreso con los años como marcas */}
-            <div className="absolute inset-x-0 bottom-0 pb-10">
-              <div className="max-w-[1480px] mx-auto px-6 md:px-10">
-                <div className="relative h-px bg-white/15">
-                  <motion.div
-                    className="absolute inset-y-0 left-0 w-full bg-white/60 origin-left"
-                    style={{ scaleX: railScale }}
-                    aria-hidden
-                  />
-                </div>
-                <div className="flex justify-between mt-4">
-                  {items.map((m, i) => (
-                    <span
-                      key={m.year}
-                      className={`display-num text-[10px] transition-colors duration-500 ${
-                        i === active ? (m.highlight ? 'text-flamingo' : 'text-white') : 'text-white/25'
-                      }`}
-                    >
-                      {m.year}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          {items.map((m) => (
+            <MilestoneRow key={m.year} m={m} reduce={reduce} />
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

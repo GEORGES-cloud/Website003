@@ -1,6 +1,7 @@
 import ScrollReveal from './ScrollReveal';
 import JoinCTA from './JoinCTA';
 import ParallaxImage from './ParallaxImage';
+import RevealText from './RevealText';
 
 interface CTAFinalProps {
   eyebrow: string;
@@ -45,11 +46,9 @@ export default function CTAFinal({
         <ScrollReveal>
           <p className="eyebrow-invert mb-7">{eyebrow}</p>
         </ScrollReveal>
-        <ScrollReveal delay={0.1}>
           <h2 className="display text-white mb-8 display-1">
-            {title}
+            <RevealText delay={0.1}>{title}</RevealText>
           </h2>
-        </ScrollReveal>
         <ScrollReveal delay={0.2}>
           <p className="font-sans text-lg text-white/70 mb-12 max-w-lg mx-auto leading-relaxed">{description}</p>
         </ScrollReveal>

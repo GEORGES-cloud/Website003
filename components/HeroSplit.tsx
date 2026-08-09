@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import MediaSlideshow, { type Slide } from './MediaSlideshow';
+import RevealText from './RevealText';
 
 interface HeroSplitProps {
   eyebrow: string;
@@ -22,10 +23,10 @@ export default function HeroSplit({ eyebrow, title, subtitle, image, slides }: H
         <div className="md:w-1/2 md:pr-12 lg:pr-16 py-14 md:py-20 md:min-h-[80svh] flex flex-col justify-center">
           <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
           <h1
-            className="display text-ink whitespace-pre-line animate-hero animate-hero-d1 display-1"
+            className="display text-ink display-1"
           >
-            {title}
-          </h1>
+          <RevealText>{title}</RevealText>
+        </h1>
           {subtitle && (
             <p className="font-sans text-lg text-muted max-w-lg leading-relaxed mt-7 animate-hero animate-hero-d2">
               {subtitle}

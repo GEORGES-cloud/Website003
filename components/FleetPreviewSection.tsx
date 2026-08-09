@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { getActiveFleet } from '@/lib/localize';
 import ScrollReveal from './ScrollReveal';
+import RevealText from './RevealText';
 
 interface FleetPreviewSectionProps {
   eyebrow: string;
@@ -23,11 +24,9 @@ export default function FleetPreviewSection({ eyebrow, title, viewAll, locale }:
           <ScrollReveal>
             <p className="eyebrow mb-4">{eyebrow}</p>
           </ScrollReveal>
-          <ScrollReveal delay={0.1}>
             <h2 className="display text-ink display-2">
-              {title}
+              <RevealText delay={0.1}>{title}</RevealText>
             </h2>
-          </ScrollReveal>
         </div>
         <ScrollReveal delay={0.15}>
           <Link href={`/${locale}/flota`} className="link-underline hidden md:inline-flex">

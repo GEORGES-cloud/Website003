@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { getTiers } from '@/lib/localize';
 import ScrollReveal from './ScrollReveal';
 import JoinCTA from './JoinCTA';
+import RevealText from './RevealText';
 
 /* Single membership, no pricing shown for now. The card reads name-less on
    purpose — the section heading introduces it ("La membresía"). */
@@ -16,11 +17,9 @@ export default function MembershipTiers({ locale }: { locale: string }) {
           <ScrollReveal>
             <p className="eyebrow mb-5">{t('eyebrow')}</p>
           </ScrollReveal>
-          <ScrollReveal delay={0.1}>
             <h2 className="display text-ink display-2">
-              {t('title')}
+              <RevealText delay={0.1}>{t('title')}</RevealText>
             </h2>
-          </ScrollReveal>
         </div>
 
         {/* Tarjeta "imponente": declaración en serif a la izquierda, prestaciones

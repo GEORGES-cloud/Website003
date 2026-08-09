@@ -10,6 +10,7 @@ import CookieBanner from '@/components/CookieBanner';
 import DiscountQuiz from '@/components/DiscountQuiz';
 import FloatingContact from '@/components/FloatingContact';
 import SmoothScroll from '@/components/SmoothScroll';
+import ScrollProgress from '@/components/ScrollProgress';
 import JoinFunnelProvider from '@/components/JoinFunnelProvider';
 import MotionProvider from '@/components/MotionProvider';
 import JoinFunnel from '@/components/JoinFunnel';
@@ -86,6 +87,7 @@ export default async function LocaleLayout({
           <MotionProvider>
           <JoinFunnelProvider>
             <SmoothScroll />
+            <ScrollProgress />
             <Navbar locale={locale} />
             <main id="main">{children}</main>
             <Footer locale={locale} />

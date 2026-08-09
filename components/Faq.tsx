@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { getFaqs } from '@/lib/localize';
 import ScrollReveal from './ScrollReveal';
+import RevealText from './RevealText';
 
 export default function Faq({ locale }: { locale: string }) {
   const t = useTranslations('membership.faq');
@@ -17,11 +18,9 @@ export default function Faq({ locale }: { locale: string }) {
           <ScrollReveal>
             <p className="eyebrow mb-5">{t('eyebrow')}</p>
           </ScrollReveal>
-          <ScrollReveal delay={0.1}>
             <h2 className="display text-ink display-3">
-              {t('title')}
+              <RevealText delay={0.1}>{t('title')}</RevealText>
             </h2>
-          </ScrollReveal>
         </div>
 
         <div className="divide-y divide-line border-t border-line">

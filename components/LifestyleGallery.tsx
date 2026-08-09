@@ -1,5 +1,6 @@
 import ScrollReveal from './ScrollReveal';
 import BoatGallery from './BoatGallery';
+import RevealText from './RevealText';
 
 interface LifestyleGalleryProps {
   title: string;
@@ -127,11 +128,9 @@ export default function LifestyleGallery({ title }: LifestyleGalleryProps) {
   return (
     <section className="py-24 md:py-36 bg-bone">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
-        <ScrollReveal>
           <h2 className="display text-ink section-head display-2">
-            {title}
+            <RevealText>{title}</RevealText>
           </h2>
-        </ScrollReveal>
 
         <BoatGallery images={REEL} alts={REEL_ALTS} name={title} auto />
       </div>

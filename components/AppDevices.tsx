@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from './ScrollReveal';
 import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
+import RevealText from './RevealText';
 
 /* La app del club en sus dispositivos (portátil + teléfono, maquetados en CSS).
    Rescatado del diseño original y alineado con la flota y el motion actuales. */
@@ -72,11 +73,9 @@ export default function AppDevices() {
             <ScrollReveal>
               <p className="eyebrow mb-6">{t('eyebrow')}</p>
             </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <h2 className="display text-ink mb-7 display-2">
-                {t('titleLead')} {t('titleAccent')}
-              </h2>
-            </ScrollReveal>
+            <h2 className="display text-ink mb-7 display-2">
+              <RevealText delay={0.08}>{`${t('titleLead')} ${t('titleAccent')}`}</RevealText>
+            </h2>
             <ScrollReveal delay={0.2}>
               <p className="font-sans text-lg text-muted leading-relaxed mb-12 max-w-md">{t('description')}</p>
             </ScrollReveal>
