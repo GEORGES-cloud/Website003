@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Manrope } from 'next/font/google';
-import { YachtMark } from '@/components/Logo';
+import { Manrope, Bodoni_Moda } from 'next/font/google';
+import { FlamingoMark } from '@/components/Logo';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -9,14 +9,23 @@ const manrope = Manrope({
   display: 'swap',
 });
 
+// Esta página declara su propio <html>/<body> y no pasa por app/[locale]/layout,
+// así que necesita cargar aquí la Didone de marca o el lockup caería a Times.
+const bodoni = Bodoni_Moda({
+  subsets: ['latin'],
+  axes: ['opsz'],
+  variable: '--font-display',
+  display: 'swap',
+});
+
 export default function NotFound() {
   return (
     <html lang="es">
       <body
-        className={`${manrope.variable} bg-bone text-ink antialiased min-h-screen flex items-center justify-center px-6`}
+        className={`${manrope.variable} ${bodoni.variable} bg-bone text-ink antialiased min-h-screen flex items-center justify-center px-6`}
       >
         <div className="text-center max-w-md">
-          <YachtMark size={76} className="block mx-auto mb-9 text-ink" />
+          <FlamingoMark size={92} withWaves className="block mx-auto mb-9 text-ink" />
           <p className="eyebrow mb-5">Error 404</p>
           <h1 className="display text-ink mb-5" style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)' }}>
             Mar adentro, sin rumbo.

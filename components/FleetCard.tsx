@@ -31,7 +31,7 @@ export default function FleetCard({ boat, locale, capacityLabel }: FleetCardProp
       {/* Info */}
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="font-sans text-xl font-medium text-ink group-hover:text-sea transition-colors leading-snug">
+          <h3 className="font-sans text-xl font-medium text-ink group-hover:text-flamingo-deep transition-colors leading-snug">
             {boat.name}
           </h3>
           <p className="font-sans text-sm text-muted mt-1.5">{boat.tagline}</p>

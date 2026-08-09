@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
+import Logo from './Logo';
 import { useJoinFunnel } from './JoinFunnelProvider';
 import { fleet, ACTIVE_BOAT_SLUGS } from '@/lib/data';
 
@@ -21,24 +22,8 @@ const MENU_LABEL: Record<string, string> = {
   fr: 'Menu',
 };
 
-const display = { fontFamily: 'var(--font-display), "Arial Black", Impact, sans-serif' } as const;
+const display = { fontFamily: 'var(--font-display), Didot, "Bodoni MT", Georgia, serif' } as const;
 const EASE = [0.22, 1, 0.36, 1] as const;
-
-function Wordmark({ className = '' }: { className?: string }) {
-  return (
-    <span className={`flex flex-col items-center leading-none ${className}`}>
-      <span className="font-black uppercase" style={{ ...display, fontSize: 'clamp(1rem, 2.3vw, 1.5rem)', letterSpacing: '0.03em' }}>
-        Flamingo
-      </span>
-      <span
-        className="uppercase mt-1 opacity-90"
-        style={{ ...display, fontWeight: 500, fontSize: 'clamp(0.46rem, 0.82vw, 0.58rem)', letterSpacing: '0.36em', paddingLeft: '0.36em' }}
-      >
-        Yacht Club
-      </span>
-    </span>
-  );
-}
 
 export default function Navbar({ locale }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
@@ -129,7 +114,7 @@ export default function Navbar({ locale }: NavbarProps) {
           <button
             onClick={() => setMenuOpen(true)}
             aria-label={menuLabel}
-            className={`flex items-center gap-3 transition-colors hover:text-sea ${textColor}`}
+            className={`flex items-center gap-3 transition-colors hover:text-flamingo-deep ${textColor}`}
           >
             <span className="flex flex-col gap-[5px]" aria-hidden>
               <span className={`block w-6 h-[1.5px] transition-colors ${barColor}`} />
@@ -145,9 +130,13 @@ export default function Navbar({ locale }: NavbarProps) {
           <Link
             href={`/${locale}`}
             aria-label="Flamingo Yacht Club"
-            className={`absolute left-1/2 -translate-x-1/2 transition-colors hover:text-sea ${textColor}`}
+            className={`absolute left-1/2 -translate-x-1/2 transition-colors hover:text-flamingo-deep ${textColor}`}
           >
-            <Wordmark />
+            {/* Sin flamenco: la cabecera mide 88px y el pájaro a ~26px sobre el
+                vídeo del hero se convierte en ruido. Dos tamaños en vez de un
+                clamp porque la tipografía del lockup se escala en px. */}
+            <Logo variant="wordmark" size={44} className="sm:hidden" />
+            <Logo variant="wordmark" size={54} className="hidden sm:inline-flex" />
           </Link>
 
           {/* RIGHT — language + Únete al club (abre el mismo funnel que "Hazte socio") */}
@@ -157,7 +146,7 @@ export default function Navbar({ locale }: NavbarProps) {
               type="button"
               onClick={openFunnel}
               className={`hidden sm:inline-flex items-center justify-center font-sans text-[11px] font-semibold uppercase tracking-[0.18em] px-5 py-2.5 transition-colors duration-300 ${
-                onLight ? 'bg-ink text-white hover:bg-sea' : 'bg-white text-ink hover:bg-sea hover:text-white'
+                onLight ? 'bg-ink text-white hover:bg-flamingo-deep' : 'bg-white text-ink hover:bg-flamingo-deep hover:text-white'
               }`}
             >
               {t('join')}
@@ -179,7 +168,8 @@ export default function Navbar({ locale }: NavbarProps) {
             <div className="relative flex justify-between items-center px-6 md:px-10 h-[var(--header-h)] border-b border-line">
               <span className="w-8" aria-hidden />
               <Link href={`/${locale}`} aria-label="Flamingo Yacht Club" className="absolute left-1/2 -translate-x-1/2 text-ink">
-                <Wordmark />
+                <Logo variant="wordmark" size={44} className="sm:hidden" />
+                <Logo variant="wordmark" size={54} className="hidden sm:inline-flex" />
               </Link>
               <button
                 onClick={() => setMenuOpen(false)}
@@ -220,12 +210,14 @@ export default function Navbar({ locale }: NavbarProps) {
                           className="group flex items-baseline gap-4 py-1 md:py-1.5"
                         >
                           <span
-                            className="font-display font-black uppercase leading-none text-ink group-hover:text-sea transition-colors duration-300"
-                            style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)', letterSpacing: '-0.015em' }}
+                            // Bodoni a 900 y con tracking negativo se le juntan
+                            // las serifas a 5.5rem: peso 700 y tracking a cero.
+                            className="font-display font-bold uppercase leading-none text-ink group-hover:text-flamingo-deep transition-colors duration-300"
+                            style={{ fontSize: 'clamp(2.6rem, 7vw, 5.5rem)', letterSpacing: '0' }}
                           >
                             {b.shortName ?? b.name}
                           </span>
-                          <span className="hidden sm:inline font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted group-hover:text-sea transition-colors duration-300">
+                          <span className="hidden sm:inline font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted group-hover:text-flamingo-deep transition-colors duration-300">
                             {b.name}
                           </span>
                         </Link>

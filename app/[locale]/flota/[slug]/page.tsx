@@ -130,7 +130,7 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
           <div className="mt-16">
             <Link
               href={`/${locale}/flota`}
-              className="font-sans text-[12px] font-semibold tracking-wide2 uppercase text-muted hover:text-sea transition-colors"
+              className="font-sans text-[12px] font-semibold tracking-wide2 uppercase text-muted hover:text-flamingo-deep transition-colors"
             >
               {t('backToFleet')}
             </Link>

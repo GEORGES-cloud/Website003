@@ -31,14 +31,14 @@ export default function MembershipTiers({ locale }: { locale: string }) {
             <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr]">
               {/* Statement */}
               <div className="p-8 sm:p-12 lg:p-14 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col">
-                <p className="font-sans text-[10px] font-semibold uppercase tracking-eyebrow text-sea-light mb-8">
+                <p className="font-sans text-[10px] font-semibold uppercase tracking-eyebrow text-flamingo-soft mb-8">
                   Flamingo Yacht Club
                 </p>
                 <p className="display leading-snug text-white/95" style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2.25rem)' }}>
                   {membership.tagline}
                 </p>
                 <div className="hidden lg:block mt-auto pt-12">
-                  <JoinCTA className="inline-block w-full font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-sea-light">
+                  <JoinCTA className="inline-block w-full font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-flamingo-tint">
                     {t('cta')}
                   </JoinCTA>
                 </div>
@@ -52,7 +52,7 @@ export default function MembershipTiers({ locale }: { locale: string }) {
                       key={f}
                       className="flex items-baseline gap-5 py-[15px] first:pt-0 border-b border-white/10 last:border-b-0"
                     >
-                      <span className="font-sans text-[11px] tracking-wide2 text-sea-light flex-none tabular-nums">
+                      <span className="font-sans text-[11px] tracking-wide2 text-flamingo-soft flex-none tabular-nums">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <span className="font-sans text-[15px] sm:text-base leading-snug text-white/85">{f}</span>
@@ -60,7 +60,7 @@ export default function MembershipTiers({ locale }: { locale: string }) {
                   ))}
                 </ul>
                 <div className="lg:hidden mt-10">
-                  <JoinCTA className="inline-block w-full font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-sea-light">
+                  <JoinCTA className="inline-block w-full font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-flamingo-tint">
                     {t('cta')}
                   </JoinCTA>
                 </div>

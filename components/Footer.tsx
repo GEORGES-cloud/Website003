@@ -28,9 +28,10 @@ export default function Footer({ locale }: FooterProps) {
             <Link
               href={`/${locale}`}
               aria-label="Flamingo Yacht Club"
-              className="inline-block text-white hover:text-sea-light transition-colors w-fit"
+              className="inline-block text-white hover:text-flamingo-soft transition-colors w-fit"
             >
-              <Logo layout="row" />
+              {/* Único sitio donde aparece la línea "powered by Marina Marbella". */}
+              <Logo variant="full" orientation="row" size={52} withTagline />
             </Link>
             <p className="font-sans text-sm text-white/60 mt-6 leading-relaxed max-w-xs">
               {tf('tagline')}
@@ -50,7 +51,7 @@ export default function Footer({ locale }: FooterProps) {
 
           {/* Navigation */}
           <div>
-            <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-sea-light mb-7">
+            <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-white/50 mb-7">
               {tf('explore')}
             </p>
             <ul className="space-y-3.5">
@@ -66,20 +67,20 @@ export default function Footer({ locale }: FooterProps) {
 
           {/* App */}
           <div>
-            <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-sea-light mb-7">
+            <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-white/50 mb-7">
               {tf('app')}
             </p>
             <p className="font-sans text-sm text-white/60 mb-7 leading-relaxed">{tf('appText')}</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={appStoreUrl}
-                className="inline-flex items-center justify-center font-sans text-[11px] font-semibold tracking-wide2 uppercase text-white/60 border border-white/20 px-5 py-3 hover:border-sea-light hover:text-white transition-colors"
+                className="inline-flex items-center justify-center font-sans text-[11px] font-semibold tracking-wide2 uppercase text-white/60 border border-white/20 px-5 py-3 hover:border-white/45 hover:text-white transition-colors"
               >
                 App Store
               </Link>
               <Link
                 href={playStoreUrl}
-                className="inline-flex items-center justify-center font-sans text-[11px] font-semibold tracking-wide2 uppercase text-white/60 border border-white/20 px-5 py-3 hover:border-sea-light hover:text-white transition-colors"
+                className="inline-flex items-center justify-center font-sans text-[11px] font-semibold tracking-wide2 uppercase text-white/60 border border-white/20 px-5 py-3 hover:border-white/45 hover:text-white transition-colors"
               >
                 Google Play
               </Link>

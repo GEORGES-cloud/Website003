@@ -13,7 +13,8 @@ export default function JsonLd({ locale }: { locale: string }) {
         : 'Yacht membership club in Puerto Banús, Marbella. Access a premium fleet of yachts with no compromises.',
     url: `${siteUrl}/${locale}`,
     image: `${siteUrl}/opengraph-image.jpg`,
-    logo: `${siteUrl}/logo.svg`,
+    // Google prefiere ráster con dimensiones conocidas para `logo`.
+    logo: `${siteUrl}/logo-1200.png`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Puerto Banús',

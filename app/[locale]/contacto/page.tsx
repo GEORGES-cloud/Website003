@@ -45,7 +45,7 @@ export default function ContactoPage({ params: { locale } }: { params: { locale:
                     <p className="font-sans text-xs tracking-wide2 uppercase text-muted mb-2">Email</p>
                     <a
                       href={`mailto:${t('info.email')}`}
-                      className="display text-2xl text-ink hover:text-sea transition-colors"
+                      className="display text-2xl text-ink hover:text-flamingo-deep transition-colors"
                     >
                       {t('info.email')}
                     </a>

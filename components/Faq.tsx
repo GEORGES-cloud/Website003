@@ -35,7 +35,7 @@ export default function Faq({ locale }: { locale: string }) {
                     aria-expanded={isOpen}
                     className="w-full flex items-center justify-between gap-6 py-6 text-left group"
                   >
-                    <span className="font-sans text-lg md:text-xl font-light text-ink group-hover:text-sea transition-colors">
+                    <span className="font-sans text-lg md:text-xl font-light text-ink group-hover:text-flamingo-deep transition-colors">
                       {f.q}
                     </span>
                     <span

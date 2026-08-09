@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { Manrope, Montserrat } from 'next/font/google';
+import { Manrope, Bodoni_Moda } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
@@ -22,10 +22,16 @@ const manrope = Manrope({
   display: 'swap',
 });
 
-// Display face for the brand wordmark — heavy geometric grotesque matching the logo.
-const montserrat = Montserrat({
+// Didone de marca — la serif del logotipo oficial. El eje óptico es la razón de
+// elegir Bodoni Moda y no otra: el lockup pide el corte display (serifas de
+// pelo) por encima de 40px, mientras "YACHT CLUB" a 9px y las cifras necesitan
+// el corte de texto con los finos engrosados. Una sola familia cubre los dos
+// extremos sin que se rompa el trazo.
+// Sin cirílico a propósito: la Didone no debe entrar en los titulares del
+// locale `ru` — de eso se sigue encargando Manrope.
+const bodoni = Bodoni_Moda({
   subsets: ['latin'],
-  weight: ['500', '900'],
+  axes: ['opsz'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -73,7 +79,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${manrope.variable} ${montserrat.variable} bg-bone text-ink antialiased`} suppressHydrationWarning>
+      <body className={`${manrope.variable} ${bodoni.variable} bg-bone text-ink antialiased`} suppressHydrationWarning>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-ink focus:text-white focus:px-5 focus:py-3 focus:text-sm"

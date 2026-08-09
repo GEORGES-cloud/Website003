@@ -1,79 +1,222 @@
-interface LogoProps {
-  layout?: 'row' | 'stack';
-  withTagline?: boolean;
-  className?: string; // controls color via currentColor
-}
+import {
+  BIRD_VIEWBOX,
+  FULL_VIEWBOX,
+  FLAMINGO_PATHS,
+  DETAIL_PATHS,
+  WAVE_PATHS,
+  WAVE_STROKE,
+} from './logo-paths';
 
-const display = { fontFamily: 'var(--font-display), "Arial Black", Impact, sans-serif' } as const;
+export type LogoVariant =
+  | 'full' // marca + agua + FLAMINGO + —YACHT CLUB— (+ tagline)
+  | 'compact' // marca + tipografía, sin agua ni tagline → navbar
+  | 'mark' // solo el flamenco → 404, favicon, cierre del funnel
+  | 'wordmark'; // solo tipografía → UI pequeña, mockups de app
+
+export type LogoTone =
+  | 'brand' // flamenco rosa, tipografía y agua en currentColor
+  | 'mono' // todo en currentColor (una sola tinta)
+  | 'inverse'; // todo en blanco, ignora currentColor
 
 /**
- * Brand symbol — the Flamingo Yacht Club yacht, recreated as a single-ink
- * line mark. Uses currentColor so it sits white over the hero and ink on light.
- * Swap the paths for the client's exact vectorised file when provided.
+ * El rosa entra por variable CSS y no por un fill fijo: así el `hover:text-*`
+ * del contenedor tiñe la tipografía mientras el flamenco se mantiene de marca,
+ * y `tone="mono"` colapsa las dos tintas en una sin props nuevas.
  */
-export function YachtMark({ size = 40, className = '' }: { size?: number; className?: string }) {
+const TONE_VARS: Record<LogoTone, { mark: string; className: string }> = {
+  brand: { mark: '#E81E5C', className: '' },
+  mono: { mark: 'currentColor', className: '' },
+  inverse: { mark: '#FFFFFF', className: 'text-white' },
+};
+
+interface MarkProps {
+  size?: number;
+  tone?: LogoTone;
+  withWaves?: boolean;
+  /** Nombre accesible. Si se omite, la marca es decorativa (aria-hidden). */
+  title?: string;
+  className?: string;
+}
+
+export function FlamingoMark({
+  size = 40,
+  tone = 'brand',
+  withWaves = false,
+  title,
+  className = '',
+}: MarkProps) {
+  const viewBox = withWaves ? FULL_VIEWBOX : BIRD_VIEWBOX;
+  const [, , vbW, vbH] = viewBox.split(' ').map(Number);
+  const width = Math.round((size * vbW) / vbH);
+  const mark = TONE_VARS[tone].mark;
+
+  // El enlace que envuelve el logo en Navbar/Footer ya lleva aria-label; una
+  // <title> aquí haría que el lector de pantalla anunciara la marca dos veces.
+  const a11y = title
+    ? ({ role: 'img' as const, 'aria-label': title })
+    : ({ 'aria-hidden': true as const, focusable: 'false' as const });
+
   return (
     <svg
-      width={size}
-      height={size * 0.573}
-      viewBox="0 0 300 172"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={7.6}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      viewBox={viewBox}
+      width={width}
+      height={size}
       xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
       className={`flex-none ${className}`}
+      {...a11y}
     >
-      <path d="M 92 50 L 99 30 C 100 26 103 25 107 26 L 129 32 C 133 33 134 37 131 40 L 123 55" />
-      <path d="M 108 33 C 158 20 214 22 258 47" />
-      <path d="M 74 62 C 104 57 150 54 258 47" />
-      <path d="M 74 62 C 98 96 168 102 226 80 C 244 73 254 62 258 47" />
-      <path strokeWidth={6.6} d="M 56 116 C 108 98 158 128 210 108 C 226 102 240 108 252 105" />
-      <path strokeWidth={6} d="M 86 130 C 130 117 176 135 214 122" />
+      {withWaves && (
+        <g
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={WAVE_STROKE}
+          strokeLinecap="round"
+        >
+          {WAVE_PATHS.map((d) => (
+            <path key={d} d={d} />
+          ))}
+        </g>
+      )}
+
+      {FLAMINGO_PATHS.map((d) => (
+        <path key={d} d={d} fill={mark} />
+      ))}
+
+      {/* pico y ojo */}
+      {DETAIL_PATHS.map((d) => (
+        <path key={d} d={d} fill="currentColor" />
+      ))}
     </svg>
   );
 }
 
+export interface LogoProps {
+  variant?: LogoVariant;
+  orientation?: 'stack' | 'row';
+  tone?: LogoTone;
+  /** "POWERED BY MARINA MARBELLA". Por defecto solo en variant="full". */
+  withTagline?: boolean;
+  /** Línea de agua. Por defecto solo en variant="full" y a partir de 40px. */
+  withWaves?: boolean;
+  /** Altura de la marca en px; la tipografía escala desde aquí. */
+  size?: number;
+  title?: string;
+  className?: string;
+}
+
+const serif = {
+  fontFamily: 'var(--font-display), Didot, "Bodoni MT", Georgia, serif',
+} as const;
+
 export default function Logo({
-  layout = 'row',
-  withTagline = true,
+  variant = 'full',
+  orientation = 'stack',
+  tone = 'brand',
+  withTagline,
+  withWaves,
+  size = 40,
+  title,
   className = '',
 }: LogoProps) {
-  if (layout === 'stack') {
-    return (
-      <span className={`inline-flex flex-col items-center text-center ${className}`}>
-        <span className="text-[1.15em] font-black uppercase leading-none" style={{ ...display, letterSpacing: '0.02em' }}>
-          Flamingo
-        </span>
-        <span className="mt-2 text-[0.52em] uppercase leading-none opacity-90" style={{ ...display, fontWeight: 500, letterSpacing: '0.36em', paddingLeft: '0.36em' }}>
+  const showTagline = withTagline ?? variant === 'full';
+  // Cuatro hairlines dentro de ~10px de alto se convierten en una mancha gris:
+  // por debajo de 40px el agua se cae aunque se pida.
+  const showWaves = (withWaves ?? variant === 'full') && size >= 40;
+  const showMark = variant !== 'wordmark';
+  const showType = variant !== 'mark';
+  const toneClass = TONE_VARS[tone].className;
+
+  // La Didone pierde trazo por debajo de 9px: ese es el suelo de la línea
+  // "YACHT CLUB", con tracking recortado a 0.30em para que no se deshilache.
+  const flamingoSize = Math.max(size * 0.42, 12);
+  const yachtSize = Math.max(size * 0.17, 9);
+  const taglineSize = Math.max(size * 0.13, 7);
+
+  const type = showType ? (
+    <span
+      className={`inline-flex flex-col leading-none ${
+        orientation === 'row' ? 'items-start' : 'items-center text-center'
+      }`}
+    >
+      <span
+        className="uppercase leading-none"
+        style={{
+          ...serif,
+          fontWeight: 500,
+          fontSize: `${flamingoSize}px`,
+          letterSpacing: '0.22em',
+          paddingLeft: '0.22em',
+        }}
+      >
+        Flamingo
+      </span>
+
+      <span
+        className="inline-flex items-center gap-[0.5em] leading-none"
+        style={{ marginTop: `${Math.max(size * 0.1, 5)}px` }}
+      >
+        <span className="h-px w-[2.2em] bg-current opacity-70" aria-hidden />
+        <span
+          className="uppercase leading-none"
+          style={{
+            ...serif,
+            fontWeight: 500,
+            fontSize: `${yachtSize}px`,
+            letterSpacing: '0.3em',
+            paddingLeft: '0.3em',
+          }}
+        >
           Yacht Club
         </span>
-        {withTagline && (
-          <span className="font-sans text-[8px] font-semibold tracking-[0.3em] uppercase opacity-55 mt-2.5">
-            powered by Marina Marbella
-          </span>
-        )}
+        <span className="h-px w-[2.2em] bg-current opacity-70" aria-hidden />
       </span>
-    );
-  }
+
+      {showTagline && (
+        <span
+          className="uppercase leading-none opacity-60"
+          style={{
+            ...serif,
+            fontWeight: 500,
+            fontSize: `${taglineSize}px`,
+            letterSpacing: '0.32em',
+            paddingLeft: '0.32em',
+            marginTop: `${Math.max(size * 0.16, 8)}px`,
+          }}
+        >
+          powered by Marina Marbella
+        </span>
+      )}
+    </span>
+  ) : null;
+
+  const mark = showMark ? (
+    <FlamingoMark
+      size={size}
+      tone={tone}
+      withWaves={showWaves}
+      title={showType ? undefined : title}
+    />
+  ) : null;
+
+  const a11yWrapper =
+    title && showType
+      ? ({ role: 'img' as const, 'aria-label': title })
+      : {};
 
   return (
-    <span className={`inline-flex flex-col leading-none ${className}`}>
-      <span className="inline-flex flex-col leading-none">
-        <span className="text-[0.95rem] font-black uppercase" style={{ ...display, letterSpacing: '0.02em' }}>
-          Flamingo
-        </span>
-        <span className="text-[0.5rem] uppercase mt-1.5 opacity-90" style={{ ...display, fontWeight: 500, letterSpacing: '0.32em', paddingLeft: '0.32em' }}>
-          Yacht Club
-        </span>
-        {withTagline && (
-          <span className="font-sans text-[7px] font-semibold tracking-[0.26em] uppercase opacity-55 mt-1.5">
-            powered by Marina Marbella
-          </span>
-        )}
-      </span>
+    <span
+      className={`inline-flex ${
+        orientation === 'row'
+          ? 'flex-row items-center gap-3'
+          : 'flex-col items-center'
+      } ${toneClass} ${className}`}
+      {...a11yWrapper}
+    >
+      {mark}
+      {showMark && showType && orientation === 'stack' && (
+        <span style={{ height: `${Math.max(size * 0.22, 10)}px` }} aria-hidden />
+      )}
+      {type}
     </span>
   );
 }

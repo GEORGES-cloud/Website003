@@ -36,7 +36,7 @@ export default function Destinations({ locale }: { locale: string }) {
             <ScrollReveal key={r.name} delay={(i % 4) * 0.06}>
               <div className="group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 items-baseline py-7 md:py-8 border-b border-line">
                 <div className="md:col-span-1 display-num text-2xl md:text-3xl text-ink/20">0{i + 1}</div>
-                <h3 className="md:col-span-4 display text-2xl md:text-3xl text-ink group-hover:text-sea transition-colors">
+                <h3 className="md:col-span-4 display text-2xl md:text-3xl text-ink group-hover:text-flamingo-deep transition-colors">
                   {r.name}
                 </h3>
                 <p className="md:col-span-4 font-sans text-base text-muted leading-relaxed">{r.desc}</p>

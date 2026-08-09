@@ -34,7 +34,7 @@ export default function LanguageSwitcher({ locale, dark = false, className = '',
     router.push(pathname.replace(`/${locale}`, `/${next}`));
   };
 
-  const base = dark ? 'text-white/70 hover:text-white' : 'text-ink/55 hover:text-sea';
+  const base = dark ? 'text-white/70 hover:text-white' : 'text-ink/55 hover:text-flamingo-deep';
 
   if (variant === 'inline') {
     return (

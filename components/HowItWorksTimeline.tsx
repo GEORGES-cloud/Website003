@@ -71,7 +71,7 @@ function TimelineStep({
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-4">
             <h3 className="display text-2xl md:text-4xl text-ink">{step.title}</h3>
             {isLicense && (
-              <span className="font-sans text-[10px] font-semibold uppercase tracking-wide2 text-sea border border-sea/40 px-3 py-1">
+              <span className="font-sans text-[10px] font-semibold uppercase tracking-wide2 text-flamingo-deep border border-flamingo/30 px-3 py-1">
                 {requiredLabel}
               </span>
             )}

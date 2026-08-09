@@ -36,7 +36,7 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    'w-full bg-transparent border-b border-line py-3 font-sans text-base text-ink focus:outline-none focus:border-sea transition-colors';
+    'w-full bg-transparent border-b border-line py-3 font-sans text-base text-ink focus:outline-none focus:border-flamingo-deep transition-colors';
   const labelClass =
     'block font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted mb-1';
 
@@ -67,7 +67,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'sending'}
-        className="font-sans text-[12px] font-semibold tracking-wide2 uppercase bg-ink text-white px-10 py-4 hover:bg-sea transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="font-sans text-[12px] font-semibold tracking-wide2 uppercase bg-ink text-white px-10 py-4 hover:bg-flamingo-deep transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'sending' ? t('sending') : t('submit')}
       </button>

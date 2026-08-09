@@ -57,7 +57,7 @@ export default function CookieBanner({ locale }: { locale: string }) {
           <div className="flex gap-3 mt-5">
             <button
               onClick={() => decide('accepted')}
-              className="font-sans text-[11px] font-semibold uppercase tracking-wide2 bg-white text-ink px-6 py-3 hover:bg-sea-light transition-colors"
+              className="font-sans text-[11px] font-semibold uppercase tracking-wide2 bg-white text-ink px-6 py-3 hover:bg-flamingo-tint transition-colors"
             >
               {t.accept}
             </button>

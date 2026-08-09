@@ -20,14 +20,14 @@
   }
 
   ::selection {
-    background-color: #1A1916;
+    background-color: #B01046;
     color: #FAF9F6;
   }
 }
 
 @layer components {
   .eyebrow {
-    @apply font-sans text-[10px] font-semibold uppercase tracking-[0.34em] text-sea/90;
+    @apply font-sans text-[10px] font-semibold uppercase tracking-[0.34em] text-flamingo-deep;
   }
 
   /* Big editorial heading — Manrope extralight, airy */
@@ -35,9 +35,11 @@
     @apply font-sans font-extralight tracking-[-0.01em] leading-[1.04];
   }
 
-  /* Brand punctuation — Montserrat black, for big numerals only (stats, indices) */
+  /* Puntuación de marca — Didone para cifras grandes (stats, índices).
+     Peso 600 y no black: la Bodoni a 900 aguanta a 60px pero se emborrona en
+     las instancias pequeñas (PageHero, FleetShowcase). */
   .display-num {
-    @apply font-display font-black tracking-tight leading-none;
+    @apply font-display font-semibold tracking-tight leading-none;
     font-variant-numeric: tabular-nums;
   }
 
@@ -47,7 +49,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-[0.18em] bg-ink text-white px-9 py-4 transition-colors duration-300 hover:bg-sea;
+    @apply inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-[0.18em] bg-ink text-white px-9 py-4 transition-colors duration-300 hover:bg-flamingo-deep;
   }
 
   .btn-outline {
@@ -65,7 +67,7 @@
     right: 0;
     bottom: -1px;
     height: 1px;
-    background: currentColor;
+    background: #E81E5C;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -133,7 +135,7 @@ html.lenis body {
 
 /* ---- Accessibility ---- */
 :focus-visible {
-  outline: 2px solid #2C4A4F;
+  outline: 2px solid #B01046;
   outline-offset: 3px;
   border-radius: 1px;
 }

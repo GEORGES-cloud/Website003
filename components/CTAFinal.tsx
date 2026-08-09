@@ -30,7 +30,7 @@ export default function CTAFinal({ eyebrow, title, description, button, image = 
           <p className="font-sans text-lg text-white/70 mb-12 max-w-lg mx-auto leading-relaxed">{description}</p>
         </ScrollReveal>
         <ScrollReveal delay={0.3}>
-          <JoinCTA className="inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-wide2 bg-white text-ink px-12 py-5 hover:bg-sea hover:text-white transition-colors duration-300">
+          <JoinCTA className="inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-wide2 bg-white text-ink px-12 py-5 hover:bg-flamingo-deep hover:text-white transition-colors duration-300">
             {button}
           </JoinCTA>
         </ScrollReveal>

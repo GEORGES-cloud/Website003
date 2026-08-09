@@ -47,7 +47,7 @@ function MilestoneRow({ m, reduce }: { m: Milestone; reduce: boolean }) {
         <div>
           <span
             className={`display-num block mb-2.5 transition-colors duration-500 ${
-              m.highlight ? 'text-sea' : active ? 'text-ink' : 'text-ink/20'
+              m.highlight ? 'text-flamingo-deep' : active ? 'text-ink' : 'text-ink/20'
             }`}
             style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
           >
