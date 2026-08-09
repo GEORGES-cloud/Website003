@@ -53,7 +53,7 @@ function TimelineStep({
       <div className="relative flex justify-center pt-3 md:pt-4">
         <span
           className={`relative z-10 block rounded-full transition-all duration-500 ${
-            active ? 'h-3.5 w-3.5 bg-sea ring-4 ring-sea/15' : 'h-3 w-3 bg-bone border border-sea/40'
+            active ? 'h-3.5 w-3.5 bg-flamingo ring-4 ring-flamingo/15' : 'h-3 w-3 bg-bone border border-ink/20'
           }`}
           aria-hidden
         />
@@ -102,13 +102,13 @@ export default function HowItWorksTimeline({ steps, locale, licenseStepIndex = 1
           <div className={`absolute ${RAIL_LEFT} top-2 bottom-2 w-px bg-line`} aria-hidden />
           {/* Rail — sea line that draws with scroll */}
           <motion.div
-            className={`absolute ${RAIL_LEFT} top-2 bottom-2 w-px bg-sea origin-top`}
+            className={`absolute ${RAIL_LEFT} top-2 bottom-2 w-px bg-ink/15 origin-top`}
             style={{ scaleY: reduce ? 1 : scaleY }}
             aria-hidden
           />
           {/* Travelling lead dot (hidden under reduced motion) */}
           <motion.span
-            className={`absolute ${RAIL_LEFT} h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-sea shadow-[0_0_0_4px_rgba(44,74,79,0.12)]`}
+            className={`absolute ${RAIL_LEFT} h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-flamingo shadow-[0_0_0_4px_rgba(232,30,92,0.12)]`}
             style={{ top: dotTop, opacity: reduce ? 0 : 1 }}
             aria-hidden
           />
