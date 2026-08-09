@@ -1,6 +1,5 @@
 import { useTranslations } from 'next-intl';
 import HeroVideo from '@/components/HeroVideo';
-import ClubManifesto from '@/components/ClubManifesto';
 import Stats from '@/components/Stats';
 import AppShowcase from '@/components/AppShowcase';
 import LifestyleGallery from '@/components/LifestyleGallery';
@@ -12,15 +11,36 @@ import CTAFinal from '@/components/CTAFinal';
 // /puerto-base) — no duplicated information on the home.
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const t = useTranslations('home');
+  const tm = useTranslations('home.manifesto');
 
   return (
     <>
-      {/* Abre el manifiesto con el metraje real del SPX; el vídeo panorámico
-          pasa a segundo golpe de vista. El logo queda sobre el fondo claro,
-          donde el flamenco y la serif se leen mejor que sobre agua brillante. */}
-      <ClubManifesto locale={locale} asHero />
+      {/* El vídeo panorámico abre a pantalla completa y ahora lleva encima el
+          manifiesto. Antes el hero era mudo y ese texto vivía en un split
+          debajo, donde el logo caía sobre la costura entre vídeo y fondo claro. */}
+      <HeroVideo
+        eyebrow={tm('eyebrow')}
+        title={tm('title')}
+        body={tm('p1')}
+        cta={{ href: `/${locale}/precios`, label: tm('cta') }}
+      />
 
-      <HeroVideo showHeading={false} navbarOnDark={false} />
+      {/* El metraje real del SPX se queda como banda cinematográfica: mismo
+          material, sin repetir el texto que ahora está en el hero. */}
+      <section className="relative w-full aspect-[16/9] max-h-[72svh] overflow-hidden bg-ink">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden
+          preload="metadata"
+          poster="/images/spx-poster.jpg"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/spx.mp4" type="video/mp4" />
+        </video>
+      </section>
 
       <Stats locale={locale} />
 
