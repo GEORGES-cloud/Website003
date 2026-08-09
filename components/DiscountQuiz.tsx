@@ -223,7 +223,7 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
                     </form>
                     <p
                       aria-live="polite"
-                      className={`font-sans text-sm text-sea mt-5 transition-opacity duration-300 ${error ? 'opacity-100' : 'opacity-0'}`}
+                      className={`font-sans text-sm text-red-600 mt-5 transition-opacity duration-300 ${error ? 'opacity-100' : 'opacity-0'}`}
                     >
                       {t('form.error')}
                     </p>

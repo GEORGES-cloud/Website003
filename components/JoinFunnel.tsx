@@ -324,7 +324,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                     </form>
                   )}
                   {sendError && (
-                    <p aria-live="polite" className="font-sans text-xs text-sea mt-3">
+                    <p aria-live="polite" className="font-sans text-xs text-red-600 mt-3">
                       {t('contact.error')}
                     </p>
                   )}
