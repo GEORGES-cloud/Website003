@@ -32,8 +32,8 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal direction="right">
               <ParallaxImage
-                src="/images/life-2.jpg"
-                alt=""
+                src="/images/banus-concha.jpg"
+                alt="La playa de Puerto Banús con La Concha al fondo"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}
                 className="aspect-[4/5]"

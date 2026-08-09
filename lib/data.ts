@@ -69,8 +69,9 @@ export const fleet: Boat[] = [
       '/images/blue-cove-run.jpg',
       '/images/blue-swim-split.jpg',
     ],
-    // Hero de ficha: el barco azul real fondeado en cala turquesa
-    heroImage: '/images/blue-cove.jpg',
+    // Hero de ficha: cenital del barco fondeado en agua transparente, con los
+    // tres socios a bordo (elección del cliente sobre la vista lateral anterior)
+    heroImage: '/images/blue-overhead-anchor.jpg',
     // Vídeo oficial SPX 210 (Mandelieu, Costa Azul) — 720p sin audio, autoplay silencioso
     video: '/videos/blue-spx210.mp4',
     videoPoster: '/images/blue-video-poster.jpg',
@@ -79,7 +80,7 @@ export const fleet: Boat[] = [
       '/images/blue-stern-friends.jpg',
       '/images/blue-cockpit-friends.jpg',
       '/images/helm-empty.jpg',
-      '/images/blue-overhead-anchor.jpg',
+      '/images/blue-cove.jpg',
       '/images/searay-2.jpg',
       '/images/searay-dive-split.jpg',
       '/images/blue-bow-sunpad.jpg',
@@ -168,7 +169,7 @@ export const fleet: Boat[] = [
     image: '/images/level-running.jpg',
     slides: [
       '/images/level-running.jpg',
-      '/images/level-1.jpg',
+      '/images/level-deck-table.jpg',
       '/images/level-aerial-anchor.jpg',
       '/images/level-terrace.jpg',
     ],
@@ -178,7 +179,7 @@ export const fleet: Boat[] = [
     // las de la tarjeta (el fabricante solo ha entregado ~13 fotos en total).
     gallery: [
       '/images/level-3.jpg',
-      '/images/level-deck-table.jpg',
+      '/images/level-1.jpg',
       '/images/level-5.jpg',
       '/images/level-cockpit.jpg',
       '/images/level-sunpad.jpg',

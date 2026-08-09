@@ -18,6 +18,9 @@ const config: Config = {
         sea: '#2C4A4F', // restrained deep marine — used sparingly
         'sea-light': '#5E7E80',
         line: '#E6E2DA', // hairline borders
+        // Único color de marca (el flamenco del logo). Reservado para acentos
+        // puntuales — nunca como color de sección ni de texto corrido.
+        flamingo: '#E31C5F',
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],

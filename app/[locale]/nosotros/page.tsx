@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import HeroOffset from '@/components/HeroOffset';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
 import MilestonesTimeline from '@/components/MilestonesTimeline';
@@ -16,23 +15,16 @@ export default function NosotrosPage({ params: { locale } }: { params: { locale:
   const t = useTranslations('about');
   const tc = useTranslations('home.cta');
 
-  const values = ['v1', 'v2', 'v3'] as const;
-
   return (
     <>
-      {/* Hero offset: el titular solapa la proa al anochecer (estilo editorial).
-          62% centra a la mujer del timón entera en el recorte 3/4. */}
-      <HeroOffset
-        eyebrow={t('hero.eyebrow')}
-        title={t('hero.title')}
-        subtitle={t('hero.subtitle')}
-        image="/images/bow-dusk.jpg"
-        imagePosition="62% center"
-        slides={[
-          { src: '/images/bow-dusk.jpg', position: '62% center' },
-          { src: '/images/stern-couple.jpg', position: '50% 50%' },
-          { src: '/images/platform-dawn.jpg', position: '65% 50%' },
-        ]}
+      {/* La línea del tiempo abre la página en lugar de un hero de foto: la
+          travesía de 1965 a Flamingo ES la portada de "Nosotros". */}
+      <MilestonesTimeline
+        asHero
+        locale={locale}
+        eyebrow={t('history.eyebrow')}
+        title={t('history.title')}
+        intro={t('history.intro')}
       />
 
       {/* Momento de película: el helicóptero sobre el mar en calma, con deriva
@@ -80,42 +72,14 @@ export default function NosotrosPage({ params: { locale } }: { params: { locale:
         </div>
       </section>
 
-      {/* La historia que avala al club: de Marina Marbella (1965) a Flamingo */}
-      <MilestonesTimeline
-        locale={locale}
-        eyebrow={t('history.eyebrow')}
-        title={t('history.title')}
-        intro={t('history.intro')}
-      />
-
-      {/* Values */}
-      <section className="py-24 md:py-36 bg-sand">
-        <div className="max-w-[1480px] mx-auto px-6 md:px-10">
-          <ScrollReveal>
-            <h2 className="display text-ink mb-14 md:mb-16" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
-              {t('values.title')}
-            </h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-            {values.map((key, i) => (
-              <ScrollReveal key={key} delay={i * 0.1}>
-                <div className="border-t border-line pt-8">
-                  <h3 className="display text-2xl text-ink mb-4">
-                    {t(`values.${key}.title`)}
-                  </h3>
-                  <p className="font-sans text-base text-muted leading-relaxed">{t(`values.${key}.desc`)}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Foto propia: con la de por defecto, esta página cerraba con el mismo
+          banner que la home (misma imagen y mismo texto). */}
       <CTAFinal
         eyebrow={tc('eyebrow')}
         title={tc('title')}
         description={tc('description')}
         button={tc('button')}
+        image="/images/navan-duo-1.jpg"
       />
     </>
   );

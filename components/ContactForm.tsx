@@ -40,8 +40,10 @@ export default function ContactForm() {
   const labelClass =
     'block font-sans text-[11px] font-semibold uppercase tracking-wide2 text-muted mb-1';
 
+  // Sin noValidate: los required y type=email ya están puestos, así el navegador
+  // señala el campo concreto en vez de soltar un error genérico al enviar.
   return (
-    <form onSubmit={handleSubmit} className="space-y-8" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-8">
       <div>
         <label htmlFor="name" className={labelClass}>{t('name')}</label>
         <input id="name" name="name" type="text" required autoComplete="name" className={inputClass} />

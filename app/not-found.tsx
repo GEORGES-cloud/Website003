@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Manrope } from 'next/font/google';
-import { YachtMark } from '@/components/Logo';
+import { FlamingoMark } from '@/components/Logo';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -16,7 +16,7 @@ export default function NotFound() {
         className={`${manrope.variable} bg-bone text-ink antialiased min-h-screen flex items-center justify-center px-6`}
       >
         <div className="text-center max-w-md">
-          <YachtMark size={76} className="block mx-auto mb-9 text-ink" />
+          <FlamingoMark size={84} className="block mx-auto mb-9" />
           <p className="eyebrow mb-5">Error 404</p>
           <h1 className="display text-ink mb-5" style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)' }}>
             Mar adentro, sin rumbo.

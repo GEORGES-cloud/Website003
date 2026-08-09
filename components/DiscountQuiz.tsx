@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { waInterestHref } from '@/lib/whatsapp';
+import { CONSENT_EVENT, hasConsentDecision } from '@/lib/consent';
 
-const KEY = 'navigante-quiz-v2';
+const KEY = 'fyc-quiz-v2';
 const OPEN_DELAY = 6000;
 const CODE = 'FLAMINGO3';
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -30,14 +31,28 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
 
+  // La cuenta atrás no arranca hasta que el visitante ha resuelto el aviso de
+  // cookies: de lo contrario ambos diálogos se solapaban en la primera visita.
   useEffect(() => {
     let id: number | undefined;
     try {
-      if (!localStorage.getItem(KEY)) id = window.setTimeout(() => setOpen(true), OPEN_DELAY);
+      if (localStorage.getItem(KEY)) return;
     } catch {
-      /* storage unavailable */
+      return; /* storage unavailable */
     }
-    return () => window.clearTimeout(id);
+
+    const arm = () => {
+      window.clearTimeout(id);
+      id = window.setTimeout(() => setOpen(true), OPEN_DELAY);
+    };
+
+    if (hasConsentDecision()) arm();
+    else window.addEventListener(CONSENT_EVENT, arm, { once: true });
+
+    return () => {
+      window.clearTimeout(id);
+      window.removeEventListener(CONSENT_EVENT, arm);
+    };
   }, []);
 
   const dismiss = useCallback(() => {
@@ -206,6 +221,7 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder={t('form.name')}
+                        aria-label={t('form.name')}
                         className={inputCls}
                       />
                       <input
@@ -215,6 +231,7 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
                         value={contact}
                         onChange={(e) => setContact(e.target.value)}
                         placeholder={isEmail ? t('form.email') : t('form.phone')}
+                        aria-label={isEmail ? t('form.email') : t('form.phone')}
                         className={inputCls}
                       />
                       <button type="submit" disabled={!canSubmit} className="btn-primary mt-3 disabled:opacity-40 disabled:cursor-not-allowed">

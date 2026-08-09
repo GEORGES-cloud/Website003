@@ -36,7 +36,9 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
         slides={[
           { src: '/images/wake-circle.jpg' },
           { src: '/images/aerial-reef-1.jpg' },
-          { src: '/images/aerial-reef-2.jpg' },
+          // Cierra con un encuadre a ras de agua y un barco de la flota: las dos
+          // aéreas de arrecife eran casi el mismo fotograma y el pase no cambiaba.
+          { src: '/images/navan-clearcove.jpg' },
         ]}
       />
 

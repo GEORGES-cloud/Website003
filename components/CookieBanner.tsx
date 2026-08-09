@@ -2,8 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-
-const KEY = 'navigante-cookie-consent';
+import { CONSENT_EVENT, CONSENT_KEY as KEY } from '@/lib/consent';
 
 export default function CookieBanner({ locale }: { locale: string }) {
   const [show, setShow] = useState(false);
@@ -23,6 +22,8 @@ export default function CookieBanner({ locale }: { locale: string }) {
       /* ignore */
     }
     setShow(false);
+    // Libera al banner de descuento, que espera a esta decisión.
+    window.dispatchEvent(new Event(CONSENT_EVENT));
   };
 
   const TEXTS: Record<string, { text: string; more: string; accept: string; reject: string }> = {

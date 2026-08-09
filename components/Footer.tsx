@@ -28,9 +28,10 @@ export default function Footer({ locale }: FooterProps) {
             <Link
               href={`/${locale}`}
               aria-label="Flamingo Yacht Club"
-              className="inline-block text-white hover:text-sea-light transition-colors w-fit"
+              className="inline-block w-fit transition-opacity hover:opacity-80"
             >
-              <Logo layout="row" />
+              {/* Lockup completo del cliente, tinta blanca sobre el footer oscuro */}
+              <Logo variant="full" tone="white" width={190} />
             </Link>
             <p className="font-sans text-sm text-white/60 mt-6 leading-relaxed max-w-xs">
               {tf('tagline')}
@@ -90,7 +91,10 @@ export default function Footer({ locale }: FooterProps) {
         <div className="h-px bg-white/10 mt-16 mb-8" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-sans text-sm text-white/60">{tf('legal')}</p>
+          {/* El año sale del reloj, no del JSON: el literal se quedó en 2024. */}
+          <p className="font-sans text-sm text-white/60">
+            {tf('legal').replace(/\b(19|20)\d{2}\b/, String(new Date().getFullYear()))}
+          </p>
           <div className="flex gap-8">
             <Link href={`/${locale}/privacidad`} className="font-sans text-sm text-white/60 hover:text-white transition-colors">
               {tf('privacy')}

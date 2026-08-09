@@ -21,21 +21,33 @@ const MENU_LABEL: Record<string, string> = {
   fr: 'Menu',
 };
 
-const display = { fontFamily: 'var(--font-display), "Arial Black", Impact, sans-serif' } as const;
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-function Wordmark({ className = '' }: { className?: string }) {
+/**
+ * Logo del cliente en la barra (variante SVG sin tagline). Se apilan las dos
+ * tintas y se alterna su opacidad: ambas quedan cargadas de inicio, así el
+ * cambio blanco→tinta al hacer scroll es un fundido limpio, sin parpadeo.
+ */
+function BrandLogo({ white, className = '' }: { white: boolean; className?: string }) {
   return (
-    <span className={`flex flex-col items-center leading-none ${className}`}>
-      <span className="font-black uppercase" style={{ ...display, fontSize: 'clamp(1rem, 2.3vw, 1.5rem)', letterSpacing: '0.03em' }}>
-        Flamingo
-      </span>
-      <span
-        className="uppercase mt-1 opacity-90"
-        style={{ ...display, fontWeight: 500, fontSize: 'clamp(0.46rem, 0.82vw, 0.58rem)', letterSpacing: '0.36em', paddingLeft: '0.36em' }}
-      >
-        Yacht Club
-      </span>
+    <span className={`relative block w-[104px] md:w-[124px] ${className}`}>
+      {/* eslint-disable @next/next/no-img-element */}
+      <img
+        src="/brand/logo-nav.svg"
+        alt="Flamingo Yacht Club"
+        width={2823}
+        height={1481}
+        className={`block w-full h-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
+      />
+      <img
+        src="/brand/logo-nav-white.svg"
+        alt=""
+        aria-hidden
+        width={2823}
+        height={1481}
+        className={`absolute inset-0 w-full h-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
+      />
+      {/* eslint-enable @next/next/no-img-element */}
     </span>
   );
 }
@@ -145,9 +157,9 @@ export default function Navbar({ locale }: NavbarProps) {
           <Link
             href={`/${locale}`}
             aria-label="Flamingo Yacht Club"
-            className={`absolute left-1/2 -translate-x-1/2 transition-colors hover:text-sea ${textColor}`}
+            className="absolute left-1/2 -translate-x-1/2"
           >
-            <Wordmark />
+            <BrandLogo white={!onLight} />
           </Link>
 
           {/* RIGHT — language + Únete al club (abre el mismo funnel que "Hazte socio") */}
@@ -178,8 +190,8 @@ export default function Navbar({ locale }: NavbarProps) {
           >
             <div className="relative flex justify-between items-center px-6 md:px-10 h-[var(--header-h)] border-b border-line">
               <span className="w-8" aria-hidden />
-              <Link href={`/${locale}`} aria-label="Flamingo Yacht Club" className="absolute left-1/2 -translate-x-1/2 text-ink">
-                <Wordmark />
+              <Link href={`/${locale}`} aria-label="Flamingo Yacht Club" className="absolute left-1/2 -translate-x-1/2">
+                <BrandLogo white={false} />
               </Link>
               <button
                 onClick={() => setMenuOpen(false)}
