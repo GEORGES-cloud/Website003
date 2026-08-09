@@ -20,8 +20,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, meta }: Page
         <div className="relative h-full max-w-[1480px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-16 md:pb-20">
           <p className="eyebrow-invert mb-5 animate-hero">{eyebrow}</p>
           <h1
-            className="display text-white max-w-3xl whitespace-pre-line animate-hero animate-hero-d1"
-            style={{ fontSize: 'clamp(2.5rem, 5.5vw, 5rem)' }}
+            className="display text-white max-w-3xl whitespace-pre-line animate-hero animate-hero-d1 display-1"
           >
             {title}
           </h1>
@@ -34,7 +33,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, meta }: Page
             <div className="mt-10 md:mt-12 flex items-center gap-5 animate-hero animate-hero-d2">
               <span className="display-num text-sm text-white">{meta.index}</span>
               <span aria-hidden className="h-px flex-1 bg-white/25" />
-              <span className="eyebrow-invert !text-white/85">{meta.label}</span>
+              <span className="eyebrow-invert">{meta.label}</span>
             </div>
           )}
         </div>
@@ -48,8 +47,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, meta }: Page
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
         <h1
-          className="display text-ink max-w-3xl whitespace-pre-line animate-hero animate-hero-d1"
-          style={{ fontSize: 'clamp(3rem, 6.5vw, 6rem)' }}
+          className="display text-ink max-w-3xl whitespace-pre-line animate-hero animate-hero-d1 display-xl"
         >
           {title}
         </h1>
@@ -62,7 +60,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, meta }: Page
           <div className="mt-12 md:mt-16 flex items-center gap-5 animate-hero animate-hero-d2">
             <span className="display-num text-sm text-ink">{meta.index}</span>
             <span aria-hidden className="h-px flex-1 bg-line" />
-            <span className="eyebrow !text-ink/65">{meta.label}</span>
+            <span className="eyebrow-muted">{meta.label}</span>
           </div>
         )}
       </div>

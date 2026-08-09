@@ -1,6 +1,6 @@
 {
   "funnel": {
-    "title": "Become a member",
+    "title": "Join the club",
     "close": "Close",
     "back": "Back",
     "progress": "Question {current} of {total}",
@@ -314,7 +314,7 @@
       "eyebrow": "The sea awaits",
       "title": "Ready to set sail?",
       "description": "Join the club and discover what it means to sail without limits.",
-      "button": "Become a member"
+      "button": "Join the club"
     }
   },
   "fleet": {
@@ -462,6 +462,7 @@
     "appText": "Manage your bookings from the app.",
     "legal": "© 2024 Flamingo Yacht Club. All rights reserved.",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms",
+    "legalNotice": "Legal notice"
   }
 }

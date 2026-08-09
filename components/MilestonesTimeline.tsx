@@ -171,7 +171,7 @@ export default function MilestonesTimeline({
       }`}
     >
       {header}
-      <ol className="max-w-[1480px] mx-auto px-6 md:px-10 mt-14 space-y-12">
+      <ol className="max-w-[1480px] mx-auto px-6 md:px-10 mt-14 md:mt-16 space-y-12">
         {items.map((m, i) => (
           <Panel key={m.year} m={m} i={i} total={items.length} active stacked />
         ))}

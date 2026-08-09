@@ -13,12 +13,12 @@ export default function Faq({ locale }: { locale: string }) {
   return (
     <section className="py-24 md:py-36 bg-sand">
       <div className="max-w-3xl mx-auto px-6 md:px-10">
-        <div className="mb-14 md:mb-16">
+        <div className="section-head">
           <ScrollReveal>
             <p className="eyebrow mb-5">{t('eyebrow')}</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="display text-ink" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}>
+            <h2 className="display text-ink display-3">
               {t('title')}
             </h2>
           </ScrollReveal>

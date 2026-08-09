@@ -50,6 +50,7 @@ export interface LocalBoat {
   video?: string;
   videoPoster?: string;
   gallery?: string[];
+  galleryAlts?: string[];
   tagline: string;
   description: string;
 }
@@ -69,6 +70,7 @@ export function getFleet(locale: string): LocalBoat[] {
     video: b.video,
     videoPoster: b.videoPoster,
     gallery: b.gallery,
+    galleryAlts: locale === 'es' ? b.galleryAlts : b.galleryAltsEn ?? b.galleryAlts,
     tagline: pick(locale, b.tagline, b.taglineEn, extra[locale]?.fleet?.[b.slug]?.tagline),
     description: pick(locale, b.description, b.descriptionEn, extra[locale]?.fleet?.[b.slug]?.description),
   }));

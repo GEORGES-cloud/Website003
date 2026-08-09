@@ -22,7 +22,9 @@ const manrope = Manrope({
   display: 'swap',
 });
 
-// Display face for the brand wordmark — heavy geometric grotesque matching the logo.
+// Display face para titulares — grotesca pesada, en contraste deliberado con el
+// lockup serif del logo; el all-caps con tracking hace de puente entre ambos.
+// El wordmark nunca se re-tipografía: siempre via components/Logo.
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['500', '900'],

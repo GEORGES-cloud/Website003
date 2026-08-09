@@ -21,8 +21,7 @@ export default function HeroQuiet({ eyebrow, title, subtitle, image, slides }: H
           <div className="md:col-span-7">
             <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
             <h1
-              className="display text-ink whitespace-pre-line animate-hero animate-hero-d1"
-              style={{ fontSize: 'clamp(2.75rem, 5.5vw, 5rem)' }}
+              className="display text-ink whitespace-pre-line animate-hero animate-hero-d1 display-1"
             >
               {title}
             </h1>

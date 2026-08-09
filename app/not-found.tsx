@@ -18,7 +18,7 @@ export default function NotFound() {
         <div className="text-center max-w-md">
           <FlamingoMark size={84} className="block mx-auto mb-9" />
           <p className="eyebrow mb-5">Error 404</p>
-          <h1 className="display text-ink mb-5" style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)' }}>
+          <h1 className="display text-ink mb-5 display-3">
             Mar adentro, sin rumbo.
           </h1>
           <p className="font-sans text-muted leading-relaxed mb-10">

@@ -12,12 +12,12 @@ export default function MembershipTiers({ locale }: { locale: string }) {
   return (
     <section className="py-24 md:py-36 bg-sand">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
-        <div className="max-w-2xl mb-14 md:mb-16">
+        <div className="max-w-2xl section-head">
           <ScrollReveal>
             <p className="eyebrow mb-5">{t('eyebrow')}</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="display text-ink" style={{ fontSize: 'clamp(2rem, 4.5vw, 3.75rem)' }}>
+            <h2 className="display text-ink display-2">
               {t('title')}
             </h2>
           </ScrollReveal>
@@ -31,14 +31,14 @@ export default function MembershipTiers({ locale }: { locale: string }) {
             <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr]">
               {/* Statement */}
               <div className="p-8 sm:p-12 lg:p-14 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col">
-                <p className="font-sans text-[10px] font-semibold uppercase tracking-eyebrow text-sea-light mb-8">
+                <p className="eyebrow-accent mb-8">
                   Flamingo Yacht Club
                 </p>
                 <p className="display leading-snug text-white/95" style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2.25rem)' }}>
                   {membership.tagline}
                 </p>
                 <div className="hidden lg:block mt-auto pt-12">
-                  <JoinCTA className="inline-block w-full font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-sea-light">
+                  <JoinCTA className="btn-light w-full px-8">
                     {t('cta')}
                   </JoinCTA>
                 </div>
@@ -60,7 +60,7 @@ export default function MembershipTiers({ locale }: { locale: string }) {
                   ))}
                 </ul>
                 <div className="lg:hidden mt-10">
-                  <JoinCTA className="inline-block w-full font-sans text-[12px] font-semibold uppercase tracking-wide2 text-center px-8 py-4 transition-colors duration-300 bg-white text-ink hover:bg-sea-light">
+                  <JoinCTA className="btn-light w-full px-8">
                     {t('cta')}
                   </JoinCTA>
                 </div>

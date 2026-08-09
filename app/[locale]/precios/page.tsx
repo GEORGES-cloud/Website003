@@ -47,7 +47,7 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="max-w-3xl">
             <ScrollReveal>
-              <h2 className="display text-ink mb-6" style={{ fontSize: 'clamp(1.9rem, 4vw, 3.25rem)' }}>
+              <h2 className="display text-ink mb-6 display-3">
                 {t('intro.title')}
               </h2>
             </ScrollReveal>

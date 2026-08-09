@@ -17,12 +17,12 @@ export default function Destinations({ locale }: { locale: string }) {
   return (
     <section className="py-24 md:py-36 bg-bone">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
-        <div className="max-w-2xl mb-14 md:mb-16">
+        <div className="max-w-2xl section-head">
           <ScrollReveal>
             <p className="eyebrow mb-5">{copy.eyebrow}</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="display text-ink mb-6" style={{ fontSize: 'clamp(2rem, 4.5vw, 3.75rem)' }}>
+            <h2 className="display text-ink mb-6 display-2">
               {copy.title}
             </h2>
           </ScrollReveal>

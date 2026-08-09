@@ -23,7 +23,7 @@ function DashboardMock() {
     <div className="w-full h-full bg-white flex flex-col text-[5px] sm:text-[6px]">
       <div className="flex items-center justify-between px-3 py-2 border-b border-line">
         <div className="flex items-center gap-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-sea/20" />
+          <img src="/brand/logo-mark.svg" alt="" className="w-2.5 h-auto" />
           <span className="font-semibold text-ink text-[6px] sm:text-[7px]">Flamingo Yacht Club · Puerto Banús</span>
         </div>
         <span className="px-1.5 py-0.5 rounded bg-sea text-white text-[5px] sm:text-[6px]">+ Reserva</span>
@@ -73,7 +73,7 @@ export default function AppDevices() {
               <p className="eyebrow mb-6">{t('eyebrow')}</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="display text-ink mb-7" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 4rem)' }}>
+              <h2 className="display text-ink mb-7 display-2">
                 {t('titleLead')} {t('titleAccent')}
               </h2>
             </ScrollReveal>

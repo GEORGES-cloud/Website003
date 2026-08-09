@@ -1,6 +1,6 @@
 {
   "funnel": {
-    "title": "Bli medlem",
+    "title": "Gå med i klubben",
     "close": "Stäng",
     "back": "Tillbaka",
     "progress": "Fråga {current} av {total}",
@@ -314,7 +314,7 @@
       "eyebrow": "Havet väntar",
       "title": "Redo att kasta loss?",
       "description": "Bli medlem i klubben och upptäck vad det innebär att segla utan gränser.",
-      "button": "Bli medlem"
+      "button": "Gå med i klubben"
     }
   },
   "fleet": {
@@ -462,6 +462,7 @@
     "appText": "Hantera dina bokningar från appen.",
     "legal": "© 2024 Flamingo Yacht Club. Med ensamrätt.",
     "privacy": "Integritet",
-    "terms": "Villkor"
+    "terms": "Villkor",
+    "legalNotice": "Rättsligt meddelande"
   }
 }

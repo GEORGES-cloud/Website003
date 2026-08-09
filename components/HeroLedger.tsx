@@ -27,8 +27,7 @@ export default function HeroLedger({ eyebrow, title, subtitle, image, facts, sli
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
         <h1
-          className="display text-ink max-w-4xl whitespace-pre-line animate-hero animate-hero-d1"
-          style={{ fontSize: 'clamp(3rem, 6.5vw, 6rem)' }}
+          className="display text-ink max-w-4xl whitespace-pre-line animate-hero animate-hero-d1 display-xl"
         >
           {title}
         </h1>
@@ -42,7 +41,7 @@ export default function HeroLedger({ eyebrow, title, subtitle, image, facts, sli
           <dl className="mt-12 md:mt-16 border-t border-line grid grid-cols-3 gap-x-4 md:flex md:divide-x md:divide-line animate-hero animate-hero-d2">
             {facts.map((f) => (
               <div key={f.label} className="flex flex-col-reverse gap-1 py-5 md:px-8 md:first:pl-0 md:flex-none">
-                <dt className="eyebrow !text-[9px] !text-ink/65 break-words">{f.label}</dt>
+                <dt className="eyebrow-sm break-words">{f.label}</dt>
                 <dd className="display text-2xl md:text-[2rem] text-ink">{f.value}</dd>
               </div>
             ))}

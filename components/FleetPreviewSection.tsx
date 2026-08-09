@@ -18,13 +18,13 @@ export default function FleetPreviewSection({ eyebrow, title, viewAll, locale }:
   return (
     <section className="py-24 md:py-36 bg-bone overflow-hidden">
       {/* Header */}
-      <div className="max-w-[1480px] mx-auto px-6 md:px-10 mb-14 flex flex-wrap items-end justify-between gap-6">
+      <div className="max-w-[1480px] mx-auto px-6 md:px-10 section-head flex flex-wrap items-end justify-between gap-6">
         <div>
           <ScrollReveal>
             <p className="eyebrow mb-4">{eyebrow}</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="display text-ink" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 4rem)' }}>
+            <h2 className="display text-ink display-2">
               {title}
             </h2>
           </ScrollReveal>

@@ -168,7 +168,7 @@ export default function Navbar({ locale }: NavbarProps) {
             <button
               type="button"
               onClick={openFunnel}
-              className={`hidden sm:inline-flex items-center justify-center font-sans text-[11px] font-semibold uppercase tracking-[0.18em] px-5 py-2.5 transition-colors duration-300 ${
+              className={`hidden sm:inline-flex items-center justify-center font-sans text-[11px] font-semibold uppercase tracking-wide2 px-5 py-2.5 transition-colors duration-300 ${
                 onLight ? 'bg-ink text-white hover:bg-sea' : 'bg-white text-ink hover:bg-sea hover:text-white'
               }`}
             >

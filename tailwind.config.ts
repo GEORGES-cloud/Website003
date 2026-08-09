@@ -27,7 +27,9 @@ const config: Config = {
         display: ['var(--font-display)', 'sans-serif'],
       },
       letterSpacing: {
-        eyebrow: '0.3em',
+        // Única fuente de verdad del tracking de eyebrow (antes el token decía
+        // 0.3em y la clase .eyebrow 0.34em, así que no casaban).
+        eyebrow: '0.34em',
         wide2: '0.18em',
       },
       transitionTimingFunction: {

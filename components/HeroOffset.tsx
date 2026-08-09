@@ -30,8 +30,7 @@ export default function HeroOffset({ eyebrow, title, subtitle, image, imagePosit
           <div className="relative z-10 lg:max-w-[56%]">
             <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
             <h1
-              className="display text-ink text-balance whitespace-pre-line animate-hero animate-hero-d1"
-              style={{ fontSize: 'clamp(2.5rem, 5vw, 4.75rem)' }}
+              className="display text-ink text-balance whitespace-pre-line animate-hero animate-hero-d1 display-1"
             >
               {title}
             </h1>

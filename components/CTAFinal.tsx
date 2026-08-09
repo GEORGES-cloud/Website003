@@ -46,7 +46,7 @@ export default function CTAFinal({
           <p className="eyebrow-invert mb-7">{eyebrow}</p>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="display text-white mb-8" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)' }}>
+          <h2 className="display text-white mb-8 display-1">
             {title}
           </h2>
         </ScrollReveal>
@@ -54,7 +54,7 @@ export default function CTAFinal({
           <p className="font-sans text-lg text-white/70 mb-12 max-w-lg mx-auto leading-relaxed">{description}</p>
         </ScrollReveal>
         <ScrollReveal delay={0.3}>
-          <JoinCTA className="inline-flex items-center justify-center font-sans text-[12px] font-semibold uppercase tracking-wide2 bg-white text-ink px-12 py-5 hover:bg-sea hover:text-white transition-colors duration-300">
+          <JoinCTA className="btn-light px-12 py-5">
             {button}
           </JoinCTA>
         </ScrollReveal>

@@ -18,11 +18,14 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
 
   return (
     <>
+      {/* hero.jpg venía a 1600×674: se quedaba corta para un hero a sangre de
+          70svh. Esta va a 2048 px y además es el barco del club amarrado en
+          Banús, que es literalmente el puerto base. */}
       <PageHero
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        image="/images/hero.jpg"
+        image="/images/blue-marina-golden.jpg"
         meta={{ index: '36°29′N', label: '4°57′O · Puerto Banús, Marbella' }}
       />
 
@@ -42,7 +45,7 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
             <ScrollReveal>
               <div>
                 <p className="eyebrow mb-6">{t('why.eyebrow')}</p>
-                <h2 className="display text-ink mb-7" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+                <h2 className="display text-ink mb-7 display-3">
                   {t('why.title')}
                 </h2>
                 <p className="font-sans text-lg text-muted leading-relaxed mb-5">{t('why.p1')}</p>
@@ -57,12 +60,12 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
           (Edificio Levante, junto a Marina Marbella) */}
       <section className="py-24 md:py-36 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
-          <div className="max-w-2xl mb-12 md:mb-14">
+          <div className="max-w-2xl section-head">
             <ScrollReveal>
               <p className="eyebrow mb-5">{t('map.eyebrow')}</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="display text-ink mb-5" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+              <h2 className="display text-ink mb-5 display-3">
                 {t('map.title')}
               </h2>
             </ScrollReveal>

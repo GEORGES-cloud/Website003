@@ -23,8 +23,10 @@ export default function ContactoPage({ params: { locale } }: { params: { locale:
         subtitle={t('hero.subtitle')}
         image="/images/marina-dawn.jpg"
         slides={[
-          { src: '/images/sunset-palms.jpg', position: '60% center' },
+          // El pase abre con la foto declarada en `image`; antes arrancaba con
+          // una playa de palmeras tropical, ajena a Puerto Banús.
           { src: '/images/marina-dawn.jpg' },
+          { src: '/images/navan-sterndawn.jpg' },
           { src: '/images/teak-water.jpg' },
         ]}
       />

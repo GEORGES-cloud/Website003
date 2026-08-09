@@ -22,8 +22,7 @@ export default function HeroSplit({ eyebrow, title, subtitle, image, slides }: H
         <div className="md:w-1/2 md:pr-12 lg:pr-16 py-14 md:py-20 md:min-h-[80svh] flex flex-col justify-center">
           <p className="eyebrow mb-6 animate-hero">{eyebrow}</p>
           <h1
-            className="display text-ink whitespace-pre-line animate-hero animate-hero-d1"
-            style={{ fontSize: 'clamp(2.5rem, 4.6vw, 4.5rem)' }}
+            className="display text-ink whitespace-pre-line animate-hero animate-hero-d1 display-1"
           >
             {title}
           </h1>

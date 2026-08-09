@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { waInterestHref } from '@/lib/whatsapp';
 import { useJoinFunnel } from './JoinFunnelProvider';
+import { FlamingoMark } from './Logo';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -23,9 +24,11 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   const [name, setName] = useState('');
   const [day, setDay] = useState<number | null>(null);
   const [time, setTime] = useState<number | null>(null);
-  // Canal de contacto preferido en el cierre: WhatsApp (handoff directo),
-  // email o llamada (dejan su dato y contacta el club).
-  const [channel, setChannel] = useState<'whatsapp' | 'email' | 'phone'>('whatsapp');
+  // Canal de contacto preferido en el cierre: llamada por defecto — quien llega
+  // aquí eligió "prefiero que me contactéis vosotros", y arrancar en WhatsApp
+  // le lanzaba justo el handoff que acababa de descartar. El chip de WhatsApp
+  // sigue en el paso 2, y sigue siendo el CTA principal de la intro.
+  const [channel, setChannel] = useState<'whatsapp' | 'email' | 'phone'>('phone');
   const [contact, setContact] = useState('');
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState(false);
@@ -39,7 +42,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
     setName('');
     setDay(null);
     setTime(null);
-    setChannel('whatsapp');
+    setChannel('phone');
     setContact('');
     setSending(false);
     setSendError(false);
@@ -174,6 +177,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
           {/* INTRO */}
           {step === 0 && (
             <>
+              <FlamingoMark size={44} className="mx-auto mb-6" />
               <p className="eyebrow mb-6">{t('intro.eyebrow')}</p>
               <h2 className="display text-ink mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
                 {t('intro.title')}

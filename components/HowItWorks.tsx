@@ -17,12 +17,12 @@ export default function HowItWorks({ eyebrow, title, steps }: HowItWorksProps) {
     <section className="py-24 md:py-36 bg-sand">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         {/* Header */}
-        <div className="mb-16 md:mb-20 max-w-2xl">
+        <div className="section-head max-w-2xl">
           <ScrollReveal>
             <p className="eyebrow mb-4">{eyebrow}</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="display text-ink" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 4rem)' }}>
+            <h2 className="display text-ink display-2">
               {title}
             </h2>
           </ScrollReveal>

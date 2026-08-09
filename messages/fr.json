@@ -1,6 +1,6 @@
 {
   "funnel": {
-    "title": "Devenir membre",
+    "title": "Rejoins le club",
     "close": "Fermer",
     "back": "Retour",
     "progress": "Question {current} sur {total}",
@@ -314,7 +314,7 @@
       "eyebrow": "La mer vous attend",
       "title": "Prêt à larguer les amarres ?",
       "description": "Rejoignez le club et découvrez ce que signifie naviguer sans limites.",
-      "button": "Devenir membre"
+      "button": "Rejoins le club"
     }
   },
   "fleet": {
@@ -462,6 +462,7 @@
     "appText": "Gérez vos réservations depuis l'application.",
     "legal": "© 2024 Flamingo Yacht Club. Tous droits réservés.",
     "privacy": "Confidentialité",
-    "terms": "Conditions"
+    "terms": "Conditions",
+    "legalNotice": "Mentions légales"
   }
 }

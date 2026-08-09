@@ -28,7 +28,6 @@ const REEL = [
   '/images/blue-profile.jpg',
   
   '/images/navan-dji-1.jpg',
-  '/images/life-3.jpg',
   '/images/life-4.jpg',
   '/images/blue-snorkel-split.jpg',
   '/images/navan-print-37.jpg',
@@ -68,17 +67,73 @@ const REEL = [
   '/images/reel-sunset-lone.jpg',
 ];
 
+/* Descripción de cada foto, en el mismo orden que REEL — el patrón numerado
+   ("Una vida en el mar 23") no dice nada a quien usa lector de pantalla. */
+const REEL_ALTS = [
+  'La Sea Ray SPX 210 fondeada en una cala',
+  'La SPX 210 amarrada en Puerto Banús al atardecer',
+  'La NAVAN T30 navegando por la costa',
+  'Navegando al atardecer frente a la Costa del Sol',
+  'Un día completo en el mar con amigos',
+  'Paddle surf junto a una cueva marina',
+  'La NAVAN T30 fondeada en aguas transparentes',
+  'Salida privada al caer la tarde',
+  'El puesto de mando de la SPX 210 sobre cubierta de teca',
+  'La NAVAN T30 en la bahía',
+  'Escapada de fin de semana a bordo',
+  'Una pareja sentada en la plataforma de baño',
+  'La NAVAN T30 navegando pegada a la costa',
+  'Vida a bordo en una jornada de sol',
+  'Perfil de la SPX 210 navegando',
+  'Vista aérea de la NAVAN T30 desde el dron',
+  'Momento de descanso a bordo',
+  'Foto partida: snorkel bajo el agua junto al barco',
+  'La NAVAN T30 al sol del mediodía',
+  'Baño desde el barco en aguas abiertas',
+  'La SPX 210 frente a la fachada del puerto',
+  'La NAVAN T30 entre rocas en una cala',
+  'Cala de arena vista desde el agua',
+  'La SPX 210 vista desde arriba',
+  'La NAVAN T30 navegando al atardecer',
+  'Delfines nadando junto al barco',
+  'Luz de atardecer sobre el mar',
+  'La playa de Puerto Banús entre palmeras',
+  'Vista aérea de la NAVAN T30',
+  'Agua turquesa vista desde cubierta',
+  'Estela circular del barco vista desde el aire',
+  'Dos barcos del club fondeados, vistos desde el aire',
+  'La NAVAN T30 fondeada en calma',
+  'La proa recortada contra el atardecer',
+  'La NAVAN T30 bajo un acantilado',
+  'La bañera y la proa vistas desde popa',
+  'La NAVAN T30 saliendo de una cala',
+  'La mesa de la bañera preparada',
+  'La NAVAN T30 en travesía',
+  'Detalle de la bañera con cubierta de teca',
+  'Amigos a bordo de la NAVAN T30',
+  'Los motores fueraborda vistos desde el agua',
+  'La NAVAN T30 a plena velocidad',
+  'Pies descalzos sobre la cubierta de teca',
+  'La popa de la NAVAN T30',
+  'Un niño bañándose junto al barco',
+  'Sentados en la plataforma de baño',
+  'Bajando al agua por la plataforma de baño',
+  'Perfil del barco al anochecer',
+  'Una pareja en el solárium de proa',
+  'Un barco solo en el mar al atardecer',
+];
+
 export default function LifestyleGallery({ title }: LifestyleGalleryProps) {
   return (
     <section className="py-24 md:py-36 bg-bone">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <ScrollReveal>
-          <h2 className="display text-ink mb-14 md:mb-16" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 4rem)' }}>
+          <h2 className="display text-ink section-head display-2">
             {title}
           </h2>
         </ScrollReveal>
 
-        <BoatGallery images={REEL} name={title} auto />
+        <BoatGallery images={REEL} alts={REEL_ALTS} name={title} auto />
       </div>
     </section>
   );

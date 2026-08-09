@@ -32,8 +32,7 @@ export default function TestimonialsSection({ locale }: TestimonialsSectionProps
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <blockquote
-              className="display text-ink leading-[1.15] mb-10"
-              style={{ fontSize: 'clamp(1.9rem, 3.5vw, 3.25rem)' }}
+              className="display text-ink leading-[1.15] mb-10 display-3"
             >
               &ldquo;{featured.quote}&rdquo;
             </blockquote>

@@ -40,7 +40,7 @@ export default function MembershipPitch({ eyebrow, title, description, cta, loca
               <p className="eyebrow mb-6">{eyebrow}</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="display text-ink mb-8" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 4.25rem)' }}>
+              <h2 className="display text-ink mb-8 display-2">
                 {title}
               </h2>
             </ScrollReveal>

@@ -9,7 +9,28 @@ import { motion, AnimatePresence } from 'framer-motion';
    completa, que también se pasa deslizando. Con `auto`, el carrete avanza solo
    a velocidad media mientras nadie lo toca (petición del cliente; se pausa con
    hover/gesto y respeta prefers-reduced-motion). */
-export default function BoatGallery({ images, name, auto = false }: { images: string[]; name: string; auto?: boolean }) {
+/* Encuadre por foto: las verticales se recortaban por el centro en el carril
+   4:3 y perdían lo importante (proa, motores, casco). Se declara aquí y no en
+   cada llamada porque depende de la foto, no de dónde se use. */
+const OBJECT_POSITION: Record<string, string> = {
+  '/images/blue-vertical.jpg': '50% 70%',
+  '/images/navan-vertical.jpg': '50% 45%',
+};
+
+export default function BoatGallery({
+  images,
+  name,
+  auto = false,
+  alts,
+}: {
+  images: string[];
+  name: string;
+  auto?: boolean;
+  /** Descripción por foto, en el mismo orden que `images`. Sin ella se cae al
+   *  patrón numerado, que no describe nada para quien usa lector de pantalla. */
+  alts?: string[];
+}) {
+  const altFor = (i: number) => alts?.[i] ?? `${name} ${i + 1}`;
   const [open, setOpen] = useState<number | null>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedUntil = useRef(0);
@@ -106,14 +127,15 @@ export default function BoatGallery({ images, name, auto = false }: { images: st
               key={src}
               data-slide
               onClick={() => setOpen(i)}
-              aria-label={`${name} — ${i + 1}`}
+              aria-label={altFor(i)}
               className="group relative overflow-hidden flex-none snap-start w-[78vw] sm:w-[440px] md:w-[540px] aspect-[4/3]"
             >
               <Image
                 src={src}
-                alt={`${name} ${i + 1}`}
+                alt={altFor(i)}
                 fill
                 sizes="(max-width: 640px) 78vw, 540px"
+                style={{ objectPosition: OBJECT_POSITION[src] }}
                 className="img-grade object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.05]"
               />
               <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors" />
@@ -194,7 +216,7 @@ export default function BoatGallery({ images, name, auto = false }: { images: st
               className="relative w-full max-w-5xl aspect-[3/2] touch-pan-y"
               onClick={(e) => e.stopPropagation()}
             >
-              <Image src={images[open]} alt={`${name} ${open + 1}`} fill sizes="100vw" className="object-contain pointer-events-none" />
+              <Image src={images[open]} alt={altFor(open)} fill sizes="100vw" className="object-contain pointer-events-none" />
             </motion.div>
 
             <p className="absolute bottom-6 left-1/2 -translate-x-1/2 font-sans text-[11px] tracking-wide2 uppercase text-white/60">

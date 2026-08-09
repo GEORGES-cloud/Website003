@@ -122,6 +122,7 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
               <p className="eyebrow mb-8">{({ es: 'Galería', en: 'Gallery', sv: 'Galleri', ru: 'Галерея', de: 'Galerie', fr: 'Galerie' } as Record<string, string>)[locale] ?? 'Gallery'}</p>
               <BoatGallery
                 images={boat.gallery ?? [boat.image]}
+                alts={boat.galleryAlts}
                 name={boat.name}
               />
             </ScrollReveal>

@@ -82,9 +82,9 @@ export default function FleetShowcase({ locale }: { locale: string }) {
                       {String(i + 1).padStart(2, '0')} <span className="text-ink/35">/ {total}</span>
                     </span>
                     <span aria-hidden className="h-px w-12 bg-ink/25" />
-                    <p className="eyebrow !text-ink/65">{boat.name}</p>
+                    <p className="eyebrow-muted">{boat.name}</p>
                   </div>
-                  <h2 className="display text-ink" style={{ fontSize: 'clamp(2.75rem, 5.2vw, 4.6rem)' }}>
+                  <h2 className="display text-ink display-1">
                     {boat.shortName ?? boat.name}
                   </h2>
                   <p className="font-sans text-lg font-extralight text-ink/75 leading-snug mt-5">{boat.tagline}</p>
@@ -102,7 +102,7 @@ export default function FleetShowcase({ locale }: { locale: string }) {
                         key={s.label}
                         className="flex flex-col-reverse gap-1 py-5 pr-5 md:px-6 md:first:pl-0 md:flex-1 border-b border-line md:border-b-0"
                       >
-                        <dt className="eyebrow !text-[9px] !text-ink/65">{s.label}</dt>
+                        <dt className="eyebrow-sm">{s.label}</dt>
                         <dd className="display text-xl md:text-[1.6rem] text-ink whitespace-nowrap">{s.value}</dd>
                       </div>
                     ))}

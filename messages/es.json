@@ -1,6 +1,6 @@
 {
   "funnel": {
-    "title": "Hazte socio",
+    "title": "Únete al club",
     "close": "Cerrar",
     "back": "Atrás",
     "progress": "Pregunta {current} de {total}",
@@ -314,7 +314,7 @@
       "eyebrow": "El mar te espera",
       "title": "¿Listo para zarpar?",
       "description": "Únete al club y descubre lo que es navegar sin límites.",
-      "button": "Hazte socio"
+      "button": "Únete al club"
     }
   },
   "fleet": {
@@ -462,6 +462,7 @@
     "appText": "Gestiona tus reservas desde la app.",
     "legal": "© 2024 Flamingo Yacht Club. Todos los derechos reservados.",
     "privacy": "Privacidad",
-    "terms": "Términos"
+    "terms": "Términos",
+    "legalNotice": "Aviso legal"
   }
 }

@@ -33,7 +33,7 @@ export default function AppShowcase() {
               <p className="eyebrow mb-6">{t('eyebrow')}</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="display text-ink mb-7" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 4rem)' }}>
+              <h2 className="display text-ink mb-7 display-2">
                 {t('titleLead')} {t('titleAccent')}
               </h2>
             </ScrollReveal>

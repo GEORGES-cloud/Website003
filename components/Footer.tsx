@@ -51,7 +51,7 @@ export default function Footer({ locale }: FooterProps) {
 
           {/* Navigation */}
           <div>
-            <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-sea-light mb-7">
+            <p className="eyebrow-accent mb-7">
               {tf('explore')}
             </p>
             <ul className="space-y-3.5">
@@ -67,7 +67,7 @@ export default function Footer({ locale }: FooterProps) {
 
           {/* App */}
           <div>
-            <p className="font-sans text-[11px] font-semibold tracking-eyebrow uppercase text-sea-light mb-7">
+            <p className="eyebrow-accent mb-7">
               {tf('app')}
             </p>
             <p className="font-sans text-sm text-white/60 mb-7 leading-relaxed">{tf('appText')}</p>
@@ -101,6 +101,10 @@ export default function Footer({ locale }: FooterProps) {
             </Link>
             <Link href={`/${locale}/terminos`} className="font-sans text-sm text-white/60 hover:text-white transition-colors">
               {tf('terms')}
+            </Link>
+            {/* La página de aviso legal existía pero no se enlazaba desde ningún sitio */}
+            <Link href={`/${locale}/aviso-legal`} className="font-sans text-sm text-white/60 hover:text-white transition-colors">
+              {tf('legalNotice')}
             </Link>
           </div>
         </div>

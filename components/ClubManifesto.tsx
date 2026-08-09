@@ -34,7 +34,7 @@ export default function ClubManifesto({ locale }: { locale: string }) {
               <p className="eyebrow mb-6">{t('eyebrow')}</p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <h2 className="display text-ink mb-8" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 4rem)' }}>
+              <h2 className="display text-ink mb-8 display-2">
                 {t('title')}
               </h2>
             </ScrollReveal>
