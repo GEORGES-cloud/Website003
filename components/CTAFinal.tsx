@@ -8,12 +8,36 @@ interface CTAFinalProps {
   description: string;
   button: string;
   image?: string;
+  /** Metraje de fondo en lugar de foto; `image` hace de póster mientras carga. */
+  video?: string;
 }
 
-export default function CTAFinal({ eyebrow, title, description, button, image = '/images/hero-final.jpg' }: CTAFinalProps) {
+export default function CTAFinal({
+  eyebrow,
+  title,
+  description,
+  button,
+  image = '/images/hero-final.jpg',
+  video,
+}: CTAFinalProps) {
   return (
     <section className="relative py-32 md:py-44 overflow-hidden">
-      <ParallaxImage src={image} alt="" sizes="100vw" strength={70} className="absolute inset-0" />
+      {video ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-hidden
+          preload="metadata"
+          poster={image}
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src={video} type="video/mp4" />
+        </video>
+      ) : (
+        <ParallaxImage src={image} alt="" sizes="100vw" strength={70} className="absolute inset-0" />
+      )}
       <div className="absolute inset-0 bg-ink/55" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
 

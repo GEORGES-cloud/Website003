@@ -27,23 +27,6 @@ export default function NosotrosPage({ params: { locale } }: { params: { locale:
         intro={t('history.intro')}
       />
 
-      {/* Momento de película: el helicóptero sobre el mar en calma, con deriva
-          lenta generada desde la foto original (bucle ida y vuelta) */}
-      <section className="relative w-full aspect-[16/9] max-h-[72svh] overflow-hidden bg-ink">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden
-          preload="metadata"
-          poster="/images/heli-flyover-poster.jpg"
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/videos/heli-flyover.mp4" type="video/mp4" />
-        </video>
-      </section>
-
       {/* Story */}
       <section className="py-24 md:py-36 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
@@ -72,14 +55,16 @@ export default function NosotrosPage({ params: { locale } }: { params: { locale:
         </div>
       </section>
 
-      {/* Foto propia: con la de por defecto, esta página cerraba con el mismo
-          banner que la home (misma imagen y mismo texto). */}
+      {/* El helicóptero sobre el mar en calma cierra la página como fondo del
+          CTA: era una banda suelta a mitad de página y aquí remata mejor.
+          (De paso deja de repetirse el banner de la home.) */}
       <CTAFinal
         eyebrow={tc('eyebrow')}
         title={tc('title')}
         description={tc('description')}
         button={tc('button')}
-        image="/images/navan-duo-1.jpg"
+        image="/images/heli-flyover-poster.jpg"
+        video="/videos/heli-flyover.mp4"
       />
     </>
   );
