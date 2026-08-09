@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import RevealText from './RevealText';
+import Logo from './Logo';
 
 interface HeroVideoProps {
   /** Video source. Defaults to the top hero clip. */
@@ -23,6 +24,8 @@ interface HeroVideoProps {
   title?: string;
   body?: string;
   cta?: { href: string; label: string };
+  /** Lockup de marca en grande, centrado sobre el vídeo. */
+  showLogo?: boolean;
 }
 
 export default function HeroVideo({
@@ -35,6 +38,7 @@ export default function HeroVideo({
   title,
   body,
   cta,
+  showLogo = false,
 }: HeroVideoProps) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
@@ -73,6 +77,31 @@ export default function HeroVideo({
 
       {/* Legibility overlay — weighted to the top so the header lockup stays readable over bright water */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/10 to-black/40" />
+
+      {showLogo && (
+        <>
+          {/* Oscurecido suave hacia el centro: el vídeo pasa por fotogramas de
+              agua muy iluminada y el lockup blanco se perdía en ellos. */}
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{ background: 'radial-gradient(60% 55% at 50% 46%, rgba(26,25,22,0.46) 0%, rgba(26,25,22,0.18) 55%, transparent 100%)' }}
+          />
+          <motion.div
+            style={{ opacity: copyOpacity }}
+            className="relative h-full flex items-center justify-center px-6"
+          >
+          {/* Decorativo: el nombre del club ya lo da el h1 y el lockup del header */}
+            <Logo
+              variant="full"
+              tone="white"
+              width={520}
+              alt=""
+              className="w-[min(74vw,520px)] h-auto animate-hero drop-shadow-[0_2px_24px_rgba(0,0,0,0.45)]"
+            />
+          </motion.div>
+        </>
+      )}
 
       {title && (
         <>
