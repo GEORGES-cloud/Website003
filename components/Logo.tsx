@@ -1,21 +1,25 @@
-type LogoVariant = 'full' | 'nav' | 'mark';
+type LogoVariant = 'full' | 'nav' | 'mark' | 'word';
 type LogoTone = 'ink' | 'white';
 
 /**
  * Logotipo oficial del cliente, vectorizado desde el original de
  * "Contenido recibido/Logo" y servido como SVG desde public/brand/:
- *   logo-full   lockup completo con "powered by Marina Marbella"
- *   logo-nav    flamenco + FLAMINGO YACHT CLUB, sin tagline (barra)
+ *   logo-word   ondas + FLAMINGO —YACHT CLUB— + "powered by Marina Marbella",
+ *               SIN el flamenco (decisión del cliente 2026-08-10: solo texto;
+ *               es la variante de barra y footer)
+ *   logo-full   lockup completo con el flamenco (ya no se usa en la web)
+ *   logo-nav    flamenco + FLAMINGO YACHT CLUB, sin tagline (ya no se usa)
  *   logo-mark   solo el flamenco sobre el agua (favicon, 404, sellos)
- * Cada uno en dos tintas (-white para fondos oscuros); el flamenco rosa es
- * idéntico en ambas. Al ser vectorial se ve nítido a cualquier tamaño y en
- * pantallas retina — por eso va en <img> y no en next/image: el optimizador
- * rasterizaría el SVG y volveríamos al problema que resolvimos.
+ * Cada uno en dos tintas (-white para fondos oscuros). Al ser vectorial se ve
+ * nítido a cualquier tamaño y en pantallas retina — por eso va en <img> y no
+ * en next/image: el optimizador rasterizaría el SVG y volveríamos al problema
+ * que resolvimos.
  */
 const RATIO: Record<LogoVariant, number> = {
   full: 2823 / 1825,
   nav: 2823 / 1481,
   mark: 1163 / 925,
+  word: 2823 / 487,
 };
 
 interface LogoProps {

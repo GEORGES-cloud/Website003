@@ -30,8 +30,12 @@ export default function Footer({ locale }: FooterProps) {
               aria-label="Flamingo Yacht Club"
               className="inline-block w-fit transition-opacity hover:opacity-80"
             >
-              {/* Lockup completo del cliente, tinta blanca sobre el footer oscuro */}
-              <Logo variant="full" tone="white" width={190} />
+              {/* Wordmark del cliente (sin flamenco, decisión 2026-08-10); el
+                  "powered by" va en HTML porque en el arte sale ilegible. */}
+              <Logo variant="word" tone="white" width={230} />
+              <span className="block mt-2 font-sans text-[9px] font-semibold uppercase tracking-wide2 text-white/70">
+                powered by Marina Marbella
+              </span>
             </Link>
             <p className="font-sans text-sm text-white/60 mt-6 leading-relaxed max-w-xs">
               {tf('tagline')}

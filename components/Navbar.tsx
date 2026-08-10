@@ -32,10 +32,9 @@ const MENU_LABEL: Record<string, string> = {
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 /**
- * Logo de la barra: el lockup tal cual lo entregó el cliente — flamenco encima
- * y FLAMINGO YACHT CLUB debajo. Se lleva casi todo el alto útil de la barra
- * (88 px): más grande no cabe sin engordar la barra, porque en el apilado el
- * texto solo ocupa una cuarta parte de la altura del conjunto.
+ * Logo de la barra: el wordmark del cliente — ondas, FLAMINGO, —YACHT CLUB—
+ * y "powered by Marina Marbella", sin el flamenco (petición del cliente
+ * 2026-08-10: solo texto). Aspecto ~5.8:1, así que va por altura contenida.
  *
  * Las dos tintas van superpuestas alternando opacidad: ambas quedan cargadas
  * de inicio, así el cambio blanco→tinta al hacer scroll es un fundido limpio,
@@ -43,20 +42,31 @@ const EASE = [0.22, 1, 0.36, 1] as const;
  */
 function BrandLogo({ white, className = '' }: { white: boolean; className?: string }) {
   return (
-    <span className={`relative block h-[58px] md:h-[70px] ${className}`}>
-      {/* eslint-disable @next/next/no-img-element */}
-      <img
-        src="/brand/logo-nav.svg"
-        alt="Flamingo Yacht Club"
-        className={`block h-full w-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
-      />
-      <img
-        src="/brand/logo-nav-white.svg"
-        alt=""
-        aria-hidden
-        className={`absolute inset-0 h-full w-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
-      />
-      {/* eslint-enable @next/next/no-img-element */}
+    <span className={`flex flex-col items-center gap-[5px] ${className}`}>
+      <span className="relative block h-[26px] md:h-[32px]">
+        {/* eslint-disable @next/next/no-img-element */}
+        <img
+          src="/brand/logo-word.svg"
+          alt="Flamingo Yacht Club"
+          className={`block h-full w-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
+        />
+        <img
+          src="/brand/logo-word-white.svg"
+          alt=""
+          aria-hidden
+          className={`absolute inset-0 h-full w-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
+        />
+        {/* eslint-enable @next/next/no-img-element */}
+      </span>
+      {/* El "powered by" del arte mide ~2px a este tamaño; va como texto HTML
+          para que sea legible (all-caps + tracking, el puente tipográfico). */}
+      <span
+        className={`font-sans text-[7px] md:text-[8px] font-semibold uppercase tracking-wide2 whitespace-nowrap transition-colors duration-500 ${
+          white ? 'text-white/80' : 'text-ink/70'
+        }`}
+      >
+        powered by Marina Marbella
+      </span>
     </span>
   );
 }
@@ -134,9 +144,10 @@ export default function Navbar({ locale, menuBoats }: NavbarProps) {
     { href: `/${locale}/contacto`, label: t('contact') },
   ];
 
-  // Sobre un hero oscuro (sin scroll): texto blanco. Tras el scroll, o en
-  // páginas de hero claro (/flota, /contacto, legales): fondo claro, tinta.
-  const onLight = scrolled || !overDark;
+  // Al hacer scroll la barra se funde a negro (petición del cliente), con
+  // texto y logo en blanco. Solo va en tinta sin scroll sobre un hero claro
+  // (/flota, legales...).
+  const onLight = !scrolled && !overDark;
   const textColor = onLight ? 'text-ink' : 'text-white';
   const barColor = onLight ? 'bg-ink' : 'bg-white';
 
@@ -145,7 +156,7 @@ export default function Navbar({ locale, menuBoats }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-[transform,background-color,border-color] duration-500 ease-smooth ${
           hidden && !menuOpen ? '-translate-y-full' : 'translate-y-0'
-        } ${scrolled ? 'bg-bone/95 backdrop-blur-md border-b border-line' : 'bg-transparent'}`}
+        } ${scrolled ? 'bg-ink/95 backdrop-blur-md border-b border-white/10' : 'bg-transparent'}`}
       >
         <div className="relative max-w-[1480px] mx-auto px-6 md:px-10 h-[var(--header-h)] flex items-center justify-between">
           {/* LEFT — menu trigger */}
