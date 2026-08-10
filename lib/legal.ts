@@ -9,10 +9,10 @@ export interface LegalDoc {
   sections: LegalSection[];
 }
 
-// Placeholders in [BRACKETS] should be completed by the client with their
-// registered company details and reviewed by a lawyer before launch.
-const COMPANY = '[RAZÓN SOCIAL]';
-const CIF = '[CIF/NIF]';
+// Company details filled with the registered denomination and NIF of
+// Marina Marbella, S.A. Texts still pending lawyer review before launch.
+const COMPANY = 'Marina Marbella, S.A.';
+const CIF = 'A29071693';
 const ADDR = 'Puerto Banús, 29660 Marbella, Málaga';
 const EMAIL = 'Hello@flamingoyachtclub.com';
 
