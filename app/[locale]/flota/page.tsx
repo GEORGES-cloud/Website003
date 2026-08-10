@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import PageHero from '@/components/PageHero';
 import FleetShowcase from '@/components/FleetShowcase';
 import CTAFinal from '@/components/CTAFinal';
-import { ACTIVE_BOAT_SLUGS } from '@/lib/data';
+import { getActiveFleet } from '@/lib/localize';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'meta.pages.fleet' });
   return { title: t('title'), description: t('description') };
 }
 
-export default function FlotaPage({ params: { locale } }: { params: { locale: string } }) {
-  const t = useTranslations('fleet');
-  const th = useTranslations('home.cta');
+export default async function FlotaPage({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale, namespace: 'fleet' });
+  const th = await getTranslations({ locale, namespace: 'home.cta' });
+  const boats = await getActiveFleet(locale);
 
   return (
     <>
@@ -21,10 +21,10 @@ export default function FlotaPage({ params: { locale } }: { params: { locale: st
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        meta={{ index: String(ACTIVE_BOAT_SLUGS.length).padStart(2, '0'), label: 'Puerto Banús · Marbella' }}
+        meta={{ index: String(boats.length).padStart(2, '0'), label: 'Puerto Banús · Marbella' }}
       />
 
-      <FleetShowcase locale={locale} />
+      <FleetShowcase locale={locale} boats={boats} />
 
       {/* Fondo monocromo: estela circular sobre azul profundo, gráfico y
           sin distracciones detrás del texto. */}

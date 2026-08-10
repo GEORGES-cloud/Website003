@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import HeroLedger from '@/components/HeroLedger';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -15,22 +14,24 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   return { title: t('title'), description: t('description') };
 }
 
-export default function PreciosPage({ params: { locale } }: { params: { locale: string } }) {
-  const t = useTranslations('prices');
+export default async function PreciosPage({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale, namespace: 'prices' });
   // "Cómo funciona" vive ahora dentro de Membresía (petición del cliente):
   // pasos, licencia, app y FAQ se sirven desde esta misma página.
-  const th = useTranslations('howItWorks');
+  const th = await getTranslations({ locale, namespace: 'howItWorks' });
   const steps = (['step1', 'step2', 'step3'] as const).map((s) => ({
     number: th(`${s}.number`),
     title: th(`${s}.title`),
     desc: th(`${s}.desc`),
   }));
 
+  const faqs = await getFaqs(locale);
+
   // Las mismas FAQ que pinta <Faq/>, como datos estructurados para Google.
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: getFaqs(locale).map((f) => ({
+    mainEntity: faqs.map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -110,7 +111,7 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
       {/* The single membership card (features, no price) */}
       <MembershipTiers locale={locale} />
 
-      <Faq locale={locale} />
+      <Faq faqs={faqs} />
 
       {/* Price in person → funnel */}
       <CTAFinal

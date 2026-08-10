@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { getTiers } from '@/lib/localize';
 import ScrollReveal from './ScrollReveal';
 import JoinCTA from './JoinCTA';
@@ -6,9 +6,9 @@ import RevealText from './RevealText';
 
 /* Single membership, no pricing shown for now. The card reads name-less on
    purpose — the section heading introduces it ("La membresía"). */
-export default function MembershipTiers({ locale }: { locale: string }) {
-  const t = useTranslations('membership.tiers');
-  const membership = getTiers(locale)[0];
+export default async function MembershipTiers({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: 'membership.tiers' });
+  const membership = (await getTiers(locale))[0];
 
   return (
     <section className="py-24 md:py-36 bg-sand">

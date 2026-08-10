@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-import { ACTIVE_BOAT_SLUGS } from '@/lib/data';
-import { getBoat } from '@/lib/localize';
+import { getTranslations } from 'next-intl/server';
+import { getBoat, getActiveBoatSlugs } from '@/lib/localize';
 import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import BoatGallery from '@/components/BoatGallery';
@@ -13,30 +12,31 @@ interface Props {
   params: { locale: string; slug: string };
 }
 
-// Only the active boat(s) are reachable; hidden slugs 404 instead of rendering.
-export const dynamicParams = false;
+/* dynamicParams abierto: si el cliente da de alta un barco nuevo en /studio,
+   su ficha se renderiza bajo demanda sin necesidad de redeploy. Los slugs
+   inactivos o inexistentes siguen cayendo en 404 (guard de abajo). */
+export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return ACTIVE_BOAT_SLUGS.map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  return (await getActiveBoatSlugs()).map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params: { locale, slug } }: Props): Metadata {
-  const boat = ACTIVE_BOAT_SLUGS.includes(slug) ? getBoat(locale, slug) : null;
-  if (!boat) return {};
+export async function generateMetadata({ params: { locale, slug } }: Props): Promise<Metadata> {
+  const boat = await getBoat(locale, slug);
+  if (!boat || !boat.active) return {};
   // Meta description: tagline + descripción, recortada en un espacio antes de ~160 chars.
   const raw = `${boat.tagline} ${boat.description}`;
   const description = raw.length > 160 ? `${raw.slice(0, raw.lastIndexOf(' ', 157))}…` : raw;
   return { title: `${boat.name} — ${boat.lengthM}`, description };
 }
 
-export default function BoatDetailPage({ params: { locale, slug } }: Props) {
-  // Runtime guard: only active boats are reachable. `dynamicParams=false` covers
-  // this for static generation, but the boat data for hidden slugs still exists,
-  // so a dynamically-rendered request would otherwise render them — 404 explicitly.
-  const boat = ACTIVE_BOAT_SLUGS.includes(slug) ? getBoat(locale, slug) : null;
-  if (!boat) notFound();
+export default async function BoatDetailPage({ params: { locale, slug } }: Props) {
+  // Solo los barcos activos son accesibles: los ocultos existen en los datos
+  // pero su ficha responde 404.
+  const boat = await getBoat(locale, slug);
+  if (!boat || !boat.active) notFound();
 
-  const t = useTranslations('boatDetail');
+  const t = await getTranslations({ locale, namespace: 'boatDetail' });
   const guests: Record<string, string> = { es: 'personas', en: 'guests', sv: 'gäster', ru: 'гостей', de: 'Gäste', fr: 'invités' };
   const guestsLabel = guests[locale] ?? guests.en;
 

@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { getActiveFleet } from '@/lib/localize';
+import type { LocalBoat } from '@/lib/localize';
 import ParallaxImage from './ParallaxImage';
 import ScrollReveal from './ScrollReveal';
 import ImageReveal from './ImageReveal';
@@ -10,9 +10,10 @@ import MediaSlideshow from './MediaSlideshow';
 /* Presentación editorial de la flota: una pieza a gran formato por barco.
    La foto entra con cortina (ImageReveal) y responde al hover con un zoom
    lentísimo; la ficha se coreografía en tres tiempos (cabecera → datos → CTA).
-   El modelo corto protagoniza la tipografía (patrón range-page De Antonio). */
-export default function FleetShowcase({ locale }: { locale: string }) {
-  const fleet = getActiveFleet(locale);
+   El modelo corto protagoniza la tipografía (patrón range-page De Antonio).
+   Los barcos llegan por props desde /flota (server). */
+export default function FleetShowcase({ locale, boats }: { locale: string; boats: LocalBoat[] }) {
+  const fleet = boats;
   const t = useTranslations('boatDetail');
   const tf = useTranslations('fleet');
   const total = String(fleet.length).padStart(2, '0');

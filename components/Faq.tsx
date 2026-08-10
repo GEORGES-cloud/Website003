@@ -2,13 +2,18 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { getFaqs } from '@/lib/localize';
 import ScrollReveal from './ScrollReveal';
 import RevealText from './RevealText';
 
-export default function Faq({ locale }: { locale: string }) {
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
+/* Las FAQ llegan por props desde la página (server): este componente es
+   cliente por el acordeón y no puede consultar el CMS directamente. */
+export default function Faq({ faqs }: { faqs: FaqItem[] }) {
   const t = useTranslations('membership.faq');
-  const faqs = getFaqs(locale);
   const [open, setOpen] = useState<number | null>(0);
 
   return (

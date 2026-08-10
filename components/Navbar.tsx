@@ -6,11 +6,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useJoinFunnel } from './JoinFunnelProvider';
-import { fleet, ACTIVE_BOAT_SLUGS } from '@/lib/data';
 import { getLenis } from '@/lib/lenis';
+
+export interface MenuBoat {
+  slug: string;
+  name: string;
+  shortName?: string;
+}
 
 interface NavbarProps {
   locale: string;
+  /** Barcos activos para el menú "range", ya localizados (los pasa el layout). */
+  menuBoats: MenuBoat[];
 }
 
 const MENU_LABEL: Record<string, string> = {
@@ -54,7 +61,7 @@ function BrandLogo({ white, className = '' }: { white: boolean; className?: stri
   );
 }
 
-export default function Navbar({ locale }: NavbarProps) {
+export default function Navbar({ locale, menuBoats }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   // La barra se retira al bajar y reaparece al subir (patrón "mayordomo")
   const [hidden, setHidden] = useState(false);
@@ -113,10 +120,9 @@ export default function Navbar({ locale }: NavbarProps) {
     };
   }, [menuOpen]);
 
-  // Menú tipo "range": la flota en grande a la izquierda, navegación a la derecha
-  const models = ACTIVE_BOAT_SLUGS
-    .map((slug) => fleet.find((b) => b.slug === slug))
-    .filter((b): b is (typeof fleet)[number] => Boolean(b));
+  // Menú tipo "range": la flota en grande a la izquierda, navegación a la derecha.
+  // Los barcos llegan por props desde el layout (server) — salen del CMS.
+  const models = menuBoats;
 
   // Orden pedido por el cliente: Membresía (con "cómo funciona" dentro), Flota,
   // Puerto base, Nosotros, Contacto. "Cómo funciona" ya no es item propio.

@@ -1,7 +1,6 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useInView, useReducedMotion, useScroll, useTransform } from 'framer-motion';
-import { getMilestones } from '@/lib/localize';
 import { FlamingoMark } from './Logo';
 import ScrollReveal from './ScrollReveal';
 import RevealText from './RevealText';
@@ -67,13 +66,14 @@ function MilestoneRow({ m, reduce }: { m: Milestone; reduce: boolean }) {
 }
 
 export default function MilestonesTimeline({
-  locale,
+  items,
   eyebrow,
   title,
   intro,
   asHero = false,
 }: {
-  locale: string;
+  /** Hitos ya localizados: llegan por props desde la página (server). */
+  items: Milestone[];
   eyebrow: string;
   title: string;
   intro?: string;
@@ -86,7 +86,6 @@ export default function MilestonesTimeline({
   const { scrollYProgress } = useScroll({ target: railRef, offset: ['start center', 'end center'] });
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const dotTop = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-  const items = getMilestones(locale) as Milestone[];
 
   // Abriendo la página, el titular de la sección es el h1 del documento.
   const Heading = asHero ? 'h1' : 'h2';

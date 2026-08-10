@@ -11,9 +11,9 @@ const COPY: Record<string, { eyebrow: string; title: string; subtitle: string; d
   fr: { eyebrow: 'Depuis Puerto Banús', title: 'La Méditerranée, à votre portée', subtitle: 'Criques cachées, ports de charme et navigations à la journée. Tout commence au cœur de Marbella.', distance: 'Distance', time: 'Temps' },
 };
 
-export default function Destinations({ locale }: { locale: string }) {
+export default async function Destinations({ locale }: { locale: string }) {
   const copy = COPY[locale] ?? COPY.en;
-  const routes = getRoutes(locale);
+  const routes = await getRoutes(locale);
 
   return (
     <section className="py-24 md:py-36 bg-bone">

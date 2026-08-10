@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
 import HeroVideo from '@/components/HeroVideo';
 import MilestonesTimeline from '@/components/MilestonesTimeline';
 import CTAFinal from '@/components/CTAFinal';
+import { getMilestones } from '@/lib/localize';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'meta.pages.about' });
   return { title: t('title'), description: t('description') };
 }
 
-export default function NosotrosPage({ params: { locale } }: { params: { locale: string } }) {
-  const t = useTranslations('about');
-  const tc = useTranslations('home.cta');
+export default async function NosotrosPage({ params: { locale } }: { params: { locale: string } }) {
+  const t = await getTranslations({ locale, namespace: 'about' });
+  const tc = await getTranslations({ locale, namespace: 'home.cta' });
+  const milestones = await getMilestones(locale);
 
   return (
     <>
@@ -29,7 +30,7 @@ export default function NosotrosPage({ params: { locale } }: { params: { locale:
       />
 
       <MilestonesTimeline
-        locale={locale}
+        items={milestones}
         eyebrow={t('history.eyebrow')}
         title={t('history.title')}
         intro={t('history.intro')}

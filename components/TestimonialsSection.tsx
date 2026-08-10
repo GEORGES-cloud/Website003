@@ -16,8 +16,8 @@ const EYEBROW: Record<string, string> = {
 
 /* Static editorial quote — one confident hero testimonial, the rest as a quiet
    two-column postscript. No carousel, no timers. */
-export default function TestimonialsSection({ locale }: TestimonialsSectionProps) {
-  const all = getTestimonials(locale);
+export default async function TestimonialsSection({ locale }: TestimonialsSectionProps) {
+  const all = await getTestimonials(locale);
   if (all.length === 0) return null;
 
   const featured = all.reduce((a, b) => (b.quote.length > a.quote.length ? b : a));

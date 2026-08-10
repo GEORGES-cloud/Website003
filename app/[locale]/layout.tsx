@@ -17,6 +17,7 @@ import JoinFunnelProvider from '@/components/JoinFunnelProvider';
 import MotionProvider from '@/components/MotionProvider';
 import JoinFunnel from '@/components/JoinFunnel';
 import { locales, isLocale } from '@/lib/locales';
+import { getMenuBoats } from '@/lib/localize';
 
 const manrope = Manrope({
   subsets: ['latin', 'cyrillic'],
@@ -75,6 +76,7 @@ export default async function LocaleLayout({
   if (!isLocale(locale)) notFound();
 
   const messages = await getMessages();
+  const menuBoats = await getMenuBoats(locale);
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -90,7 +92,7 @@ export default async function LocaleLayout({
           <JoinFunnelProvider>
             <SmoothScroll />
             <ScrollProgress />
-            <Navbar locale={locale} />
+            <Navbar locale={locale} menuBoats={menuBoats} />
             <main id="main">{children}</main>
             <Footer locale={locale} />
             <FloatingContact locale={locale} />

@@ -1,7 +1,12 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { useInView, useReducedMotion } from 'framer-motion';
-import { getStats } from '@/lib/localize';
+
+export interface StatItem {
+  value: number;
+  suffix?: string;
+  label: string;
+}
 
 function Counter({ value, suffix }: { value: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -36,8 +41,9 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
   );
 }
 
-export default function Stats({ locale }: { locale: string }) {
-  const stats = getStats(locale);
+/* Las cifras llegan por props desde la home (server): el contador anima en
+   cliente pero los datos salen del CMS. */
+export default function Stats({ stats }: { stats: StatItem[] }) {
   return (
     <section className="bg-ink text-white py-20 md:py-28">
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">

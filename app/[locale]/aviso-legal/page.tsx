@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import LegalDocView from '@/components/LegalDocView';
 import { getLegal } from '@/lib/localize';
 
-export function generateMetadata({ params: { locale } }: { params: { locale: string } }): Metadata {
-  return { title: getLegal(locale, 'notice').title, robots: { index: false } };
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return { title: (await getLegal(locale, 'notice')).title, robots: { index: false } };
 }
 
-export default function AvisoLegalPage({ params: { locale } }: { params: { locale: string } }) {
-  return <LegalDocView doc={getLegal(locale, 'notice')} />;
+export default async function AvisoLegalPage({ params: { locale } }: { params: { locale: string } }) {
+  return <LegalDocView doc={await getLegal(locale, 'notice')} />;
 }

@@ -1,8 +1,9 @@
-import { WA_PHONE } from '@/lib/whatsapp';
+import { getSiteSettings } from '@/lib/localize';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://flamingoyachtclub.com';
 
-export default function JsonLd({ locale }: { locale: string }) {
+export default async function JsonLd({ locale }: { locale: string }) {
+  const settings = await getSiteSettings();
   const data = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -27,10 +28,11 @@ export default function JsonLd({ locale }: { locale: string }) {
     // Mismo punto que el mapa de /puerto-base (antes divergían).
     geo: { '@type': 'GeoCoordinates', latitude: 36.48862, longitude: -4.94988 },
     areaServed: { '@type': 'Place', name: 'Costa del Sol, Marbella' },
-    telephone: `+${WA_PHONE}`,
-    email: process.env.CONTACT_EMAIL ?? 'Hello@flamingoyachtclub.com',
+    telephone: settings.telephone,
+    email: settings.email,
     priceRange: '€€€',
-    sameAs: [] as string[],
+    // Redes sociales: el cliente las rellena en /studio → Ajustes del sitio.
+    sameAs: settings.sameAs,
   };
 
   return (
