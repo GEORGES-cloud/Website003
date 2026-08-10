@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
+import HeroVideo from '@/components/HeroVideo';
 import MilestonesTimeline from '@/components/MilestonesTimeline';
 import CTAFinal from '@/components/CTAFinal';
 
@@ -17,10 +18,17 @@ export default function NosotrosPage({ params: { locale } }: { params: { locale:
 
   return (
     <>
-      {/* La línea del tiempo abre la página en lugar de un hero de foto: la
-          travesía de 1965 a Flamingo ES la portada de "Nosotros". */}
+      {/* Hero de vídeo a pantalla completa (yate navegando): el titular del
+          club sobre el mar abre la página, como en las webs de astilleros. */}
+      <HeroVideo
+        src="/videos/about-hero.mp4"
+        poster="/images/about-hero-poster.jpg"
+        eyebrow={t('hero.eyebrow')}
+        title={t('hero.title')}
+        body={t('hero.subtitle')}
+      />
+
       <MilestonesTimeline
-        asHero
         locale={locale}
         eyebrow={t('history.eyebrow')}
         title={t('history.title')}
