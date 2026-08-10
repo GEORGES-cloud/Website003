@@ -13,3 +13,11 @@ export function hasConsentDecision(): boolean {
     return true;
   }
 }
+
+export function hasAcceptedCookies(): boolean {
+  try {
+    return localStorage.getItem(CONSENT_KEY) === 'accepted';
+  } catch {
+    return false;
+  }
+}

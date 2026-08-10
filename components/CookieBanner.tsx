@@ -27,12 +27,12 @@ export default function CookieBanner({ locale }: { locale: string }) {
   };
 
   const TEXTS: Record<string, { text: string; more: string; accept: string; reject: string }> = {
-    es: { text: 'Usamos cookies propias y de terceros para mejorar tu experiencia. Puedes aceptarlas o rechazar las no esenciales.', more: 'Política de privacidad', accept: 'Aceptar', reject: 'Rechazar' },
-    en: { text: 'We use our own and third-party cookies to improve your experience. You can accept them or reject non-essential ones.', more: 'Privacy policy', accept: 'Accept', reject: 'Reject' },
-    sv: { text: 'Vi använder egna och tredjepartscookies för att förbättra din upplevelse. Du kan acceptera dem eller avvisa icke-nödvändiga.', more: 'Integritetspolicy', accept: 'Acceptera', reject: 'Avvisa' },
-    ru: { text: 'Мы используем собственные и сторонние файлы cookie, чтобы улучшить ваш опыт. Вы можете принять их или отклонить необязательные.', more: 'Политика конфиденциальности', accept: 'Принять', reject: 'Отклонить' },
-    de: { text: 'Wir verwenden eigene und Cookies von Drittanbietern, um Ihr Erlebnis zu verbessern. Sie können sie akzeptieren oder nicht notwendige ablehnen.', more: 'Datenschutzrichtlinie', accept: 'Akzeptieren', reject: 'Ablehnen' },
-    fr: { text: 'Nous utilisons des cookies propres et tiers pour améliorer votre expérience. Vous pouvez les accepter ou refuser les non essentiels.', more: 'Politique de confidentialité', accept: 'Accepter', reject: 'Refuser' },
+    es: { text: 'Usamos cookies propias y de terceros para mejorar tu experiencia. Puedes aceptarlas o rechazar las no esenciales.', more: 'Política de cookies', accept: 'Aceptar', reject: 'Rechazar' },
+    en: { text: 'We use our own and third-party cookies to improve your experience. You can accept them or reject non-essential ones.', more: 'Cookie policy', accept: 'Accept', reject: 'Reject' },
+    sv: { text: 'Vi använder egna och tredjepartscookies för att förbättra din upplevelse. Du kan acceptera dem eller avvisa icke-nödvändiga.', more: 'Cookiepolicy', accept: 'Acceptera', reject: 'Avvisa' },
+    ru: { text: 'Мы используем собственные и сторонние файлы cookie, чтобы улучшить ваш опыт. Вы можете принять их или отклонить необязательные.', more: 'Политика cookie', accept: 'Принять', reject: 'Отклонить' },
+    de: { text: 'Wir verwenden eigene und Cookies von Drittanbietern, um Ihr Erlebnis zu verbessern. Sie können sie akzeptieren oder nicht notwendige ablehnen.', more: 'Cookie-Richtlinie', accept: 'Akzeptieren', reject: 'Ablehnen' },
+    fr: { text: 'Nous utilisons des cookies propres et tiers pour améliorer votre expérience. Vous pouvez les accepter ou refuser les non essentiels.', more: 'Politique de cookies', accept: 'Accepter', reject: 'Refuser' },
   };
   const t = TEXTS[locale] ?? TEXTS.en;
 
@@ -50,7 +50,7 @@ export default function CookieBanner({ locale }: { locale: string }) {
         >
           <p className="font-sans text-sm text-white/80 leading-relaxed">
             {t.text}{' '}
-            <Link href={`/${locale}/privacidad`} className="underline underline-offset-2 hover:text-white">
+            <Link href={`/${locale}/cookies`} className="underline underline-offset-2 hover:text-white">
               {t.more}
             </Link>
             .

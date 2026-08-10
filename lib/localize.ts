@@ -8,7 +8,7 @@ import ru from './strings/ru.json';
 import de from './strings/de.json';
 import fr from './strings/fr.json';
 
-type Doc = 'privacy' | 'terms' | 'notice';
+type Doc = 'privacy' | 'terms' | 'notice' | 'cookies';
 
 interface Strings {
   fleet?: Record<string, { tagline?: string; description?: string }>;

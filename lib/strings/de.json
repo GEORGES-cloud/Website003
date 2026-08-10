@@ -245,6 +245,37 @@
           ]
         }
       ]
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "updated": "Letzte Aktualisierung: August 2026",
+      "intro": "Diese Website verwendet nur eine minimale Anzahl von Cookies und ähnlichen Technologien. Hier erklären wir, welche das sind, wozu sie dienen und wie Sie sie kontrollieren.",
+      "sections": [
+        {
+          "heading": "Technische Speicherung (Erstanbieter)",
+          "body": [
+            "Wir speichern in Ihrem Browser (localStorage) Ihre Entscheidung zum Cookie-Hinweis und ob Sie das Willkommensbanner bereits gesehen haben. Das sind rein technische Einstellungen: Sie enthalten keine persönlichen Informationen, können Sie nicht identifizieren und werden niemals weitergegeben."
+          ]
+        },
+        {
+          "heading": "Cookies von Drittanbietern: Google Maps",
+          "body": [
+            "Die Seite \"Heimathafen\" bettet eine Google-Karte ein. Google kann beim Laden eigene Cookies setzen. Deshalb lädt die Karte nur, wenn Sie die Cookies im Hinweis akzeptieren oder ausdrücklich auf \"Karte laden\" klicken. Googles Richtlinie finden Sie unter policies.google.com."
+          ]
+        },
+        {
+          "heading": "Reichweitenmessung",
+          "body": [
+            "Wir verwenden Vercel Analytics, ein Messwerkzeug, das keine Cookies verwendet und Besucher nicht identifiziert: Es zählt Besuche nur aggregiert und anonym."
+          ]
+        },
+        {
+          "heading": "So widerrufen Sie Ihre Entscheidung",
+          "body": [
+            "Sie können die Daten dieser Website in den Browsereinstellungen löschen (Datenschutz → Websitedaten). Beim nächsten Besuch erscheint der Cookie-Hinweis erneut und Sie können neu entscheiden."
+          ]
+        }
+      ]
     }
   },
   "milestones": [

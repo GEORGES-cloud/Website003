@@ -16,7 +16,7 @@ const CIF = '[CIF/NIF]';
 const ADDR = 'Puerto Banús, 29660 Marbella, Málaga';
 const EMAIL = 'Hello@flamingoyachtclub.com';
 
-export const legal: Record<'privacy' | 'terms' | 'notice', Record<'es' | 'en', LegalDoc>> = {
+export const legal: Record<'privacy' | 'terms' | 'notice' | 'cookies', Record<'es' | 'en', LegalDoc>> = {
   privacy: {
     es: {
       title: 'Política de Privacidad',
@@ -96,6 +96,72 @@ export const legal: Record<'privacy' | 'terms' | 'notice', Record<'es' | 'en', L
         { heading: 'Owner', body: [`Company: ${COMPANY}.`, `Tax ID: ${CIF}.`, `Address: ${ADDR}.`, `Email: ${EMAIL}.`] },
         { heading: 'Terms of use', body: ['Accessing this site grants user status and implies acceptance of this legal notice.'] },
         { heading: 'Intellectual property', body: ['All rights to the site content belong to its owner or to third parties who have authorised its use.'] },
+      ],
+    },
+  },
+  cookies: {
+    es: {
+      title: 'Política de Cookies',
+      updated: 'Última actualización: agosto de 2026',
+      intro:
+        'Esta web utiliza un número mínimo de cookies y tecnologías similares. Aquí te explicamos cuáles son, para qué sirven y cómo controlarlas.',
+      sections: [
+        {
+          heading: 'Almacenamiento técnico propio',
+          body: [
+            'Guardamos en tu navegador (localStorage) tu decisión sobre el aviso de cookies y si ya has visto el banner de bienvenida. Son datos técnicos imprescindibles para recordar tus preferencias: no contienen información personal, no permiten identificarte y no se comparten con nadie.',
+          ],
+        },
+        {
+          heading: 'Cookies de terceros: Google Maps',
+          body: [
+            'La página "Puerto base" incluye un mapa de Google Maps. Google puede instalar cookies propias al cargarlo. Por eso el mapa solo se carga si aceptas las cookies en el aviso o pulsas expresamente "Cargar mapa". Puedes consultar la política de Google en policies.google.com.',
+          ],
+        },
+        {
+          heading: 'Medición de audiencia',
+          body: [
+            'Utilizamos Vercel Analytics, una herramienta de medición que no usa cookies ni identifica a los visitantes: solo cuenta visitas de forma agregada y anónima.',
+          ],
+        },
+        {
+          heading: 'Cómo revocar tu decisión',
+          body: [
+            'Puedes borrar el almacenamiento de este sitio desde la configuración de tu navegador (privacidad → datos de sitios web). Al volver a visitarnos, el aviso de cookies aparecerá de nuevo y podrás decidir otra vez.',
+          ],
+        },
+      ],
+    },
+    en: {
+      title: 'Cookie Policy',
+      updated: 'Last updated: August 2026',
+      intro:
+        'This website uses a minimal number of cookies and similar technologies. Here we explain what they are, what they do and how to control them.',
+      sections: [
+        {
+          heading: 'First-party technical storage',
+          body: [
+            'We store in your browser (localStorage) your decision about the cookie notice and whether you have already seen the welcome banner. These are strictly technical preferences: they contain no personal information, cannot identify you and are never shared.',
+          ],
+        },
+        {
+          heading: 'Third-party cookies: Google Maps',
+          body: [
+            'The "Home port" page embeds a Google Map. Google may set its own cookies when it loads. For that reason the map only loads if you accept cookies in the notice or expressly click "Load map". See Google\'s policy at policies.google.com.',
+          ],
+        },
+        {
+          heading: 'Audience measurement',
+          body: [
+            'We use Vercel Analytics, a measurement tool that uses no cookies and does not identify visitors: it only counts visits in an aggregated, anonymous way.',
+          ],
+        },
+        {
+          heading: 'How to withdraw your decision',
+          body: [
+            'You can clear this site\'s storage from your browser settings (privacy → website data). On your next visit the cookie notice will appear again and you can decide anew.',
+          ],
+        },
       ],
     },
   },

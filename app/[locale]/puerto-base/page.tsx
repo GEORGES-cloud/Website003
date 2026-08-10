@@ -5,6 +5,7 @@ import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
 import Destinations from '@/components/Destinations';
+import ConsentAwareMap from '@/components/ConsentAwareMap';
 import CTAFinal from '@/components/CTAFinal';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -75,13 +76,10 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
           </div>
           <ScrollReveal zoom>
             <div className="aspect-[4/3] md:aspect-[21/9] border border-line overflow-hidden">
-              <iframe
+              {/* Solo carga Google Maps con las cookies aceptadas (o bajo demanda) */}
+              <ConsentAwareMap
                 src={`https://maps.google.com/maps?q=36.48862,-4.94988&t=k&z=17&output=embed&hl=${locale}`}
                 title={t('map.title')}
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full border-0"
               />
             </div>
           </ScrollReveal>

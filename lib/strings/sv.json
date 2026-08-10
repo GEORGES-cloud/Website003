@@ -245,6 +245,37 @@
           ]
         }
       ]
+    },
+    "cookies": {
+      "title": "Cookiepolicy",
+      "updated": "Senast uppdaterad: augusti 2026",
+      "intro": "Den här webbplatsen använder ett minimalt antal cookies och liknande tekniker. Här förklarar vi vilka de är, vad de gör och hur du kontrollerar dem.",
+      "sections": [
+        {
+          "heading": "Teknisk lagring (förstapart)",
+          "body": [
+            "Vi sparar i din webbläsare (localStorage) ditt beslut om cookiemeddelandet och om du redan har sett välkomstbannern. Det är rent tekniska inställningar: de innehåller ingen personlig information, kan inte identifiera dig och delas aldrig."
+          ]
+        },
+        {
+          "heading": "Tredjepartscookies: Google Maps",
+          "body": [
+            "Sidan \"Hemmahamn\" bäddar in en Google-karta. Google kan placera egna cookies när den laddas. Därför laddas kartan bara om du accepterar cookies i meddelandet eller uttryckligen klickar på \"Ladda kartan\". Se Googles policy på policies.google.com."
+          ]
+        },
+        {
+          "heading": "Besöksmätning",
+          "body": [
+            "Vi använder Vercel Analytics, ett mätverktyg som inte använder cookies och inte identifierar besökare: det räknar bara besök aggregerat och anonymt."
+          ]
+        },
+        {
+          "heading": "Så ångrar du ditt beslut",
+          "body": [
+            "Du kan rensa webbplatsens lagring i webbläsarens inställningar (integritet → webbplatsdata). Vid nästa besök visas cookiemeddelandet igen och du kan välja på nytt."
+          ]
+        }
+      ]
     }
   },
   "milestones": [

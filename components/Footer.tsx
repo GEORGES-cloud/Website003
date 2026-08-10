@@ -110,6 +110,9 @@ export default function Footer({ locale }: FooterProps) {
             <Link href={`/${locale}/aviso-legal`} className="font-sans text-sm text-white/60 hover:text-white transition-colors">
               {tf('legalNotice')}
             </Link>
+            <Link href={`/${locale}/cookies`} className="font-sans text-sm text-white/60 hover:text-white transition-colors">
+              {tf('cookies')}
+            </Link>
           </div>
         </div>
       </div>

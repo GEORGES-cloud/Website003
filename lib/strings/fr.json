@@ -245,6 +245,37 @@
           ]
         }
       ]
+    },
+    "cookies": {
+      "title": "Politique de cookies",
+      "updated": "Dernière mise à jour : août 2026",
+      "intro": "Ce site utilise un nombre minimal de cookies et de technologies similaires. Nous vous expliquons ici lesquels, à quoi ils servent et comment les contrôler.",
+      "sections": [
+        {
+          "heading": "Stockage technique propre",
+          "body": [
+            "Nous conservons dans votre navigateur (localStorage) votre décision concernant l'avis de cookies et le fait d'avoir déjà vu la bannière de bienvenue. Ce sont des préférences purement techniques : elles ne contiennent aucune information personnelle, ne permettent pas de vous identifier et ne sont jamais partagées."
+          ]
+        },
+        {
+          "heading": "Cookies tiers : Google Maps",
+          "body": [
+            "La page « Port d'attache » intègre une carte Google Maps. Google peut installer ses propres cookies lors du chargement. C'est pourquoi la carte ne se charge que si vous acceptez les cookies dans l'avis ou cliquez expressément sur « Charger la carte ». Consultez la politique de Google sur policies.google.com."
+          ]
+        },
+        {
+          "heading": "Mesure d'audience",
+          "body": [
+            "Nous utilisons Vercel Analytics, un outil de mesure qui n'utilise pas de cookies et n'identifie pas les visiteurs : il compte uniquement les visites de manière agrégée et anonyme."
+          ]
+        },
+        {
+          "heading": "Comment revenir sur votre décision",
+          "body": [
+            "Vous pouvez effacer le stockage de ce site dans les réglages de votre navigateur (confidentialité → données des sites). Lors de votre prochaine visite, l'avis de cookies réapparaîtra et vous pourrez décider à nouveau."
+          ]
+        }
+      ]
     }
   },
   "milestones": [
