@@ -74,12 +74,16 @@ export default function Footer({ locale }: FooterProps) {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center font-sans text-[11px] font-semibold tracking-wide2 uppercase text-white/60 border border-white/20 px-5 py-3 hover:border-sea-light hover:text-white transition-colors"
               >
                 App Store
               </Link>
               <Link
                 href={playStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center font-sans text-[11px] font-semibold tracking-wide2 uppercase text-white/60 border border-white/20 px-5 py-3 hover:border-sea-light hover:text-white transition-colors"
               >
                 Google Play

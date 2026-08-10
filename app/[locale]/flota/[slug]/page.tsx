@@ -60,8 +60,8 @@ export default function BoatDetailPage({ params: { locale, slug } }: Props) {
                 <div className="mt-12">
                   <p className="eyebrow mb-5">{t('book')}</p>
                   <div className="flex flex-wrap gap-x-8 gap-y-3">
-                    <Link href={appStoreUrl} className="link-underline">App Store</Link>
-                    <Link href={playStoreUrl} className="link-underline">Google Play</Link>
+                    <Link href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">App Store</Link>
+                    <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">Google Play</Link>
                   </div>
                 </div>
               </div>

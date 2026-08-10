@@ -1,3 +1,5 @@
+import { WA_PHONE } from '@/lib/whatsapp';
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://flamingoyachtclub.com';
 
 export default function JsonLd({ locale }: { locale: string }) {
@@ -22,8 +24,12 @@ export default function JsonLd({ locale }: { locale: string }) {
       postalCode: '29660',
       addressCountry: 'ES',
     },
-    geo: { '@type': 'GeoCoordinates', latitude: 36.4848, longitude: -4.9534 },
+    // Mismo punto que el mapa de /puerto-base (antes divergían).
+    geo: { '@type': 'GeoCoordinates', latitude: 36.48862, longitude: -4.94988 },
     areaServed: { '@type': 'Place', name: 'Costa del Sol, Marbella' },
+    telephone: `+${WA_PHONE}`,
+    email: process.env.CONTACT_EMAIL ?? 'Hello@flamingoyachtclub.com',
+    priceRange: '€€€',
     sameAs: [] as string[],
   };
 

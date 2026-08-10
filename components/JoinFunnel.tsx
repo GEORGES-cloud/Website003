@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { waInterestHref } from '@/lib/whatsapp';
 import { getLenis } from '@/lib/lenis';
+import { trackEvent } from '@/lib/analytics';
 import { useJoinFunnel } from './JoinFunnelProvider';
 import { FlamingoMark } from './Logo';
 import ConsentCheckbox from './ConsentCheckbox';
@@ -43,6 +44,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   // Fresh run each time the modal opens
   useEffect(() => {
     if (!open) return;
+    trackEvent('join_funnel_open');
     setStep(0);
     setName('');
     setDay(null);
@@ -130,6 +132,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
         }),
       });
       if (!res.ok) throw new Error('send failed');
+      trackEvent('lead_submitted', { source: 'join_funnel' });
       setStep(3);
     } catch {
       setSendError(true);
@@ -201,7 +204,10 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                   href={waInterestHref(locale)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={closeFunnel}
+                  onClick={() => {
+                    trackEvent('whatsapp_click', { source: 'funnel_intro' });
+                    closeFunnel();
+                  }}
                   className="btn-primary !px-10 !py-5 !text-[13px] inline-flex items-center gap-3"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -305,7 +311,10 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                       href={waHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={closeFunnel}
+                      onClick={() => {
+                        trackEvent('whatsapp_click', { source: 'funnel_close' });
+                        closeFunnel();
+                      }}
                       className="btn-primary !py-3 w-full inline-flex items-center justify-center gap-2"
                     >
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>

@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
+import { Analytics } from '@vercel/analytics/react';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Manrope, Montserrat } from 'next/font/google';
@@ -101,6 +102,8 @@ export default async function LocaleLayout({
           </MotionProvider>
         </NextIntlClientProvider>
         <JsonLd locale={locale} />
+        {/* Sin cookies: no necesita entrar en el banner de consentimiento */}
+        <Analytics />
       </body>
     </html>
   );

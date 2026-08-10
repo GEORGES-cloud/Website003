@@ -50,8 +50,8 @@ export default function AppShowcase() {
             </ScrollReveal>
             <ScrollReveal delay={0.4}>
               <div className="flex gap-8">
-                <Link href={appStoreUrl} className="link-underline">App Store</Link>
-                <Link href={playStoreUrl} className="link-underline">Google Play</Link>
+                <Link href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">App Store</Link>
+                <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">Google Play</Link>
               </div>
             </ScrollReveal>
           </div>

@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { trackEvent } from '@/lib/analytics';
 import ConsentCheckbox from './ConsentCheckbox';
 import HoneypotField from './HoneypotField';
 
@@ -30,6 +31,7 @@ export default function ContactForm() {
       });
       if (res.ok) {
         setStatus('success');
+        trackEvent('lead_submitted', { source: 'contact_form' });
         form.reset();
       } else {
         setStatus('error');

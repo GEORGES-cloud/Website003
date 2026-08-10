@@ -1,4 +1,6 @@
+'use client';
 import { waInterestHref } from '@/lib/whatsapp';
+import { trackEvent } from '@/lib/analytics';
 
 export default function FloatingContact({ locale }: { locale: string }) {
   const href = waInterestHref(locale);
@@ -9,6 +11,7 @@ export default function FloatingContact({ locale }: { locale: string }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp"
+      onClick={() => trackEvent('whatsapp_click', { source: 'floating' })}
       className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-5 z-[80] flex items-center gap-3 bg-ink text-white pl-4 pr-5 py-3 rounded-full border border-white/15 hover:bg-sea transition-colors duration-300 group"
     >
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden className="flex-none">

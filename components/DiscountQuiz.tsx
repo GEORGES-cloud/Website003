@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { waInterestHref } from '@/lib/whatsapp';
 import { getLenis } from '@/lib/lenis';
+import { trackEvent } from '@/lib/analytics';
 import { CONSENT_EVENT, hasConsentDecision } from '@/lib/consent';
 import ConsentCheckbox from './ConsentCheckbox';
 import HoneypotField from './HoneypotField';
@@ -112,6 +113,7 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
         }),
       });
       if (!res.ok) throw new Error('send failed');
+      trackEvent('lead_submitted', { source: 'discount_quiz' });
       try {
         localStorage.setItem(KEY, 'won');
       } catch {

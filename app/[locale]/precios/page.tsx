@@ -8,6 +8,7 @@ import MembershipTiers from '@/components/MembershipTiers';
 import HowItWorksTimeline from '@/components/HowItWorksTimeline';
 import Faq from '@/components/Faq';
 import CTAFinal from '@/components/CTAFinal';
+import { getFaqs } from '@/lib/localize';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'meta.pages.prices' });
@@ -25,8 +26,21 @@ export default function PreciosPage({ params: { locale } }: { params: { locale: 
     desc: th(`${s}.desc`),
   }));
 
+  // Las mismas FAQ que pinta <Faq/>, como datos estructurados para Google.
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: getFaqs(locale).map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
       {/* Hero "ledger": tipografía + regla de datos + banda panorámica */}
       <HeroLedger
         eyebrow={t('hero.eyebrow')}
