@@ -347,7 +347,7 @@ async function run() {
   console.log('Ajustes del sitio: ✔');
 
   console.log(`\nListo. ${assetCache.size} imágenes en el CDN de Sanity.`);
-  console.log('Abre /studio y comprueba: 8 barcos (3 activos), 7 FAQs, 3 testimonios, 4 cifras, 7 hitos, 1 membresía, 4 legales, galería de 51.');
+  console.log('Abre /studio y comprueba: 8 barcos (3 activos), 7 FAQs, 3 testimonios, 4 cifras, 7 hitos, 1 membresía, 4 legales, galería de 50.');
 }
 
 run().catch((err) => {
