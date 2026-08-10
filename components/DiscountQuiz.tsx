@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { waInterestHref } from '@/lib/whatsapp';
+import { getLenis } from '@/lib/lenis';
 import { CONSENT_EVENT, hasConsentDecision } from '@/lib/consent';
 import ConsentCheckbox from './ConsentCheckbox';
 import HoneypotField from './HoneypotField';
@@ -68,14 +69,16 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
     setOpen(false);
   }, []);
 
-  // Bloqueo de scroll + Escape para cerrar
+  // Bloqueo de scroll (+ pausa de Lenis) + Escape para cerrar
   useEffect(() => {
     if (!open) return;
     document.body.style.overflow = 'hidden';
+    getLenis()?.stop();
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && dismiss();
     document.addEventListener('keydown', onKey);
     return () => {
       document.body.style.overflow = '';
+      getLenis()?.start();
       document.removeEventListener('keydown', onKey);
     };
   }, [open, dismiss]);
@@ -150,6 +153,7 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
             animate={panelShown}
             exit={{ opacity: 0, y: reduce ? 0 : 12 }}
             transition={{ duration: reduce ? 0.2 : 0.45, ease: EASE }}
+            data-lenis-prevent
             className="relative w-full max-w-lg bg-bone border border-line max-h-[90dvh] overflow-y-auto"
           >
             <button

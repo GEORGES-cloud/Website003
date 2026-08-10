@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useJoinFunnel } from './JoinFunnelProvider';
 import { fleet, ACTIVE_BOAT_SLUGS } from '@/lib/data';
+import { getLenis } from '@/lib/lenis';
 
 interface NavbarProps {
   locale: string;
@@ -101,10 +102,13 @@ export default function Navbar({ locale }: NavbarProps) {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
+    if (menuOpen) getLenis()?.stop();
+    else getLenis()?.start();
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMenuOpen(false);
     if (menuOpen) document.addEventListener('keydown', onKey);
     return () => {
       document.body.style.overflow = '';
+      getLenis()?.start();
       document.removeEventListener('keydown', onKey);
     };
   }, [menuOpen]);
@@ -208,7 +212,7 @@ export default function Navbar({ locale }: NavbarProps) {
 
             {/* Cuerpo — dos columnas estilo "range": flota en display a la izquierda,
                 navegación secundaria a la derecha */}
-            <div className="flex-1 overflow-y-auto">
+            <div data-lenis-prevent className="flex-1 overflow-y-auto">
               <div className="max-w-[1480px] mx-auto px-6 md:px-10 py-10 md:py-16 grid md:grid-cols-[1.5fr_1fr] gap-x-12 gap-y-12">
                 {/* LA FLOTA */}
                 <div>

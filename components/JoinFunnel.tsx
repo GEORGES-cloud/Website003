@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { waInterestHref } from '@/lib/whatsapp';
+import { getLenis } from '@/lib/lenis';
 import { useJoinFunnel } from './JoinFunnelProvider';
 import { FlamingoMark } from './Logo';
 import ConsentCheckbox from './ConsentCheckbox';
@@ -53,15 +54,17 @@ export default function JoinFunnel({ locale }: { locale: string }) {
     setSendError(false);
   }, [open]);
 
-  // Body scroll lock + Escape to close
+  // Body scroll lock (+ pausa de Lenis, que si no secuestra la rueda) + Escape
   useEffect(() => {
     if (!open) return;
     document.body.style.overflow = 'hidden';
+    getLenis()?.stop();
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && closeFunnel();
     document.addEventListener('keydown', onKey);
     const id = window.setTimeout(() => closeRef.current?.focus(), 60);
     return () => {
       document.body.style.overflow = '';
+      getLenis()?.start();
       document.removeEventListener('keydown', onKey);
       window.clearTimeout(id);
     };
@@ -172,7 +175,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
 
       {/* Content — block layout + my-auto so tall steps scroll from the top
           instead of clipping (centered-flex-in-overflow bug on small phones) */}
-      <div className="flex-1 overflow-y-auto flex flex-col px-6 py-12">
+      <div data-lenis-prevent className="flex-1 overflow-y-auto flex flex-col px-6 py-12">
         <motion.div
           key={step}
           initial={panelInit}

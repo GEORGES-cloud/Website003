@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getLenis } from '@/lib/lenis';
 
 /* Carrete horizontal: se recorre con el dedo (scroll nativo + snap) y en
    escritorio con rueda/drag o flechas — las flechas solo existen con puntero
@@ -109,9 +110,11 @@ export default function BoatGallery({
     };
     window.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
+    getLenis()?.stop();
     return () => {
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
+      getLenis()?.start();
     };
   }, [open, close, go]);
 
