@@ -47,10 +47,12 @@ export default async function PreciosPage({ params: { locale } }: { params: { lo
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        image="/images/wake-circle.jpg"
+        image="/images/spx-formation-aerial.jpg"
         slides={[
+          // Abre la formación de 4 SPX a vista de dron (material oficial Sea Ray
+          // enviado por el cliente): es la imagen de flota-como-membresía.
+          { src: '/images/spx-formation-aerial.jpg' },
           { src: '/images/wake-circle.jpg' },
-          { src: '/images/aerial-reef-1.jpg' },
           // Cierra con un encuadre a ras de agua y un barco de la flota: las dos
           // aéreas de arrecife eran casi el mismo fotograma y el pase no cambiaba.
           { src: '/images/navan-clearcove.jpg' },
