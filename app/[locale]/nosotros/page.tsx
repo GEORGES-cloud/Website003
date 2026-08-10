@@ -41,9 +41,11 @@ export default async function NosotrosPage({ params: { locale } }: { params: { l
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal direction="right">
+              {/* La SPX volviendo a su amarre entre los yates de Banús: la
+                  "casa" de Marina Marbella que cuenta el texto de al lado. */}
               <ParallaxImage
-                src="/images/navan-shade.jpg"
-                alt="Navegando por el Mediterráneo"
+                src="/images/about.jpg"
+                alt="La SPX 210 volviendo a su amarre en Puerto Banús al atardecer"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}
                 className="aspect-[4/5]"

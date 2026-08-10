@@ -4,7 +4,6 @@
 
 export const REEL = [
   '/images/blue-cala-anchor.jpg',
-  '/images/about.jpg',
   '/images/navan-5.jpg',
   '/images/cta.jpg',
   '/images/exp-daytrip.jpg',
@@ -60,7 +59,6 @@ export const REEL = [
    ("Una vida en el mar 23") no dice nada a quien usa lector de pantalla. */
 export const REEL_ALTS = [
   'La Sea Ray SPX 210 fondeada en una cala',
-  'La SPX 210 amarrada en Puerto Banús al atardecer',
   'La NAVAN T30 navegando por la costa',
   'Navegando al atardecer frente a la Costa del Sol',
   'Un día completo en el mar con amigos',
