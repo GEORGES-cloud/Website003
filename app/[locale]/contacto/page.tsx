@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import HeroQuiet from '@/components/HeroQuiet';
+import HeroVideo from '@/components/HeroVideo';
 import ContactForm from '@/components/ContactForm';
 import ScrollReveal from '@/components/ScrollReveal';
 
@@ -15,24 +15,25 @@ export default function ContactoPage({ params: { locale } }: { params: { locale:
 
   return (
     <>
-      {/* Hero silencioso: tipografía + invitación fotográfica (la popa del SPX
-          al amanecer saliendo de la bocana; el recorte 4:5 centra a la pareja) */}
-      <HeroQuiet
+      {/* Mar en calma al atardecer: el hero no vende barco aquí, invita a
+          venir. Media altura — el formulario es lo que importa y queda a un
+          scroll corto. La frase larga baja con el formulario. */}
+      <HeroVideo
+        src="/videos/contacto-hero.mp4"
+        poster="/images/contacto-hero-poster.jpg"
+        heightClass="h-[64svh] min-h-[440px]"
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
-        subtitle={t('hero.subtitle')}
-        image="/images/marina-dawn.jpg"
-        slides={[
-          // El pase abre con la foto declarada en `image`; antes arrancaba con
-          // una playa de palmeras tropical, ajena a Puerto Banús.
-          { src: '/images/marina-dawn.jpg' },
-          { src: '/images/navan-sterndawn.jpg' },
-          { src: '/images/teak-water.jpg' },
-        ]}
       />
 
-      <section className="pt-8 md:pt-16 pb-24 md:pb-36 bg-bone">
+      <section className="pt-20 md:pt-28 pb-24 md:pb-36 bg-bone">
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
+          <ScrollReveal>
+            <p className="font-sans text-lg md:text-xl text-muted leading-relaxed max-w-3xl mb-16 md:mb-20">
+              {t('hero.subtitle')}
+            </p>
+          </ScrollReveal>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
             <ScrollReveal>
               <p className="display text-xl md:text-2xl text-ink mb-10">{t('consult')}</p>
