@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import ImageReveal from './ImageReveal';
 import MediaSlideshow, { type Slide } from './MediaSlideshow';
+import ParallaxImage from './ParallaxImage';
 import RevealText from './RevealText';
 
 interface Fact {
@@ -57,13 +57,9 @@ export default function HeroLedger({ eyebrow, title, subtitle, image, facts, sli
             {slides && slides.length > 1 ? (
               <MediaSlideshow slides={slides} sizes="100vw" />
             ) : (
-              <Image
-                src={image}
-                alt=""
-                fill
-                sizes="100vw"
-                className="img-grade object-cover"
-              />
+              /* Foto única: deriva de parallax al cruzar el viewport — la
+                 banda gana profundidad sin tocar el pase de diapositivas. */
+              <ParallaxImage src={image} alt="" sizes="100vw" strength={36} className="absolute inset-0" />
             )}
           </div>
         </ImageReveal>

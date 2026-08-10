@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import ImageReveal from './ImageReveal';
 import ScrollReveal from './ScrollReveal';
 import RevealText from './RevealText';
 
@@ -12,8 +13,9 @@ export default function ClubManifesto({ locale }: { locale: string }) {
   return (
     <section className="bg-bone overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        {/* Video — real footage, bleeds to the section edge */}
-        <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[640px] bg-ink">
+        {/* Video — real footage, bleeds to the section edge. La cortina
+            editorial lo desvela como a las fotos: mismo lenguaje de entrada. */}
+        <ImageReveal className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[640px] bg-ink">
           <video
             autoPlay
             muted
@@ -26,7 +28,7 @@ export default function ClubManifesto({ locale }: { locale: string }) {
           >
             <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
-        </div>
+        </ImageReveal>
 
         {/* Manifesto */}
         <div className="py-24 md:py-36 px-6 md:px-10 lg:pl-20 lg:pr-16 flex flex-col justify-center">

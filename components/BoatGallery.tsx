@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { getLenis } from '@/lib/lenis';
 
 /* Carrete horizontal: se recorre con el dedo (scroll nativo + snap) y en
@@ -32,6 +32,7 @@ export default function BoatGallery({
   alts?: string[];
 }) {
   const altFor = (i: number) => alts?.[i] ?? `${name} ${i + 1}`;
+  const reduce = useReducedMotion();
   const [open, setOpen] = useState<number | null>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedUntil = useRef(0);
@@ -133,14 +134,24 @@ export default function BoatGallery({
               aria-label={altFor(i)}
               className="group relative overflow-hidden flex-none snap-start w-[78vw] sm:w-[440px] md:w-[540px] aspect-[4/3]"
             >
-              <Image
-                src={src}
-                alt={altFor(i)}
-                fill
-                sizes="(max-width: 640px) 78vw, 540px"
-                style={{ objectPosition: OBJECT_POSITION[src] }}
-                className="img-grade object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.05]"
-              />
+              {/* Cada foto asienta al entrar en pantalla — también las que
+                  llegan deslizando en horizontal. Una sola vez por foto. */}
+              <motion.div
+                initial={reduce ? false : { opacity: 0, scale: 1.14 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 1.15, delay: (i % 4) * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={src}
+                  alt={altFor(i)}
+                  fill
+                  sizes="(max-width: 640px) 78vw, 540px"
+                  style={{ objectPosition: OBJECT_POSITION[src] }}
+                  className="img-grade object-cover transition-transform duration-700 ease-smooth group-hover:scale-[1.05]"
+                />
+              </motion.div>
               <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors" />
             </button>
           ))}

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import ImageReveal from './ImageReveal';
 import ScrollReveal from './ScrollReveal';
 import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
 import RevealText from './RevealText';
@@ -18,13 +19,15 @@ export default function AppShowcase() {
         {/* Mockup oficial de la app (MOXSEA) — contenida, sin recorte ni gradación:
             es interfaz, no fotografía. El fondo replica el gris del propio mockup. */}
         <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[680px] bg-[#e4e6e9]">
-          <Image
-            src="/images/app-mockup-moxsea.jpg"
-            alt="La app del club: reservas, check-in y check-out desde el móvil"
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-contain"
-          />
+          <ImageReveal className="absolute inset-0">
+            <Image
+              src="/images/app-mockup-moxsea.jpg"
+              alt="La app del club: reservas, check-in y check-out desde el móvil"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-contain"
+            />
+          </ImageReveal>
         </div>
 
         {/* Text */}

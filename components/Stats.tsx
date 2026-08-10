@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { useInView, useReducedMotion } from 'framer-motion';
+import ScrollReveal from './ScrollReveal';
 
 export interface StatItem {
   value: number;
@@ -49,14 +50,16 @@ export default function Stats({ stats }: { stats: StatItem[] }) {
       <div className="max-w-[1480px] mx-auto px-6 md:px-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6">
           {stats.map((s, i) => (
-            <div key={i} className="text-center">
-              <p className="display-num text-white" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)' }}>
-                <Counter value={s.value} suffix={s.suffix} />
-              </p>
-              <p className="font-sans text-xs sm:text-sm text-white/55 tracking-wide mt-3 max-w-[14rem] mx-auto">
-                {s.label}
-              </p>
-            </div>
+            <ScrollReveal key={i} delay={i * 0.08}>
+              <div className="text-center">
+                <p className="display-num text-white" style={{ fontSize: 'clamp(2.25rem, 4.5vw, 3.75rem)' }}>
+                  <Counter value={s.value} suffix={s.suffix} />
+                </p>
+                <p className="font-sans text-xs sm:text-sm text-white/55 tracking-wide mt-3 max-w-[14rem] mx-auto">
+                  {s.label}
+                </p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
