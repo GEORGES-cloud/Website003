@@ -33,7 +33,9 @@ function rateLimited(ip: string): boolean {
   hits.set(ip, recent);
   // Evita que el Map crezca sin límite entre ráfagas de tráfico.
   if (hits.size > 5000) {
-    for (const [k, v] of hits) if (v.every((t) => now - t >= WINDOW_MS)) hits.delete(k);
+    hits.forEach((v, k) => {
+      if (v.every((t) => now - t >= WINDOW_MS)) hits.delete(k);
+    });
   }
   return false;
 }
