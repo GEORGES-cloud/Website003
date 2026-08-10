@@ -8,15 +8,51 @@ import nodemailer from 'nodemailer';
    1. SMTP de Hostinger (el propio buzón Hello@flamingoyachtclub.com) si hay
       SMTP_PASS configurada — sin cuentas externas.
    2. Resend, si hay RESEND_API_KEY.
-   3. Sin nada configurado (desarrollo): solo log en el servidor. */
+   3. Sin nada configurado: en desarrollo se loguea; en producción responde
+      503 para que el fallo se vea — antes devolvía ok y el lead se perdía
+      sin que nadie se enterase. */
 
 const esc = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+/* Anti-spam de mejor esfuerzo por instancia: ventana deslizante de envíos por
+   IP. En serverless cada instancia lleva su propio contador — suficiente
+   como freno junto al honeypot, sin base de datos. */
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_PER_WINDOW = 5;
+const hits = new Map<string, number[]>();
+
+function rateLimited(ip: string): boolean {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
+  if (recent.length >= MAX_PER_WINDOW) {
+    hits.set(ip, recent);
+    return true;
+  }
+  recent.push(now);
+  hits.set(ip, recent);
+  // Evita que el Map crezca sin límite entre ráfagas de tráfico.
+  if (hits.size > 5000) {
+    for (const [k, v] of hits) if (v.every((t) => now - t >= WINDOW_MS)) hits.delete(k);
+  }
+  return false;
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message, company } = body;
+
+    // Honeypot: el campo "company" está oculto para personas; si llega
+    // relleno es un bot. Se descarta fingiendo éxito para no darle pistas.
+    if (company) {
+      return NextResponse.json({ ok: true });
+    }
+
+    const ip = (req.headers.get('x-forwarded-for') ?? 'unknown').split(',')[0].trim();
+    if (rateLimited(ip)) {
+      return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+    }
 
     // Basta con un medio de contacto: email o teléfono (el banner de
     // bienvenida y el funnel dejan elegir el canal preferido).
@@ -25,7 +61,6 @@ export async function POST(req: NextRequest) {
     }
 
     const contactEmail = process.env.CONTACT_EMAIL ?? 'Hello@flamingoyachtclub.com';
-    console.log('[Contact form]', { name, email, phone, message, to: contactEmail });
 
     const subject = `Nuevo lead — ${name}`;
     const html = `
@@ -83,6 +118,14 @@ export async function POST(req: NextRequest) {
         console.error('[Contact form] Resend error', res.status, detail);
         return NextResponse.json({ error: 'Email delivery failed' }, { status: 502 });
       }
+    } else if (process.env.NODE_ENV === 'production') {
+      // Sin transporte configurado en producción el lead se perdería en
+      // silencio: mejor que el formulario enseñe su estado de error.
+      console.error('[Contact form] Ni SMTP_PASS ni RESEND_API_KEY configuradas — lead rechazado');
+      return NextResponse.json({ error: 'Email not configured' }, { status: 503 });
+    } else {
+      // Desarrollo sin credenciales: registro sin datos personales.
+      console.warn('[Contact form] Lead recibido (sin transporte de email configurado en dev)');
     }
 
     return NextResponse.json({ ok: true });

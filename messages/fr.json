@@ -464,5 +464,19 @@
     "privacy": "Confidentialité",
     "terms": "Conditions",
     "legalNotice": "Mentions légales"
+  },
+  "forms": {
+    "consentPre": "J'accepte la",
+    "consentLink": "politique de confidentialité"
+  },
+  "notFound": {
+    "eyebrow": "Erreur 404",
+    "title": "Cette page n'existe pas",
+    "body": "La route que vous cherchez n'est pas sur la carte. Revenez au port et continuez à naviguer.",
+    "cta": "Retour à l'accueil"
+  },
+  "map": {
+    "load": "Charger la carte",
+    "note": "En chargeant la carte, vous acceptez les cookies de Google Maps."
   }
 }

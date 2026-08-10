@@ -464,5 +464,19 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "legalNotice": "Legal notice"
+  },
+  "forms": {
+    "consentPre": "I accept the",
+    "consentLink": "privacy policy"
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "This page doesn't exist",
+    "body": "The route you're looking for isn't on the chart. Head back to port and keep sailing.",
+    "cta": "Back to home"
+  },
+  "map": {
+    "load": "Load map",
+    "note": "Loading the map accepts Google Maps cookies."
   }
 }

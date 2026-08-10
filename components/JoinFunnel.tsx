@@ -6,6 +6,8 @@ import { useTranslations } from 'next-intl';
 import { waInterestHref } from '@/lib/whatsapp';
 import { useJoinFunnel } from './JoinFunnelProvider';
 import { FlamingoMark } from './Logo';
+import ConsentCheckbox from './ConsentCheckbox';
+import HoneypotField from './HoneypotField';
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -30,10 +32,12 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   // sigue en el paso 2, y sigue siendo el CTA principal de la intro.
   const [channel, setChannel] = useState<'whatsapp' | 'email' | 'phone'>('phone');
   const [contact, setContact] = useState('');
+  const [consent, setConsent] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
+  const hpRef = useRef<HTMLInputElement>(null);
 
   // Fresh run each time the modal opens
   useEffect(() => {
@@ -44,6 +48,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
     setTime(null);
     setChannel('phone');
     setContact('');
+    setConsent(false);
     setSending(false);
     setSendError(false);
   }, [open]);
@@ -100,7 +105,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   const contactValid = isEmail
     ? /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact.trim())
     : contact.replace(/[^\d]/g, '').length >= 9;
-  const canSend = nameValid && contactValid && !sending;
+  const canSend = nameValid && contactValid && consent && !sending;
 
   const sendLead = async () => {
     if (!canSend) return;
@@ -117,6 +122,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
           name: fullName,
           email: isEmail ? contact.trim() : undefined,
           phone: isEmail ? undefined : contact.trim(),
+          company: hpRef.current?.value || undefined,
           message: `Lead del funnel "Únete al club" — prefiere contacto por ${isEmail ? 'email' : 'llamada'}.${when ? ` Cita: ${when}.` : ''}`,
         }),
       });
@@ -312,6 +318,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                         sendLead();
                       }}
                     >
+                      <HoneypotField ref={hpRef} />
                       <input
                         type={isEmail ? 'email' : 'tel'}
                         inputMode={isEmail ? 'email' : 'tel'}
@@ -322,6 +329,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
                         aria-label={isEmail ? t('contact.emailPlaceholder') : t('contact.phonePlaceholder')}
                         className="w-full border border-line bg-white px-4 py-2.5 font-sans text-[14px] text-ink placeholder:text-muted/60 focus:outline-none focus:border-sea transition-colors"
                       />
+                      <ConsentCheckbox checked={consent} onChange={setConsent} />
                       <button type="submit" disabled={!canSend} className="btn-primary !py-3 w-full disabled:opacity-40 disabled:cursor-not-allowed">
                         {sending ? t('contact.sending') : t('contact.send')}
                       </button>

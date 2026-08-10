@@ -464,5 +464,19 @@
     "privacy": "Integritet",
     "terms": "Villkor",
     "legalNotice": "Rättsligt meddelande"
+  },
+  "forms": {
+    "consentPre": "Jag godkänner",
+    "consentLink": "integritetspolicyn"
+  },
+  "notFound": {
+    "eyebrow": "Fel 404",
+    "title": "Sidan finns inte",
+    "body": "Rutten du söker finns inte i sjökortet. Gå tillbaka till hamnen och fortsätt navigera.",
+    "cta": "Till startsidan"
+  },
+  "map": {
+    "load": "Ladda kartan",
+    "note": "När du laddar kartan godkänner du Google Maps-cookies."
   }
 }

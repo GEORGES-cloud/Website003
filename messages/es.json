@@ -464,5 +464,19 @@
     "privacy": "Privacidad",
     "terms": "Términos",
     "legalNotice": "Aviso legal"
+  },
+  "forms": {
+    "consentPre": "Acepto la",
+    "consentLink": "política de privacidad"
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Esta página no existe",
+    "body": "La ruta que buscas no está en la carta náutica. Vuelve a puerto y sigue navegando.",
+    "cta": "Volver al inicio"
+  },
+  "map": {
+    "load": "Cargar mapa",
+    "note": "Al cargar el mapa aceptas las cookies de Google Maps."
   }
 }

@@ -1,10 +1,13 @@
 'use client';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import ConsentCheckbox from './ConsentCheckbox';
+import HoneypotField from './HoneypotField';
 
 export default function ContactForm() {
   const t = useTranslations('contact.form');
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [consent, setConsent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,6 +19,7 @@ export default function ContactForm() {
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
       phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      company: (form.elements.namedItem('company') as HTMLInputElement | null)?.value,
     };
 
     try {
@@ -44,6 +48,7 @@ export default function ContactForm() {
   // señala el campo concreto en vez de soltar un error genérico al enviar.
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
+      <HoneypotField />
       <div>
         <label htmlFor="name" className={labelClass}>{t('name')}</label>
         <input id="name" name="name" type="text" required autoComplete="name" className={inputClass} />
@@ -60,6 +65,8 @@ export default function ContactForm() {
         <label htmlFor="message" className={labelClass}>{t('message')}</label>
         <textarea id="message" name="message" required rows={5} className={`${inputClass} resize-none`} />
       </div>
+
+      <ConsentCheckbox checked={consent} onChange={setConsent} required />
 
       <p aria-live="polite" className="min-h-[1.25rem]">
         {status === 'success' && <span className="font-sans text-sm text-sea">{t('success')}</span>}

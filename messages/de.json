@@ -464,5 +464,19 @@
     "privacy": "Datenschutz",
     "terms": "AGB",
     "legalNotice": "Impressum"
+  },
+  "forms": {
+    "consentPre": "Ich akzeptiere die",
+    "consentLink": "Datenschutzerklärung"
+  },
+  "notFound": {
+    "eyebrow": "Fehler 404",
+    "title": "Diese Seite gibt es nicht",
+    "body": "Die gesuchte Route steht nicht in der Seekarte. Kehren Sie in den Hafen zurück und navigieren Sie weiter.",
+    "cta": "Zur Startseite"
+  },
+  "map": {
+    "load": "Karte laden",
+    "note": "Mit dem Laden der Karte akzeptieren Sie Cookies von Google Maps."
   }
 }

@@ -1,10 +1,12 @@
 'use client';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { waInterestHref } from '@/lib/whatsapp';
 import { CONSENT_EVENT, hasConsentDecision } from '@/lib/consent';
+import ConsentCheckbox from './ConsentCheckbox';
+import HoneypotField from './HoneypotField';
 
 const KEY = 'fyc-quiz-v2';
 const OPEN_DELAY = 6000;
@@ -28,8 +30,10 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
   const [channel, setChannel] = useState<Channel>('whatsapp');
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
+  const [consent, setConsent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
+  const hpRef = useRef<HTMLInputElement>(null);
 
   // La cuenta atrás no arranca hasta que el visitante ha resuelto el aviso de
   // cookies: de lo contrario ambos diálogos se solapaban en la primera visita.
@@ -86,7 +90,7 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
   const contactValid = isEmail
     ? /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact.trim())
     : contact.replace(/[^\d]/g, '').length >= 9;
-  const canSubmit = name.trim().length >= 2 && contactValid && !sending;
+  const canSubmit = name.trim().length >= 2 && contactValid && consent && !sending;
 
   const submit = async () => {
     if (!canSubmit) return;
@@ -100,6 +104,7 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
           name: name.trim(),
           email: isEmail ? contact.trim() : undefined,
           phone: isEmail ? undefined : contact.trim(),
+          company: hpRef.current?.value || undefined,
           message: `Lead del banner de bienvenida — prefiere contacto por ${channel}. Código ${CODE}.`,
         }),
       });
@@ -234,6 +239,8 @@ export default function DiscountQuiz({ locale }: { locale: string }) {
                         aria-label={isEmail ? t('form.email') : t('form.phone')}
                         className={inputCls}
                       />
+                      <HoneypotField ref={hpRef} />
+                      <ConsentCheckbox checked={consent} onChange={setConsent} />
                       <button type="submit" disabled={!canSubmit} className="btn-primary mt-3 disabled:opacity-40 disabled:cursor-not-allowed">
                         {sending ? t('form.sending') : t('form.submit')}
                       </button>
