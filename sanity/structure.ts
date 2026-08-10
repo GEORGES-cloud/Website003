@@ -1,20 +1,33 @@
 import type { StructureResolver } from 'sanity/structure';
+import {
+  RocketIcon,
+  HelpCircleIcon,
+  CommentIcon,
+  BarChartIcon,
+  CalendarIcon,
+  TagIcon,
+  DocumentTextIcon,
+  ImagesIcon,
+  CogIcon,
+} from '@sanity/icons';
 
 /* Menú del panel en el orden que le importa al club, con los documentos
-   únicos (legales, galería, ajustes) como entradas fijas. */
+   únicos (legales, galería, ajustes) como entradas fijas. Los iconos hacen
+   el menú escaneable también en la vista de móvil del Studio. */
 export const structure: StructureResolver = (S) =>
   S.list()
     .title('Contenido')
     .items([
-      S.documentTypeListItem('boat').title('Flota'),
-      S.documentTypeListItem('faq').title('Preguntas frecuentes'),
-      S.documentTypeListItem('testimonial').title('Testimonios'),
-      S.documentTypeListItem('stat').title('Cifras de la portada'),
-      S.documentTypeListItem('milestone').title('Historia (hitos)'),
-      S.documentTypeListItem('tier').title('Membresía'),
+      S.documentTypeListItem('boat').title('Flota').icon(RocketIcon),
+      S.documentTypeListItem('faq').title('Preguntas frecuentes').icon(HelpCircleIcon),
+      S.documentTypeListItem('testimonial').title('Testimonios').icon(CommentIcon),
+      S.documentTypeListItem('stat').title('Cifras de la portada').icon(BarChartIcon),
+      S.documentTypeListItem('milestone').title('Historia (hitos)').icon(CalendarIcon),
+      S.documentTypeListItem('tier').title('Membresía').icon(TagIcon),
       S.divider(),
       S.listItem()
         .title('Textos legales')
+        .icon(DocumentTextIcon)
         .child(
           S.list()
             .title('Textos legales')
@@ -35,8 +48,10 @@ export const structure: StructureResolver = (S) =>
         ),
       S.listItem()
         .title('Galería lifestyle (portada)')
+        .icon(ImagesIcon)
         .child(S.document().schemaType('lifestyleGallery').documentId('lifestyleGallery')),
       S.listItem()
         .title('Ajustes del sitio')
+        .icon(CogIcon)
         .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
     ]);

@@ -15,13 +15,13 @@ export default defineConfig({
   name: 'flamingo',
   title: 'Flamingo Yacht Club',
   basePath: '/studio',
-  // Placeholder hasta crear el proyecto en sanity.io (ver PROXIMOS-PASOS.md):
-  // el Studio no conectará, pero la web compila y funciona con datos locales.
   projectId: projectId || 'pendiente0',
   dataset,
   plugins: [
     structureTool({ structure }),
-    visionTool(),
+    // Vision (playground GROQ) solo en desarrollo: es una herramienta de
+    // programador y en el panel del cliente solo estorba.
+    ...(process.env.NODE_ENV === 'development' ? [visionTool()] : []),
     internationalizedArray({
       languages: [
         { id: 'es', title: 'Español' },

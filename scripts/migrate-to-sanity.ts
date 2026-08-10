@@ -111,8 +111,12 @@ async function run() {
   console.log(`Migrando a ${projectId}/${dataset}...\n`);
 
   // ——— Flota ———
+  // Solo los barcos activos: el 2026-08-10 se limpiaron de Sanity los 5
+  // ocultos (petición del cliente — el Studio solo enseña lo que la web
+  // enseña). Si algún día vuelve un barco, añádelo a ACTIVE_BOAT_SLUGS.
   console.log('Flota:');
   for (const [i, b] of fleet.entries()) {
+    if (!ACTIVE_BOAT_SLUGS.includes(b.slug)) continue;
     const slugExtras = (loc: (typeof EXTRA_LOCALES)[number]) => extras[loc].fleet?.[b.slug as keyof typeof svStrings.fleet];
     const galleryImages = [];
     for (const [gi, src] of (b.gallery ?? []).entries()) {
