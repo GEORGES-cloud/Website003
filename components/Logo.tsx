@@ -40,7 +40,7 @@ export default function Logo({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`/brand/logo-${variant}${tone === 'white' ? '-white' : ''}.svg`}
+      src={`/brand/logo-${variant}${tone === 'white' ? '-white' : ''}.svg?v=2`}
       alt={alt}
       width={width}
       height={Math.round(width / RATIO[variant])}
