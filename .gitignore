@@ -20,3 +20,6 @@ Thumbs.db
 
 # Received raw assets (videos/images) — not part of the app
 Contenido recibido/
+
+# PDFs de entrega al cliente (se regeneran, no versionar)
+Entrega cliente/
