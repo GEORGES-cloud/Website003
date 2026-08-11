@@ -18,7 +18,8 @@ export default function AppShowcase() {
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Mockup oficial de la app (MOXSEA) — contenida, sin recorte ni gradación:
             es interfaz, no fotografía. El fondo replica el gris del propio mockup. */}
-        <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[680px] bg-[#e4e6e9]">
+        {/* Sin fondo: la maqueta es PNG transparente y flota sobre la sección */}
+        <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[680px]">
           <ImageReveal className="absolute inset-0">
             <Image
               src="/images/app-mockup-flamingo.png"

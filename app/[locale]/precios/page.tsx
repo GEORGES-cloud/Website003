@@ -86,7 +86,7 @@ export default async function PreciosPage({ params: { locale } }: { params: { lo
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
             <ScrollReveal>
-              <div className="relative aspect-[1961/2339] bg-[#e4e6e9] h-full">
+              <div className="relative aspect-[1961/2339] h-full">
                 <Image
                   src="/images/app-mockup-flamingo.png"
                   alt="La app del club: reservas, check-in y check-out desde el móvil"
@@ -97,7 +97,7 @@ export default async function PreciosPage({ params: { locale } }: { params: { lo
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <div className="relative aspect-[3/2] lg:aspect-auto bg-white h-full min-h-[320px]">
+              <div className="relative aspect-[3/2] lg:aspect-auto h-full min-h-[320px]">
                 <Image
                   src="/images/app-mockup-flamingo-2.png"
                   alt="La app del club: calendario de reservas y puerto base Puerto Banús"
