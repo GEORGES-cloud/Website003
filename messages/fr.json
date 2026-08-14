@@ -1,6 +1,6 @@
 {
   "funnel": {
-    "title": "Rejoins le club",
+    "title": "Rejoignez le club",
     "close": "Fermer",
     "back": "Retour",
     "progress": "Question {current} sur {total}",
@@ -139,7 +139,7 @@
     "waNow": "Écrivez-nous maintenant sur WhatsApp"
   },
   "meta": {
-    "title": "Flamingo Yacht Club powered by Marina Marbella | Club de Membres Yachts",
+    "title": "Flamingo Yacht Club powered by Marina Marbella | Club nautique par adhésion",
     "description": "Club nautique par adhésion à Puerto Banús, Marbella. Une cotisation annuelle, un accès illimité à des bateaux premium entretenus par Marina Marbella — sans entretien, sans amarrage, sans souci.",
     "pages": {
       "howItWorks": {
@@ -257,7 +257,7 @@
   },
   "home": {
     "hero": {
-      "tagline": "Club de Yachts · Puerto Banús",
+      "tagline": "Yacht Club · Puerto Banús",
       "subtitle": "La mer, sans entraves.",
       "cta": "Défiler"
     },
@@ -314,7 +314,7 @@
       "eyebrow": "La mer vous attend",
       "title": "Prêt à larguer les amarres ?",
       "description": "Rejoignez le club et découvrez ce que signifie naviguer sans limites.",
-      "button": "Rejoins le club"
+      "button": "Rejoignez le club"
     }
   },
   "fleet": {
@@ -396,7 +396,7 @@
     },
     "private": {
       "title": "Célébration privée",
-      "desc": "Anniversaires, départs, célébrations. Le bateau comme écrin de vos plus beaux moments."
+      "desc": "Anniversaires, enterrements de vie de célibataire, grandes occasions. Le bateau comme écrin de vos plus beaux moments."
     }
   },
   "about": {
@@ -428,7 +428,7 @@
     },
     "history": {
       "eyebrow": "Notre histoire",
-      "title": "Soixante ans de mer. Une nouvelle façon de la naviguer.",
+      "title": "Soixante ans de mer. Une nouvelle façon de la vivre.",
       "intro": "Flamingo ne part pas de zéro : le club naît au sein de Marina Marbella, la maison qui prend soin des bateaux sur cette côte depuis 1965. Voici la ligne qui relie ce galion suédois à votre prochaine sortie."
     }
   },
@@ -456,7 +456,7 @@
     }
   },
   "footer": {
-    "tagline": "Club de membres yachts à Puerto Banús, Marbella.",
+    "tagline": "Club nautique par adhésion à Puerto Banús, Marbella.",
     "explore": "Explorer",
     "app": "Application",
     "appText": "Gérez vos réservations depuis l'application.",
@@ -473,7 +473,7 @@
   "notFound": {
     "eyebrow": "Erreur 404",
     "title": "Cette page n'existe pas",
-    "body": "La route que vous cherchez n'est pas sur la carte. Revenez au port et continuez à naviguer.",
+    "body": "Cette route ne figure sur aucune carte marine. Revenez au port et gardez le cap.",
     "cta": "Retour à l'accueil"
   },
   "map": {

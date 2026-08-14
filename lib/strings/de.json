@@ -70,11 +70,11 @@
     },
     {
       "q": "Darf ich Gäste an Bord mitnehmen?",
-      "a": "Selbstverständlich. Sie können Familie und Freunde ohne Aufpreis einladen – im Rahmen der Kapazität der jeweiligen Yacht."
+      "a": "Selbstverständlich. Du kannst Familie und Freunde ohne Aufpreis einladen – im Rahmen der Kapazität der jeweiligen Yacht."
     },
     {
       "q": "Wie reserviere ich eine Yacht?",
-      "a": "Über unsere App, in Sekunden. Sie wählen Yacht, Termin und Ziel und erhalten die Bestätigung sofort. Sie kommen an den Liegeplatz und legen ab."
+      "a": "Über unsere App, in Sekunden. Du wählst Yacht, Termin und Ziel und erhältst die Bestätigung sofort. Du kommst an den Liegeplatz und legst ab."
     },
     {
       "q": "Was ist im Beitrag enthalten?",
@@ -86,7 +86,7 @@
     },
     {
       "q": "Gibt es eine Mindestlaufzeit?",
-      "a": "Die Mitgliedschaft ist jährlich. Schreiben Sie uns, und wir erläutern Ihnen unverbindlich die Konditionen."
+      "a": "Die Mitgliedschaft ist jährlich. Schreib uns, und wir erläutern dir unverbindlich die Konditionen."
     },
     {
       "q": "Wie viele Mitglieder teilen sich ein Boot?",
@@ -116,10 +116,10 @@
       "label": "Alles inklusive, keine Überraschungen"
     },
     {
-      "label": "Befahrbare Tage im Jahr"
+      "label": "Tage auf dem Wasser pro Jahr"
     },
     {
-      "label": "Küste in Ihrer Reichweite"
+      "label": "Küste zum Greifen nah"
     },
     {
       "label": "Heimathafen: Banús, Marbella"
@@ -129,12 +129,12 @@
     "privacy": {
       "title": "Datenschutzerklärung",
       "updated": "Zuletzt aktualisiert: Juni 2026",
-      "intro": "Bei Flamingo Yacht Club (betrieben durch [RAZÓN SOCIAL], Steuernummer [CIF/NIF]) achten wir Ihre Privatsphäre und verarbeiten Ihre Daten im Einklang mit der Verordnung (EU) 2016/679 (DSGVO).",
+      "intro": "Bei Flamingo Yacht Club (betrieben durch Marina Marbella, S.A., Steuernummer A29071693) achten wir Ihre Privatsphäre und verarbeiten Ihre Daten im Einklang mit der Verordnung (EU) 2016/679 (DSGVO).",
       "sections": [
         {
           "heading": "Verantwortlicher",
           "body": [
-            "[RAZÓN SOCIAL] · Steuernummer [CIF/NIF] · Puerto Banús, 29660 Marbella, Málaga · Hello@flamingoyachtclub.com."
+            "Marina Marbella, S.A. · Steuernummer A29071693 · Puerto Banús, 29660 Marbella, Málaga · Hello@flamingoyachtclub.com."
           ]
         },
         {
@@ -226,8 +226,8 @@
         {
           "heading": "Inhaber",
           "body": [
-            "Firma: [RAZÓN SOCIAL].",
-            "Steuernummer: [CIF/NIF].",
+            "Firma: Marina Marbella, S.A..",
+            "Steuernummer: A29071693.",
             "Anschrift: Puerto Banús, 29660 Marbella, Málaga.",
             "E-Mail: Hello@flamingoyachtclub.com."
           ]
