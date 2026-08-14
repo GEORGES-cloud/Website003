@@ -19,11 +19,14 @@ export default async function NosotrosPage({ params: { locale } }: { params: { l
 
   return (
     <>
-      {/* Hero de vídeo a pantalla completa (yate navegando): el titular del
-          club sobre el mar abre la página, como en las webs de astilleros. */}
+      {/* El mismo cenital de siempre, con el agua corregida: el metraje venía
+          marrón y turbio y el cliente lo quería azul cristalino (2026-08-14).
+          El grade va horneado en about-hero-blue.mp4 — curvas por canal, que
+          respetan el blanco del casco y de la estela — y no en CSS, para que
+          también salga así en el póster y en redes. */}
       <HeroVideo
-        src="/videos/about-hero.mp4"
-        poster="/images/about-hero-poster.jpg"
+        src="/videos/about-hero-blue.mp4"
+        poster="/images/about-hero-blue-poster.jpg"
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
         body={t('hero.subtitle')}
