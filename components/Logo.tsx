@@ -10,6 +10,10 @@ type LogoTone = 'ink' | 'white';
  *   logo-full   lockup completo con el flamenco (ya no se usa en la web)
  *   logo-nav    flamenco + FLAMINGO YACHT CLUB, sin tagline (ya no se usa)
  *   logo-mark   solo el flamenco sobre el agua (favicon, 404, sellos)
+ * El wordmark lleva un stroke del mismo color sobre el trazado (v3, petición
+ * del cliente 2026-08-14): la vectorización salía demasiado fina y en la barra
+ * sobre el vídeo el nombre se deshacía. El grosor va en el propio SVG para que
+ * barra, footer y sellos engorden a la vez.
  * Cada uno en dos tintas (-white para fondos oscuros). Al ser vectorial se ve
  * nítido a cualquier tamaño y en pantallas retina — por eso va en <img> y no
  * en next/image: el optimizador rasterizaría el SVG y volveríamos al problema
@@ -40,7 +44,7 @@ export default function Logo({
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`/brand/logo-${variant}${tone === 'white' ? '-white' : ''}.svg?v=2`}
+      src={`/brand/logo-${variant}${tone === 'white' ? '-white' : ''}.svg?v=4`}
       alt={alt}
       width={width}
       height={Math.round(width / RATIO[variant])}
