@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import Logo from './Logo';
 import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
+import { CLUB_PHONE_DISPLAY, CLUB_PHONE_E164 } from '@/lib/contact';
 
 interface FooterProps {
   locale: string;
@@ -50,6 +51,14 @@ export default function Footer({ locale }: FooterProps) {
               Edificio Levante, local 9-10
               <br />
               Puerto Banús · 29660 Marbella
+            </a>
+            {/* Teléfono del club a la vista (petición del cliente 2026-08-14):
+                hasta ahora el número solo vivía dentro del botón de WhatsApp. */}
+            <a
+              href={`tel:${CLUB_PHONE_E164}`}
+              className="font-sans text-sm text-white/60 hover:text-white transition-colors mt-3 block w-fit"
+            >
+              {CLUB_PHONE_DISPLAY}
             </a>
           </div>
 
