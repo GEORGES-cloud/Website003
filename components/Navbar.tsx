@@ -45,17 +45,18 @@ function BrandLogo({ white, className = '' }: { white: boolean; className?: stri
     <span className={`flex flex-col items-center gap-[5px] ${className}`}>
       <span className="relative block h-[26px] md:h-[32px]">
         {/* eslint-disable @next/next/no-img-element */}
-        {/* ?v=4: fuerza a los navegadores a soltar la version cacheada. v2 quito
+        {/* ?v=5: fuerza a los navegadores a soltar la version cacheada. v2 quito
             las rayas junto a YACHT CLUB; v3 engordo el trazo (peticion del
-            cliente 2026-08-14); v4 barre el polvo de la vectorizacion que el
-            trazo grueso inflaba en borrones. */}
+            cliente 2026-08-14); v4 barre el polvo de la vectorizacion; v5 da a
+            cada linea su propio grosor (6 FLAMINGO / 2 YACHT CLUB): con el
+            mismo trazo la linea pequena salia como una negrita gorda. */}
         <img
-          src="/brand/logo-word.svg?v=4"
+          src="/brand/logo-word.svg?v=5"
           alt="Flamingo Yacht Club"
           className={`block h-full w-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
         />
         <img
-          src="/brand/logo-word-white.svg?v=4"
+          src="/brand/logo-word-white.svg?v=5"
           alt=""
           aria-hidden
           className={`absolute inset-0 h-full w-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
