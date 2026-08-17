@@ -45,18 +45,17 @@ function BrandLogo({ white, className = '' }: { white: boolean; className?: stri
     <span className={`flex flex-col items-center gap-[5px] ${className}`}>
       <span className="relative block h-[26px] md:h-[32px]">
         {/* eslint-disable @next/next/no-img-element */}
-        {/* ?v=5: fuerza a los navegadores a soltar la version cacheada. v2 quito
-            las rayas junto a YACHT CLUB; v3 engordo el trazo (peticion del
-            cliente 2026-08-14); v4 barre el polvo de la vectorizacion; v5 da a
-            cada linea su propio grosor (6 FLAMINGO / 2 YACHT CLUB): con el
-            mismo trazo la linea pequena salia como una negrita gorda. */}
+        {/* wordmark-bold.svg es un NOMBRE nuevo, no un ?v=: tras varias
+            iteraciones de grosor (2026-08-14) el cliente seguia viendo la
+            version fina y la query no burlaba todos los caches. Grosor por
+            linea (10 FLAMINGO / 3 YACHT CLUB) y esquinas en inglete. */}
         <img
-          src="/brand/logo-word.svg?v=5"
+          src="/brand/wordmark-bold.svg"
           alt="Flamingo Yacht Club"
           className={`block h-full w-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
         />
         <img
-          src="/brand/logo-word-white.svg?v=5"
+          src="/brand/wordmark-bold-white.svg"
           alt=""
           aria-hidden
           className={`absolute inset-0 h-full w-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
