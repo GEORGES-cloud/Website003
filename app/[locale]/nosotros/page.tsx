@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxImage from '@/components/ParallaxImage';
-import HeroVideo from '@/components/HeroVideo';
+import PageHero from '@/components/PageHero';
 import MilestonesTimeline from '@/components/MilestonesTimeline';
 import CTAFinal from '@/components/CTAFinal';
 import { getMilestones } from '@/lib/localize';
@@ -19,17 +19,17 @@ export default async function NosotrosPage({ params: { locale } }: { params: { l
 
   return (
     <>
-      {/* El mismo cenital de siempre, con el agua corregida: el metraje venía
-          marrón y turbio y el cliente lo quería azul cristalino (2026-08-14).
-          El grade va horneado en about-hero-blue.mp4 — curvas por canal, que
-          respetan el blanco del casco y de la estela — y no en CSS, para que
-          también salga así en el póster y en redes. */}
-      <HeroVideo
-        src="/videos/about-hero-blue.mp4"
-        poster="/images/about-hero-blue-poster.jpg"
+      {/* Foto de la NAVAN en una cala turquesa. Aquí hubo un vídeo cenital
+          (about-hero.mp4) que el cliente descartó por calidad incluso
+          regradado (2026-08-18); el único metraje bueno que hay es el de la
+          SPX y ya abre la home. Foto del carrete que no se usaba en ninguna
+          otra página, clara y tropical como pidió el cliente para esta
+          sección. */}
+      <PageHero
+        image="/images/reel-navan-covrun.jpg"
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
-        body={t('hero.subtitle')}
+        subtitle={t('hero.subtitle')}
       />
 
       <MilestonesTimeline
@@ -44,14 +44,16 @@ export default async function NosotrosPage({ params: { locale } }: { params: { l
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal direction="right">
-              {/* La SPX volviendo a su amarre entre los yates de Banús: la
-                  "casa" de Marina Marbella que cuenta el texto de al lado. */}
+              {/* Foto elegida por el cliente (2026-08-18) en sustitución de la
+                  SPX en el amarre, que se veía pixelada. La lancha va en el
+                  tercio izquierdo del original: el recorte 4:5 se ancla ahí. */}
               <ParallaxImage
-                src="/images/about.jpg"
-                alt="La SPX 210 volviendo a su amarre en Puerto Banús al atardecer"
+                src="/images/sun-sport-250-lifestyle.jpg"
+                alt="Una lancha navegando al atardecer con la costa al fondo"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}
                 className="aspect-[4/5]"
+                position="28% 50%"
               />
             </ScrollReveal>
 

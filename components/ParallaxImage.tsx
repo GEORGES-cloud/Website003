@@ -12,6 +12,9 @@ interface ParallaxImageProps {
   priority?: boolean;
   className?: string;
   overlayClassName?: string;
+  /** Punto de anclaje del recorte (`object-position`), p. ej. "30% 50%",
+   *  para cuando el motivo no está centrado en el original. */
+  position?: string;
 }
 
 /**
@@ -26,6 +29,7 @@ export default function ParallaxImage({
   priority = false,
   className = '',
   overlayClassName,
+  position,
 }: ParallaxImageProps) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
@@ -36,7 +40,15 @@ export default function ParallaxImage({
   return (
     <div ref={ref} className={`overflow-hidden ${positioned ? '' : 'relative'} ${className}`}>
       <motion.div style={{ y }} className="absolute -inset-y-[22%] inset-x-0">
-        <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="img-grade object-cover" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="img-grade object-cover"
+          style={position ? { objectPosition: position } : undefined}
+        />
       </motion.div>
       {overlayClassName && <div className={`absolute inset-0 ${overlayClassName}`} />}
     </div>
