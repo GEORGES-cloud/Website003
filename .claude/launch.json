@@ -4,7 +4,7 @@
   "configurations": [
     {
       "name": "Navigante Dev Server",
-      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeExecutable": "node",
       "runtimeArgs": ["node_modules/next/dist/bin/next", "dev", "-p", "3010"],
       "port": 3010
     }
