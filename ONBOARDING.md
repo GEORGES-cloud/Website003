@@ -14,13 +14,15 @@ decisiones de diseño acordadas con el cliente.
 | Repo de GitHub | El código | Colaborador **Admin** |
 | Contenido de `.env.local` | Arrancar en local (ver paso 3) | — |
 | Sanity | Contenido del CMS y esquemas | **Administrator** |
-| Panel de Hostinger | Deploy, variables de producción, dominio | **Acceso compartido** |
-| Buzón `Hello@` | Recibe los leads del formulario | Contraseña del buzón |
+| Panel de Hostinger | Deploy, variables de producción, dominio | Lo da **el cliente** |
+| Buzón `Hello@` | Recibe los leads del formulario | Lo da **el cliente** |
 
-Con acceso al panel de Hostinger asumes el despliegue: las variables de
-entorno de producción viven ahí y `SANITY_API_WRITE_TOKEN` no debe subirse
-nunca. Cambia las contraseñas que recibas y activa 2FA en GitHub,
-Hostinger y Sanity.
+El hosting, el dominio y el correo están en la cuenta de Hostinger del
+cliente: ese acceso lo concede el cliente, no el desarrollador saliente.
+Las variables de entorno de producción viven en ese panel y
+`SANITY_API_WRITE_TOKEN` no debe subirse ahí nunca.
+
+Cambia las contraseñas que recibas y activa 2FA en GitHub y Sanity.
 
 ## 2. Arranque
 
