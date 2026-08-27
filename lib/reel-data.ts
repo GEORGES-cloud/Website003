@@ -1,6 +1,6 @@
 /* Carrete "lifestyle" de la portada: fotos + descripciones en el mismo orden.
-   Vive aquí (y no dentro del componente) para que el script de migración a
-   Sanity y el fallback local lean la misma fuente. */
+   Vive aquí, y no dentro del componente, para que las descripciones se
+   traduzcan y revisen junto al resto del contenido. */
 
 export const REEL = [
   '/images/blue-cala-anchor.jpg',

@@ -8,9 +8,7 @@ interface LifestyleGalleryProps {
 }
 
 /* Carrete horizontal de la home: se pasa con el dedo (snap táctil) y cada foto
-   abre el visor a pantalla completa. Las fotos las gestiona el cliente desde
-   /studio (documento "Galería lifestyle"); sin CMS configurado salen de
-   lib/reel-data. */
+   abre el visor a pantalla completa. Las fotos salen de lib/reel-data.ts. */
 export default async function LifestyleGallery({ title, locale }: LifestyleGalleryProps) {
   const reel = await getLifestyleReel(locale);
 

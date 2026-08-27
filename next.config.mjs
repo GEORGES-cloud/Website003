@@ -10,8 +10,6 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1600],
     imageSizes: [256, 384],
     formats: ['image/webp'],
-    // Las fotos gestionadas desde el CMS se sirven del CDN de Sanity.
-    remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io' }],
   },
   // The old /membresia and /experiencias pages were folded into /precios and
   // /puerto-base. Keep their inbound links + SEO alive across all 6 locales.

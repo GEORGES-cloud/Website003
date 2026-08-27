@@ -12,9 +12,9 @@ interface Props {
   params: { locale: string; slug: string };
 }
 
-/* dynamicParams abierto: si el cliente da de alta un barco nuevo en /studio,
-   su ficha se renderiza bajo demanda sin necesidad de redeploy. Los slugs
-   inactivos o inexistentes siguen cayendo en 404 (guard de abajo). */
+/* dynamicParams abierto: las fichas de barcos que no se prerrenderizan (los
+   inactivos de lib/data.ts) se resuelven bajo demanda. Los slugs inactivos o
+   inexistentes siguen cayendo en 404 (guard de abajo). */
 export const dynamicParams = true;
 
 export async function generateStaticParams() {

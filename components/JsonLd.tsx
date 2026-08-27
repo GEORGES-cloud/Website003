@@ -31,7 +31,7 @@ export default async function JsonLd({ locale }: { locale: string }) {
     telephone: settings.telephone,
     email: settings.email,
     priceRange: '€€€',
-    // Redes sociales: el cliente las rellena en /studio → Ajustes del sitio.
+    // Redes sociales: se añaden en getSiteSettings() cuando el club las facilite.
     sameAs: settings.sameAs,
   };
 

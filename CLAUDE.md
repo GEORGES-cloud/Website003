@@ -2,16 +2,16 @@
 
 Web de club náutico de membresía en Puerto Banús (Marbella), operado por
 Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
-(6 idiomas: es, en, sv, ru, de, fr) + Sanity embebido en `/studio`.
+(6 idiomas: es, en, sv, ru, de, fr). Sin CMS: el contenido vive en el repo.
 
 ## Despliegue — IMPORTANTE
 
 - Producción se sirve vía **CDN de Hostinger** con **auto-deploy desde GitHub**
   (`GEORGES-cloud/Website003`, rama `main`). NO es Vercel.
 - Publicar = commit + push a `main`. Tarda ~3 minutos en llegar a producción.
-- Las variables de entorno de producción viven en el panel de Hostinger.
-  `SANITY_API_WRITE_TOKEN` NUNCA va a producción ni al repo (solo `.env.local`,
-  que está gitignored).
+- Las variables de entorno de producción viven en el panel de Hostinger, que
+  es del cliente. Los secretos (`SMTP_PASS`) NUNCA van al repo: solo a ese
+  panel y a `.env.local`, que está gitignored.
 
 ## Reglas de desarrollo
 
@@ -40,19 +40,22 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
 - El navbar se funde a negro (`bg-ink/95`) al hacer scroll, con lockup y
   texto en blanco (también petición del cliente, mismo día).
 
-## Contenido: Sanity con fallback local
+## Contenido: en el repo, sin CMS
 
-- Proyecto Sanity `zx8vyxcc`, dataset `production` (público), Studio en `/studio`.
-- `lib/localize.ts` es la capa de acceso: con `NEXT_PUBLIC_SANITY_PROJECT_ID`
-  lee del CMS (ISR por tags, refrescado por webhook → `/api/revalidate`);
-  sin proyecto o con dataset vacío sirve los datos locales de
-  `lib/content.ts`, `lib/data.ts`, `lib/legal.ts` y `lib/strings/*.json`.
-- Una vez activo el CMS, los cambios de contenido del cliente van por
-  `/studio`; los archivos locales quedan como fallback (mantenerlos
-  sincronizados solo si se re-ejecuta `scripts/migrate-to-sanity.ts`, que es
-  idempotente).
-- Los VÍDEOS (`public/videos/`) no los gestiona el CMS: los gestiona el
-  desarrollador — comprimidos con ffmpeg a ~2 MB, con póster propio en
+- **No hay CMS.** Sanity se retiró en 2026-08: todo el contenido vive en el
+  repo y cada cambio de texto o foto es un commit.
+- `lib/localize.ts` es la ÚNICA capa de acceso al contenido. Sus funciones son
+  async por contrato (17 archivos las esperan con `await`); mantenerlas así.
+- Dónde vive cada cosa:
+  - `lib/data.ts` — flota (8 barcos, 3 activos vía `ACTIVE_BOAT_SLUGS`).
+  - `lib/content.ts` — membresía, FAQs, rutas, cifras, hitos.
+  - `lib/legal.ts` — privacidad, términos, aviso legal, cookies.
+  - `lib/reel-data.ts` — carrete lifestyle de la portada.
+  - `lib/strings/{sv,ru,de,fr}.json` — traducciones; es/en van en los base.
+- Al tocar un texto en español o inglés, revisar si los otros 4 idiomas
+  necesitan la misma actualización en `lib/strings/`.
+- Los VÍDEOS (`public/videos/`) los gestiona el desarrollador: comprimidos
+  con ffmpeg a ~2 MB, con póster propio en
   `public/images/<nombre>-poster.jpg`.
 
 ## Leads

@@ -8,7 +8,5 @@ export default createMiddleware({
 });
 
 export const config = {
-  // "studio" excluido: si no, next-intl redirige /studio → /es/studio y el
-  // panel de Sanity nunca carga.
-  matcher: ['/((?!api|studio|_next|_vercel|.*\\..*).*)'],
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 };

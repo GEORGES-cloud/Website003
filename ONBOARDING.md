@@ -13,16 +13,13 @@ decisiones de diseño acordadas con el cliente.
 |---|---|---|
 | Repo de GitHub | El código | Colaborador **Admin** |
 | Contenido de `.env.local` | Arrancar en local (ver paso 3) | — |
-| Sanity | Contenido del CMS y esquemas | **Administrator** |
 | Panel de Hostinger | Deploy, variables de producción, dominio | Lo da **el cliente** |
 | Buzón `Hello@` | Recibe los leads del formulario | Lo da **el cliente** |
 
 El hosting, el dominio y el correo están en la cuenta de Hostinger del
 cliente: ese acceso lo concede el cliente, no el desarrollador saliente.
-Las variables de entorno de producción viven en ese panel y
-`SANITY_API_WRITE_TOKEN` no debe subirse ahí nunca.
 
-Cambia las contraseñas que recibas y activa 2FA en GitHub y Sanity.
+Cambia las contraseñas que recibas y activa 2FA en GitHub.
 
 ## 2. Arranque
 
@@ -49,32 +46,25 @@ valores al dueño por un gestor de contraseñas, nunca por email o chat.
 # URL pública — la usan sitemap, robots, OpenGraph y JSON-LD
 NEXT_PUBLIC_SITE_URL=https://flamingoyachtclub.com
 
-# CMS (estos dos no son secretos: viajan en el bundle del navegador)
-NEXT_PUBLIC_SANITY_PROJECT_ID=
-NEXT_PUBLIC_SANITY_DATASET=production
-
 # Destino de los leads
 CONTACT_EMAIL=Hello@flamingoyachtclub.com
 
 # SECRETO — contraseña del buzón del club. Puede que no te la den.
 SMTP_PASS=
-
-# SECRETO — solo si vas a re-ejecutar scripts/migrate-to-sanity.ts
-SANITY_API_WRITE_TOKEN=
-
-# SECRETO — compartido con el webhook de Sanity → /api/revalidate
-SANITY_REVALIDATE_SECRET=
 ```
 
-Referencia completa de variables en `.env.example`.
+Referencia completa de variables en `.env.example`. Para tocar el código no
+hace falta ninguna: sin `.env.local` la web arranca igual con los valores por
+defecto.
 
 **Sin `SMTP_PASS` los formularios devuelven 503.** Es intencionado: es
 preferible un error visible a perder leads en silencio. No lo "arregles".
 
-**Sin las variables de Sanity la web funciona igual**, sirviendo el
-contenido local de `lib/content.ts`, `lib/data.ts`, `lib/legal.ts` y
-`lib/strings/*.json`. La capa que decide entre CMS y local es
-`lib/localize.ts`.
+**No hay CMS.** Todo el contenido vive en el repo — `lib/data.ts` (flota),
+`lib/content.ts` (membresía, FAQs, cifras, hitos), `lib/legal.ts` (textos
+legales), `lib/reel-data.ts` (carrete) y `lib/strings/*.json` (sv, ru, de,
+fr). La capa de acceso es `lib/localize.ts`. Cada cambio de texto o foto es
+un commit.
 
 ## 4. Flujo de trabajo
 
@@ -110,21 +100,15 @@ Estos materiales viven fuera de git. Si los necesitas, pídeselos al dueño:
 - **`Entrega cliente/`** — PDFs de entrega, se regeneran.
 - **`Pinterest/`** — material de inspiración, prescindible.
 
-Los vídeos no los gestiona el CMS: los gestiona el desarrollador.
-
 ## 6. Si trabajas en la nube (claude.ai/code)
 
 Dos ajustes del entorno cloud que hacen falta para este proyecto:
 
-**Red.** El nivel por defecto (`Trusted`) bloquea Sanity y Open-Meteo, así
-que la web caería al contenido local sin avisar y el widget de estado del
-mar fallaría. Cambia **Network access** a `Custom` y permite:
+**Red.** El nivel por defecto (`Trusted`) bloquea Open-Meteo, así que el
+widget de estado del mar (`lib/marine.ts`) falla. Cambia **Network access**
+a `Custom` y permite:
 
 ```
-*.api.sanity.io
-*.apicdn.sanity.io
-cdn.sanity.io
-*.sanity.io
 api.open-meteo.com
 marine-api.open-meteo.com
 ```
@@ -144,6 +128,6 @@ de secretos: cualquiera que use el entorno puede leer los valores.
 
 ## 7. Siguiente lectura
 
-- `CLAUDE.md` — reglas del proyecto y dirección de diseño.
+- `CLAUDE.md` — reglas del proyecto, dónde vive cada contenido y dirección
+  de diseño.
 - `PROXIMOS-PASOS.md` — qué queda pendiente de la puesta en marcha.
-- `GUIA-EDICION.md` — la guía del CMS que usa el cliente.
