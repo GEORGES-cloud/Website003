@@ -44,7 +44,7 @@
       "title": "Vilken erfarenhet har du av havet?",
       "options": [
         "Jag har förarintyg",
-        "Jag har seglat, men utan intyg",
+        "Jag har kört båt, men utan intyg",
         "Jag är ny på det här"
       ]
     },
@@ -131,7 +131,7 @@
       "title": "Tack – vi hör av oss mycket snart",
       "subtitle": "Här är din särskilda välkomstrabatt till klubben under tiden.",
       "codeLabel": "Din kod",
-      "hint": "Nämn koden när du bokar ditt besök så drar vi av den på din inträdesavgift.",
+      "hint": "Nämn koden när du bokar ditt besök så drar vi av rabatten från din inträdesavgift.",
       "whatsapp": "Skriv till oss på WhatsApp",
       "plans": "Se medlemskap"
     },
@@ -205,7 +205,7 @@
     "license": {
       "eyebrow": "Ett absolut krav",
       "title": "Förarintyg är obligatoriskt",
-      "body": "För att segla med klubben behöver du förarintyg. Om du ännu inte har ett hjälper vi dig att skaffa det – men för att vara med i den här klubben är det ett krav."
+      "body": "För att köra klubbens båtar behöver du förarintyg. Om du ännu inte har ett hjälper vi dig att skaffa det – men för att vara med i den här klubben är det ett krav."
     }
   },
   "prices": {
@@ -246,7 +246,7 @@
     "why": {
       "eyebrow": "Varför här",
       "title": "Den finaste hamnen på Costa del Sol",
-      "p1": "Puerto Banús är synonymt med lyx, glamour och segling. Med sitt perfekta läge i hjärtat av Costa del Sol ger hamnen omedelbar tillgång till vackra farvatten, dolda vikar, beach clubs och restauranger vid vattnet.",
+      "p1": "Puerto Banús är synonymt med lyx, glamour och båtliv. Med sitt perfekta läge i hjärtat av Costa del Sol ger hamnen omedelbar tillgång till vackra farvatten, dolda vikar, beach clubs och restauranger vid vattnet.",
       "p2": "Oavsett om du styr österut mot Málaga eller västerut mot Estepona och Sotogrande börjar ditt nästa äventyr bara några steg från kajen."
     },
     "map": {
@@ -271,7 +271,7 @@
     "pitch": {
       "eyebrow": "Yachtklubb · Puerto Banús",
       "title": "Havet utan kompromisser.",
-      "description": "Från hjärtat av Puerto Banús får du tillgång till en premiumflotta av yachter med ett exklusivt medlemskap. Du väljer när, var och med vem du seglar. Vi tar hand om resten.",
+      "description": "Från hjärtat av Puerto Banús får du tillgång till en premiumflotta av yachter med ett exklusivt medlemskap. Du väljer när, var och med vem du ger dig ut. Vi tar hand om resten.",
       "cta": "Se hur det fungerar"
     },
     "fleet": {
@@ -294,7 +294,7 @@
       },
       "step3": {
         "number": "03",
-        "title": "Segla",
+        "title": "Ge dig ut",
         "desc": "Kom till båten och kasta loss. Vi tar hand om allt annat."
       }
     },
@@ -313,7 +313,7 @@
     "cta": {
       "eyebrow": "Havet väntar",
       "title": "Redo att kasta loss?",
-      "description": "Bli medlem i klubben och upptäck vad det innebär att segla utan gränser.",
+      "description": "Bli medlem i klubben och upptäck vad båtliv utan gränser innebär.",
       "button": "Gå med i klubben"
     }
   },
@@ -343,12 +343,12 @@
     "hero": {
       "eyebrow": "Medlemskap",
       "title": "Tillgången till havet du alltid önskat dig.",
-      "subtitle": "En enkel modell: betala en avgift, segla på havet."
+      "subtitle": "En enkel modell: betala en avgift och ge dig ut på havet."
     },
     "how": {
       "eyebrow": "Modellen",
       "title": "Hur fungerar det?",
-      "description": "Med Flamingo Yacht Club köper du ingen båt. Du får tillgång till hela flottan. Inga hamnavgifter, inget underhåll, ingen försäkring. Bara ren segling."
+      "description": "Med Flamingo Yacht Club köper du ingen båt. Du får tillgång till hela flottan. Inga hamnavgifter, inget underhåll, ingen försäkring. Bara ren båtglädje."
     },
     "benefits": {
       "title": "Vad ingår?",
@@ -396,14 +396,14 @@
     },
     "private": {
       "title": "Privat firande",
-      "desc": "Födelsedagar, avskedsfester, jubileum. Båten som scen för dina bästa stunder."
+      "desc": "Födelsedagar, möhippor och svensexor, bröllopsdagar. Båten som scen för dina bästa stunder."
     }
   },
   "about": {
     "hero": {
       "eyebrow": "Vilka vi är",
-      "title": "Född ur havet. Vi lever för det.",
-      "subtitle": "Stolt powered by Marina Marbella, ett av de mest respekterade marina företagen på Costa del Sol, med mer än 60 års erfarenhet."
+      "title": "Födda ur havet. Vi lever för det.",
+      "subtitle": "Med Marina Marbella i ryggen – ett av de mest respekterade marina företagen på Costa del Sol, med över 60 års erfarenhet."
     },
     "story": {
       "title": "Mer än en båtklubb",
@@ -415,7 +415,7 @@
       "title": "Vad som driver oss",
       "v1": {
         "title": "Frihet",
-        "desc": "Segla när du vill, vart du vill."
+        "desc": "Åk ut när du vill, vart du vill."
       },
       "v2": {
         "title": "Kvalitet",
@@ -428,8 +428,8 @@
     },
     "history": {
       "eyebrow": "Vår historia",
-      "title": "Sextio år till havs. Ett nytt sätt att segla.",
-      "intro": "Flamingo börjar inte från noll: klubben föds inom Marina Marbella, huset som sedan 1965 tagit hand om båtar på den här kusten. Det här är linjen som förbinder den svenska galeonen med din nästa tur."
+      "title": "Sextio år till havs. Ett nytt sätt att uppleva havet.",
+      "intro": "Flamingo börjar inte från noll: klubben föds inom Marina Marbella, företaget som sedan 1965 tagit hand om båtar på den här kusten. Det här är linjen som förbinder den där svenska galeonen med din nästa tur."
     }
   },
   "contact": {
@@ -473,7 +473,7 @@
   "notFound": {
     "eyebrow": "Fel 404",
     "title": "Sidan finns inte",
-    "body": "Rutten du söker finns inte i sjökortet. Gå tillbaka till hamnen och fortsätt navigera.",
+    "body": "Den kurs du söker finns inte i sjökortet. Gå tillbaka till hamnen och fortsätt färden.",
     "cta": "Till startsidan"
   },
   "map": {

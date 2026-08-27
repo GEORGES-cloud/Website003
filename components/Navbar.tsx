@@ -43,17 +43,23 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 function BrandLogo({ white, className = '' }: { white: boolean; className?: string }) {
   return (
     <span className={`flex flex-col items-center gap-[5px] ${className}`}>
-      <span className="relative block h-[26px] md:h-[32px]">
+      {/* 44px en escritorio (antes 32): al 100% de zoom en un monitor normal
+          FLAMINGO tenia ~15px de letra y YACHT CLUB ~3.5px — una serifa fina no
+          se rasteriza limpia con tan pocos pixeles y salia gris y borrosa
+          (2026-08-14). Con zoom se arreglaba sola: faltaba tamano, no trazo. */}
+      <span className="relative block h-[28px] md:h-[44px]">
         {/* eslint-disable @next/next/no-img-element */}
-        {/* ?v=2: fuerza a los navegadores a soltar la version cacheada que
-            aun llevaba las rayas junto a YACHT CLUB (retiradas 2026-08-11). */}
+        {/* wordmark-bold.svg es un NOMBRE nuevo, no un ?v=: tras varias
+            iteraciones de grosor (2026-08-14) el cliente seguia viendo la
+            version fina y la query no burlaba todos los caches. Grosor por
+            linea (10 FLAMINGO / 3 YACHT CLUB) y esquinas en inglete. */}
         <img
-          src="/brand/logo-word.svg?v=2"
+          src="/brand/wordmark-bold.svg"
           alt="Flamingo Yacht Club"
           className={`block h-full w-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
         />
         <img
-          src="/brand/logo-word-white.svg?v=2"
+          src="/brand/wordmark-bold-white.svg"
           alt=""
           aria-hidden
           className={`absolute inset-0 h-full w-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
@@ -63,7 +69,7 @@ function BrandLogo({ white, className = '' }: { white: boolean; className?: stri
       {/* El "powered by" del arte mide ~2px a este tamaño; va como texto HTML
           para que sea legible (all-caps + tracking, el puente tipográfico). */}
       <span
-        className={`font-sans text-[7px] md:text-[8px] font-semibold uppercase tracking-wide2 whitespace-nowrap transition-colors duration-500 ${
+        className={`font-sans text-[7px] md:text-[9px] font-semibold uppercase tracking-wide2 whitespace-nowrap transition-colors duration-500 ${
           white ? 'text-white/80' : 'text-ink/70'
         }`}
       >

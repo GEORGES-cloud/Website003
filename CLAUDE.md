@@ -34,7 +34,8 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
 - Vive vectorizado en `public/brand/*.svg` y se sirve SIEMPRE con `<img>`,
   nunca con `next/image`.
 - Decisión del cliente (2026-08-10): en barra y footer va el **wordmark sin
-  flamenco** (`logo-word.svg`: FLAMINGO —YACHT CLUB—) con "powered by Marina
+  flamenco** (`wordmark-bold.svg`: FLAMINGO / YACHT CLUB, engordado con stroke
+  por línea) con "powered by Marina
   Marbella" como texto HTML debajo (en el arte sale ilegible a tamaño de
   barra). El flamenco solo sobrevive en `logo-mark` (favicon, 404, sellos).
 - El navbar se funde a negro (`bg-ink/95`) al hacer scroll, con lockup y

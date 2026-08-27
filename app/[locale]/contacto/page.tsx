@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import HeroVideo from '@/components/HeroVideo';
 import ContactForm from '@/components/ContactForm';
 import ScrollReveal from '@/components/ScrollReveal';
+import { CLUB_PHONE_DISPLAY, CLUB_PHONE_E164, PHONE_LABEL } from '@/lib/contact';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'meta.pages.contact' });
@@ -51,6 +52,19 @@ export default function ContactoPage({ params: { locale } }: { params: { locale:
                       className="display text-2xl text-ink hover:text-sea transition-colors"
                     >
                       {t('info.email')}
+                    </a>
+                  </div>
+                  {/* Teléfono (petición del cliente 2026-08-14). Mismo número
+                      que el WhatsApp; en móvil el tel: abre el marcador. */}
+                  <div className="border-t border-line pt-8">
+                    <p className="font-sans text-xs tracking-wide2 uppercase text-muted mb-2">
+                      {PHONE_LABEL[locale] ?? PHONE_LABEL.en}
+                    </p>
+                    <a
+                      href={`tel:${CLUB_PHONE_E164}`}
+                      className="display text-2xl text-ink hover:text-sea transition-colors"
+                    >
+                      {CLUB_PHONE_DISPLAY}
                     </a>
                   </div>
                   <div className="border-t border-line pt-8">

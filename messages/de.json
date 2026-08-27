@@ -8,7 +8,7 @@
       "eyebrow": "Eine Minute · Unverbindlich",
       "title": "Werde in einer Minute Mitglied",
       "subtitle": "Sag uns, wie wir dich kontaktieren dürfen, und vereinbare auf Wunsch einen unverbindlichen Besuch im Club in Puerto Banús.",
-      "start": "Kontaktiert mich lieber ihr"
+      "start": "Meldet euch lieber bei mir"
     },
     "name": {
       "title": "Zuerst: Wie heißt du?",
@@ -130,8 +130,8 @@
       "eyebrow": "Alles bereit",
       "title": "Danke – wir melden uns sehr bald",
       "subtitle": "Hier ist schon mal dein besonderer Willkommensrabatt im Club.",
-      "codeLabel": "Ihr Code",
-      "hint": "Nennen Sie diesen Code bei der Buchung Ihres Besuchs – wir rechnen ihn auf Ihre Aufnahmegebühr an.",
+      "codeLabel": "Dein Code",
+      "hint": "Nenn diesen Code bei der Buchung deines Besuchs – wir rechnen ihn auf deine Aufnahmegebühr an.",
       "whatsapp": "Schreib uns auf WhatsApp",
       "plans": "Mitgliedschaften ansehen"
     },
@@ -156,7 +156,7 @@
       },
       "homePort": {
         "title": "Heimathafen: Puerto Banús, Marbella",
-        "description": "Legen Sie ab in Puerto Banús, einem der ikonischsten Häfen Europas: versteckte Buchten, Beach Clubs und die schönste Küste des Mittelmeers, nur wenige Schritte vom Liegeplatz."
+        "description": "Leg ab in Puerto Banús, einem der ikonischsten Häfen Europas: versteckte Buchten, Beach Clubs und die schönste Küste des Mittelmeers, nur wenige Schritte vom Liegeplatz."
       },
       "about": {
         "title": "Über uns – powered by Marina Marbella",
@@ -164,7 +164,7 @@
       },
       "contact": {
         "title": "Besuch in Puerto Banús buchen",
-        "description": "Lernen Sie den Club kennen: Wir zeigen Ihnen die Boote bei einem erfrischenden Getränk und einer persönlichen Tour und helfen bei der Wahl der Mitgliedschaft. Buchen Sie noch heute Ihre private Beratung."
+        "description": "Lern den Club kennen: Wir zeigen dir die Boote bei einem erfrischenden Getränk und einer persönlichen Tour und helfen bei der Wahl der Mitgliedschaft. Buche noch heute deine private Beratung."
       }
     }
   },
@@ -251,7 +251,7 @@
     },
     "map": {
       "eyebrow": "Lage",
-      "title": "Sie finden uns in Puerto Banús",
+      "title": "Du findest uns in Puerto Banús",
       "address": "Edificio Levante, local 9-10 · Puerto Banús, Marbella"
     }
   },
@@ -264,14 +264,14 @@
     "manifesto": {
       "eyebrow": "Der Club",
       "title": "Das Meer, ohne Kompromisse.",
-      "p1": "Ob Sie davon träumen, eines Tages ein eigenes Boot zu besitzen, oder einfach unkompliziert das Leben auf dem Wasser genießen möchten – Flamingo Yacht Club ist der flexible Weg, Bootfahren vom Herzen Puerto Banús' aus zu erleben.",
-      "p2": "Eine einfache Jahresmitgliedschaft, unbegrenzter Zugang zu einem Premium-Boot und ein Team, das sich um Wartung, Service und Vorbereitung kümmert. Sie wählen nur den Tag.",
-      "cta": "Entdecken Sie, wie es funktioniert"
+      "p1": "Ob du davon träumst, eines Tages ein eigenes Boot zu besitzen, oder einfach unkompliziert das Leben auf dem Wasser genießen möchtest – Flamingo Yacht Club ist der flexible Weg, Bootfahren vom Herzen von Puerto Banús aus zu erleben.",
+      "p2": "Eine einfache Jahresmitgliedschaft, unbegrenzter Zugang zu einem Premium-Boot und ein Team, das sich um Wartung, Service und Vorbereitung kümmert. Du wählst nur den Tag.",
+      "cta": "Entdecke, wie es funktioniert"
     },
     "pitch": {
       "eyebrow": "Yacht Club · Puerto Banús",
       "title": "Das Meer ohne Kompromisse.",
-      "description": "Vom Herzen Puerto Banús' aus erhalten Sie mit einer exklusiven Mitgliedschaft Zugang zu einer Premium-Flotte erlesener Yachten. Sie entscheiden, wann, wohin und mit wem Sie hinausfahren. Um den Rest kümmern wir uns.",
+      "description": "Vom Herzen von Puerto Banús aus erhältst du mit einer exklusiven Mitgliedschaft Zugang zu einer Premium-Flotte erlesener Yachten. Du entscheidest, wann, wohin und mit wem du hinausfährst. Um den Rest kümmern wir uns.",
       "cta": "Entdecke, wie es funktioniert"
     },
     "fleet": {
@@ -285,22 +285,22 @@
       "step1": {
         "number": "01",
         "title": "Beitreten",
-        "desc": "Wählen Sie Ihren Plan und werden Sie in wenigen Minuten über unsere App Mitglied."
+        "desc": "Wähle deinen Plan und werde in wenigen Minuten über unsere App Mitglied."
       },
       "step2": {
         "number": "02",
         "title": "Reservieren",
-        "desc": "Wählen Sie Ihre Yacht, Ihren Termin und Ihr Ziel. Sofortige Bestätigung."
+        "desc": "Wähle Yacht, Datum und Ziel. Sofortige Bestätigung."
       },
       "step3": {
         "number": "03",
         "title": "Auslaufen",
-        "desc": "Kommen Sie an Bord und legen Sie ab. Um alles Weitere kümmern wir uns."
+        "desc": "Komm an Bord und leg ab. Um alles Weitere kümmern wir uns."
       }
     },
     "app": {
       "eyebrow": "Die Club-App",
-      "titleLead": "Ihr Club, in Ihrer",
+      "titleLead": "Dein Club, in deiner",
       "titleAccent": "Tasche.",
       "description": "Reserviere ohne Limits und verwalte deine Mitgliedschaft über eine einzige App. Keine Anrufe, kein Warten.",
       "f1": "Unbegrenzte Reservierungen über die App",
@@ -311,9 +311,9 @@
       "title": "Ein Leben auf dem Meer"
     },
     "cta": {
-      "eyebrow": "Das Meer erwartet Sie",
+      "eyebrow": "Das Meer wartet auf dich",
       "title": "Bereit, die Leinen zu lösen?",
-      "description": "Treten Sie dem Club bei und entdecken Sie, was es heißt, ohne Grenzen zu fahren.",
+      "description": "Tritt dem Club bei und entdecke, was es heißt, ohne Grenzen zu fahren.",
       "button": "Werde Mitglied"
     }
   },
@@ -334,7 +334,7 @@
     "specs": "Technische Daten",
     "capacity": "Kapazität",
     "length": "Länge",
-    "maxSpeed": "Top-Speed",
+    "maxSpeed": "Höchstgeschwindigkeit",
     "engines": "Motoren",
     "book": "Reserviere über die App",
     "backToFleet": "← Zurück zur Flotte"
@@ -342,13 +342,13 @@
   "membership": {
     "hero": {
       "eyebrow": "Mitgliedschaft",
-      "title": "Der Zugang zum Meer, den Sie sich immer gewünscht haben.",
+      "title": "Der Zugang zum Meer, den du dir immer gewünscht hast.",
       "subtitle": "Ein einfaches Prinzip: Beitrag zahlen, das Meer genießen."
     },
     "how": {
       "eyebrow": "Das Prinzip",
       "title": "Wie funktioniert das?",
-      "description": "Mit Flamingo Yacht Club kaufen Sie keine Yacht. Sie erhalten Zugang zur gesamten Flotte. Keine Liegegebühren, keine Wartung, keine Versicherung. Nur reines Fahrvergnügen."
+      "description": "Mit Flamingo Yacht Club kaufst du keine Yacht. Du erhältst Zugang zur gesamten Flotte. Keine Liegegebühren, keine Wartung, keine Versicherung. Nur reines Fahrvergnügen."
     },
     "benefits": {
       "title": "Was ist inbegriffen?",
@@ -360,15 +360,15 @@
       "b6": "Priorisierter Support"
     },
     "plans": {
-      "eyebrow": "Treten Sie dem Club bei",
+      "eyebrow": "Tritt dem Club bei",
       "title": "Eine Mitgliedschaft nach Maß",
-      "contact": "Für weitere Informationen zur Mitgliedschaft schreiben Sie uns – ganz unverbindlich."
+      "contact": "Für weitere Informationen zur Mitgliedschaft schreib uns – ganz unverbindlich."
     },
     "tiers": {
       "eyebrow": "Mitgliedschaft",
       "title": "Die Mitgliedschaft",
       "cta": "Informationen anfordern",
-      "note": "Unverbindliche Konditionen. Schreiben Sie uns – wir erzählen Ihnen alles."
+      "note": "Unverbindliche Konditionen. Schreib uns – wir erzählen dir alles."
     },
     "faq": {
       "eyebrow": "Fragen",
@@ -379,12 +379,12 @@
   "experiences": {
     "hero": {
       "eyebrow": "Erlebnisse",
-      "title": "Momente, die Sie nie vergessen.",
+      "title": "Momente, die du nie vergisst.",
       "subtitle": "Vom Sonnenaufgang bis zum Sonnenuntergang eröffnet das Meer unendliche Möglichkeiten."
     },
     "dayTrip": {
       "title": "Tagesausflug",
-      "desc": "Im Morgengrauen ablegen, mit dem Sonnenuntergang zurückkehren. Wählen Sie Ihr Ziel und genießen Sie das Meer, als gehörte es Ihnen."
+      "desc": "Im Morgengrauen ablegen, mit dem Sonnenuntergang zurückkehren. Wähle dein Ziel und genieße das Meer, als gehörte es dir."
     },
     "sunset": {
       "title": "Sonnenuntergang an Bord",
@@ -392,30 +392,30 @@
     },
     "weekend": {
       "title": "Wochenend-Auszeit",
-      "desc": "Von Freitagabend bis Sonntag. Schlafen Sie an Bord und erwachen Sie zum Rauschen des Meeres."
+      "desc": "Von Freitagabend bis Sonntag. Schlaf an Bord und erwache zum Rauschen des Meeres."
     },
     "private": {
       "title": "Private Feier",
-      "desc": "Geburtstage, Abschiede, Jubiläen. Die Yacht als Bühne für Ihre schönsten Momente."
+      "desc": "Geburtstage, Junggesellenabschiede, Jahrestage. Die Yacht als Bühne für deine schönsten Momente."
     }
   },
   "about": {
     "hero": {
       "eyebrow": "Wer wir sind",
       "title": "Aus dem Meer geboren. Für das Meer leben wir.",
-      "subtitle": "Mit Stolz powered by Marina Marbella, einem der angesehensten Nautikunternehmen der Costa del Sol, mit mehr als 60 Jahren Erfahrung."
+      "subtitle": "Getragen von Marina Marbella, einem der angesehensten Nautikunternehmen der Costa del Sol – mit mehr als 60 Jahren Erfahrung."
     },
     "story": {
       "title": "Mehr als ein Bootsclub",
       "p1": "Anders als viele Bootsclubs verwalten wir nicht einfach nur eine Flotte — hinter uns steht die komplette nautische Infrastruktur von Marina Marbella: professionelle Techniker, eigene Wartungsanlagen und jahrzehntelanges nautisches Know-how vor Ort.",
       "p2": "Dieses Fundament erlaubt uns, unsere Boote nach höchsten Standards zu warten, außergewöhnliche Zuverlässigkeit zu bieten und einen Service zu liefern, der uns von anderen abhebt.",
-      "p3": "Wenn Sie dem Flamingo Yacht Club beitreten, treten Sie nicht einfach einem Bootsclub bei — Sie werden Teil der Familie von Marina Marbella."
+      "p3": "Wenn du dem Flamingo Yacht Club beitrittst, trittst du nicht einfach einem Bootsclub bei — du wirst Teil der Familie von Marina Marbella."
     },
     "values": {
       "title": "Was uns antreibt",
       "v1": {
         "title": "Freiheit",
-        "desc": "Fahren Sie, wann Sie wollen, wohin Sie wollen."
+        "desc": "Fahr raus, wann du willst, wohin du willst."
       },
       "v2": {
         "title": "Qualität",
@@ -428,26 +428,26 @@
     },
     "history": {
       "eyebrow": "Unsere Geschichte",
-      "title": "Sechzig Jahre Meer. Eine neue Art, es zu befahren.",
+      "title": "Sechzig Jahre Meer. Eine neue Art, es zu erleben.",
       "intro": "Flamingo fängt nicht bei null an: Der Club entsteht innerhalb von Marina Marbella, dem Haus, das sich seit 1965 an dieser Küste um Boote kümmert. Das ist die Linie, die jene schwedische Galeone mit deinem nächsten Törn verbindet."
     }
   },
   "contact": {
     "hero": {
       "eyebrow": "Kontakt",
-      "title": "Wir sind für Sie da.",
-      "subtitle": "Am besten erleben Sie den Club bei einem Besuch in Puerto Banús: Wir empfangen Sie mit einem erfrischenden Getränk und einer persönlichen Tour, zeigen Ihnen die Boote und helfen Ihnen, die passende Mitgliedschaft zu finden."
+      "title": "Wir sind für dich da.",
+      "subtitle": "Am besten erlebst du den Club bei einem Besuch in Puerto Banús: Wir empfangen dich mit einem erfrischenden Getränk und einer persönlichen Tour, zeigen dir die Boote und helfen dir, die passende Mitgliedschaft zu finden."
     },
-    "consult": "Buchen Sie noch heute Ihre private Beratung – die Boote liegen bereit.",
+    "consult": "Buche noch heute deine private Beratung – die Boote liegen bereit.",
     "form": {
       "name": "Vollständiger Name",
       "email": "E-Mail-Adresse",
       "phone": "Telefon (optional)",
-      "message": "Ihre Nachricht",
+      "message": "Deine Nachricht",
       "submit": "Nachricht senden",
       "sending": "Wird gesendet …",
-      "success": "Nachricht gesendet. Wir melden uns in Kürze bei Ihnen.",
-      "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+      "success": "Nachricht gesendet. Wir melden uns in Kürze bei dir.",
+      "error": "Ein Fehler ist aufgetreten. Bitte versuch es erneut."
     },
     "info": {
       "title": "Kontaktdaten",
@@ -459,7 +459,7 @@
     "tagline": "Yacht-Membership-Club in Puerto Banús, Marbella.",
     "explore": "Entdecken",
     "app": "App",
-    "appText": "Verwalten Sie Ihre Reservierungen über die App.",
+    "appText": "Verwalte deine Reservierungen über die App.",
     "legal": "© 2024 Flamingo Yacht Club. Alle Rechte vorbehalten.",
     "privacy": "Datenschutz",
     "terms": "AGB",
@@ -473,11 +473,11 @@
   "notFound": {
     "eyebrow": "Fehler 404",
     "title": "Diese Seite gibt es nicht",
-    "body": "Die gesuchte Route steht nicht in der Seekarte. Kehren Sie in den Hafen zurück und navigieren Sie weiter.",
+    "body": "Dieser Kurs steht in keiner Seekarte. Kehr zurück in den Hafen und bleib auf Kurs.",
     "cta": "Zur Startseite"
   },
   "map": {
     "load": "Karte laden",
-    "note": "Mit dem Laden der Karte akzeptieren Sie Cookies von Google Maps."
+    "note": "Mit dem Laden der Karte akzeptierst du Cookies von Google Maps."
   }
 }
