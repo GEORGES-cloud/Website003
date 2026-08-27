@@ -1,19 +1,16 @@
 import { getTranslations } from 'next-intl/server';
 import HeroVideo from '@/components/HeroVideo';
 import ClubManifesto from '@/components/ClubManifesto';
-import Stats from '@/components/Stats';
 import AppShowcase from '@/components/AppShowcase';
 import LifestyleGallery from '@/components/LifestyleGallery';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import CTAFinal from '@/components/CTAFinal';
-import { getStats } from '@/lib/localize';
 
 // The home keeps only landing-specific content. Fleet, How-it-works, Membership/Prices
 // and Destinations live solely in their menu pages (/flota, /como-funciona, /precios,
 // /puerto-base) — no duplicated information on the home.
 export default async function HomePage({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'home' });
-  const stats = await getStats(locale);
 
   return (
     <>
@@ -22,8 +19,6 @@ export default async function HomePage({ params: { locale } }: { params: { local
       <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" />
 
       <ClubManifesto locale={locale} />
-
-      <Stats stats={stats} />
 
       <AppShowcase />
 
