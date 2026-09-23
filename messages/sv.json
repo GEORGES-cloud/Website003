@@ -318,6 +318,7 @@
     }
   },
   "fleet": {
+    "onRequest": "På medlemmarnas begäran",
     "hero": {
       "eyebrow": "Vår flotta",
       "title": "Varje båt,\nen historia.",
@@ -330,6 +331,8 @@
     "book": "Boka"
   },
   "boatDetail": {
+    "onRequestBody": "Den här modellen sjösätts när tillräckligt många medlemmar efterfrågar den. Ställ dig i kön så hör vi av oss.",
+    "onRequestCta": "Ställ dig i kön",
     "beam": "Bredd",
     "specs": "Specifikationer",
     "capacity": "Kapacitet",
@@ -440,6 +443,7 @@
     },
     "consult": "Boka din privata konsultation idag – vi har båtarna redo.",
     "form": {
+      "waitingList": "Jag vill ställa mig i kön för {boat}.",
       "name": "Fullständigt namn",
       "email": "E-postadress",
       "phone": "Telefon (valfritt)",

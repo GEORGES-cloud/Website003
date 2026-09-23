@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { trackEvent } from '@/lib/analytics';
 import ConsentCheckbox from './ConsentCheckbox';
@@ -9,6 +9,15 @@ export default function ContactForm() {
   const t = useTranslations('contact.form');
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [consent, setConsent] = useState(false);
+  /* Quien llega desde la lista de espera de un barco trae ?boat= en la URL:
+     se precarga el mensaje para que el lead llegue ya etiquetado. Se lee en
+     efecto (y no con useSearchParams) para no forzar Suspense ni sacar esta
+     pagina del prerenderizado. */
+  const [prefill, setPrefill] = useState('');
+  useEffect(() => {
+    const boat = new URLSearchParams(window.location.search).get('boat');
+    if (boat) setPrefill(t('waitingList', { boat }));
+  }, [t]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -65,7 +74,16 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="message" className={labelClass}>{t('message')}</label>
-        <textarea id="message" name="message" required rows={5} className={`${inputClass} resize-none`} />
+        {/* key: defaultValue no se refresca solo cuando llega el prefill */}
+        <textarea
+          key={prefill}
+          defaultValue={prefill}
+          id="message"
+          name="message"
+          required
+          rows={5}
+          className={`${inputClass} resize-none`}
+        />
       </div>
 
       <ConsentCheckbox checked={consent} onChange={setConsent} required />

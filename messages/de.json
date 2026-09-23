@@ -318,6 +318,7 @@
     }
   },
   "fleet": {
+    "onRequest": "Auf Wunsch der Mitglieder",
     "hero": {
       "eyebrow": "Unsere Flotte",
       "title": "Jede Yacht,\neine eigene Geschichte.",
@@ -330,6 +331,8 @@
     "book": "Reservieren"
   },
   "boatDetail": {
+    "onRequestBody": "Dieses Modell kommt ins Wasser, sobald genügend Mitglieder danach fragen. Trag dich in die Warteliste ein und wir halten dich auf dem Laufenden.",
+    "onRequestCta": "Auf die Warteliste",
     "beam": "Breite",
     "specs": "Technische Daten",
     "capacity": "Kapazität",
@@ -440,6 +443,7 @@
     },
     "consult": "Buche noch heute deine private Beratung – die Boote liegen bereit.",
     "form": {
+      "waitingList": "Ich möchte auf die Warteliste für die {boat}.",
       "name": "Vollständiger Name",
       "email": "E-Mail-Adresse",
       "phone": "Telefon (optional)",

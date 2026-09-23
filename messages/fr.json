@@ -318,6 +318,7 @@
     }
   },
   "fleet": {
+    "onRequest": "À la demande des membres",
     "hero": {
       "eyebrow": "Notre flotte",
       "title": "Chaque bateau,\nune histoire.",
@@ -330,6 +331,8 @@
     "book": "Réserver"
   },
   "boatDetail": {
+    "onRequestBody": "Ce modèle rejoint la flotte dès que suffisamment de membres le demandent. Inscrivez-vous sur la liste d’attente et nous vous tiendrons au courant.",
+    "onRequestCta": "Rejoindre la liste d’attente",
     "beam": "Bau",
     "specs": "Caractéristiques",
     "capacity": "Capacité",
@@ -440,6 +443,7 @@
     },
     "consult": "Réservez votre consultation privée dès aujourd’hui — les bateaux seront prêts.",
     "form": {
+      "waitingList": "Je souhaite m’inscrire sur la liste d’attente pour le {boat}.",
       "name": "Nom complet",
       "email": "Adresse e-mail",
       "phone": "Téléphone (facultatif)",

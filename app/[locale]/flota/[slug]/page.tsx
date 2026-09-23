@@ -37,6 +37,7 @@ export default async function BoatDetailPage({ params: { locale, slug } }: Props
   if (!boat || !boat.active) notFound();
 
   const t = await getTranslations({ locale, namespace: 'boatDetail' });
+  const tf = await getTranslations({ locale, namespace: 'fleet' });
   const guests: Record<string, string> = { es: 'personas', en: 'guests', sv: 'gäster', ru: 'гостей', de: 'Gäste', fr: 'invités' };
   const guestsLabel = guests[locale] ?? guests.en;
 
@@ -56,13 +57,33 @@ export default async function BoatDetailPage({ params: { locale, slug } }: Props
                   &ldquo;{boat.tagline}&rdquo;
                 </p>
                 <p className="font-sans text-lg text-muted leading-relaxed">{boat.description}</p>
-                {/* Booking happens in the club app, not on the web */}
+                {/* Un barco "a peticion" no se puede reservar todavia: en su
+                    ficha el bloque de la app se sustituye por la lista de
+                    espera, con el nombre del barco en el enlace para que el
+                    lead llegue ya etiquetado. */}
                 <div className="mt-12">
-                  <p className="eyebrow mb-5">{t('book')}</p>
-                  <div className="flex flex-wrap gap-x-8 gap-y-3">
-                    <Link href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">App Store</Link>
-                    <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">Google Play</Link>
-                  </div>
+                  {boat.onRequest ? (
+                    <>
+                      <p className="eyebrow mb-5">{tf('onRequest')}</p>
+                      <p className="font-sans text-[15px] text-muted leading-[1.8] max-w-[46ch]">
+                        {t('onRequestBody')}
+                      </p>
+                      <Link
+                        href={`/${locale}/contacto?boat=${encodeURIComponent(boat.name)}`}
+                        className="btn-primary mt-8"
+                      >
+                        {t('onRequestCta')}
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <p className="eyebrow mb-5">{t('book')}</p>
+                      <div className="flex flex-wrap gap-x-8 gap-y-3">
+                        <Link href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">App Store</Link>
+                        <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">Google Play</Link>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             </ScrollReveal>

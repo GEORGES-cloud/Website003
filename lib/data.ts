@@ -6,6 +6,11 @@ export interface Boat {
   lengthM: string;
   capacity: number;
   year: number;
+  /** Barco al que el club tiene acceso pero que AUN NO esta en el agua: se
+   *  bota cuando lo piden suficientes socios. Su ficha lo dice y ofrece lista
+   *  de espera en lugar de "reservar en la app" (decision del cliente
+   *  2026-09-23). */
+  onRequest?: boolean;
   tagline: string;
   taglineEn: string;
   description: string;
@@ -128,6 +133,7 @@ export const fleet: Boat[] = [
   },
   {
     slug: 'navan-t30',
+    onRequest: true,
     name: 'NAVAN T30',
     shortName: 'T30',
     lengthM: '9.4 m',
@@ -216,6 +222,7 @@ export const fleet: Boat[] = [
   },
   {
     slug: 'level-43st',
+    onRequest: true,
     name: 'Level Yachts 43ST',
     shortName: '43ST',
     lengthM: '13.2 m',

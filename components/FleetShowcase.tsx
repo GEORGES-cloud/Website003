@@ -88,6 +88,14 @@ export default function FleetShowcase({ locale, boats }: { locale: string; boats
                   <h2 className="display text-ink display-1">
                     {boat.shortName ?? boat.name}
                   </h2>
+                  {/* Barco al que el club tiene acceso pero que aun no esta
+                      en el agua: se dice aqui para que no parezca disponible
+                      como los demas. */}
+                  {boat.onRequest && (
+                    <p className="inline-flex items-center border border-ink/25 px-3 py-1.5 eyebrow-sm mt-5">
+                      {tf('onRequest')}
+                    </p>
+                  )}
                   <p className="font-sans text-lg font-extralight text-ink/75 leading-snug mt-5">{boat.tagline}</p>
                 </ScrollReveal>
 

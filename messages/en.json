@@ -318,6 +318,7 @@
     }
   },
   "fleet": {
+    "onRequest": "By member request",
     "hero": {
       "eyebrow": "Our fleet",
       "title": "Every boat,\na story.",
@@ -330,6 +331,8 @@
     "book": "Book"
   },
   "boatDetail": {
+    "onRequestBody": "This model enters the water once enough members ask for it. Join the waiting list and we’ll keep you posted.",
+    "onRequestCta": "Join the waiting list",
     "beam": "Beam",
     "specs": "Specifications",
     "capacity": "Capacity",
@@ -440,6 +443,7 @@
     },
     "consult": "Book your private consultation today — we’ll have the boats ready.",
     "form": {
+      "waitingList": "I’d like to join the waiting list for the {boat}.",
       "name": "Full name",
       "email": "Email address",
       "phone": "Phone (optional)",

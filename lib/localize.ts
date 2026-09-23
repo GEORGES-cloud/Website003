@@ -54,6 +54,7 @@ export interface LocalBoat {
   capacity: number;
   year: number;
   active: boolean;
+  onRequest: boolean;
   specs: Boat['specs'];
   image: string;
   slides?: string[];
@@ -77,6 +78,7 @@ export async function getFleet(locale: string): Promise<LocalBoat[]> {
     capacity: b.capacity,
     year: b.year,
     active: ACTIVE_BOAT_SLUGS.includes(b.slug),
+    onRequest: b.onRequest ?? false,
     specs: b.specs,
     image: b.image,
     slides: b.slides,
