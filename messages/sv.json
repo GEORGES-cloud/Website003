@@ -152,7 +152,7 @@
       },
       "prices": {
         "title": "Medlemskap och priser",
-        "description": "En årsavgift, allt ingår: obegränsad användning, professionell förberedelse, bokningsapp, handdukar, paddelbrädor och snorkelutrustning. Inget underhåll, ingen vinterförvaring."
+        "description": "En årsavgift, allt ingår: obegränsad användning, professionell förberedelse, bokningsapp, handdukar och snorkelutrustning. Inget underhåll, ingen vinterförvaring."
       },
       "homePort": {
         "title": "Hemmahamn: Puerto Banús, Marbella",
@@ -228,7 +228,7 @@
     },
     "intro": {
       "title": "Vad ingår i medlemskapet?",
-      "body": "Obegränsad användning året runt, bokningsappen, professionell förberedelse av båten inför varje tur, introduktion och medlemssupport – plus badhanddukar, kostnadsfria läskedrycker, paddelbrädor och snorkelutrustning ombord. Inget förarintyg ännu? Vi lotsar dig åt rätt håll."
+      "body": "Obegränsad användning året runt, bokningsappen, professionell förberedelse av båten inför varje tur, introduktion och medlemssupport – plus badhanddukar, kostnadsfria läskedrycker och snorkelutrustning ombord. Inget förarintyg ännu? Vi lotsar dig åt rätt håll."
     },
     "cta": {
       "eyebrow": "Priset, personligen",
@@ -305,7 +305,7 @@
       "description": "Boka utan gränser och hantera ditt medlemskap från en enda app. Inga samtal, ingen väntan.",
       "f1": "Obegränsade bokningar från appen",
       "f2": "Din båt förberedd, ren och fulltankad inför varje tur",
-      "f3": "Badhanddukar, läskedrycker, paddelbrädor och snorkelutrustning ombord"
+      "f3": "Badhanddukar, läskedrycker och snorkelutrustning ombord"
     },
     "gallery": {
       "title": "Ett liv till havs"

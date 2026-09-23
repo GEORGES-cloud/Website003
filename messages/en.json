@@ -152,7 +152,7 @@
       },
       "prices": {
         "title": "Membership & prices",
-        "description": "One annual fee, everything included: unlimited usage, professional preparation, booking app, towels, paddleboards and snorkelling gear. No maintenance or winter storage."
+        "description": "One annual fee, everything included: unlimited usage, professional preparation, booking app, towels and snorkelling gear. No maintenance or winter storage."
       },
       "homePort": {
         "title": "Home port: Puerto Banús, Marbella",
@@ -228,7 +228,7 @@
     },
     "intro": {
       "title": "What’s included in the membership?",
-      "body": "Unlimited annual usage, the booking app, professional boat preparation before every trip, onboarding and member support — plus beach towels, complimentary soft drinks, paddleboards and snorkelling equipment on board. No boating licence yet? We steer you in the right direction."
+      "body": "Unlimited annual usage, the booking app, professional boat preparation before every trip, onboarding and member support — plus beach towels, complimentary soft drinks and snorkelling equipment on board. No boating licence yet? We steer you in the right direction."
     },
     "cta": {
       "eyebrow": "The price, in person",
@@ -305,7 +305,7 @@
       "description": "Book without limits and manage your membership from a single app. No calls, no waiting.",
       "f1": "Unlimited bookings from the app",
       "f2": "Your boat prepared, clean and fuelled before every trip",
-      "f3": "Beach towels, soft drinks, paddleboards and snorkelling gear on board"
+      "f3": "Beach towels, soft drinks and snorkelling gear on board"
     },
     "gallery": {
       "title": "A life at sea"
