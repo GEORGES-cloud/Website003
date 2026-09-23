@@ -31,12 +31,14 @@ export default function Footer({ locale }: FooterProps) {
               aria-label="Flamingo Yacht Club"
               className="inline-block w-fit transition-opacity hover:opacity-80"
             >
-              {/* Lockup con flamenco: en el footer hay sitio de sobra y el
-                  cliente lo quiere completo aquí. Va la variante `nav` y no
-                  `full` porque `full` trae el "powered by" dibujado dentro,
-                  que sale ilegible y duplicaría la linea de abajo; el
-                  "powered by" sigue en HTML. */}
-              <Logo variant="nav" tone="white" width={200} />
+              {/* Solo el flamenco (petición del cliente 2026-09-23): la marca
+                  sola aguanta el sitio y el nombre del club ya lo lleva la
+                  barra en todas las páginas. El "powered by" sigue en HTML
+                  debajo. */}
+              {/* mx-auto: la marca sola es más estrecha que el "powered by"
+                  de abajo (al revés que el lockup anterior), así que sin esto
+                  el pájaro se queda descolgado a la izquierda. */}
+              <Logo variant="bird" tone="white" width={72} className="block mx-auto" />
               <span className="block mt-2 font-sans text-[9px] font-semibold uppercase tracking-wide2 text-white/70 text-center">
                 powered by Marina Marbella
               </span>

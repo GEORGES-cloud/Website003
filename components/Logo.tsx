@@ -1,4 +1,4 @@
-type LogoVariant = 'full' | 'nav' | 'mark' | 'word';
+type LogoVariant = 'full' | 'nav' | 'mark' | 'word' | 'bird';
 type LogoTone = 'ink' | 'white';
 
 /**
@@ -10,6 +10,11 @@ type LogoTone = 'ink' | 'white';
  *   logo-full   lockup completo con el flamenco (ya no se usa en la web)
  *   logo-nav    flamenco + FLAMINGO YACHT CLUB, sin tagline (ya no se usa)
  *   logo-mark   solo el flamenco sobre el agua (favicon, 404, sellos)
+ *   logo-bird   el flamenco SIN las ondas del agua, recortado a su caja:
+ *               es la marca del footer (peticion del cliente 2026-09-23).
+ *               Sale del mismo arte que logo-mark, quitando del trazado
+ *               maestro las seis subrutas del agua — por eso pesa 10 KB y
+ *               no 61 (variant="bird")
  * El wordmark lleva un stroke del mismo color sobre el trazado (petición del
  * cliente 2026-08-14): la vectorización salía demasiado fina y en la barra
  * sobre el vídeo el nombre se deshacía. El grosor va en el propio SVG para que
@@ -28,6 +33,7 @@ const RATIO: Record<LogoVariant, number> = {
   nav: 2823 / 1481,
   mark: 1163 / 925,
   word: 2823 / 487,
+  bird: 581 / 886,
 };
 
 /* Nombre de archivo por variante. El wordmark vive en un nombre NUEVO
@@ -39,6 +45,7 @@ const FILE: Record<LogoVariant, string> = {
   nav: 'logo-nav',
   mark: 'logo-mark',
   word: 'wordmark-bold',
+  bird: 'logo-bird',
 };
 
 interface LogoProps {
