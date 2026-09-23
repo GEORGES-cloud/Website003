@@ -37,10 +37,15 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
   FLAMINGO / YACHT CLUB, engordado con stroke por línea) con "powered by Marina
   Marbella" como texto HTML debajo (decisión del cliente 2026-08-10: en el arte
   sale ilegible a tamaño de barra).
-- En el **footer** va el lockup CON flamenco (2026-08-27, revierte para el
-  footer la decisión de 2026-08-10: ahí hay sitio y el cliente lo quiere
-  completo). Se usa la variante `nav` y NO `full`: `full` trae el "powered by"
-  dibujado dentro, que sale como un hilo ilegible y duplicaría la línea HTML.
+- En el **footer** va SOLO el flamenco (`logo-bird.svg`, variante `bird`,
+  2026-09-23). Antes estuvo el wordmark (2026-08-10) y luego el lockup `nav`
+  con flamenco (2026-08-27); el cliente acabó pidiendo la marca sola. El
+  "powered by Marina Marbella" sigue como texto HTML debajo, y el pájaro lleva
+  `mx-auto` porque es más estrecho que esa línea.
+- `logo-bird` se genera a partir de `logo-mark` quitando del trazado maestro
+  las seis subrutas de las ondas del agua y recortando el viewBox a la caja del
+  pájaro (por eso pesa 10 KB y no 61). Si hay que regenerarlo, el pico y el ojo
+  son las tres primeras subrutas de ese trazado.
 - El flamenco tambien vive en `logo-mark` (favicon, 404, sellos) y en el lockup
   grande sobre el vídeo de `HeroVideo` (variante `full`).
 - El navbar se funde a negro (`bg-ink/95`) al hacer scroll, con lockup y
