@@ -195,7 +195,7 @@
     "step2": {
       "number": "02",
       "title": "Führerschein leicht gemacht",
-      "desc": "Noch keinen Bootsführerschein? Wir machen es dir leicht und begleiten dich auf dem Weg dorthin."
+      "desc": "Noch keinen Bootsführerschein? Wir weisen dir den richtigen Weg."
     },
     "step3": {
       "number": "03",
@@ -205,7 +205,7 @@
     "license": {
       "eyebrow": "Unverzichtbare Voraussetzung",
       "title": "Der Bootsführerschein ist Pflicht",
-      "body": "Um mit dem Club aufs Meer zu fahren, brauchst du einen Bootsführerschein. Falls du noch keinen hast, begleiten wir dich, bis du ihn hast — aber um Teil dieses Clubs zu sein, ist er unverzichtbar."
+      "body": "Um mit dem Club aufs Meer zu fahren, brauchst du einen Bootsführerschein. Falls du noch keinen hast, weisen wir dir den richtigen Weg — aber um Teil dieses Clubs zu sein, ist er unverzichtbar."
     }
   },
   "prices": {

@@ -60,8 +60,8 @@ export const faqs: Faq[] = [
   {
     q: '¿Necesito licencia de navegación?',
     qEn: 'Do I need a boating licence?',
-    a: 'Sí. Y si aún no la tienes, te lo ponemos fácil: te acompañamos en todo el proceso para que la consigas rápido y sin complicaciones.',
-    aEn: 'Yes — and if you don’t have one yet, we make it easy: we guide you through the whole process so you get it quickly, hassle-free.',
+    a: 'Sí. Y si aún no la tienes, te orientamos en la dirección correcta.',
+    aEn: 'Yes — and if you don’t have one yet, we steer you in the right direction.',
   },
   {
     q: '¿Puedo llevar invitados a bordo?',

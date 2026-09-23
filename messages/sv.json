@@ -195,7 +195,7 @@
     "step2": {
       "number": "02",
       "title": "Förarintyg utan krångel",
-      "desc": "Har du inget förarintyg ännu? Vi gör det enkelt och hjälper dig hela vägen."
+      "desc": "Har du inget förarintyg ännu? Vi lotsar dig åt rätt håll."
     },
     "step3": {
       "number": "03",
@@ -205,7 +205,7 @@
     "license": {
       "eyebrow": "Ett absolut krav",
       "title": "Förarintyg är obligatoriskt",
-      "body": "För att köra klubbens båtar behöver du förarintyg. Om du ännu inte har ett hjälper vi dig att skaffa det – men för att vara med i den här klubben är det ett krav."
+      "body": "För att köra klubbens båtar behöver du förarintyg. Om du ännu inte har ett lotsar vi dig åt rätt håll – men för att vara med i den här klubben är det ett krav."
     }
   },
   "prices": {

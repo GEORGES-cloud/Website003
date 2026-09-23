@@ -195,7 +195,7 @@
     "step2": {
       "number": "02",
       "title": "Permis en toute simplicité",
-      "desc": "Pas encore de permis bateau ? On vous facilite les choses et on vous accompagne pour l’obtenir."
+      "desc": "Pas encore de permis bateau ? On vous met sur la bonne voie."
     },
     "step3": {
       "number": "03",
@@ -205,7 +205,7 @@
     "license": {
       "eyebrow": "Une exigence incontournable",
       "title": "Le permis bateau est obligatoire",
-      "body": "Pour naviguer avec le club, vous avez besoin d’un permis. Si vous ne l’avez pas encore, nous vous accompagnons pour l’obtenir — mais pour faire partie de ce club, il est indispensable."
+      "body": "Pour naviguer avec le club, vous avez besoin d’un permis. Si vous ne l’avez pas encore, on vous met sur la bonne voie — mais pour faire partie de ce club, il est indispensable."
     }
   },
   "prices": {
