@@ -152,7 +152,7 @@
       },
       "prices": {
         "title": "Mitgliedschaft und Preise",
-        "description": "Ein Jahresbeitrag, alles inklusive: unbegrenzte Nutzung, professionelle Vorbereitung, Reservierungs-App, Handtücher und Schnorchelausrüstung. Ohne Wartung und Winterlager."
+        "description": "Ein Jahresbeitrag, alles inklusive: unbegrenzte Nutzung, professionelle Vorbereitung, Reservierungs-App und Mitglieder-Support. Ohne Wartung und Winterlager."
       },
       "homePort": {
         "title": "Heimathafen: Puerto Banús, Marbella",
@@ -228,7 +228,7 @@
     },
     "intro": {
       "title": "Was ist in der Mitgliedschaft enthalten?",
-      "body": "Unbegrenzte Nutzung das ganze Jahr, die Reservierungs-App, professionelle Vorbereitung des Bootes vor jedem Törn, Onboarding und Mitglieder-Support — dazu Strandtücher, kostenlose Softdrinks und Schnorchelausrüstung an Bord. Noch kein Bootsführerschein? Wir weisen dir den richtigen Weg."
+      "body": "Unbegrenzte Nutzung das ganze Jahr, die Reservierungs-App, professionelle Vorbereitung des Bootes vor jedem Törn, Onboarding und Mitglieder-Support. Noch kein Bootsführerschein? Wir weisen dir den richtigen Weg."
     },
     "cta": {
       "eyebrow": "Der Preis, ganz persönlich",
@@ -305,7 +305,7 @@
       "description": "Reserviere ohne Limits und verwalte deine Mitgliedschaft über eine einzige App. Keine Anrufe, kein Warten.",
       "f1": "Unbegrenzte Reservierungen über die App",
       "f2": "Dein Boot vorbereitet, sauber und vollgetankt vor jedem Törn",
-      "f3": "Strandtücher, Softdrinks und Schnorchelausrüstung an Bord"
+      "f3": "Zwei Slots hintereinander: das Boot gehört dir den ganzen Tag"
     },
     "gallery": {
       "title": "Ein Leben auf dem Meer"

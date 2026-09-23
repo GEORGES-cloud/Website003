@@ -152,7 +152,7 @@
       },
       "prices": {
         "title": "Adhésion et tarifs",
-        "description": "Une seule cotisation annuelle, tout inclus : usage illimité, préparation professionnelle, app de réservation, serviettes et équipement de snorkeling. Sans entretien ni hivernage."
+        "description": "Une seule cotisation annuelle, tout inclus : usage illimité, préparation professionnelle, app de réservation et assistance aux membres. Sans entretien ni hivernage."
       },
       "homePort": {
         "title": "Port d’attache : Puerto Banús, Marbella",
@@ -228,7 +228,7 @@
     },
     "intro": {
       "title": "Que comprend l’adhésion ?",
-      "body": "Utilisation annuelle illimitée, application de réservation, préparation professionnelle du bateau avant chaque sortie, accompagnement à vos débuts et assistance aux membres — sans oublier serviettes de plage, boissons fraîches offertes et équipement de snorkeling à bord. Pas encore de permis bateau ? On vous met sur la bonne voie."
+      "body": "Utilisation annuelle illimitée, application de réservation, préparation professionnelle du bateau avant chaque sortie, accompagnement à vos débuts et assistance aux membres. Pas encore de permis bateau ? On vous met sur la bonne voie."
     },
     "cta": {
       "eyebrow": "Le prix, en personne",
@@ -305,7 +305,7 @@
       "description": "Réservez sans limites et gérez votre adhésion depuis une seule application. Aucun appel, aucune attente.",
       "f1": "Réservations illimitées depuis l’application",
       "f2": "Votre bateau préparé, propre et le plein fait avant chaque sortie",
-      "f3": "Serviettes de plage, boissons fraîches et équipement de snorkeling à bord"
+      "f3": "Deux créneaux d’affilée : le bateau est à vous toute la journée"
     },
     "gallery": {
       "title": "Une vie en mer"

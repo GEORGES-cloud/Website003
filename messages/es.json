@@ -152,7 +152,7 @@
       },
       "prices": {
         "title": "Membresía y precios",
-        "description": "Una sola cuota anual, todo incluido: uso ilimitado, preparación profesional, app de reservas, toallas y snorkel. Sin mantenimiento ni invernaje."
+        "description": "Una sola cuota anual, todo incluido: uso ilimitado, preparación profesional, app de reservas y soporte a socios. Sin mantenimiento ni invernaje."
       },
       "homePort": {
         "title": "Puerto base: Puerto Banús, Marbella",
@@ -228,7 +228,7 @@
     },
     "intro": {
       "title": "¿Qué incluye la membresía?",
-      "body": "Uso anual ilimitado, app de reservas, preparación profesional del barco antes de cada salida, onboarding y soporte a socios — además de toallas, refrescos y equipo de snorkel a bordo. ¿Sin licencia de navegación? Te orientamos en la dirección correcta."
+      "body": "Uso anual ilimitado, app de reservas, preparación profesional del barco antes de cada salida, onboarding y soporte a socios. ¿Sin licencia de navegación? Te orientamos en la dirección correcta."
     },
     "cta": {
       "eyebrow": "El precio, en persona",
@@ -305,7 +305,7 @@
       "description": "Reserva sin límites y gestiona tu membresía desde una sola app. Sin llamadas, sin esperas.",
       "f1": "Reservas ilimitadas desde la app",
       "f2": "Tu barco preparado, limpio y repostado antes de cada salida",
-      "f3": "Toallas, refrescos y equipo de snorkel a bordo"
+      "f3": "Dos reservas seguidas: el barco es tuyo todo el día"
     },
     "gallery": {
       "title": "Una vida en el mar"

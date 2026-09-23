@@ -56,10 +56,10 @@
         "Réservez jusqu’à deux créneaux d’affilée : assurez votre place, le bateau est à vous toute la journée",
         "Préparation professionnelle du bateau avant chaque sortie",
         "Accompagnement à vos débuts et assistance aux membres",
-        "Serviettes de plage, boissons fraîches offertes et équipement de snorkeling à bord",
+        "Invités à bord sans frais supplémentaires",
         "Aucun entretien, aucune assurance, aucune révision ni hivernage à gérer",
-        "Pas encore de permis bateau ? On vous facilite les choses et on vous aide à l’obtenir",
-        "Invités à bord sans frais supplémentaires"
+        "Pas encore de permis bateau ? On vous met sur la bonne voie",
+        "Demandez-nous ce que le Flamingo garde encore sous son aile"
       ]
     }
   },
@@ -78,7 +78,7 @@
     },
     {
       "q": "Que comprend la cotisation ?",
-      "a": "Utilisation annuelle illimitée, application de réservation, préparation professionnelle du bateau avant chaque sortie, accompagnement à vos débuts et assistance aux membres — sans oublier serviettes de plage, boissons fraîches offertes et équipement de snorkeling à bord. Aucun entretien, aucune assurance ni hivernage à gérer."
+      "a": "Utilisation annuelle illimitée, application de réservation, préparation professionnelle du bateau avant chaque sortie, accompagnement à vos débuts et assistance aux membres. Aucun entretien, aucune assurance ni hivernage à gérer."
     },
     {
       "q": "D'où partent les bateaux ?",
