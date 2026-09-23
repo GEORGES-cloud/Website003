@@ -38,7 +38,7 @@ export default function Footer({ locale }: FooterProps) {
               {/* mx-auto: la marca sola es más estrecha que el "powered by"
                   de abajo (al revés que el lockup anterior), así que sin esto
                   el pájaro se queda descolgado a la izquierda. */}
-              <Logo variant="bird" tone="white" width={72} className="block mx-auto" />
+              <Logo variant="bird" tone="white" width={68} className="block mx-auto" />
               <span className="block mt-2 font-sans text-[9px] font-semibold uppercase tracking-wide2 text-white/70 text-center">
                 powered by Marina Marbella
               </span>

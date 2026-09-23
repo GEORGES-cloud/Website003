@@ -10,11 +10,10 @@ type LogoTone = 'ink' | 'white';
  *   logo-full   lockup completo con el flamenco (ya no se usa en la web)
  *   logo-nav    flamenco + FLAMINGO YACHT CLUB, sin tagline (ya no se usa)
  *   logo-mark   solo el flamenco sobre el agua (favicon, 404, sellos)
- *   logo-bird   el flamenco SIN las ondas del agua, recortado a su caja:
- *               es la marca del footer (peticion del cliente 2026-09-23).
- *               Sale del mismo arte que logo-mark, quitando del trazado
- *               maestro las seis subrutas del agua — por eso pesa 10 KB y
- *               no 61 (variant="bird")
+ *   logo-bird   el flamenco NUEVO del cliente — arte distinto al de arriba,
+ *               de trazo grueso. Es la marca del footer (2026-09-23) y es el
+ *               ÚNICO archivo que no es SVG: llegó como PNG y así se queda
+ *               hasta que el cliente mande el vectorial (variant="bird")
  * El wordmark lleva un stroke del mismo color sobre el trazado (petición del
  * cliente 2026-08-14): la vectorización salía demasiado fina y en la barra
  * sobre el vídeo el nombre se deshacía. El grosor va en el propio SVG para que
@@ -33,7 +32,7 @@ const RATIO: Record<LogoVariant, number> = {
   nav: 2823 / 1481,
   mark: 1163 / 925,
   word: 2823 / 487,
-  bird: 581 / 886,
+  bird: 266 / 440,
 };
 
 /* Nombre de archivo por variante. El wordmark vive en un nombre NUEVO
@@ -63,10 +62,20 @@ export default function Logo({
   className = '',
   alt = 'Flamingo Yacht Club',
 }: LogoProps) {
+  /* PROVISIONAL (2026-09-23): el flamenco nuevo llegó como PNG recortado a su
+     caja. Es rosa con fondo transparente, así que vale igual sobre claro y
+     sobre oscuro y no tiene variante `-white` — por eso ignora `tone`. En
+     cuanto el cliente mande el vectorial, borrar esta excepción, dejar el
+     `.svg` del patrón general y actualizar RATIO. */
+  const src =
+    variant === 'bird'
+      ? '/brand/logo-bird.png'
+      : `/brand/${FILE[variant]}${tone === 'white' ? '-white' : ''}.svg`;
+
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`/brand/${FILE[variant]}${tone === 'white' ? '-white' : ''}.svg`}
+      src={src}
       alt={alt}
       width={width}
       height={Math.round(width / RATIO[variant])}

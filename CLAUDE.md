@@ -37,15 +37,20 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
   FLAMINGO / YACHT CLUB, engordado con stroke por línea) con "powered by Marina
   Marbella" como texto HTML debajo (decisión del cliente 2026-08-10: en el arte
   sale ilegible a tamaño de barra).
-- En el **footer** va SOLO el flamenco (`logo-bird.svg`, variante `bird`,
+- En el **footer** va SOLO el flamenco (`logo-bird.png`, variante `bird`,
   2026-09-23). Antes estuvo el wordmark (2026-08-10) y luego el lockup `nav`
   con flamenco (2026-08-27); el cliente acabó pidiendo la marca sola. El
   "powered by Marina Marbella" sigue como texto HTML debajo, y el pájaro lleva
   `mx-auto` porque es más estrecho que esa línea.
-- `logo-bird` se genera a partir de `logo-mark` quitando del trazado maestro
-  las seis subrutas de las ondas del agua y recortando el viewBox a la caja del
-  pájaro (por eso pesa 10 KB y no 61). Si hay que regenerarlo, el pico y el ojo
-  son las tres primeras subrutas de ese trazado.
+- **`logo-bird.png` es la ÚNICA excepción a la regla del SVG y es PROVISIONAL.**
+  Es un arte NUEVO del cliente (trazo grueso, distinto al flamenco de
+  `logo-mark`), que llegó como PNG; el vectorial está pendiente de que lo
+  manden. Va recortado a la caja del dibujo y reescalado a 266x440 (el
+  original traía mucho margen vacío y pesaba 218 KB; así pesa 51). Es rosa con
+  fondo transparente, así que sirve sobre claro y sobre oscuro y NO tiene
+  variante `-white`: por eso `Logo` ignora `tone` para esta variante. Cuando
+  llegue el SVG: sustituirlo, quitar la excepción de `Logo.tsx` y actualizar
+  `RATIO.bird`.
 - El flamenco tambien vive en `logo-mark` (favicon, 404, sellos) y en el lockup
   grande sobre el vídeo de `HeroVideo` (variante `full`).
 - El navbar se funde a negro (`bg-ink/95`) al hacer scroll, con lockup y
