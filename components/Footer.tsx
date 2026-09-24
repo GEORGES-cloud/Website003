@@ -29,19 +29,15 @@ export default function Footer({ locale }: FooterProps) {
             <Link
               href={`/${locale}`}
               aria-label="Flamingo Yacht Club"
-              className="inline-block w-fit transition-opacity hover:opacity-80"
+              className="block w-fit transition-opacity hover:opacity-80"
             >
-              {/* Solo el flamenco (petición del cliente 2026-09-23): la marca
-                  sola aguanta el sitio y el nombre del club ya lo lleva la
-                  barra en todas las páginas. El "powered by" sigue en HTML
-                  debajo. */}
-              {/* mx-auto: la marca sola es más estrecha que el "powered by"
-                  de abajo (al revés que el lockup anterior), así que sin esto
-                  el pájaro se queda descolgado a la izquierda. */}
-              <Logo variant="bird" tone="white" width={68} className="block mx-auto" />
-              <span className="block mt-2 font-sans text-[9px] font-semibold uppercase tracking-wide2 text-white/70 text-center">
-                powered by Marina Marbella
-              </span>
+              {/* Solo el flamenco, sin "powered by" debajo (petición del
+                  cliente 2026-09-24; la atribución sigue en la barra y en el
+                  <title>). Va alineado a la izquierda, no centrado: el resto
+                  de la columna —lema, dirección, teléfono— y el aviso legal de
+                  abajo van a bandera izquierda, así que centrarlo lo dejaba
+                  flotando sin nada con lo que alinearse. */}
+              <Logo variant="bird" tone="white" width={68} className="block" />
             </Link>
             <p className="font-sans text-sm text-white/60 mt-6 leading-relaxed max-w-xs">
               {tf('tagline')}
