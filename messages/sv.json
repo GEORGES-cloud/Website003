@@ -299,6 +299,7 @@
       }
     },
     "app": {
+      "memberNote": "Klubbappen är för medlemmar – du får tillgång så fort du går med.",
       "eyebrow": "Klubbappen",
       "titleLead": "Din klubb, i din",
       "titleAccent": "ficka.",
@@ -331,6 +332,7 @@
     "book": "Boka"
   },
   "boatDetail": {
+    "bookNote": "Medlemmar bokar den här båten i klubbappen: välj dag och åk.",
     "onRequestBody": "Den här modellen sjösätts när tillräckligt många medlemmar efterfrågar den. Ställ dig i kön så hör vi av oss.",
     "onRequestCta": "Ställ dig i kön",
     "beam": "Bredd",

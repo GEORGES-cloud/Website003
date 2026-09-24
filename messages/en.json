@@ -299,6 +299,7 @@
       }
     },
     "app": {
+      "memberNote": "The club app is for members — you’ll get access as soon as you join.",
       "eyebrow": "The club app",
       "titleLead": "Your club, in your",
       "titleAccent": "pocket.",
@@ -331,6 +332,7 @@
     "book": "Book"
   },
   "boatDetail": {
+    "bookNote": "Members book this boat from the club app: pick a day and go.",
     "onRequestBody": "This model enters the water once enough members ask for it. Join the waiting list and we’ll keep you posted.",
     "onRequestCta": "Join the waiting list",
     "beam": "Beam",

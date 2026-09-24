@@ -299,6 +299,7 @@
       }
     },
     "app": {
+      "memberNote": "L’application du club est réservée aux membres : vous y aurez accès dès votre adhésion.",
       "eyebrow": "L'application du club",
       "titleLead": "Votre club, dans votre",
       "titleAccent": "poche.",
@@ -331,6 +332,7 @@
     "book": "Réserver"
   },
   "boatDetail": {
+    "bookNote": "Les membres réservent ce bateau depuis l’application du club : choisissez le jour et partez.",
     "onRequestBody": "Ce modèle rejoint la flotte dès que suffisamment de membres le demandent. Inscrivez-vous sur la liste d’attente et nous vous tiendrons au courant.",
     "onRequestCta": "Rejoindre la liste d’attente",
     "beam": "Bau",

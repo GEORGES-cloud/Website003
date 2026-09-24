@@ -299,6 +299,7 @@
       }
     },
     "app": {
+      "memberNote": "La app del club es para socios: tendrás acceso en cuanto te unas.",
       "eyebrow": "La app del club",
       "titleLead": "Tu club, en el",
       "titleAccent": "bolsillo.",
@@ -331,6 +332,7 @@
     "book": "Reservar"
   },
   "boatDetail": {
+    "bookNote": "Los socios reservan este barco desde la app del club: eliges el día y a navegar.",
     "onRequestBody": "Este modelo se bota cuando lo piden suficientes socios. Apúntate a la lista de espera y te mantenemos al tanto.",
     "onRequestCta": "Apuntarme a la lista de espera",
     "beam": "Manga",

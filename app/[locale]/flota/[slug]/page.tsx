@@ -6,7 +6,6 @@ import { getBoat, getActiveBoatSlugs } from '@/lib/localize';
 import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import BoatGallery from '@/components/BoatGallery';
-import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
 
 interface Props {
   params: { locale: string; slug: string };
@@ -78,10 +77,11 @@ export default async function BoatDetailPage({ params: { locale, slug } }: Props
                   ) : (
                     <>
                       <p className="eyebrow mb-5">{t('book')}</p>
-                      <div className="flex flex-wrap gap-x-8 gap-y-3">
-                        <Link href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">App Store</Link>
-                        <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">Google Play</Link>
-                      </div>
+                      {/* Sin enlaces a las tiendas: la app llega al hacerse
+                          socio (2026-09-24). */}
+                      <p className="font-sans text-[15px] text-muted leading-[1.8] max-w-[46ch]">
+                        {t('bookNote')}
+                      </p>
                     </>
                   )}
                 </div>

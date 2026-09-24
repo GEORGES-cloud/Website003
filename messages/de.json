@@ -299,6 +299,7 @@
       }
     },
     "app": {
+      "memberNote": "Die Club-App ist für Mitglieder — du bekommst Zugang, sobald du beitrittst.",
       "eyebrow": "Die Club-App",
       "titleLead": "Dein Club, in deiner",
       "titleAccent": "Tasche.",
@@ -331,6 +332,7 @@
     "book": "Reservieren"
   },
   "boatDetail": {
+    "bookNote": "Mitglieder buchen dieses Boot in der Club-App: Tag wählen und los.",
     "onRequestBody": "Dieses Modell kommt ins Wasser, sobald genügend Mitglieder danach fragen. Trag dich in die Warteliste ein und wir halten dich auf dem Laufenden.",
     "onRequestCta": "Auf die Warteliste",
     "beam": "Breite",

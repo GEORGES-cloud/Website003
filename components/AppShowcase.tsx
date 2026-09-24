@@ -1,9 +1,7 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import ImageReveal from './ImageReveal';
 import ScrollReveal from './ScrollReveal';
-import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
 import RevealText from './RevealText';
 
 /* Cinematic editorial split: full-bleed photography instead of device mockups.
@@ -52,11 +50,14 @@ export default function AppShowcase() {
                 ))}
               </ul>
             </ScrollReveal>
+            {/* Aquí iban los botones de las tiendas. La app es una ventaja
+                de socio y el enlace de descarga se manda al darse de alta, así
+                que en su lugar va una línea que lo explica: sin ella el
+                visitante busca un botón que ya no existe. */}
             <ScrollReveal delay={0.4}>
-              <div className="flex gap-8">
-                <Link href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">App Store</Link>
-                <Link href={playStoreUrl} target="_blank" rel="noopener noreferrer" className="link-underline">Google Play</Link>
-              </div>
+              <p className="font-sans text-base text-muted leading-relaxed max-w-md">
+                {t('memberNote')}
+              </p>
             </ScrollReveal>
           </div>
         </div>
