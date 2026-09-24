@@ -1,4 +1,4 @@
-type LogoVariant = 'full' | 'nav' | 'mark' | 'word' | 'bird';
+type LogoVariant = 'full' | 'nav' | 'mark' | 'word' | 'bird' | 'hero';
 type LogoTone = 'ink' | 'white';
 
 /**
@@ -33,6 +33,7 @@ const RATIO: Record<LogoVariant, number> = {
   mark: 1163 / 925,
   word: 2823 / 487,
   bird: 249 / 440,
+  hero: 1200 / 611,
 };
 
 /* Nombre de archivo por variante. El wordmark vive en un nombre NUEVO
@@ -45,6 +46,7 @@ const FILE: Record<LogoVariant, string> = {
   mark: 'logo-mark',
   word: 'wordmark-bold',
   bird: 'logo-bird',
+  hero: 'logo-hero',
 };
 
 interface LogoProps {
@@ -62,15 +64,17 @@ export default function Logo({
   className = '',
   alt = 'Flamingo Yacht Club',
 }: LogoProps) {
-  /* PROVISIONAL (2026-09-23): el flamenco nuevo llegó como PNG recortado a su
-     caja. Es rosa con fondo transparente, así que vale igual sobre claro y
-     sobre oscuro y no tiene variante `-white` — por eso ignora `tone`. En
-     cuanto el cliente mande el vectorial, borrar esta excepción, dejar el
-     `.svg` del patrón general y actualizar RATIO. */
+  /* Variantes que son mapa de bits y no SVG: el arte nuevo del diseñador llegó
+     en WebP y se sirve recortado como PNG. Ignoran `tone` porque cada archivo
+     ya viene en su color —`hero` trae la palabra en BLANCO, así que solo vale
+     sobre fondo oscuro—. Si el diseñador manda los vectoriales: sustituirlos,
+     vaciar este mapa y actualizar `RATIO`. */
+  const RASTER: Partial<Record<LogoVariant, string>> = {
+    bird: '/brand/logo-bird.png',
+    hero: '/brand/logo-hero.png',
+  };
   const src =
-    variant === 'bird'
-      ? '/brand/logo-bird.png'
-      : `/brand/${FILE[variant]}${tone === 'white' ? '-white' : ''}.svg`;
+    RASTER[variant] ?? `/brand/${FILE[variant]}${tone === 'white' ? '-white' : ''}.svg`;
 
   return (
     // eslint-disable-next-line @next/next/no-img-element

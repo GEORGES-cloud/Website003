@@ -80,24 +80,31 @@ export default function HeroVideo({
 
       {showLogo && (
         <>
-          {/* Oscurecido suave hacia el centro: el vídeo pasa por fotogramas de
-              agua muy iluminada y el lockup blanco se perdía en ellos. */}
+          {/* Oscurecido suave detrás del lockup: el vídeo pasa por fotogramas
+              de agua muy iluminada y el texto blanco se perdía en ellos. El
+              foco va ARRIBA (28%), no en el centro, porque ahí es donde está
+              ahora el logo. */}
           <div
             aria-hidden
             className="absolute inset-0"
-            style={{ background: 'radial-gradient(60% 55% at 50% 46%, rgba(26,25,22,0.46) 0%, rgba(26,25,22,0.18) 55%, transparent 100%)' }}
+            style={{ background: 'radial-gradient(62% 48% at 50% 28%, rgba(26,25,22,0.50) 0%, rgba(26,25,22,0.20) 55%, transparent 100%)' }}
           />
+          {/* Arriba y no centrado (petición del cliente 2026-09-24): quiere que
+              el logo sea lo primero que se ve al entrar. El `max()` es el
+              detalle importante: con un porcentaje a secas, en pantallas bajas
+              (móvil apaisado, ~560px) el 14% caía justo debajo de la barra y
+              casi la tocaba. El suelo en píxeles —alto de barra + aire— impide
+              que suba más de la cuenta por muy baja que sea la ventana. */}
           <motion.div
             style={{ opacity: copyOpacity }}
-            className="relative h-full flex items-center justify-center px-6"
+            className="absolute inset-x-0 top-[max(14%,calc(var(--header-h)+28px))] md:top-[max(18%,calc(var(--header-h)+40px))] flex justify-center px-6"
           >
-          {/* Decorativo: el nombre del club ya lo da el h1 y el lockup del header */}
+            {/* Decorativo: el nombre del club ya lo da el h1 */}
             <Logo
-              variant="full"
-              tone="white"
-              width={520}
+              variant="hero"
+              width={560}
               alt=""
-              className="w-[min(74vw,520px)] h-auto animate-hero drop-shadow-[0_2px_24px_rgba(0,0,0,0.45)]"
+              className="w-[min(82vw,560px)] h-auto animate-hero drop-shadow-[0_2px_24px_rgba(0,0,0,0.45)]"
             />
           </motion.div>
         </>

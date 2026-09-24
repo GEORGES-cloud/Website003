@@ -35,10 +35,21 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
 
 - Vive vectorizado en `public/brand/*.svg` y se sirve SIEMPRE con `<img>`,
   nunca con `next/image`.
-- En la **barra** va el **wordmark sin flamenco** (`wordmark-bold.svg`:
-  FLAMINGO / YACHT CLUB, engordado con stroke por línea) con "powered by Marina
-  Marbella" como texto HTML debajo (decisión del cliente 2026-08-10: en el arte
-  sale ilegible a tamaño de barra).
+- En la **barra** ya NO hay marca (2026-09-24): el centro está vacío a
+  propósito. El lockup completo pasó al hero del vídeo, que es donde el
+  cliente lo quería desde el principio; la barra nunca pudo crecer lo
+  suficiente para el logo con flamenco sin quedar enorme al hacer scroll.
+  `BrandLogo` (el wordmark + "powered by") sobrevive SOLO dentro del menú
+  desplegable, y es el único enlace a inicio que queda en la cabecera.
+- En el **hero del vídeo** va `logo-hero.png` (variante `hero`, prop
+  `showLogo` de `HeroVideo`, solo en la portada). Es el lockup del diseñador:
+  flamenco rosa sobre FLAMINGO / YACHT CLUB en BLANCO, así que **solo sirve
+  sobre fondo oscuro**. Va arriba y no centrado, con
+  `top-[max(14%,calc(var(--header-h)+28px))]`: el suelo en píxeles evita que
+  en ventanas bajas (móvil apaisado) se pegue a la barra.
+- Las páginas SIN hero de vídeo (Flota, Puerto base, Nosotros, Membresía y las
+  legales) se quedan sin marca en la cabecera. Avisado al cliente el
+  2026-09-24; pendiente de decidir si se les pone logo o vuelve algo a la barra.
 - En el **footer** va SOLO el flamenco (`logo-bird.png`, variante `bird`,
   2026-09-23). Antes estuvo el wordmark (2026-08-10) y luego el lockup `nav`
   con flamenco (2026-08-27); el cliente acabó pidiendo la marca sola. El

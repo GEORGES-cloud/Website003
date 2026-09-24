@@ -14,9 +14,10 @@ export default async function HomePage({ params: { locale } }: { params: { local
 
   return (
     <>
-      {/* Hero: el metraje del SPX a pantalla completa, sin texto ni lockup —
-          la marca la lleva la barra. El plano en movimiento baja al split. */}
-      <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" />
+      {/* Hero: el metraje del SPX a pantalla completa con el lockup completo
+          encima (2026-09-24). La barra ya no lleva marca: el logo grande sobre
+          el vídeo es ahora lo primero que ve quien entra. */}
+      <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" showLogo />
 
       <ClubManifesto locale={locale} />
 
