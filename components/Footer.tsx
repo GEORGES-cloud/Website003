@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import Logo from './Logo';
-import { appStoreUrl, playStoreUrl } from '@/lib/appLinks';
-import { CLUB_PHONE_DISPLAY, CLUB_PHONE_E164 } from '@/lib/contact';
+import { CLUB_EMAIL, CLUB_PHONE_DISPLAY, CLUB_PHONE_E164 } from '@/lib/contact';
 
 interface FooterProps {
   locale: string;
@@ -41,28 +40,12 @@ export default function Footer({ locale }: FooterProps) {
                   propio pájaro. */}
               <Logo variant="bird" tone="white" width={68} className="block mx-auto" />
             </Link>
-            <p className="font-sans text-sm text-white/60 mt-6 leading-relaxed max-w-xs">
+            {/* El lema va centrado bajo el pájaro, como él (2026-09-24): el
+                bloque de marca se lee entonces como una unidad simétrica y no
+                como un logo centrado sobre un texto a bandera izquierda. */}
+            <p className="font-sans text-sm text-white/60 mt-6 leading-relaxed max-w-xs text-center">
               {tf('tagline')}
             </p>
-            {/* Ubicación del club (base Marina Marbella en Puerto Banús) → Google Maps */}
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Marina+Marbella%2C+Edificio+Levante%2C+Puerto+Ban%C3%BAs%2C+Marbella"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans text-sm text-white/60 hover:text-white transition-colors mt-4 block max-w-xs leading-relaxed"
-            >
-              Edificio Levante, local 9-10
-              <br />
-              Puerto Banús · 29660 Marbella
-            </a>
-            {/* Teléfono del club a la vista (petición del cliente 2026-08-14):
-                hasta ahora el número solo vivía dentro del botón de WhatsApp. */}
-            <a
-              href={`tel:${CLUB_PHONE_E164}`}
-              className="font-sans text-sm text-white/60 hover:text-white transition-colors mt-3 block w-fit"
-            >
-              {CLUB_PHONE_DISPLAY}
-            </a>
           </div>
 
           {/* Navigation */}
@@ -81,30 +64,38 @@ export default function Footer({ locale }: FooterProps) {
             </ul>
           </div>
 
-          {/* App */}
+          {/* Contacto. Ocupa el hueco que dejó la columna de la app
+              (2026-09-24) y es lo que de verdad necesita quien todavía no es
+              socio: no puede reservar, así que tiene que escribir o llamar.
+              La dirección y el teléfono vivían apretados bajo la marca; aquí
+              respiran y el bloque de marca se queda limpio. */}
           <div>
-            <p className="eyebrow-accent mb-7">
-              {tf('app')}
-            </p>
-            <p className="font-sans text-sm text-white/60 mb-7 leading-relaxed">{tf('appText')}</p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href={appStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center font-sans text-[11px] font-semibold tracking-wide2 uppercase text-white/60 border border-white/20 px-5 py-3 hover:border-sea-light hover:text-white transition-colors"
-              >
-                App Store
-              </Link>
-              <Link
-                href={playStoreUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center font-sans text-[11px] font-semibold tracking-wide2 uppercase text-white/60 border border-white/20 px-5 py-3 hover:border-sea-light hover:text-white transition-colors"
-              >
-                Google Play
-              </Link>
-            </div>
+            <p className="eyebrow-accent mb-7">{t('contact')}</p>
+            {/* Ubicación del club (base Marina Marbella en Puerto Banús) → Google Maps */}
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Marina+Marbella%2C+Edificio+Levante%2C+Puerto+Ban%C3%BAs%2C+Marbella"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-sm text-white/60 hover:text-white transition-colors block max-w-xs leading-relaxed"
+            >
+              Edificio Levante, local 9-10
+              <br />
+              Puerto Banús · 29660 Marbella
+            </a>
+            {/* Teléfono del club a la vista (petición del cliente 2026-08-14):
+                hasta ahora el número solo vivía dentro del botón de WhatsApp. */}
+            <a
+              href={`tel:${CLUB_PHONE_E164}`}
+              className="font-sans text-sm text-white/60 hover:text-white transition-colors mt-4 block w-fit"
+            >
+              {CLUB_PHONE_DISPLAY}
+            </a>
+            <a
+              href={`mailto:${CLUB_EMAIL}`}
+              className="font-sans text-sm text-white/60 hover:text-white transition-colors mt-3 block w-fit"
+            >
+              {CLUB_EMAIL}
+            </a>
           </div>
         </div>
 

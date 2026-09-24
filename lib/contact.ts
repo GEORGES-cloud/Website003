@@ -20,3 +20,9 @@ export const PHONE_LABEL: Record<string, string> = {
   de: 'Telefon',
   fr: 'Téléphone',
 };
+
+/* Buzon publico del club. Ya aparece en la pagina de Contacto y en los
+   textos legales, asi que mostrarlo tambien en el footer no expone nada
+   nuevo. Literal, como en lib/legal.ts: CONTACT_EMAIL solo existe en el
+   servidor y el footer se renderiza sin el. */
+export const CLUB_EMAIL = 'Hello@flamingoyachtclub.com';
