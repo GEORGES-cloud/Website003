@@ -29,15 +29,17 @@ export default function Footer({ locale }: FooterProps) {
             <Link
               href={`/${locale}`}
               aria-label="Flamingo Yacht Club"
-              className="block w-fit transition-opacity hover:opacity-80"
+              className="block max-w-xs transition-opacity hover:opacity-80"
             >
               {/* Solo el flamenco, sin "powered by" debajo (petición del
                   cliente 2026-09-24; la atribución sigue en la barra y en el
-                  <title>). Va alineado a la izquierda, no centrado: el resto
-                  de la columna —lema, dirección, teléfono— y el aviso legal de
-                  abajo van a bandera izquierda, así que centrarlo lo dejaba
-                  flotando sin nada con lo que alinearse. */}
-              <Logo variant="bird" tone="white" width={68} className="block" />
+                  <title>). CENTRADO a petición expresa del cliente: se probó
+                  a bandera izquierda —alineado con el lema y la dirección— y
+                  él prefiere el centrado por simetría. El enlace toma
+                  `max-w-xs`, la misma anchura que el lema de abajo, para que
+                  el `mx-auto` centre sobre ESA columna y no sobre el ancho del
+                  propio pájaro. */}
+              <Logo variant="bird" tone="white" width={68} className="block mx-auto" />
             </Link>
             <p className="font-sans text-sm text-white/60 mt-6 leading-relaxed max-w-xs">
               {tf('tagline')}
