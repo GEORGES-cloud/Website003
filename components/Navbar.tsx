@@ -183,14 +183,13 @@ export default function Navbar({ locale, menuBoats }: NavbarProps) {
             </span>
           </button>
 
-          {/* CENTER — brand lockup */}
-          <Link
-            href={`/${locale}`}
-            aria-label="Flamingo Yacht Club"
-            className="absolute left-1/2 -translate-x-1/2"
-          >
-            <BrandLogo white={!onLight} />
-          </Link>
+          {/* CENTRO — vacío a propósito (petición del cliente 2026-09-24): el
+              lockup sale de la barra para poder ponerlo en grande sobre el
+              vídeo del hero, que es donde el cliente lo quería desde el
+              principio. La barra no podía crecer lo suficiente para el logo
+              completo con flamenco sin quedar enorme al hacer scroll.
+              `BrandLogo` SIGUE en uso dentro del menú desplegable (más abajo),
+              que es ahora el único enlace a inicio de la cabecera. */}
 
           {/* RIGHT — language + Únete al club (abre el mismo funnel que "Hazte socio") */}
           <div className="flex items-center gap-4 md:gap-6">
