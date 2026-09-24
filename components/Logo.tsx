@@ -32,7 +32,7 @@ const RATIO: Record<LogoVariant, number> = {
   nav: 2823 / 1481,
   mark: 1163 / 925,
   word: 2823 / 487,
-  bird: 266 / 440,
+  bird: 249 / 440,
 };
 
 /* Nombre de archivo por variante. El wordmark vive en un nombre NUEVO

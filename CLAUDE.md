@@ -42,15 +42,18 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
   con flamenco (2026-08-27); el cliente acabó pidiendo la marca sola. El
   "powered by Marina Marbella" sigue como texto HTML debajo, y el pájaro lleva
   `mx-auto` porque es más estrecho que esa línea.
-- **`logo-bird.png` es la ÚNICA excepción a la regla del SVG y es PROVISIONAL.**
-  Es un arte NUEVO del cliente (trazo grueso, distinto al flamenco de
-  `logo-mark`), que llegó como PNG; el vectorial está pendiente de que lo
-  manden. Va recortado a la caja del dibujo y reescalado a 266x440 (el
-  original traía mucho margen vacío y pesaba 218 KB; así pesa 51). Es rosa con
-  fondo transparente, así que sirve sobre claro y sobre oscuro y NO tiene
-  variante `-white`: por eso `Logo` ignora `tone` para esta variante. Cuando
-  llegue el SVG: sustituirlo, quitar la excepción de `Logo.tsx` y actualizar
-  `RATIO.bird`.
+- **`logo-bird.png` es la ÚNICA excepción a la regla del SVG.** Es el arte
+  oficial del diseñador del cliente (2026-09-24), distinto al flamenco de
+  `logo-mark`. Llegó como WebP de 2000x1200 con mucho margen vacío; va
+  recortado a la caja del dibujo y reescalado a 249x440 (unas 3,5 veces el
+  tamaño al que se ve, de sobra para pantallas retina). Sigue siendo mapa de
+  bits: **si el diseñador manda el SVG, sustituirlo, quitar la excepción de
+  `Logo.tsx` y actualizar `RATIO.bird`.**
+- **OJO con el rosa.** Este flamenco es `#f97ccf`, un rosa claro. No es el
+  `#E31C5F` de `tailwind.config.ts` (clase `flamingo`, que usan los hitos de
+  Nosotros) ni el `#e63c73` de los SVG antiguos. Son tres rosas distintos
+  conviviendo; pendiente de decidir con el cliente si el resto se alinea con el
+  nuevo.
 - El flamenco tambien vive en `logo-mark` (favicon, 404, sellos) y en el lockup
   grande sobre el vídeo de `HeroVideo` (variante `full`).
 - El navbar se funde a negro (`bg-ink/95`) al hacer scroll, con lockup y
