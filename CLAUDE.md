@@ -23,8 +23,10 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
 
 ## Dirección de diseño (acordada con el cliente — no desviarse)
 
-- Monocromo/minimal estilo De Antonio Yachts. El rosa `#E31C5F` es el ÚNICO
-  color de acento en toda la web.
+- Monocromo/minimal estilo De Antonio Yachts. El rosa `#f97ccf` es el ÚNICO
+  color de acento en toda la web (lo trajo el arte nuevo del diseñador el
+  2026-09-24 y sustituyó al `#E31C5F` anterior en TODAS partes: tema, SVG de
+  marca e icono de pestaña).
 - Sin 3D, sin animaciones decorativas infinitas, sin efectos-truco.
 - El quiz de descuento existe SOLO como banner; "Únete al club" abre JoinFunnel.
 - Los heros de página usan vídeo a pantalla completa o la banda de `HeroLedger`.
@@ -49,12 +51,18 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
   tamaño al que se ve, de sobra para pantallas retina). Sigue siendo mapa de
   bits: **si el diseñador manda el SVG, sustituirlo, quitar la excepción de
   `Logo.tsx` y actualizar `RATIO.bird`.**
-- **OJO con el rosa.** Este flamenco es `#f97ccf`, un rosa claro. No es el
-  `#E31C5F` de `tailwind.config.ts` (clase `flamingo`, que usan los hitos de
-  Nosotros) ni el `#e63c73` de los SVG antiguos. Son tres rosas distintos
-  conviviendo; pendiente de decidir con el cliente si el resto se alinea con el
-  nuevo.
-- El flamenco tambien vive en `logo-mark` (favicon, 404, sellos) y en el lockup
+- **El rosa `#f97ccf` es claro y eso importa sobre fondo claro.** En el footer
+  oscuro y en el icono de pestaña luce; sobre el crema tiene poco contraste
+  (~2,3:1 contra ~4,3:1 del rosa viejo). Se avisó al cliente el 2026-09-24 por
+  el titular `2026` de los hitos de Nosotros: si alguna vez molesta, la salida
+  es un rosa más oscuro SOLO para fondos claros, no cambiar este.
+- **Icono de pestana** (`app/icon.png` 512px y `app/favicon.ico` con 16/32/48):
+  flamenco NUEVO en rosa sobre cuadrado tinta `#1A1916`, con 12% de margen
+  (2026-09-24). Fondo oscuro a proposito: el rosa nuevo es claro y sobre el
+  crema anterior se perdia en las pestanas de tema claro. El .ico lleva PNG
+  dentro de cada entrada; si hay que rehacerlo, el script vive en el historial
+  de esta sesion (cabecera 6 bytes + 16 por tamano + los PNG al final).
+- El flamenco tambien vive en `logo-mark` (404, sellos) y en el lockup
   grande sobre el vídeo de `HeroVideo` (variante `full`).
 - El navbar se funde a negro (`bg-ink/95`) al hacer scroll, con lockup y
   texto en blanco (también petición del cliente, mismo día).
