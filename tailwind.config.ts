@@ -20,7 +20,7 @@ const config: Config = {
         line: '#E6E2DA', // hairline borders
         // Único color de marca (el flamenco del logo). Reservado para acentos
         // puntuales — nunca como color de sección ni de texto corrido.
-        flamingo: '#E31C5F',
+        flamingo: '#f97ccf',
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
