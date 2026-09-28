@@ -26,7 +26,7 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
         eyebrow={t('hero.eyebrow')}
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        image="/images/blue-marina-golden.jpg"
+        image="/images/banus-sunset.jpg"
         meta={{ index: '36°29′N', label: '4°57′O · Puerto Banús, Marbella' }}
       />
 
