@@ -41,6 +41,12 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
   suficiente para el logo con flamenco sin quedar enorme al hacer scroll.
   `BrandLogo` (el wordmark + "powered by") sobrevive SOLO dentro del menú
   desplegable, y es el único enlace a inicio que queda en la cabecera.
+- El wordmark de `BrandLogo` es `wordmark-2026.png` (+ `-white`), arte del
+  diseñador (2026-09-28), que jubila la vectorización a mano `wordmark-bold`
+  y su stroke postizo. Va **recortado a FLAMINGO + YACHT CLUB**: el original
+  trae tambien un "powered by" dibujado que a la altura de barra mediria ~5px,
+  el mismo motivo por el que en agosto se paso a texto HTML. La variante
+  `-white` existe por pareja pero hoy no se usa (el desplegable es claro).
 - En el **hero del vídeo** va `logo-hero.png` (variante `hero`, prop
   `showLogo` de `HeroVideo`, solo en la portada). Es el lockup del diseñador:
   flamenco rosa sobre FLAMINGO / YACHT CLUB en BLANCO, así que **solo sirve

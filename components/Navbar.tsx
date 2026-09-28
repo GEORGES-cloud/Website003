@@ -49,17 +49,20 @@ function BrandLogo({ white, className = '' }: { white: boolean; className?: stri
           (2026-08-14). Con zoom se arreglaba sola: faltaba tamano, no trazo. */}
       <span className="relative block h-[28px] md:h-[44px]">
         {/* eslint-disable @next/next/no-img-element */}
-        {/* wordmark-bold.svg es un NOMBRE nuevo, no un ?v=: tras varias
-            iteraciones de grosor (2026-08-14) el cliente seguia viendo la
-            version fina y la query no burlaba todos los caches. Grosor por
-            linea (10 FLAMINGO / 3 YACHT CLUB) y esquinas en inglete. */}
+        {/* wordmark-2026: el arte del diseñador (2026-09-28), que sustituye a
+            la vectorizacion a mano de Carlos. Nombre nuevo, no un ?v=: cuando
+            se itero el grosor en agosto el cliente seguia viendo la version
+            vieja porque la query no burlaba todos los caches.
+            Recortado a FLAMINGO + YACHT CLUB: el original trae ademas un
+            "powered by" dibujado que a esta altura mediria ~5px, el mismo
+            problema que en agosto llevo a ponerlo como texto HTML (abajo). */}
         <img
-          src="/brand/wordmark-bold.svg"
+          src="/brand/wordmark-2026.png"
           alt="Flamingo Yacht Club"
           className={`block h-full w-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
         />
         <img
-          src="/brand/wordmark-bold-white.svg"
+          src="/brand/wordmark-2026-white.png"
           alt=""
           aria-hidden
           className={`absolute inset-0 h-full w-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
