@@ -16,7 +16,12 @@ export default async function JsonLd({ locale }: { locale: string }) {
         : 'Yacht membership club in Puerto Banús, Marbella. Access a premium fleet of yachts with no compromises.',
     url: `${siteUrl}/${locale}`,
     image: `${siteUrl}/opengraph-image.jpg`,
-    logo: `${siteUrl}/brand/wordmark-bold.svg`,
+    // El logo oficial que leen los buscadores. Apuntaba al wordmark viejo
+    // (la vectorizacion a mano de Carlos) hasta 2026-09-28; ahora al arte del
+    // diseñador, que es el que se ve en la web. Si algun dia Google pide un
+    // logo mas "presentable" para el panel de conocimiento, lo ideal seria un
+    // PNG cuadrado con fondo solido: este es apaisado y transparente.
+    logo: `${siteUrl}/brand/wordmark-2026.png`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Puerto Banús',
