@@ -189,7 +189,9 @@ export default function JoinFunnel({ locale }: { locale: string }) {
           {/* INTRO */}
           {step === 0 && (
             <>
-              <FlamingoMark size={44} className="mx-auto mb-6" />
+              {/* 64 de ALTO: el flamenco nuevo es estrecho y con el 44 de antes
+                  (que era ancho) quedaba diminuto sobre el titular. */}
+              <FlamingoMark size={64} className="mx-auto mb-6" />
               <p className="eyebrow mb-6">{t('intro.eyebrow')}</p>
               <h2 className="display text-ink mb-6" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
                 {t('intro.title')}

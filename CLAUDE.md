@@ -80,8 +80,14 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
   crema anterior se perdia en las pestanas de tema claro. El .ico lleva PNG
   dentro de cada entrada; si hay que rehacerlo, el script vive en el historial
   de esta sesion (cabecera 6 bytes + 16 por tamano + los PNG al final).
-- El flamenco tambien vive en `logo-mark` (404, sellos) y en el lockup
-  grande sobre el vídeo de `HeroVideo` (variante `full`).
+- `logo-bird` es tambien el sello suelto de `FlamingoMark`: funnel de "Unete
+  al club", 404 e hitos de Nosotros (2026-09-29). **OJO con `FlamingoMark`:
+  su prop `size` es el ALTO**, no el ancho — el pajaro nuevo es vertical
+  (0,57:1) donde el viejo era apaisado (1,26:1), asi que medirlo por el ancho
+  descuadraba los tres sitios de golpe.
+- `logo-mark` y `logo-full`/`logo-nav` (el flamenco viejo, de linea fina) ya
+  NO se usan en ninguna parte. Se conservan en `public/brand/` por si hay que
+  volver al arte original.
 - El navbar se funde a negro (`bg-ink/95`) al hacer scroll, con lockup y
   texto en blanco (también petición del cliente, mismo día).
 

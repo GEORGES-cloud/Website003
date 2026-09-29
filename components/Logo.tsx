@@ -9,7 +9,9 @@ type LogoTone = 'ink' | 'white';
  *               footer — variant="word")
  *   logo-full   lockup completo con el flamenco (ya no se usa en la web)
  *   logo-nav    flamenco + FLAMINGO YACHT CLUB, sin tagline (ya no se usa)
- *   logo-mark   solo el flamenco sobre el agua (favicon, 404, sellos)
+ *   logo-mark   el flamenco VIEJO sobre el agua. Ya no se usa en ningun
+ *               sitio desde 2026-09-29; se conserva por si hiciera falta
+ *               recuperar el arte original
  *   logo-bird   el flamenco NUEVO del cliente — arte distinto al de arriba,
  *               de trazo grueso. Es la marca del footer (2026-09-23) y es el
  *               ÚNICO archivo que no es SVG: llegó como PNG y así se queda
@@ -88,14 +90,22 @@ export default function Logo({
   );
 }
 
+/* El flamenco suelto que se usa como sello (funnel, 404, hitos de Nosotros).
+   Desde 2026-09-29 es el arte NUEVO (`bird`) y ya no el viejo `logo-mark`
+   sobre el agua: era el último sitio donde sobrevivía el flamenco antiguo.
+   `size` es el ALTO, no el ancho: el pájaro nuevo es vertical (0,57:1) donde
+   el viejo era apaisado (1,26:1), así que medirlo por el ancho cambiaba el
+   alto de golpe y descuadraba los cuatro sitios. Ignora `tone`: el arte ya
+   viene en rosa. */
 export function FlamingoMark({
   size = 76,
   tone = 'ink',
   className = '',
 }: {
+  /** Alto en px. */
   size?: number;
   tone?: LogoTone;
   className?: string;
 }) {
-  return <Logo variant="mark" tone={tone} width={size} className={className} alt="" />;
+  return <Logo variant="bird" tone={tone} width={Math.round(size * RATIO.bird)} className={className} alt="" />;
 }
