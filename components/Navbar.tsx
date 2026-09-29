@@ -42,41 +42,32 @@ const EASE = [0.22, 1, 0.36, 1] as const;
  */
 function BrandLogo({ white, className = '' }: { white: boolean; className?: string }) {
   return (
-    <span className={`flex flex-col items-center gap-[5px] ${className}`}>
+    <span className={`flex flex-col items-center ${className}`}>
       {/* 44px en escritorio (antes 32): al 100% de zoom en un monitor normal
           FLAMINGO tenia ~15px de letra y YACHT CLUB ~3.5px — una serifa fina no
           se rasteriza limpia con tan pocos pixeles y salia gris y borrosa
           (2026-08-14). Con zoom se arreglaba sola: faltaba tamano, no trazo. */}
       <span className="relative block h-[28px] md:h-[44px]">
         {/* eslint-disable @next/next/no-img-element */}
-        {/* wordmark-2026: el arte del diseñador (2026-09-28), que sustituye a
-            la vectorizacion a mano de Carlos. Nombre nuevo, no un ?v=: cuando
-            se itero el grosor en agosto el cliente seguia viendo la version
-            vieja porque la query no burlaba todos los caches.
-            Recortado a FLAMINGO + YACHT CLUB: el original trae ademas un
-            "powered by" dibujado que a esta altura mediria ~5px, el mismo
-            problema que en agosto llevo a ponerlo como texto HTML (abajo). */}
+        {/* wordmark-min: version limpia del arte del diseñador (2026-09-30).
+            Solo FLAMINGO / YACHT CLUB — sin los filetes a los lados de YACHT
+            CLUB y sin "powered by": el cliente lo veia recargado y pidio
+            "menos es mas". Por eso aqui abajo ya NO hay linea de texto.
+            Nombre nuevo, no un ?v=: cuando se itero el grosor en agosto el
+            cliente seguia viendo la version vieja porque la query no burlaba
+            todos los caches. */}
         <img
-          src="/brand/wordmark-2026.png"
+          src="/brand/wordmark-min.png"
           alt="Flamingo Yacht Club"
           className={`block h-full w-auto transition-opacity duration-500 ${white ? 'opacity-0' : 'opacity-100'}`}
         />
         <img
-          src="/brand/wordmark-2026-white.png"
+          src="/brand/wordmark-min-white.png"
           alt=""
           aria-hidden
           className={`absolute inset-0 h-full w-auto transition-opacity duration-500 ${white ? 'opacity-100' : 'opacity-0'}`}
         />
         {/* eslint-enable @next/next/no-img-element */}
-      </span>
-      {/* El "powered by" del arte mide ~2px a este tamaño; va como texto HTML
-          para que sea legible (all-caps + tracking, el puente tipográfico). */}
-      <span
-        className={`font-sans text-[7px] md:text-[9px] font-semibold uppercase tracking-wide2 whitespace-nowrap transition-colors duration-500 ${
-          white ? 'text-white/80' : 'text-ink/70'
-        }`}
-      >
-        powered by Marina Marbella
       </span>
     </span>
   );

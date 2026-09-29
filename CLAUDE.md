@@ -42,12 +42,17 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
   al hacer scroll — por eso arriba va el wordmark y no el lockup.
   `BrandLogo` (el wordmark + "powered by") sobrevive SOLO dentro del menú
   desplegable, y es el único enlace a inicio que queda en la cabecera.
-- El wordmark de `BrandLogo` es `wordmark-2026.png` (+ `-white`), arte del
-  diseñador (2026-09-28), que jubila la vectorización a mano `wordmark-bold`
-  y su stroke postizo. Va **recortado a FLAMINGO + YACHT CLUB**: el original
-  trae tambien un "powered by" dibujado que a la altura de barra mediria ~5px,
-  el mismo motivo por el que en agosto se paso a texto HTML. La variante
-  `-white` existe por pareja pero hoy no se usa (el desplegable es claro).
+- El wordmark de `BrandLogo` es `wordmark-min.png` (+ `-white`), arte del
+  diseñador (2026-09-30). Solo **FLAMINGO / YACHT CLUB**: sin los filetes a
+  los lados de YACHT CLUB y **sin ninguna línea de "powered by"** — el cliente
+  lo veía recargado y pidió "menos es más". Antes de este hubo
+  `wordmark-2026` (con filetes, dos días) y antes la vectorización a mano de
+  Carlos, `wordmark-bold`, con su stroke postizo. Ambos siguen en
+  `public/brand/` pero ya no se usan.
+- **La atribución a Marina Marbella ya no sale en barra ni en footer.** Queda
+  en el `<title>` de portada y Nosotros, en los datos estructurados, y como
+  frase de verdad en el texto de Nosotros ("Proudly powered by Marina
+  Marbella…"). Avisado al cliente el 2026-09-30.
 - En el **hero del vídeo** va `logo-hero.png` (variante `hero`, prop
   `showLogo` de `HeroVideo`, solo en la portada). Es el lockup del diseñador:
   flamenco rosa sobre FLAMINGO / YACHT CLUB en BLANCO, así que **solo sirve
