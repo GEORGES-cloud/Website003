@@ -44,16 +44,17 @@ export default async function NosotrosPage({ params: { locale } }: { params: { l
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal direction="right">
-              {/* Foto elegida por el cliente (2026-08-18) en sustitución de la
-                  SPX en el amarre, que se veía pixelada. La lancha va en el
-                  tercio izquierdo del original: el recorte 4:5 se ancla ahí. */}
+              {/* Foto elegida por el cliente (2026-09-29): la anterior se veía
+                  blanda. Es vertical (3:4) y el hueco es 4:5, así que entra casi
+                  entera — la de antes era apaisada y de ella solo se veía el
+                  40% del ancho, estirado. Sin `position`: el barco ya está
+                  centrado en el original. */}
               <ParallaxImage
-                src="/images/sun-sport-250-lifestyle.jpg"
-                alt="Una lancha navegando al atardecer con la costa al fondo"
+                src="/images/navan-red-cliffs.jpg"
+                alt="Una NAVAN fondeada en una cala de acantilados rojos"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 strength={44}
                 className="aspect-[4/5]"
-                position="28% 50%"
               />
             </ScrollReveal>
 
