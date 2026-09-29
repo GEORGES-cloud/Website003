@@ -56,6 +56,19 @@ export default async function PreciosPage({ params: { locale } }: { params: { lo
           // Cierra con un encuadre a ras de agua y un barco de la flota: las dos
           // aéreas de arrecife eran casi el mismo fotograma y el pase no cambiaba.
           { src: '/images/navan-clearcove.jpg' },
+          /* Material oficial NAVAN / Sea Ray que mandó el cliente (2026-09-29).
+             La banda es 21:9 y estas vienen en 3:2, así que se ve la franja
+             central: el `position` está puesto foto a foto y COMPROBADO en
+             pantalla, no calculado — es lo que evita cortar cabezas o pies. */
+          { src: '/images/navan-sunset-pair.jpg', position: '50% 60%' },
+          { src: '/images/navan-yoga-sunset.jpg', position: '50% 55%' },
+          // La familia es la más delicada: centrada se le cortaban los pies, y
+          // al 68% quedaban justo en el borde. Al 76% pisan arena.
+          { src: '/images/navan-family-beach.jpg', position: '50% 76%' },
+          { src: '/images/searay-palms-sunset.jpg', position: '50% 58%' },
+          { src: '/images/navan-teak-platform.jpg' },
+          { src: '/images/spx-stern-couple.jpg', position: '50% 55%' },
+          { src: '/images/swim-platform-feet.jpg', position: '50% 45%' },
         ]}
       />
 
