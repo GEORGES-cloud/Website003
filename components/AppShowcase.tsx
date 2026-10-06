@@ -20,7 +20,7 @@ export default function AppShowcase() {
         <div className="relative aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:min-h-[680px]">
           <ImageReveal className="absolute inset-0">
             <Image
-              src="/images/app-mockup-flamingo.png"
+              src="/images/app-mockup-2026.png"
               alt="La app del club: reservas, check-in y check-out desde el móvil"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

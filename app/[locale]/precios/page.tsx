@@ -99,9 +99,9 @@ export default async function PreciosPage({ params: { locale } }: { params: { lo
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
             <ScrollReveal>
-              <div className="relative aspect-[1961/2339] h-full">
+              <div className="relative aspect-[1200/1431] h-full">
                 <Image
-                  src="/images/app-mockup-flamingo.png"
+                  src="/images/app-mockup-2026.png"
                   alt="La app del club: reservas, check-in y check-out desde el móvil"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
