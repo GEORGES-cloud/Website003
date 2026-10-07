@@ -110,10 +110,10 @@ export default async function PreciosPage({ params: { locale } }: { params: { lo
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <div className="relative aspect-[3/2] lg:aspect-auto h-full min-h-[320px]">
+              <div className="relative aspect-[1400/1457] lg:aspect-auto h-full min-h-[320px]">
                 <Image
-                  src="/images/app-mockup-flamingo-2.png"
-                  alt="La app del club: calendario de reservas y puerto base Puerto Banús"
+                  src="/images/app-mockup-2026-b.webp"
+                  alt="La app del club: perfil de socio, ficha de Puerto Banús y seleccion de barco"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-contain"
