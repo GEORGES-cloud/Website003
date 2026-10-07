@@ -390,11 +390,11 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'La flota es impresionante y el servicio, impecable. Reservar es tan fácil que ya no puedo imaginar el verano en Marbella sin esto.',
+      'Me encanta la propiedad sin preocupaciones: reservo, llego, disfruto y me olvido del mantenimiento, las facturas y las reparaciones. La mejor forma de disfrutar de un barco.',
     quoteEn:
-      "The fleet is impressive and the service impeccable. Booking is so easy I can't imagine a summer in Marbella without it.",
-    author: 'Ana & Javier R.',
-    role: 'Socios',
+      'I love the care-free ownership! I just book, show up, enjoy and forget about all the maintenance, bills, repairs, etc. The best way to enjoy a boat.',
+    author: 'Carlos A.',
+    role: 'Socio',
   },
   {
     quote:

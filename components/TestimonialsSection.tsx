@@ -20,8 +20,11 @@ export default async function TestimonialsSection({ locale }: TestimonialsSectio
   const all = await getTestimonials(locale);
   if (all.length === 0) return null;
 
-  const featured = all.reduce((a, b) => (b.quote.length > a.quote.length ? b : a));
-  const rest = all.filter((t) => t !== featured);
+  /* La cita grande es SIEMPRE la primera (el socio fundador). Antes se elegía
+     "la más larga", y eso hacía dos cosas raras: la portada destacaba una cita
+     distinta en cada idioma, y al tocar un texto el bloque grande saltaba solo.
+     Con la reseña de Carlos A. (2026-10-07) habría saltado en es y en. */
+  const [featured, ...rest] = all;
 
   return (
     <section className="py-24 md:py-36 bg-sand">
