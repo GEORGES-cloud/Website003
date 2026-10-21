@@ -385,7 +385,7 @@ export const testimonials: Testimonial[] = [
       'Tener el Mediterráneo a tu disposición desde Puerto Banús sin los quebraderos de cabeza del mantenimiento — eso es exactamente lo que buscábamos.',
     quoteEn:
       'Having the Mediterranean at your fingertips from Puerto Banús without the maintenance headaches — that is exactly what we were looking for.',
-    author: 'Carlos M.',
+    author: 'Gonzalo I.',
     role: 'Socio fundador',
   },
   {
