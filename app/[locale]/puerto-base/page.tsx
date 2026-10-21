@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import PageHero from '@/components/PageHero';
 import ScrollReveal from '@/components/ScrollReveal';
-import ParallaxImage from '@/components/ParallaxImage';
+import MediaSlideshow from '@/components/MediaSlideshow';
 import Destinations from '@/components/Destinations';
 import ConsentAwareMap from '@/components/ConsentAwareMap';
 import CTAFinal from '@/components/CTAFinal';
@@ -35,13 +35,35 @@ export default function PuertoBasePage({ params: { locale } }: { params: { local
         <div className="max-w-[1480px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <ScrollReveal direction="right">
-              <ParallaxImage
-                src="/images/banus-concha.jpg"
-                alt="La playa de Puerto Banús con La Concha al fondo"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                strength={44}
-                className="aspect-[4/5]"
-              />
+              {/* Pase "hoy y entonces": abre con la foto actual de la playa y
+                  sigue con el archivo de Puerto Banús de los 70-80 (peticion
+                  del cliente 2026-10-21).
+                  Dos decisiones que no son cosméticas:
+                  · El marco pasa de 4:5 a 4:3. El archivo es TODO apaisado y en
+                    el hueco vertical se veía la franja central y poco más; el
+                    plano general del puerto es justo lo que hay que enseñar.
+                  · Fuera ParallaxImage. Su capa interior va a -inset-y-22%, o
+                    sea un 44% más alta que el marco, y eso volvía a recortar
+                    por los lados lo que acabábamos de recuperar. */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <MediaSlideshow
+                  slides={[
+                    { src: '/images/banus-concha.jpg' },
+                    { src: '/images/vintage-banus-quay.jpg' },
+                    { src: '/images/vintage-restaurant-antonio.jpg' },
+                    { src: '/images/vintage-tower-sailor.jpg' },
+                    { src: '/images/vintage-jose-banus.jpg' },
+                    { src: '/images/vintage-royals-quay.jpg' },
+                    { src: '/images/vintage-julio-iglesias.jpg' },
+                    { src: '/images/vintage-sean-connery.jpg' },
+                    { src: '/images/vintage-race-quay.jpg' },
+                    { src: '/images/vintage-rally-cars.jpg' },
+                    { src: '/images/marina-marbella-founders.webp' },
+                  ]}
+                  interval={4500}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </ScrollReveal>
             <ScrollReveal>
               <div>
