@@ -118,7 +118,7 @@ export async function getTestimonials(locale: string) {
   return testimonials.map((t, i) => ({
     author: t.author,
     quote: pick(locale, t.quote, t.quoteEn, extra[locale]?.testimonials?.[i]?.quote),
-    role: locale === 'es' ? t.role : extra[locale]?.testimonials?.[i]?.role || t.role,
+    role: pick(locale, t.role, t.roleEn, extra[locale]?.testimonials?.[i]?.role),
   }));
 }
 

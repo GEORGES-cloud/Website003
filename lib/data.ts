@@ -42,6 +42,10 @@ export interface Testimonial {
   quoteEn: string;
   author: string;
   role: string;
+  /* El cargo en inglés. Los otros cuatro idiomas lo traen de
+     lib/strings/<locale>.json; el inglés vive aquí, como quoteEn. Sin esto la
+     web en inglés enseñaba "SOCIO" y "SOCIA" en español (2026-10-21). */
+  roleEn: string;
 }
 
 // The boats currently active in the club. Edit this list to show/hide boats
@@ -387,6 +391,7 @@ export const testimonials: Testimonial[] = [
       'Having the Mediterranean at your fingertips from Puerto Banús without the maintenance headaches — that is exactly what we were looking for.',
     author: 'Gonzalo I.',
     role: 'Socio fundador',
+    roleEn: 'Founding member',
   },
   {
     quote:
@@ -395,6 +400,7 @@ export const testimonials: Testimonial[] = [
       'I love the care-free ownership! I just book, show up, enjoy and forget about all the maintenance, bills, repairs, etc. The best way to enjoy a boat.',
     author: 'Carlos A.',
     role: 'Socio',
+    roleEn: 'Member',
   },
   {
     quote:
@@ -403,5 +409,6 @@ export const testimonials: Testimonial[] = [
       'What I value most is the flexibility. I choose the boat, the day, and the destination. Setting off from Puerto Banús whenever I want is a privilege.',
     author: 'Martina L.',
     role: 'Socia',
+    roleEn: 'Member',
   },
 ];
