@@ -125,3 +125,15 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
 - Las fotos originales que envía el club están en `Contenido recibido/`
   (fuera de `public/`). Antes de usar una: comprimir con ffmpeg (`-q:v 4`,
   ~400-600 KB) hacia `public/images/` con nombre kebab-case descriptivo.
+
+- **Archivo vintage de Puerto Banus** (`public/images/vintage-*.jpg`): 10 fotos
+  de los 70-80 que, junto a la foto actual de la playa, forman el pase de
+  Puerto base. En cuatro salen personajes reconocibles (los Reyes, Julio
+  Iglesias, Sean Connery, Jose Banus) y el material parece de agencia. Se le
+  explico la exposicion al cliente el 2026-10-21 (derechos de imagen, LO
+  1/1982, y licencia de la agencia) y dio el visto bueno a las once.
+  **Decision tomada: no reabrirla.**
+- Ese pase usa `MediaSlideshow` dentro de un `div` 4:3 pelado. El marco NO
+  puede ser vertical ni llevar `ParallaxImage`: el archivo es todo apaisado, y
+  la capa del parallax (`-inset-y-[22%]`, un 44% mas alta que el marco) recorta
+  por los lados justo lo que hay que ensenar.
