@@ -86,57 +86,43 @@ export const fleet: Boat[] = [
       '/images/spx210-pair-anchored.jpg',
       '/images/spx210-helm.jpg',
     ],
-    // Hero de ficha: cenital del barco fondeado en agua transparente, con los
-    // tres socios a bordo (elección del cliente sobre la vista lateral anterior)
-    heroImage: '/images/blue-overhead-anchor.jpg',
+    // Hero de ficha: cenital del barco fondeado en agua transparente, con
+    // gente a bordo. Mismo encuadre que eligió el cliente en su día, ahora con
+    // la foto oficial del modelo correcto (2026-10-22).
+    heroImage: '/images/spx210-overhead.jpg',
     // Vídeo oficial SPX 210 (Mandelieu, Costa Azul) — 720p sin audio, autoplay silencioso
     video: '/videos/blue-spx210.mp4',
     videoPoster: '/images/blue-video-poster.jpg',
-    // Galería abundante: navegación, vida a bordo, detalle y puerto (sin cascos rojos)
+    /* Galería: SOLO material oficial de la SPX 210. Pasó de 13 fotos a 6 el
+       2026-10-22 — las 13 de antes eran de otro modelo (aviso del cliente, que
+       es el concesionario) y preferimos seis correctas a trece que no lo son.
+       El cenital va de hero y por eso no se repite aquí. Cuando Sea Ray mande
+       más fotos del 210, ampliar esta lista (y sus dos juegos de alts).
+       La regla vieja de "sin cascos rojos" ya no aplica: el material oficial
+       del modelo los trae, y el cliente lo ha dado por bueno. */
     gallery: [
-      '/images/blue-stern-friends.jpg',
-      '/images/blue-cockpit-friends.jpg',
-      '/images/helm-empty.jpg',
-      '/images/blue-cove.jpg',
-      '/images/searay-dive-split.jpg',
-      '/images/blue-bow-sunpad.jpg',
-      '/images/blue-castle-stern.jpg',
-      '/images/blue-bow-detail.jpg',
-      '/images/blue-marina-golden.jpg',
-      '/images/wake-circle.jpg',
-      '/images/searay-8.jpg',
-      '/images/searay-6.jpg',
-      '/images/teak-water.jpg',
+      '/images/spx210-cove-trio.jpg',
+      '/images/spx210-stern-couple.jpg',
+      '/images/spx210-helm.jpg',
+      '/images/spx210-castle-profile.jpg',
+      '/images/spx210-running.jpg',
+      '/images/spx210-pair-anchored.jpg',
     ],
     galleryAlts: [
-      'Cuatro amigos charlando en la bañera de popa de la SPX 210',
-      'Tres amigas tomando el sol en el solárium de popa',
+      'La SPX 210 fondeada en una cala de agua turquesa, con tres amigas a bordo',
+      'Una pareja en el solárium de popa, señalando la costa',
       'El puesto de mando y la cubierta de teca, listos para salir',
-      'La SPX 210 fondeada en una cala de agua turquesa',
-      'Foto partida: la SPX 210 fondeada y un bañista buceando bajo el agua',
-      'Una socia leyendo al sol en el solárium de proa',
-      'La SPX 210 fondeada frente a un castillo entre pinos',
-      'Detalle de la proa: tapicería clara y cubierta de teca',
-      'La SPX 210 atracada en el puerto a la luz del atardecer',
-      'Vista cenital de la estela circular de la SPX 210 sobre agua azul',
-      'Tres socias navegando con la costa al fondo',
-      'Wakesurf en la estela de la SPX 210',
-      'Detalle de la plataforma de baño de teca sobre agua transparente',
+      'La SPX 210 fondeada frente a una torre entre pinos',
+      'La SPX 210 navegando a buen ritmo frente a la costa',
+      'Dos SPX 210 fondeadas frente a la costa al atardecer',
     ],
     galleryAltsEn: [
-      'Four friends chatting in the SPX 210 stern cockpit',
-      'Three friends sunbathing on the stern sunpad',
+      'The SPX 210 anchored in a turquoise cove with three friends aboard',
+      'A couple on the stern sunpad, pointing out the coastline',
       'The helm and teak deck, ready to cast off',
-      'The SPX 210 anchored in a turquoise cove',
-      'Split shot: the SPX 210 at anchor and a swimmer diving below',
-      'A member reading in the sun on the bow sunpad',
-      'The SPX 210 anchored below a castle among pines',
-      'Bow detail: pale upholstery and teak decking',
-      'The SPX 210 berthed in the marina at golden hour',
-      'Overhead view of the SPX 210 circular wake on blue water',
-      'Three members cruising with the coastline behind',
-      'Wakesurfing in the SPX 210 wake',
-      'Teak swim platform detail over clear water',
+      'The SPX 210 anchored below a tower among pines',
+      'The SPX 210 running at speed along the coast',
+      'Two SPX 210s at anchor off the coast at sunset',
     ],
   },
   {
