@@ -72,15 +72,19 @@ export const fleet: Boat[] = [
       maxSpeed: '35 kn',
       engines: 'Mercury FourStroke · 200 CV',
     },
-    // La tarjeta de flota pasa a ser un pase de fotos: navegando al atardecer,
-    // fondeada en cala, cenital, saliendo de la cala y baño con el barco al fondo.
-    image: '/images/blue-sunset-run.jpg',
+    // La tarjeta de flota es un pase de fotos. Material oficial Sea Ray de la
+    // SPX 210 que mando el cliente el 2026-10-22: las `blue-*` que habia antes
+    // NO son este modelo (aviso suyo, el es el concesionario). Ojo: aqui hay
+    // cascos rojos, que la galeria evitaba a proposito por el azul de Blue.
+    image: '/images/spx210-cove-trio.jpg',
     slides: [
-      '/images/blue-sunset-run.jpg',
-      '/images/blue-cliff-cove.jpg',
-      '/images/blue-cove-aerial.jpg',
-      '/images/blue-cove-run.jpg',
-      '/images/blue-swim-split.jpg',
+      '/images/spx210-cove-trio.jpg',
+      '/images/spx210-running.jpg',
+      '/images/spx210-overhead.jpg',
+      '/images/spx210-castle-profile.jpg',
+      '/images/spx210-stern-couple.jpg',
+      '/images/spx210-pair-anchored.jpg',
+      '/images/spx210-helm.jpg',
     ],
     // Hero de ficha: cenital del barco fondeado en agua transparente, con los
     // tres socios a bordo (elección del cliente sobre la vista lateral anterior)
