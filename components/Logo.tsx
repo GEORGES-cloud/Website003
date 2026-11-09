@@ -35,7 +35,7 @@ const RATIO: Record<LogoVariant, number> = {
   mark: 1163 / 925,
   word: 2823 / 487,
   bird: 249 / 440,
-  hero: 1200 / 611,
+  hero: 1200 / 203,
 };
 
 /* Nombre de archivo por variante. El wordmark vive en un nombre NUEVO
@@ -73,7 +73,13 @@ export default function Logo({
      vaciar este mapa y actualizar `RATIO`. */
   const RASTER: Partial<Record<LogoVariant, string>> = {
     bird: '/brand/logo-bird.png',
-    hero: '/brand/logo-hero.png',
+    /* Solo FLAMINGO / YACHT CLUB, sin el flamenco encima (2026-11-09). Es el
+       MISMO archivo del disenador recortado por abajo: filas 408-610 del
+       logo-hero.png original, a ancho completo. Ese ancho completo es
+       deliberado — pintado a 560px las letras salen exactamente del tamano
+       que tenian con el pajaro. El lockup entero sigue en
+       `logo-hero.png`: para volver atras, esta linea y RATIO.hero. */
+    hero: '/brand/logo-hero-word.png',
   };
   const src =
     RASTER[variant] ?? `/brand/${FILE[variant]}${tone === 'white' ? '-white' : ''}.svg`;

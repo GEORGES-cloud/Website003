@@ -53,10 +53,17 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
   en el `<title>` de portada y Nosotros, en los datos estructurados, y como
   frase de verdad en el texto de Nosotros ("Proudly powered by Marina
   Marbella…"). Avisado al cliente el 2026-09-30.
-- En el **hero del vídeo** va `logo-hero.png` (variante `hero`, prop
-  `showLogo` de `HeroVideo`, solo en la portada). Es el lockup del diseñador:
-  flamenco rosa sobre FLAMINGO / YACHT CLUB en BLANCO, así que **solo sirve
-  sobre fondo oscuro**. Va arriba y no centrado, con
+- En el **hero del vídeo** va `logo-hero-word.png` (variante `hero`, prop
+  `showLogo` de `HeroVideo`, solo en la portada): SOLO FLAMINGO / YACHT CLUB
+  en BLANCO y **sin el flamenco encima** (2026-11-09 — el cliente quiso verlo
+  sin pájaro y se quedó con esa versión, "más limpio"). Al ser blanco **solo
+  sirve sobre fondo oscuro**. Es el `logo-hero.png` del diseñador recortado a
+  las filas 408-610 y **a ancho completo (1200 px)**: ese ancho de más es
+  deliberado, porque pintado a 560 px las letras salen exactamente del tamaño
+  que tenían cuando llevaban pájaro. El lockup entero sigue en
+  `logo-hero.png`; para volver atrás basta con `RASTER.hero` y `RATIO.hero`
+  en `Logo.tsx`. Sin el pájaro el nombre sube unos 190 px en escritorio: no
+  lo mueve nadie, es que ya no hay nada encima. Va arriba y no centrado, con
   `top-[max(14%,calc(var(--header-h)+28px))]`: el suelo en píxeles evita que
   en ventanas bajas (móvil apaisado) se pegue a la barra.
 - La tinta del wordmark la decide sola `white` (el flag `data-navbar-on-dark`
