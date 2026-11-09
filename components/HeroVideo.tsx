@@ -97,7 +97,7 @@ export default function HeroVideo({
               que suba más de la cuenta por muy baja que sea la ventana. */}
           <motion.div
             style={{ opacity: copyOpacity }}
-            className="absolute inset-x-0 top-[max(14%,calc(var(--header-h)+28px))] md:top-[max(18%,calc(var(--header-h)+40px))] flex justify-center px-6"
+            className="absolute inset-x-0 top-[max(27%,calc(var(--header-h)+28px))] md:top-[max(36%,calc(var(--header-h)+40px))] flex justify-center px-6"
           >
             {/* Decorativo: el nombre del club ya lo da el h1 */}
             <Logo

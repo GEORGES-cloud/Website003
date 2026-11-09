@@ -14,10 +14,12 @@ export default async function HomePage({ params: { locale } }: { params: { local
 
   return (
     <>
-      {/* Hero: el metraje del SPX a pantalla completa con el lockup completo
-          encima (2026-09-24). La barra ya no lleva marca: el logo grande sobre
-          el vídeo es ahora lo primero que ve quien entra. */}
-      <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" showLogo />
+      {/* Hero: el metraje del SPX a pantalla completa y LIMPIO (2026-11-09).
+          Llevó el lockup encima desde 2026-09-24, pero al quitarle el flamenco
+          se quedaba siendo el mismo wordmark que ya va en la barra, dos veces
+          en la misma pantalla. El cliente pidió dejarlo solo arriba. Volver a
+          ponerlo es añadir `showLogo`: el bloque sigue en `HeroVideo`. */}
+      <HeroVideo src="/videos/spx.mp4" poster="/images/spx-poster.jpg" />
 
       <ClubManifesto locale={locale} />
 

@@ -35,13 +35,17 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
 
 - Vive vectorizado en `public/brand/*.svg` y se sirve SIEMPRE con `<img>`,
   nunca con `next/image`.
-- En la **barra** va el wordmark en TODAS las páginas menos la portada
-  (2026-09-28, `!isHome` en `Navbar`). En la portada el centro va vacío a
-  propósito: ahí el lockup completo está en grande sobre el vídeo. La barra
-  nunca pudo crecer lo suficiente para el logo CON flamenco sin quedar enorme
-  al hacer scroll — por eso arriba va el wordmark y no el lockup.
-  `BrandLogo` (el wordmark + "powered by") sobrevive SOLO dentro del menú
-  desplegable, y es el único enlace a inicio que queda en la cabecera.
+- En la **barra** va el wordmark en TODAS las páginas, portada incluida
+  (2026-11-09). Hasta esa fecha la portada era la excepción (`!isHome` en
+  `Navbar`, 2026-09-28) porque el lockup con flamenco vivía en grande sobre el
+  vídeo; al quitarle el pájaro, el hero se quedaba repitiendo el mismo
+  wordmark que ya estaba arriba, dos veces en la misma pantalla. El cliente
+  pidió dejarlo solo en la barra y el vídeo limpio. La barra nunca pudo crecer
+  lo suficiente para el logo CON flamenco sin quedar enorme al hacer scroll —
+  por eso aquí va el wordmark y no el lockup. `BrandLogo` es el único enlace a
+  inicio de la cabecera, y el mismo componente sirve dentro del menú
+  desplegable: por eso la portada sale del mismo tamaño que el resto sin tocar
+  nada.
 - El wordmark de `BrandLogo` es `wordmark-min.png` (+ `-white`), arte del
   diseñador (2026-09-30). Solo **FLAMINGO / YACHT CLUB**: sin los filetes a
   los lados de YACHT CLUB y **sin ninguna línea de "powered by"** — el cliente
@@ -53,19 +57,21 @@ Marina Marbella, S.A. Next.js 14 (App Router) + Tailwind + next-intl
   en el `<title>` de portada y Nosotros, en los datos estructurados, y como
   frase de verdad en el texto de Nosotros ("Proudly powered by Marina
   Marbella…"). Avisado al cliente el 2026-09-30.
-- En el **hero del vídeo** va `logo-hero-word.png` (variante `hero`, prop
-  `showLogo` de `HeroVideo`, solo en la portada): SOLO FLAMINGO / YACHT CLUB
-  en BLANCO y **sin el flamenco encima** (2026-11-09 — el cliente quiso verlo
-  sin pájaro y se quedó con esa versión, "más limpio"). Al ser blanco **solo
-  sirve sobre fondo oscuro**. Es el `logo-hero.png` del diseñador recortado a
-  las filas 408-610 y **a ancho completo (1200 px)**: ese ancho de más es
-  deliberado, porque pintado a 560 px las letras salen exactamente del tamaño
-  que tenían cuando llevaban pájaro. El lockup entero sigue en
-  `logo-hero.png`; para volver atrás basta con `RASTER.hero` y `RATIO.hero`
-  en `Logo.tsx`. Sin el pájaro el nombre sube unos 190 px en escritorio: no
-  lo mueve nadie, es que ya no hay nada encima. Va arriba y no centrado, con
-  `top-[max(14%,calc(var(--header-h)+28px))]`: el suelo en píxeles evita que
-  en ventanas bajas (móvil apaisado) se pegue a la barra.
+- El **hero del vídeo de la portada va SIN logo** (2026-11-09). El nombre vive
+  solo en la barra. El bloque sigue entero en `HeroVideo` detrás de la prop
+  `showLogo`, que ya no le pasa nadie: para recuperarlo basta con volver a
+  ponerla en `app/[locale]/page.tsx`. Ojo, ese bloque se lleva consigo el
+  oscurecido radial al 28%, que existía para el logo — la legibilidad de la
+  barra no depende de él, sino del degradado `from-black/45` de arriba.
+  Lo que pintaba era `logo-hero-word.png` (variante `hero`): SOLO FLAMINGO /
+  YACHT CLUB en BLANCO, **sin el flamenco encima**, que es el `logo-hero.png`
+  del diseñador recortado a las filas 408-610 y **a ancho completo (1200 px)**
+  — ese ancho de más era deliberado, porque pintado a 560 px las letras salían
+  exactamente del tamaño que tenían con el pájaro. Ambos archivos siguen en
+  `public/brand/`. Historia de tres días, por si vuelve: el cliente quitó el
+  flamenco ("más limpio"), luego pidió bajar el nombre a donde estaba antes
+  (`top` 27% / 36%, que es justo donde caía cuando el pájaro lo empujaba), y
+  al final prefirió el vídeo limpio y el nombre arriba.
 - La tinta del wordmark la decide sola `white` (el flag `data-navbar-on-dark`
   que ponen `PageHero` con foto y `HeroVideo`): blanco sobre Puerto base,
   Nosotros y Contacto; tinta sobre Membresía y Flota, cuyos heros son claros.

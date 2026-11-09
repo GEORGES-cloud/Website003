@@ -86,13 +86,6 @@ export default function Navbar({ locale, menuBoats }: NavbarProps) {
   const menuLabel = MENU_LABEL[locale] ?? 'Menu';
   const { openFunnel } = useJoinFunnel();
 
-  /* La portada es la ÚNICA sin marca en la barra: ahí el lockup completo va en
-     grande sobre el vídeo y repetirlo arriba sobraba. En el resto de páginas
-     el hero no lleva logo, así que sin esto se quedaban sin marca ninguna en
-     la cabecera (petición del cliente 2026-09-28). `usePathname` viene de
-     next/navigation, así que el locale va incluido. */
-  const isHome = pathname === `/${locale}` || pathname === '/';
-
   // "Let's Meet" — the 6th menu item. Closes the overlay first so its scroll-lock
   // is released cleanly, then opens the funnel (z-90, above everything).
   const openLetsMeet = () => {
@@ -184,22 +177,21 @@ export default function Navbar({ locale, menuBoats }: NavbarProps) {
             </span>
           </button>
 
-          {/* CENTRO — el wordmark, en todas las páginas MENOS la portada
-              (2026-09-28). En la portada el centro va vacío a propósito: el
-              lockup completo con flamenco vive sobre el vídeo del hero. El
-              wordmark (sin flamenco) es el que cabe aquí: la barra nunca pudo
-              crecer lo suficiente para el logo con pájaro sin quedar enorme al
-              hacer scroll. La tinta la decide `white`, que ya cruza a blanco
-              sobre los heros oscuros. */}
-          {!isHome && (
-            <Link
-              href={`/${locale}`}
-              aria-label="Flamingo Yacht Club"
-              className="absolute left-1/2 -translate-x-1/2"
-            >
-              <BrandLogo white={!onLight} />
-            </Link>
-          )}
+          {/* CENTRO — el wordmark, en TODAS las páginas, portada incluida
+              (2026-11-09). Antes la portada era la excepción porque el lockup
+              con flamenco ocupaba el vídeo del hero; al quitarse el pájaro, el
+              hero se quedaba con el mismo wordmark que va aquí arriba, repetido
+              dos veces en la misma pantalla. El cliente pidió dejarlo solo en
+              la barra: ahora el vídeo va limpio y el nombre vive en un único
+              sitio, igual que en el resto de la web. La tinta la decide
+              `white`, que ya cruza a blanco sobre los heros oscuros. */}
+          <Link
+            href={`/${locale}`}
+            aria-label="Flamingo Yacht Club"
+            className="absolute left-1/2 -translate-x-1/2"
+          >
+            <BrandLogo white={!onLight} />
+          </Link>
 
           {/* RIGHT — language + Únete al club (abre el mismo funnel que "Hazte socio") */}
           <div className="flex items-center gap-4 md:gap-6">
