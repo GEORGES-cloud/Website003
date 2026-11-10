@@ -20,10 +20,12 @@ export default async function TestimonialsSection({ locale }: TestimonialsSectio
   const all = await getTestimonials(locale);
   if (all.length === 0) return null;
 
-  /* La cita grande es SIEMPRE la primera (el socio fundador). Antes se elegía
-     "la más larga", y eso hacía dos cosas raras: la portada destacaba una cita
-     distinta en cada idioma, y al tocar un texto el bloque grande saltaba solo.
-     Con la reseña de Carlos A. (2026-10-07) habría saltado en es y en. */
+  /* La cita grande es SIEMPRE la primera de `testimonials`, y el resto van
+     abajo en dos columnas. Antes se elegía "la más larga", y eso hacía dos
+     cosas raras: la portada destacaba una cita distinta en cada idioma, y al
+     tocar un texto el bloque grande saltaba solo (2026-10-07).
+     Desde el 2026-11-10 sólo hay UNA reseña, la de Carlos A., porque es la
+     única real: `rest` queda vacío y el bloque de abajo no se pinta. */
   const [featured, ...rest] = all;
 
   return (

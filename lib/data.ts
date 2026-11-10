@@ -373,16 +373,11 @@ export const fleet: Boat[] = [
   },
 ];
 
+/* SOLO reseñas REALES. El 2026-11-10 el cliente quitó las dos que quedaban de
+   ejemplo ("no son socios de verdad y no quiero nada que no sea real en la
+   web") y dejó la única que un socio escribió y mandó él. Si se añade otra,
+   que venga de una persona real: el orden manda, la PRIMERA es la grande. */
 export const testimonials: Testimonial[] = [
-  {
-    quote:
-      'Tener el Mediterráneo a tu disposición desde Puerto Banús sin los quebraderos de cabeza del mantenimiento — eso es exactamente lo que buscábamos.',
-    quoteEn:
-      'Having the Mediterranean at your fingertips from Puerto Banús without the maintenance headaches — that is exactly what we were looking for.',
-    author: 'Gonzalo I.',
-    role: 'Socio fundador',
-    roleEn: 'Founding member',
-  },
   {
     quote:
       'Me encanta la propiedad sin preocupaciones: reservo, llego, disfruto y me olvido del mantenimiento, las facturas y las reparaciones. La mejor forma de disfrutar de un barco.',
@@ -390,15 +385,6 @@ export const testimonials: Testimonial[] = [
       'I love the care-free ownership! I just book, show up, enjoy and forget about all the maintenance, bills, repairs, etc. The best way to enjoy a boat.',
     author: 'Carlos A.',
     role: 'Socio',
-    roleEn: 'Member',
-  },
-  {
-    quote:
-      'Lo que más valoro es la flexibilidad. Elijo el barco, el día y el destino. Salir desde Puerto Banús cada vez que quiero es un privilegio.',
-    quoteEn:
-      'What I value most is the flexibility. I choose the boat, the day, and the destination. Setting off from Puerto Banús whenever I want is a privilege.',
-    author: 'Martina L.',
-    role: 'Socia',
     roleEn: 'Member',
   },
 ];
