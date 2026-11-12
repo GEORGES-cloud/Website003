@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { waInterestHref } from '@/lib/whatsapp';
+import { WA_PHONE, waInterestHref } from '@/lib/whatsapp';
 import { getLenis } from '@/lib/lenis';
 import { trackEvent } from '@/lib/analytics';
 import { CONSENT_EVENT, hasConsentDecision } from '@/lib/consent';
@@ -24,7 +24,7 @@ type Channel = 'whatsapp' | 'phone' | 'email';
 export default function DiscountQuiz({ locale }: { locale: string }) {
   const t = useTranslations('quiz');
   const reduce = useReducedMotion();
-  const waPhone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
+  const waPhone = WA_PHONE;
 
   const [open, setOpen] = useState(false);
   // step: 0 intro · 1 canal · 2 datos · 3 gracias + código

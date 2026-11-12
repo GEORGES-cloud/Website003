@@ -5,7 +5,7 @@ import { WA_PHONE } from './whatsapp';
 
 export const CLUB_PHONE_E164 = `+${WA_PHONE}`;
 
-/** +34722454277 → +34 722 45 42 77. Si el número no es un móvil español de
+/** +34633090801 → +34 633 09 08 01. Si el número no es un móvil español de
  *  9 dígitos se queda como está: mejor sin agrupar que mal agrupado. */
 export const CLUB_PHONE_DISPLAY = CLUB_PHONE_E164.replace(
   /^(\+34)(\d{3})(\d{2})(\d{2})(\d{2})$/,

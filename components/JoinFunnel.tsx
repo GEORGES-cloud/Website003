@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { waInterestHref } from '@/lib/whatsapp';
+import { WA_PHONE, waInterestHref } from '@/lib/whatsapp';
 import { getLenis } from '@/lib/lenis';
 import { trackEvent } from '@/lib/analytics';
 import { useJoinFunnel } from './JoinFunnelProvider';
@@ -21,7 +21,7 @@ export default function JoinFunnel({ locale }: { locale: string }) {
   const { open, closeFunnel } = useJoinFunnel();
   const t = useTranslations('funnel');
   const reduce = useReducedMotion();
-  const phone = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
+  const phone = WA_PHONE;
 
   // step: 0 intro · 1 name · 2 close (canal + cita) · 3 enviado
   const [step, setStep] = useState(0);

@@ -4,6 +4,7 @@ import { tiers, faqs, routes, stats, milestones } from './content';
 import { legal } from './legal';
 import type { LegalDoc } from './legal';
 import { REEL, REEL_ALTS } from './reel-data';
+import { CLUB_PHONE_E164 } from './contact';
 import sv from './strings/sv.json';
 import ru from './strings/ru.json';
 import de from './strings/de.json';
@@ -190,7 +191,7 @@ export interface SiteSettings {
    facilite, se añaden aquí y salen en el JSON-LD. */
 export async function getSiteSettings(): Promise<SiteSettings> {
   return {
-    telephone: `+${process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277'}`,
+    telephone: CLUB_PHONE_E164,
     email: process.env.CONTACT_EMAIL ?? 'Hello@flamingoyachtclub.com',
     sameAs: [],
   };

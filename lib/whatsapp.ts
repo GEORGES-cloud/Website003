@@ -10,7 +10,14 @@ export const WA_INTEREST_MSG: Record<string, string> = {
   fr: 'Bonjour, je suis intéressé(e) par l’adhésion au Flamingo Yacht Club.',
 };
 
-export const WA_PHONE = process.env.NEXT_PUBLIC_WHATSAPP ?? '34722454277';
+/* EL número del club, en un solo sitio. Lo usan el teléfono de Contacto
+   (`lib/contact.ts`), el botón flotante, los atajos de WhatsApp del funnel y
+   del banner, y el `telephone` de los datos estructurados de Google.
+   Si hay que cambiarlo, se cambia AQUÍ y punto — hasta el 2026-11-12 estaba
+   copiado a mano en cinco archivos y era cuestión de tiempo que uno se
+   quedara atrás. Ojo: en producción manda la variable de entorno del panel de
+   Hostinger; este valor es solo el de reserva. */
+export const WA_PHONE = process.env.NEXT_PUBLIC_WHATSAPP ?? '34633090801';
 
 export function waInterestHref(locale: string) {
   return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(WA_INTEREST_MSG[locale] ?? WA_INTEREST_MSG.en)}`;
